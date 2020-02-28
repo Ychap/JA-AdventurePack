@@ -7,8 +7,8 @@ THEN
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 		Wait(1)
 		SmallWait(7)
-		LeaveAreaLUAPanic("%EBaldursGate_ThievesGuildr%","",[793.364],12)
-		LeaveAreaLUA("%EBaldursGate_ThievesGuildr%","",[793.364],12)
+		LeaveAreaLUAPanic("%EBaldursGate_ThievesGuild%","",[793.364],12)
+		LeaveAreaLUA("%EBaldursGate_ThievesGuild%","",[793.364],12)
 		SetMasterArea("%EBaldursGate%")
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 		Wait(2)
@@ -29,7 +29,7 @@ THEN
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 		Wait(1)
 		SmallWait(7)
-		LeaveAreaLUA("%EBaldursGate_ThievesGuildr%","",[799.418],12)
+		LeaveAreaLUA("%EBaldursGate_ThievesGuild%","",[799.418],12)
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 END
 
@@ -42,7 +42,7 @@ THEN
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 		Wait(1)
 		SmallWait(7)
-		LeaveAreaLUA("%EBaldursGate_ThievesGuildr%","",[804.470],12)
+		LeaveAreaLUA("%EBaldursGate_ThievesGuild%","",[804.470],12)
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 END
 
@@ -55,7 +55,7 @@ THEN
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 		Wait(1)
 		SmallWait(7)
-		LeaveAreaLUA("%EBaldursGate_ThievesGuildr%","",[884.384],12)
+		LeaveAreaLUA("%EBaldursGate_ThievesGuild%","",[884.384],12)
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 END
 
@@ -68,7 +68,7 @@ THEN
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 		Wait(1)
 		SmallWait(7)
-		LeaveAreaLUA("%EBaldursGate_ThievesGuildr%","",[908.422],12)
+		LeaveAreaLUA("%EBaldursGate_ThievesGuild%","",[908.422],12)
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 END
 
@@ -81,6 +81,6 @@ THEN
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 		Wait(1)
 		SmallWait(7)
-		LeaveAreaLUA("%EBaldursGate_ThievesGuildr%","",[936.473],12)
+		LeaveAreaLUA("%EBaldursGate_ThievesGuild%","",[936.473],12)
 		CreateVisualEffectObject("JA#SPWN1",Myself)
 END

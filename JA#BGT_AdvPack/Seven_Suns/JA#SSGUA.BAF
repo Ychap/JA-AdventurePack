@@ -9,7 +9,7 @@ THEN
 END
 
 IF
-	Killed("DoppSS")
+	Killed("SSDopple")
 THEN
 	RESPONSE #100
 		IncrementGlobal("SPRITE_IS_DEADDOPPSS","GLOBAL",1)

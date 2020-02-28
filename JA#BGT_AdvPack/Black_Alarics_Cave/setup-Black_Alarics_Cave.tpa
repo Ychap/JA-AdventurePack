@@ -14,7 +14,7 @@ COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#SKEL1.CRE~ ~override~
 	SAY NAME2 @34
 
 COMPILE ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.BAF~
-COMPILE ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.D~
 
 COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 	//delete not needed actors

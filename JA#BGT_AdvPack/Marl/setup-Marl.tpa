@@ -215,3 +215,6 @@ COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 		fj_cre_resref     = ~JA#GUAB8~
 		fj_dlg_resref	  = ~JA#GUAB8~
 	END
+
+//Marl misc.d
+COMPILE ~JA#BGT_AdvPack/Marl/JA#MARL.D~

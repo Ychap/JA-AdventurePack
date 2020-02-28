@@ -38,7 +38,7 @@ ACTION_IF GAME_IS ~bgee~ BEGIN
 END
 
 
-COMPILE ~JA#BGT_AdvPack/Niemain_Zentarim/JA#NIEMAI.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Niemain_Zentarim/JA#NIEMAI.D~
 
 /* Den cres werden über die Area ein Specifics script zugewiesen: */
 

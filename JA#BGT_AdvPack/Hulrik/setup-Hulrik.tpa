@@ -5,24 +5,28 @@
 
 COPY_EXISTING ~HULRIK.CRE~ ~override~
 	SAY SELECT_COMMON1 #11082
+COPY_EXISTING ~XvartH.CRE~ ~override~
+            ~OgreS.CRE~ ~override~
+    WRITE_ASCIIE 0x280  ~%SOURCE_RES%~     #32    //Scriptname
+
 
 COMPILE ~JA#BGT_AdvPack/Hulrik/JA#HULRIK.D~
 
 ACTION_IF GAME_IS ~bgt~ THEN BEGIN
 
-/* prevent Hulrik from disappearing - BGT */
-COPY_EXISTING ~%LonelyPeaks%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY CASE_INSENSITIVE ~IF[%WNL%%MNL%%LNL%%TAB% ]+Dead("Mulahey")[%WNL%%MNL%%LNL%%TAB% ]+Exists("HulriksCow")[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+ActionOverride("HulriksCow",DestroySelf())[%WNL%%MNL%%LNL%%TAB% ]+END~ ~~
-		REPLACE_TEXTUALLY CASE_INSENSITIVE ~IF[%WNL%%MNL%%LNL%%TAB% ]+Dead("Mulahey")[%WNL%%MNL%%LNL%%TAB% ]+Exists("Hulrik")[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+ActionOverride("Hulrik",DestroySelf())[%WNL%%MNL%%LNL%%TAB% ]+END~ ~~
+	/* prevent Hulrik from disappearing - BGT */
+	COPY_EXISTING ~%LonelyPeaks%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE ~IF[%WNL%%MNL%%LNL%%TAB% ]+Dead("Mulahey")[%WNL%%MNL%%LNL%%TAB% ]+Exists("HulriksCow")[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+ActionOverride("HulriksCow",DestroySelf())[%WNL%%MNL%%LNL%%TAB% ]+END~ ~~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE ~IF[%WNL%%MNL%%LNL%%TAB% ]+Dead("Mulahey")[%WNL%%MNL%%LNL%%TAB% ]+Exists("Hulrik")[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+ActionOverride("Hulrik",DestroySelf())[%WNL%%MNL%%LNL%%TAB% ]+END~ ~~
+		END
+	BUT_ONLY
+	
+	
+	LAF extend_area_script 
+		STR_VAR area="%LonelyPeaks%" 
+				bottom="JA#BGT_AdvPack/Hulrik/AR3300_b.baf"
 	END
-BUT_ONLY
-
-
-LAF extend_area_script 
-	STR_VAR area="%LonelyPeaks%" 
-			bottom="JA#BGT_AdvPack/Hulrik/AR3300_b.baf"
-END
 END //bgt
 
 
