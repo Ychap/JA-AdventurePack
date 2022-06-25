@@ -62,6 +62,6 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		END
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_SHORT "JA#OFF_SNG"	~0~
-	WRITE_SHORT "JA#OFF_SNG" + 0x4	~0~
+	WRITE_LONG "JA#OFF_SNG"	~0~
+	WRITE_LONG "JA#OFF_SNG" + 0x4	~0~
 BUT_ONLY
