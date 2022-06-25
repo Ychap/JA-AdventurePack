@@ -79,7 +79,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 			WRITE_SHORT actors_offset+0x34        15
 		END
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	//add new actors
@@ -119,7 +119,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 			WRITE_SHORT actors_offset+0x34        1
 		END
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	//add new actors
@@ -213,7 +213,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 			END
 		END
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	//add new actors

@@ -8,7 +8,7 @@ COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 	PATCH_IF (SOURCE_SIZE > 0x11b) BEGIN 
-		READ_SHORT 0xbc "JA#OFF_SNG"
+		READ_LONG 0xbc "JA#OFF_SNG"
 		WRITE_SHORT "JA#OFF_SNG"	~0~
 		WRITE_SHORT "JA#OFF_SNG" + 0x4	~0~
 	END

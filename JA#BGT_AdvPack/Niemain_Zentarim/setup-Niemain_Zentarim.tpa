@@ -61,7 +61,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 			WRITE_ASCII actors_offset+0x78  ~JA#ZENT1~ #8
 		END
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_SHORT "JA#OFF_SNG"	~0~
 	WRITE_SHORT "JA#OFF_SNG" + 0x4	~0~
 BUT_ONLY
