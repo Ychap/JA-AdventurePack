@@ -284,18 +284,18 @@ COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.ARE~ ~override~
 		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
 		//Flaming Fist Dialog and Script changes
 		PATCH_IF ((~%actors_pos_x%~ = 1029) AND (~%actors_filename%~ STR_EQ  ~PUMBER2~)) BEGIN
-			WRITE_ASCII actors_offset + 0x20        1143
-			WRITE_ASCII actors_offset + 0x22        610
-			WRITE_ASCII actors_offset + 0x24        1143
-			WRITE_ASCII actors_offset + 0x26        610
-			WRITE_ASCII actors_offset + 0x34        5
+			WRITE_SHORT actors_offset + 0x20        1143
+			WRITE_SHORT actors_offset + 0x22        610
+			WRITE_SHORT actors_offset + 0x24        1143
+			WRITE_SHORT actors_offset + 0x26        610
+			WRITE_SHORT actors_offset + 0x34        5
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 936) AND (~%actors_filename%~ STR_EQ  ~PUMBER2~)) BEGIN
-			WRITE_ASCII actors_offset + 0x20        395
-			WRITE_ASCII actors_offset + 0x22        825
-			WRITE_ASCII actors_offset + 0x24        395
-			WRITE_ASCII actors_offset + 0x26        825
-			WRITE_ASCII actors_offset + 0x34        11
+			WRITE_SHORT actors_offset + 0x20        395
+			WRITE_SHORT actors_offset + 0x22        825
+			WRITE_SHORT actors_offset + 0x24        395
+			WRITE_SHORT actors_offset + 0x26        825
+			WRITE_SHORT actors_offset + 0x34        11
 		END
 	END
 BUT_ONLY
