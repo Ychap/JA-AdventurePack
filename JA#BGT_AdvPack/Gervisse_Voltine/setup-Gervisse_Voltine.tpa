@@ -149,4 +149,4 @@ COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
 COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.BAF~
-EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~
+EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~ EVALUATE_BUFFER
