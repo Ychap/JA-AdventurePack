@@ -15,3 +15,21 @@ COPY ~JA#BGT_AdvPack/Suthie_Sthief/JA#SUTHI.CRE~ ~override~
 COMPILE ~JA#BGT_AdvPack/Suthie_Sthief/JA#SUTHI.D~
 
 EXTEND_TOP ~%EBaldursGate_SilencesShop%.BCS~ ~JA#BGT_AdvPack/Suthie_Sthief/AR7809.BAF~ EVALUATE_BUFFER
+
+COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
+	//add new actors
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 714
+		fj_loc_y          = 282
+		fj_dest_x         = 714
+		fj_dest_y         = 282
+		fj_orientation    = 3      
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = Dieb
+		fj_cre_resref     = JA#STHIE
+		fj_dlg_resref	  = JA#STHIE
+	END
+
+BUT_ONLY
