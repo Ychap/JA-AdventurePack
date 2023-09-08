@@ -131,10 +131,10 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP1.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDET.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MGUAR.BAF~
 
-EXTEND_TOP ~AR7219.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7219.BAF~
-EXTEND_TOP ~AR7227.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7227.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~AR7228.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7228.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~AR7229.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7229.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_ThreeOldKegs_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7219.BAF~
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7228.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7229.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~FLAMAL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#FFHUN.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~FFHUNT.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#FFHUN.BAF~ EVALUATE_BUFFER
 
@@ -151,7 +151,7 @@ EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/ZORL.BAF~ EVALU
 	REPLACE ~999999~ @41
 
 /* changed the following REPLACE_TEXTUALLY so the former extra script blocks in the area script are not needed */
-COPY_EXISTING ~AR7228.BCS~ ~override~
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~("ALDETH",[217.491],0)~ ~("ALDETH",[1244.720],2)~
 //    	REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Aldeth",SetNumTimesTalkedTo(1))~ ~Continue()~
@@ -315,7 +315,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 		STR_VAR
 		actor_name 	= ~Irlentree~
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
@@ -386,7 +386,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		lock_difficulty  = 100
 		container_key = ~JA#ZRLKY~
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
@@ -432,7 +432,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 			END
 		END
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
