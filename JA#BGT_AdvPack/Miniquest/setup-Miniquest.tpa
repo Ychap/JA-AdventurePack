@@ -439,7 +439,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_name = Beholder
 		fj_bam_resref = JA#BEHOL
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 BUT_ONLY
@@ -463,7 +463,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = AMB_M08A
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 BUT_ONLY

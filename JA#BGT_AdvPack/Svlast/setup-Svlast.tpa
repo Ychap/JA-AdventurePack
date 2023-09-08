@@ -15,7 +15,7 @@ END ELSE BEGIN
 	EXTEND_TOP ~%FirewineBridge%.BCS~ ~JA#BGT_AdvPack/Svlast/AR3400.BAF~ EVALUATE_BUFFER
 	COMPILE ~JA#BGT_AdvPack/Svlast/JA#ZOMB1.BAF~
 	COMPILE ~JA#BGT_AdvPack/Svlast/JA#SVLST.BAF~
-	COMPILE ~JA#BGT_AdvPack/Svlast/JA#SVLST.D~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Svlast/JA#SVLST.D~
 	
 	COPY_EXISTING ~%FirewineBridge%.ARE~ ~override~
 		//add new actors

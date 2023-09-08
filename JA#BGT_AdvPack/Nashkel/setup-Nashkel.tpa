@@ -56,43 +56,43 @@ COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
 		//Flaming Fist Dialog and Script changes
 		PATCH_IF ((~%actors_pos_x%~ = 500) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
-			WRITE_ASCII actors_offset + 0x20        912
-			WRITE_ASCII actors_offset + 0x22        604
-			WRITE_ASCII actors_offset + 0x24        912
-			WRITE_ASCII actors_offset + 0x26        604
-			WRITE_ASCII actors_offset + 0x34        7
+			WRITE_SHORT actors_offset + 0x20        912
+			WRITE_SHORT actors_offset + 0x22        604
+			WRITE_SHORT actors_offset + 0x24        912
+			WRITE_SHORT actors_offset + 0x26        604
+			WRITE_SHORT actors_offset + 0x34        7
 			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 614) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
-			WRITE_ASCII actors_offset + 0x20        1132
-			WRITE_ASCII actors_offset + 0x22        515
-			WRITE_ASCII actors_offset + 0x24        1132
-			WRITE_ASCII actors_offset + 0x26        515
-			WRITE_ASCII actors_offset + 0x34        4
+			WRITE_SHORT actors_offset + 0x20        1132
+			WRITE_SHORT actors_offset + 0x22        515
+			WRITE_SHORT actors_offset + 0x24        1132
+			WRITE_SHORT actors_offset + 0x26        515
+			WRITE_SHORT actors_offset + 0x34        4
 			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 634) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
-			WRITE_ASCII actors_offset + 0x20        3386
-			WRITE_ASCII actors_offset + 0x22        1797
-			WRITE_ASCII actors_offset + 0x24        3386
-			WRITE_ASCII actors_offset + 0x26        1797
-			WRITE_ASCII actors_offset + 0x34        2
+			WRITE_SHORT actors_offset + 0x20        3386
+			WRITE_SHORT actors_offset + 0x22        1797
+			WRITE_SHORT actors_offset + 0x24        3386
+			WRITE_SHORT actors_offset + 0x26        1797
+			WRITE_SHORT actors_offset + 0x34        2
 			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 663) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
-			WRITE_ASCII actors_offset + 0x20        2917
-			WRITE_ASCII actors_offset + 0x22        2855
-			WRITE_ASCII actors_offset + 0x24        2917
-			WRITE_ASCII actors_offset + 0x26        2855
-			WRITE_ASCII actors_offset + 0x34        1
+			WRITE_SHORT actors_offset + 0x20        2917
+			WRITE_SHORT actors_offset + 0x22        2855
+			WRITE_SHORT actors_offset + 0x24        2917
+			WRITE_SHORT actors_offset + 0x26        2855
+			WRITE_SHORT actors_offset + 0x34        1
 			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 688) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
-			WRITE_ASCII actors_offset + 0x20        3113
-			WRITE_ASCII actors_offset + 0x22        2986
-			WRITE_ASCII actors_offset + 0x24        3113
-			WRITE_ASCII actors_offset + 0x26        2986
-			WRITE_ASCII actors_offset + 0x34        6
+			WRITE_SHORT actors_offset + 0x20        3113
+			WRITE_SHORT actors_offset + 0x22        2986
+			WRITE_SHORT actors_offset + 0x24        3113
+			WRITE_SHORT actors_offset + 0x26        2986
+			WRITE_SHORT actors_offset + 0x34        6
 			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 	END

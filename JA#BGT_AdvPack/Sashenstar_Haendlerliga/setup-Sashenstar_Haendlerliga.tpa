@@ -315,7 +315,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 		STR_VAR
 		actor_name 	= ~Irlentree~
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
@@ -386,7 +386,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		lock_difficulty  = 100
 		container_key = ~JA#ZRLKY~
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
@@ -432,7 +432,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 			END
 		END
 	END
-	READ_SHORT 0xbc "JA#OFF_SNG"
+	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
