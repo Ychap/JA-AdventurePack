@@ -9,27 +9,9 @@ THEN
 END
 
 IF
-	!Dead("NIEMAIN")
-	Global("JA#NIEMAIN_SPWN","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",2)
-		CreateCreature("JA#NIEMA",[942.617],7)
-END
-
-IF
 	Global("JA#ELFSONG_QUEST","GLOBAL",9)
 	GlobalTimerExpired("JA#HARP_TIMER","%EBaldursGate_ElfsongTavern_L2%")
 THEN
 	RESPONSE #100
 		SetGlobal("JA#ELFSONG_QUEST","GLOBAL",10)
-END
-
-IF
-	Global("Chapter","GLOBAL",%tutu_chapter_7%)
-	GlobalGT("JA#NIEMAIN_SPWN","GLOBAL",1)
-THEN
-	RESPONSE #100
-		ActionOverride("NIEMAIN",DestroySelf())
-		Continue()
 END
