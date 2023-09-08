@@ -26,6 +26,14 @@ COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1%.BCS~ ~override~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW5",[582.678],0)~ ~NoAction()~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW6",[614.189],0)~ ~NoAction()~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW7",[895.498],0)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("ULF",[602.489],S)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW1",[593.397],S)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW2",[461.513],S)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW3",[287.471],S)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW4",[384.594],S)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW5",[582.678],S)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW6",[614.189],S)~ ~NoAction()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW7",[895.498],S)~ ~NoAction()~
 		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("JACIL",DestroySelf())~ ~NoAction()~
 	END
 BUT_ONLY
@@ -39,6 +47,13 @@ COPY_EXISTING ~%NEBaldursGate_CountingHouse_L2%.BCS~ ~override~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU5",[612.544],0)~ ~CreateCreature("CREW5",[612.544],0)~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU6",[615.637],0)~ ~CreateCreature("CREW6",[615.637],0)~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU7",[769.475],0)~ ~CreateCreature("CREW7",[769.475],0)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU1",[515.486],S)~ ~CreateCreature("CREW1",[515.486],S)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU2",[414.311],S)~ ~CreateCreature("CREW2",[414.311],S)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU3",[287.437],S)~ ~CreateCreature("CREW3",[287.437],S)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU4",[304.598],S)~ ~CreateCreature("CREW4",[304.598],S)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU5",[612.544],S)~ ~CreateCreature("CREW5",[612.544],S)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU6",[615.637],S)~ ~CreateCreature("CREW6",[615.637],S)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU7",[769.475],S)~ ~CreateCreature("CREW7",[769.475],S)~
 	END
 BUT_ONLY
 

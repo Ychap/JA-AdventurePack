@@ -18,17 +18,6 @@ THEN
 END
 
 IF
-	OnCreation()
-	Global("Chapter","GLOBAL",%tutu_chapter_7%)
-	Global("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",0)
-	GlobalGT("Captured","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",1)
-		CreateCreature("JA#IGNAT",[842.653],14)
-END
-
-IF
 	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",0)
 	GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
 THEN
@@ -58,14 +47,4 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",7)
 		ActionOverride("JA#KEG02",EscapeArea())
-END
-
-IF
-	!Dead("NIEMAIN")
-	Global("JA#NIEMAIN_SPWN","GLOBAL",2)
-	InParty("XZAR")
-THEN
-	RESPONSE #100
-		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",3)
-		CreateCreature("JA#NIEMA",[1031.460],2)
 END
