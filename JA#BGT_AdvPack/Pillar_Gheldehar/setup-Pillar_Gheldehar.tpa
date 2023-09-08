@@ -40,7 +40,7 @@ COMPILE ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#PILAR.D~
 COMPILE ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#GHELD.D~
 COMPILE ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#GHELD.BAF~
 COMPILE ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#PILAR.BAF~
-EXTEND_TOP ~AR6801.BCS~ ~JA#BGT_AdvPack/Pillar_Gheldehar/AR6801.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%FriendlyArmInn_L1%.BCS~ ~JA#BGT_AdvPack/Pillar_Gheldehar/AR6801.BAF~ EVALUATE_BUFFER
 
 COPY_EXISTING ~%SWBaldursGate%.ARE~ ~override~
 	//add new actors
