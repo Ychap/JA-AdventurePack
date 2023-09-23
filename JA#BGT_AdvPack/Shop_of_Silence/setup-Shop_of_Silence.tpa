@@ -15,7 +15,7 @@ ACTION_IF GAME_IS ~eet bgee~ BEGIN
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_eet.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
 END
 
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
 COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.D~
 COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.D~
 COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILC1.BAF~
