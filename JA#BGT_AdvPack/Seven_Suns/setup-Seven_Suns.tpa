@@ -27,7 +27,7 @@ COPY_EXISTING ~DOPPSE.DLG~ ~override~
 		strref
 	END
 	SET ssungu1 = strref 
-COPY_EXISTING ~DOPPSE.DLG~ ~override~
+COPY_EXISTING ~DOPPSM.DLG~ ~override~
 	LPF READ_JOURNAL_STRREF
 		INT_VAR
 		state = 3
@@ -35,6 +35,14 @@ COPY_EXISTING ~DOPPSE.DLG~ ~override~
 		strref
 	END
 	SET ssungu2 = strref 
+COPY_EXISTING ~DOPPSE.DLG~ ~override~
+	LPF READ_JOURNAL_STRREF
+		INT_VAR
+		state = 3
+		RET
+		strref
+	END
+	SET ssungu3 = strref 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DOPPSE.D~	//Cutscene oben
 
@@ -49,20 +57,16 @@ COPY_EXISTING ~DOPPSM.CRE~ ~override~
 COPY_EXISTING ~RASHAD.CRE~ ~override~
 	WRITE_ASCII 0x258	~JA#DPKIZ~	#8
 	ADD_CRE_ITEM ~JA#DPKIZ~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
+
 /*ACTION_IF GAME_IS ~eet~ BEGIN
 	ADD_JOURNAL EXISTING TITLE (#231394) @1012 @1013 @1014 @1015 @1016 @1017 @1018 @1019
 END
 ACTION_IF GAME_IS ~bgee~ BEGIN
 	ADD_JOURNAL EXISTING TITLE (#31394) @1012 @1013 @1014 @1015 @1016 @1017 @1018 @1019
 END*/
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#JHASSO.D~
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#JHASSO_EE.D~
-END
 COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR.D~
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR_EE.D~
-END
 COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#laola.D~
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
@@ -146,7 +150,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR1
+		fj_cre_resref     = JA#SSMR2
 		fj_dlg_resref	  = JA#DPSS2
 	END
 	LPF fj_are_structure
@@ -159,7 +163,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR2
+		fj_cre_resref     = JA#SSMR1
 		fj_dlg_resref	  = JA#DPSS1
 	END
 	LPF fj_are_structure
@@ -252,7 +256,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_orientation    = 2      
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard2
+		fj_name           = Guard3
 		fj_cre_resref     = JA#SSGU3
 		fj_dlg_resref	  = JA#SSGU3
 	END

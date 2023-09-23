@@ -9,7 +9,9 @@ THEN
 END
 
 IF
-	Killed("SSDopple")
+	OR(2)
+		Killed("SSDopple")
+		Killed("DoppSS")
 THEN
 	RESPONSE #100
 		IncrementGlobal("SPRITE_IS_DEADDOPPSS","GLOBAL",1)

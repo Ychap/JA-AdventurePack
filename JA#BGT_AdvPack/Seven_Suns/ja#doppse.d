@@ -33,7 +33,7 @@ DO ~SetGlobal("JA#DOPPSE_TALK","GLOBAL",1)~
     == JA#DPSS1
       @9
 END
-IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)AddJournalEntry(%ssungu2%,QUEST)~ EXIT
+IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)AddJournalEntry(%ssungu3%,QUEST)~ EXIT
 
 
 BEGIN ~JA#SSMR3~

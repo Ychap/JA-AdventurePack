@@ -2,7 +2,7 @@ IF
 	Global("Doppleganger","GLOBAL",0)
 	Global("JA#JHASSO_MOVE","GLOBAL",0)
 	Global("LaolaSpawn","GLOBAL",0)
-	GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)
+	GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
 	!Exists("LAOLA")
 	OR(2)
 		Global("laola","GLOBAL",1)
