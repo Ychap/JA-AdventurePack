@@ -59,8 +59,8 @@ And also: to make the transition to Jaheira's Shadow Druid quest, i.e. to lead t
 */
 
 /* this will grab the correct state from the language bg1npc is installed in - this is great! */
-OUTER_SET jaheira_state = STATE_WHICH_SAYS 95 IN ~bg1npc/tra/%s/x#jaqu.tra~ FROM ~JAHEIRAJ.dlg~
-OUTER_SET vic_state = STATE_WHICH_SAYS 5 IN ~bg1npc/tra/%s/x#viint.tra~ FROM ~viconij.dlg~
+OUTER_SET jaheira_state = STATE_WHICH_SAYS 95 IN ~bg1npc/tra/%s/x#jaqu.tra~ FROM ~%JAHEIRA_JOINED%.dlg~
+OUTER_SET vic_state = STATE_WHICH_SAYS 5 IN ~bg1npc/tra/%s/x#viint.tra~ FROM ~%VICONIA_JOINED%.dlg~
 
 END //ACTION_IF bg1npc interjections is installed
 
@@ -80,18 +80,18 @@ BUT_ONLY
 
 <<<<<<<< ...inlined/aldeth_bg1npc.d
 
-EXTEND_BOTTOM ~viconij~ %vic_state%
+EXTEND_BOTTOM ~%VICONIA_JOINED%~ %vic_state%
   IF ~~ THEN REPLY @0 EXTERN SENIYA JA#SENIYA_00
 END
 
 /* more bg1npc compatibility: loop to Jaheira's quest, by Lumorus */
 
 INTERJECT SENIYA JA#SENIYA_07 JA#SENIYA_06_BG1NPC
-== JAHEIRAJ IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @68 
+== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @68 
 == SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @111
-== JAHEIRAJ IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @112
+== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @112
 == SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @113
-END JAHEIRAJ %jaheira_state%
+END %JAHEIRA_JOINED% %jaheira_state%
 >>>>>>>>
 
 ACTION_IF ((vic_state >= 0) AND (jaheira_state >= 0)) BEGIN
@@ -197,6 +197,11 @@ COPY_EXISTING ~IRLENTRE.BCS~ ~override~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[710.673],0)~ ~~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[881.661],0)~ ~~
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[942.567],0)~ ~~
+		REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[768.607],S)~ ~UseItem("JA#DPIRL",Myself)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[710.673],S)~ ~~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[881.661],S)~ ~~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[942.567],S)~ ~~
 		REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~~
 	END
 BUT_ONLY

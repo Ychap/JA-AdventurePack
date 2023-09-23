@@ -81,7 +81,7 @@ END
 
 
 IF
-	GlobalGT("Chapter","GLOBAL",6)
+	GlobalGT("Chapter","GLOBAL",%tutu_chapter_5%)
 	Global("DukeThanks","GLOBAL",1)
 	Exists("Aldeth")
 	!Dead("Aldeth")
@@ -93,7 +93,7 @@ END
 
 /* In case the player didn't find the bodies yet */
 IF
-	GlobalGT("Chapter","GLOBAL",7)
+	GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%)
 	Global("C#JA#_DestroyBodies","GLOBAL",0)
 THEN
 	RESPONSE #100
