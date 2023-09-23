@@ -15,9 +15,9 @@ IF ~~ THEN BEGIN 2
   SAY @4
   IF ~PartyHasItem("POTN08")~ THEN REPLY @5 DO ~TakePartyItemNum("POTN08",1)~ EXIT
   IF ~PartyHasItem("POTN17")~ THEN REPLY @6 DO ~TakePartyItemNum("POTN17",1)~ EXIT
-  IF ~PartyHasItem("GBERRY")~ THEN REPLY @7 DO ~TakePartyItemNum("GBERRY",1)~  EXIT
+  IF ~PartyHasItem("GBERRY")~ THEN REPLY @7 DO ~TakePartyItemNum("GBERRY",1)~ EXIT
   IF ~~ THEN REPLY @8 DO ~SetGlobal("JA#_HelpedMechant","MYAREA",1) SetGlobalTimer("JA#MERC3","GLOBAL",TWO_DAYS)~ UNSOLVED_JOURNAL @1008 EXIT
-  IF ~~ THEN REPLY @9 JOURNAL @10 GOTO 1
+  IF ~~ THEN REPLY @9 GOTO 1
 END
 
 IF ~Global("JA#_HelpedMechant","MYAREA",2)~ THEN BEGIN 3
@@ -57,7 +57,7 @@ IF ~Global("JA#_HelpedMechant","MYAREA",1)~ THEN BEGIN 9
   SAY @26
   IF ~PartyHasItem("POTN08")~ THEN REPLY @5 DO ~TakePartyItemNum("POTN08",1)~ EXIT
   IF ~PartyHasItem("POTN17")~ THEN REPLY @6 DO ~TakePartyItemNum("POTN17",1)~ EXIT
-  IF ~PartyHasItem("GBERRY")~ THEN REPLY @7 DO ~TakePartyItemNum("GBERRY",1)~  EXIT
+  IF ~PartyHasItem("GBERRY")~ THEN REPLY @7 DO ~TakePartyItemNum("GBERRY",1)~ EXIT
   IF ~~ THEN REPLY @27 EXIT
-  IF ~~ THEN REPLY @9 DO ~EraseJournalEntry(@1008)~ JOURNAL @10 EXIT
+  IF ~~ THEN REPLY @9 DO ~SetGlobalTimer("JA#MERC3","GLOBAL",TWO_MINUTES)~ EXIT
 END
