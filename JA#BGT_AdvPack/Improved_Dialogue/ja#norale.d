@@ -39,6 +39,10 @@ REPLACE_ACTION_TEXT NORALE
 ~EscapeAreaDestroy(90)~
 ~SmallWait(1)~
 
+REPLACE_ACTION_TEXT NORALE
+~ReputationInc(1)~
+~SmallWait(1)~
+
 //bgee eet
 REPLACE_ACTION_TEXT NORALE
 ~EscapeArea()~

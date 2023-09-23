@@ -22,8 +22,6 @@ END
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#PRSBX.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#MTOWBA.D~ //MTOWBASC.CRE MTWOBASN.CRE MTWOBAST.CRE
 
-COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#Zordral.D~
-
 COPY_EXISTING ~PRSBAX_A.CRE~ ~override~
 	WRITE_ASCII 0x2cc ~JA#PRS01~	#8
 COPY_EXISTING ~PRSBAX_B.CRE~ ~override~
@@ -46,4 +44,5 @@ COPY_EXISTING ~FLAMVAI.CRE~ ~override~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#Vai.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#Bently.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#Greywo.d~
-COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#Jondal.d~
+// COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#Jondal.d~
+COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#Zordral.D~
