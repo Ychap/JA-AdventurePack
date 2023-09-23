@@ -117,22 +117,3 @@ DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",5)EraseJournalEntry(@1023)AddexperiencePart
 == JA#JOPI @37
 == RAGEFA @38
 EXIT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
