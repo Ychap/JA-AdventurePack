@@ -7,6 +7,8 @@ COMPILE ~JA#BGT_AdvPack/Priester/JA#OGHM1.D~
 COPY ~JA#BGT_AdvPack/Priester/JA#OGHM1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Priester/JA#OGHM1.STO~ ~override~
 	SAY 0xc @2 // Unrolling Scroll
+
+OUTER_SET Unrolling_Scroll = RESOLVE_STR_REF (@2)
 COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 	//add new actors
 	LPF fj_are_structure
@@ -42,7 +44,7 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 		INT_VAR 
 		fj_loc_x = 2580 
 		fj_loc_y = 304  
-		fj_note_strref = RESOLVE_STR_REF (@2)
+		fj_note_strref = ~%Unrolling_Scroll%~
 		fj_color = 1
 		STR_VAR 
 		fj_structure_type = note
