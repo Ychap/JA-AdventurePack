@@ -10,6 +10,7 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.TIS~ ~override~
 	~JA#BGT_AdvPack/Arkhstaff/JA#C04HT.BMP~ ~override~
 	~JA#BGT_AdvPack/Arkhstaff/JA#C04LM.BMP~ ~override~
 	~JA#BGT_AdvPack/Arkhstaff/JA#C04SR.BMP~ ~override~
+
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
 		LPF ALTER_AREA_REGION
@@ -86,6 +87,8 @@ COPY_EXISTING ~%BaldursGateDocks_IronThrone_Cellar%.ARE~ ~override~
 			fj_bam_resref = JA#7611D
 		END
 	END
+	CLEAR_ARRAY x_coord
+	CLEAR_ARRAY y_coord
 BUT_ONLY
 
 COPY_EXISTING ~%WSewers%.ARE~ ~override~
