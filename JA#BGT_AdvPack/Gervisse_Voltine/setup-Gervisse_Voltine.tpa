@@ -13,12 +13,17 @@ COPY_EXISTING ~LOUISE.CRE~ ~override~
 COPY_EXISTING ~VOLTIN.CRE~ ~override~
 	WRITE_LONG 0x14 720
 	WRITE_ASCII 0x248	~JA#VOLTI~	#8
-	REMOVE_KNOWN_SPELL ~SPPR105~ ~SPPR304~
-	REMOVE_MEMORIZED_SPELL ~SPPR105~ ~SPPR304~
-	ADD_KNOWN_SPELL ~SPPR301~ #2 ~priest~
-	ADD_KNOWN_SPELL ~SPPR503~ #4 ~priest~
-	ADD_MEMORIZED_SPELL ~SPPR301~ #2 ~priest~
-	ADD_MEMORIZED_SPELL ~SPPR503~ #4 ~priest~
+	WRITE_ASCII 0x250	~DRUID8B~	#8
+	REMOVE_KNOWN_SPELL ~SPPR102~ ~SPPR304~ ~SPPR301~
+	REMOVE_MEMORIZED_SPELL ~SPPR102~ ~SPPR304~ ~SPPR301~
+	ADD_KNOWN_SPELL ~SPPR111~ #0 ~priest~
+	ADD_KNOWN_SPELL ~SPPR110~ #0 ~priest~
+	ADD_KNOWN_SPELL ~SPPR302~ #2 ~priest~
+	ADD_KNOWN_SPELL ~SPPR402~ #3 ~priest~
+	ADD_MEMORIZED_SPELL ~SPPR111~ #0 ~priest~
+	ADD_MEMORIZED_SPELL ~SPPR110~ #0 ~priest~
+	ADD_MEMORIZED_SPELL ~SPPR302~ #2 ~priest~
+	ADD_MEMORIZED_SPELL ~SPPR402~ #3 ~priest~
 
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
@@ -102,15 +107,14 @@ COPY_EXISTING ~VOLTIN.DLG~ ~override~
 	END
 	SET gervis3 = strref 
 
-
 /* if bg1npc interjections are installd, Faldorn will not tolerate if Voltine is attacked. Taken from bg1npc Project */
 
 <<<<<<<< ...inlined/ja#gervis_bg1npc.d
 EXTEND_BOTTOM VOLTIN JA_VOLTIN_9
-  IF ~InParty("faldorn") InMyArea("faldorn") !StateCheck("faldorn",CD_STATE_NOTVALID)~ THEN EXTERN ~FALDOJ~ P5#FalMadVoltine
+  IF ~InParty("faldorn") InMyArea("faldorn") !StateCheck("faldorn",CD_STATE_NOTVALID)~ THEN EXTERN ~%FALDORN_JOINED%~ P5#FalMadVoltine
 END
 
-APPEND FALDOJ
+APPEND "%FALDORN_JOINED%"
 
 IF ~~ THEN BEGIN P5#FalMadVoltine
 SAY @90
