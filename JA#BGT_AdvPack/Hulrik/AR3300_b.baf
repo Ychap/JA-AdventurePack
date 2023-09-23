@@ -1,11 +1,11 @@
-IF
+/*IF this belongs to Saherdra, bgt has this scriptblock, BG:EE doesn't need it
   NumDeadGT("XvartH",7)
   Global("XvartsDead","GLOBAL",0)
 THEN
   RESPONSE #100
     SetGlobal("XvartsDead","GLOBAL",8)
 END
-
+*/
 /* this belongs to Saherdra, bgt has this scriptblock, BG:EE doesn't need it
 IF
   NumDeadGT("OgreS",1)
