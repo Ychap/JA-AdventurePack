@@ -23,12 +23,13 @@ BUT_ONLY
 /* Better: cycle through the existing actors, first (in case area was altered by another mod) */
 
 COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
-	READ_LONG  0x54 actor_off
-	READ_SHORT 0x58 actor_num
-	FOR (index = 0 ; index < actor_num ; ++index) BEGIN
-		READ_ASCII (actor_off + 0x80 + (index * 0x110)) cre_file
-		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "phanda" = 0) BEGIN // phandalyn's creature file
-		WRITE_LONG (actor_off + 0x38 + (index * 0x110)) 0
+	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
+		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
+		PATCH_IF (~%actors_filename%~ STR_EQ  ~Phandalyn~) BEGIN
+			LPF fj_are_structure
+				INT_VAR fj_delete_mode = EVAL %cnt%
+				STR_VAR fj_structure_type = actor
+			END
 		END
 	END
 BUT_ONLY

@@ -228,11 +228,19 @@ BEGIN ~Galtoth - the fence~ DESIGNATED 13
 
 INCLUDE ~JA#BGT_AdvPack/Galtoth/setup-Galtoth.tpa~
 
+//////////////////////////////////
+//FIXED: Moved Phandalyn to the Elfsong
+//////////////////////////////////
+
+BEGIN ~Phandalyn to the Elfsong~ DESIGNATED 14
+
+INCLUDE ~JA#BGT_AdvPack/Phandalyn/setup-Phandalyn.tpa~
+
 ///////////////////////////////////////////////
 //RESTORED: SUTHIE & STHIEF at Silence's Store
 ///////////////////////////////////////////////
 
-BEGIN ~SUTHIE & STHIEF at Silence's Store~ DESIGNATED 14
+BEGIN ~SUTHIE & STHIEF at Silence's Store~ DESIGNATED 15
 
 INCLUDE ~JA#BGT_AdvPack/Suthie_Sthief/setup-Suthie_Sthief.tpa~
 
@@ -240,7 +248,7 @@ INCLUDE ~JA#BGT_AdvPack/Suthie_Sthief/setup-Suthie_Sthief.tpa~
 //RESTORED: WAREHOUSE WORKERS
 ////////////////////////////////
 
-BEGIN ~WAREHOUSE WORKERS~ DESIGNATED 15
+BEGIN ~WAREHOUSE WORKERS~ DESIGNATED 16
 
 INCLUDE ~JA#BGT_AdvPack/Warehouse_Workers/setup-Warehouse_Workers.tpa~
 
@@ -250,7 +258,7 @@ INCLUDE ~JA#BGT_AdvPack/Warehouse_Workers/setup-Warehouse_Workers.tpa~
 
 //NOBLAY.CRE (Undercellars), NOBL15.CRE (3 Old Kegs), FTOWB3.CRE (Bl. Merm.), BOYBA3, LOWLGU
 
-BEGIN ~Nobles~ DESIGNATED 16
+BEGIN ~Nobles~ DESIGNATED 17
 
 INCLUDE ~JA#BGT_AdvPack/nobles/setup-nobles.tpa~
 
@@ -258,7 +266,7 @@ INCLUDE ~JA#BGT_AdvPack/nobles/setup-nobles.tpa~
 //RESTORED: Ignatio Phleed
 /////////////////////////////
 
-BEGIN ~Ignatio Phleed~ DESIGNATED 17
+BEGIN ~Ignatio Phleed~ DESIGNATED 18
 
 INCLUDE ~JA#BGT_AdvPack/Ignation_Phleed/setup-Ignation_Phleed.tpa~
 
@@ -266,7 +274,7 @@ INCLUDE ~JA#BGT_AdvPack/Ignation_Phleed/setup-Ignation_Phleed.tpa~
 //RESTORED: Shalasin
 ////////////////////////
 
-BEGIN ~Shalasin~ DESIGNATED 18
+BEGIN ~Shalasin~ DESIGNATED 19
 
 INCLUDE ~JA#BGT_AdvPack/Shalasin/setup-Shalasin.tpa~
 
@@ -274,7 +282,7 @@ INCLUDE ~JA#BGT_AdvPack/Shalasin/setup-Shalasin.tpa~
 //RESTORED: ARTOLA - Sir Artolas
 //////////////////////////////////
 
-BEGIN ~ARTOLA - Sir Artolas~ DESIGNATED 19
+BEGIN ~ARTOLA - Sir Artolas~ DESIGNATED 20
 
 INCLUDE ~JA#BGT_AdvPack/ARTOLA/setup-ARTOLA.tpa~
 
@@ -282,7 +290,7 @@ INCLUDE ~JA#BGT_AdvPack/ARTOLA/setup-ARTOLA.tpa~
 //RESTORED: Pilar & Gheldehar
 ////////////////////////////////
 
-BEGIN ~Pilar & Gheldehar~ DESIGNATED 20
+BEGIN ~Pilar & Gheldehar~ DESIGNATED 21
 
 INCLUDE ~JA#BGT_AdvPack/Pillar_Gheldehar/setup-Pillar_Gheldehar.tpa~
 
@@ -290,7 +298,7 @@ INCLUDE ~JA#BGT_AdvPack/Pillar_Gheldehar/setup-Pillar_Gheldehar.tpa~
 //RESTORED: Llindellyn - the archer
 ////////////////////////////////////
 
-BEGIN ~Llindellyn - the archer~ DESIGNATED 21
+BEGIN ~Llindellyn - the archer~ DESIGNATED 22
 
 INCLUDE ~JA#BGT_AdvPack/Llindellyn/setup-Llindellyn.tpa~
 
@@ -298,7 +306,7 @@ INCLUDE ~JA#BGT_AdvPack/Llindellyn/setup-Llindellyn.tpa~
 //RESTORED: Mal-Kalen - Ulcaster's Adept
 /////////////////////////////////////////
 
-BEGIN ~Mal-Kalen - Ulcaster's Adept~ DESIGNATED 22
+BEGIN ~Mal-Kalen - Ulcaster's Adept~ DESIGNATED 23
 
 INCLUDE ~JA#BGT_AdvPack/Mal-Kalen/setup-Mal-Kalen.tpa~
 
@@ -306,7 +314,7 @@ INCLUDE ~JA#BGT_AdvPack/Mal-Kalen/setup-Mal-Kalen.tpa~
 //RESTORED: Keelor & Nasha
 ///////////////////////////////
 
-BEGIN ~Keelor & Nasha~ DESIGNATED 23
+BEGIN ~Keelor & Nasha~ DESIGNATED 24
 
 INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
@@ -314,7 +322,7 @@ INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 //RESTORED: Marl & the Guard
 ///////////////////////////////
 
-BEGIN ~Marl & the Guard~ DESIGNATED 24
+BEGIN ~Marl & the Guard~ DESIGNATED 25
 
 INCLUDE ~JA#BGT_AdvPack/Marl/setup-Marl.tpa~
 
@@ -322,7 +330,7 @@ INCLUDE ~JA#BGT_AdvPack/Marl/setup-Marl.tpa~
 //RESTORED: Item-descriptions - Rythe's Last Arrow
 ///////////////////////////////////////////////////
 
-BEGIN ~Item-descriptions - Rythe's Last Arrow~ DESIGNATED 25
+BEGIN ~Item-descriptions - Rythe's Last Arrow~ DESIGNATED 26
 
 INCLUDE ~JA#BGT_AdvPack/RythesLastArrow/setup-RythesLastArrow.tpa~
 
@@ -330,7 +338,7 @@ INCLUDE ~JA#BGT_AdvPack/RythesLastArrow/setup-RythesLastArrow.tpa~
 //IMPROVED/FIXED: Counting House
 ////////////////////////////////
 
-BEGIN ~IMPROVED/FIXED: Counting House~ DESIGNATED 26
+BEGIN ~IMPROVED/FIXED: Counting House~ DESIGNATED 27
 
 INCLUDE ~JA#BGT_AdvPack/Counting_House/setup-Counting_House.tpa~
 
@@ -338,7 +346,7 @@ INCLUDE ~JA#BGT_AdvPack/Counting_House/setup-Counting_House.tpa~
 //ALDETH SASHENSTAR & HAENDLERLIGA
 ///////////////////////////////////
 
-BEGIN ~ALDETH SASHENSTAR & HAENDLERLIGA~ DESIGNATED 27
+BEGIN ~ALDETH SASHENSTAR & HAENDLERLIGA~ DESIGNATED 28
 REQUIRE_PREDICATE GAME_IS ~bgt~ ~Not compatible with EE~
 
 INCLUDE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/setup-Sashenstar_Haendlerliga.tpa~
@@ -347,7 +355,7 @@ INCLUDE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/setup-Sashenstar_Haendlerliga.tp
 //ERWEITERTE TENYA-HANDLUNG & TEMPEL DER UMBERLEE
 ///////////////////////////////////////////////////
 
-BEGIN ~ERWEITERTE TENYA-HANDLUNG & TEMPEL DER UMBERLEE~ DESIGNATED 28
+BEGIN ~ERWEITERTE TENYA-HANDLUNG & TEMPEL DER UMBERLEE~ DESIGNATED 29
 
 INCLUDE ~JA#BGT_AdvPack/Tenya/setup-Tenya.tpa~
 
@@ -355,7 +363,7 @@ INCLUDE ~JA#BGT_AdvPack/Tenya/setup-Tenya.tpa~
 //NASHKEL
 ///////////
 
-BEGIN ~NASHKEL~ DESIGNATED 29
+BEGIN ~NASHKEL~ DESIGNATED 30
 
 INCLUDE ~JA#BGT_AdvPack/Nashkel/setup-Nashkel.tpa~
 
@@ -363,7 +371,7 @@ INCLUDE ~JA#BGT_AdvPack/Nashkel/setup-Nashkel.tpa~
 //IMOENS ERWEITERTER AUFTRITT IN KERZENBURG
 ///////////////////////////////////////////////
 
-BEGIN ~IMOENS ERWEITERTER AUFTRITT (KERZENBURG)~ DESIGNATED 30
+BEGIN ~IMOENS ERWEITERTER AUFTRITT (KERZENBURG)~ DESIGNATED 31
 
 INCLUDE ~JA#BGT_AdvPack/Imoen_candlekeep/setup-Imoen_candlekeep.tpa~
 
@@ -371,7 +379,7 @@ INCLUDE ~JA#BGT_AdvPack/Imoen_candlekeep/setup-Imoen_candlekeep.tpa~
 //PRIESTER DES OGHMA, GOND UND ILMATER IN BALDURS TOR
 /////////////////////////////////////////////////
 
-BEGIN ~PRIESTER DES OGHMA, GOND UND ILMATER IN BALDURS TOR~ DESIGNATED 31
+BEGIN ~PRIESTER DES OGHMA, GOND UND ILMATER IN BALDURS TOR~ DESIGNATED 32
 
 INCLUDE ~JA#BGT_AdvPack/Priester/setup-Priester.tpa~
 
@@ -380,7 +388,7 @@ INCLUDE ~JA#BGT_AdvPack/Priester/setup-Priester.tpa~
 ///////////////////////////////////////
 
 
-BEGIN ~ERWEITERTE-VERBESSERTE DIALOGE IN BG1~ DESIGNATED 32
+BEGIN ~ERWEITERTE-VERBESSERTE DIALOGE IN BG1~ DESIGNATED 33
 
 INCLUDE ~JA#BGT_AdvPack/Improved_Dialogue/setup-Improved_Dialogue.tpa~
 
@@ -389,7 +397,7 @@ INCLUDE ~JA#BGT_AdvPack/Improved_Dialogue/setup-Improved_Dialogue.tpa~
 //HULRIK UND SEINE KUEHE
 /////////////////////////
 
-BEGIN ~HULRIK UND SEINE KUEHE~ DESIGNATED 33
+BEGIN ~HULRIK UND SEINE KUEHE~ DESIGNATED 34
 
 INCLUDE ~JA#BGT_AdvPack/Hulrik/setup-Hulrik.tpa~
 
@@ -397,7 +405,7 @@ INCLUDE ~JA#BGT_AdvPack/Hulrik/setup-Hulrik.tpa~
 //VERBESSERTES GESCHAEFT DER STILLE
 ///////////////////////////////////////
 
-BEGIN ~VERBESSERTES GESCHAEFT DER STILLE~ DESIGNATED 34
+BEGIN ~VERBESSERTES GESCHAEFT DER STILLE~ DESIGNATED 35
 
 INCLUDE ~JA#BGT_AdvPack/Shop_of_Silence/setup-Shop_of_Silence.tpa~
 
@@ -405,7 +413,7 @@ INCLUDE ~JA#BGT_AdvPack/Shop_of_Silence/setup-Shop_of_Silence.tpa~
 //ENDER SAI in TAVERNE
 ///////////////////////
 
-BEGIN ~ENDER SAI in TAVERNE~ DESIGNATED 35
+BEGIN ~ENDER SAI in TAVERNE~ DESIGNATED 36
 
 INCLUDE ~JA#BGT_AdvPack/Ender_Sai/setup-Ender_Sai.tpa~
 
@@ -415,7 +423,7 @@ INCLUDE ~JA#BGT_AdvPack/Ender_Sai/setup-Ender_Sai.tpa~
 
 /* ~Allerlei Zauberei: Neue Personen, neue Ambients~ */
 
-BEGIN ~SORCEROUS SUNDRIES~ DESIGNATED 36
+BEGIN ~SORCEROUS SUNDRIES~ DESIGNATED 37
 
 INCLUDE ~JA#BGT_AdvPack/Sorcerous_Sundries/setup-Sorcerous_Sundries.tpa~
 
@@ -423,7 +431,7 @@ INCLUDE ~JA#BGT_AdvPack/Sorcerous_Sundries/setup-Sorcerous_Sundries.tpa~
 // Mini-Quest: "Das Rätsel um die verstummte Geisterstimme" 
 ////////////////////////////////////////////////////////////
 
-BEGIN ~Mini-Quest: "Das Rätsel um die verstummte Geisterstimme"~ DESIGNATED 37
+BEGIN ~Mini-Quest: "Das Rätsel um die verstummte Geisterstimme"~ DESIGNATED 38
 
 INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
@@ -431,7 +439,7 @@ INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 //Black Alaric's Cave
 ////////////////////////
 
-BEGIN ~Black Alaric's Cave~ DESIGNATED 38
+BEGIN ~Black Alaric's Cave~ DESIGNATED 39
 
 INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 
@@ -442,7 +450,7 @@ INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 
 //Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
-BEGIN @2121 DESIGNATED 39
+BEGIN @2121 DESIGNATED 40
 
 INCLUDE ~JA#BGT_AdvPack/Niemain_Zentarim/setup-Niemain_Zentarim.tpa~
 
