@@ -2,11 +2,12 @@
 //RESTORED: Item-descriptions - Rythe's Last Arrow
 ///////////////////////////////////////////////////
 
-COPY_EXISTING ~AX1H06.ITM~ ~override/JA#AX1H6.ITM~
+COPY_EXISTING ~AX1H05.ITM~ ~override/JA#AX1H5.ITM~
+	SAY NAME2 @2023
 	SAY DESC @2000
 
 COPY_EXISTING ~PRAT.CRE~ ~override~
-	REPLACE_CRE_ITEM ~JA#AX1H6~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
+	REPLACE_CRE_ITEM ~JA#AX1H5~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
 
 COPY ~JA#BGT_AdvPack/RythesLastArrow/JA#BELT1.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/RythesLastArrow/JA#BELT1.ITM~ ~override~
