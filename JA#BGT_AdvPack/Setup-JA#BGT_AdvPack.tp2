@@ -212,6 +212,7 @@ INCLUDE ~JA#BGT_AdvPack/AMNIS2/setup-AMNIS2.tpa~
 
 BEGIN ~Velvet - Cockfight~ DESIGNATED 10
 LABEL "JA#BGT_AdvPack-Velvet"
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~setup-infinityanimations.tp2~ 0) @37
 
 INCLUDE ~JA#BGT_AdvPack/velvet/setup-velvet.tpa~
 
