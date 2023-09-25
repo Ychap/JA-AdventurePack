@@ -2,77 +2,73 @@
 //RESTORED: Nim Furlwing
 ////////////////////////////
 
-ACTION_IF (FILE_EXISTS_IN_GAME ntnimfur.cre) OR (FILE_EXISTS_IN_GAME ubnimfur.cre) BEGIN
-	PRINT ~Skipping NimFurlwing and Her Hounds: Is already restored by another mod.~
-END ELSE BEGIN
-	COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#NIMFU.CRE~ ~override~
-		SAY NAME1 #15611 // ~Nim Furlwing~ (string ref is true for BGT and BG:EE)
-		SAY NAME2 #15611 //~Nim Furlwing~ (string ref is true for BGT and BG:EE)
-	COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#DWOLF.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#HOUND.CRE~ ~override~
-		SAY NAME1 @2059
-		SAY NAME2 @2059
-	
-	COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#HOUND.BAF~
-	COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#DWOLF.BAF~
-	COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#NIMFU.BAF~
-	COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#CUNIM.BAF~
-		REPLACE ~999999~ @42
-	
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nim_Furlwing/JA#NIMFU.D~
-	
-	COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#PR402.ITM~ ~override~
-	COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#PR402.BAM~ ~override~
-	
-	COPY_EXISTING ~%Peldvale%.ARE~ ~override~
-	//add new actors
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 4080
-		fj_loc_y          = 3081
-		fj_dest_x         = 4080
-		fj_dest_y         = 3081
-		fj_orientation    = 13     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Nim Furlwing~
-		fj_cre_resref     = ~JA#NIMFU~
-		fj_dlg_resref	  = ~JA#NIMFU~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 4225
-		fj_loc_y          = 3102
-		fj_dest_x         = 4225
-		fj_dest_y         = 3102
-		fj_orientation    = 13     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Jagdhund~
-		fj_cre_resref     = ~JA#HOUND~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 4226
-		fj_loc_y          = 3211
-		fj_dest_x         = 4226
-		fj_dest_y         = 3211
-		fj_orientation    = 12     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Jagdhund~
-		fj_cre_resref     = ~JA#HOUND~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 4167
-		fj_loc_y          = 3152
-		fj_dest_x         = 4167
-		fj_dest_y         = 3152
-		fj_orientation    = 4      
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Jagdhund~
-		fj_cre_resref     = ~JA#HOUND~
-	END
+COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#NIMFU.CRE~ ~override~
+	SAY NAME1 #15611 // ~Nim Furlwing~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #15611 //~Nim Furlwing~ (string ref is true for BGT and BG:EE)
+COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#DWOLF.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#HOUND.CRE~ ~override~
+	SAY NAME1 @2059
+	SAY NAME2 @2059
+
+COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#HOUND.BAF~
+COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#DWOLF.BAF~
+COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#NIMFU.BAF~
+COMPILE ~JA#BGT_AdvPack/Nim_Furlwing/JA#CUNIM.BAF~
+	REPLACE ~999999~ @42
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nim_Furlwing/JA#NIMFU.D~
+
+COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#PR402.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#PR402.BAM~ ~override~
+
+COPY_EXISTING ~%Peldvale%.ARE~ ~override~
+//add new actors
+LPF fj_are_structure
+	INT_VAR
+	fj_loc_x          = 4080
+	fj_loc_y          = 3081
+	fj_dest_x         = 4080
+	fj_dest_y         = 3081
+	fj_orientation    = 13     
+	STR_VAR
+	fj_structure_type = actor
+	fj_name           = ~Nim Furlwing~
+	fj_cre_resref     = ~JA#NIMFU~
+	fj_dlg_resref	  = ~JA#NIMFU~
+END
+LPF fj_are_structure
+	INT_VAR
+	fj_loc_x          = 4225
+	fj_loc_y          = 3102
+	fj_dest_x         = 4225
+	fj_dest_y         = 3102
+	fj_orientation    = 13     
+	STR_VAR
+	fj_structure_type = actor
+	fj_name           = ~Jagdhund~
+	fj_cre_resref     = ~JA#HOUND~
+END
+LPF fj_are_structure
+	INT_VAR
+	fj_loc_x          = 4226
+	fj_loc_y          = 3211
+	fj_dest_x         = 4226
+	fj_dest_y         = 3211
+	fj_orientation    = 12     
+	STR_VAR
+	fj_structure_type = actor
+	fj_name           = ~Jagdhund~
+	fj_cre_resref     = ~JA#HOUND~
+END
+LPF fj_are_structure
+	INT_VAR
+	fj_loc_x          = 4167
+	fj_loc_y          = 3152
+	fj_dest_x         = 4167
+	fj_dest_y         = 3152
+	fj_orientation    = 4      
+	STR_VAR
+	fj_structure_type = actor
+	fj_name           = ~Jagdhund~
+	fj_cre_resref     = ~JA#HOUND~
 END
