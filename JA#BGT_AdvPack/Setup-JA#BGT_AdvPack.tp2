@@ -192,6 +192,8 @@ INCLUDE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/setup-Aldeth_hunter_comrade.tpa~
 
 BEGIN ~Svlast - the fallen Paladin~ DESIGNATED 8
 LABEL "JA#BGT_AdvPack-Svlast"
+FORBID_FILE ~override/ntsvlast.cre~ ~Svlast, the Fallen Paladin is already restored by another mod.~
+FORBID_FILE ~override/UBSVLAST.CRE~ ~Svlast, the Fallen Paladin is already restored by another mod.~
 
 INCLUDE ~JA#BGT_AdvPack/Svlast/setup-Svlast.tpa~
 
