@@ -336,6 +336,7 @@ INCLUDE ~JA#BGT_AdvPack/Llindellyn/setup-Llindellyn.tpa~
 
 BEGIN ~Mal-Kalen - Ulcaster's Adept~ DESIGNATED 23
 LABEL "JA#BGT_AdvPack-Mal-Kalen"
+FORBID_FILE ~override/UBMALKAL.CRE~ ~Mal-Kalen, the Ulcaster Ghost is already restored by another mod.~
 
 INCLUDE ~JA#BGT_AdvPack/Mal-Kalen/setup-Mal-Kalen.tpa~
 
