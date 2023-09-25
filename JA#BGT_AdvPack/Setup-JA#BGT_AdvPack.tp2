@@ -346,6 +346,7 @@ INCLUDE ~JA#BGT_AdvPack/Mal-Kalen/setup-Mal-Kalen.tpa~
 
 BEGIN ~Keelor & Nasha~ DESIGNATED 24
 LABEL "JA#BGT_AdvPack-Keelor_Nasha"
+FORBID_FILE ~override/ntkeelor.cre~ ~Keelor and Nasha is already restored by another mod.~
 
 INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
