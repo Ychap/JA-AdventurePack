@@ -326,6 +326,7 @@ INCLUDE ~JA#BGT_AdvPack/Pillar_Gheldehar/setup-Pillar_Gheldehar.tpa~
 
 BEGIN ~Llindellyn - the archer~ DESIGNATED 22
 LABEL "JA#BGT_AdvPack-Llindellyn"
+FORBID_FILE ~override/ntllinde.cre~ ~Llyndellyn's Lucky Arrow is already restored by another mod.~
 
 INCLUDE ~JA#BGT_AdvPack/Llindellyn/setup-Llindellyn.tpa~
 

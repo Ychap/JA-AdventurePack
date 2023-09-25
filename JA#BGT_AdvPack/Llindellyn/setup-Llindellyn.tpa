@@ -2,10 +2,6 @@
 //RESTORED: Llindellyn - the archer
 ////////////////////////////////////
 
-ACTION_IF (FILE_EXISTS_IN_GAME ntllinde.cre) BEGIN
-	PRINT ~Skipping Llyndellyn's Lucky Arrow: Is already restored by another mod.~
-END ELSE BEGIN
-
 COPY ~JA#BGT_AdvPack/Llindellyn/JA#LLIND.CRE~ ~override~
 	SAY NAME1 #15620 //~Llindellyn~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #15620 //~Llindellyn~ (string ref is true for BGT and BG:EE)
@@ -46,4 +42,3 @@ COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
 		fj_name           = ~Tasloi~  
 		fj_cre_resref     = ~JA#TASL1~
 	END
-END
