@@ -122,7 +122,7 @@ COPY_EXISTING ~HANNAH.dlg~ ~override~
 	END
 	SET ramazi4 = strref*/
 
-COMPILE ~JA#BGT_AdvPack/Ramazith/JA#RAMAZI.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#RAMAZI.D~
 /*	REPLACE ~999999~ ~%ramazi1%~
 	REPLACE ~999998~ ~%ramazi2%~
 	REPLACE ~999997~ ~%ramazi3%~
