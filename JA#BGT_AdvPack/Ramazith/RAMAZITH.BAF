@@ -1,0 +1,11 @@
+IF
+	Global("HelpRamazith","GLOBAL",4)
+	OR(3)
+		Dead("Abela")
+		Global("AbelaTeleport","GLOBAL",1)	// BGT
+		Global("AbelaNotExists","GLOBAL",1)	// BGEE/EET
+THEN
+	RESPONSE #100
+		SetGlobal("HelpRamazith","GLOBAL",0)
+		Continue()
+END
