@@ -56,16 +56,6 @@ Global("JA#ABELA_FREE","GLOBAL",0)
 !AreaCheck("%NBaldursGate_RamazithsTower_L5%")
 !AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
 
-ALTER_TRANS RAMAZI
-BEGIN 11 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "REPLY" ~@14~
-END
-
-EXTEND_BOTTOM RAMAZI 11
-IF ~~ THEN REPLY @0 GOTO JA#RAMAZITH_0
-END
 
 ALTER_TRANS RAMAZI
 BEGIN 13 END // state number (can be more than one)
@@ -248,10 +238,6 @@ SAY @32
 IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN JA#RAMAZITH_0
-SAY @4
-IF ~~ THEN DO ~SetGlobal("JA#RAMAZ_1","LOCALS",1)~ EXIT
-END
 
 IF ~AreaCheck("%NBaldursGate_RamazithsTower_L3%")
 Global("RamazithMove","GLOBAL",2)~
