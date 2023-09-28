@@ -63,17 +63,14 @@ BEGIN 0 END
 
 
 ALTER_TRANS RAMAZI
-BEGIN 15 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+BEGIN 15 END
+BEGIN 0 END
+BEGIN
   "REPLY" ~@15~
 END
 
 EXTEND_BOTTOM RAMAZI 15
 IF ~~ THEN REPLY @1 DO ~%state15_actions%~ GOTO JA#RAMAZITH_6
-END
-
-EXTEND_BOTTOM RAMAZI 15
 IF ~~ THEN REPLY @17 DO ~%state15_actions%~ GOTO JA#RAMAZITH_8
 END
 
@@ -88,58 +85,23 @@ BEGIN 0 2 END
 ~ReputationInc(-2)~
 
 
-EXTEND_BOTTOM RAMAZI 16
-IF ~~ THEN REPLY @17 GOTO JA#RAMAZITH_8
-END
-
-/*
-ALTER_TRANS RAMAZI
-BEGIN 17 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~DialogInterrupt(FALSE)
-ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
-SetGlobal("RamazithMove","GLOBAL",2)
-DialogInterrupt(TRUE)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~
-  "REPLY" ~@14~
-END
-
-
-
-EXTEND_BOTTOM RAMAZI 17
-IF ~~ THEN REPLY @2 GOTO JA#RAMAZITH_4
-END
-*/
-
-EXTEND_BOTTOM RAMAZI 18
+EXTEND_BOTTOM RAMAZI 16 18
 IF ~~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
 
 
 ALTER_TRANS RAMAZI
-BEGIN 19 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~DialogInterrupt(FALSE)
-ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
-SetGlobal("RamazithMove","GLOBAL",2)
-DialogInterrupt(TRUE)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~
+BEGIN 19 END
+BEGIN 0 END
+BEGIN
   "REPLY" ~@14~
 END
 
 EXTEND_BOTTOM RAMAZI 19
 IF ~~ THEN REPLY @2 GOTO JA#RAMAZITH_4
-END
-
-EXTEND_BOTTOM RAMAZI 19
 IF ~~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
+
 
 ALTER_TRANS RAMAZI
 BEGIN 22 END // state number (can be more than one)
