@@ -1,25 +1,25 @@
-// Missing in BGEE/EET
+// BGEE/EET
 ADD_TRANS_ACTION RAMAZI
 BEGIN 9 END
 BEGIN 0 END
 ~SetGlobal("RamazithMove","GLOBAL",1)~
 UNLESS ~SetGlobal("RamazithMove","GLOBAL",1)~
 
-// Missing in BGT
+// BGT
 REPLACE_TRANS_TRIGGER RAMAZI
 BEGIN 11 END
 BEGIN 0 END
 ~!PartyHasItem("MISC68")~
 ~OR(2)Dead("Abela") Global("AbelaNotExists","GLOBAL",1)~
 
-// Missing in BGT
+// BGT
 REPLACE_TRANS_ACTION RAMAZI
 BEGIN 11 17 19 END
 BEGIN 0 END
 ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
 ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Wait(1) ForceSpellPoint([169.147],QUICK_TELEPORT)~
 
-// Missing in BGEE/EET
+// BGEE/EET
 REPLACE_TRANS_ACTION RAMAZI
 BEGIN 11 12 17 19 22 END
 BEGIN 0 END
@@ -56,17 +56,12 @@ Global("JA#ABELA_FREE","GLOBAL",0)
 !AreaCheck("%NBaldursGate_RamazithsTower_L5%")
 !AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
 
-
-ALTER_TRANS RAMAZI
-BEGIN 13 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("HelpRamazith","GLOBAL",2)
-TakePartyItem("MISC68")
-DestroyItem("MISC68")
-CreateCreature("ABELA",[354.265],3)
-ActionOverride("Abela",Dialogue([PC]))~
-END
+// BGT
+REPLACE_TRANS_TRIGGER RAMAZI
+BEGIN 13 END
+BEGIN 0 END
+~CreateCreature("ABELA",[260.170],0)~
+~CreateCreature("ABELA",[376.228],2) ActionOverride("Abela",Wait(1))~
 
 /* Taken out - this is bad for compatibility
 ADD_TRANS_ACTION RAMAZI
