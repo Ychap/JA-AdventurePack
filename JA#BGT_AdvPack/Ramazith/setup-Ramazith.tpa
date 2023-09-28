@@ -2,13 +2,6 @@
 //Ramaziths Turm
 /////////////////////////
 
-COPY_EXISTING ~%NBaldursGate_RamazithsTower_L1%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("RAMAZI",[328.234],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("RAMAZI",[328.234],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Ramazith",SetNumTimesTalkedTo(1))~ ~Continue()~
-	END
-BUT_ONLY_IF_IT_CHANGES
 
 COPY_EXISTING ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN

@@ -10,19 +10,12 @@ BEGIN
 		DestroySelf()~
 END
 
-ALTER_TRANS RAMAZI
+// Missing in BGEE/EET
+ADD_TRANS_ACTION RAMAZI
 BEGIN 9 END
 BEGIN 0 END
-BEGIN
-  "ACTION" ~SetGlobal("HelpRamazith","GLOBAL",1)
-MoveToObjectNoInterrupt("Door0137")
-Wait(1)
-Unlock("Door0137")
-OpenDoor("Door0137")
-SetGlobal("RamazithMove","GLOBAL",1)
-Wait(1)
-EscapeAreaMove("%NBaldursGate_RamazithsTower_L1%",328,234,0)~
-END
+~SetGlobal("RamazithMove","GLOBAL",1)~
+UNLESS ~SetGlobal("RamazithMove","GLOBAL",1)~
 
 
 ADD_STATE_TRIGGER RAMAZI 0
@@ -58,7 +51,7 @@ ALTER_TRANS RAMAZI
 BEGIN 11 END // state number (can be more than one)
 BEGIN 0 END // transition number (can be more than one)
 BEGIN // list of changes, see below for flags
-  "REPLY" ~@14~ 
+  "REPLY" ~@14~
 END
 
 EXTEND_BOTTOM RAMAZI 11
@@ -73,7 +66,7 @@ BEGIN // list of changes, see below for flags
 TakePartyItem("MISC68")
 DestroyItem("MISC68")
 CreateCreature("ABELA",[354.265],3)
-ActionOverride("Abela",Dialogue([PC]))~ 
+ActionOverride("Abela",Dialogue([PC]))~
 END
 
 /* Taken out - this is bad for compatibility
@@ -251,8 +244,8 @@ SAY @4
 IF ~~ THEN DO ~SetGlobal("JA#RAMAZ_1","LOCALS",1)~ EXIT
 END
 
-IF ~AreaCheck("%NBaldursGate_RamazithsTower_L3%") 
-Global("RamazithMove","GLOBAL",2)~ 
+IF ~AreaCheck("%NBaldursGate_RamazithsTower_L3%")
+Global("RamazithMove","GLOBAL",2)~
 THEN BEGIN JA#RAMAZITH_1
 SAY @5
 IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),SPIDER_SUMMON)
@@ -262,8 +255,8 @@ Wait(1)
 DestroySelf()~ EXIT
 END
 
-IF ~AreaCheck("%NBaldursGate_RamazithsTower_L6%") 
-Global("RamazithMove","GLOBAL",2)~ 
+IF ~AreaCheck("%NBaldursGate_RamazithsTower_L6%")
+Global("RamazithMove","GLOBAL",2)~
 THEN BEGIN JA#RAMAZITH_2
 SAY @6
 IF ~~ THEN DO ~ForceSpell(Myself,WIZARD_STONE_SKIN)
@@ -271,8 +264,8 @@ Wait(1)
 ForceSpell(Myself,SUMMON_SHADOW)~ EXIT
 END
 
-IF ~AreaCheck("%NBaldursGate_RamazithsTower_L5%") 
-Global("RamazithMove","GLOBAL",2)~ 
+IF ~AreaCheck("%NBaldursGate_RamazithsTower_L5%")
+Global("RamazithMove","GLOBAL",2)~
 THEN BEGIN JA#RAMAZITH_3
 SAY @7
 IF ~~ THEN DO ~Wait(1)
@@ -357,9 +350,3 @@ ForceSpell(Myself,DRYAD_TELEPORT)
 Wait(1)
 DestroySelf()~ EXIT
 END
-
-
-
-
-
-
