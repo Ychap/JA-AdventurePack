@@ -1,25 +1,25 @@
 // BGEE/EET
 ADD_TRANS_ACTION RAMAZI
-BEGIN 9 END
+BEGIN 11 END
 BEGIN 0 END
-~SetGlobal("RamazithMove","GLOBAL",1)~
-UNLESS ~SetGlobal("RamazithMove","GLOBAL",1)~
+~SetGlobal("RamazithMove","GLOBAL",2)~
+UNLESS ~SetGlobal("RamazithMove","GLOBAL",2)~
 
-// BGT
+// BGT (better check for Abela as in BGEE/EET)
 REPLACE_TRANS_TRIGGER RAMAZI
 BEGIN 11 END
 BEGIN 0 END
 ~!PartyHasItem("MISC68")~
-~OR(2)Dead("Abela") Global("AbelaNotExists","GLOBAL",1)~
+~OR(2) Dead("Abela") Global("AbelaNotExists","GLOBAL",1)~
 
-// BGT
+// BGT (add missing QUICK_TELEPORT on teleport)
 REPLACE_TRANS_ACTION RAMAZI
 BEGIN 11 17 19 END
 BEGIN 0 END
 ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
 ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Wait(1) ForceSpellPoint([169.147],QUICK_TELEPORT)~
 
-// BGEE/EET
+// BGEE/EET (add missing WIZARD_LIGHTNING_BOLT on teleport)
 REPLACE_TRANS_ACTION RAMAZI
 BEGIN 11 12 17 19 22 END
 BEGIN 0 END
@@ -56,19 +56,12 @@ Global("JA#ABELA_FREE","GLOBAL",0)
 !AreaCheck("%NBaldursGate_RamazithsTower_L5%")
 !AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
 
-// BGT
+// BGT (spawn at same postion as in BGEE/EET)
 REPLACE_TRANS_TRIGGER RAMAZI
 BEGIN 13 END
 BEGIN 0 END
 ~CreateCreature("ABELA",[260.170],0)~
 ~CreateCreature("ABELA",[376.228],2) ActionOverride("Abela",Wait(1))~
-
-/* Taken out - this is bad for compatibility
-ADD_TRANS_ACTION RAMAZI
-BEGIN 15 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-~AddexperienceParty(400)
-ReputationInc(-2)~
 
 
 ALTER_TRANS RAMAZI
@@ -79,27 +72,23 @@ BEGIN // list of changes, see below for flags
 END
 
 EXTEND_BOTTOM RAMAZI 15
-IF ~~ THEN REPLY @1 DO ~EraseJournalEntry(999999)
-EraseJournalEntry(999998)
-EraseJournalEntry(999997)
-EraseJournalEntry(999996)
-AddexperienceParty(400)
-GiveItemCreate("BRAC02",LastTalkedToBy(Myself),0,0,0)
-SetGlobal("HelpRamazith","GLOBAL",3)~ GOTO JA#RAMAZITH_6
+IF ~~ THEN REPLY @1 DO ~%state15_actions%~ GOTO JA#RAMAZITH_6
 END
 
 EXTEND_BOTTOM RAMAZI 15
-IF ~~ THEN REPLY @17 DO ~EraseJournalEntry(999999)
-EraseJournalEntry(999998)
-EraseJournalEntry(999997)
-EraseJournalEntry(999996)
-AddexperienceParty(400)
-ReputationInc(-2)
-GiveItemCreate("BRAC02",LastTalkedToBy(Myself),0,0,0)
-SetGlobal("HelpRamazith","GLOBAL",3)~ GOTO JA#RAMAZITH_8
+IF ~~ THEN REPLY @17 DO ~%state15_actions%~ GOTO JA#RAMAZITH_8
 END
 
-*/
+ADD_TRANS_ACTION RAMAZI
+BEGIN 15 END
+BEGIN 0 1 2 END
+~AddexperienceParty(400)~
+
+ADD_TRANS_ACTION RAMAZI
+BEGIN 15 END
+BEGIN 0 2 END
+~ReputationInc(-2)~
+
 
 EXTEND_BOTTOM RAMAZI 16
 IF ~~ THEN REPLY @17 GOTO JA#RAMAZITH_8

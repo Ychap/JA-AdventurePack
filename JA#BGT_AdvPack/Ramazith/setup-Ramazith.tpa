@@ -18,7 +18,7 @@ COPY_EXISTING ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~override~
 	END
 BUT_ONLY_IF_IT_CHANGES
 
-
+// TODO: needed?
 COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~GlobalLT("RamazithMove","GLOBAL",2)~
@@ -90,48 +90,27 @@ EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7600.BAF~ EVALUATE_BU
 //Ramazith vanishes, if Abela dead and quest denied
 EXTEND_TOP ~RAMAZITH.BCS~ ~JA#BGT_AdvPack/Ramazith/RAMAZITH.BAF~
 
-//get stringref for journal entry
-/*COPY_EXISTING ~RAMAZI.dlg~ ~override~
-	LPF ~READ_JOURNAL_STRREF~
-		INT_VAR
-		state         = "9"  // state index
-		stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-		RET
-		strref    // returned string reference, or -1 if not available
-	END
-	SET ramazi1 = strref
-	LPF ~READ_JOURNAL_STRREF~
-		INT_VAR
-		state         = "18"  // state index
-		stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-		RET
-		strref    // returned string reference, or -1 if not available
-	END
-	SET ramazi3 = strref
-COPY_EXISTING ~RAGEFA.dlg~ ~override~
-	LPF ~READ_JOURNAL_STRREF~
-		INT_VAR
-		state         = "3"  // state index
-		stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-		RET
-		strref    // returned string reference, or -1 if not available
-	END
-	SET ramazi2 = strref
-COPY_EXISTING ~HANNAH.dlg~ ~override~
-	LPF ~READ_JOURNAL_STRREF~
-		INT_VAR
-		state         = "3"  // state index
-		stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-		RET
-		strref    // returned string reference, or -1 if not available
-	END
-	SET ramazi4 = strref*/
+// Grab actions from first response of state 15
+COPY_EXISTING ~RAMAZI.DLG~ ~override~
+	SET state = 15
+    READ_LONG 0x0c ofs_states
+    READ_LONG 0x14 ofs_responses
+    READ_LONG 0x28 ofs_response_actions
+
+	SET ofs_state = ofs_states + (state * 0x10)
+	READ_LONG (ofs_state + 0x4) idx_first_response
+
+	SET ofs_response = ofs_responses + idx_first_response * 0x20
+	READ_LONG (ofs_response + 0x10) idx_response_action
+
+	SET ofs_action = ofs_response_actions + idx_response_action * 0x8
+	READ_LONG ofs_action actions_ptr
+	READ_LONG (ofs_action + 0x8) next_actions_ptr
+	READ_ASCII actions_ptr state15_actions (next_actions_ptr - actions_ptr)
+
+LOG "state15_actions: %state15_actions%"
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#RAMAZI.D~
-/*	REPLACE ~999999~ ~%ramazi1%~
-	REPLACE ~999998~ ~%ramazi2%~
-	REPLACE ~999997~ ~%ramazi3%~
-	REPLACE ~999996~ ~%ramazi4%~*/
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#JOPI.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#ABELA.D~
 
