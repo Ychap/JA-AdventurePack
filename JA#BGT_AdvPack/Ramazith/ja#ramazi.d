@@ -1,15 +1,3 @@
-ALTER_TRANS RAMAZI
-BEGIN 11 END
-BEGIN 0 END
-BEGIN
-  "ACTION" ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
-		Wait(1)
-		SetGlobal("RamazithMove","GLOBAL",2)
-		ForceSpell(Myself,DRYAD_TELEPORT)
-		Wait(1)
-		DestroySelf()~
-END
-
 // Missing in BGEE/EET
 ADD_TRANS_ACTION RAMAZI
 BEGIN 9 END
@@ -23,6 +11,20 @@ BEGIN 11 END
 BEGIN 0 END
 ~!PartyHasItem("MISC68")~
 ~OR(2)Dead("Abela") Global("AbelaNotExists","GLOBAL",1)~
+
+// Missing in BGT
+REPLACE_TRANS_ACTION RAMAZI
+BEGIN 11 17 19 END
+BEGIN 0 END
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Wait(1) ForceSpellPoint([169.147],QUICK_TELEPORT)~
+
+// Missing in BGEE/EET
+REPLACE_TRANS_ACTION RAMAZI
+BEGIN 11 12 17 19 22 END
+BEGIN 0 END
+~ForceSpellPoint([169.147],QUICK_TELEPORT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Wait(1) ForceSpellPoint([169.147],QUICK_TELEPORT)~
 
 
 ADD_STATE_TRIGGER RAMAZI 0
