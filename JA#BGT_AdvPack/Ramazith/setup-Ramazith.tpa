@@ -3,6 +3,15 @@
 /////////////////////////
 
 
+COPY_EXISTING ~%NBaldursGate%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		// BGT
+		REPLACE_TEXTUALLY EXACT_MATCH
+		~Global("AbelaTeleport","GLOBAL",1)~
+		~OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1)~
+	END
+BUT_ONLY_IF_IT_CHANGES
+
 COPY_EXISTING ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("RAMAZI",[0.0],0)~ ~CreateCreature("RAMAZI",[172.173],13)~

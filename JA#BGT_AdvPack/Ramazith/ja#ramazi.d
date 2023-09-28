@@ -17,6 +17,13 @@ BEGIN 0 END
 ~SetGlobal("RamazithMove","GLOBAL",1)~
 UNLESS ~SetGlobal("RamazithMove","GLOBAL",1)~
 
+// Missing in BGT
+REPLACE_TRANS_TRIGGER RAMAZI
+BEGIN 11 END
+BEGIN 0 END
+~!PartyHasItem("MISC68")~
+~OR(2)Dead("Abela") Global("AbelaNotExists","GLOBAL",1)~
+
 
 ADD_STATE_TRIGGER RAMAZI 0
 ~!AreaCheck("%NBaldursGate_RamazithsTower_L3%")
