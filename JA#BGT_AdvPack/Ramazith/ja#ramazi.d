@@ -158,41 +158,21 @@ END
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L3%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_1
 SAY @5
-IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),SPIDER_SUMMON)
-Wait(1)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~ EXIT
+IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),SPIDER_SUMMON) Wait(1) ForceSpell(Myself,QUICK_TELEPORT) DestroySelf()~ EXIT
 END
 
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L6%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_2
 SAY @6
-IF ~~ THEN DO ~ForceSpell(Myself,WIZARD_STONE_SKIN)
-Wait(1)
-ForceSpell(Myself,SUMMON_SHADOW)~ EXIT
+IF ~~ THEN DO ~ForceSpell(Myself,WIZARD_STONE_SKIN) Wait(1) ForceSpell(Myself,SUMMON_SHADOW)~ EXIT
 END
 
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L5%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_3
 SAY @7
-IF ~~ THEN DO ~Wait(1)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~ EXIT
+IF ~~ THEN DO ~ForceSpell(Myself,QUICK_TELEPORT) DestroySelf()~ EXIT
 END
 
-/*
-IF ~Global("JA#ABELA_FREE","GLOBAL",1) !PartyHasItem("MISC68")~ THEN BEGIN JA#RAMAZITH_7
-SAY @13
-IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
-Wait(1)
-SetGlobal("RamazithMove","GLOBAL",2)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~ EXIT
-END
-*/
 
 IF ~~ THEN BEGIN JA#RAMAZITH_4
 SAY @8
@@ -215,12 +195,9 @@ END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_8
 SAY @19
-IF ~~ THEN DO ~DialogInterrupt(FALSE)
-SetGlobalTimer("JA#RamazithItem","GLOBAL",TWO_DAYS)
+IF ~~ THEN DO ~SetGlobalTimer("JA#RamazithItem","GLOBAL",TWO_DAYS)
 SetGlobal("JA#RamazithDeal","GLOBAL",1)
-DialogInterrupt(TRUE)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
+ForceSpell(Myself,QUICK_TELEPORT)
 DestroySelf()~ SOLVED_JOURNAL @18 EXIT
 END
 
@@ -261,8 +238,7 @@ SAY @37
 IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
 Wait(1)
 SetGlobal("RamazithMove","GLOBAL",2)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
+ForceSpell(Myself,QUICK_TELEPORT)
 DestroySelf()~ EXIT
 END
 
@@ -271,7 +247,6 @@ SAY @38
 IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
 Wait(1)
 SetGlobal("RamazithMove","GLOBAL",2)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
+ForceSpell(Myself,QUICK_TELEPORT)
 DestroySelf()~ EXIT
 END
