@@ -25,27 +25,6 @@ REPLACE_ACTION_TEXT RAMAZI
 UNLESS ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
 
 
-ADD_STATE_TRIGGER RAMAZI 0
-~!AreaCheck("%NBaldursGate_RamazithsTower_L3%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L5%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
-
-ADD_STATE_TRIGGER RAMAZI 2
-~!AreaCheck("%NBaldursGate_RamazithsTower_L3%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L5%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
-
-ADD_STATE_TRIGGER RAMAZI 11
-~Global("JA#ABELA_FREE","GLOBAL",0)
-!AreaCheck("%NBaldursGate_RamazithsTower_L3%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L5%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
-
-ADD_STATE_TRIGGER RAMAZI 13
-~!AreaCheck("%NBaldursGate_RamazithsTower_L3%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L5%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
-
 REPLACE_STATE_TRIGGER RAMAZI 22
 ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~
 IF ~True()~

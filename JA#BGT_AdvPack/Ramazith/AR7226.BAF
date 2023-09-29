@@ -8,14 +8,6 @@ THEN
 END
 
 IF
-	Global("JA#ABELA_FREE","GLOBAL",0)
-	PartyHasItem("MISC51")
-THEN
-	RESPONSE #100
-		SetGlobal("JA#ABELA_FREE","GLOBAL",1)
-END
-
-IF
 	Global("AbelaTeleport","GLOBAL",1)
 	Global("JA#JOPIMOVE","GLOBAL",3)
 	!Dead("JOPI")
