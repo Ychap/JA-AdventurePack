@@ -5,12 +5,12 @@ BEGIN 0 END
 ~SetGlobal("RamazithMove","GLOBAL",2)~
 UNLESS ~SetGlobal("RamazithMove","GLOBAL",2)~
 
-// BGT (better check for Abela as in BGEE/EET)
+// BGT (better check for failed quest (similar as in BGEE/EET))
 REPLACE_TRANS_TRIGGER RAMAZI
 BEGIN 11 END
 BEGIN 0 END
 ~!PartyHasItem("MISC68")~
-~OR(2) Dead("Abela") Global("AbelaNotExists","GLOBAL",1)~
+~OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1)~
 
 // BGT (add missing QUICK_TELEPORT on teleport)
 REPLACE_ACTION_TEXT RAMAZI
@@ -128,18 +128,19 @@ REPLACE_STATE_TRIGGER RAMAZI 16 ~AreaCheck("%NBaldursGate_RamazithsTower_L1%")
 Global("HelpRamazith","GLOBAL",3)~
 
 
+
 APPEND RAMAZI
 
-IF ~GlobalTimerExpired("JA#RamazithItem","GLOBAL")
-Global("JA#RamazithDeal","GLOBAL",1)~ THEN BEGIN JA#RAMAZITH_X0
+
+IF ~GlobalTimerExpired("JA#RamazithItem","GLOBAL") Global("JA#RamazithDeal","GLOBAL",1)~ THEN BEGIN JA#RAMAZITH_X0
 SAY @20
-IF ~~ THEN REPLY @21 DO ~ClearAllActions()StartCutSceneMode()StartCutScene("JA#CURA1")~ EXIT
+IF ~~ THEN REPLY @21 DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CURA1")~ EXIT
 IF ~~ THEN REPLY @22 GOTO JA#RAMAZITH_X1
 END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_X1
 SAY @23
-IF ~~ THEN DO ~SetGlobal("JA#RamazithDeal","GLOBAL",10)ForceSpell(Myself,WIZARD_STONE_SKIN)Enemy()~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#RamazithDeal","GLOBAL",10) ForceSpell(Myself,WIZARD_STONE_SKIN) Enemy()~ EXIT
 END
 
 IF ~Global("JA#RamazithDeal","GLOBAL",2)~ THEN BEGIN JA#RAMAZITH_X2
@@ -150,7 +151,7 @@ END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_X3
 SAY @27
-IF ~~ THEN DO ~TakePartyGold(200)GiveItemCreate("CLCK07",LastTalkedToBy(Myself),0,0,0)~ EXIT
+IF ~~ THEN DO ~TakePartyGold(200) GiveItemCreate("CLCK07",LastTalkedToBy(Myself),0,0,0)~ EXIT
 END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_X4
@@ -169,15 +170,13 @@ SAY @31
 IF ~~ THEN EXIT
 END
 
-IF ~GlobalTimerNotExpired("JA#RamazithItem","GLOBAL")
-Global("JA#RamazithDeal","GLOBAL",1)~ THEN BEGIN JA#RAMAZITH_X7
+IF ~GlobalTimerNotExpired("JA#RamazithItem","GLOBAL") Global("JA#RamazithDeal","GLOBAL",1)~ THEN BEGIN JA#RAMAZITH_X7
 SAY @32
 IF ~~ THEN EXIT
 END
 
 
-IF ~AreaCheck("%NBaldursGate_RamazithsTower_L3%")
-Global("RamazithMove","GLOBAL",2)~
+IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L3%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_1
 SAY @5
 IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),SPIDER_SUMMON)
@@ -187,8 +186,7 @@ Wait(1)
 DestroySelf()~ EXIT
 END
 
-IF ~AreaCheck("%NBaldursGate_RamazithsTower_L6%")
-Global("RamazithMove","GLOBAL",2)~
+IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L6%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_2
 SAY @6
 IF ~~ THEN DO ~ForceSpell(Myself,WIZARD_STONE_SKIN)
@@ -196,8 +194,7 @@ Wait(1)
 ForceSpell(Myself,SUMMON_SHADOW)~ EXIT
 END
 
-IF ~AreaCheck("%NBaldursGate_RamazithsTower_L5%")
-Global("RamazithMove","GLOBAL",2)~
+IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L5%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_3
 SAY @7
 IF ~~ THEN DO ~Wait(1)
@@ -206,16 +203,30 @@ Wait(1)
 DestroySelf()~ EXIT
 END
 
+/*
+IF ~Global("JA#ABELA_FREE","GLOBAL",1) !PartyHasItem("MISC68")~ THEN BEGIN JA#RAMAZITH_7
+SAY @13
+IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
+Wait(1)
+SetGlobal("RamazithMove","GLOBAL",2)
+ForceSpell(Myself,DRYAD_TELEPORT)
+Wait(1)
+DestroySelf()~ EXIT
+END
+*/
+
 IF ~~ THEN BEGIN JA#RAMAZITH_4
 SAY @8
 IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN JA#RAMAZITH_5
+
+IF ~True()~ THEN BEGIN JA#RAMAZITH_5
 SAY @9
 IF ~~ THEN REPLY @10 GOTO JA#RAMAZITH_6
 IF ~~ THEN REPLY @11 EXIT
 END
+
 
 IF ~~ THEN BEGIN JA#RAMAZITH_6
 SAY @12
@@ -223,16 +234,6 @@ IF ~~ THEN DO ~DialogInterrupt(FALSE)
 ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
 SetGlobal("RamazithMove","GLOBAL",2)
 DialogInterrupt(TRUE)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~ EXIT
-END
-
-IF ~Global("JA#ABELA_FREE","GLOBAL",1)!PartyHasItem("MISC68")~ THEN BEGIN JA#RAMAZITH_7
-SAY @13
-IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
-Wait(1)
-SetGlobal("RamazithMove","GLOBAL",2)
 ForceSpell(Myself,DRYAD_TELEPORT)
 Wait(1)
 DestroySelf()~ EXIT
