@@ -209,13 +209,7 @@ END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_6
 SAY @12
-IF ~~ THEN DO ~DialogInterrupt(FALSE)
-ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
-SetGlobal("RamazithMove","GLOBAL",2)
-DialogInterrupt(TRUE)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~ EXIT
+COPY_TRANS_LATE RAMAZI 17
 END
 
 
@@ -239,7 +233,7 @@ END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_19
 SAY @12
-COPY_TRANS RAMAZI 19
+COPY_TRANS_LATE RAMAZI 17
 END
 
 
