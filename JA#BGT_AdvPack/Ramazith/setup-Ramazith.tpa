@@ -3,28 +3,39 @@
 /////////////////////////
 
 
-COPY_EXISTING ~%NBaldursGate%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		// BGT
-		REPLACE_TEXTUALLY EXACT_MATCH
-		~Global("AbelaTeleport","GLOBAL",1)~
-		~OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1)~
-	END
-BUT_ONLY_IF_IT_CHANGES
-
-COPY_EXISTING ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("RAMAZI",[0.0],0)~ ~CreateCreature("RAMAZI",[169.147],13)~
-	END
-BUT_ONLY_IF_IT_CHANGES
-
-// TODO: needed?
+//Ramazith vanishes into this tower, if Abela is dead or gone
 COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~GlobalLT("RamazithMove","GLOBAL",2)~
+		REPLACE_TEXTUALLY EXACT_MATCH
+		~GlobalLT("RamazithMove","GLOBAL",2)~
 		~GlobalLT("RamazithMove","GLOBAL",2) Global("JA#RamazithDeal","GLOBAL",0)~
+		// BGEE/EET
+		REPLACE_TEXTUALLY EVALUATE_REGEXP
+		~IF[%WNL%%MNL%%LNL%%TAB% ]+Global("HelpRamazith","GLOBAL",0)~
+		~IF OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4)~
 	END
 BUT_ONLY_IF_IT_CHANGES
+
+// BGT
+COPY_EXISTING ~AR7300.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EVALUATE_REGEXP
+		~IF[%WNL%%MNL%%LNL%%TAB% ]+Exists("Ramazith")[%WNL%%MNL%%LNL%%TAB% ]+Global("HelpRamazith","GLOBAL",0)[%WNL%%MNL%%LNL%%TAB% ]+Global("AbelaTeleport","GLOBAL",1)[%WNL%%MNL%%LNL%%TAB% ]+THEN~
+		~IF Exists("Ramazith") OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4) OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1) THEN~
+	END
+IF_EXISTS
+BUT_ONLY_IF_IT_CHANGES
+
+
+// BGT
+COPY_EXISTING ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH
+		~CreateCreature("RAMAZI",[0.0],0)~
+		~CreateCreature("RAMAZI",[169.147],13)~
+	END
+BUT_ONLY_IF_IT_CHANGES
+
 
 //delete existing creatures
 COPY_EXISTING ~%NBaldursGate_RamazithsTower_L2%.ARE~ ~override~
@@ -87,8 +98,6 @@ EXTEND_TOP ~%NBaldursGate_RamazithsTower_L4%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR724
 EXTEND_TOP ~%NBaldursGate_RamazithsTower_L5%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7242.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7600.BAF~ EVALUATE_BUFFER
 
-//Ramazith vanishes, if Abela dead and item denied for Ramazith
-EXTEND_TOP ~RAMAZITH.BCS~ ~JA#BGT_AdvPack/Ramazith/RAMAZITH.BAF~
 
 // Grab actions from first response of state 15
 COPY_EXISTING ~RAMAZI.DLG~ ~override~
