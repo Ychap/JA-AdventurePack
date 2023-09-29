@@ -36,8 +36,7 @@ ADD_STATE_TRIGGER RAMAZI 2
 !AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
 
 ADD_STATE_TRIGGER RAMAZI 11
-~Global("JA#RAMAZ_1","LOCALS",0)
-Global("JA#ABELA_FREE","GLOBAL",0)
+~Global("JA#ABELA_FREE","GLOBAL",0)
 !AreaCheck("%NBaldursGate_RamazithsTower_L3%")
 !AreaCheck("%NBaldursGate_RamazithsTower_L5%")
 !AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
@@ -47,12 +46,9 @@ ADD_STATE_TRIGGER RAMAZI 13
 !AreaCheck("%NBaldursGate_RamazithsTower_L5%")
 !AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
 
-ADD_STATE_TRIGGER RAMAZI 22
-~GlobalLT("HelpRamazith","GLOBAL",2)
-Global("JA#ABELA_FREE","GLOBAL",0)
-!AreaCheck("%NBaldursGate_RamazithsTower_L3%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L5%")
-!AreaCheck("%NBaldursGate_RamazithsTower_L6%")~
+REPLACE_STATE_TRIGGER RAMAZI 22
+~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~
+IF ~True()~
 
 // BGT (spawn at same postion as in BGEE/EET)
 REPLACE_TRANS_TRIGGER RAMAZI
@@ -107,34 +103,28 @@ END
 
 
 ALTER_TRANS RAMAZI
-BEGIN 22 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("JA#RAMAZ_1","LOCALS",1)
-Global("RamazithMove","GLOBAL",1)
-!PartyHasItem("MISC68")
-AreaCheck("%NBaldursGate_RamazithsTower_L1%")~
+BEGIN ~%default_dialog_state%~ END // 10(BGEE/EET) or 22(BGT)
+BEGIN 0 END
+BEGIN
+  "TRIGGER" ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~
+  "ACTION" ~~
   "REPLY" ~@16~
+  "EPILOGUE" ~GOTO JA#RAMAZITH_22~
 END
 
-EXTEND_BOTTOM RAMAZI 22
-IF ~Global("JA#RAMAZ_1","LOCALS",1)
-Global("RamazithMove","GLOBAL",1)
-!PartyHasItem("MISC68")
-AreaCheck("%NBaldursGate_RamazithsTower_L1%")~ THEN REPLY @3 DO ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)
-Wait(1)
-SetGlobal("RamazithMove","GLOBAL",2)
-ForceSpell(Myself,DRYAD_TELEPORT)
-Wait(1)
-DestroySelf()~ EXIT
+EXTEND_BOTTOM RAMAZI ~%default_dialog_state%~ // 10(BGEE/EET) or 22(BGT)
+IF ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~ THEN
+REPLY @3
+GOTO JA#RAMAZITH_19
 END
 
+/*
 REPLACE_ACTION_TEXT RAMAZI
-~SetGlobalTimer("Ramazith","GLOBAL",ONE_MINUTE)~
-~SmallWait(1)~
+~SetGlobalTimer("Ramazith","GLOBAL",[^)]+)~
+~~*/
 
 REPLACE_STATE_TRIGGER RAMAZI 16 ~AreaCheck("%NBaldursGate_RamazithsTower_L1%")
-Global("RamazithMove","GLOBAL",1)
+!GlobalGT("RamazithMove","GLOBAL",1)
 Global("HelpRamazith","GLOBAL",3)~
 
 
@@ -218,10 +208,10 @@ END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_4
 SAY @8
-IF ~~ THEN DO ~SetGlobal("JA#RAMAZ_1","LOCALS",2)~ EXIT
+IF ~~ THEN EXIT
 END
 
-IF ~Global("JA#RAMAZ_1","LOCALS",2)~ THEN BEGIN JA#RAMAZITH_5
+IF ~~ THEN BEGIN JA#RAMAZITH_5
 SAY @9
 IF ~~ THEN REPLY @10 GOTO JA#RAMAZITH_6
 IF ~~ THEN REPLY @11 EXIT
@@ -273,7 +263,13 @@ COPY_TRANS RAMAZI 19
 END
 
 
+IF ~~ THEN BEGIN JA#RAMAZITH_22
+SAY @4
+IF ~~ THEN EXIT
 END
+
+
+END // APPEND RAMAZI
 
 
 

@@ -87,7 +87,7 @@ EXTEND_TOP ~%NBaldursGate_RamazithsTower_L4%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR724
 EXTEND_TOP ~%NBaldursGate_RamazithsTower_L5%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7242.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7600.BAF~ EVALUATE_BUFFER
 
-//Ramazith vanishes, if Abela dead and quest denied
+//Ramazith vanishes, if Abela dead and item denied for Ramazith
 EXTEND_TOP ~RAMAZITH.BCS~ ~JA#BGT_AdvPack/Ramazith/RAMAZITH.BAF~
 
 // Grab actions from first response of state 15
@@ -108,8 +108,7 @@ COPY_EXISTING ~RAMAZI.DLG~ ~override~
 	READ_LONG (ofs_action + 0x8) next_actions_ptr
 	READ_ASCII actions_ptr state15_actions (next_actions_ptr - actions_ptr)
 
-LOG "state15_actions: %state15_actions%"
-
+OUTER_SET default_dialog_state = (GAME_IS ~bgt~) ? 22 : 10
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#RAMAZI.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#JOPI.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#ABELA.D~
