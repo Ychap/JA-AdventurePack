@@ -1,24 +1,24 @@
-@0	= ~No, no! You're wrong. I'll be back with the nymph soon!~ 
+@0	= ~No, no! You're wrong. I'll be back with the nymph soon!~
 @1	= ~You want her as an ingredient? What kind of monster are you?! Let her go immediately!~
-@2	= ~Very well. Just do whatever you want with the nymph. We'll leave.~ 
+@2	= ~Very well. Just do whatever you want with the nymph. We'll leave.~
 @3	= ~I've changed my mind! You will have to get your nymph back by yourself!~
-@4	= ~Hmph, then hurry! I cannot wait forever for this recipe.~ 
+@4	= ~Hmph, then hurry! I cannot wait forever for this recipe.~
 @5	= ~Wretched fools! No one escapes the net of the spider! No one!~
 @6	= ~Well, well, you've actually made it to the top floor of my humble hideaway! Then it will be up to me to give you the painful end you seek! I'm curious to see what useful tinctures I can gain from the ashes of your bones.~
-@7	= ~Kill them! Kill them all, my faithful servants!~ 
-@8	= ~Hmph, a wise decision.~
-@9	= ~What next? I am beginning to lose patience!~ 
+@7	= ~Kill them! Kill them all, my faithful servants!~
+@8	= ~A wise decision.~
+@9	= ~What next? I am beginning to lose patience!~
 @10	= ~Your game is over! Free the nymph!~
 @11	= ~I'm already gone!~
-@12	= ~Then so shall it be. Die fraudulent bastard!~ 
+@12	= ~Then so shall it be. Die fraudulent bastard!~
 @13	= ~I see you are back. Spare me your elaborate excuses. I who see everything, including the future, already know that you have betrayed me. How silly of you to come back here after you have broken our agreement! I have some magic brewing on the stove, the only ingredient missing being one or two pieces of nymph. It may take a long time until I find another one. This delay, for which you are responsible, will cost you dearly! Challenge me if you dare.~
-@14	= ~Prepare to die, necromancer!~ 
+@14	= ~Prepare to die, necromancer!~
 @15	= ~It was a pleasure to do business with you. Farewell.~
 @16	= ~I'm already gone!~
 @17	= ~I would be very interested in the magical items you are going to make out of the nymph.~
 @18	= ~The captive nymph
 
-I brought the nymph Abela to Ramazith as agreed. The mage told me to return to him at the top floor of his tower in two days, then he will be able to offer me magic items that he will have made out of the nymph's body.~ 
+I brought the nymph Abela to Ramazith as agreed. The mage told me to return to him at the top floor of his tower in two days, then he will be able to offer me magic items that he will have made out of the nymph's body.~
 @19	= ~Oh, then there are already prospective customers for my goods. Fabulous! However, I will need some time to prepare the ingredients. Come back in two days to the top floor of my tower, then you shall get what you want in exchange for some gold.~
 @20	= ~Ah, the customer has returned. Wait a moment, my preparations are not yet complete.~
 @21	= ~All right, we're waiting.~
@@ -39,3 +39,5 @@ I brought the nymph Abela to Ramazith as agreed. The mage told me to return to h
 @36	= ~Oh, I'm already gone.~
 @37	= ~HAHA! Do you think so, huh? *I* will nail you at the top of my tower. Nobody can escape the Spider's Web, you little fly!~
 @38	= ~*You* invaded my sanctuary! Nobody threatens me in my home.~
+
+@40 = ~I must insist that you do not tarry in my home. Good eve to you.~
