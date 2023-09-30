@@ -1,5 +1,5 @@
 IF
-	Oncreation()
+	OnCreation()
 	Global("JA#IMPSPWN","%WBaldursGate_RagefastsHouse%",0)
 THEN
 	RESPONSE #100

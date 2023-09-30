@@ -71,7 +71,7 @@ COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 
 
-// Delete existing creatures of Ramazith's tower
+// Replace in Ramazith's tower L2 existing creatures with spawns
 COPY_EXISTING ~%NBaldursGate_RamazithsTower_L2%.ARE~ ~override~
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
 		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
@@ -83,7 +83,9 @@ COPY_EXISTING ~%NBaldursGate_RamazithsTower_L2%.ARE~ ~override~
 		END
 	END
 BUT_ONLY
+EXTEND_TOP ~%NBaldursGate_RamazithsTower_L2%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7239.BAF~ EVALUATE_BUFFER
 
+// Replace in Ramazith's tower L3 existing creatures with spawns
 ACTION_IF NOT (MOD_IS_INSTALLED ~setup-FotD.tp2~ 0) BEGIN
 	COPY_EXISTING ~%NBaldursGate_RamazithsTower_L3%.ARE~ ~override~
 		FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
@@ -96,8 +98,10 @@ ACTION_IF NOT (MOD_IS_INSTALLED ~setup-FotD.tp2~ 0) BEGIN
 			END
 		END
 	BUT_ONLY
+	EXTEND_TOP ~%NBaldursGate_RamazithsTower_L3%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7240.BAF~ EVALUATE_BUFFER
 END
 
+// Replace in Ramazith's tower L4 existing creatures with spawns
 COPY_EXISTING ~%NBaldursGate_RamazithsTower_L4%.ARE~ ~override~
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
 		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
@@ -109,7 +113,9 @@ COPY_EXISTING ~%NBaldursGate_RamazithsTower_L4%.ARE~ ~override~
 		END
 	END
 BUT_ONLY
+EXTEND_TOP ~%NBaldursGate_RamazithsTower_L4%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7241.BAF~ EVALUATE_BUFFER
 
+// Replace in Ramazith's tower L5 existing creatures with spawns
 COPY_EXISTING ~%NBaldursGate_RamazithsTower_L5%.ARE~ ~override~
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
 		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
@@ -121,14 +127,15 @@ COPY_EXISTING ~%NBaldursGate_RamazithsTower_L5%.ARE~ ~override~
 		END
 	END
 BUT_ONLY
-
-// Add Ramazith and new creatures by script
-EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7226.BAF~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7238.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate_RamazithsTower_L2%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7239.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate_RamazithsTower_L3%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7240.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate_RamazithsTower_L4%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7241.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%NBaldursGate_RamazithsTower_L5%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7242.BAF~ EVALUATE_BUFFER
+
+// Hostile Ramazith will start dialogue
+EXTEND_BOTTOM ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7238.BAF~ EVALUATE_BUFFER
+
+// Spawn JA#IMP01.CRE(Yuxi) and start cutscene
+EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7226.BAF~ EVALUATE_BUFFER
+
+// Spawn and despawn JA#JOPI.CRE(Jopi)
 EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7600.BAF~ EVALUATE_BUFFER
 
 
@@ -178,6 +185,6 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	LAF ALTER_SEARCHMAP
 		STR_VAR
 		path_to_2da_file = EVAL ~%MOD_FOLDER%/Ramazith/AR7238SR_changes.2da~ 	// full path to the *changes.2da file containing your icons, e.g. ~mymod/bam/AR3700SR_changes_ee.2da~
-		areaname = EVAL ~%NBaldursGate_RamazithsTower_L6%~ 							  		 			// area name, e.g. ~AR3700~
+		areaname = EVAL ~%NBaldursGate_RamazithsTower_L6%~ 						// area name, e.g. ~AR3700~
 	END
 END
