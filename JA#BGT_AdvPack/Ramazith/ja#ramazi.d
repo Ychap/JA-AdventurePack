@@ -1,9 +1,3 @@
-// BGEE/EET
-ADD_TRANS_ACTION RAMAZI
-BEGIN 11 END
-BEGIN 0 END
-~SetGlobal("RamazithMove","GLOBAL",2)~
-UNLESS ~SetGlobal("RamazithMove","GLOBAL",2)~
 
 // BGT (better check for failed quest (similar as in BGEE/EET))
 REPLACE_TRANS_TRIGGER RAMAZI
@@ -11,6 +5,15 @@ BEGIN 11 END
 BEGIN 0 END
 ~!PartyHasItem("MISC68")~
 ~OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1)~
+
+// BGEE/EET
+ADD_TRANS_ACTION RAMAZI
+BEGIN 11 12 22 END
+BEGIN 0 END
+~SetGlobal("RamazithMove","GLOBAL",2)~
+IF ~Enemy()~
+IF ~QUICK_TELEPORT~
+UNLESS ~SetGlobal("RamazithMove","GLOBAL",[23])~
 
 // BGT (add missing Enemy() and QUICK_TELEPORT when Ramazith teleports)
 REPLACE_ACTION_TEXT RAMAZI
