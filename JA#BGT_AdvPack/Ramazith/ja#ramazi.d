@@ -12,17 +12,17 @@ BEGIN 0 END
 ~!PartyHasItem("MISC68")~
 ~OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1)~
 
-// BGT (add missing QUICK_TELEPORT on teleport)
+// BGT (add missing Enemy() and QUICK_TELEPORT when Ramazith teleports)
 REPLACE_ACTION_TEXT RAMAZI
 ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
-~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Wait(1) ForceSpellPoint([169.147],QUICK_TELEPORT)~
-UNLESS ~ForceSpellPoint(\[169.147\],QUICK_TELEPORT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) SmallWait(1) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
+UNLESS ~QUICK_TELEPORT~
 
-// BGEE/EET (add missing WIZARD_LIGHTNING_BOLT on teleport)
+// BGEE/EET (add missing WIZARD_LIGHTNING_BOLT when Ramazith teleports)
 REPLACE_ACTION_TEXT RAMAZI
-~ForceSpellPoint(\[169.147\],QUICK_TELEPORT)~
-~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Wait(1) ForceSpellPoint([169.147],QUICK_TELEPORT)~
-UNLESS ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
+~Enemy()[%WNL%%MNL%%LNL%%TAB% ]+ForceSpellPoint(\[169.147\],QUICK_TELEPORT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) SmallWait(1) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
+UNLESS ~WIZARD_LIGHTNING_BOLT~
 
 
 REPLACE_STATE_TRIGGER RAMAZI 22
