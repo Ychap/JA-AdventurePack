@@ -155,22 +155,41 @@ IF ~~ THEN EXIT
 END
 
 
+IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L1%") OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4)~
+THEN BEGIN JA#RAMAZITH_10
+SAY @33
+IF ~~ THEN REPLY @34 GOTO JA#RAMAZITH_11
+IF ~~ THEN REPLY @35 GOTO JA#RAMAZITH_12
+IF ~~ THEN REPLY @36 GOTO JA#RAMAZITH_11
+END
+
+IF ~~ THEN BEGIN JA#RAMAZITH_11
+SAY @37
+COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
+END
+
+IF ~~ THEN BEGIN JA#RAMAZITH_12
+SAY @38
+COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
+END
+
+
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L3%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_1
 SAY @5
 IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),SPIDER_SUMMON) Wait(1) ForceSpell(Myself,QUICK_TELEPORT) DestroySelf()~ EXIT
 END
 
-IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L6%") GlobalGT("RamazithMove","GLOBAL",1)~
-THEN BEGIN JA#RAMAZITH_2
-SAY @6
-IF ~~ THEN DO ~ForceSpell(Myself,WIZARD_STONE_SKIN) Wait(1) ForceSpell(Myself,SUMMON_SHADOW)~ EXIT
-END
-
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L5%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_3
 SAY @7
 IF ~~ THEN DO ~ForceSpell(Myself,QUICK_TELEPORT) DestroySelf()~ EXIT
+END
+
+IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L6%") GlobalGT("RamazithMove","GLOBAL",1)~
+THEN BEGIN JA#RAMAZITH_2
+SAY @6
+IF ~~ THEN DO ~ForceSpell(Myself,WIZARD_STONE_SKIN) Wait(1) ForceSpell(Myself,SUMMON_SHADOW)~ EXIT
 END
 
 
@@ -217,26 +236,6 @@ END
 IF ~~ THEN BEGIN JA#RAMAZITH_22
 SAY @4
 IF ~~ THEN EXIT
-END
-
-
-
-IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L1%") OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4)~
-THEN BEGIN JA#RAMAZITH_10
-SAY @33
-IF ~~ THEN REPLY @34 GOTO JA#RAMAZITH_11
-IF ~~ THEN REPLY @35 GOTO JA#RAMAZITH_12
-IF ~~ THEN REPLY @36 GOTO JA#RAMAZITH_11
-END
-
-IF ~~ THEN BEGIN JA#RAMAZITH_11
-SAY @37
-COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
-END
-
-IF ~~ THEN BEGIN JA#RAMAZITH_12
-SAY @38
-COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
 END
 
 
