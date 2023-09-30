@@ -2,7 +2,7 @@ IF
 	InMyArea("Abela")
 	Exists("Abela")
 	!Dead("Abela")
-	Global("RamazithMove","GLOBAL",2)
+	GlobalGT("RamazithMove","GLOBAL",1)
 	Global("JA#MOVE_ABELA","GLOBAL",0)
 THEN
 	RESPONSE #100
