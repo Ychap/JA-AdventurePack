@@ -25,14 +25,3 @@ THEN
 		SmallWait(12)
 		ActionOverride("Abela",DestroySelf())
 END
-
-IF
-	!Exists("Ramazith")
-	Global("HelpRamazith","GLOBAL",0)
-	Global("AbelaTeleport","GLOBAL",1)
-	Global("JA#RAMAZENCOUNT","%NBaldursGate_RamazithsTower_L1%",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#RAMAZENCOUNT","%NBaldursGate_RamazithsTower_L1%",1)
-		CreateCreature("JA#RAMAZ",[328.234],0)
-END
