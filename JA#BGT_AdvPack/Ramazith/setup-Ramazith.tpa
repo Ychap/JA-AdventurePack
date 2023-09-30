@@ -22,18 +22,22 @@ COPY_EXISTING ~AR7300.BCS~ ~override~
 		REPLACE_TEXTUALLY EVALUATE_REGEXP
 		~IF[%WNL%%MNL%%LNL%%TAB% ]+Exists("Ramazith")[%WNL%%MNL%%LNL%%TAB% ]+Global("HelpRamazith","GLOBAL",0)[%WNL%%MNL%%LNL%%TAB% ]+Global("AbelaTeleport","GLOBAL",1)[%WNL%%MNL%%LNL%%TAB% ]+THEN~
 		~IF Exists("Ramazith") OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4) OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1) THEN~
+		REPLACE_TEXTUALLY EXACT_MATCH
+		~ActionOverride("Ramazith",DestroySelf())~
+		~ActionOverride("Ramazith",DestroySelf()) SetGlobal("RamazithMove","GLOBAL",1)~
 	END
 IF_EXISTS
 BUT_ONLY_IF_IT_CHANGES
 
 
 // BGT
-COPY_EXISTING ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~override~
+COPY_EXISTING ~AR7238.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH
 		~CreateCreature("RAMAZI",[0.0],0)~
 		~CreateCreature("RAMAZI",[169.147],13)~
 	END
+IF_EXISTS
 BUT_ONLY_IF_IT_CHANGES
 
 
