@@ -18,13 +18,13 @@ UNLESS ~SetGlobal("RamazithMove","GLOBAL",[23])~
 // BGT (add missing Enemy() and QUICK_TELEPORT when Ramazith teleports)
 REPLACE_ACTION_TEXT RAMAZI
 ~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
-~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) SmallWait(1) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
 UNLESS ~QUICK_TELEPORT~
 
 // BGEE/EET (add missing WIZARD_LIGHTNING_BOLT when Ramazith teleports)
 REPLACE_ACTION_TEXT RAMAZI
 ~Enemy()[%WNL%%MNL%%LNL%%TAB% ]+ForceSpellPoint(\[169.147\],QUICK_TELEPORT)~
-~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) SmallWait(1) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
 UNLESS ~WIZARD_LIGHTNING_BOLT~
 
 
@@ -58,12 +58,12 @@ END
 
 EXTEND_BOTTOM RAMAZI 15
 IF ~~ THEN REPLY @1 GOTO JA#RAMAZITH_6
-IF ~~ THEN REPLY @17 GOTO JA#RAMAZITH_8
+IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
 
 
 EXTEND_BOTTOM RAMAZI 16 18
-IF ~~ THEN REPLY @17 GOTO JA#RAMAZITH_8
+IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
 
 
@@ -73,12 +73,12 @@ BEGIN 0 END
 BEGIN
   "ACTION" ~~
   "REPLY" ~@14~
-  "EPILOGUE" ~GOTO JA#RAMAZITH_19~
+  "EPILOGUE" ~GOTO JA#RAMAZITH_6~
 END
 
 EXTEND_BOTTOM RAMAZI 19
 IF ~~ THEN REPLY @2 GOTO JA#RAMAZITH_4
-IF ~~ THEN REPLY @17 GOTO JA#RAMAZITH_8
+IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
 
 
@@ -95,17 +95,14 @@ END
 EXTEND_BOTTOM RAMAZI ~%default_state_during_quest%~ // 10(BGEE/EET) or 22(BGT)
 IF ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~ THEN
 REPLY @3
-GOTO JA#RAMAZITH_19
+GOTO JA#RAMAZITH_7
 END
 
-/*
-REPLACE_ACTION_TEXT RAMAZI
-~SetGlobalTimer("Ramazith","GLOBAL",[^)]+)~
-~~*/
 
-REPLACE_STATE_TRIGGER RAMAZI 16 ~AreaCheck("%NBaldursGate_RamazithsTower_L1%")
-!GlobalGT("RamazithMove","GLOBAL",1)
-Global("HelpRamazith","GLOBAL",3)~
+// BGEE/EET
+ADD_STATE_TRIGGER RAMAZI 16
+~Global("RamazithMove","GLOBAL",1)~
+UNLESS ~Global("RamazithMove","GLOBAL",1)~
 
 
 
@@ -166,25 +163,25 @@ END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_11
 SAY @37
-COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
+COPY_TRANS_LATE RAMAZI 11 // Ramazith turns hostile (but without Abela)
 END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_12
 SAY @38
-COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
+COPY_TRANS_LATE RAMAZI 11 // Ramazith turns hostile (but without Abela)
 END
 
 
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L3%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_1
 SAY @5
-IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),SPIDER_SUMMON) Wait(1) ForceSpell(Myself,QUICK_TELEPORT) DestroySelf()~ EXIT
+IF ~~ THEN DO ~ForceSpell(LastTalkedToBy(Myself),SPIDER_SUMMON) Wait(1) ForceSpellPoint([422.293],QUICK_TELEPORT) EscapeAreaDestroy(0)~ EXIT
 END
 
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L5%") GlobalGT("RamazithMove","GLOBAL",1)~
 THEN BEGIN JA#RAMAZITH_3
 SAY @7
-IF ~~ THEN DO ~ForceSpell(Myself,QUICK_TELEPORT) DestroySelf()~ EXIT
+IF ~~ THEN DO ~ForceSpellPoint([124.169],QUICK_TELEPORT) EscapeAreaDestroy(0)~ EXIT
 END
 
 IF WEIGHT #0 ~AreaCheck("%NBaldursGate_RamazithsTower_L6%") GlobalGT("RamazithMove","GLOBAL",1)~
@@ -202,10 +199,10 @@ END
 
 IF ~True()~ THEN BEGIN JA#RAMAZITH_5
 SAY @9
-IF ~Exists("Abela") !Dead("Abela")~ THEN REPLY @10 GOTO JA#RAMAZITH_6
 IF ~~ THEN REPLY @11 EXIT
+IF ~Global("HelpRamazith","GLOBAL",3) InMyArea("Abela") !Dead("Abela")~ THEN REPLY @10 GOTO JA#RAMAZITH_6
+IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
-
 
 IF ~~ THEN BEGIN JA#RAMAZITH_6
 SAY @12
@@ -213,24 +210,26 @@ COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
 END
 
 
+IF ~~ THEN BEGIN JA#RAMAZITH_7
+SAY @12
+COPY_TRANS_LATE RAMAZI 11 // Ramazith turns hostile (but without Abela)
+END
+
+
 IF ~~ THEN BEGIN JA#RAMAZITH_8
 SAY @19
 IF ~~ THEN DO ~SetGlobalTimer("JA#RamazithItem","GLOBAL",TWO_DAYS)
 SetGlobal("JA#RamazithDeal","GLOBAL",1)
-ForceSpell(Myself,QUICK_TELEPORT)
-DestroySelf()~ SOLVED_JOURNAL @18 EXIT
+ForceSpellPoint([169.147],QUICK_TELEPORT)
+ActionOverride("Abela",MoveBetweenAreas("%NBaldursGate_RamazithsTower_L6%",[336.162],2))
+SmallWait(4)
+EscapeAreaMove("%NBaldursGate_RamazithsTower_L6%",169,147,15)~ SOLVED_JOURNAL @18 EXIT
 END
 
 
 IF ~~ THEN BEGIN JA#RAMAZITH_15
 SAY @13
 IF ~~ THEN EXIT
-END
-
-
-IF ~~ THEN BEGIN JA#RAMAZITH_19
-SAY @12
-COPY_TRANS_LATE RAMAZI 17 // Ramazith turns hostile
 END
 
 

@@ -1,23 +1,4 @@
 IF
-	Global("JA#RamazithDeal","GLOBAL",1)
-	!Exists("Ramazith")
-	!Dead("Ramazith")
-THEN
-	RESPONSE #100
-		CreateCreature("RAMAZI",[339.184],1) // Ramazith
-		ActionOverride("Ramazith",SetNumTimesTalkedTo(1))
-END
-
-IF
-	Global("JA#MOVE_ABELA","GLOBAL",1)
-	!Exists("Abela")
-THEN
-	RESPONSE #100
-		SetGlobal("JA#MOVE_ABELA","GLOBAL",2)
-		CreateCreature("Abela",[273.237],1)
-END
-
-IF
 	GlobalGT("RamazithMove","GLOBAL",1)
 	Global("JA#RAMAZITH_AR7238","%NBaldursGate_RamazithsTower_L6%",0)
 	Global("JA#RamazithDeal","GLOBAL",0)

@@ -1,7 +1,7 @@
+/*
 IF
 	InMyArea("Abela")
 	Exists("Abela")
-	!Dead("Abela")
 	OR(2)
 		GlobalGT("RamazithMove","GLOBAL",1)
 		Global("JA#RamazithDeal","GLOBAL",1)
@@ -9,8 +9,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#MOVE_ABELA","GLOBAL",1)
-		ActionOverride("Abela",ForceSpell(Myself,DRYAD_TELEPORT))
-		SmallWait(12)
-		ActionOverride("Abela",DestroySelf())
+		ActionOverride("Abela",ForceSpell(Myself,QUICK_TELEPORT))
+		// SmallWait(1)
+		// ActionOverride("Abela",EscapeAreaDestroy(0))
+		ActionOverride("Abela",EscapeAreaDestroy(0))
 END
-
+*/

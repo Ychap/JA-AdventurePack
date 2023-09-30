@@ -11,7 +11,7 @@ THEN
 		CreateCreature("MEPSAL01",[424.286],1)
 		CreateCreature("RAMAZI",[422.293],6)
 		ActionOverride("Ramazith",SetNumTimesTalkedTo(1))
-//		ActionOverride("RAMAZITH",Enemy())
-		Wait(1)
+		ActionOverride("RAMAZITH",Enemy())
+		SmallWait(2)
 		ActionOverride("RAMAZITH",StartDialogueNoSet([PC]))
 END
