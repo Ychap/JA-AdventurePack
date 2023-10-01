@@ -7,11 +7,6 @@ BEGIN
   "ACTION" ~~
 END
 
-/* addition for v1.07: give Jopi a dialogue state if talked to again before chapter 5 */
-
-ADD_STATE_TRIGGER JOPI 2 ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)~
-
-
 
 APPEND JOPI
 
