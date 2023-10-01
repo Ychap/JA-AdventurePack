@@ -101,7 +101,7 @@ END
 
 // BGEE/EET
 ADD_STATE_TRIGGER RAMAZI 16
-~Global("RamazithMove","GLOBAL",1)~
+~GlobalTimerExpired("Ramazith","GLOBAL") Global("RamazithMove","GLOBAL",1)~
 UNLESS ~Global("RamazithMove","GLOBAL",1)~
 
 
@@ -201,7 +201,7 @@ IF ~True()~ THEN BEGIN JA#RAMAZITH_5
 SAY @9
 IF ~~ THEN REPLY @11 EXIT
 IF ~Global("HelpRamazith","GLOBAL",3) InMyArea("Abela") !Dead("Abela")~ THEN REPLY @10 GOTO JA#RAMAZITH_6
-IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
+IF ~Global("HelpRamazith","GLOBAL",3) Global("JA#RamazithDeal","GLOBAL",0) InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
 
 IF ~~ THEN BEGIN JA#RAMAZITH_6
