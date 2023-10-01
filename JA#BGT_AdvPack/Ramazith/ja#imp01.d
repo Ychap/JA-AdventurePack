@@ -1,5 +1,7 @@
 
-BEGIN JA#IMP01
+BEGIN ~JA#IMP01~
+// END JA#IMP01
+
 
 CHAIN
 IF ~NumTimesTalkedToGT(5) GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%) Global("JA#IMP01X","LOCALS",0)~
@@ -66,16 +68,17 @@ THEN JA#IMP01 JA#IMP01_5
 == RAGEFA @26
 EXIT
 
+
 APPEND JA#IMP01
 
-IF ~NumTimesTalkedToGT(5) RandomNum(2,1)~ THEN BEGIN JA#IMP01_6
+IF ~RandomNum(2,1)~ THEN BEGIN JA#IMP01_6
 SAY @27
 IF ~~ THEN EXIT
 END
 
-IF ~NumTimesTalkedToGT(5) RandomNum(2,2)~ THEN BEGIN JA#IMP01_7
+IF ~RandomNum(2,2)~ THEN BEGIN JA#IMP01_7
 SAY @28
 IF ~~ THEN EXIT
 END
 
-END
+END // APPEND JA#IMP01

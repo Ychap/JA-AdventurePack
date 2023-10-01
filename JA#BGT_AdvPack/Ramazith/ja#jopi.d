@@ -18,7 +18,7 @@ END
 
 IF ~~ THEN BEGIN JA#JOPI_2
 SAY @3
-IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",1)EscapeArea()~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",1) EscapeArea()~ EXIT
 END
 
 IF ~RandomNum(3,1)~ THEN BEGIN JA#JOPI_3
@@ -36,10 +36,10 @@ SAY @6
 IF ~~ THEN EXIT
 END
 
-END
+END // APPEND JOPI
 
 
-BEGIN JA#JOPI
+BEGIN ~JA#JOPI~
 
 IF ~Global("JA#JOPIMOVE","GLOBAL",2)~ THEN BEGIN JA#JOPI_1
 SAY @7
@@ -49,7 +49,7 @@ END
 
 IF ~~ THEN BEGIN JA#JOPI_2
 SAY @10
-IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20)EscapeArea()~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN JA#JOPI_3
@@ -74,14 +74,14 @@ END
 IF ~~ THEN BEGIN JA#JOPI_6
 SAY @20
 = @21
-IF ~~ THEN DO ~EraseJournalEntry(@1023)AddexperienceParty(100)SetGlobal("JA#JOPIMOVE","GLOBAL",20)EscapeArea()~ SOLVED_JOURNAL @22 EXIT
+IF ~~ THEN DO ~EraseJournalEntry(@1023) AddexperienceParty(100) SetGlobal("JA#JOPIMOVE","GLOBAL",20) EscapeArea()~ SOLVED_JOURNAL @22 EXIT
 END
 
 CHAIN
 IF ~Global("JA#JOPIMOVE","GLOBAL",4)~
 THEN JA#JOPI JA#JOPI_7
 @23
-DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",5)EraseJournalEntry(@1023)AddexperienceParty(100)AddJournalEntry(@39,QUEST_DONE)EscapeArea()~
+DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",5) EraseJournalEntry(@1023) AddexperienceParty(100) AddJournalEntry(@39,QUEST_DONE) EscapeArea()~
 == RAGEFA @24
 == JA#JOPI @25
 == RAGEFA @26
@@ -98,3 +98,5 @@ DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",5)EraseJournalEntry(@1023)AddexperiencePart
 == JA#JOPI @37
 == RAGEFA @38
 EXIT
+
+// END JA#JOPI

@@ -108,7 +108,6 @@ UNLESS ~Global("RamazithMove","GLOBAL",1)~
 
 APPEND RAMAZI
 
-
 IF ~GlobalTimerExpired("JA#RamazithItem","GLOBAL") Global("JA#RamazithDeal","GLOBAL",1)~ THEN BEGIN JA#RAMAZITH_X0
 SAY @20
 IF ~~ THEN REPLY @21 DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CURA1")~ EXIT
@@ -237,6 +236,5 @@ IF ~~ THEN BEGIN JA#RAMAZITH_22
 SAY @4
 IF ~~ THEN EXIT
 END
-
 
 END // APPEND RAMAZI
