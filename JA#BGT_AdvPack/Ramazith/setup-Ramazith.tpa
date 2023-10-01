@@ -132,7 +132,7 @@ EXTEND_TOP ~%NBaldursGate_RamazithsTower_L5%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR724
 // Hostile Ramazith will start dialogue
 EXTEND_BOTTOM ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7238.BAF~ EVALUATE_BUFFER
 
-// Spawn JA#IMP01.CRE(Yuxi) and start cutscene
+// Spawn JA#IMP01.CRE(Yuxi) and start cutscene with JA#JOPI(Jopi)
 EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7226.BAF~ EVALUATE_BUFFER
 
 // Spawn and despawn JA#JOPI.CRE(Jopi)

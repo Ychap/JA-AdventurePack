@@ -8,8 +8,10 @@ THEN
 END
 
 IF
-	Global("AbelaTeleport","GLOBAL",1)
 	Global("JA#JOPIMOVE","GLOBAL",3)
+	OR(2)
+		Global("AbelaTeleport","GLOBAL",1)
+		Global("AbelaNotExists","GLOBAL",1)
 	!Dead("JOPI")
 	!Dead("Ragefast")
 THEN

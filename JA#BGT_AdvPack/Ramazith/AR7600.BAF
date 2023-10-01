@@ -1,6 +1,7 @@
 IF
 	Global("JA#JOPIMOVE","GLOBAL",1)
 	Global("AbelaTeleport","GLOBAL",0)
+	Global("AbelaNotExists","GLOBAL",0)
 	!Exists("JOPI")
 	!Dead("JOPI")
 	!Dead("Ragefast")
@@ -12,7 +13,9 @@ END
 
 IF
 	GlobalGT("JA#JOPIMOVE","GLOBAL",3)
-	Global("AbelaTeleport","GLOBAL",1)
+	OR(2)
+		Global("AbelaTeleport","GLOBAL",1)
+		Global("AbelaNotExists","GLOBAL",1)
 	Global("JA#JOPIDSTR","%WBaldursGate%",0)
 	!Dead("Ragefast")
 THEN
