@@ -32,7 +32,7 @@ BEGIN 3 END // state number (can be more than one)
 BEGIN 0 END // transition number (can be more than one)
 BEGIN // list of changes, see below for flags
   "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5)
-GiveGoldForce(1000)
+GiveGoldForce(2000)
 SetGlobal("BassilusDead","GLOBAL",2)
 AddexperienceParty(500)
 EraseJournalEntry(%kelddath1%)
@@ -64,4 +64,3 @@ BEGIN 0 END // transition number (can be more than one)
 BEGIN // list of changes, see below for flags
   "ACTION" ~SetGlobal("JA#DUNKIN","%Beregost_FeldepostsInn_L1%",2)~
 END
-
