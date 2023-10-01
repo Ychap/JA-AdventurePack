@@ -1,27 +1,36 @@
+
+// BGT (Global introduced by BGEE/EET)
 ADD_STATE_TRIGGER ABELA 5
-~GlobalLT("HelpRamazith","GLOBAL",2)~
+~Global("RagefastDead","GLOBAL",0)~
+UNLESS ~Global("RagefastDead","GLOBAL",0)~
+
+// BGT (Global introduced by BGEE/EET)
+ADD_TRANS_ACTION RAMAZI
+BEGIN 13 END
+BEGIN 0 END
+~SetGlobal("RagefastDead","GLOBAL",1)~
+UNLESS ~SetGlobal("RagefastDead","GLOBAL",1)~
 
 
 APPEND ABELA
 
-IF ~!Dead("Ramazith")Global("HelpRamazith","GLOBAL",3)~ THEN BEGIN JA#ABELA_1
+IF ~!Dead("Ramazith") Global("HelpRamazith","GLOBAL",3)~ THEN BEGIN JA#ABELA_1
 SAY @0
 IF ~~ THEN EXIT
 END
 
 END
 
-REPLACE_STATE_TRIGGER RAGEFA 17 ~NumTimesTalkedToGT(0)~
 
 
 
 BEGIN JA#IMP01
 
 CHAIN
-IF ~NumTimesTalkedToGT(5)GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%)Global("JA#IMP01X","LOCALS",0)~
+IF ~NumTimesTalkedToGT(5) GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%) Global("JA#IMP01X","LOCALS",0)~
 THEN JA#IMP01 JA#IMP01_X
 @1
-DO ~SetGlobal("JA#IMP01X","LOCALS",1)ActionOverride("Ragefast",ForceSpell("JA#IMP01",WIZARD_POWER_WORD_SILENCE))~
+DO ~SetGlobal("JA#IMP01X","LOCALS",1) ActionOverride("Ragefast",ForceSpell("JA#IMP01",WIZARD_POWER_WORD_SILENCE))~
 == RAGEFA @2
 == JA#IMP01 @3
 == RAGEFA @4
@@ -84,22 +93,14 @@ EXIT
 
 APPEND JA#IMP01
 
-IF ~NumTimesTalkedToGT(5)RandomNum(2,1)~ THEN BEGIN JA#IMP01_6
+IF ~NumTimesTalkedToGT(5) RandomNum(2,1)~ THEN BEGIN JA#IMP01_6
 SAY @27
 IF ~~ THEN EXIT
 END
 
-IF ~NumTimesTalkedToGT(5)RandomNum(2,2)~ THEN BEGIN JA#IMP01_7
+IF ~NumTimesTalkedToGT(5) RandomNum(2,2)~ THEN BEGIN JA#IMP01_7
 SAY @28
 IF ~~ THEN EXIT
 END
 
 END
-
-
-
-
-
-
-
-
