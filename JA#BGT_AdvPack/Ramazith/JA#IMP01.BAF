@@ -13,3 +13,15 @@ THEN
 	RESPONSE #100
 		Enemy()
 END
+
+IF
+	Range([PC],15)
+	NumberOfTimesTalkedTo(0)
+	See([PC])
+	See("Ragefast")
+	Allegiance(Myself,NEUTRAL)
+	Allegiance("Ragefast",NEUTRAL)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
