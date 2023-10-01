@@ -158,9 +158,11 @@ COPY_EXISTING ~RAMAZI.DLG~ ~override~
 	READ_ASCII actions_ptr state15_actions (next_actions_ptr - actions_ptr)
 
 OUTER_SET default_state_during_quest = (GAME_IS ~bgt~) ? 22 : 10
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#RAMAZI.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#JOPI.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#ABELA.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#ramazi.d~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#jopi.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#abela.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#imp01.d~
 
 
 COPY_EXISTING ~RAGEFA.CRE~ ~override~
