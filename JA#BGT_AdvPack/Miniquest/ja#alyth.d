@@ -168,7 +168,7 @@ EraseJournalEntry(999995)
 EraseJournalEntry(999994)
 EraseJournalEntry(999993)
 AddExperienceParty(500)
-GiveGoldForce(400)SetGlobalTimer("JA#HARP_TIMER","AR7706",ONE_DAY)~ SOLVED_JOURNAL @70 EXIT
+GiveGoldForce(400)SetGlobalTimer("JA#HARP_TIMER","%EBaldursGate_ElfsongTavern_L2%",ONE_DAY)~ SOLVED_JOURNAL @70 EXIT
 END
 
 IF ~Global("JA#ELFSONG_QUEST","GLOBAL",10)~ THEN BEGIN JA#ALYTH_22
@@ -192,28 +192,3 @@ IF ~~ THEN REPLY @68 DO ~GiveItem("JA#HRP02",LastTalkedToBy(Myself))~ EXIT
 END
 
 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

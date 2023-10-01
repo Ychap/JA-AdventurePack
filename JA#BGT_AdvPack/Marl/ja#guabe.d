@@ -146,24 +146,24 @@ END
 
 BEGIN ~JA#GUAB8~
 
-IF ~RandomNum(2,1)Global("JA#GUABE_ACT","AR6704",0)~ THEN BEGIN 1
+IF ~RandomNum(2,1)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
   SAY @30
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)Global("JA#GUABE_ACT","AR6704",0)~ THEN BEGIN 2
+IF ~RandomNum(2,2)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
   SAY @31
   IF ~~ THEN EXIT
 END
 
 BEGIN ~JA#GUAB9~
 
-IF ~RandomNum(2,1)Global("JA#GUABE_ACT","AR6704",0)~ THEN BEGIN 1
+IF ~RandomNum(2,1)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
   SAY @32
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)Global("JA#GUABE_ACT","AR6704",0)~ THEN BEGIN 2
+IF ~RandomNum(2,2)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
   SAY @33
   IF ~~ THEN EXIT
 END
@@ -172,7 +172,7 @@ CHAIN
 IF ~!Dead("Bassilus")~
 THEN JA#GUAB8 JA#GUAB8_1
 @34
-DO ~SetGlobal("JA#GUABE_ACT","AR6704",0)AddJournalEntry(@1020,INFO)~
+DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)AddJournalEntry(@1020,INFO)~
 == JA#GUAB9 @35
 == JA#GUAB8 @36
 == JA#GUAB9 @37
@@ -187,7 +187,7 @@ CHAIN
 IF ~Dead("Bassilus")Dead("Mulahey")~
 THEN JA#GUAB8 JA#GUAB8_3
 @43
-DO ~SetGlobal("JA#GUABE_ACT","AR6704",0)~
+DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~
 = @44
 == JA#GUAB9 @45
 == JA#GUAB8 @46
@@ -199,7 +199,7 @@ CHAIN
 IF ~Dead("Bassilus")~
 THEN JA#GUAB8 JA#GUAB8_2
 @49
-DO ~SetGlobal("JA#GUABE_ACT","AR6704",0)AddJournalEntry(@1021,INFO)~
+DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)AddJournalEntry(@1021,INFO)~
 == JA#GUAB9 @50
 == JA#GUAB8 @51
 == JA#GUAB9 @52
@@ -207,5 +207,3 @@ DO ~SetGlobal("JA#GUABE_ACT","AR6704",0)AddJournalEntry(@1021,INFO)~
 == JA#GUAB9 @54
 == JA#GUAB8 @55
 EXIT
-
-
