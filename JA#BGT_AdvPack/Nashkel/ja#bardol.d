@@ -1,28 +1,10 @@
 ADD_STATE_TRIGGER BARDOL 0 ~NumTimesTalkedTo(0)~
 
-ALTER_TRANS BARDOL // file name
-BEGIN 1 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~MoveToPoint([1104.722])
-Face(11)~
-END
-
-ALTER_TRANS BARDOL // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~MoveToPoint([1104.722])
-Face(11)~
-END
-
-ALTER_TRANS BARDOL // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~MoveToPoint([1104.722])
-Face(11)~
-END
+REPLACE_TRANS_ACTION BARDOL
+BEGIN 1 3 4 END
+BEGIN 0 1 END
+~EscapeArea()~
+~MoveToPoint([1104.722]) Face(11)~
 
 
 APPEND BARDOL
@@ -32,19 +14,19 @@ SAY @0
 IF ~~ THEN EXIT
 END
 
-IF ~Dead("Mulahey")Global("JA#BARDOL_MULAHEY","LOCALS",0)~ THEN BEGIN JA#BARDOL_2
+IF ~Dead("Mulahey") Global("JA#BARDOL_MULAHEY","LOCALS",0)~ THEN BEGIN JA#BARDOL_2
 SAY @1
 IF ~~ THEN REPLY @2 DO ~SetGlobal("JA#BARDOL_MULAHEY","LOCALS",1)~ EXIT
 IF ~~ THEN REPLY @3 DO ~SetGlobal("JA#BARDOL_MULAHEY","LOCALS",1)~ GOTO JA#BARDOL_5
 END
 
-IF ~NumTimesTalkedToGT(0)Global("JA#BARDOL_MULAHEY","LOCALS",0)~ THEN BEGIN JA#BARDOL_3
+IF ~Global("JA#BARDOL_MULAHEY","LOCALS",0)~ THEN BEGIN JA#BARDOL_3
 SAY @4
 IF ~~ THEN REPLY @2 EXIT
 IF ~~ THEN REPLY @3 GOTO JA#BARDOL_5
 END
 
-IF ~NumTimesTalkedToGT(0)Global("JA#BARDOL_MULAHEY","LOCALS",1)~ THEN BEGIN JA#BARDOL_4
+IF ~Global("JA#BARDOL_MULAHEY","LOCALS",1)~ THEN BEGIN JA#BARDOL_4
 SAY @5
 IF ~~ THEN REPLY @2 EXIT
 IF ~~ THEN REPLY @3 GOTO JA#BARDOL_5
