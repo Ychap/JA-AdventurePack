@@ -12,14 +12,17 @@ THEN
 END
 
 IF
-	GlobalGT("JA#JOPIMOVE","GLOBAL",3)
+	Global("JA#JOPIMOVE","GLOBAL",3)
 	OR(2)
 		Global("AbelaTeleport","GLOBAL",1)
 		Global("AbelaNotExists","GLOBAL",1)
-	Global("JA#JOPIDSTR","%WBaldursGate%",0)
+	InMyArea("JOPI")
+	!Dead("JOPI")
 	!Dead("Ragefast")
 THEN
 	RESPONSE #100
+		Wait(4)
+		MoveToPoint([2897.540])
 		ActionOverride("JOPI",DestroySelf())
-		SetGlobal("JA#JOPIDSTR","%WBaldursGate%",1)
+		SetGlobal("JA#JOPIMOVE","GLOBAL",4)
 END

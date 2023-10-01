@@ -8,7 +8,7 @@ THEN
 END
 
 IF
-	Global("JA#JOPIMOVE","GLOBAL",3)
+	Global("JA#JOPIMOVE","GLOBAL",4)
 	OR(2)
 		Global("AbelaTeleport","GLOBAL",1)
 		Global("AbelaNotExists","GLOBAL",1)
@@ -16,7 +16,7 @@ IF
 	!Dead("Ragefast")
 THEN
 	RESPONSE #100
-		Wait(4)
+		SetGlobal("JA#JOPIMOVE","GLOBAL",5)
 		ClearAllActions()
 		StartCutSceneMode()
 		StartCutScene("JA#CUJO1")
