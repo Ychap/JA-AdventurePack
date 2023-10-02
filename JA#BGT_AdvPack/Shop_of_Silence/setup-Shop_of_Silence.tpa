@@ -11,8 +11,8 @@ ACTION_IF GAME_IS ~eet bgee~ BEGIN
 	COPY_EXISTING ~SILENC.DLG~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY EXACT_MATCH ~!Global("Chapter","GLOBAL",7)~ ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-		END	
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_eet.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
+		END
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_eet.D~ USING ~JA#BGT_AdvPack/languages/autotra/%s/JA#SILENC.tra~
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
@@ -37,7 +37,7 @@ COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
 		fj_loc_y          = 410
 		fj_dest_x         = 556
 		fj_dest_y         = 410
-		fj_orientation    = 9      
+		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Schattendieb
@@ -47,13 +47,13 @@ COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
 		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~SILENC~) BEGIN
-			WRITE_ASCII actors_offset+0x78        ~JA#SILC1~ #8	
+			WRITE_ASCII actors_offset+0x78 ~JA#SILC1~ #8
 		END
 	END
 	//add new actors
@@ -63,7 +63,7 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_loc_y          = 367
 		fj_dest_x         = 317
 		fj_dest_y         = 367
-		fj_orientation    = 2      
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Schattendieb
@@ -76,7 +76,7 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_loc_y          = 164
 		fj_dest_x         = 581
 		fj_dest_y         = 164
-		fj_orientation    = 1      
+		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Mongo
@@ -87,9 +87,9 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 90
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 90 
+		fj_volume_variance = 90
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -107,7 +107,7 @@ ACTION_IF GAME_IS ~eet bgee~ BEGIN
 		SAY NAME2 @44
 		WRITE_EVALUATED_ASCII 0x280 ~Honk~ #32 // script name / DV
 	<<<<<<<< ...inlined/JA#Silenc_mongo.d
-	
+
 	REPLACE_TRANS_ACTION SILENC
 	BEGIN 8 END BEGIN 0 END ~CreateCreature("mongo",[661.372],NW)~ ~CreateCreature("Honk",[661.372],NW)~
 	>>>>>>>>

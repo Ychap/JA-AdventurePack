@@ -15,7 +15,7 @@ COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP.D~
 
 COPY_EXISTING ~ALDETH.dlg~ ~override~
   LPF READ_JOURNAL_STRREF
-    INT_VAR 
+    INT_VAR
 	state = 0
 //	stateResponse = 0  //is already set to "0"
     RET strref
@@ -65,7 +65,7 @@ OUTER_SET vic_state = STATE_WHICH_SAYS 5 IN ~bg1npc/tra/%s/x#viint.tra~ FROM ~%V
 END //ACTION_IF bg1npc interjections is installed
 
 
-/* Baldurdash: Aldeth's special store. The additional dialogue state for Baldurdash will be deactivated to increase compatibility. The store can be started from the original dialogue state instead. 
+/* Baldurdash: Aldeth's special store. The additional dialogue state for Baldurdash will be deactivated to increase compatibility. The store can be started from the original dialogue state instead.
 
 This has to be done before compiling the ja#aldeth.d */
 
@@ -87,7 +87,7 @@ END
 /* more bg1npc compatibility: loop to Jaheira's quest, by Lumorus */
 
 INTERJECT SENIYA JA#SENIYA_07 JA#SENIYA_06_BG1NPC
-== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @68 
+== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @68
 == SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @111
 == %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @112
 == SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @113
@@ -97,14 +97,14 @@ END %JAHEIRA_JOINED% %jaheira_state%
 ACTION_IF ((vic_state >= 0) AND (jaheira_state >= 0)) BEGIN
 
 
-	COMPILE EVALUATE_BUFFER 
-		~...inlined/aldeth_bg1npc.d~ 
+	COMPILE EVALUATE_BUFFER
+		~...inlined/aldeth_bg1npc.d~
 		~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
-		USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
-	
-	
+		USING ~JA#BGT_AdvPack/languages/autotra/%s/JA#ALDETH.tra~
+
+
 END ELSE BEGIN //Viconia interjection from bg1npc is not installed or couldn't be detected
-  
+
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
 END
 
@@ -161,7 +161,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
 	END
 BUT_ONLY
 
-/* not needed - the original script block will be deactivated for Global("Capture800","GLOBAL",1) after Deagan spawned 
+/* not needed - the original script block will be deactivated for Global("Capture800","GLOBAL",1) after Deagan spawned
 COPY_EXISTING ~AR7800.BCS~ ~override~
   DECOMPILE_BCS_TO_BAF
     REPLACE_TEXTUALLY EXACT_MATCH ~Global("Capture800","GLOBAL",0)~ ~False()~
@@ -177,7 +177,7 @@ COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
 BUT_ONLY
 
 
-/* Irlentree didn't change when attacked in game. Maybe the script was too slow? 
+/* Irlentree didn't change when attacked in game. Maybe the script was too slow?
 COPY_EXISTING ~IRLENTRE.BCS~ ~override~
   DECOMPILE_BCS_TO_BAF
     REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[768.607],0)~ ~NoAction()~
@@ -327,15 +327,15 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 	//add new actors
 	PATCH_DEFINE_ARRAY x_coord BEGIN 1103 1176 779 1048 688 632 711 219 402 1125 END
 	PATCH_DEFINE_ARRAY y_coord BEGIN 587  577  888 757  598 576 301 487 606 500 END
-	PATCH_DEFINE_ARRAY orient  BEGIN 11   2    6   8    5   13  0   14  6   3 END  
+	PATCH_DEFINE_ARRAY orient  BEGIN 11   2    6   8    5   13  0   14  6   3 END
 	PATCH_PHP_EACH x_coord AS index => x BEGIN
 		LPF fj_are_structure
 			INT_VAR
 			fj_loc_x          = $x_coord("%index%")
-			fj_loc_y          = $y_coord("%index%") 
+			fj_loc_y          = $y_coord("%index%")
 			fj_dest_x         = $x_coord("%index%")
-			fj_dest_y         = $y_coord("%index%") 
-			fj_orientation    = $orient("%index%")     
+			fj_dest_y         = $y_coord("%index%")
+			fj_orientation    = $orient("%index%")
 			STR_VAR
 			fj_structure_type = actor
 			fj_name           = Gast
@@ -347,9 +347,9 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 40 
+		fj_volume_variance = 40
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -360,7 +360,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~FECOOK~) BEGIN
@@ -402,10 +402,10 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		fj_loc_y          = 736
 		fj_dest_x         = 807
 		fj_dest_y         = 736
-		fj_orientation    = 14    
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Deagan~  
+		fj_name           = ~Deagan~
 		fj_cre_resref     = ~JA#DEAGA~
 		fj_dlg_resref	  = ~JA#DEAGA~
 	END
@@ -413,9 +413,9 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 20 
+		fj_volume_variance = 20
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -424,7 +424,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		fj_wav_resref0    = AM0704
 	END
 BUT_ONLY
-		
+
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 	//delete not needed actors
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
@@ -445,9 +445,9 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 20 
+		fj_volume_variance = 20
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -460,7 +460,7 @@ BUT_ONLY
 COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgt~ BEGIN
 		SET index = "-1"
-		GET_OFFSET_ARRAY con_array ARE_V10_CONTAINERS 
+		GET_OFFSET_ARRAY con_array ARE_V10_CONTAINERS
 		PHP_EACH con_array AS con_num => con_offset BEGIN
 			GET_OFFSET_ARRAY2 item_array con_offset ARE_V10_ITEMS
 			PHP_EACH item_array AS item_num => item_offset BEGIN
@@ -477,7 +477,7 @@ COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
 	END
 	PATCH_IF GAME_IS ~eet bgee~ BEGIN
 		SET index = "-1"
-		GET_OFFSET_ARRAY con_array ARE_V10_CONTAINERS 
+		GET_OFFSET_ARRAY con_array ARE_V10_CONTAINERS
 		PHP_EACH con_array AS con_num => con_offset BEGIN
 			GET_OFFSET_ARRAY2 item_array con_offset ARE_V10_ITEMS
 			PHP_EACH item_array AS item_num => item_offset BEGIN
@@ -492,7 +492,3 @@ COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
 			END
 		END
 	END
-
-
-
-
