@@ -31,6 +31,7 @@ END ELSE BEGIN
 		SAY NAME2 @4
 END
 COPY_EXISTING ~JA#MONGO.CRE~ ~override~
+	WRITE_BYTE  0x238 17 // More strength to match his dialog
 	WRITE_BYTE  0x270 128
 	WRITE_ASCII 0x2cc ~JA#MONGO~ #8
 
