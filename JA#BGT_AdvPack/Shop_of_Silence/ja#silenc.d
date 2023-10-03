@@ -2,6 +2,13 @@ REPLACE_ACTION_TEXT SILENC
 ~CreateCreature("GUARD",[^)]+)~
 ~~
 
+REPLACE_TRANS_ACTION SILENC
+BEGIN 4 END
+BEGIN END
+~Wait(10)~
+~~
+IF ~Wait(10)[%WNL%%MNL%%LNL%%TAB% ]*$~
+
 
 
 ADD_STATE_TRIGGER SILENC 0
@@ -27,6 +34,11 @@ END
 ADD_STATE_TRIGGER SILENC 1
 ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
 
+ADD_TRANS_TRIGGER SILENC 1
+~PartyGoldGT(4)~
+DO 1
+UNLESS ~PartyGoldGT(4)~
+
 ADD_TRANS_ACTION SILENC
 BEGIN 1 END
 BEGIN 1 END
@@ -44,37 +56,11 @@ BEGIN
 END
 
 
-ADD_STATE_TRIGGER SILENC 3
-~Global("NoPayment","GLOBAL",0)
-GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
-NumTimesTalkedToGT(4)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~
-
-ALTER_TRANS SILENC
-BEGIN 3 END
-BEGIN 1 END
-BEGIN
-  "ACTION" ~TakePartyGold(5)
-		SetNumTimesTalkedTo(1)
-		StartStore("stosilen",LastTalkedToBy(Myself))~
-  "REPLY" ~@9~
-END
-
-
-ADD_STATE_TRIGGER SILENC 5
-~Global("NoPayment","GLOBAL",1)
-GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-
-ADD_TRANS_ACTION SILENC
-BEGIN 5 END
-BEGIN 0 END
-~SetGlobal("NoPayment","GLOBAL",2)~
-
-
 ADD_TRANS_ACTION SILENC
 BEGIN 6 END
-BEGIN 0 END
+BEGIN END
 ~SetGlobal("SeenSanctuary","GLOBAL",1)~
+UNLESS ~SetGlobal("SeenSanctuary","GLOBAL",1)~
 
 ALTER_TRANS SILENC
 BEGIN 6 7 END
@@ -94,6 +80,48 @@ IF ~~ THEN REPLY @0 JOURNAL @1032 EXIT
 END
 
 
+ADD_STATE_TRIGGER SILENC 3
+~Global("NoPayment","GLOBAL",0)
+GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
+NumTimesTalkedToGT(4)
+ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~
+
+ALTER_TRANS SILENC
+BEGIN 3 END
+BEGIN 1 END
+BEGIN
+	"TRIGGER" ~PartyGoldGT(4)~
+  "ACTION" ~TakePartyGold(5)
+		SetNumTimesTalkedTo(1)
+		StartStore("stosilen",LastTalkedToBy(Myself))~
+  "REPLY" ~@9~
+END
+
+
+ADD_STATE_TRIGGER SILENC 5
+~Global("NoPayment","GLOBAL",1)
+GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
+
+ADD_TRANS_ACTION SILENC
+BEGIN 5 END
+BEGIN 0 END
+~SetGlobal("NoPayment","GLOBAL",2)~
+
+
+ADD_STATE_TRIGGER SILENC 10
+~Global("NoPayment","GLOBAL",2)~
+
+ALTER_TRANS SILENC
+BEGIN 10 END
+BEGIN 0 END
+BEGIN
+	"ACTION" ~DialogueInterrupt(FALSE)
+		Wait(3)
+		ActionOverride("Mongo",Enemy())
+		Enemy()~
+END
+
+
 ALTER_TRANS SILENC
 BEGIN 8 END
 BEGIN 0 END
@@ -108,7 +136,7 @@ IF ~~ THEN REPLY @0 EXIT
 END
 
 
-SET_WEIGHT SILENC 9 #-1
+// SET_WEIGHT SILENC 9 #-1
 REPLACE_STATE_TRIGGER SILENC 9
 ~StateCheck(Myself,STATE_CHARMED)~
 
@@ -119,18 +147,6 @@ BEGIN
   "ACTION" ~SetGlobal("SeenSanctuary","GLOBAL",1)
 		StartStore("stosilen",LastTalkedToBy(Myself))~
 END
-
-
-ADD_STATE_TRIGGER SILENC 10
-~Global("NoPayment","GLOBAL",2)~
-
-REPLACE_TRANS_ACTION SILENC
-BEGIN 10 END
-BEGIN 0 END
-~DialogueInterrupt(FALSE)
-Wait(3)
-ActionOverride("Mongo",Enemy())
-Enemy()~
 
 
 APPEND SILENC

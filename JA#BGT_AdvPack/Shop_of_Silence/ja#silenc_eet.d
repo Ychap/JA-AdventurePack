@@ -20,6 +20,12 @@ IF ~~ THEN REPLY @0 DO ~SetGlobal("SeenSanctuary","GLOBAL",1)~ EXIT
 END
 
 
+ADD_TRANS_ACTION SILENC
+BEGIN 4 END
+BEGIN END
+~SetGlobal("SeenSanctuary","GLOBAL",1)~
+UNLESS ~SetGlobal("SeenSanctuary","GLOBAL",1)~
+
 ALTER_TRANS SILENC
 BEGIN 4 5 END
 BEGIN 0 END
