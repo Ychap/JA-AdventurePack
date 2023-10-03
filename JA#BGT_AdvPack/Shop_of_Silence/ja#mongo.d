@@ -49,15 +49,3 @@ INTERJECT_COPY_TRANS2 JA#MONGO JA#MONGO_2 JA#coran_mongo1
 == "%CORAN_JOINED%" IF ~InParty("CORAN") InMyArea("CORAN") !StateCheck("CORAN",CD_STATE_NOTVALID)~ THEN
 @10
 END
-
-
-
-
-
-
-
-
-
-
-
-

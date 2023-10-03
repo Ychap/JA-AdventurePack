@@ -22,9 +22,18 @@ COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILC1.BAF~
 
 COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.CRE~ ~override~
-	SAY NAME1 @4
-	SAY NAME2 @4
+
+ACTION_IF FILE_EXISTS_IN_GAME ~MONGO.CRE~ BEGIN
+	COPY_EXISTING ~MONGO.CRE~ ~override/JA#MONGO.CRE~
+END ELSE BEGIN
+	COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.CRE~ ~override~
+		SAY NAME1 @4
+		SAY NAME2 @4
+END
+COPY_EXISTING ~JA#MONGO.CRE~ ~override~
+	WRITE_BYTE  0x270 128
+	WRITE_ASCII 0x2cc ~JA#MONGO~ #8
+
 
 COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MASK1.STO~ ~override~
 	SAY 0xc @5
@@ -109,7 +118,7 @@ ACTION_IF GAME_IS ~eet bgee~ BEGIN
 	<<<<<<<< ...inlined/JA#Silenc_mongo.d
 
 	REPLACE_TRANS_ACTION SILENC
-	BEGIN 8 END BEGIN 0 END ~CreateCreature("mongo",[661.372],NW)~ ~CreateCreature("Honk",[661.372],NW)~
+	BEGIN 8 END BEGIN 0 END ~CreateCreature("mongo",\[661.372\],NW)~ ~CreateCreature("JA#Honk",[661.372],NW)~
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/JA#Silenc_mongo.d~
 END
