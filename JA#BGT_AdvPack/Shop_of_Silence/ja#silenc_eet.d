@@ -1,3 +1,12 @@
+REPLACE_TRIGGER_TEXT SILENC
+~!Global("Chapter","GLOBAL",7)~
+~GlobalLT("Chapter","GLOBAL",7)~
+
+REPLACE_ACTION_TEXT SILENC
+~CreateCreature("mongo",[^)]+)~
+~ActionOverride("Mongo",Enemy())~
+
+
 ADD_TRANS_ACTION SILENC // file name
 BEGIN 0 END // state number (can be more than one)
 BEGIN 0 END // transition number (can be more than one)
@@ -28,7 +37,7 @@ BEGIN 1 END // transition number (can be more than one)
 
 
 
-ADD_STATE_TRIGGER SILENC 4 
+ADD_STATE_TRIGGER SILENC 4
 ~Global("JA#SILENCE_STO","LOCALS",0)Global("JA#SILENCE_CH8","LOCALS",0)~
 
 ADD_TRANS_ACTION SILENC
@@ -126,6 +135,3 @@ END
 
 /*ADD_STATE_TRIGGER SILENC 10
 ~Global("Chapter","GLOBAL",%tutu_chapter_7%)ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~*/
-
-
-

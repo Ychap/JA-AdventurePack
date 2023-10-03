@@ -8,10 +8,6 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
 END
 ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	COPY_EXISTING ~SILENC.DLG~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY EXACT_MATCH ~!Global("Chapter","GLOBAL",7)~ ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-		END
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_eet.D~ USING ~JA#BGT_AdvPack/languages/autotra/%s/JA#SILENC.tra~
 END
 
@@ -107,18 +103,3 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_wav_resref0    = GAHOUSE3
 	END
 BUT_ONLY
-
-//Mongo and JA#Mongo sollten nicht gleichzeitig erscheinen
-//Mongo wird zu Honk
-ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	COPY_EXISTING ~Mongo.cre~ ~override/JA#Honk.cre~
-		SAY NAME1 @44
-		SAY NAME2 @44
-		WRITE_EVALUATED_ASCII 0x280 ~Honk~ #32 // script name / DV
-	<<<<<<<< ...inlined/JA#Silenc_mongo.d
-
-	REPLACE_TRANS_ACTION SILENC
-	BEGIN 8 END BEGIN 0 END ~CreateCreature("mongo",\[661.372\],NW)~ ~CreateCreature("JA#Honk",[661.372],NW)~
-	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/JA#Silenc_mongo.d~
-END
