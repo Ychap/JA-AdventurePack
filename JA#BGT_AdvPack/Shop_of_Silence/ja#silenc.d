@@ -1,128 +1,156 @@
-ALTER_TRANS SILENC // file name
-BEGIN 0 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#SILENCE_STO","LOCALS",1)
-		StartStore("stosilen",LastTalkedToBy(Myself))~
-  "REPLY" ~@8~
-END
+REPLACE_ACTION_TEXT SILENC
+~CreateCreature("GUARD",[^)]+)~
+~~
 
-EXTEND_BOTTOM SILENC 0
-IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#SILENCE_STO","LOCALS",1)~ EXIT
-END
 
-ALTER_TRANS SILENC // file name
-BEGIN 1 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~TakePartyGold(5)
-		SetGlobal("JA#SILENCE_STO","LOCALS",1)
-		StartStore("stosilen",LastTalkedToBy(Myself))~
-END
-
-ADD_STATE_TRIGGER SILENC 3
-~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)Global("JA#SILENCE_STO","LOCALS",0)~
-
-ALTER_TRANS SILENC // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~TakePartyGold(5)
-		SetGlobal("JA#SILENCE_STO","LOCALS",1)
-		StartStore("stosilen",LastTalkedToBy(Myself))~
-  "REPLY" ~@9~
-END
-
-ADD_STATE_TRIGGER SILENC 5
-~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)Global("JA#SILENCE_STO","LOCALS",0)~
 
 ADD_STATE_TRIGGER SILENC 0
 ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
 
+ALTER_TRANS SILENC
+BEGIN 0 END
+BEGIN 0 END
+BEGIN
+  "REPLY" ~@8~
+END
+
+ADD_TRANS_ACTION SILENC
+BEGIN 0 END
+BEGIN 0 END
+~SetGlobal("SeenSanctuary","GLOBAL",1)~
+
+EXTEND_BOTTOM SILENC 0
+IF ~~ THEN REPLY @0 DO ~SetGlobal("SeenSanctuary","GLOBAL",1)~ EXIT
+END
+
+
 ADD_STATE_TRIGGER SILENC 1
 ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
+
+ADD_TRANS_ACTION SILENC
+BEGIN 1 END
+BEGIN 1 END
+~SetGlobal("SeenSanctuary","GLOBAL",1)~
+
 
 ADD_STATE_TRIGGER SILENC 2
 ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
 
-ALTER_TRANS SILENC // file name
-BEGIN 2 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
+ALTER_TRANS SILENC
+BEGIN 2 END
+BEGIN 0 END
+BEGIN
+  "ACTION" ~SetGlobal("NoPayment","GLOBAL",1)~
 END
 
-REPLACE_STATE_TRIGGER SILENC 6 ~Global("Chapter","GLOBAL",%tutu_chapter_7%)Global("JA#SILENCE_STO","LOCALS",0)Global("JA#SILENCE_CH8","LOCALS",0)~
 
-REPLACE_STATE_TRIGGER SILENC 7 ~Global("Chapter","GLOBAL",%tutu_chapter_7%)Global("JA#SILENCE_STO","LOCALS",1)Global("JA#SILENCE_CH8","LOCALS",0)~
+ADD_STATE_TRIGGER SILENC 3
+~Global("NoPayment","GLOBAL",0)
+GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
+NumTimesTalkedToGT(4)
+ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~
 
-ALTER_TRANS SILENC // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#SILENCE_STO","LOCALS",1)
-		SetGlobal("JA#SILENCE_CH8","LOCALS",1)
+ALTER_TRANS SILENC
+BEGIN 3 END
+BEGIN 1 END
+BEGIN
+  "ACTION" ~TakePartyGold(5)
+		SetNumTimesTalkedTo(1)
 		StartStore("stosilen",LastTalkedToBy(Myself))~
-  "REPLY" ~@10~
+  "REPLY" ~@9~
 END
 
-EXTEND_BOTTOM SILENC 6
-IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#SILENCE_STO","LOCALS",1)
-SetGlobal("JA#SILENCE_CH8","LOCALS",1)~ JOURNAL @1032 EXIT
-END
 
-ALTER_TRANS SILENC // file name
-BEGIN 7 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#SILENCE_CH8","LOCALS",1)~
+ADD_STATE_TRIGGER SILENC 5
+~Global("NoPayment","GLOBAL",1)
+GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
+
+ADD_TRANS_ACTION SILENC
+BEGIN 5 END
+BEGIN 0 END
+~SetGlobal("NoPayment","GLOBAL",2)~
+
+
+ADD_STATE_TRIGGER SILENC 6
+~Global("JA#SILENCE_CH8","LOCALS",0)~
+
+ADD_STATE_TRIGGER SILENC 7
+~Global("JA#SILENCE_CH8","LOCALS",0)~
+
+ADD_TRANS_ACTION SILENC
+BEGIN 6 END
+BEGIN 0 END
+~SetGlobal("SeenSanctuary","GLOBAL",1)~
+
+ADD_TRANS_ACTION SILENC
+BEGIN 6 7 END
+BEGIN 0 END
+~SetGlobal("JA#SILENCE_CH8","LOCALS",1)~
+
+ALTER_TRANS SILENC
+BEGIN 6 7 END
+BEGIN 0 END
+BEGIN
   "REPLY" ~@10~
   "JOURNAL" ~@1032~
 END
 
 EXTEND_BOTTOM SILENC 7
-IF ~Global("JA#SILENCE_MASK","LOCALS",1)!InParty("TIAX")~ THEN REPLY @2 DO ~StartStore("JA#MASK1",LastTalkedToBy(Myself))~ EXIT
-IF ~Global("JA#SILENCE_MASK","LOCALS",1)InParty("TIAX")~ THEN REPLY @2 GOTO JA#SILENC_3
-IF ~~ THEN REPLY @0 JOURNAL @1032 DO ~SetGlobal("JA#SILENCE_CH8","LOCALS",1)~ EXIT
+IF ~Global("JA#SILENCE_MASK","LOCALS",1) !InParty("TIAX")~ THEN REPLY @2 DO ~StartStore("JA#MASK1",LastTalkedToBy(Myself))~ EXIT
+IF ~Global("JA#SILENCE_MASK","LOCALS",1) InParty("TIAX")~ THEN REPLY @2 GOTO JA#SILENC_3
 END
 
-ADD_STATE_TRIGGER SILENC 8
-~Global("JA#SILENCE_STO","LOCALS",1)
-!Global("JA#KNOW_MASKTEMPLE","GLOBAL",1)~
+EXTEND_BOTTOM SILENC 6 7
+IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#SILENCE_CH8","LOCALS",1)~ JOURNAL @1032 EXIT
+END
 
-ALTER_TRANS SILENC // file name
-BEGIN 8 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~StartStore("stosilen",LastTalkedToBy(Myself))~
+
+ALTER_TRANS SILENC
+BEGIN 8 END
+BEGIN 0 END
+BEGIN
   "REPLY" ~@10~
 END
 
 EXTEND_BOTTOM SILENC 8
-IF ~Global("JA#SILENCE_MASK","LOCALS",1)!InParty("TIAX")~ THEN REPLY @2 DO ~StartStore("JA#MASK1",LastTalkedToBy(Myself))~ EXIT
-IF ~Global("JA#SILENCE_MASK","LOCALS",1)InParty("TIAX")~ THEN REPLY @2 GOTO JA#SILENC_3
+IF ~Global("JA#SILENCE_MASK","LOCALS",1) !InParty("TIAX")~ THEN REPLY @2 DO ~StartStore("JA#MASK1",LastTalkedToBy(Myself))~ EXIT
+IF ~Global("JA#SILENCE_MASK","LOCALS",1) InParty("TIAX")~ THEN REPLY @2 GOTO JA#SILENC_3
 IF ~~ THEN REPLY @0 EXIT
 END
 
-ALTER_TRANS SILENC // file name
-BEGIN 9 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#SILENCE_STO","LOCALS",1)
+
+SET_WEIGHT SILENC 9 #-1
+REPLACE_STATE_TRIGGER SILENC 9
+~StateCheck(Myself,STATE_CHARMED)~
+
+ALTER_TRANS SILENC
+BEGIN 9 END
+BEGIN 0 END
+BEGIN
+  "ACTION" ~SetGlobal("SeenSanctuary","GLOBAL",1)
 		StartStore("stosilen",LastTalkedToBy(Myself))~
 END
 
+
 ADD_STATE_TRIGGER SILENC 10
-~Global("Chapter","GLOBAL",%tutu_chapter_7%)ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~
+~Global("NoPayment","GLOBAL",2)~
+
+REPLACE_TRANS_ACTION SILENC
+BEGIN 10 END
+BEGIN 0 END
+~DialogueInterrupt(FALSE)
+Wait(3)
+ActionOverride("Mongo",Enemy())
+Enemy()~
 
 
 APPEND SILENC
 
-IF ~Global("JA#SILENCE_MASK","LOCALS",0)Global("JA#KNOW_MASKTEMPLE","GLOBAL",1)~ THEN BEGIN JA#SILENC_1
+IF WEIGHT #3 ~Global("SeenSanctuary","GLOBAL",1) Global("JA#KNOW_MASKTEMPLE","GLOBAL",1) Global("JA#SILENCE_MASK","LOCALS",0)~ THEN BEGIN JA#SILENC_1
 SAY @3
 IF ~~ THEN REPLY @4 DO ~StartStore("stosilen",LastTalkedToBy(Myself))~ EXIT
-IF ~!InParty("TIAX")~ THEN REPLY @5 DO ~SetGlobal("JA#SILENCE_MASK","LOCALS",1)SetGlobal("JA#KNOW_MASKTEMPLE","GLOBAL",0)~ GOTO JA#SILENC_2
-IF ~InParty("TIAX")~ THEN REPLY @5 DO ~SetGlobal("JA#SILENCE_MASK","LOCALS",1)SetGlobal("JA#KNOW_MASKTEMPLE","GLOBAL",0)~ GOTO JA#SILENC_3
+IF ~!InParty("TIAX")~ THEN REPLY @5 DO ~SetGlobal("JA#SILENCE_MASK","LOCALS",1)~ GOTO JA#SILENC_2
+IF ~InParty("TIAX")~ THEN REPLY @5 DO ~SetGlobal("JA#SILENCE_MASK","LOCALS",1)~ GOTO JA#SILENC_3
 IF ~~ THEN REPLY @0 EXIT
 END
 
@@ -136,4 +164,4 @@ SAY @7
 IF ~~ THEN EXIT
 END
 
-END
+END // APPEND SILENC
