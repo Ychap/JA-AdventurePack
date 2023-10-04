@@ -15,6 +15,7 @@ SAY @4
 IF ~~ THEN EXIT
 END
 
+// Related to Shop of Silence component to reveal secret Mask temple
 IF ~Global("JA#KNOW_MASKTEMPLE","GLOBAL",0)~ THEN BEGIN JA#RUM01_4
 SAY @5
 IF ~~ THEN DO ~ActionOverride(Player1,SetGlobal("JA#KNOW_MASKTEMPLE","GLOBAL",1))~ EXIT
@@ -39,5 +40,3 @@ IF ~~ THEN BEGIN JA#RUM01_8
 SAY @10
 IF ~~ THEN EXIT
 END
-
-
