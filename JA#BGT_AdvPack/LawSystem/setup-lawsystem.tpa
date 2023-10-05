@@ -3,7 +3,6 @@
 /////////////////////////////////////////////////////////////
 
 
-
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRIENDLYARM.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#LAW.D~
 
@@ -11,7 +10,7 @@ EXTEND_TOP ~BENTLY.BCS~ ~JA#BGT_AdvPack/LawSystem/JA#FRGUB.BAF~
 EXTEND_TOP ~%FriendlyArmInn%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR6800.BAF~ EVALUATE_BUFFER
 
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FRINI.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRCUT.BAF~ 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRCUT.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FRGUA.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FRGUB.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#GUAR1.BAF~
@@ -41,16 +40,16 @@ COPY ~JA#BGT_AdvPack/LawSystem/JA#FACAP.CRE~ ~override~
 	SAY NAME1 @2037
 	SAY NAME2 @2037
 
-COPY_EXISTING 	~FAFIGHT.CRE~ ~override~
-				~FRIEND.CRE~ ~override~
-	WRITE_ASCII SCRIPT_RACE	~JA#FRGUB~	#8	//Script
+COPY_EXISTING ~FAFIGHT.CRE~ ~override~
+			  ~FRIEND.CRE~  ~override~
+	WRITE_ASCII SCRIPT_RACE  ~JA#FRGUB~ #8
 COPY_EXISTING ~GELLAN.CRE~ ~override~
-	WRITE_ASCII SCRIPT_CLASS ~JA#FRGUB~	#8	//Script
+	WRITE_ASCII SCRIPT_CLASS ~JA#FRGUB~ #8
 
 /* same patching as in bg1ub */
-COPY_EXISTING ~BENTLY.CRE~ ~override~ // Bently Mirrorshade, FAI
-	WRITE_ASCIIE 0x248 ~BENTLY~ #8       // Assigns BENTLY.BCS as the OVERRIDE script
-	WRITE_ASCIIE 0x250 ~SHOUT~ #8        // Assigns SHOUT.BCS as the Class script
+COPY_EXISTING ~BENTLY.CRE~ ~override~	// Bently Mirrorshade, FAI
+	WRITE_ASCII 0x248 ~BENTLY~ #8		// Assigns BENTLY.BCS as the OVERRIDE script
+	WRITE_ASCII 0x250 ~SHOUT~  #8		// Assigns SHOUT.BCS as the Class script
 BUT_ONLY
 
 
@@ -73,12 +72,12 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
 		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF ((~%actors_pos_x%~ = 1406) AND (~%actors_filename%~ STR_EQ  ~FRIEND~)) BEGIN
+		PATCH_IF ((~%actors_pos_x%~ = 1406) AND (~%actors_filename%~ STR_EQ ~FRIEND~)) BEGIN
 			WRITE_ASCII actors_offset+0x60 "JA#FRINI" #8
 		END
 	END
@@ -189,7 +188,7 @@ COPY_EXISTING ~%FriendlyArmInn_L3%.ARE~ ~override~
 	END
 BUT_ONLY
 
-COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~	//Bl. Mermaid
+COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
 	//change container script
 	LPF ALTER_AREA_REGION
 		STR_VAR
@@ -229,6 +228,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		container_name = ~Container 4~
 		container_script = ~JA#LAW05~
 	END
+
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 	//Container Script
 	LPF ALTER_AREA_CONTAINER
