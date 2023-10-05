@@ -1,6 +1,6 @@
-////////////////////////////////////////////////////////////
-// Mini-Quest: "Das Rätsel um die verstummte Geisterstimme" 
-////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+// Mini-Quest: "The mystery of the silent ghostly voice"
+//////////////////////////////////////////////////////////
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#BEHOL.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Miniquest/JA#HRP01.BAM~ ~override~
@@ -50,17 +50,8 @@ COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILY2.BAF~
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#ALYTH.D~
-	REPLACE_TEXTUALLY ~#999999~ ~@1000~
-	REPLACE_TEXTUALLY ~999999~ ~@1000~
-	REPLACE_TEXTUALLY ~999998~ ~@1001~
-	REPLACE_TEXTUALLY ~999997~ ~@1002~
-	REPLACE_TEXTUALLY ~999996~ ~@1003~
-	REPLACE_TEXTUALLY ~999995~ ~@1004~
-	REPLACE_TEXTUALLY ~999994~ ~@1005~
-	REPLACE_TEXTUALLY ~999993~ ~@1006~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#BRULGON.D~
-	REPLACE_TEXTUALLY ~#999998~ ~@1001~
-	
+
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	OUTER_SPRINT storename ~TAV0705~
 END
@@ -72,20 +63,15 @@ COPY_EXISTING ~%storename%.STO~ ~override~
 	WRITE_ASCII 0x44 ~JA#RUM01~ #8
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#NATHAN.D~
-	REPLACE_TEXTUALLY ~#999997~ ~@1002~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#SERW1.D~
-	REPLACE_TEXTUALLY ~#999995~ ~@1004~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#COOK1.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#RUM01.D~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#MTOB5.D~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILY1.D~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILY2.D~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILYN.D~
-	REPLACE_TEXTUALLY ~#999996~ ~@1003~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#VAALA.D~
-	REPLACE_TEXTUALLY ~#999994~ ~@1005~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#ESELY.D~
-	REPLACE_TEXTUALLY ~#999993~ ~@1006~
 COMPILE ~JA#BGT_AdvPack/Miniquest/JA#ETC00.D~
 
 
@@ -225,7 +211,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 865
 		fj_dest_x         = 417
 		fj_dest_y         = 865
-		fj_orientation    = 9      
+		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Nathan
@@ -238,7 +224,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 360
 		fj_dest_x         = 784
 		fj_dest_y         = 360
-		fj_orientation    = 11     
+		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Brulgon
@@ -251,7 +237,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 725
 		fj_dest_x         = 560
 		fj_dest_y         = 725
-		fj_orientation    = 8      
+		fj_orientation    = 8
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Bekki
@@ -264,7 +250,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 418
 		fj_dest_x         = 409
 		fj_dest_y         = 418
-		fj_orientation    = 13     
+		fj_orientation    = 13
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Koch
@@ -277,7 +263,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 728
 		fj_dest_x         = 735
 		fj_dest_y         = 728
-		fj_orientation    = 0      
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Gast
@@ -290,7 +276,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 644
 		fj_dest_x         = 665
 		fj_dest_y         = 644
-		fj_orientation    = 3      
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Gast
@@ -303,7 +289,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 422
 		fj_dest_x         = 931
 		fj_dest_y         = 422
-		fj_orientation    = 3      
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Gast
@@ -316,7 +302,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 629
 		fj_dest_x         = 640
 		fj_dest_y         = 629
-		fj_orientation    = 1      
+		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Gast
@@ -329,7 +315,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 405
 		fj_dest_x         = 860
 		fj_dest_y         = 405
-		fj_orientation    = 15     
+		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Gast
@@ -342,7 +328,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 747
 		fj_dest_x         = 795
 		fj_dest_y         = 747
-		fj_orientation    = 3      
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Gast
@@ -355,7 +341,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 506
 		fj_dest_x         = 594
 		fj_dest_y         = 506
-		fj_orientation    = 1    
+		fj_orientation    = 1
 		fj_schedule		  = 0b111111100000000000011111
 		STR_VAR
 		fj_structure_type = actor
@@ -386,9 +372,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 384
-		fj_loc_y           = 320 
+		fj_loc_y           = 320
 		fj_radius          = 500
-		fj_volume_variance = 100 
+		fj_volume_variance = 100
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -399,9 +385,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 100 
+		fj_volume_variance = 100
 		fj_sound_num       = 7
 		fj_flags 		   = 0b0000001001
 		fj_delay		   = 150
@@ -443,9 +429,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 384
-		fj_loc_y           = 320 
+		fj_loc_y           = 320
 		fj_radius          = 500
-		fj_volume_variance = 70 
+		fj_volume_variance = 70
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -462,7 +448,7 @@ MKDIR ~Music\JA#ESTA~
 COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTAA.ACM~ ~Music\JA#ESTA~
 COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~Music~
 
-ADD_MUSIC ~JA#ESTA~ ~Music\JA#ESTA.mus~ 
+ADD_MUSIC ~JA#ESTA~ ~Music\JA#ESTA.mus~
 
 EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L1%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705B.BAF~
 	REPLACE_TEXTUALLY 999999 ~%JA#ESTA%~

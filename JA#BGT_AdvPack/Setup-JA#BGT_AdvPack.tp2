@@ -19,14 +19,14 @@ ALWAYS
 	/* check for a ready SoD */
 	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
 		FAIL @90000
-	END 
+	END
 
 	INCLUDE ~JA#BGT_AdvPack/lib/func_fetch_journal_entries.tph~
 	INCLUDE ~JA#BGT_AdvPack/lib/extend_area_script_DW.tph~
 
 
 	ACTION_IF !FILE_EXISTS ~JA#BGT_AdvPack/Install/JA#BGT_AdvPack_reinstall.mrk~ BEGIN
-			
+
 		/* and GTIMES.IDS, ANIMATE.IDS patching to ToB, courtesy of the BG2 Fix Pack */
 		INCLUDE ~JA#BGT_AdvPack/lib/ids_entries_cleanup.tph~
 		APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
@@ -38,13 +38,13 @@ ALWAYS
 		LAF autotra_workaround END
 		COPY_EXISTING sw1h01.itm ~JA#BGT_AdvPack/Install/JA#BGT_AdvPack_reinstall.mrk~
 	END
-	
+
 		ACTION_IF ENGINE_IS ~bgee bg2ee~ BEGIN
-			
-		
+
+
 			ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
 			ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
-		
+
 			LAF HANDLE_CHARSETS
 				INT_VAR
 					infer_charsets = 1
@@ -54,16 +54,16 @@ ALWAYS
 					reload_array = tra#reload
 					iconv_path = ~JA#BGT_AdvPack/tools/iconv~
 			END
-			
-		
+
+
 			//TRAs declared in LANGUAGE must be reloaded
 			//LOAD_TRA "JA#BGT_AdvPack/languages/autotra/%LANGUAGE%/Setup.tra"
 		END
-	
-	
+
+
 	INCLUDE ~JA#BGT_AdvPack/lib/extra_regexp_vars.tph~
 	OUTER_SPRINT newline ~%WNL%%LNL%%MNL%%TAB% ~
-	
+
 	ACTION_IF GAME_IS ~eet~ THEN BEGIN
 		/* Tell the player it is using eet */
 		PRINT ~EET detected...~
@@ -76,9 +76,9 @@ ALWAYS
 	END
 	ACTION_IF GAME_IS ~bgt~ THEN BEGIN
 		PRINT ~Baldur's Gate Trilogy detected~
-		INCLUDE ~JA#BGT_AdvPack/lib/g3_bgt_cpmvars.tpa~ 
+		INCLUDE ~JA#BGT_AdvPack/lib/g3_bgt_cpmvars.tpa~
 	END
-	
+
 	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter BEGIN
 		ACTION_IF GAME_IS ~eet~ BEGIN
 			OUTER_SET bg2_chapter = 12
@@ -139,7 +139,7 @@ INCLUDE ~JA#BGT_AdvPack/Ramazith/setup-Ramazith.tpa~
 //Komplett überarbeitete Herzogspalast-Szene mit restaurierten Inhalten
 //Restauriert: Abschluss der Husam-Storyline
 ///////////////////////////////////////////////////////////////////////
- 
+
 BEGIN ~Dukal Palace and Husam Story~ DESIGNATED 3
 LABEL "JA#BGT_AdvPack-Husam"
 
@@ -463,11 +463,11 @@ LABEL "JA#BGT_AdvPack-Sorcerous_Sundries"
 
 INCLUDE ~JA#BGT_AdvPack/Sorcerous_Sundries/setup-Sorcerous_Sundries.tpa~
 
-////////////////////////////////////////////////////////////
-//Mini-Quest: "Das Rätsel um die verstummte Geisterstimme" 
-////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+//Mini-Quest: "The mystery of the silent ghostly voice"
+/////////////////////////////////////////////////////////
 
-BEGIN ~Mini-Quest: "The mystery of the silent ghost voice"~ DESIGNATED 37
+BEGIN ~Mini-Quest: "The mystery of the silent ghostly voice"~ DESIGNATED 37
 LABEL "JA#BGT_AdvPack-Miniquest"
 REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~setup-infinityanimations.tp2~ 0) @37
 
@@ -492,7 +492,7 @@ LABEL "JA#BGT_AdvPack-Black_Alarics_Cave"
 INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden) 
+// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
