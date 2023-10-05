@@ -29,7 +29,8 @@ COPY_EXISTING ~ALYTH.CRE~ ~override~
 	//WRITE_SHORT 0x272 0x03
 	//WRITE_SHORT 0x273 0x04
 
-ACTION_IF (FILE_EXISTS_IN_GAME ubtavern.mve) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME tavern.mve) OR (FILE_EXISTS_IN_GAME ubtavern.mve) BEGIN
+	// with EET or bg1ub
 	PRINT ~Skipping Restored Elfsong Tavern Movie: Is already restored by another mod.~
 END ELSE BEGIN
 	COPY ~JA#BGT_AdvPack/Miniquest/JA#TAVER.MVE~ ~override~
