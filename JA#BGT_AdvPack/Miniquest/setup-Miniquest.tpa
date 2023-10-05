@@ -353,18 +353,19 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 	//add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 1    //info
-		fj_box_left     = 882
-		fj_box_top      = 203
-		fj_box_right    = 931
-		fj_box_bottom   = 279
-		fj_cursor_idx	= 22
-		fj_loc_x		= 891
-		fj_loc_y		= 203
-		fj_vertex_0     = 891 + (203 << 16)
-		fj_vertex_1     = 931 + (234 << 16)
-		fj_vertex_2     = 925 + (279 << 16)
-		fj_vertex_3     = 882 + (252 << 16)
+		fj_type              = 1    //info
+		fj_box_left          = 882
+		fj_box_top           = 203
+		fj_box_right         = 931
+		fj_box_bottom        = 279
+		fj_cursor_idx        = 22
+		fj_info_point_strref = RESOLVE_STR_REF (@32)
+		fj_loc_x             = 891
+		fj_loc_y             = 203
+		fj_vertex_0          = 891 + (203 << 16)
+		fj_vertex_1          = 931 + (234 << 16)
+		fj_vertex_2          = 925 + (279 << 16)
+		fj_vertex_3          = 882 + (252 << 16)
 		STR_VAR
 		fj_structure_type   = region
 		fj_name             = JA#BEHOL
