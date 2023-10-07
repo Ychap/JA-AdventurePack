@@ -13,8 +13,8 @@ COMPILE ~JA#BGT_AdvPack/Nashkel/JA#BARDOL.D~
 
 /* Bardolan needs DV */
 
-COPY_EXISTING ~bardol.CRE~ ~override/bardol.cre~
-WRITE_EVALUATED_ASCII 0x280 ~Bardolan~ #32 // script name / DV
+COPY_EXISTING ~BARDOL.CRE~ ~override/bardol.cre~
+	WRITE_ASCII 0x280 ~Bardolan~ #32 // script name / DV
 
 
 /*Add Bardolan's respawn to Nashkel area if he disappeared because of another mod */
@@ -22,21 +22,21 @@ WRITE_EVALUATED_ASCII 0x280 ~Bardolan~ #32 // script name / DV
 <<<<<<<< ...inlined/bardolan_ar4800.baf
 
 IF
-!Exists("C#BARDOL") //bg1re
-!Exists("Bardolan") 
-OR(2)
-	Global("C#LC_BardolanMoves","GLOBAL",0)
-	Global("C#LC_BardolanMoves","GLOBAL",5)
-Global("C#JA#_BardolanRespawn","MYAREA",0)
-THEN 
+	!Exists("C#BARDOL") //bg1re
+	!Exists("Bardolan")
+	OR(2)
+		Global("C#LC_BardolanMoves","GLOBAL",0)
+		Global("C#LC_BardolanMoves","GLOBAL",5)
+	Global("C#JA#_BardolanRespawn","MYAREA",0)
+THEN
 RESPONSE #100
-SetGlobal("C#JA#_BardolanRespawn","MYAREA",1)
-CreateCreature("bardol",[1104.722],11)
-ActionOverride("Bardolan",SetNumTimesTalkedTo(1))
-Continue()
+	SetGlobal("C#JA#_BardolanRespawn","MYAREA",1)
+	CreateCreature("bardol",[1104.722],11)
+	ActionOverride("Bardolan",SetNumTimesTalkedTo(1))
+	Continue()
 END
 >>>>>>>>
-LAF extend_area_script STR_VAR area="%Nashkel%" top="...inlined/bardolan_ar4800.baf"   END
+LAF extend_area_script STR_VAR area="%Nashkel%" top="...inlined/bardolan_ar4800.baf" END
 
 
 COPY_EXISTING ~INNKN2.CRE~ ~override~
@@ -46,10 +46,17 @@ COPY_EXISTING ~INNKN2.CRE~ ~override~
 COPY_EXISTING ~INN4801.STO~ ~override~
 	SAY 0xc @2119
 
-COMPILE ~JA#BGT_AdvPack/Nashkel/JA#AMNNA.BAF~
+
+COPY_EXISTING ~AMNISNA.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EVALUATE_REGEXP
+		~IF[%WNL%%MNL%%LNL%%TAB% ]+!See(NearestEnemyOf(Myself))[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+\(MoveToPoint(\[[0-9]+\.[0-9]+\])[%WNL%%MNL%%LNL%%TAB% ]+\)+END~
+		~~
+	END
+BUT_ONLY
 
 COPY_EXISTING ~%Nashkel%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
@@ -61,7 +68,6 @@ COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 			WRITE_SHORT actors_offset + 0x24        912
 			WRITE_SHORT actors_offset + 0x26        604
 			WRITE_SHORT actors_offset + 0x34        7
-			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 614) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
 			WRITE_SHORT actors_offset + 0x20        1132
@@ -69,7 +75,6 @@ COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 			WRITE_SHORT actors_offset + 0x24        1132
 			WRITE_SHORT actors_offset + 0x26        515
 			WRITE_SHORT actors_offset + 0x34        4
-			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 634) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
 			WRITE_SHORT actors_offset + 0x20        3386
@@ -77,7 +82,6 @@ COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 			WRITE_SHORT actors_offset + 0x24        3386
 			WRITE_SHORT actors_offset + 0x26        1797
 			WRITE_SHORT actors_offset + 0x34        2
-			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 663) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
 			WRITE_SHORT actors_offset + 0x20        2917
@@ -85,7 +89,6 @@ COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 			WRITE_SHORT actors_offset + 0x24        2917
 			WRITE_SHORT actors_offset + 0x26        2855
 			WRITE_SHORT actors_offset + 0x34        1
-			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 		PATCH_IF ((~%actors_pos_x%~ = 688) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
 			WRITE_SHORT actors_offset + 0x20        3113
@@ -93,7 +96,6 @@ COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 			WRITE_SHORT actors_offset + 0x24        3113
 			WRITE_SHORT actors_offset + 0x26        2986
 			WRITE_SHORT actors_offset + 0x34        6
-			WRITE_ASCII actors_offset + 0x58		~JA#AMNNA~	#8
 		END
 	END
 BUT_ONLY
