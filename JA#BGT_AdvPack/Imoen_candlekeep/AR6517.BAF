@@ -1,8 +1,0 @@
-IF
-	Global("JA#IMOEN_WINTH","GLOBAL",3)
-	GlobalLT("CHAPTER","GLOBAL",%tutu_chapter_1%)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#IMOEN_WINTH","GLOBAL",4)
-		CreateCreature("Imoen",[254.275],6)
-END
