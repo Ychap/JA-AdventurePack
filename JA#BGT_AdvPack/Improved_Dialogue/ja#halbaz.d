@@ -1,64 +1,45 @@
-EXTEND_TOP HALBAZ 0 #2
-+ ~PartyHasItem("MISC51")Global("JA#MISC51","LOCALS",1)~ + @0 GOTO 8
-END
-
 ADD_STATE_TRIGGER HALBAZ 1 ~Global("JA#MISC51","LOCALS",0)~
 
-ALTER_TRANS HALBAZ // file name
-BEGIN 1 END // state number (can be more than one)
-BEGIN 2 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#MISC51","LOCALS",100)~
-END
 
-ALTER_TRANS HALBAZ // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#MISC51","LOCALS",1)~
-END
+ADD_TRANS_ACTION HALBAZ
+BEGIN 7 END
+BEGIN END
+~SetGlobal("JA#MISC51","LOCALS",1)~
 
-ALTER_TRANS HALBAZ // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#MISC51","LOCALS",100)~
-END
+ADD_TRANS_ACTION HALBAZ
+BEGIN 2 END
+BEGIN END
+~SetGlobal("JA#MISC51","LOCALS",100)~
 
-ALTER_TRANS HALBAZ // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 2 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~TakePartyGold(100)
-SetGlobal("JA#MISC51","LOCALS",0)~
-END
+ADD_TRANS_ACTION HALBAZ
+BEGIN 4 END
+BEGIN END
+~SetGlobal("JA#MISC51","LOCALS",0)~
 
 EXTEND_BOTTOM HALBAZ 3
-IF ~~ THEN REPLY @1 DO ~SetGlobal("JA#MISC51","LOCALS",0)GiveGoldForce(500)TakePartyItem("MISC51")~ EXIT
+IF ~~ THEN REPLY @1 DO ~GiveGoldForce(500) TakePartyItem("MISC51")~ EXIT
 END
 
-ALTER_TRANS HALBAZ // file name
-BEGIN 8 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#MISC51","LOCALS",100)~
+
+ALTER_TRANS HALBAZ
+BEGIN 1 END
+BEGIN 3 END
+BEGIN
+  "EPILOGUE" ~GOTO 7~
 END
 
-ALTER_TRANS HALBAZ // file name
-BEGIN 8 END // state number (can be more than one)
-BEGIN 2 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#MISC51","LOCALS",0)~
-  "REPLY" ~@4~ 
+
+EXTEND_TOP HALBAZ 0 #1
+IF ~PartyHasItem("MISC51") Global("JA#MISC51","LOCALS",1)~ THEN REPLY @0 GOTO 8
 END
+
+ADD_TRANS_ACTION HALBAZ
+BEGIN 8 END
+BEGIN 2 END
+~TakePartyGold(100)~
+UNLESS ~TakePartyGold(100)~
 
 EXTEND_BOTTOM HALBAZ 8
-IF ~~ THEN REPLY @2 DO ~SetGlobal("JA#MISC51","LOCALS",0)GiveGoldForce(500)TakePartyItem("MISC51")~ EXIT
-END
-
-EXTEND_BOTTOM HALBAZ 8
+IF ~~ THEN REPLY @2 DO ~SetGlobal("JA#MISC51","LOCALS",0) GiveGoldForce(500) TakePartyItem("MISC51")~ EXIT
 IF ~~ THEN REPLY @3 DO ~StartStore("Sto0703",LastTalkedToBy(Myself))~ EXIT
 END
-
-
-
