@@ -1,18 +1,7 @@
-REPLACE_STATE_TRIGGER CONNOL 0 ~NumTimesTalkedTo(0)~
+REPLACE_ACTION_TEXT CONNOL
+~EscapeArea\(Destroy\)?([0-9]*)~
+~NoAction()~
 
-ALTER_TRANS CONNOL // file name
-BEGIN 2 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
-END
-
-ALTER_TRANS CONNOL // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
-END
 
 EXTEND_BOTTOM CONNOL 0
 IF ~~ THEN REPLY @0 EXIT
@@ -25,41 +14,10 @@ END
 
 APPEND CONNOL
 
-IF ~NumTimesTalkedToGT(0)~ THEN BEGIN JA#CONNOL_1
+IF WEIGHT #-1 ~NumTimesTalkedToGT(0)~ THEN BEGIN JA#CONNOL_1
 SAY @2
-IF ~~ THEN REPLY @3 GOTO 1
-IF ~~ THEN REPLY @4 GOTO 2
-IF ~~ THEN REPLY @5 GOTO 3
-IF ~~ THEN REPLY @6 EXIT
+COPY_TRANS CONNOL 0
+IF ~~ THEN REPLY @3 EXIT
 END
 
-END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+END // APPEND CONNOL
