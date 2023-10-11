@@ -2,6 +2,20 @@
 //ERWEITERTE-VERBESSERTE DIALOGE IN BG1
 ///////////////////////////////////////
 
+// In BGEE/EET: Fix state connection for specific response
+COPY_EXISTING ~HALBAZ.DLG~ ~override~
+    READ_LONG 0x14 ofs_responses
+    READ_LONG 0x10 num_responses
+	SET responses_end = ofs_responses + (num_responses * 0x20)
+
+	FOR (response = ofs_responses; response < responses_end; response+=0x20) BEGIN
+		READ_LONG (response + 0x04) strref
+		PATCH_IF ((strref MODULO 20000) = 192) BEGIN
+			WRITE_BYTE (response + 0x1c) 7 // next state
+		END
+	END
+BUT_ONLY
+
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#HALBAZ.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#NORALE.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#PHLYDI.D~
@@ -13,10 +27,9 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_Dialogue/JA#CALDO.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#CAUTER.D~
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	<<<<<<<< ...inlined/JA#CAUTER_eet.d
-	
 	ADD_STATE_TRIGGER CAUTER 3 ~NumTimesTalkedToGT(0)~
 	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/JA#CAUTER_eet.d~ 
+	COMPILE EVALUATE_BUFFER ~...inlined/JA#CAUTER_eet.d~
 END
 
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#PRSBX.D~
