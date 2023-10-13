@@ -1,15 +1,13 @@
 //Bentley - Reaction to Chapter 3
 
-REPLACE_STATE_TRIGGER BENTLY 0 ~RandomNum(2,1)
-!Dead("Mulahey")~
-REPLACE_STATE_TRIGGER BENTLY 1 ~RandomNum(2,2)
-!Dead("Mulahey")~
 ADD_STATE_TRIGGER BENTLY 3 ~Dead("Mulahey")~
+SET_WEIGHT BENTLY 3 #0
 
-ALTER_TRANS BENTLY // file name
-BEGIN 2 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+
+ALTER_TRANS BENTLY
+BEGIN 2 END
+BEGIN 0 END
+BEGIN
   "REPLY" ~@12~
 END
 
