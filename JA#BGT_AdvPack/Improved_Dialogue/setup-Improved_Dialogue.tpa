@@ -25,12 +25,6 @@ COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#CONNOL.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#CENTEO.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_Dialogue/JA#CALDO.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#CAUTER.D~
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	<<<<<<<< ...inlined/JA#CAUTER_eet.d
-	ADD_STATE_TRIGGER CAUTER 3 ~NumTimesTalkedToGT(0)~
-	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/JA#CAUTER_eet.d~
-END
 
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#PRSBX.D~
 COMPILE ~JA#BGT_AdvPack/Improved_Dialogue/JA#MTOWBA.D~ //MTOWBASC.CRE MTWOBASN.CRE MTWOBAST.CRE
