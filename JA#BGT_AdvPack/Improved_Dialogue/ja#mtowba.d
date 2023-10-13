@@ -53,6 +53,7 @@ SAY @9
 IF ~~ THEN EXIT
 END
 
+
 BEGIN ~MTOWBAST~
 
 IF ~RandomNum(5,1)~ THEN BEGIN JA#MTOWBAST_1
@@ -79,11 +80,3 @@ IF ~RandomNum(5,5)~ THEN BEGIN JA#MTOWBAST_5
 SAY @14
 IF ~~ THEN EXIT
 END
-
-
-
-
-
-
-
-

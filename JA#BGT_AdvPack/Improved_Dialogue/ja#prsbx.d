@@ -80,8 +80,3 @@ IF ~RandomNum(2,2)Gender(LastTalkedToBy(Myself),FEMALE)~ THEN BEGIN JA#PRSBX_C_5
 SAY @14
 IF ~~ THEN EXIT
 END
-
-
-
-
-
