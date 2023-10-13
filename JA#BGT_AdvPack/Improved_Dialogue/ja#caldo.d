@@ -1,14 +1,6 @@
-ADD_STATE_TRIGGER CALDO 0 ~!StateCheck(Myself,STATE_CHARMED)~
-ADD_STATE_TRIGGER CALDO 1 ~!StateCheck(Myself,STATE_CHARMED)~
-ADD_STATE_TRIGGER CALDO 3 ~!StateCheck(Myself,STATE_CHARMED)~
-ADD_STATE_TRIGGER CALDO 7 ~!StateCheck(Myself,STATE_CHARMED)~
-ADD_STATE_TRIGGER CALDO 9 ~!StateCheck(Myself,STATE_CHARMED)~
-
-
-
 APPEND CALDO
 
-IF ~StateCheck(Myself,STATE_CHARMED)!Dead("CDryad")~ THEN BEGIN JA#CALDO_1
+IF WEIGHT #-1 ~StateCheck(Myself,STATE_CHARMED) !Dead("CDryad")~ THEN BEGIN JA#CALDO_1
 SAY @0
 IF ~~ THEN REPLY @1 GOTO 6
 IF ~~ THEN REPLY @2 GOTO JA#CALDO_2
@@ -20,39 +12,40 @@ SAY @4
 IF ~~ THEN EXTERN KRUMM JA#KRUMM_2
 END
 
-IF ~StateCheck(Myself,STATE_CHARMED)Dead("CDryad")~ THEN BEGIN JA#CALDO_3
+IF WEIGHT #-1 ~StateCheck(Myself,STATE_CHARMED) Dead("CDryad")~ THEN BEGIN JA#CALDO_3
 SAY @5
-IF ~~ THEN DO ~ActionOverride("Krumm",EscapeArea())EscapeArea()~ EXIT
+IF ~~ THEN DO ~ActionOverride("Krumm",EscapeArea()) EscapeArea()~ EXIT
 END
 
-END
+END // APPEND CALDO
 
 
 APPEND KRUMM
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN JA#KRUMM_1
+IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN BEGIN JA#KRUMM_1
 SAY @6
 IF ~~ THEN EXTERN CALDO 0
 END
 
 IF ~~ THEN BEGIN JA#KRUMM_2
 SAY @7
-IF ~~ THEN DO ~SetGlobal("JA#CALDOQU1","%DryadFalls%",1)ActionOverride("Caldo",EscapeArea())EscapeArea()~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#CALDOQU1","%DryadFalls%",1) ActionOverride("Caldo",EscapeArea()) EscapeArea()~ EXIT
 END
 
-END
+END // APPEND KRUMM
+
 
 REPLACE_ACTION_TEXT DRYAD
-~EscapeAreaDestroy(90)~
+~EscapeArea\(Destroy\)?([0-9]*)~
 ~ForceSpell(Myself,DRYAD_TELEPORT)
 Wait(1)
 DestroySelf()~
 
 APPEND DRYAD
 
-IF ~Global("JA#CALDOQU1","%DryadFalls%",1)~ THEN BEGIN JA#DRYAD_1
+IF WEIGHT #3 ~Global("JA#CALDOQU1","%DryadFalls%",1)~ THEN BEGIN JA#DRYAD_1
 SAY @8
-IF ~~ THEN + 6
+IF ~~ THEN GOTO 6
 END
 
-END
+END // APPEND DRYAD
