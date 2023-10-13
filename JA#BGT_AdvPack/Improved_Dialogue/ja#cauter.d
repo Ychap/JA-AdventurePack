@@ -1,27 +1,20 @@
-REPLACE_STATE_TRIGGER CAUTER 0 ~NumTimesTalkedTo(0)~
+REPLACE_STATE_TRIGGER CAUTER 0
+~NumTimesTalkedTo(0)~
+IF ~True()~
 
-REPLACE_STATE_TRIGGER CAUTER 3 ~NumTimesTalkedToGT(0)~
+REPLACE_STATE_TRIGGER CAUTER 3
+~True()~
 
 
-ALTER_TRANS CAUTER // file name
-BEGIN 1 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
-END
+REPLACE_ACTION_TEXT CAUTER
+~EscapeArea\(Destroy\)?([0-9]*)~
+~NoAction()~
 
-ALTER_TRANS CAUTER // file name
-BEGIN 2 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
-END
 
-ALTER_TRANS CAUTER // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
+ALTER_TRANS CAUTER
+BEGIN 3 END
+BEGIN 0 END
+BEGIN
   "REPLY" ~@5~
 END
 
@@ -43,8 +36,4 @@ SAY @4
 IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
 END
 
-END
-
-
-
-
+END // APPEND CAUTER
