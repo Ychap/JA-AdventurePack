@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden) 
+// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -8,12 +8,10 @@
 
 COPY_EXISTING ~NIEMAIN.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~See([PC])~ ~LOS([PC],6)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~See([PC])~ ~Range([PC],15)~
 	END
 BUT_ONLY
-  
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Niemain_Zentarim/JA#ZENT1.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Niemain_Zentarim/JA#NIEMA.BAF~
+
 
 COPY_EXISTING ~NIEMAI.CRE~ ~override/JA#NIEMA.CRE~
 	WRITE_ASCII 0x248 ~NONE~	#8
@@ -42,27 +40,8 @@ EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentari
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Niemain_Zentarim/JA#NIEMAI.D~
 
-/* Den cres werden über die Area ein Specifics script zugewiesen: */
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~NIEMAI~) BEGIN
-			WRITE_ASCII actors_offset+0x78  ~JA#NIEMA~ #8
-		END
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~OULAM~) BEGIN
-			WRITE_ASCII actors_offset+0x78  ~JA#ZENT1~ #8
-		END
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~WHEBER~) BEGIN
-			WRITE_ASCII actors_offset+0x78  ~JA#ZENT1~ #8
-		END
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~WILLIAM1~) BEGIN
-			WRITE_ASCII actors_offset+0x78  ~JA#ZENT1~ #8
-		END
-	END
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG"	~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4	~0~

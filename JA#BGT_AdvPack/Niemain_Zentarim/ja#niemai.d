@@ -20,58 +20,37 @@ IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#TalkedNiemai","LOCALS",1)~ EXIT
 END
 
 
-ALTER_TRANS NIEMAI // file name
-BEGIN 1 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "EPILOGUE" ~GOTO JA#NIEMAI_1~
-END
+REPLACE_SAY NIEMAI 2 @1
 
-
-ALTER_TRANS NIEMAI // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
+ALTER_TRANS NIEMAI
+BEGIN 3 END
+BEGIN 0 END
+BEGIN
+  "ACTION" ~~
   "EPILOGUE" ~GOTO JA#NIEMAI_2~
 END
 
-ALTER_TRANS NIEMAI // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~NoAction()~
+ALTER_TRANS NIEMAI
+BEGIN 4 END
+BEGIN 0 END
+BEGIN
+  "ACTION" ~~
   "EPILOGUE" ~GOTO JA#NIEMAI_3~
 END
 
 
-ALTER_TRANS NIEMAI // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#ZENTEXIT","%EBaldursGate_SorcerousSundries_L2%",2)~
-END
-
-ALTER_TRANS NIEMAI // file name
-BEGIN 7 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#ZENTEXIT","%EBaldursGate_SorcerousSundries_L2%",2)~
-END
-
-ALTER_TRANS NIEMAI // file name
-BEGIN 13 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#TalkedNiemai","LOCALS",1)~
-END
+REPLACE_TRANS_ACTION NIEMAI
+BEGIN 13 END
+BEGIN 0 END
+~ActionOverride("WHEBER",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("OULAM",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("WILLIAM",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*EscapeArea\(Destroy\)?([0-9]*)~
+~SetGlobal("JA#TalkedNiemai","LOCALS",1)~
 
 
 APPEND NIEMAI
 
 /* Xzar is in party. Start a weighted dialogue so the content shows if bg1npc is installed. */
 
-IF WEIGHT #-1 
+IF WEIGHT #-1
 ~InParty("XZAR")
 !Dead("XZAR")
 AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~ THEN niemei_xzargreeting
@@ -80,7 +59,7 @@ IF ~~ THEN + 0
 END
 
 /* Montaron but no Xzar */
-IF WEIGHT #-1 
+IF WEIGHT #-1
 ~InParty("MONTARON")
 !Dead("MONTARON")
 AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~ THEN BEGIN niemai_montarongreeting
@@ -89,7 +68,7 @@ IF ~~ THEN + 5
 END
 
 /* Neither Xzar nor Montaron nor Jaheira in party */
-IF WEIGHT #-1 
+IF WEIGHT #-1
 ~!InParty("JAHEIRA")
 Global("JA#TalkedNiemai","LOCALS",0)
 AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~ THEN BEGIN miemai_greeting
@@ -98,22 +77,14 @@ IF ~~ THEN + 8
 END
 
 
-IF ~~ THEN BEGIN JA#NIEMAI_1
-SAY @1
-IF ~~ THEN DO ~SetGlobal("JA#ZENTEXIT","%EBaldursGate_SorcerousSundries_L2%",1)~ UNSOLVED_JOURNAL 
-@1024 EXIT
-END
-
 IF ~~ THEN BEGIN JA#NIEMAI_2
 SAY @3
-IF ~~ THEN DO ~SetGlobal("JA#ZENTEXIT","%EBaldursGate_SorcerousSundries_L2%",1)~ UNSOLVED_JOURNAL 
-@1024 EXIT
+COPY_TRANS NIEMAI 3
 END
 
 IF ~~ THEN BEGIN JA#NIEMAI_3
 SAY @4
-IF ~~ THEN DO ~SetGlobal("JA#ZENTEXIT","%EBaldursGate_SorcerousSundries_L2%",1)~ UNSOLVED_JOURNAL 
-@1024 EXIT
+COPY_TRANS NIEMAI 4
 END
 
 IF ~!InParty("XZAR")InParty("JAHEIRA") InMyArea("JAHEIRA")!StateCheck("JAHEIRA",CD_STATE_NOTVALID)~ THEN BEGIN JA#NIEMAI_4
@@ -173,54 +144,68 @@ ActionOverride("WILLIAM",Enemy())
 Enemy()~ EXIT
 END
 
+END // APPEND NIEMAI
+
+
+ADD_TRANS_ACTION NIEMAI
+BEGIN 2 JA#NIEMAI_2 JA#NIEMAI_3 END
+BEGIN 0 END
+~SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",1)~
+
+ALTER_TRANS NIEMAI
+BEGIN 2 JA#NIEMAI_2 JA#NIEMAI_3 END
+BEGIN 0 END
+BEGIN
+  "UNSOLVED_JOURNAL" ~@1024~
 END
+
 
 
 BEGIN JA#NIEMA
 
 IF ~AreaCheck("%EBaldursGate_ElfsongTavern_L2%")Dead("XZAR")~ THEN BEGIN JA#NIEMAI_13
-SAY 
+SAY
 @20
-= 
+=
 @21
 IF ~~ THEN DO ~EraseJournalEntry(@1024)
 EscapeAreaDestroy(90)~ EXIT
 END
 
 IF ~AreaCheck("%EBaldursGate_ElfsongTavern_L2%")InParty("XZAR")InParty("JAHEIRA")InMyArea("JAHEIRA")!StateCheck("JAHEIRA",CD_STATE_NOTVALID)Global("JA#7706JAHNIEMAIN","LOCALS",0)~ THEN BEGIN JA#NIEMAI_14
-SAY 
+SAY
 @22
-= 
+=
 @23
 IF ~~ THEN DO ~SetGlobal("JA#7706JAHNIEMAIN","LOCALS",1)~ EXTERN %JAHEIRA_JOINED% Jaheira_2
 END
 
 IF ~AreaCheck("%EBaldursGate_ElfsongTavern_L2%")InParty("XZAR")~ THEN BEGIN JA#NIEMAI_15
-SAY 
+SAY
 @24
-IF ~Global("SearchIronThrone","GLOBAL",1)~ THEN REPLY 
+IF ~Global("SearchIronThrone","GLOBAL",1)~ THEN REPLY
 @25 GOTO JA#NIEMAI_18
-IF ~~ THEN REPLY 
+IF ~~ THEN REPLY
 @26 EXIT
 END
 
 IF ~~ THEN BEGIN JA#NIEMAI_16
-SAY 
+SAY
 @27
 IF ~~ THEN EXTERN %JAHEIRA_JOINED% Jaheira_3
 END
 
 IF ~~ THEN BEGIN JA#NIEMAI_17
-SAY 
+SAY
 @28
-IF ~Global("SearchIronThrone","GLOBAL",1)~ THEN REPLY 
-@25 GOTO JA#NIEMAI_18 
-IF ~~ THEN REPLY 
+IF ~Global("SearchIronThrone","GLOBAL",1)~ THEN REPLY
+@25 GOTO JA#NIEMAI_18
+IF ~~ THEN REPLY
 @26 EXIT
 END
 
 IF ~~ THEN BEGIN JA#NIEMAI_18
-SAY 
+SAY
 @29
 = @30
 IF ~~ THEN DO ~EraseJournalEntry(
@@ -326,19 +311,3 @@ IF ~Global("JA#TalkedNiemai","LOCALS",2)~ THEN BEGIN JA#ZENT1_6
 SAY @46
 IF ~~ THEN EXIT
 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
