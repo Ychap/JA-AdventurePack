@@ -1,16 +1,16 @@
-@1    = ~Main Component: Jarl's BGT Adventure Pack~ 
+@1    = ~Main Component: Jarl's BGT Adventure Pack~
 @2    = ~Unrolling Scroll~
-@3    = ~Shrine of Suffering~ 
+@3    = ~Shrine of Suffering~
 @4    = ~Mongo~
-@5    = ~Temple of Mask~ 
+@5    = ~Temple of Mask~
 @6    = ~Saznar Vron~
 @7    = ~Red Wizards of Thay~
-@8    = ~Velara~ 
+@8    = ~Velara~
 @9    = ~Female Gnome~
-@10   = ~Naiduja~ 
+@10   = ~Naiduja~
 //@11   = ~NPC-Portraits for the main component~
 @12   = ~BG1 Unfinished Business component #19 is required.~
-@13   = ~Vaalahor's Harp~ 
+@13   = ~Vaalahor's Harp~
 @14   = ~This is the harp of Vaalahor. The mage who tried to bind the ghost voice of the Elfsong tavern to this instrument.  But it does not seem to have worked because the instrument remains silent.~
 @15   = ~This was the harp of Vaalahor, the mage who tried to steal the ghost song of the Elfsong tavern. Once you had solved the case, the owner Alyth Elendara gave you the instrument after she got it enchanted by a befriended mage, so that magical powers now flow through the rotten harp.
 
@@ -21,16 +21,16 @@ Charm Person (3x daily)
  Range: 1 person
 
 Usable By:
-- Bard~ 
+- Bard~
 @16   = ~Bartley~
 @17   = ~"Lady" Alyth Elendara~
 @18   = ~"Lady" Alyth Elendara~
-@19   = ~Rogue~ 
+@19   = ~Rogue~
 @20   = ~Guest~
-@21   = ~Brulgon Waterspeier~ 
-@22   = ~Dwarf~ 
+@21   = ~Brulgon Waterspeier~
+@22   = ~Dwarf~
 @23   = ~Nathan~
-@24   = ~Wilyn~ 
+@24   = ~Wilyn~
 @25   = ~Vaalahor~
 @26   = ~Ghostly Elf Lady~
 @27   = ~Bekki~
@@ -368,6 +368,7 @@ Thieves, druids, sorcerer, clerics, mages, monks~
 @2035 = ~Bouncer~
 @2036 = ~Guardian~
 @2037 = ~Captain~
+@2040 = ~Lesser Clay Golem~
 @2042 = ~Yuxi~
 @2044 = ~Treasurer~
 @2045 = ~Nelfas Vroc~
