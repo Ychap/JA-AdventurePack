@@ -1,20 +1,3 @@
-/* These are not necessary because of the introduced weighted states below. This is for compatibility with bg1npc (independent of install order.)
-REPLACE_STATE_TRIGGER NIEMAI 0
-~InParty("XZAR")
-!Dead("XZAR")
-AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~
-
-REPLACE_STATE_TRIGGER NIEMAI 5
-~InParty("MONTARON")
-!Dead("MONTARON")
-AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~
-
-REPLACE_STATE_TRIGGER NIEMAI 8
-~!InParty("JAHEIRA")
-Global("JA#TalkedNiemai","LOCALS",0)
-AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~
-*/
-
 EXTEND_BOTTOM NIEMAI 9
 IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#TalkedNiemai","LOCALS",1)~ EXIT
 END
@@ -203,27 +186,7 @@ END
 
 
 
-BEGIN JA#ZENT1
-
-IF ~InParty("XZAR")!Dead("XZAR")~ THEN BEGIN JA#ZENT1_1
-SAY @42
-IF ~~ THEN EXTERN NIEMAI 0
-END
-
-IF ~!InParty("XZAR")InParty("MONTARON")!Dead("MONTARON")~ THEN BEGIN JA#ZENT1_2
-SAY @42
-IF ~~ THEN EXTERN NIEMAI 5
-END
-
-IF ~!InParty("JAHEIRA")~ THEN BEGIN JA#ZENT1_3
-SAY @43
-IF ~~ THEN EXTERN NIEMAI 8
-END
-
-IF ~!InParty("XZAR")InParty("JAHEIRA")~ THEN BEGIN JA#ZENT1_4
-SAY @44
-IF ~~ THEN EXTERN NIEMAI JA#NIEMAI_12
-END
+BEGIN ~JA#ZENT1~
 
 IF ~Global("JA#TalkedNiemai","LOCALS",1)~ THEN BEGIN JA#ZENT1_5
 SAY @45
@@ -234,3 +197,25 @@ IF ~Global("JA#TalkedNiemai","LOCALS",2)~ THEN BEGIN JA#ZENT1_6
 SAY @46
 IF ~~ THEN EXIT
 END
+
+IF ~!InParty("XZAR") InParty("JAHEIRA") InMyArea("JAHEIRA") !StateCheck("JAHEIRA",CD_STATE_NOTVALID)~ THEN BEGIN JA#ZENT1_4
+SAY @44
+IF ~~ THEN EXTERN NIEMAI JA#NIEMAI_12
+END
+
+IF ~InParty("XZAR")~ THEN BEGIN JA#ZENT1_1
+SAY @42
+IF ~~ THEN EXTERN NIEMAI 0
+END
+
+IF ~InParty("MONTARON")~ THEN BEGIN JA#ZENT1_2
+SAY @42
+IF ~~ THEN EXTERN NIEMAI 5
+END
+
+IF ~True()~ THEN BEGIN JA#ZENT1_3
+SAY @43
+IF ~~ THEN EXTERN NIEMAI 8
+END
+
+// END JA#ZENT1
