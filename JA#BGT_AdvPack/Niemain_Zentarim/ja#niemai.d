@@ -76,10 +76,7 @@ END
 
 IF ~~ THEN BEGIN JA#NIEMAI_8
 SAY @15
-IF ~~ THEN DO ~ActionOverride("OULAM",Enemy())
-ActionOverride("WHEBER",Enemy())
-ActionOverride("WILLIAM",Enemy())
-Enemy()~ EXIT
+COPY_TRANS NIEMAI 14 // Turns Niemain and his group hostile
 END
 
 IF ~~ THEN BEGIN JA#NIEMAI_9
@@ -91,6 +88,7 @@ IF ~~ THEN BEGIN JA#NIEMAI_10
 SAY @17
 IF ~~ THEN EXIT
 END
+
 
 IF WEIGHT #-1
 ~Global("JA#TalkedNiemai","LOCALS",2)~ THEN BEGIN JA#NIEMAI_11
