@@ -48,35 +48,6 @@ BEGIN 0 END
 
 APPEND NIEMAI
 
-/* Xzar is in party. Start a weighted dialogue so the content shows if bg1npc is installed. */
-
-IF WEIGHT #-1
-~InParty("XZAR")
-!Dead("XZAR")
-AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~ THEN niemei_xzargreeting
-SAY @54
-IF ~~ THEN + 0
-END
-
-/* Montaron but no Xzar */
-IF WEIGHT #-1
-~InParty("MONTARON")
-!Dead("MONTARON")
-AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~ THEN BEGIN niemai_montarongreeting
-SAY @54
-IF ~~ THEN + 5
-END
-
-/* Neither Xzar nor Montaron nor Jaheira in party */
-IF WEIGHT #-1
-~!InParty("JAHEIRA")
-Global("JA#TalkedNiemai","LOCALS",0)
-AreaCheck("%EBaldursGate_SorcerousSundries_L2%")~ THEN BEGIN miemai_greeting
-SAY @55
-IF ~~ THEN + 8
-END
-
-
 IF ~~ THEN BEGIN JA#NIEMAI_2
 SAY @3
 COPY_TRANS NIEMAI 3
