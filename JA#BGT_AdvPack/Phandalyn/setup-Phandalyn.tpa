@@ -44,10 +44,10 @@ COPY_EXISTING ~PHANDALY.bcs~ ~override~
 	END
 BUT_ONLY
 
-EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/PHANDALY.BAF~
+EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/JA#PHANDALY.BAF~
 
-COMPILE ~JA#BGT_AdvPack/Phandalyn/PHANDALY.D~
-COMPILE ~JA#BGT_AdvPack/Phandalyn/Bellamy.D~
+COMPILE ~JA#BGT_AdvPack/Phandalyn/JA#Phanda.d~
+COMPILE ~JA#BGT_AdvPack/Phandalyn/JA#Bellam.d~
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 	//add new actor
