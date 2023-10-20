@@ -7,7 +7,6 @@ THEN
 		Deactivate(Myself)
 END
 
-
 IF
 	Global("JA#PHANDA","GLOBAL",1)
 	!IsActive(Myself)
@@ -16,13 +15,3 @@ THEN
 		Activate(Myself)
 		SetGlobal("JA#PHANDA","GLOBAL",2)
 END
-
-IF
-	NumTimesTalkedToGT(0)
-	InParty([0.0.0.0.0.0.MASK_EVIL])
-	See([PC.0.0.0.0.0.MASK_EVIL])
-THEN
-	RESPONSE #100
-		Dialogue([PC])
-END
-

@@ -2,30 +2,26 @@
 //FIXED: Moved Phandalyn to the Elfsong
 ////////////////////////////////////////
 
-/* remove SHOUT script - or the whole inn will turn hostile! */
+// Remove SHOUT script - or the whole inn will turn hostile!
 COPY_EXISTING ~PHANDA.CRE~ ~override~
-	WRITE_ASCIIE 0x248 ~PHANDALY~ #8       // remove SHOUT OVERRIDE script
+	PATCH_IF GAME_IS ~bgt~ BEGIN
+		WRITE_ASCIIE 0x248 ~None~ #8       // SHOUT is Override script
+	END
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x250 ~PHANDALY~ #8   // SHOUT is Class script
+	END
 BUT_ONLY
 
 
-
-
-/* this is not fail-proof in case other mods changed the area already
-COPY_EXISTING ~AR8009.ARE~ ~override~
-PATCH_IF (SOURCE_SIZE > 0x11b) BEGIN 
-READ_SHORT 0x54 "JA#OFF_ACT"
-WRITE_LONG "JA#OFF_ACT" + (0x110 * 15) + 0x38        0x00000000	//Remove Phandalyn
-END
-BUT_ONLY
-*/
-
-
-/* Better: cycle through the existing actors, first (in case area was altered by another mod) */
-
+// Cycle through the existing actors, first (in case area was altered by another mod)
 COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~Phandalyn~) BEGIN
+    READ_LONG 0x54 ofs_actors
+    READ_SHORT 0x58 num_actors
+
+	// Look for Phandalyn and remove him
+	FOR (cnt = num_actors - 1; cnt >= 0; --cnt) BEGIN
+		READ_ASCII ofs_actors+(0x110*cnt) actor_name (32) NULL
+		PATCH_IF (~%actor_name%~ STR_EQ ~Phandalyn~) BEGIN
 			LPF fj_are_structure
 				INT_VAR fj_delete_mode = EVAL %cnt%
 				STR_VAR fj_structure_type = actor
@@ -34,13 +30,13 @@ COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
 	END
 BUT_ONLY
 
-/* correct Phandalyn's script: should attack evil party member, not other evil (quest) NPCs! */
+// Correct Phandalyn's script: should talk before attacking evil party members
 COPY_EXISTING ~PHANDALY.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		SPRINT textToReplace ~Attack(\[0\.0\.0\.0\.0\.0\.MASK_EVIL\])~
+		SPRINT textToReplace ~Attack(\[.*MASK_EVIL\])~
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
 		PATCH_IF (num_matches > 0) BEGIN
-			REPLACE_TEXTUALLY ~\(%textToReplace%\)~ ~Attack(LastSeenBy(Myself))~
+			REPLACE_TEXTUALLY ~\(%textToReplace%\)~ ~Dialogue([PC])~
 			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
 		END ELSE BEGIN
 			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -50,7 +46,6 @@ BUT_ONLY
 
 EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/PHANDALY.BAF~
 
-//misc.d
 COMPILE ~JA#BGT_AdvPack/Phandalyn/PHANDALY.D~
 COMPILE ~JA#BGT_AdvPack/Phandalyn/Bellamy.D~
 
@@ -62,7 +57,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 577
 		fj_dest_x         = 980
 		fj_dest_y         = 577
-		fj_orientation    = 1    
+		fj_orientation    = 1
 		fj_schedule		  = 0b000000011111111111100000
 		STR_VAR
 		fj_structure_type = actor
@@ -70,4 +65,4 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_cre_resref     = PHANDA
 		fj_dlg_resref	  = PHANDA
 	END
-	BUT_ONLY
+BUT_ONLY
