@@ -16,17 +16,21 @@ COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#SKEL1.CRE~ ~override~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.D~
 
 COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
-	//delete not needed actors
-	FOR (cnt = BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~GOLEMF~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
+    READ_LONG 0x54 ofs_actors
+    READ_SHORT 0x58 num_actors
+	SET actors_end = ofs_actors + (num_actors * 0x110)
+
+	// Replace Flesh Golems with Pirate skeletons
+	FOR (actor = ofs_actors; actor < actors_end; actor+=0x110) BEGIN
+		READ_ASCII actor+0x80 actors_filename (32) NULL
+		PATCH_IF (~%actors_filename%~ STR_EQ ~GOLEMF~) BEGIN
+			WRITE_ASCII	actor+0x00 ~Piratenskelett~ #32
+			WRITE_LONG	actor+0x30 0xEB10 // SKELETON_WARRIOR
+			WRITE_ASCII	actor+0x80 ~JA#SKEL1~ #8
 		END
 	END
-	//add new actors
+
+	// Add The Red Beric
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 882
@@ -40,46 +44,11 @@ COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 		fj_cre_resref     = ~JA#PIRA1~
 		fj_dlg_resref	  = ~JA#PIRA1~
 	END
+
+	// Rest encounters
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 209
-		fj_loc_y          = 775
-		fj_dest_x         = 209
-		fj_dest_y         = 775
-		fj_orientation    = 0
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Piratenskelett~
-		fj_cre_resref     = ~JA#SKEL1~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 1226
-		fj_loc_y          = 761
-		fj_dest_x         = 1226
-		fj_dest_y         = 761
-		fj_orientation    = 11
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Piratenskelett~
-		fj_cre_resref     = ~JA#SKEL1~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 693
-		fj_loc_y          = 176
-		fj_dest_x         = 693
-		fj_dest_y         = 176
-		fj_orientation    = 2
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Piratenskelett~
-		fj_cre_resref     = ~JA#SKEL1~
-	END
-	//Rest encounters
-	LPF fj_are_structure
-		INT_VAR
-		fj_cre_strref0	  = RESOLVE_STR_REF (#10134)
+		fj_cre_strref0	  = RESOLVE_STR_REF (#10148)
 		STR_VAR
 		fj_structure_type = interrupts
 		fj_name           = ~~
