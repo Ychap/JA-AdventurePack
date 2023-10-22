@@ -20,7 +20,6 @@ COPY_EXISTING ~BARDOL.CRE~ ~override/bardol.cre~
 /*Add Bardolan's respawn to Nashkel area if he disappeared because of another mod */
 
 <<<<<<<< ...inlined/bardolan_ar4800.baf
-
 IF
 	!Exists("C#BARDOL") //bg1re
 	!Exists("Bardolan")
@@ -29,14 +28,14 @@ IF
 		Global("C#LC_BardolanMoves","GLOBAL",5)
 	Global("C#JA#_BardolanRespawn","MYAREA",0)
 THEN
-RESPONSE #100
-	SetGlobal("C#JA#_BardolanRespawn","MYAREA",1)
-	CreateCreature("bardol",[1104.722],11)
-	ActionOverride("Bardolan",SetNumTimesTalkedTo(1))
-	Continue()
+	RESPONSE #100
+		SetGlobal("C#JA#_BardolanRespawn","MYAREA",1)
+		CreateCreature("bardol",[1104.722],11)
+		ActionOverride("Bardolan",SetNumTimesTalkedTo(1))
+		Continue()
 END
 >>>>>>>>
-LAF extend_area_script STR_VAR area="%Nashkel%" top="...inlined/bardolan_ar4800.baf" END
+EXTEND_TOP ~%Nashkel%.BCS~ ~...inlined/bardolan_ar4800.baf~
 
 
 COPY_EXISTING ~INNKN2.CRE~ ~override~
