@@ -12,7 +12,7 @@ BACKUP ~JA#BGT_AdvPack/backup~
 //AUTHOR ~Jarl~
 SUPPORT ~Please post at G3 or Kerzenburgforum, refer to readme.~
 
-VERSION ~0.9.0 beta3~ //
+VERSION ~0.9.0 beta3~
 
 ALWAYS
 
@@ -28,10 +28,8 @@ ALWAYS
 	INCLUDE ~JA#BGT_AdvPack/lib/ids_entries_cleanup.tph~
 
 	ACTION_IF GAME_IS ~bgee eet~ BEGIN
-
 		ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
 		ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
-
 		LAF HANDLE_CHARSETS
 			INT_VAR
 				infer_charsets = 1
@@ -41,39 +39,25 @@ ALWAYS
 				reload_array = tra#reload
 		END
 
+		ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+			PRINT ~BG:EE detected...~
+			INCLUDE ~JA#BGT_AdvPack/lib/g3_bgee_cpmvars.tpa~
+		END
+		ACTION_IF GAME_IS ~eet~ THEN BEGIN
+			PRINT ~EET detected...~
+			INCLUDE ~EET/other/cpmvars/eet_cpmvars.tpa~
+		END
+	END ELSE BEGIN
+    	ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+			PRINT ~Baldur's Gate Trilogy detected...~
+			INCLUDE ~JA#BGT_AdvPack/lib/g3_bgt_cpmvars.tpa~
+    	END ELSE BEGIN
+    		FAIL ~Game version not supported!~
+		END
 	END
 
 
 	INCLUDE ~JA#BGT_AdvPack/lib/extra_regexp_vars.tph~
-
-	ACTION_IF GAME_IS ~eet~ THEN BEGIN
-		/* Tell the player it is using eet */
-		PRINT ~EET detected...~
-		INCLUDE ~JA#BGT_AdvPack/lib/eet_cpmvars.tpa~
-	END
-	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
-		/* Tell the player it is using bgee */
-		PRINT ~BG:EE detected...~
-		INCLUDE ~JA#BGT_AdvPack/lib/g3_bgee_cpmvars.tpa~
-	END
-	ACTION_IF GAME_IS ~bgt~ THEN BEGIN
-		PRINT ~Baldur's Gate Trilogy detected~
-		INCLUDE ~JA#BGT_AdvPack/lib/g3_bgt_cpmvars.tpa~
-	END
-
-	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter BEGIN
-		ACTION_IF GAME_IS ~eet~ BEGIN
-			OUTER_SET bg2_chapter = 12
-		END ELSE BEGIN
-			OUTER_SET bg2_chapter = 0
-		END
-		OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
-			OUTER_SET bg2_chapter = bg2_chapter + 1
-			OUTER_SPRINT name_source ~bg2_chapter_%i%~
-			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
-		END
-	END
-
 END
 
 AUTO_TRA ~JA#BGT_AdvPack/Languages/%s~
