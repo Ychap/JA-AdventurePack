@@ -48,6 +48,12 @@ EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/JA#PHANDALY.BAF~
 
 COMPILE ~JA#BGT_AdvPack/Phandalyn/JA#Phanda.d~
 COMPILE ~JA#BGT_AdvPack/Phandalyn/JA#Bellam.d~
+	PATCH_IF GAME_IS ~bgt~ BEGIN
+		REPLACE_TEXTUALLY ~#26870~ ~@1~
+	END
+	PATCH_IF GAME_IS ~eet~ BEGIN
+		REPLACE_TEXTUALLY ~#26870~ ~#226870~
+	END
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 	//add new actor
