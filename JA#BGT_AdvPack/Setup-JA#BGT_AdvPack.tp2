@@ -14,18 +14,12 @@ SUPPORT ~Please post at G3 or Kerzenburgforum, refer to readme.~
 
 VERSION ~0.9.0 beta3~
 
-ALWAYS
 
+ALWAYS
 	/* check for a ready SoD */
 	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
 		FAIL @90000
 	END
-
-	INCLUDE ~JA#BGT_AdvPack/lib/func_fetch_journal_entries.tph~
-
-	/* ACTION.IDS and TRIGGER.IDS patching to ToB - thanks, Cam, if you read it */
-	/* and GTIMES.IDS, ANIMATE.IDS patching to ToB, courtesy of the BG2 Fix Pack */
-	INCLUDE ~JA#BGT_AdvPack/lib/ids_entries_cleanup.tph~
 
 	ACTION_IF GAME_IS ~bgee eet~ BEGIN
 		ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
@@ -58,7 +52,14 @@ ALWAYS
 
 
 	INCLUDE ~JA#BGT_AdvPack/lib/extra_regexp_vars.tph~
+
+	INCLUDE ~JA#BGT_AdvPack/lib/func_fetch_journal_entries.tph~
+
+	/* ACTION.IDS and TRIGGER.IDS patching to ToB - thanks, Cam, if you read it */
+	/* and GTIMES.IDS, ANIMATE.IDS patching to ToB, courtesy of the BG2 Fix Pack */
+	INCLUDE ~JA#BGT_AdvPack/lib/ids_entries_cleanup.tph~
 END
+
 
 AUTO_TRA ~JA#BGT_AdvPack/Languages/%s~
 
@@ -70,16 +71,6 @@ LANGUAGE ~English~
          ~english~
          ~JA#BGT_AdvPack/languages/english/Setup.tra~
 
-
-
-
-/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
-/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
-/////                                                  \\\\\
-///// Main Component: Jarl's BGT Adventure Pack        \\\\\
-/////                                                  \\\\\
-/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
-/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 
 
