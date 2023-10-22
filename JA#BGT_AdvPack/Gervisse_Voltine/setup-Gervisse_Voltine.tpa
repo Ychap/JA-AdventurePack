@@ -138,13 +138,13 @@ ACTION_IF (MOD_IS_INSTALLED ~BG1NPC/BG1NPC.TP2~ "10") BEGIN
 	COMPILE EVALUATE_BUFFER
 		~...inlined/ja#gervis_bg1npc.d~
 		~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
-		USING ~JA#BGT_AdvPack/languages/autotra/%s/JA#GERVIS.tra~
+		USING ~JA#BGT_AdvPack/languages/%s/JA#GERVIS.tra~
 END ELSE BEGIN
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
 END
 
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#Laerta_Gervis_EE.D~ USING ~JA#BGT_AdvPack/languages/autotra/%s/JA#GERVIS.tra~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#Laerta_Gervis_EE.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#GERVIS.tra~
 END
 
 

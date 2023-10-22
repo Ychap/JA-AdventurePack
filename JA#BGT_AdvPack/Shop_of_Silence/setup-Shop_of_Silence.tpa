@@ -12,7 +12,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	COMPILE EVALUATE_BUFFER ~...inlined/ja#silenc_weight.d~
 END
 ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_eet.D~ USING ~JA#BGT_AdvPack/languages/autotra/%s/JA#SILENC.tra~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_eet.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~

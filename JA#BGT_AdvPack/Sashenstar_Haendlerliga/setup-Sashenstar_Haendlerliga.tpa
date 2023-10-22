@@ -95,18 +95,10 @@ END %JAHEIRA_JOINED% %jaheira_state%
 >>>>>>>>
 
 ACTION_IF ((vic_state >= 0) AND (jaheira_state >= 0)) BEGIN
-
-
-	COMPILE EVALUATE_BUFFER
-		~...inlined/aldeth_bg1npc.d~
-		~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
-		USING ~JA#BGT_AdvPack/languages/autotra/%s/JA#ALDETH.tra~
-
-
-END ELSE BEGIN //Viconia interjection from bg1npc is not installed or couldn't be detected
-
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bg1npc.d~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
 
 
 /* replace quest reward ("POTN09") with mod quest item JA#ALDET */
