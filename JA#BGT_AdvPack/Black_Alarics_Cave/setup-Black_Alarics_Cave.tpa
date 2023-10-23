@@ -21,6 +21,11 @@ COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 	SET actors_end = ofs_actors + (num_actors * 0x110)
 
 	// Replace Flesh Golems with Pirate skeletons
+	// LPF ALTER_AREA_ACTOR
+	// 	INT_VAR animation = 0xEB10
+	// 	STR_VAR actor_name = ~Flesh Golem~
+	// 			cre_file = ~JA#SKEL1~
+	// END
 	FOR (actor = ofs_actors; actor < actors_end; actor+=0x110) BEGIN
 		READ_ASCII actor+0x80 actors_filename (32) NULL
 		PATCH_IF (~%actors_filename%~ STR_EQ ~GOLEMF~) BEGIN
