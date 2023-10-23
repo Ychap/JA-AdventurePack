@@ -3,19 +3,20 @@ IF
 	See([PC])
 THEN
 	RESPONSE #100
+		Wait(3)
+		Polymorph(FAT_MAN)
+		Wait(1)
 		StartDialogNoSet([PC])
 END
-
-
 
 IF
 	GlobalLT("JA#_HelpedMechant","MYAREA",2)
 	HasItem("POTN08",Myself) // Heiltrank
 THEN
 	RESPONSE #100
+		DialogInterrupt(FALSE)
 		UseItem("POTN08",Myself) // Heiltrank
 		SetGlobal("JA#_HelpedMechant","MYAREA",2)
-		ChangeAnimationNoEffect("JA#MERCX") // Kaufmann
 END
 
 IF
@@ -23,9 +24,9 @@ IF
 	HasItem("POTN17",Myself) // Heilungselixier
 THEN
 	RESPONSE #100
+		DialogInterrupt(FALSE)
 		UseItem("POTN17",Myself) // Heilungselixier
 		SetGlobal("JA#_HelpedMechant","MYAREA",2)
-		ChangeAnimationNoEffect("JA#MERCX") // Kaufmann
 END
 
 IF
@@ -33,9 +34,9 @@ IF
 	HasItem("GBERRY",Myself) // Gute Beeren
 THEN
 	RESPONSE #100
+		DialogInterrupt(FALSE)
 		UseItem("GBERRY",Myself) // Gute Beeren
 		SetGlobal("JA#_HelpedMechant","MYAREA",2)
-		ChangeAnimationNoEffect("JA#MERCX") // Kaufmann
 END
 
 IF
@@ -51,8 +52,8 @@ END
 
 IF
 	GlobalLT("JA#_HelpedMechant","MYAREA",2)
-	OR(8)	
-		SpellCastOnMe([GOODCUTOFF],CLERIC_HEAL)  // SPPR607.SPL (Heilung)	
+	OR(8)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_HEAL)
 		SpellCastOnMe([GOODCUTOFF],CLERIC_CURE_LIGHT_WOUNDS)
 		SpellCastOnMe([GOODCUTOFF],CLERIC_CURE_MEDIUM_WOUNDS)
 		SpellCastOnMe([GOODCUTOFF],CLERIC_CURE_SERIOUS_WOUNDS)
@@ -63,10 +64,6 @@ IF
 	See([PC])
 THEN
 	RESPONSE #100
+		DialogInterrupt(FALSE)
 		SetGlobal("JA#_HelpedMechant","MYAREA",2)
-		ChangeAnimationNoEffect("JA#MERCX") // Kaufmann
 END
-
-
-
-

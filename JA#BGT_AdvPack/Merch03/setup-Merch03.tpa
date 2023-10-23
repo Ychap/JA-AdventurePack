@@ -3,7 +3,6 @@
 ////////////////////////////////////////
 
 COPY ~JA#BGT_AdvPack/MERCH03/JA#MERC3.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/MERCH03/JA#MERCX.CRE~ ~override~
 
 COMPILE ~JA#BGT_AdvPack/MERCH03/JA#MERC3.BAF~
 

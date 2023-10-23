@@ -20,6 +20,7 @@ IF ~~ THEN BEGIN 2
   IF ~~ THEN REPLY @9 GOTO 1
 END
 
+
 IF ~Global("JA#_HelpedMechant","MYAREA",2)~ THEN BEGIN 3
   SAY @11
   IF ~~ THEN REPLY @12 DO ~EraseJournalEntry(@1008)~ SOLVED_JOURNAL @13 GOTO 4
@@ -30,7 +31,7 @@ END
 
 IF ~~ THEN BEGIN 4
   SAY @19
-  IF ~~ THEN DO ~SetGlobal("JA#_HelpedMechant","MYAREA",3) ReputationInc(-1) AddExperienceParty(150)EscapeArea()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#_HelpedMechant","MYAREA",3) ReputationInc(-1) AddExperienceParty(150) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN 5
@@ -40,18 +41,19 @@ END
 
 IF ~~ THEN BEGIN 6
   SAY @21
-  IF ~~ THEN DO ~SetGlobal("JA#_HelpedMechant","MYAREA",3) ReputationInc(1) AddExperienceParty(150)EscapeArea()~ JOURNAL @22 EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#_HelpedMechant","MYAREA",3) ReputationInc(1) AddExperienceParty(150) EscapeArea()~ JOURNAL @22 EXIT
 END
 
 IF ~~ THEN BEGIN 7
   SAY @23
-  IF ~~ THEN DO ~SetGlobal("JA#_HelpedMechant","MYAREA",3) ReputationInc(1) AddExperienceParty(150)EscapeArea()~ JOURNAL @24 EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#_HelpedMechant","MYAREA",3) ReputationInc(1) AddExperienceParty(150) EscapeArea()~ JOURNAL @24 EXIT
 END
 
 IF ~~ THEN BEGIN 8
   SAY @25
   IF ~~ THEN EXIT
 END
+
 
 IF ~Global("JA#_HelpedMechant","MYAREA",1)~ THEN BEGIN 9
   SAY @26
@@ -61,3 +63,5 @@ IF ~Global("JA#_HelpedMechant","MYAREA",1)~ THEN BEGIN 9
   IF ~~ THEN REPLY @27 EXIT
   IF ~~ THEN REPLY @9 DO ~SetGlobalTimer("JA#MERC3","GLOBAL",TWO_MINUTES)~ EXIT
 END
+
+// END JA#MERC3
