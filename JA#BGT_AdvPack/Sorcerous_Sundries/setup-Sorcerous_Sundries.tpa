@@ -6,11 +6,8 @@
 
 COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
 
-
 COPY_EXISTING ~HALBAZ.CRE~ ~override~
-	WRITE_BYTE 0x2e 37 //color
-	WRITE_ASCII 0x268 ~JA#HLBZ1~	#8
-	REPLACE_CRE_ITEM ~CLCK16~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
+	WRITE_ASCII 0x268 ~JA#HLBZ1~ #8
 
 
 COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.CRE~ ~override~
@@ -24,7 +21,6 @@ COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.CRE~ ~override~
 	SAY NAME1 @10
 	SAY NAME2 @10
-	WRITE_ASCII 0x248 ~None~ #8
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.D~
 COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.D~
