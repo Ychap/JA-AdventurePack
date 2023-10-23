@@ -31,17 +31,11 @@ SAY @13
 IF ~~ THEN DO ~StartStore("STO0703",LastTalkedToBy(Myself))~ EXIT
 END
 
-IF ~NumTimesTalkedToGT(0)~ THEN BEGIN JA#SSELF_6
+
+IF ~True()~ THEN BEGIN JA#SSELF_6
 SAY @14
 IF ~~ THEN REPLY @15 DO ~StartStore("STO0703",LastTalkedToBy(Myself))~ EXIT
 IF ~~ THEN REPLY @16 EXIT
 END
 
-
-
-
-
-
-
-
-
+// END JA#SSELF

@@ -39,28 +39,25 @@ Wait(1)
 DestroySelf()~ EXIT
 END
 
-IF ~NumTimesTalkedToGT(0)RandomNum(4,1)~ THEN BEGIN JA#SSC01_7
+
+IF ~RandomNum(4,1)~ THEN BEGIN JA#SSC01_7
 SAY @14
 IF ~~ THEN EXIT
 END
 
-IF ~NumTimesTalkedToGT(0)RandomNum(4,2)~ THEN BEGIN JA#SSC01_8
+IF ~RandomNum(4,2)~ THEN BEGIN JA#SSC01_8
 SAY @15
 IF ~~ THEN EXIT
 END
 
-IF ~NumTimesTalkedToGT(0)RandomNum(4,3)~ THEN BEGIN JA#SSC01_9
+IF ~RandomNum(4,3)~ THEN BEGIN JA#SSC01_9
 SAY @16
 IF ~~ THEN EXIT
 END
 
-IF ~NumTimesTalkedToGT(0)RandomNum(4,4)~ THEN BEGIN JA#SSC01_10
+IF ~RandomNum(4,4)~ THEN BEGIN JA#SSC01_10
 SAY @17
 IF ~~ THEN EXIT
 END
 
-
-
-
-
-
+// END JA#SSC01
