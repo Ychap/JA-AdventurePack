@@ -16,7 +16,12 @@ COPY_EXISTING ~MARL.CRE~ ~override~
 		END
 
 COPY_EXISTING ~DUNKIN.CRE~ ~override~
-	WRITE_ASCII 0x248 ~JA#DUNKI~ #8
+	LPF ADD_CRE_SCRIPT
+		STR_VAR script = ~JA#DUNKI~
+		RET success
+	END
+	PATCH_IF !success BEGIN PATCH_FAIL ~ERROR: ADD_CRE_SCRIPT was unable to assign script in %SOURCE_RES%!~ END
+
 
 COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
 	~JA#BGT_AdvPack/Marl/JA#GUAB2.CRE~ ~override~
@@ -93,7 +98,7 @@ COPY_EXISTING ~RBEREG.dlg~ ~override~
 		END
 		SET kelddath7 = strref
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#KELDDA.D~		
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#KELDDA.D~
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#GUABE.D~
 
@@ -112,23 +117,23 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_loc_y          = 3651
 		fj_dest_x         = 4194
 		fj_dest_y         = 3651
-		fj_orientation    = 13     
+		fj_orientation    = 13
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB4~
 		fj_dlg_resref	  = ~JA#GUAB4~
 	END
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 2509
-		fj_loc_y          = 554 
+		fj_loc_y          = 554
 		fj_dest_x         = 2509
-		fj_dest_y         = 554 
-		fj_orientation    = 6      
+		fj_dest_y         = 554
+		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB5~
 		fj_dlg_resref	  = ~JA#GUAB5~
 	END
@@ -138,23 +143,23 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_loc_y          = 3287
 		fj_dest_x         = 1535
 		fj_dest_y         = 3287
-		fj_orientation    = 1      
+		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB6~
 		fj_dlg_resref	  = ~JA#GUAB6~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 452 
+		fj_loc_x          = 452
 		fj_loc_y          = 2095
-		fj_dest_x         = 452 
+		fj_dest_x         = 452
 		fj_dest_y         = 2095
-		fj_orientation    = 4      
+		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB7~
 		fj_dlg_resref	  = ~JA#GUAB7~
 	END
@@ -164,10 +169,10 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_loc_y          = 2745
 		fj_dest_x         = 3948
 		fj_dest_y         = 2745
-		fj_orientation    = 14     
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB7~
 		fj_dlg_resref	  = ~JA#GUAB7~
 	END
@@ -177,10 +182,10 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_loc_y          = 1634
 		fj_dest_x         = 1768
 		fj_dest_y         = 1634
-		fj_orientation    = 5      
+		fj_orientation    = 5
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB7~
 		fj_dlg_resref	  = ~JA#GUAB7~
 	END
@@ -193,11 +198,11 @@ COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 		fj_loc_y          = 638
 		fj_dest_x         = 700
 		fj_dest_y         = 638
-		fj_orientation    = 5     
+		fj_orientation    = 5
 		fj_schedule 	  = 0b111100000000000001111111
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB9~
 		fj_dlg_resref	  = ~JA#GUAB9~
 	END
@@ -207,11 +212,11 @@ COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 		fj_loc_y          = 591
 		fj_dest_x         = 709
 		fj_dest_y         = 591
-		fj_orientation    = 1     
+		fj_orientation    = 1
 		fj_schedule 	  = 0b111100000000000001111111
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Guard~   
+		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB8~
 		fj_dlg_resref	  = ~JA#GUAB8~
 	END
