@@ -22,27 +22,17 @@ END
 
 ADD_STATE_TRIGGER KELDDA 1 ~GlobalLT("JA#MARL_GUARD","GLOBAL",1)~
 
-REPLACE_STATE_TRIGGER KELDDA 3 ~Dead("bassilus")
+REPLACE_STATE_TRIGGER KELDDA 3 ~GlobalGT("JA#MARL_GUARD","GLOBAL",0)
+Dead("bassilus")
 PartyHasItem("MISC04")
-!Global("BassilusDead","GLOBAL",2)
-GlobalGT("JA#MARL_GUARD","GLOBAL",0)~
+!Global("BassilusDead","GLOBAL",2)~
 
 ALTER_TRANS KELDDA
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+BEGIN 3 END
+BEGIN END
+BEGIN
   "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5)
-GiveGoldForce(2000)
-SetGlobal("BassilusDead","GLOBAL",2)
-AddexperienceParty(500)
-EraseJournalEntry(%kelddath1%)
-EraseJournalEntry(%kelddath2%)
-EraseJournalEntry(%kelddath3%)
-EraseJournalEntry(%kelddath4%)
-EraseJournalEntry(%kelddath5%)
-EraseJournalEntry(%kelddath6%)
-EraseJournalEntry(%kelddath7%)
-TakePartyItem("MISC04")~
+%state1_response0_action%~
 END
 
 

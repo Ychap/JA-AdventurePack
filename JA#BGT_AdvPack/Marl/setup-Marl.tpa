@@ -25,68 +25,30 @@ COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
 	SAY NAME1 @2085
 	SAY NAME2 @2085
 
-COPY_EXISTING ~KELDDA.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "8"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath1 = strref
-COPY_EXISTING ~BASSIL.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "3"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath2 = strref
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "14"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath3 = strref
-COPY_EXISTING ~FOOTY.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "1"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath4 = strref
-COPY_EXISTING ~TOWNCR.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "0"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath5 = strref
-COPY_EXISTING ~FTOWBE.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "0"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath6 = strref
-COPY_EXISTING ~RBEREG.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "22"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath7 = strref
+
+// Grab action text from first response of state 1
+COPY_EXISTING ~KELDDA.DLG~ ~override~
+	SET state = 1
+    READ_LONG 0x0c ofs_states
+    READ_LONG 0x14 ofs_responses
+    READ_LONG 0x28 ofs_actions
+
+	SET state = ofs_states + (state * 0x10)
+	READ_LONG (state + 0x4) idx_first_response
+
+	SET response = ofs_responses + (idx_first_response * 0x20)
+	READ_LONG (response + 0x10) idx_action
+
+	SET action = ofs_actions + (idx_action * 0x8)
+	READ_LONG (action + 0x0) ofs_action
+	READ_LONG (action + 0x4) len_action
+	READ_ASCII ofs_action state1_response0_action (len_action) NULL
+BUT_ONLY
+
+OUTER_PATCH_SAVE ~state1_response0_action~ ~%state1_response0_action%~ BEGIN
+	REPLACE_TEXTUALLY ~GiveGoldForce([0-9]+)~ ~GiveGoldForce(2000)~
+	REPLACE_TEXTUALLY ~AddexperienceParty([0-9]+)~ ~AddexperienceParty(500)~
+END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#KELDDA.D~
 
