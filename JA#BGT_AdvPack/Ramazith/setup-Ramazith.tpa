@@ -139,23 +139,24 @@ EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7226.B
 EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7600.BAF~ EVALUATE_BUFFER
 
 
-// Grab actions from first response of state 15
+// Grab action text from first response of state 15
 COPY_EXISTING ~RAMAZI.DLG~ ~override~
 	SET state = 15
     READ_LONG 0x0c ofs_states
     READ_LONG 0x14 ofs_responses
-    READ_LONG 0x28 ofs_response_actions
+    READ_LONG 0x28 ofs_actions
 
-	SET ofs_state = ofs_states + (state * 0x10)
-	READ_LONG (ofs_state + 0x4) idx_first_response
+	SET state = ofs_states + (state * 0x10)
+	READ_LONG (state + 0x4) idx_first_response
 
-	SET ofs_response = ofs_responses + idx_first_response * 0x20
-	READ_LONG (ofs_response + 0x10) idx_response_action
+	SET response = ofs_responses + (idx_first_response * 0x20)
+	READ_LONG (response + 0x10) idx_action
 
-	SET ofs_action = ofs_response_actions + idx_response_action * 0x8
-	READ_LONG ofs_action actions_ptr
-	READ_LONG (ofs_action + 0x8) next_actions_ptr
-	READ_ASCII actions_ptr state15_actions (next_actions_ptr - actions_ptr)
+	SET action = ofs_actions + (idx_action * 0x8)
+	READ_LONG (action + 0x0) ofs_action
+	READ_LONG (action + 0x4) len_action
+	READ_ASCII ofs_action state15_response0_action (len_action) NULL
+BUT_ONLY
 
 OUTER_SET default_state_during_quest = (GAME_IS ~bgt~) ? 22 : 10
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#ramazi.d~

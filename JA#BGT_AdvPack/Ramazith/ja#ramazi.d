@@ -44,7 +44,7 @@ ALTER_TRANS RAMAZI
 BEGIN 14 END
 BEGIN 0 END
 BEGIN
-  "ACTION" ~AddexperienceParty(400) ReputationInc(-1) %state15_actions%~
+  "ACTION" ~AddexperienceParty(400) ReputationInc(-1) %state15_response0_action%~
 END
 
 ALTER_TRANS RAMAZI
