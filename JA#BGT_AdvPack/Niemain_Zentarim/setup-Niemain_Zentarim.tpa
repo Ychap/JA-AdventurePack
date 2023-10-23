@@ -39,10 +39,3 @@ EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2%.BCS~ ~JA#BGT_AdvPack/Niemain_Zen
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7706_niemain.BAF~ EVALUATE_BUFFER
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Niemain_Zentarim/JA#NIEMAI.D~
-
-
-COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG"	~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4	~0~
-BUT_ONLY

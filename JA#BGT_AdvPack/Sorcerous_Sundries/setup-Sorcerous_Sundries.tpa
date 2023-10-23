@@ -6,13 +6,6 @@
 
 COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
 
-COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
-	PATCH_IF (SOURCE_SIZE > 0x11b) BEGIN 
-		READ_LONG 0xbc "JA#OFF_SNG"
-		WRITE_LONG "JA#OFF_SNG"	~0~
-		WRITE_LONG "JA#OFF_SNG" + 0x4	~0~
-	END
-BUT_ONLY
 
 COPY_EXISTING ~HALBAZ.CRE~ ~override~
 	WRITE_BYTE 0x2e 37 //color
@@ -37,15 +30,16 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.D~
 COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.D~
 COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
 
+
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 	//add new actors
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 238 
-		fj_loc_y          = 697 
-		fj_dest_x         = 238 
-		fj_dest_y         = 697 
-		fj_orientation    = 5   
+		fj_loc_x          = 238
+		fj_loc_y          = 697
+		fj_dest_x         = 238
+		fj_dest_y         = 697
+		fj_orientation    = 5
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Roter Magier~
@@ -58,20 +52,21 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_loc_y          = 274
 		fj_dest_x         = 827
 		fj_dest_y         = 274
-		fj_orientation    = 14 
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Velara
 		fj_cre_resref     = JA#SSC01
 		fj_dlg_resref	  = JA#SSC01
 	END
+
 	// Add Ambient 1
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 100 
+		fj_volume_variance = 100
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -79,29 +74,35 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = JA#AMSS1
 	END
-	
+	// Deactivate songs from outside
+	READ_LONG 0xbc ofs_songs
+	WRITE_LONG ofs_songs+0x0 0
+	WRITE_LONG ofs_songs+0x4 0
+
+
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 	//add new actors
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 709 
-		fj_loc_y          = 519 
-		fj_dest_x         = 709 
-		fj_dest_y         = 519 
-		fj_orientation    = 11  
+		fj_loc_x          = 709
+		fj_loc_y          = 519
+		fj_dest_x         = 709
+		fj_dest_y         = 519
+		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Naiduja
 		fj_cre_resref     = JA#SSELF
 		fj_dlg_resref	  = JA#SSELF
 	END
+
 	// Add Ambient 1
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 80 
+		fj_volume_variance = 80
 		fj_sound_num       = 1
 		fj_flags 		   = 0b0000000111
 		STR_VAR
@@ -109,6 +110,10 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = JA#AMSS1
 	END
+	// Deactivate songs from outside
+	READ_LONG 0xbc ofs_songs
+	WRITE_LONG ofs_songs+0x0 0
+	WRITE_LONG ofs_songs+0x4 0
 
 
 //COPY_EXISTING ~STO0703.STO~ ~override~
