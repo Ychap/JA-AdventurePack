@@ -6,7 +6,7 @@ BEGIN 0 END
 ~!PartyHasItem("MISC68")~
 ~OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1)~
 
-// BGEE/EET
+// BGEE/EET (set "RamazithMove" as in BGT)
 ADD_TRANS_ACTION RAMAZI
 BEGIN 11 12 22 END
 BEGIN 0 END
@@ -97,13 +97,6 @@ IF ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~ THEN
 REPLY @3
 GOTO JA#RAMAZITH_7
 END
-
-
-// BGEE/EET
-ADD_STATE_TRIGGER RAMAZI 16
-~GlobalTimerExpired("Ramazith","GLOBAL") Global("RamazithMove","GLOBAL",1)~
-UNLESS ~Global("RamazithMove","GLOBAL",1)~
-
 
 
 APPEND RAMAZI
