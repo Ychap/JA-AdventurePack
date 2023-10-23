@@ -4,16 +4,7 @@
 
 COPY_EXISTING ~MARL.CRE~ ~override~
 	WRITE_BYTE 0x273 155	//innocent - reputation
-	//delete item
-		FOR (cnt=BYTE_AT 0x2C0 -1; cnt>=0; --cnt) BEGIN
-			READ_LONG SHORT_AT 0x2BC +(0x14 * (cnt)) item_name
-			PATCH_IF (~%item_name%~ STR_EQ  ~B1-2~) BEGIN
-				LPF fj_are_structure
-					INT_VAR fj_delete_mode = EVAL %cnt%
-					STR_VAR fj_structure_type = item
-				END
-			END
-		END
+	REMOVE_CRE_ITEM ~B1-2~
 
 COPY_EXISTING ~DUNKIN.CRE~ ~override~
 	LPF ADD_CRE_SCRIPT
@@ -21,7 +12,6 @@ COPY_EXISTING ~DUNKIN.CRE~ ~override~
 		RET success
 	END
 	PATCH_IF !success BEGIN PATCH_FAIL ~ERROR: ADD_CRE_SCRIPT was unable to assign script in %SOURCE_RES%!~ END
-
 
 COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
 	~JA#BGT_AdvPack/Marl/JA#GUAB2.CRE~ ~override~
