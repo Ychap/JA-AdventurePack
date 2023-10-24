@@ -10,8 +10,7 @@ COPY_EXISTING ~AR7238.BCS~ ~override~ // %NBaldursGate_RamazithsTower_L6%
 		~CreateCreature("RAMAZI",[0.0],0)~
 		~CreateCreature("RAMAZI",[169.147],13)~
 	END
-IF_EXISTS
-BUT_ONLY_IF_IT_CHANGES
+IF_EXISTS BUT_ONLY
 
 
 <<<<<<<< ...inlined/AR7300_old.baf
@@ -58,8 +57,7 @@ COPY_EXISTING ~AR7300.BCS~ ~override~ // %NBaldursGate%
 			~ActionOverride("Ramazith",DestroySelf()) SetGlobal("RamazithMove","GLOBAL",1)~
 		END
 	END
-IF_EXISTS
-BUT_ONLY_IF_IT_CHANGES
+IF_EXISTS BUT_ONLY
 
 // BGEE/EET (Ramazith moves into his tower when Abela is gone)
 COPY_EXISTING ~RAMAZITH.BCS~ ~override~
@@ -68,7 +66,7 @@ COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 		~IF[%WNL%%MNL%%LNL%%TAB% ]+Global("HelpRamazith","GLOBAL",0)~
 		~IF OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4)~
 	END
-BUT_ONLY_IF_IT_CHANGES
+BUT_ONLY
 
 
 // Replace in Ramazith's tower L2 existing creatures with spawns
@@ -151,10 +149,10 @@ ADD_JOURNAL @22 @39 @1023 USING ~JA#BGT_AdvPack/languages/%LANGUAGE%/ja#jopi.tra
 
 
 COPY_EXISTING ~RAGEFA.CRE~ ~override~
-	WRITE_ASCII 0x248 ~SHOUTDLG~ #8
-
+	WRITE_ASCII 0x248 ~SHOUTDLG~ #8 // override ~INITDLG~ (BGT)
+BUT_ONLY
 COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~
-	WRITE_ASCII 0x268 ~RUNENEMY~ #8
+	WRITE_ASCII 0x268 ~RUNENEMY~ #8 // override ~WDRUNSGT~
 	WRITE_ASCII 0x2cc ~JA#JOPI~ #8
 COPY ~JA#BGT_AdvPack/Ramazith/JA#GOLC1.CRE~ ~override~
 	SAY NAME1 @2040
