@@ -5,7 +5,8 @@ BEGIN 5 END
 BEGIN END
 ~SetGlobal("JA#DUNKIN","%Beregost_FeldepostsInn_L1%",2)~
 
+
 ADD_TRANS_ACTION DUNKIN
 BEGIN 7 END
 BEGIN END
-~ClearAllActions()~
+~SetGlobal("JA#MARLDLG","LOCALS",1) ClearAllActions() ActionOverride("Marl",ChangeEnemyAlly(Myself,NEUTRAL)) ActionOverride("Marl",MoveToPoint([701.773]))~
