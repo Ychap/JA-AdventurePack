@@ -20,7 +20,8 @@ ActionOverride("JA#GUAB3",EscapeArea())
 TakePartyGold(200)~
 END
 
-ADD_STATE_TRIGGER KELDDA 1 ~GlobalLT("JA#MARL_GUARD","GLOBAL",1)~
+
+SET_WEIGHT KELDDA 3 #-1
 
 REPLACE_STATE_TRIGGER KELDDA 3
 ~GlobalGT("JA#MARL_GUARD","GLOBAL",0) %state1_trigger%~
