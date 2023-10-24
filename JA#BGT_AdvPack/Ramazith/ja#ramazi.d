@@ -68,7 +68,6 @@ ALTER_TRANS RAMAZI
 BEGIN 19 END
 BEGIN 0 END
 BEGIN
-  "ACTION" ~~
   "REPLY" ~@14~
   "EPILOGUE" ~GOTO JA#RAMAZITH_6~
 END
@@ -83,16 +82,12 @@ ALTER_TRANS RAMAZI
 BEGIN ~%default_state_during_quest%~ END // 10(BGEE/EET) or 22(BGT)
 BEGIN 0 END
 BEGIN
-  "TRIGGER" ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~
-  "ACTION" ~~
   "REPLY" ~@16~
   "EPILOGUE" ~GOTO JA#RAMAZITH_22~
 END
 
 EXTEND_BOTTOM RAMAZI ~%default_state_during_quest%~ // 10(BGEE/EET) or 22(BGT)
-IF ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~ THEN
-REPLY @3
-GOTO JA#RAMAZITH_7
+IF ~~ THEN REPLY @3 GOTO JA#RAMAZITH_7
 END
 
 
