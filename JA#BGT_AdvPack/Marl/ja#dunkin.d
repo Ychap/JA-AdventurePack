@@ -9,4 +9,4 @@ BEGIN END
 ADD_TRANS_ACTION DUNKIN
 BEGIN 7 END
 BEGIN END
-~SetGlobal("JA#MARLDLG","LOCALS",1) ClearAllActions() ActionOverride("Marl",ChangeEnemyAlly(Myself,NEUTRAL)) ActionOverride("Marl",MoveToPoint([701.773]))~
+~SetGlobal("JA#MARLDLG","LOCALS",1) ClearAllActions() ChangeEnemyAlly("Marl",NEUTRAL) ActionOverride("Marl",MoveToPoint([701.773]))~

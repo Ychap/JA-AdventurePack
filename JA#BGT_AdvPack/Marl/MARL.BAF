@@ -18,14 +18,6 @@ THEN
 END
 
 IF
-	Global("JA#MARL_GUARD","GLOBAL",3)
-	Allegiance(Myself,ENEMY)
-THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,NEUTRAL)
-END
-
-IF
 	Global("JA#MARL_GUARD","GLOBAL",0)
 	AttackedBy(Player1,0)
 	OR(5)
