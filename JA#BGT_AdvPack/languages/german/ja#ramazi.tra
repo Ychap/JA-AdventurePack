@@ -1,5 +1,5 @@
 @0    = ~Nein, nein! Das seht Ihr falsch. Ich werde schon bald mit der Nymphe zurück sein!~
-@1    = ~Ihr wollt sie als Zutat? Was seid Ihr nur für ein Monster?! Lasst sie sofort frei!~
+// @1    = ~Ihr wollt sie als Zutat? Was seid Ihr nur für ein Monster?! Lasst sie sofort frei!~
 @2    = ~Nun gut. Dann macht mit der Nymphe, was Ihr wollt. Wir verschwinden.~
 @3    = ~Ich mache bei dieser Sache nicht mehr mit! Seht zu, wie Ihr an Eure Nymphe gelangt!~
 @4    = ~Hmpf, dann beeilt Euch! Ich kann nicht ewig auf diese Rezeptur warten.~
@@ -13,7 +13,7 @@
 @12   = ~Dann soll es so sein. Sterbt Ihr betrügerischen Missgeburten!~
 @13   = ~Bitte verlasst jetzt mein Heim. Ich wünsche Euch einen guten Abend.~
 @14   = ~Macht Euch bereit zu sterben, Nekromant!~
-@15   = ~Hat mich gefreut, mich Euch Geschäfte zu machen. Lebt wohl.~
+// @15   = ~Hat mich gefreut, mich Euch Geschäfte zu machen. Lebt wohl.~
 @16   = ~Bin schon wieder weg!~
 @17   = ~Ich wäre sehr an diesen magischen Gegenständen interessiert, die Ihr aus der Nymphe herstellen wollt.~
 @18   = ~Die gefangene Nymphe

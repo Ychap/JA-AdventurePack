@@ -40,26 +40,23 @@ BEGIN 0 END
 ~CreateCreature("ABELA",[376.228],2) ActionOverride("Abela",Wait(1))~
 
 
-ALTER_TRANS RAMAZI
-BEGIN 14 END
-BEGIN 0 END
-BEGIN
-  "ACTION" ~AddexperienceParty(400) ReputationInc(-1) %state15_response0_action%~
-END
+/* Taken out - this is bad for compatibility (bg1npc does I_C_T3 at state 15)
+ADD_TRANS_ACTION RAMAZI
+BEGIN 15 END
+BEGIN END
+~AddexperienceParty(400) ReputationInc(-1)~
 
 ALTER_TRANS RAMAZI
 BEGIN 15 END
 BEGIN 0 END
 BEGIN
-  "ACTION" ~~
   "REPLY" ~@15~
-  "EPILOGUE" ~GOTO JA#RAMAZITH_15~
 END
 
 EXTEND_BOTTOM RAMAZI 15
 IF ~~ THEN REPLY @1 GOTO JA#RAMAZITH_6
-IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
+*/
 
 
 EXTEND_BOTTOM RAMAZI 16 18

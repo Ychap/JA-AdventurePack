@@ -1,5 +1,5 @@
 @0	= ~No, no! You're wrong. I'll be back with the nymph soon!~
-@1	= ~You want her as an ingredient? What kind of monster are you?! Let her go immediately!~
+// @1	= ~You want her as an ingredient? What kind of monster are you?! Let her go immediately!~
 @2	= ~Very well. Just do whatever you want with the nymph. We'll leave.~
 @3	= ~I've changed my mind! You will have to get your nymph back by yourself!~
 @4	= ~Hmph, then hurry! I cannot wait forever for this recipe.~
@@ -13,7 +13,7 @@
 @12	= ~Then so shall it be. Die fraudulent bastard!~
 @13	= ~I must insist that you do not tarry in my home. Good eve to you.~
 @14	= ~Prepare to die, necromancer!~
-@15	= ~It was a pleasure to do business with you. Farewell.~
+// @15	= ~It was a pleasure to do business with you. Farewell.~
 @16	= ~I'm already gone!~
 @17	= ~I would be very interested in the magical items you are going to make out of the nymph.~
 @18	= ~The captive nymph
