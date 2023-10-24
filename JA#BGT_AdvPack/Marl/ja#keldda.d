@@ -1,7 +1,7 @@
 ALTER_TRANS KELDDA
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+BEGIN 4 END
+BEGIN 0 END
+BEGIN
   "ACTION" ~SetGlobal("JA#MARL_GUARD","GLOBAL",3)
 ActionOverride("JA#GUAB1",EscapeArea())
 ActionOverride("JA#GUAB2",EscapeArea())
@@ -10,9 +10,9 @@ TakePartyGold(300)~
 END
 
 ALTER_TRANS KELDDA
-BEGIN 5 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+BEGIN 5 END
+BEGIN 0 END
+BEGIN
   "ACTION" ~SetGlobal("JA#MARL_GUARD","GLOBAL",3)
 ActionOverride("JA#GUAB1",EscapeArea())
 ActionOverride("JA#GUAB2",EscapeArea())
@@ -33,8 +33,7 @@ ALTER_TRANS KELDDA
 BEGIN 3 END
 BEGIN END
 BEGIN
-  "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5)
-%state1_response0_action%~
+  "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5) %state1_response0_action%~
 END
 
 

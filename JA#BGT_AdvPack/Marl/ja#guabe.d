@@ -8,21 +8,22 @@ END
 
 IF ~Global("JA#MARL_GUARD","GLOBAL",2)~ THEN BEGIN 12
   SAY @1
-  IF ~~ THEN REPLY @2 DO ~ActionOverride("Marl",ChangeEnemyAlly(Myself,NEUTRAL))ActionOverride("Marl",NoAction())ClearAllActions()StartCutSceneMode()StartCutScene("JA#GBECU")~ EXIT
-  IF ~~ THEN REPLY @3 DO ~ActionOverride("JA#GUAB2",Enemy())ActionOverride("JA#GUAB3",Enemy())Enemy()~ EXIT
+  IF ~~ THEN REPLY @2 DO ~ActionOverride("Marl",ChangeEnemyAlly(Myself,NEUTRAL)) ClearAllActions() StartCutSceneMode() StartCutScene("JA#GBECU")~ EXIT
+  IF ~~ THEN REPLY @3 DO ~ActionOverride("JA#GUAB2",Enemy()) ActionOverride("JA#GUAB3",Enemy()) Enemy()~ EXIT
 END
 
 IF ~Global("JA#MARL_GUARD","GLOBAL",1)~ THEN BEGIN 13
   SAY @4
-  IF ~~ THEN REPLY @2 DO ~ActionOverride("Marl",ChangeEnemyAlly(Myself,NEUTRAL))ActionOverride("Marl",NoAction())ClearAllActions()StartCutSceneMode()StartCutScene("JA#GBECU")~ EXIT
-  IF ~~ THEN REPLY @3 DO ~ActionOverride("JA#GUAB2",Enemy())ActionOverride("JA#GUAB3",Enemy())Enemy()~ EXIT
+  IF ~~ THEN REPLY @2 DO ~ActionOverride("Marl",ChangeEnemyAlly(Myself,NEUTRAL)) ClearAllActions() StartCutSceneMode() StartCutScene("JA#GBECU")~ EXIT
+  IF ~~ THEN REPLY @3 DO ~ActionOverride("JA#GUAB2",Enemy()) ActionOverride("JA#GUAB3",Enemy()) Enemy()~ EXIT
 END
 
+// END JA#GUAB1
 
 
 BEGIN ~JA#GUAB4~
 
-IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)NumTimesTalkedTo(0)~ THEN BEGIN 1
+IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%) NumTimesTalkedTo(0)~ THEN BEGIN 1
   SAY @5
   IF ~~ THEN EXIT
 END
@@ -37,11 +38,12 @@ IF ~True()~ THEN BEGIN 4
   IF ~~ THEN EXIT
 END
 
+// END JA#GUAB4
 
 
 BEGIN ~JA#GUAB5~
 
-IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)NumTimesTalkedTo(0)~ THEN BEGIN 2
+IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%) NumTimesTalkedTo(0)~ THEN BEGIN 2
   SAY @8
   IF ~~ THEN JOURNAL @9 GOTO 3
 END
@@ -61,11 +63,17 @@ IF ~True()~ THEN BEGIN 4
   IF ~~ THEN EXIT
 END
 
+// END JA#GUAB5
 
 
 BEGIN ~JA#GUAB6~
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN JA#GUAB4_1
+IF ~OR(4)
+!Dead("Bassilus")
+Global("wyvernp","GLOBAL",0)
+!Dead("Mulahey")
+GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)
+NumTimesTalkedTo(0)~ THEN BEGIN JA#GUAB4_1
   SAY @11
   IF ~~ THEN REPLY @12 GOTO 14
   IF ~~ THEN REPLY @13 EXIT
@@ -125,6 +133,8 @@ IF ~True()~ THEN BEGIN 4
   IF ~~ THEN EXIT
 END
 
+// END JA#GUAB6
+
 
 BEGIN ~JA#GUAB7~
 
@@ -143,30 +153,37 @@ IF ~RandomNum(2,2)~ THEN BEGIN 3
   IF ~~ THEN EXIT
 END
 
+// END JA#GUAB7
+
 
 BEGIN ~JA#GUAB8~
 
-IF ~RandomNum(2,1)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
+IF ~RandomNum(2,1) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
   SAY @30
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
+IF ~RandomNum(2,2) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
   SAY @31
   IF ~~ THEN EXIT
 END
 
+// END JA#GUAB8
+
 BEGIN ~JA#GUAB9~
 
-IF ~RandomNum(2,1)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
+IF ~RandomNum(2,1) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
   SAY @32
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
+IF ~RandomNum(2,2) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
   SAY @33
   IF ~~ THEN EXIT
 END
+
+// END JA#GUAB9
+
 
 CHAIN
 IF ~!Dead("Bassilus")~
@@ -178,13 +195,12 @@ DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)AddJournalEntry(@10
 == JA#GUAB9 @37
 == JA#GUAB8 @38
 == JA#GUAB9 @39
-== JA#GUAB8 @40
-= @41
+== JA#GUAB8 @40 = @41
 == JA#GUAB9 @42
 EXIT
 
 CHAIN
-IF ~Dead("Bassilus")Dead("Mulahey")~
+IF ~Dead("Bassilus") Dead("Mulahey")~
 THEN JA#GUAB8 JA#GUAB8_3
 @43
 DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~
