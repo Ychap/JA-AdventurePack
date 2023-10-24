@@ -5,6 +5,17 @@
 
 //Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
+// bg1npc is installed: Set "X#XzarBoss" or "X#MontBoss" to -1 (so the the dialogs of JAP's quest extention will be triggered)
+COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EVALUATE_REGEXP
+		~SetGlobal("X#XzarBoss","GLOBAL",1)~
+		~SetGlobal("X#XzarBoss","GLOBAL",-1)~
+		REPLACE_TEXTUALLY EVALUATE_REGEXP
+		~SetGlobal("X#MontBoss","GLOBAL",1)~
+		~SetGlobal("X#MontBoss","GLOBAL",-1)~
+	END
+BUT_ONLY
 
 COPY_EXISTING ~NIEMAIN.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
