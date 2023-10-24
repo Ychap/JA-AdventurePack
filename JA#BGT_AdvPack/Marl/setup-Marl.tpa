@@ -36,15 +36,15 @@ COPY_EXISTING ~KELDDA.DLG~ ~override~
 
 	SET state = ofs_states + (state * 0x10)
 	READ_LONG (state + 0x4) idx_first_response
-	READ_LONG (state + 0xc) idx_state_trigger
+	READ_LONG (state + 0xc) idx_state1_trigger
 
-	SET trigger = ofs_state_triggers + (idx_state_trigger * 0x8)
+	SET trigger = ofs_state_triggers + (idx_state1_trigger * 0x8)
 	READ_LONG (trigger + 0x0) ofs_trigger
 	READ_LONG (trigger + 0x4) len_trigger
 	READ_ASCII ofs_trigger state1_trigger (len_trigger) NULL
 
-	SET response = ofs_responses + (idx_first_response * 0x20)
-	READ_LONG (response + 0x10) idx_action
+	SET first_response = ofs_responses + (idx_first_response * 0x20)
+	READ_LONG (first_response + 0x10) idx_action
 
 	SET action = ofs_actions + (idx_action * 0x8)
 	READ_LONG (action + 0x0) ofs_action
