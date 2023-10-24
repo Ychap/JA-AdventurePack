@@ -26,15 +26,22 @@ COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
 	SAY NAME2 @2085
 
 
-// Grab action text from first response of state 1
+// Grab trigger and action text from first response of state 1
 COPY_EXISTING ~KELDDA.DLG~ ~override~
 	SET state = 1
     READ_LONG 0x0c ofs_states
     READ_LONG 0x14 ofs_responses
+    READ_LONG 0x18 ofs_state_triggers
     READ_LONG 0x28 ofs_actions
 
 	SET state = ofs_states + (state * 0x10)
 	READ_LONG (state + 0x4) idx_first_response
+	READ_LONG (state + 0xc) idx_state_trigger
+
+	SET trigger = ofs_state_triggers + (idx_state_trigger * 0x8)
+	READ_LONG (trigger + 0x0) ofs_trigger
+	READ_LONG (trigger + 0x4) len_trigger
+	READ_ASCII ofs_trigger state1_trigger (len_trigger) NULL
 
 	SET response = ofs_responses + (idx_first_response * 0x20)
 	READ_LONG (response + 0x10) idx_action
