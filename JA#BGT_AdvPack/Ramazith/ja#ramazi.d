@@ -1,3 +1,15 @@
+// BGT (add missing Enemy() and QUICK_TELEPORT when Ramazith teleports)
+REPLACE_ACTION_TEXT RAMAZI
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
+UNLESS ~QUICK_TELEPORT~
+
+// BGEE/EET (add missing WIZARD_LIGHTNING_BOLT when Ramazith teleports)
+REPLACE_ACTION_TEXT RAMAZI
+~Enemy()[%WNL%%MNL%%LNL%%TAB% ]*ForceSpellPoint(\[169.147\],QUICK_TELEPORT)~
+~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
+UNLESS ~WIZARD_LIGHTNING_BOLT~
+
 
 // BGT (better check for failed quest (similar as in BGEE/EET))
 REPLACE_TRANS_TRIGGER RAMAZI
@@ -9,25 +21,13 @@ BEGIN 0 END
 // BGEE/EET (set "RamazithMove" as in BGT)
 ADD_TRANS_ACTION RAMAZI
 BEGIN 11 12 22 END
-BEGIN 0 END
+BEGIN END
 ~SetGlobal("RamazithMove","GLOBAL",2)~
 IF ~Enemy()~
 IF ~QUICK_TELEPORT~
 UNLESS ~SetGlobal("RamazithMove","GLOBAL",[23])~
 
-// BGT (add missing Enemy() and QUICK_TELEPORT when Ramazith teleports)
-REPLACE_ACTION_TEXT RAMAZI
-~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT)~
-~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
-UNLESS ~QUICK_TELEPORT~
-
-// BGEE/EET (add missing WIZARD_LIGHTNING_BOLT when Ramazith teleports)
-REPLACE_ACTION_TEXT RAMAZI
-~Enemy()[%WNL%%MNL%%LNL%%TAB% ]+ForceSpellPoint(\[169.147\],QUICK_TELEPORT)~
-~ForceSpell(LastTalkedToBy(Myself),WIZARD_LIGHTNING_BOLT) Enemy() ForceSpellPoint([169.147],QUICK_TELEPORT)~
-UNLESS ~WIZARD_LIGHTNING_BOLT~
-
-
+// BGT (only trigger while on quest)
 REPLACE_STATE_TRIGGER RAMAZI 22
 ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~
 IF ~True()~
