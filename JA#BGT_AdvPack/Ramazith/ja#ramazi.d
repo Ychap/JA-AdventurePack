@@ -11,12 +11,11 @@ REPLACE_ACTION_TEXT RAMAZI
 UNLESS ~WIZARD_LIGHTNING_BOLT~
 
 
-// BGT (better check for failed quest (similar as in BGEE/EET))
-REPLACE_TRANS_TRIGGER RAMAZI
-BEGIN 11 END
-BEGIN 0 END
-~!PartyHasItem("MISC68")~
+// BGT (Fix: better check for failed quest (similar as in BGEE/EET))
+ADD_STATE_TRIGGER RAMAZI 11
 ~OR(2) Dead("Abela") Global("AbelaTeleport","GLOBAL",1)~
+UNLESS ~Global("AbelaTeleport","GLOBAL",1)~
+UNLESS ~Global("AbelaNotExists","GLOBAL",1)~
 
 // BGEE/EET (set "RamazithMove" as in BGT)
 ADD_TRANS_ACTION RAMAZI
