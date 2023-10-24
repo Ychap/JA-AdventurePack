@@ -29,22 +29,11 @@ COPY_EXISTING ~NIEMAI.CRE~ ~override/JA#NIEMA.CRE~
 	WRITE_ASCII 0x250 ~NONE~	#8
 	WRITE_ASCII 0x2cc ~JA#NIEMA~	#8 //DLG
 
-COPY_EXISTING ~OULAM.CRE~ ~override~
-			~WHEBER.CRE~ ~override~
+COPY_EXISTING_REGEXP ~OULAM\.CRE~ ~override~
+		~WHEBER\.CRE~ ~override~
+		~WILLIAM[1_]?\.CRE~ ~override~
 	WRITE_ASCII 0x2cc ~JA#ZENT1~	#8 //DLG
-
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY_EXISTING ~WILLIAM1.CRE~ ~override~
-		WRITE_ASCII 0x2cc ~JA#ZENT1~	#8 //DLG
-END
-ACTION_IF GAME_IS ~eet~ BEGIN
-	COPY_EXISTING ~WILLIAM_.CRE~ ~override~
-		WRITE_ASCII 0x2cc ~JA#ZENT1~	#8 //DLG
-END
-ACTION_IF GAME_IS ~bgee~ BEGIN
-	COPY_EXISTING ~WILLIAM.CRE~ ~override~
-		WRITE_ASCII 0x2cc ~JA#ZENT1~	#8 //DLG
-END
+UNLESS ~NobleOrder~ // exclude WILLIAM.CRE(Sir Branet Al-Thon) of BGT/EET
 
 EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7704_niemain.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7706_niemain.BAF~ EVALUATE_BUFFER
