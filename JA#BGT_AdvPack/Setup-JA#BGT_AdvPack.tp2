@@ -452,7 +452,6 @@ INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 // Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 //Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
 BEGIN @2121 DESIGNATED 40
@@ -460,6 +459,15 @@ LABEL "JA#BGT_AdvPack-Niemain_Zentarim"
 FORBID_COMPONENT ~bg1npc.tp2~ 10 ~The BG1NPC Project installs a simliar version.~
 
 INCLUDE ~JA#BGT_AdvPack/Niemain_Zentarim/setup-Niemain_Zentarim.tpa~
+
+///////////////////////////////
+//RESTORED: Guards in Beregost
+///////////////////////////////
+
+BEGIN ~Guards in Beregost~ DESIGNATED 41
+LABEL "JA#BGT_AdvPack-Beregost"
+
+INCLUDE ~JA#BGT_AdvPack/Beregost/setup-Beregost.tpa~
 
 
 ///////////////////////////////////////////////////
