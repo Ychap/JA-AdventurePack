@@ -158,12 +158,12 @@ END
 
 BEGIN ~JA#GUAB8~
 
-IF ~RandomNum(2,1) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
+IF ~RandomNum(2,1)~ THEN BEGIN 1
   SAY @30
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
+IF ~RandomNum(2,2)~ THEN BEGIN 2
   SAY @31
   IF ~~ THEN EXIT
 END
@@ -172,12 +172,12 @@ END
 
 BEGIN ~JA#GUAB9~
 
-IF ~RandomNum(2,1) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 1
+IF ~RandomNum(2,1)~ THEN BEGIN 1
   SAY @32
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2) Global("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~ THEN BEGIN 2
+IF ~RandomNum(2,2)~ THEN BEGIN 2
   SAY @33
   IF ~~ THEN EXIT
 END
@@ -186,24 +186,24 @@ END
 
 
 CHAIN
-IF ~!Dead("Bassilus")~
-THEN JA#GUAB8 JA#GUAB8_1
-@34
-DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)AddJournalEntry(@1020,INFO)~
-== JA#GUAB9 @35
-== JA#GUAB8 @36
-== JA#GUAB9 @37
-== JA#GUAB8 @38
-== JA#GUAB9 @39
-== JA#GUAB8 @40 = @41
-== JA#GUAB9 @42
-EXIT
+IF WEIGHT #-1 ~Global("JA#GUABE_ROB","%Beregost_JovialJuggler_L1%",1)~
+THEN JA#GUAB8 JA#GUAB8_2
+@49
+DO ~SetGlobal("JA#GUABE_ROB","%Beregost_JovialJuggler_L1%",2)~
+== JA#GUAB9 @50
+== JA#GUAB8 @51
+== JA#GUAB9 @52
+== JA#GUAB8 @53
+== JA#GUAB9 @54
+== JA#GUAB8 @55
+END
+IF ~~ THEN JOURNAL @1021 EXIT
 
 CHAIN
-IF ~Dead("Bassilus") Dead("Mulahey")~
+IF WEIGHT #-1 ~Global("JA#GUABE_NAS","%Beregost_JovialJuggler_L1%",1)~
 THEN JA#GUAB8 JA#GUAB8_3
 @43
-DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~
+DO ~SetGlobal("JA#GUABE_NAS","%Beregost_JovialJuggler_L1%",2)~
 = @44
 == JA#GUAB9 @45
 == JA#GUAB8 @46
@@ -212,14 +212,16 @@ DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)~
 EXIT
 
 CHAIN
-IF ~Dead("Bassilus")~
-THEN JA#GUAB8 JA#GUAB8_2
-@49
-DO ~SetGlobal("JA#GUABE_ACT","%Beregost_JovialJuggler_L1%",0)AddJournalEntry(@1021,INFO)~
-== JA#GUAB9 @50
-== JA#GUAB8 @51
-== JA#GUAB9 @52
-== JA#GUAB8 @53
-== JA#GUAB9 @54
-== JA#GUAB8 @55
-EXIT
+IF WEIGHT #-1 ~Global("JA#GUABE_BAS","%Beregost_JovialJuggler_L1%",1)~
+THEN JA#GUAB8 JA#GUAB8_1
+@34
+DO ~SetGlobal("JA#GUABE_BAS","%Beregost_JovialJuggler_L1%",2)~
+== JA#GUAB9 @35
+== JA#GUAB8 @36
+== JA#GUAB9 @37
+== JA#GUAB8 @38
+== JA#GUAB9 @39
+== JA#GUAB8 @40 = @41
+== JA#GUAB9 @42
+END
+IF ~~ THEN JOURNAL @1020 EXIT
