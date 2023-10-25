@@ -188,10 +188,11 @@ END
 
 IF ~True()~ THEN BEGIN JA#RAMAZITH_5
 SAY @9
-IF ~~ THEN REPLY @11 EXIT
+IF ~~ THEN REPLY @11 GOTO JA#RAMAZITH_15
 IF ~Global("HelpRamazith","GLOBAL",3) InMyArea("Abela") !Dead("Abela")~ THEN REPLY @10 GOTO JA#RAMAZITH_6
 IF ~Global("HelpRamazith","GLOBAL",3) Global("JA#RamazithDeal","GLOBAL",0) InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
+
 
 IF ~~ THEN BEGIN JA#RAMAZITH_6
 SAY @12
