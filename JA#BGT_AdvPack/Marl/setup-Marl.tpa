@@ -50,7 +50,9 @@ BUT_ONLY
 
 OUTER_PATCH_SAVE ~state1_response0_action~ ~%state1_response0_action%~ BEGIN
 	REPLACE_TEXTUALLY ~GiveGoldForce([0-9]+)~ ~GiveGoldForce(2000)~
-	REPLACE_TEXTUALLY ~AddexperienceParty([0-9]+)~ ~AddexperienceParty(500)~
+	REPLACE_EVALUATE ~AddExperienceParty(\([0-9]+\))~ BEGIN
+		SET result = MATCH1 / 2
+	END ~AddExperienceParty(%result%)~
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#KELDDA.D~
