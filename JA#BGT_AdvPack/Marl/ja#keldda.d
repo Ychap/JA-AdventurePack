@@ -34,4 +34,5 @@ BEGIN 3 END
 BEGIN END
 BEGIN
   "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5) %state1_response0_action%~
+  "SOLVED_JOURNAL" ~@0~
 END

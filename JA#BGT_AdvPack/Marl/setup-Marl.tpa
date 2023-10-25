@@ -39,6 +39,7 @@ COPY_EXISTING ~KELDDA.DLG~ ~override~
 	READ_ASCII ofs_trigger state1_trigger (len_trigger) NULL
 
 	SET first_response = ofs_responses + (idx_first_response * 0x20)
+	// READ_STRREF (first_response + 0x08) state1_response0_journal
 	READ_LONG (first_response + 0x10) idx_action
 
 	SET action = ofs_actions + (idx_action * 0x8)
@@ -53,6 +54,7 @@ OUTER_PATCH_SAVE ~state1_response0_action~ ~%state1_response0_action%~ BEGIN
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#KELDDA.D~
+ADD_JOURNAL EXISTING @0 USING ~JA#BGT_AdvPack/languages/%s/ja#keldda.tra~
 
 COMPILE ~JA#BGT_AdvPack/Marl/JA#MARL.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#DUNKIN.D~
