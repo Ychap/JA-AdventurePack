@@ -21,18 +21,9 @@ COPY_EXISTING ~VOLTIN.CRE~ ~override~
 	ADD_MEMORIZED_SPELL ~SPPR302~ #2 ~priest~
 	ADD_MEMORIZED_SPELL ~SPPR402~ #3 ~priest~
 
-COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L1%~ #8
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door7200~
-					destination_area	= EVAL ~%NWBaldursGate%~
-		END
-	END
-COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L2%~ #8
-	END
+COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.CRE~ ~override~
+
 
 COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 	//add region triggers
@@ -65,10 +56,21 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_name           = Frja#c07
 	END
 
-COPY_EXISTING ~AMB_E14A.WAV~ ~override~
+COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L1%~ #8
+		LPF ALTER_AREA_REGION
+			STR_VAR region_name			= ~Door7200~
+					destination_area	= EVAL ~%NWBaldursGate%~
+		END
+	END
 
-COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L2%~ #8
+	END
+
+COPY_EXISTING ~AMB_E14A.WAV~ ~override~
 
 
 COPY_EXISTING ~LAERTA.DLG~ ~override~
