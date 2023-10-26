@@ -70,20 +70,18 @@ COPY_EXISTING ~AMB_E14A.WAV~ ~override~
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.CRE~ ~override~
 
+
 COPY_EXISTING ~LAERTA.DLG~ ~override~
 	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 0
-		RET
-		strref
+		INT_VAR state = 0
+		RET strref
 	END
-	SET gervis1 = strref
 BUT_ONLY
 
 <<<<<<<< ...inlined/ja#replace_action.d
 REPLACE_ACTION_TEXT_PROCESS LAERTA // BGEE/EET
-~EraseJournalEntry(%gervis1%)~
-~EraseJournalEntry(@43) EraseJournalEntry(%gervis1%)~
+~EraseJournalEntry(%strref%)~
+~EraseJournalEntry(@43) EraseJournalEntry(%strref%)~
 GERVIS VOLTIN // BGT
 
 REPLACE_ACTION_TEXT GERVIS
@@ -101,6 +99,5 @@ ADD_JOURNAL EXISTING @43 @57 @58 @81 @82 USING ~JA#BGT_AdvPack/languages/%s/ja#g
 COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
 COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
 COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.BAF~
 EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~ EVALUATE_BUFFER
