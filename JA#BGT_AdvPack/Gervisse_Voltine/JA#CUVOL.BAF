@@ -46,5 +46,3 @@ THEN
 		Wait(4)
 		Dialogue([PC])
 END
-
-

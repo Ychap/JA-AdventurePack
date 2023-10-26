@@ -5,9 +5,8 @@
 COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~ //7200,7300,7600,7700s.u.
 	WRITE_ASCII 0x2cc ~BOYBA3~	#8
 
-COPY_EXISTING ~LOUISE.CRE~ ~override~
-			~LAERTA.CRE~ ~override~
-	WRITE_ASCII 0x258	~NONE~	#8
+COPY_EXISTING ~LAERTA.CRE~ ~override~
+              ~LOUISE.CRE~ ~override~
 	WRITE_ASCII 0x268	~NONE~	#8
 
 COPY_EXISTING ~VOLTIN.CRE~ ~override~
@@ -27,15 +26,20 @@ COPY_EXISTING ~VOLTIN.CRE~ ~override~
 
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L1%~ #8
 		LPF ALTER_AREA_REGION
 			STR_VAR region_name			= ~Door7200~
 					destination_area	= EVAL ~%NWBaldursGate%~
 		END
 	END
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L2%~ #8
+	END
 
 COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
-	LPF  ~fj_are_structure~
+	//add region triggers
+	LPF fj_are_structure
 		INT_VAR
 		fj_type         = 2    //travel
 		fj_box_left     = 4000  //kleinstes x
@@ -53,7 +57,8 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_destination_area = JA#C07
 		fj_destination_name = FR7200
 	END
-	LPF  ~fj_are_structure~
+	//add entrance
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 4135    //x
 		fj_loc_y       = 1805   //y
@@ -62,6 +67,7 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_structure_type = entrance
 		fj_name           = Frja#c07
 	END
+	//add actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 2756

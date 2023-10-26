@@ -151,5 +151,3 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",50)
 END
-
-
