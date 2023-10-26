@@ -14,10 +14,10 @@ COPY_EXISTING ~%BaldursGate_Undercellars%.ARE~ ~override~
 		fj_loc_y          = 1094
 		fj_dest_x         = 1369
 		fj_dest_y         = 1094
-		fj_orientation    = 4      
+		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Noblay~  
+		fj_name           = ~Noblay~
 		fj_cre_resref     = ~JA#NOBLY~
 		fj_dlg_resref	  = ~JA#NOBLY~
 	END
@@ -29,13 +29,13 @@ COPY_EXISTING ~%NBaldursGate_ThreeOldKegs_L3%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1014
-		fj_loc_y          = 498 
+		fj_loc_y          = 498
 		fj_dest_x         = 1014
-		fj_dest_y         = 498 
-		fj_orientation    = 3      
+		fj_dest_y         = 498
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Nobl15~  
+		fj_name           = ~Nobl15~
 		fj_cre_resref     = ~JA#NOB15~
 		fj_dlg_resref	  = ~JA#NOB15~
 	END
@@ -50,10 +50,10 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L2%.ARE~ ~override~
 		fj_loc_y          = 409
 		fj_dest_x         = 545
 		fj_dest_y         = 409
-		fj_orientation    = 7     
+		fj_orientation    = 7
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~FTOWB3~  
+		fj_name           = ~FTOWB3~
 		fj_cre_resref     = ~JA#FTOB3~
 		fj_dlg_resref	  = ~JA#FTOB3~
 	END
@@ -66,56 +66,90 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/JA#LOWLG.D~
 COMPILE ~JA#BGT_AdvPack/Nobles/JA#LOWLG.BAF~
 
 COPY_EXISTING ~%BaldursGate_DocksLowLantern_D1%.ARE~ ~override~
-	//add new actors
+	//add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 425
 		fj_loc_y          = 295
 		fj_dest_x         = 425
 		fj_dest_y         = 295
-		fj_orientation    = 3     
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Wache~   
+		fj_name           = ~Wache~
 		fj_cre_resref     = ~JA#LOWLG~
 		fj_dlg_resref	  = ~JA#LOWLG~
 	END
-	
+
+COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
+	//add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 634
+		fj_loc_y          = 1303
+		fj_dest_x         = 634
+		fj_dest_y         = 1303
+		fj_orientation    = 2
+		fj_schedule 	  = 0b000111111111111111110000
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Junge~
+		fj_cre_resref     = ~JA#BOYBA~
+		fj_dlg_resref	  = ~BOYBA3~
+	END
+
 COPY_EXISTING ~%NBaldursGate%.ARE~ ~override~
-	//add new actors
+	//add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1071
 		fj_loc_y          = 1252
 		fj_dest_x         = 1071
 		fj_dest_y         = 1252
-		fj_orientation    = 15  
+		fj_orientation    = 15
 		fj_schedule		  = 0b000111111111111111110000
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Junge~   
+		fj_name           = ~Junge~
 		fj_cre_resref     = ~JA#BOYBA~
-		fj_dlg_resref	  = ~BOYBA3~  
+		fj_dlg_resref	  = ~BOYBA3~
 	END
-	
+
+COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
+	//add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 2756
+		fj_loc_y          = 2769
+		fj_dest_x         = 2756
+		fj_dest_y         = 2769
+		fj_schedule		  = 0b000111111111111111110000
+		fj_orientation    = 4
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Junge~
+		fj_cre_resref     = ~JA#BOYBA~
+		fj_dlg_resref	  = ~BOYBA3~
+	END
+
 COPY_EXISTING ~%WBaldursGate%.ARE~ ~override~
-	//add new actors
+	//add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1800
-		fj_loc_y          = 376 
+		fj_loc_y          = 376
 		fj_dest_x         = 1800
-		fj_dest_y         = 376 
-		fj_orientation    = 10  
+		fj_dest_y         = 376
+		fj_orientation    = 10
 		fj_schedule		  = 0b000111111111111111110000
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Junge~   
+		fj_name           = ~Junge~
 		fj_cre_resref     = ~JA#BOYBA~
-		fj_dlg_resref	  = ~BOYBA3~  
+		fj_dlg_resref	  = ~BOYBA3~
 	END
 
-	
+
 //misc.d
 COMPILE ~JA#BGT_AdvPack/Nobles/JA#Nobl14.D~
 		~JA#BGT_AdvPack/Nobles/JA#Yago.D~
