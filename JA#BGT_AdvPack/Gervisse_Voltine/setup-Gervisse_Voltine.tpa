@@ -90,62 +90,24 @@ COPY_EXISTING ~LAERTA.DLG~ ~override~
 		strref
 	END
 	SET gervis1 = strref
-COPY_EXISTING ~GERVIS.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 1
-		RET
-		strref
-	END
-    SET gervis2 = strref
-COPY_EXISTING ~VOLTIN.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 1
-		RET
-		strref
-	END
-	SET gervis3 = strref
+BUT_ONLY
 
-/* if bg1npc interjections are installd, Faldorn will not tolerate if Voltine is attacked. Taken from bg1npc Project */
+<<<<<<<< ...inlined/ja#replace_action.d
+REPLACE_ACTION_TEXT_PROCESS LAERTA // BGEE/EET
+~EraseJournalEntry(%gervis1%)~
+~EraseJournalEntry(@43) EraseJournalEntry(%gervis1%)~
+GERVIS VOLTIN // BGT
 
-<<<<<<<< ...inlined/ja#gervis_bg1npc.d
-EXTEND_BOTTOM VOLTIN JA_VOLTIN_9
-  IF ~InParty("faldorn") InMyArea("faldorn") !StateCheck("faldorn",CD_STATE_NOTVALID)~ THEN EXTERN ~%FALDORN_JOINED%~ P5#FalMadVoltine
-END
-
-APPEND "%FALDORN_JOINED%"
-
-IF ~~ THEN BEGIN P5#FalMadVoltine
-SAY @90
-IF ~~ THEN DO ~SetGlobal("HelpVoltine","GLOBAL",1)
-EraseJournalEntry(%gervis1%)
-EraseJournalEntry(%gervis2%)
-EraseJournalEntry(%gervis3%)
-EraseJournalEntry(@43)
-ActionOverride("voltine",Enemy()) LeaveParty() SetLeavePartyDialogFile() ChangeAIScript("",DEFAULT) Enemy()~ EXIT
-END
-END
+REPLACE_ACTION_TEXT GERVIS
+~CreateCreature("VOLTIN",\[[0-9]+\.[0-9]+\],[^,)]+)~
+~SetGlobal("JA#GERVIS_QUEST","GLOBAL",1)~
 >>>>>>>>
 
-/* The BG1 NPC Project: Banters, Quests, and Interjections */
-/* BEGIN @1007 DESIGNATED 10 */
+COMPILE EVALUATE_BUFFER ~...inlined/ja#replace_action.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#gervis.tra~
 
-ACTION_IF (MOD_IS_INSTALLED ~BG1NPC/BG1NPC.TP2~ "10") BEGIN
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
 
-	PRINT ~BG1 NPC Quest und Banter Component detected~
-
-	COMPILE EVALUATE_BUFFER
-		~...inlined/ja#gervis_bg1npc.d~
-		~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
-		USING ~JA#BGT_AdvPack/languages/%s/JA#GERVIS.tra~
-END ELSE BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
-END
-
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#Laerta_Gervis_EE.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#GERVIS.tra~
-END
+ADD_JOURNAL EXISTING @43 @57 @58 @81 @82 USING ~JA#BGT_AdvPack/languages/%s/ja#gervis.tra~
 
 
 COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~

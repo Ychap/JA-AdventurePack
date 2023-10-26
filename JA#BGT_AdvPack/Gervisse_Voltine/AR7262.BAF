@@ -1,27 +1,14 @@
 IF
 	Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",0)
 	OR(2)
-	Global("JA#GERVIS_QUEST","GLOBAL",1)
-	Global("JA#GERVIS_QUEST","GLOBAL",10)
+		Global("JA#GERVIS_QUEST","GLOBAL",1)
+		Global("JA#GERVIS_QUEST","GLOBAL",10)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",1)
 		CreateCreature("JA#VOLTJ",[781.478],5)
 		Continue()
 END
-
-/* take this out - better compatibility with other NPC mods doing I_C_T into Laerta's dialogue 
-IF
-	Global("JA#GERVIS_SPWN","%NWBaldursGate_LaertasHouse_L1%",1)
-	TimeOfDay(NIGHT)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#GERVIS_SPWN","%NWBaldursGate_LaertasHouse_L1%",2)
-		CreateCreature("GERVIS",[348.733],7)
-		Continue()
-END
-*/
-
 
 IF
 	Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",51)
