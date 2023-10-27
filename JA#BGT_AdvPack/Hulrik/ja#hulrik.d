@@ -1,8 +1,10 @@
-
 ADD_STATE_TRIGGER HULRIK 2
 ~Global("XvartsDead","GLOBAL",8)~
 
-ADD_TRANS_ACTION HULRIK BEGIN 2 END BEGIN END ~SetGlobal("XvartsDead","GLOBAL",9)~
+ADD_TRANS_ACTION HULRIK
+BEGIN 2 END
+BEGIN END
+~IncrementGlobal("XvartsDead","GLOBAL",1)~
 
 /*
 ADD_STATE_TRIGGER HULRIK 4
@@ -21,10 +23,10 @@ Dead("Mulahey")
 Dead("Nexlit")
 Global("JA#HULRIK","LOCALS",0)~ THEN BEGIN JA#HULRIK_1
 SAY @0
-IF ~Dead("Mulahey")!Dead("Nexlit")Global("JA#HULRIK_MINES","LOCALS",0)~ THEN REPLY @1 DO ~SetGlobal("JA#HULRIK_MINES","LOCALS",1)~ GOTO JA#HULRIK_2
-IF ~!Dead("Mulahey")Dead("Nexlit")~ THEN REPLY @2 GOTO JA#HULRIK_5
-IF ~Dead("Mulahey")Dead("Nexlit")Global("JA#HULRIK_MINES","LOCALS",0)~ THEN REPLY @3 GOTO JA#HULRIK_6
-IF ~Dead("Mulahey")Dead("Nexlit")Global("JA#HULRIK_MINES","LOCALS",1)~ THEN REPLY @2 GOTO JA#HULRIK_5
+IF ~Dead("Mulahey") !Dead("Nexlit") Global("JA#HULRIK_MINES","LOCALS",0)~ THEN REPLY @1 DO ~SetGlobal("JA#HULRIK_MINES","LOCALS",1)~ GOTO JA#HULRIK_2
+IF ~!Dead("Mulahey") Dead("Nexlit")~ THEN REPLY @2 GOTO JA#HULRIK_5
+IF ~Dead("Mulahey") Dead("Nexlit") Global("JA#HULRIK_MINES","LOCALS",0)~ THEN REPLY @3 GOTO JA#HULRIK_6
+IF ~Dead("Mulahey") Dead("Nexlit") Global("JA#HULRIK_MINES","LOCALS",1)~ THEN REPLY @2 GOTO JA#HULRIK_5
 IF ~~ THEN REPLY @4 EXIT
 END
 
@@ -46,39 +48,32 @@ END
 
 IF ~~ THEN BEGIN JA#HULRIK_5
 SAY @10
-IF ~~ THEN DO ~SetGlobal("JA#HULRIK","LOCALS",1)ReputationInc(1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#HULRIK","LOCALS",1) ReputationInc(1)~ EXIT
 END
 
 IF ~~ THEN BEGIN JA#HULRIK_6
 SAY @11
-IF ~~ THEN DO ~SetGlobal("JA#HULRIK","LOCALS",1)ReputationInc(1)~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#HULRIK","LOCALS",1) ReputationInc(1)~ EXIT
 END
+
 
 /* generic dialogue after dialogue about Xvarts is done - therefor for Global("XvartsDead","GLOBAL",9) */
 IF WEIGHT #-1
-~GlobalGT("XvartsDead","GLOBAL",8)Global("JA#HULRIK","LOCALS",1)RandomNum(3,1)~ THEN BEGIN JA#HULRIK_7
+~GlobalGT("XvartsDead","GLOBAL",8) Global("JA#HULRIK","LOCALS",1) RandomNum(3,1)~ THEN BEGIN JA#HULRIK_7
 SAY @12
 IF ~~ THEN EXIT
 END
 
 IF WEIGHT #-1
-~GlobalGT("XvartsDead","GLOBAL",8)Global("JA#HULRIK","LOCALS",1)RandomNum(3,2)~ THEN BEGIN JA#HULRIK_8
+~GlobalGT("XvartsDead","GLOBAL",8) Global("JA#HULRIK","LOCALS",1) RandomNum(3,2)~ THEN BEGIN JA#HULRIK_8
 SAY @13
 IF ~~ THEN EXIT
 END
 
 IF WEIGHT #-1
-~GlobalGT("XvartsDead","GLOBAL",8)Global("JA#HULRIK","LOCALS",1)RandomNum(3,3)~ THEN BEGIN JA#HULRIK_9
+~GlobalGT("XvartsDead","GLOBAL",8) Global("JA#HULRIK","LOCALS",1) RandomNum(3,3)~ THEN BEGIN JA#HULRIK_9
 SAY @14
 IF ~~ THEN EXIT
 END
 
-END
-
-
-
-
-
-
-
-
+END // APPEND HULRIK
