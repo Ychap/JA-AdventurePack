@@ -39,22 +39,13 @@ BEGIN 0 END
 ~CreateCreature("ABELA",[376.228],2) ActionOverride("Abela",Wait(1))~
 
 
-ADD_TRANS_ACTION RAMAZI
-BEGIN 15 END
-BEGIN END
-~AddexperienceParty(400) ReputationInc(-1)~
+REPLACE_SAY RAMAZI 15 @40
 
-// Not shown if an interjection of bg1npc triggers
-ALTER_TRANS RAMAZI
-BEGIN 15 END
-BEGIN 0 END
-BEGIN
-  "REPLY" ~@15~
-END
+ADD_TRANS_TRIGGER RAMAZI 15 ~False()~
 
-// Not shown if an interjection of bg1npc triggers
-EXTEND_TOP RAMAZI 15 #1
-IF ~~ THEN REPLY @1 GOTO JA#RAMAZITH_6
+EXTEND_BOTTOM RAMAZI 15
+IF ~~ THEN REPLY @15 DO ~ReputationInc(-1)~ GOTO JA#RAMAZITH_15_PART2
+IF ~~ THEN REPLY @1 GOTO 17
 END
 
 
@@ -204,6 +195,12 @@ END
 IF ~~ THEN BEGIN JA#RAMAZITH_15
 SAY @13
 IF ~~ THEN EXIT
+END
+
+
+IF ~~ THEN BEGIN JA#RAMAZITH_15_PART2
+SAY @41
+COPY_TRANS RAMAZI 15 // Get quest reward
 END
 
 

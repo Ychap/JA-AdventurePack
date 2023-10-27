@@ -13,7 +13,7 @@
 @12   = ~Dann soll es so sein. Sterbt Ihr betrügerischen Missgeburten!~
 @13   = ~Verlasst jetzt mein Heim. Ich wünsche Euch einen guten Abend.~
 @14   = ~Macht Euch bereit zu sterben, Nekromant!~
-@15   = ~Hat mich gefreut, mich Euch Geschäfte zu machen. Lebt wohl.~
+@15   = ~Aber gerne doch. Ihr erwähntet auch noch etwas von einer Belohnung?~
 @16   = ~Bin schon wieder weg!~
 @17   = ~Ich wäre sehr an diesen magischen Gegenständen interessiert, die Ihr aus der Nymphe herstellen wollt.~
 @18   = ~Die gefangene Nymphe
@@ -39,3 +39,7 @@ Ich brachte die Nymphe Abela wie vereinbart zu Ramazith. Der Magier hat mich geb
 @36   = ~Oh, ich bin schon wieder weg.~
 @37   = ~HAHA! Habt Ihr Euch so gedacht, hä? *Ich* werde Euch an die Spitze meines Turmes nageln! Niemand entkommt dem Netz der Spinne, kleine Fliege!~
 @38   = ~*Ihr* seid in mein Refugium eingedrungen! Niemand bedroht mich in meinem Heim.~
+
+/* Split #2661 into 2 parts */
+@40   = ~Ihr habt Euren Auftrag in jeder Hinsicht zu meiner vollsten Zufriedenheit ausgeführt. Ein schöneres Exemplar hätte ich kaum finden können. Eine Nymphe ist von allen Zauberzutaten die am schwierigsten erhältliche. Aus ihrem Körper lassen sich ein Dutzend oder mehr Tränke zur Herrschaft über Menschen sowie mindestens zwei oder drei Gegenstände der Macht gewinnen. Damit finde ich dieses Jahr und sicherlich auch noch im nächsten mein Auskommen – nur wer im Wohlstand lebt, lebt angenehm, wie es so schön heißt.~
+@41   = ~Ich bin Euch zu großem Dank verpflichtet und übergebe Euch darum diesen Gegenstand hier, der Euch hoffentlich viel Freude bereiten wird. Ihr habt, wie schon gesagt, Eure Arbeit gut gemacht. Nun, Ihr wisst, wo die Tür ist … ich habe zu tun.~
