@@ -2,26 +2,28 @@
 //NASHKEL
 ///////////
 
-/* changes to INNKN2.CRE etc. and patching of JA#AMNNA.bcs are tweaks.
-
-JA#BARDOL.D is added content for Bardolan after the first meeting at the bridge. */
 
 COMPILE ~JA#BGT_AdvPack/Nashkel/JA#BARDOL.D~
 
-/* compatibility with bg1npc and bg1re if JAP is installed after them / if bg1re lets Bardolan disappear from main area: Bardolan will be respawned after/no bg1re encounter
-*/
+// Add Bardolan's respawn to Nashkel area if he disappeared because of bg1re encounter
+COPY_EXISTING ~BARDOL.CRE~ ~override~
+	WRITE_ASCII DEATHVAR ~Bardolan~ #32
+BUT_ONLY
 
-/* Bardolan needs DV */
-
-COPY_EXISTING ~BARDOL.CRE~ ~override/bardol.cre~
-	WRITE_ASCII 0x280 ~Bardolan~ #32 // script name / DV
-
-
-/*Add Bardolan's respawn to Nashkel area if he disappeared because of another mod */
-
-<<<<<<<< ...inlined/bardolan_ar4800.baf
+<<<<<<<< ...inlined/bardolan_ar4800_bg1re.baf
 IF
-	!Exists("C#BARDOL") //bg1re
+	Exists("Bardolan")
+	Global("C#LC_BardolanMoves","GLOBAL",1)
+	Global("C#JA#_BardolanDespawn","MYAREA",0)
+THEN
+RESPONSE #100
+	SetGlobal("C#JA#_BardolanDespawn","MYAREA",1)
+	ActionOverride("Bardolan",EscapeArea())
+	Continue()
+END
+
+IF
+	!Exists("C#BARDOL")
 	!Exists("Bardolan")
 	OR(2)
 		Global("C#LC_BardolanMoves","GLOBAL",0)
@@ -35,7 +37,7 @@ THEN
 		Continue()
 END
 >>>>>>>>
-EXTEND_TOP ~%Nashkel%.BCS~ ~...inlined/bardolan_ar4800.baf~
+EXTEND_TOP ~%Nashkel_BCS%.BCS~ ~...inlined/bardolan_ar4800_bg1re.baf~
 
 
 COPY_EXISTING ~INNKN2.CRE~ ~override~
