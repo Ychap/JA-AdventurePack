@@ -27,9 +27,6 @@ END
 IF
 	Exists("Ramazith")
 	OR(2)
-		Global("HelpRamazith","GLOBAL",0)
-		Global("HelpRamazith","GLOBAL",4)
-	OR(2)
 		Dead("Abela")
 		Global("AbelaTeleport","GLOBAL",1)
 THEN
@@ -47,11 +44,11 @@ COPY_EXISTING ~AR7300.BCS~ ~override~ // %NBaldursGate%
 		PATCH_WARN ~WARNING: Something went wrong while patching AR7300.BCS! Trying to replace each part separately...~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY EXACT_MATCH
-			~Global("HelpRamazith","GLOBAL",0)~
-			~OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4)~
+			~[%WNL%%MNL%%LNL%%TAB% ]Global("HelpRamazith","GLOBAL",0)~
+			~ True()~ // ~AreaCheck(%NBaldursGate%)~ always true here
 			REPLACE_TEXTUALLY EXACT_MATCH
-			~Global("AbelaTeleport","GLOBAL",1)~
-			~OR(2) Global("AbelaTeleport","GLOBAL",1) Dead("Abela")~
+			~[%WNL%%MNL%%LNL%%TAB% ]Global("AbelaTeleport","GLOBAL",1)~
+			~ OR(2) Global("AbelaTeleport","GLOBAL",1) Dead("Abela")~
 			REPLACE_TEXTUALLY EXACT_MATCH
 			~ActionOverride("Ramazith",DestroySelf())~
 			~ActionOverride("Ramazith",DestroySelf()) SetGlobal("RamazithMove","GLOBAL",1)~
@@ -63,8 +60,8 @@ IF_EXISTS BUT_ONLY
 COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EVALUATE_REGEXP
-		~IF[%WNL%%MNL%%LNL%%TAB% ]+Global("HelpRamazith","GLOBAL",0)~
-		~IF OR(2) Global("HelpRamazith","GLOBAL",0) Global("HelpRamazith","GLOBAL",4)~
+		~[%WNL%%MNL%%LNL%%TAB% ]Global("HelpRamazith","GLOBAL",0)~
+		~ AreaCheck("%NBaldursGate%")~
 	END
 BUT_ONLY
 
