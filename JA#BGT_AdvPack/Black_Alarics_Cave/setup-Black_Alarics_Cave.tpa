@@ -16,22 +16,19 @@ COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#SKEL1.CRE~ ~override~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.D~
 
 COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
-    READ_LONG 0x54 ofs_actors
-    READ_SHORT 0x58 num_actors
-	SET actors_end = ofs_actors + (num_actors * 0x110)
-
-	// Replace Flesh Golems with Pirate skeletons
+	// Replace each Flesh Golem with a Pirate skeleton
 	// LPF ALTER_AREA_ACTOR
 	// 	INT_VAR animation = 0xEB10
 	// 	STR_VAR actor_name = ~Flesh Golem~
 	// 			cre_file = ~JA#SKEL1~
 	// END
-	FOR (actor = ofs_actors; actor < actors_end; actor+=0x110) BEGIN
-		READ_ASCII actor+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ ~GOLEMF~) BEGIN
-			WRITE_ASCII	actor+0x00 ~Piratenskelett~ #32
-			WRITE_LONG	actor+0x30 0xEB10 // SKELETON_WARRIOR
-			WRITE_ASCII	actor+0x80 ~JA#SKEL1~ #8
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_ASCII actor+0x80 actor_filename (32) NULL
+		PATCH_IF (~%actor_filename%~ STR_EQ ~GOLEMF~) BEGIN
+			WRITE_ASCII actor+0x00 ~Piratenskelett~ #32
+			WRITE_LONG  actor+0x30  0xEB10 // SKELETON_WARRIOR
+			WRITE_ASCII actor+0x80 ~JA#SKEL1~ #8
 		END
 	END
 
