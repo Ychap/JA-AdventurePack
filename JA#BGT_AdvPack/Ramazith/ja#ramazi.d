@@ -39,12 +39,12 @@ BEGIN 0 END
 ~CreateCreature("ABELA",[376.228],2) ActionOverride("Abela",Wait(1))~
 
 
-/* Taken out - this is bad for compatibility (bg1npc does I_C_T3 at state 15)
 ADD_TRANS_ACTION RAMAZI
 BEGIN 15 END
 BEGIN END
 ~AddexperienceParty(400) ReputationInc(-1)~
 
+// Not shown if an interjection of bg1npc triggers
 ALTER_TRANS RAMAZI
 BEGIN 15 END
 BEGIN 0 END
@@ -52,10 +52,10 @@ BEGIN
   "REPLY" ~@15~
 END
 
-EXTEND_BOTTOM RAMAZI 15
+// Not shown if an interjection of bg1npc triggers
+EXTEND_TOP RAMAZI 15 #1
 IF ~~ THEN REPLY @1 GOTO JA#RAMAZITH_6
 END
-*/
 
 
 EXTEND_BOTTOM RAMAZI 16 18
@@ -63,7 +63,7 @@ IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
 
 
-ADD_TRANS_TRIGGER RAMAZI 19 ~False()~
+ADD_TRANS_TRIGGER RAMAZI 19 ~False()~ // state 17 has exact same transition
 
 EXTEND_BOTTOM RAMAZI 19
 IF ~~ THEN REPLY @14 GOTO JA#RAMAZITH_6
