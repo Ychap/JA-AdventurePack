@@ -2,15 +2,6 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId(Player1)
-		Wait(20)
-		EndCutSceneMode()
-END
-
-IF
-	True()
-THEN
-	RESPONSE #100
 		CutSceneId("JA#VOLTI")
 		Wait(2)
 		CreateVisualEffectObject("SPPOLYMP","JA#VOLTI")
@@ -28,6 +19,7 @@ THEN
 		CreateVisualEffectObject("SPPOLYMP","JA#VOLTI")
 		CreateVisualEffectObject("POLYBACK","JA#VOLTI")
 		Polymorph(CLERIC_FEMALE_ELF)
-		Wait(4)
+		Wait(3)
+		EndCutSceneMode()
 		DestroySelf()
 END
