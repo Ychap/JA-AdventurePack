@@ -46,13 +46,29 @@ COPY_EXISTING ~INN4801.STO~ ~override~
 	SAY 0xc @2119
 
 
+<<<<<<<< ...inlined/amnisna_del.baf
+IF
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToPoint([961.541])
+		MoveToPoint([3988.2516])
+END
+>>>>>>>>
 COPY_EXISTING ~AMNISNA.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EVALUATE_REGEXP
-		~IF[%WNL%%MNL%%LNL%%TAB% ]+!See(NearestEnemyOf(Myself))[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+\(MoveToPoint(\[[0-9]+\.[0-9]+\])[%WNL%%MNL%%LNL%%TAB% ]+\)+END~
-		~~
+	REPLACE_BCS_BLOCK
+		~...inlined/amnisna_del.baf~
+		~JA#BGT_AdvPack/empty~
+	ON_MISMATCH
+		PATCH_WARN ~WARNING: Something went wrong while patching AMNISNA.BCS! Trying to replace with variable coords...~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EVALUATE_REGEXP
+			~IF[%WNL%%MNL%%LNL%%TAB% ]+!See(NearestEnemyOf(Myself))[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+\(MoveToPoint(\[[0-9]+\.[0-9]+\])[%WNL%%MNL%%LNL%%TAB% ]+\)+END~
+			~~
+		END
 	END
 BUT_ONLY
+
 
 COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
