@@ -64,14 +64,9 @@ COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~SILENC~) BEGIN
-			WRITE_ASCII actors_offset+0x78 ~JA#SILC1~ #8
-		END
+	LPF ALTER_AREA_ACTOR
+		STR_VAR actor_name = ~Silence~
+				script_specifics = ~JA#SILC1~
 	END
 	//add new actors
 	LPF fj_are_structure
