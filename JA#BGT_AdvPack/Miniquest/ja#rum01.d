@@ -7,7 +7,7 @@ END
 
 IF ~Global("Chapter","GLOBAL",%tutu_chapter_7%)~ THEN BEGIN JA#RUM01_2
 SAY @2
-IF ~~ THEN JOURNAL @1032 EXIT
+IF ~~ THEN JOURNAL #%silenc_state4_journal% EXIT
 END
 
 IF ~!InParty("SKIE")~ THEN BEGIN JA#RUM01_3

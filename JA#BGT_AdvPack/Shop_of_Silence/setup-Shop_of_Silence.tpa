@@ -2,8 +2,13 @@
 //VERBESSERTES GESCHAEFT DER STILLE
 ///////////////////////////////////////
 
-//Im Blade & Stars: Der Besitzer heißt Aundegul Shawn, spricht wenn Geld kommt
 
+COPY_EXISTING ~SILENC.DLG~ ~override~
+	LPF READ_JOURNAL_STRREF
+		INT_VAR state = 4
+		RET state4_journal = strref
+	END
+BUT_ONLY
 
 // BGT version of SILENC.DLG is a lot behind the BGEE/EET version
 //  => BGT Version wird an die Version von EET angeglichen
