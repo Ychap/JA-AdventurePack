@@ -102,8 +102,6 @@ LABEL "JA#BGT_AdvPack-Husam"
 
 INCLUDE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/setup-DukalPalace-Husamstory.tpa~
 
-
-
 //////////////////////////////
 //Gervisse und Voltine
 //////////////////////////////
@@ -113,7 +111,6 @@ LABEL "JA#BGT_AdvPack-Gervisse_Voltine"
 
 INCLUDE ~JA#BGT_AdvPack/Gervisse_Voltine/setup-Gervisse_Voltine.tpa~
 
-
 //////////////////////////////
 //SIEBEN SONNEN / SEVEN SUNS
 //////////////////////////////
@@ -122,7 +119,6 @@ BEGIN ~Seven Suns~ DESIGNATED 5
 LABEL "JA#BGT_AdvPack-Seven_Suns"
 
 INCLUDE ~JA#BGT_AdvPack/Seven_Suns/setup-Seven_Suns.tpa~
-
 
 /////////////////
 //ARKHSTAFF

@@ -29,12 +29,12 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 	//add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2     //travel
 		fj_box_left     = 4000  //kleinstes x
 		fj_box_top      = 1780  //kleinstes y
 		fj_box_right    = 4200  //größtes x
-		fj_box_bottom   = 1950   //größtes y
-		fj_cursor_idx   = 30   //door
+		fj_box_bottom   = 1950  //größtes y
+		fj_cursor_idx   = 30    //door
 		fj_vertex_0     = 4000 + (1780 << 16)   //kleinstes x +  kleinstes y
 		fj_vertex_1     = 4200 + (1780 << 16)   //größtes x + kleinstes y
 		fj_vertex_2     = 4200 + (1950 << 16)   //größtes x + größtes y
@@ -48,9 +48,9 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 	//add entrance
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x       = 4135    //x
-		fj_loc_y       = 1805   //y
-		fj_orientation = 8   //
+		fj_loc_x       = 4135
+		fj_loc_y       = 1805
+		fj_orientation = 8
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = Frja#c07
