@@ -91,12 +91,14 @@ REPLACE_ACTION_TEXT GERVIS
 ~SetGlobal("JA#GERVIS_QUEST","GLOBAL",1)~
 >>>>>>>>
 
-COMPILE EVALUATE_BUFFER ~...inlined/ja#replace_action.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#gervis.tra~
+COMPILE EVALUATE_BUFFER ~...inlined/ja#replace_action.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTIN.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#TWINS.D~
 
-ADD_JOURNAL EXISTING @43 @57 @58 @81 @82 USING ~JA#BGT_AdvPack/languages/%s/ja#gervis.tra~
-
+ADD_JOURNAL EXISTING @43 @57 @58 @81 USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
+                                           ~JA#BGT_AdvPack/languages/%s/ja#twins.tra~
 
 COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
 COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~

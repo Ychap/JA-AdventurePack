@@ -24,82 +24,14 @@
 @26   = ~Da habt Ihr recht, aber ich mache mir Vorwürfe, dass ich Voltines Pläne nicht eher vereiteln konnte und die Zwillinge unnötig in Gefahr gebracht habe. Daher werde ich hier noch ein wenig ausharren, nur, um sicherzugehen.~
 @27   = ~Also schön, wenn's Euch Freude bereitet. Lebt wohl, Gervisse.~
 @28   = ~Lebt wohl! Wir werden uns sicher wiedersehen.~
-@29   = ~Ich traue Euch nicht, Voltine. Für die Sicherheit der Kinder werde ich Euch wohl ebenfalls beseitigen müssen.~
-@30   = ~Mit solchen wie Euch hätte ich nicht gerechnet. Noch mehr Eindringlinge, die den Mädchen gefährlich werden?~
-@31   = ~Spart Euch die Maskerade! Gervisse hat mir alles erzählt. Ihr werdet die Zwillinge nicht entführen!~
-@32   = ~Gervisse hat mir von Euch erzählt, aber zuerst ich möchte auch Eure Sicht der Dinge hören.~
-@33   = ~Schweigt und sterbt!~
-@34   = ~Ich möchte mit der ganzen Sache nichts zu tun haben. Macht das mit Gervisse allein aus.~
-@35   = ~Entführen? *Das* hat er Euch erzählt? Ahnt Ihr denn nicht, was dieser alte Widerling mit den Mädchen vorhat?~
-@36   = ~Gebt Euch keine Mühe! Ich vertraue Gervisses Worten und nun sterbt!~
-@37   = ~Also gut, ich werde hören, was Ihr zu sagen habt.~
-@38   = ~Gervisse ist ein alter, verkommener Lüstling. Ich habe ihn schon oft dabei beobachtet, wie er des Nachts bei fremden Häusern durch die Fenster spähte.~
-@39   = ~Jetzt beobachtete ich ihn schon mehrmals vor dem Fenster der beiden Mädchen. Ich kann nicht genau sagen, was er mit ihnen vorhat und will es mir auch gar nicht vorstellen, aber er ist in jedem Fall eine Gefahr für die beiden. Das versichere ich Euch!~
-@40   = ~Ihr macht auf mich einen ehrlichen Eindruck. Ich werde Gervisse zur Rede stellen.~
-@41   = ~Für mich hat die Sicherheit der Mädchen Vorrang und da ich nicht erkennen kann, wer von Euch ihnen gefährlich werden kann, werde ich Euch beide töten müssen~
-@42   = ~Das solltet Ihr tun, aber seid vorsichtig. Ich kenne die wahre Macht dieses Mannes nicht. Bereitet Euch besser auf einen Kampf vor!~
-@43   = ~Laerta und Louise
 
-Voltine hat mich über das wahre Wesen Gervisses aufgeklärt und ich habe Ihr versprochen, die Mädchen vor seinem Treiben zu schützen.~
+// @82   = ~Laerta und Louise
 
-@44   = ~Dann seid Ihr ein ebenso gewissenloser Bastard wie Gervisse. Verschwindet!~
-// @45   = ~Laerta und Louise
-
-// Ich hatte keine Lust, mich in den Streit zwischen Gervisse und Voltine einzumischen. Wer von beiden den Zwillingen Laerta und Louise auch gefährlich werden mag, sollen sie es doch besser unter sich ausmachen. Mit etwas Glück sorgen die Götter in dem bevorstehenden Duell für die nötige Gerechtigkeit.~
-@46   = ~Aaah, Ihr seid es! Habt Ihr Gervisse schon entdeckt? Der finstere Widerling hat Schlimmes vor in diesem Haus!~
-@47   = ~Ihr seid zurück. Habt Ihr Gervisse aufhalten können?~
-@48   = ~Nein, noch nicht, aber ich werde mich darum kümmern~
-@49   = ~Ich vertraue Gervisse doch mehr als Euch, Voltine. Eure finsteren Pläne finden nun ihr Ende!~
-@50   = ~Gervisse ist tot, aber ich traue Euch ebenso wenig. Zur Sicherheit der Mädchen muss ich Euch umbringen!~
-@51   = ~Ihr solltet Euch beeilen! Solange Gervisse in der Nähe ist, sind die Kinder nicht sicher.~
-@52   = ~Dann sollt Ihr Voltines Zorn spüren!~
-@53   = ~Was könnt Ihr mir noch über die Gespenster erzählen? Ich muss alles wissen.~
-@54   = ~Es gibt keine Gespenster, Kindchen. Wir haben keine Zeit Euren Kindermärchen nachzujagen.~
-@55   = ~Kennt Ihr vielleicht einen Mann namens Gervisse?~
-@56   = ~Habt Ihr schon mal von einer Druidin namens Voltine gehört?~
-@57   = ~Laerta und Louise
-
-Ich habe die Zwillinge Laerta und Louise von ihrem Schreckgespenst befreit. Mit Gervisses Hilfe konnte ich Voltines dunklen Machenschaften rechtzeitig ein Ende setzen.~
-@58   = ~Laerta und Louise
-
-Ich habe die Zwillinge Laerta und Louise von ihrem Schreckgespenst befreit. Mit Voltines Hilfe habe ich Gervisses perfiden Plan durchschaut und seinen finsteren Machenschaften ein Ende gesetzt.~
-@59   = ~*Schluchz* Buhu, niemand will uns glauben, aber es wird diese Nacht wieder kommen, ganz bestimmt!~
-@60   = ~Also schön, wir werden diese Nacht ein Auge offen haben.~
-@61   = ~Verschont mich damit, ich bin dabei die Schwertküste zu retten und habe ganz andere Sorgen.~
-@62   = ~Oh, das ist lieb von Euch! Ihr werdet die garstigen Gespenster vertreiben und uns beschützen!~
-@63   = ~Was könnt Ihr mir noch über die Gespenster erzählen?~
-@64   = ~Am besten mache ich mich sofort ans Werk! Habt keine Angst.~
-@65   = ~Das Gespenst kommt seit einigen Wochen fast jede Nacht an unser Fenster, um uns zu erschrecken!~
-@66   = ~Es ist auch ziemlich groß und hat ein langes dunkles Gewand an, das in der Luft schwebt.~
-@67   = ~Aber manchmal ist es auch ein bisschen kleiner als sonst.~
-@68   = ~Hat das Gespenst schon mal mit Euch gesprochen?~
-@69   = ~Konntet Ihr vielleicht ein Gesicht erkennen?~
-@70   = ~Würdet Ihr sagen, dass das Gespenst eher ein Mann oder eher eine Frau ist?~
-@71   = ~Danke, Ihr beiden. Ich mache mich dann mal auf die Suche nach diesem *Gespenst*.~
-@72   = ~Nein, es kann nicht so reden wie ein Mensch, aber der Wind pfeift immer durch das Zimmer und rüttelt am Fenster, wenn es kommt.~
-@73   = ~Wir haben nie ein Gesicht erkannt. Ich glaube, dieses Gespensterwesen hat gar kein richtiges Gesicht.~
-@74   = ~Ich... ich weiß nicht, es ist ein Monster und ziemlich groß.~
-@75   = ~Gervisse? Das aber ein komischer Name.~
-@76   = ~Wir kennen keine Voltine. Was ist eine Druidin?~
-@77   = ~Sie haben uns wirklich geholfen, Laerta!~
-@78   = ~Danke, dass Ihr uns gegen die Gespensterleute verteidigt habt.~
-@79   = ~Es hat auch schon versucht, durch das Fenster hereinzukommen und ich glaube, es will uns von Mama und Papa wegbringen.~
-@80   = ~Aber wir haben das Fenster gut abgeschlossen.~
-@81   = ~Laerta und Louise
-
-Ich habe die Zwillinge Laerta und Louise von ihrem Schreckgespenst befreit. Es war für mich unmöglich herauszufinden, wer in diesem düsteren Spiel der böse, wer der gute war. Um die Kinder zu schützen habe ich daher sowohl Gervisse als auch Voltine getötet.~
-@82   = ~Laerta und Louise
-
-Ich entschied, dass es Voltine war, die verschlagen aussah und sich als Beschützerin der Kinder ausgab. Aus irgendeinem Grund denke ich, dass es das Problem nicht gelöst hat...~
+// Ich entschied, dass es Voltine war, die verschlagen aussah und sich als Beschützerin der Kinder ausgab. Aus irgendeinem Grund denke ich, dass es das Problem nicht gelöst hat...~
 @83   = ~Alles klar. Ich mache mich sofort auf die Suche nach ihr.~
 // @84   = ~Ich helfe doch gern. Lebt wohl.~
 @85   = ~Wir werden die Augen weiter offenhalten.~
-// @86   = ~Habt Dank, Voltine. Lebt wohl.~
-@87   = ~Ja, wir glauben Euch und sind weiter auf der Suche nach den Monstern. Keine Angst, wir beschützen Euch!~
 
 /* new for v0.7 */
-@88   = ~Ihr habt Gervisse getötet, wie es scheint?~
-@89   = ~Ja, er ist tot.~
-@90   = ~Blinder Narr! Ich werde Euch nicht auf das leere Geheiß eines Magiers eine Druidin töten lassen!~
 @91   = ~Ihr habt die Druidin getötet, wie ich sehe.~
 @92   = ~Ja, sie ist tot.~
