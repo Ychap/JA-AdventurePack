@@ -148,6 +148,17 @@ ADD_JOURNAL EXISTING @18 USING ~JA#BGT_AdvPack/languages/%LANGUAGE%/ja#ramazi.tr
 ADD_JOURNAL @22 @39 @1023 USING ~JA#BGT_AdvPack/languages/%LANGUAGE%/ja#jopi.tra~
 
 
+// Make CLCK07.ITM(Nymph Cloak) undroppable - can be obtained other ways
+COPY_EXISTING ~ABELA.CRE~ ~override~
+	GET_OFFSET_ARRAY items CRE_V10_ITEMS
+	PHP_EACH items AS i => item BEGIN
+		READ_ASCII item item_filename
+		PATCH_IF (~%item_filename%~ STR_EQ ~CLCK07~) BEGIN
+			WRITE_LONG item+0x10 (THIS | 1<<3)
+		END
+	END
+BUT_ONLY
+
 COPY_EXISTING ~RAGEFA.CRE~ ~override~
 	WRITE_ASCII 0x248 ~SHOUTDLG~ #8 // override ~INITDLG~ (BGT)
 BUT_ONLY
@@ -164,6 +175,7 @@ COPY ~JA#BGT_AdvPack/Ramazith/JA#IMP01.CRE~ ~override~
 COMPILE ~JA#BGT_AdvPack/Ramazith/JA#CURA1.BAF~
 COMPILE ~JA#BGT_AdvPack/Ramazith/JA#CUJO1.BAF~
 COMPILE ~JA#BGT_AdvPack/Ramazith/JA#IMP01.BAF~
+
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY ~JA#BGT_AdvPack/Ramazith/AR7226.WED~ ~override/%WBaldursGate_RagefastsHouse%.WED~
