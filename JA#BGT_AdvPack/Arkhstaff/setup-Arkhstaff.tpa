@@ -14,11 +14,11 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.TIS~ ~override~
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
 		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door7607~
+			STR_VAR region_name			= ~OgreMagiHouse~
 					destination_area	= EVAL ~%BaldursGateDocks_OgreMagiHouse_L1%~
 		END
 		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Traniron~
+			STR_VAR region_name			= ~IronThrone~
 					destination_area	= EVAL ~%BaldursGateDocks_IronThrone_Cellar%~
 		END
 		LPF ALTER_AREA_REGION
@@ -34,10 +34,10 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.CRE~ ~override~
 
 COPY_EXISTING ~THALDO.CRE~ ~override/JA#THALD.CRE~
-	WRITE_ASCII 0x250  ~SHOUT~ 	#8
-	WRITE_ASCII 0x260  ~NONE~ 	#8
-	WRITE_ASCII 0x280  ~JA#THALD~ 	#32	//Scriptname
-	WRITE_ASCII 0x2cc  ~JA#THALD~ 	#8
+	WRITE_ASCII SCRIPT_CLASS ~SHOUT~ #8
+	WRITE_ASCII SCRIPT_GENERAL ~None~ #8
+	WRITE_ASCII DEATHVAR ~JA#THALD~ #32
+	WRITE_ASCII DIALOG ~JA#THALD~ #8
 
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKKY.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKKY.ITM~ ~override~
@@ -66,56 +66,51 @@ COMPILE ~JA#BGT_AdvPack/Arkhstaff/JA#KRAMMOCH.D~
 COMPILE ~JA#BGT_AdvPack/Arkhstaff/JA#THALDO.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.D~
 
+
 COPY_EXISTING ~%BaldursGateDocks_IronThrone_Cellar%.ARE~ ~override~
+	SNPRINT ~-4~ WSewers_num ~%WSewers%~
 	LPF	ALTER_AREA_REGION
-		STR_VAR region_name			= ~Door7324~
+		STR_VAR region_name         = EVAL ~Door%WSewers_num%~
 				destination_area	= ~JA#C04~
 				entrance_name 		= ~Fr7611~
 	END
-	PATCH_DEFINE_ARRAY x_coord BEGIN 705 END
-	PATCH_DEFINE_ARRAY y_coord BEGIN 501 END
-	PATCH_PHP_EACH x_coord AS index => x BEGIN
-		LPF fj_are_structure
-		  INT_VAR
-			fj_loc_x = $x_coord("%index%")
-			fj_loc_y = $y_coord("%index%")
-			fj_schedule = 0b111111111111111111111111 //Hours 0.00 - 24.00
-			fj_flags = 0b00000000000000000001000001000011	// Visible, blend colours, not covered by wall, don't remove in combat
-			STR_VAR
-			fj_structure_type = animation
-			fj_name = JA#7611D
-			fj_bam_resref = JA#7611D
-		END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x = 705
+		fj_loc_y = 501
+		fj_schedule = 0b111111111111111111111111 //Hours 0.00 - 24.00
+		fj_flags = 0b00000000000000000001000001000011	// Visible, blend colours, not covered by wall, don't remove in combat
+		STR_VAR
+		fj_structure_type = animation
+		fj_name = JA#7611D
+		fj_bam_resref = JA#7611D
 	END
-	CLEAR_ARRAY x_coord
-	CLEAR_ARRAY y_coord
-BUT_ONLY
 
 COPY_EXISTING ~%WSewers%.ARE~ ~override~
+	SNPRINT ~-4~ IronThrone_Cellar_num ~%BaldursGateDocks_IronThrone_Cellar%~
 	LPF	ALTER_AREA_REGION
-		STR_VAR region_name			= ~Door7611~
+		STR_VAR region_name			= EVAL ~Door%IronThrone_Cellar_num%~
 				destination_area	= ~JA#C04~
 				entrance_name 		= ~Fr7324~
 	END
-BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
 	LPF ALTER_AREA_DOOR
 		INT_VAR	flag_locked			= 1
-				flag_located 		= 1
 				lock_difficulty 	= 100
-		STR_VAR	door_name 			= ~Door0616~
+		STR_VAR	door_name 			= ~Door0616~ // Door to BaldursGateDocks_IronThrone_L1
 	END
 BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 	//delete not needed actors
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt)) actors_name (32) NULL
-		PATCH_IF (~%actors_name%~ STR_EQ  ~Ogre Mage~) BEGIN
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	FOR (i = (SHORT_AT 0x58)-1; i >= 0; --i) BEGIN
+		READ_ASCII $actors("%i%") actor_name (32) NULL
+		PATCH_IF (~%actor_name%~ STR_EQ ~Ogre Mage~) BEGIN
 			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
+				INT_VAR fj_delete_mode = i
+				STR_VAR fj_structure_type = ~actor~
 			END
 		END
 	END
@@ -141,11 +136,11 @@ COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 		fj_name             = STJA#C04
 	END
 	//add entrance
-	LPF  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x       = 288    //x
-		fj_loc_y       = 494   //y
-		fj_orientation = 0    
+		fj_loc_x       = 288
+		fj_loc_y       = 494
+		fj_orientation = 0
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = FRJA#C04
@@ -162,20 +157,19 @@ COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 		fj_name = Cellardoor
 		fj_bam_resref = JA#A8101
 	END
-BUT_ONLY	
 
 COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L2%.are~ ~override~
+	//add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 835
 		fj_loc_y          = 465
 		fj_dest_x         = 835
 		fj_dest_y         = 465
-		fj_orientation    = 4     
+		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Krammoch Arkhstaff~
 		fj_cre_resref     = JA#ARKHS
 		fj_dlg_resref	  = JA#ARKHS
 	END
-BUT_ONLY
