@@ -4,27 +4,33 @@
 
 // Remove SHOUT script - or the whole inn will turn hostile!
 COPY_EXISTING ~PHANDA.CRE~ ~override~
-	PATCH_IF GAME_IS ~bgt~ BEGIN
-		WRITE_ASCIIE 0x248 ~None~ #8       // SHOUT is Override script
-	END
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_ASCIIE 0x250 ~PHANDALY~ #8   // SHOUT is Class script
+	//loop through cre scripts - remove SHOUT.BCS, add PHANDALY.BCS one time if it does not exist
+	FOR (script = 0x248 phandaly = 0; script <= 0x268; script+=0x08) BEGIN
+		READ_ASCII script script_filename
+		PATCH_MATCH ~%script_filename%~ WITH
+			~SHOUT~ BEGIN
+				WRITE_ASCII script ~None~ #8
+			END
+			~None~ ~PHANDALY~ WHEN !phandaly BEGIN
+				SET phandaly = 1
+				WRITE_ASCII script ~PHANDALY~ #8
+			END
+			DEFAULT
+		END
 	END
 BUT_ONLY
 
 
 // Cycle through the existing actors, first (in case area was altered by another mod)
 COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
-    READ_LONG 0x54 ofs_actors
-    READ_SHORT 0x58 num_actors
-
-	// Look for Phandalyn and remove him
-	FOR (cnt = num_actors - 1; cnt >= 0; --cnt) BEGIN
-		READ_ASCII ofs_actors+(0x110*cnt) actor_name (32) NULL
+	//remove Phandalyn
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	FOR (i = (SHORT_AT 0x58)-1; i >= 0; --i) BEGIN
+		READ_ASCII $actors("%i%") actor_name (32) NULL
 		PATCH_IF (~%actor_name%~ STR_EQ ~Phandalyn~) BEGIN
 			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
+				INT_VAR fj_delete_mode = i
+				STR_VAR fj_structure_type = ~actor~
 			END
 		END
 	END
