@@ -7,7 +7,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRIENDLYARM.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#LAW.D~
 
 EXTEND_TOP ~BENTLY.BCS~ ~JA#BGT_AdvPack/LawSystem/JA#FRGUB.BAF~
-EXTEND_TOP ~%FriendlyArmInn%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR6800.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%FriendlyArmInn_BCS%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR6800.BAF~ EVALUATE_BUFFER
 
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FRINI.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRCUT.BAF~
@@ -22,6 +22,11 @@ COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW01.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW02.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW03.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW04.BAF~
+
+//From Dukal Palace and Husam Story
+COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW05.BAF~
+COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW06.BAF~
+
 
 COPY ~JA#BGT_AdvPack/LawSystem/JA#LAW00.CRE~ ~override~
 	~JA#BGT_AdvPack/LawSystem/JA#LAW01.CRE~ ~override~
@@ -53,52 +58,42 @@ COPY_EXISTING ~BENTLY.CRE~ ~override~	// Bently Mirrorshade, FAI
 BUT_ONLY
 
 
-//Change container and actor scripts and new candle light
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 2~
-		container_script = ~JA#LAW00~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 3~
-		container_script = ~JA#LAW00~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 4~
-		container_script = ~JA#LAW00~
+	//change container scripts (dont spawn Guard Enforcer)
+	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
+	PHP_EACH containers AS i => container BEGIN
+		READ_ASCII container+0x48 container_script (8) NULL
+		PATCH_IF (~%container_script%~ STR_EQ ~ACT08~) BEGIN
+			WRITE_ASCII container+0x48 ~JA#LAW00~ #8
+		END
 	END
 
 COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF ((~%actors_pos_x%~ = 1406) AND (~%actors_filename%~ STR_EQ ~FRIEND~)) BEGIN
-			WRITE_ASCII actors_offset+0x60 "JA#FRINI" #8
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_ASCII actor actor_name (32) NULL
+		READ_SHORT actor+0x20 actor_pos_x
+		PATCH_IF ((~%actor_name%~ STR_EQ ~Guard~) AND (~%actor_pos_x%~ = 1406)) BEGIN
+			WRITE_ASCII actor+0x60 "JA#FRINI" #8 // Class script
 		END
 	END
-	//change container script
+	//change container script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name = ~REPTRAP1~
-		region_script = ~NONE~
+		region_script = ~None~
 	END
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name = ~REPTRAP2~
-		region_script = ~NONE~
+		region_script = ~None~
 	END
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name = ~REPTRAP3~
-		region_script = ~NONE~
+		region_script = ~None~
 	END
-	//Trap
-	LPF ALTER_AREA_REGION
+	LPF fj_are_structure
 		INT_VAR
 		fj_type         = 0    //trap
 		fj_box_left     = 1414
@@ -122,152 +117,60 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%FriendlyArmInn_L1%.ARE~ ~override~
-	//change container script
+	//change container script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name = ~REPTRAP~
-		region_script = ~NONE~
+		region_script = ~None~
 	END
-BUT_ONLY
 
 COPY_EXISTING ~%FriendlyArmInn_L2%.ARE~ ~override~
-	//change container script
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 1~
-		container_script = ~JA#LAW01~
+              ~%FriendlyArmInn_L3%.ARE~ ~override~
+	//change container script (dont spawn Guard Enforcer)
+	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
+	PHP_EACH containers AS i => container BEGIN
+		READ_ASCII container+0x48 container_script (8) NULL
+		PATCH_MATCH container_script WITH
+			~ACT09~ BEGIN
+				WRITE_ASCII container+0x48 ~JA#LAW01~ #8
+			END
+			~ACT08~ BEGIN
+				WRITE_ASCII container+0x48 ~JA#LAW02~ #8
+			END
+			~ACT07~ BEGIN
+				WRITE_ASCII container+0x48 ~JA#LAW03~ #8
+			END
+			DEFAULT
+		END
 	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 2~
-		container_script = ~JA#LAW02~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 3~
-		container_script = ~JA#LAW02~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 4~
-		container_script = ~JA#LAW02~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 5~
-		container_script = ~JA#LAW03~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 6~
-		container_script = ~JA#LAW03~
-	END
-BUT_ONLY
-
-COPY_EXISTING ~%FriendlyArmInn_L3%.ARE~ ~override~
-	//change container script
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 1~
-		container_script = ~JA#LAW01~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 2~
-		container_script = ~JA#LAW02~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 5~
-		container_script = ~JA#LAW03~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 14~
-		container_script = ~JA#LAW03~
-	END
-BUT_ONLY
 
 COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
-	//change container script
+	//change container script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name = ~REPTRAP~
-		region_script = ~NONE~
+		region_script = ~None~
 	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 1~
-		container_script = ~JA#LAW04~
+	//change container scripts (dont spawn Guard Enforcer)
+	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
+	PHP_EACH containers AS i => container BEGIN
+		READ_ASCII container+0x48 container_script (8) NULL
+		PATCH_IF (~%container_script%~ STR_EQ ~ACT08~) BEGIN
+			WRITE_ASCII container+0x48 ~JA#LAW04~ #8
+		END
 	END
-BUT_ONLY
 
-//From Dukal Palace and Husam Story
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW05.BAF~
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW06.BAF~
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
-	//Edit Container Script
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 1~
-		container_script = ~JA#LAW05~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 2~
-		container_script = ~JA#LAW05~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 3~
-		container_script = ~JA#LAW05~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 4~
-		container_script = ~JA#LAW05~
+	//change container scripts (dont spawn Flaming Fist Enforcer)
+	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
+	PHP_EACH containers AS i => container BEGIN
+		WRITE_ASCII container+0x48 ~JA#LAW05~ #8
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
-	//Container Script
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 1~
-		container_script = ~JA#LAW06~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 2~
-		container_script = ~JA#LAW06~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 3~
-		container_script = ~JA#LAW06~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 4~
-		container_script = ~JA#LAW06~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 5~
-		container_script = ~JA#LAW06~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 6~
-		container_script = ~JA#LAW06~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 7~
-		container_script = ~JA#LAW06~
-	END
-	LPF ALTER_AREA_CONTAINER
-		STR_VAR
-		container_name = ~Container 8~
-		container_script = ~JA#LAW06~
+	//change container scripts (dont spawn Flaming Fist Enforcer)
+	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
+	PHP_EACH containers AS i => container BEGIN
+		WRITE_ASCII container+0x48 ~JA#LAW06~ #8
 	END
