@@ -1,10 +1,11 @@
-/////////////////////////////////////////////////////////////
-//LAW-SYSTEM FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID
-/////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//LAW-SYSTEM in FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID and DUKAL PALACE
+////////////////////////////////////////////////////////////////////////////////
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRIENDLYARM.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#LAW.D~
+COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FLAM.D~
 
 EXTEND_TOP ~BENTLY.BCS~ ~JA#BGT_AdvPack/LawSystem/JA#FRGUB.BAF~
 EXTEND_TOP ~%FriendlyArmInn_BCS%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR6800.BAF~ EVALUATE_BUFFER
@@ -13,43 +14,46 @@ COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FRINI.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRCUT.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FRGUA.BAF~
 COMPILE ~JA#BGT_AdvPack/LawSystem/JA#FRGUB.BAF~
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#GUAR1.BAF~
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#GUAR2.BAF~
 
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW00.BAF~
-	REPLACE ~999999~ @39
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW01.BAF~
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW02.BAF~
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW03.BAF~
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW04.BAF~
+COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW00.BCS~
+              ~ACT01.BCS~ ~override/JA#LAW01.BCS~
+              ~ACT02.BCS~ ~override/JA#LAW02.BCS~
+              ~ACT03.BCS~ ~override/JA#LAW03.BCS~
+              ~ACT03.BCS~ ~override/JA#LAW04.BCS~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("FLAMEN~ ~CreateCreature("HOUSEN~
 
+		PATCH_MATCH ~%DEST_RES%~ WITH
+			~JA#LAW00~ BEGIN
+				REPLACE_TEXTUALLY ~Wait(3)\([%WNL%%MNL%%LNL%%TAB% ]+CreateCreature\)~ ~Wait(1) ActionOverride("Alyth",DisplayString(Myself,@39)) Wait(2)\1~
+				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW01"))~
+			END
+			~JA#LAW04~ BEGIN
+				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW05"))~
+			END
+			DEFAULT
+				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW03"))~
+		END
+	END
 //From Dukal Palace and Husam Story
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW05.BAF~
-COMPILE ~JA#BGT_AdvPack/LawSystem/JA#LAW06.BAF~
+COPY_EXISTING ~ACT02.BCS~ ~override/JA#LAW05.BCS~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~CreateCreature("FLAMEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("FlamingEnforcer",SetDialog("JA#FLAM2"))~
+	END
 
 
-COPY ~JA#BGT_AdvPack/LawSystem/JA#LAW00.CRE~ ~override~
-	~JA#BGT_AdvPack/LawSystem/JA#LAW01.CRE~ ~override~
-	~JA#BGT_AdvPack/LawSystem/JA#LAW04.CRE~ ~override~
-	~JA#BGT_AdvPack/LawSystem/JA#LAW05.CRE~ ~override~
-	~JA#BGT_AdvPack/LawSystem/JA#LAW06.CRE~ ~override~
-	SAY NAME1 @2035
-	SAY NAME2 @2035
-
-COPY ~JA#BGT_AdvPack/LawSystem/JA#LAW02.CRE~ ~override~
-	~JA#BGT_AdvPack/LawSystem/JA#LAW03.CRE~ ~override~
-	SAY NAME1 @2036
-	SAY NAME2 @2036
+COPY_EXISTING ~ALYTH.CRE~ ~override~
+	WRITE_ASCII DEATHVAR ~alyth~ #32
+BUT_ONLY
 
 COPY ~JA#BGT_AdvPack/LawSystem/JA#FACAP.CRE~ ~override~
 	SAY NAME1 @2037
 	SAY NAME2 @2037
 
 COPY_EXISTING ~FAFIGHT.CRE~ ~override~
-			  ~FRIEND.CRE~  ~override~
-	WRITE_ASCII SCRIPT_RACE  ~JA#FRGUB~ #8
-COPY_EXISTING ~GELLAN.CRE~ ~override~
-	WRITE_ASCII SCRIPT_CLASS ~JA#FRGUB~ #8
+              ~FRIEND.CRE~  ~override~
+              ~GELLAN.CRE~  ~override~
+	WRITE_ASCII SCRIPT_OVERRIDE ~JA#FRGUB~ #8 // override ~SHOUT~
 
 /* same patching as in bg1ub */
 COPY_EXISTING ~BENTLY.CRE~ ~override~	// Bently Mirrorshade, FAI
@@ -59,11 +63,11 @@ BUT_ONLY
 
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
-	//change container scripts (dont spawn Guard Enforcer)
+	//change container scripts (change Guard Enforcer dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script (8) NULL
-		PATCH_IF !(~%container_script%~ STRING_COMPARE_REGEXP ~ACT[01][0-9]~) BEGIN
+		PATCH_IF !(~%container_script%~ STRING_COMPARE_REGEXP ~ACT0[1-9]~) BEGIN
 			WRITE_ASCII container+0x48 ~JA#LAW00~ #8
 		END
 	END
@@ -74,7 +78,7 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 		READ_ASCII actor actor_name (32) NULL
 		READ_SHORT actor+0x20 actor_pos_x
 		PATCH_IF (~%actor_name%~ STR_EQ ~Guard~) AND (~%actor_pos_x%~ = 1406) BEGIN
-			WRITE_ASCII actor+0x60 "JA#FRINI" #8 // Class script
+			WRITE_ASCII actor+0x60 ~JA#FRINI~ #8 // Class script
 		END
 	END
 	//change container script (dont spawn Flaming Fist Enforcer)
@@ -93,7 +97,8 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 		region_name = ~REPTRAP3~
 		region_script = ~None~
 	END
-	LPF fj_are_structure
+	//Trap
+	LPF ALTER_AREA_REGION
 		INT_VAR
 		fj_type         = 0    //trap
 		fj_box_left     = 1414
@@ -117,27 +122,26 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%FriendlyArmInn_L1%.ARE~ ~override~
+              ~%FriendlyArmInn_L2%.ARE~ ~override~
+              ~%FriendlyArmInn_L3%.ARE~ ~override~
 	//change container script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name = ~REPTRAP~
 		region_script = ~None~
 	END
-
-COPY_EXISTING ~%FriendlyArmInn_L2%.ARE~ ~override~
-              ~%FriendlyArmInn_L3%.ARE~ ~override~
-	//change container script (dont spawn Guard Enforcer)
+	//change container scripts (change Guard Enforcer dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script (8) NULL
 		PATCH_MATCH ~%container_script%~ WITH
-			~ACT0[39]~ BEGIN
+			~ACT0[17]~ BEGIN
 				WRITE_ASCII container+0x48 ~JA#LAW01~ #8
 			END
 			~ACT0[28]~ BEGIN
 				WRITE_ASCII container+0x48 ~JA#LAW02~ #8
 			END
-			~ACT0[17]~ BEGIN
+			~ACT0[39]~ BEGIN
 				WRITE_ASCII container+0x48 ~JA#LAW03~ #8
 			END
 			DEFAULT
@@ -151,28 +155,20 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
 		region_name = ~REPTRAP~
 		region_script = ~None~
 	END
-	//change container scripts (dont spawn Guard Enforcer)
+	//change container scripts (change Guard Enforcer dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script (8) NULL
-		PATCH_IF !(~%container_script%~ STRING_COMPARE_REGEXP ~ACT0[28]~) BEGIN
+		PATCH_IF !(~%container_script%~ STRING_COMPARE_REGEXP ~ACT0[1-9]~) BEGIN
 			WRITE_ASCII container+0x48 ~JA#LAW04~ #8
 		END
 	END
 
-
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
+              ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
+              ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 	//change container scripts (dont spawn Flaming Fist Enforcer)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		WRITE_ASCII container+0x48 ~JA#LAW05~ #8
-	END
-
-// COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~ ?
-
-COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
-	//change container scripts (dont spawn Flaming Fist Enforcer)
-	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
-	PHP_EACH containers AS i => container BEGIN
-		WRITE_ASCII container+0x48 ~JA#LAW06~ #8
 	END

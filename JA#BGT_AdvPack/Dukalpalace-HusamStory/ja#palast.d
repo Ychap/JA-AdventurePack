@@ -82,17 +82,8 @@ IF ~~ THEN REPLY @14 GOTO JA#KAEM1_1
 IF ~~ THEN REPLY @16 GOTO JA#KAEM1_4
 END
 
-BEGIN ~JA#FLAM2~
 
-IF ~StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN JA#FLAM2_0
-SAY @25
-IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
-END
-
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN JA#FLAM2_1
-SAY @26
-IF ~~ THEN DO ~SetGlobal("JA#ALERT","MYAREA",1) Enemy()~ EXIT
-END
+// ~JA#FLAM2~ moved to Lawsystem
 
 
 BEGIN ~JA#FLAM3~
@@ -196,60 +187,37 @@ END
 
 
 
+REPLACE_TRANS_ACTION FLAM10
+BEGIN 1 3 4 5 6 END
+BEGIN END
+~Wait(5)~
+~~
+IF ~Shout(1)~
 
-ALTER_TRANS FLAM10 // file name
-BEGIN 1 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~Wait(5)
-SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)~
-END
+REPLACE_TRANS_ACTION FLAM10
+BEGIN 1 3 4 5 6 END
+BEGIN END
+~Shout(1)~
+~~
 
-ALTER_TRANS FLAM10 // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~Wait(5)
-SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)~
-END
 
-ALTER_TRANS FLAM10 // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~Wait(5)
-SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)~
-END
+ADD_TRANS_ACTION FLAM10
+BEGIN 1 3 4 5 6 END
+BEGIN 0 END
+~Wait(5) SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)~
 
-ALTER_TRANS FLAM10 // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~Wait(5)
-SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)~
-END
 
-ALTER_TRANS FLAM10 // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~Wait(5)
-SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)~
-END
+ADD_TRANS_ACTION FLAM10
+BEGIN 7 END
+BEGIN 0 END
+~SetGlobal("Invitation","GLOBAL",1)~
 
-ALTER_TRANS FLAM10 // file name
-BEGIN 7 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("Invitation","GLOBAL",1)
-ChangeEnemyAlly(Myself,NEUTRAL)~
-END
 
 APPEND FLAM10
 
-IF ~Global("Invitation","GLOBAL",1)~ THEN BEGIN JA#FLAM10_1
+IF WEIGHT #0 ~Global("Invitation","GLOBAL",1)~ THEN BEGIN JA#FLAM10_1
 SAY @43
 IF ~~ THEN EXIT
 END
 
-END
+END // APPEND FLAM10

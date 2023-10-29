@@ -1,11 +1,9 @@
 IF
 	NumTimesTalkedTo(0)
-	Allegiance(Myself,NEUTRAL)
+	Range([PC],10)
 	See([PC])
-	Range(LastSeenBy(Myself),8)
+	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
 		StartDialogueNoSet([PC])
 END
-
-

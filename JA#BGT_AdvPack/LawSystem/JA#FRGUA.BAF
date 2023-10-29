@@ -1,5 +1,5 @@
 IF
-	Entered([ANYONE])
+	Entered([PC])
 	!StateCheck(LastTrigger,STATE_INVISIBLE)
 	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
 	GlobalLT("JA#FRIEND_RAUS","GLOBAL",3)
@@ -7,9 +7,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#FRIEND_RAUS","GLOBAL",3)
-		CreateCreature("JA#LAW02",[1619.2373],0)
-		CreateCreature("JA#LAW02",[1678.2370],0)
-		CreateCreature("JA#LAW02",[1660.2342],0)
+		CreateCreature("FRIEND",[1619.2373],0)
+		CreateCreature("FRIEND",[1678.2370],0)
+		CreateCreature("FRIEND",[1660.2342],0)
 END
-
-

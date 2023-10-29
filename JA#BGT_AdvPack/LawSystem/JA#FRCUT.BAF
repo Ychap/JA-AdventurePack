@@ -2,7 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId("JA#LAW03")
+		CutSceneId("HouseEnforcer")
 		Wait(2)
 		MoveBetweenAreas("%FriendlyArmInn%",[1468.3213],2)
 END
@@ -15,7 +15,7 @@ THEN
 		Wait(1)
 		FadeToColor([30.0],0)
 		Wait(2)
-		ActionOverride("JA#LAW03",MoveBetweenAreas("%FriendlyArmInn%",[1468.3213],2))
+		ActionOverride("HouseEnforcer",MoveBetweenAreas("%FriendlyArmInn%",[1468.3213],2))
 		LeaveAreaLUA("%FriendlyArmInn%","",[1400.3306],8)
 		ActionOverride(Player2,LeaveAreaLUA("%FriendlyArmInn%","",[1464.3318],8))
 		ActionOverride(Player3,LeaveAreaLUA("%FriendlyArmInn%","",[1384.3342],8))
@@ -25,16 +25,5 @@ THEN
 		Wait(1)
 		FadeFromColor([30.0],0)
 		Wait(1)
-		ActionOverride("JA#LAW03",StartDialogueNoSet([PC]))
+		ActionOverride("HouseEnforcer",StartDialogueNoSet([PC]))
 END
-
-IF
-	True()
-THEN
-	RESPONSE #100
-		CutSceneId("JA#LAWFR")
-		Wait(2)
-		DestroySelf()
-END
-
-

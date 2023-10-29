@@ -365,8 +365,8 @@ Thieves, druids, sorcerer, clerics, mages, monks~
 @2030 = ~Battle axe of the Mauletar~
 /* @2031 */
 @2032 = ~Useful Fixes & Repairs~
-@2035 = ~Bouncer~
-@2036 = ~Guardian~
+// @2035 = ~Bouncer~
+// @2036 = ~Guardian~
 @2037 = ~Captain~
 @2040 = ~Lesser Clay Golem~
 @2042 = ~Yuxi~
