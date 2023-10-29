@@ -63,7 +63,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script (8) NULL
-		PATCH_IF (~%container_script%~ STR_EQ ~ACT08~) BEGIN
+		PATCH_IF !(~%container_script%~ STRING_COMPARE_REGEXP ~ACT[01][0-9]~) BEGIN
 			WRITE_ASCII container+0x48 ~JA#LAW00~ #8
 		END
 	END
@@ -73,7 +73,7 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 	PHP_EACH actors AS i => actor BEGIN
 		READ_ASCII actor actor_name (32) NULL
 		READ_SHORT actor+0x20 actor_pos_x
-		PATCH_IF ((~%actor_name%~ STR_EQ ~Guard~) AND (~%actor_pos_x%~ = 1406)) BEGIN
+		PATCH_IF (~%actor_name%~ STR_EQ ~Guard~) AND (~%actor_pos_x%~ = 1406) BEGIN
 			WRITE_ASCII actor+0x60 "JA#FRINI" #8 // Class script
 		END
 	END
@@ -130,14 +130,14 @@ COPY_EXISTING ~%FriendlyArmInn_L2%.ARE~ ~override~
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script (8) NULL
-		PATCH_MATCH container_script WITH
-			~ACT09~ BEGIN
+		PATCH_MATCH ~%container_script%~ WITH
+			~ACT0[39]~ BEGIN
 				WRITE_ASCII container+0x48 ~JA#LAW01~ #8
 			END
-			~ACT08~ BEGIN
+			~ACT0[28]~ BEGIN
 				WRITE_ASCII container+0x48 ~JA#LAW02~ #8
 			END
-			~ACT07~ BEGIN
+			~ACT0[17]~ BEGIN
 				WRITE_ASCII container+0x48 ~JA#LAW03~ #8
 			END
 			DEFAULT
@@ -155,7 +155,7 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script (8) NULL
-		PATCH_IF (~%container_script%~ STR_EQ ~ACT08~) BEGIN
+		PATCH_IF !(~%container_script%~ STRING_COMPARE_REGEXP ~ACT0[28]~) BEGIN
 			WRITE_ASCII container+0x48 ~JA#LAW04~ #8
 		END
 	END
@@ -167,6 +167,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 	PHP_EACH containers AS i => container BEGIN
 		WRITE_ASCII container+0x48 ~JA#LAW05~ #8
 	END
+
+// COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~ ?
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 	//change container scripts (dont spawn Flaming Fist Enforcer)
