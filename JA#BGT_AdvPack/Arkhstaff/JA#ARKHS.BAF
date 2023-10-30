@@ -16,7 +16,7 @@ THEN
 		StartDialogueNoSet([PC])
 END
 
-IF
+IF
 	See([PC])
 	Global("JA#SAVETHALDO","GLOBAL",0)
 	GlobalGT("SearchIronThrone","GLOBAL",0)
