@@ -29,3 +29,5 @@ IF ~~ THEN BEGIN 5
   SAY @5
   IF ~~ THEN EXIT
 END
+
+// END JA#FTOB3

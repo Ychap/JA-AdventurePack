@@ -19,3 +19,5 @@ IF ~RandomNum(4,4)~ THEN BEGIN 3
   SAY @3
   IF ~~ THEN EXIT
 END
+
+// END JA#NOB15

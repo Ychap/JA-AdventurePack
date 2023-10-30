@@ -19,7 +19,6 @@ COPY_EXISTING ~%BaldursGate_Undercellars%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Noblay~
 		fj_cre_resref     = ~JA#NOBLY~
-		fj_dlg_resref	  = ~JA#NOBLY~
 	END
 
 COPY ~JA#BGT_AdvPack/Nobles/JA#NOB15.CRE~ ~override~
@@ -37,7 +36,6 @@ COPY_EXISTING ~%NBaldursGate_ThreeOldKegs_L3%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Nobl15~
 		fj_cre_resref     = ~JA#NOB15~
-		fj_dlg_resref	  = ~JA#NOB15~
 	END
 
 COPY ~JA#BGT_AdvPack/Nobles/JA#FTOB3.CRE~ ~override~
@@ -55,16 +53,11 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~FTOWB3~
 		fj_cre_resref     = ~JA#FTOB3~
-		fj_dlg_resref	  = ~JA#FTOB3~
 	END
 
-COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~ //7200,7300,7600,7700s.u.
-	WRITE_ASCII 0x2cc ~BOYBA3~	#8
-
 COPY ~JA#BGT_AdvPack/Nobles/JA#LOWLG.CRE~ ~override~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/JA#LOWLG.D~
 COMPILE ~JA#BGT_AdvPack/Nobles/JA#LOWLG.BAF~
-
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/JA#LOWLG.D~
 COPY_EXISTING ~%BaldursGate_DocksLowLantern_D1%.ARE~ ~override~
 	//add new actor
 	LPF fj_are_structure
@@ -78,8 +71,10 @@ COPY_EXISTING ~%BaldursGate_DocksLowLantern_D1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Wache~
 		fj_cre_resref     = ~JA#LOWLG~
-		fj_dlg_resref	  = ~JA#LOWLG~
 	END
+
+COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~
+	WRITE_ASCII DIALOG ~BOYBA3~ #8
 
 COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 	//add new actor
@@ -95,7 +90,6 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Junge~
 		fj_cre_resref     = ~JA#BOYBA~
-		fj_dlg_resref	  = ~BOYBA3~
 	END
 
 COPY_EXISTING ~%NBaldursGate%.ARE~ ~override~
@@ -112,7 +106,6 @@ COPY_EXISTING ~%NBaldursGate%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Junge~
 		fj_cre_resref     = ~JA#BOYBA~
-		fj_dlg_resref	  = ~BOYBA3~
 	END
 
 COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
@@ -129,7 +122,6 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Junge~
 		fj_cre_resref     = ~JA#BOYBA~
-		fj_dlg_resref	  = ~BOYBA3~
 	END
 
 COPY_EXISTING ~%WBaldursGate%.ARE~ ~override~
@@ -146,7 +138,6 @@ COPY_EXISTING ~%WBaldursGate%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Junge~
 		fj_cre_resref     = ~JA#BOYBA~
-		fj_dlg_resref	  = ~BOYBA3~
 	END
 
 

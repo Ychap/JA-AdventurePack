@@ -19,3 +19,5 @@ IF ~RandomNum(3,3)~ THEN BEGIN 3
   SAY @3
   IF ~~ THEN EXIT
 END
+
+// END JA#NOBLY
