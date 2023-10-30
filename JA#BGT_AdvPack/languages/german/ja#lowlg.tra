@@ -4,8 +4,8 @@
 @3    = ~Wir möchten gerne die Annehmlichkeiten kosten, die Ihr anzubieten habt.~
 @4    = ~Wir sind auf der Suche nach Yago. Wir sind Freunde von ihm.~
 @5    = ~Wir sind Mitglieder der Flammenden Faust und hier, um Yago zu verhaften.~
-@6    = ~Sind schon wieder weg.~
-@7    = ~Der Preis beträgt eine Goldmünze pro Person. Ich wünsche einen angenehmen Aufenthalt.~
+@6    = ~Gar nichts, wir sind schon weg.~
+@7    = ~Der Preis beträgt eine Goldmünze pro Person.~
 @8    = ~Yago wünscht niemanden zu sehen.~
 @9    = ~Dann bitten wir zu unserem eigenen Vergnügen um Einlass.~
 @10   = ~Wir müssen ihn in einer wichtigen Angelegenheit sprechen.~
@@ -13,3 +13,8 @@
 @12   = ~Also schön, dann gehen wir wieder.~
 @13   = ~Das soll ich Euch glauben? Das kann nicht Euer Ernst sein. Geht, sonst hole ich die echte Flammende Faust her.~
 @14   = ~Ich wünsche Euch einen angenehmen Aufenthalt. Ihr könnt hier alle Sinnesfreuden bekommen, nach denen Euch gelüstet, sofern Ihr Euch an die Regeln haltet.~
+
+/* new for beta3 */
+@15   = ~Sicher.~
+@16   = ~Das ist zu teuer. Ich glaube, wir gehen wieder.~
+@17   = ~Wir haben kein Interesse.~
