@@ -36,8 +36,8 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.ITM~ ~override~
 	SAY NAME1 #6913 //Necklace (string ref is true for BGT and BG:EE)
 	SAY NAME2 @2052
-	SAY DESC @2053
 	SAY UNIDENTIFIED_DESC #6912 //general description Necklace (string ref is true for BGT and BG:EE)
+	SAY IDENTIFIED_DESC @2053
 
 
 COMPILE ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.BAF~
