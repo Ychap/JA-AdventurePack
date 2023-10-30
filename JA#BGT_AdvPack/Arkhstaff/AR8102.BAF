@@ -1,5 +1,16 @@
 IF
 	OnCreation()
+	GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
+	Global("JA#SAVETHALDO","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#SAVETHALDO","GLOBAL",2)
+		CreateCreature("JA#THALD",[768.446],14)
+		Continue()
+END
+
+IF
+	OnCreation()
 	Global("Chapter","GLOBAL",%tutu_chapter_7%)
 	Global("JA#KILL","%BaldursGateDocks_OgreMagiHouse_L2%",0)
 THEN
@@ -7,16 +18,6 @@ THEN
 		SetGlobal("JA#KILL","%BaldursGateDocks_OgreMagiHouse_L2%",1)
 		Kill("JA#ARKHS")
 		Kill("Thaldo")
-END
-
-IF
-	OnCreation()
-	GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
-	Global("JA#SAVETHALDO","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#SAVETHALDO","GLOBAL",2)
-		CreateCreature("JA#THALD",[768.446],14)
 END
 
 IF
