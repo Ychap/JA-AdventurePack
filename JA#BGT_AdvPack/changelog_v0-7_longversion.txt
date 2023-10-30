@@ -56,7 +56,7 @@ Händlerligaquest:
 
 added SetGlobal("JA#LOWLG","GLOBAL",1) to JA#LOWLG.D state "5" to prevent possible looping just in case the PC managed to sneak pst him before killing Yago
 
--added a possibility to Krammoch to ask him for the key without threatening him or stealing it from him (ja#krammoch.d)
+-added a possibility to Krammoch to ask him for the key without threatening him or stealing it from him (ja#arkhs.d)
 
 -tweaked ja#hulrik.d a little (state triggers and weights) to make it compatible with Miloch's Xvart Caverns in the install order JAP - XC
 

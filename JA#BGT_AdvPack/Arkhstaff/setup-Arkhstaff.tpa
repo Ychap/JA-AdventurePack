@@ -52,7 +52,7 @@ EXTEND_TOP ~%BaldursGateDocks_OgreMagiHouse_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Arkhsta
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#THALDO.D~
-COMPILE ~JA#BGT_AdvPack/Arkhstaff/JA#KRAMMOCH.D~
+COMPILE ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.D~
 
 
