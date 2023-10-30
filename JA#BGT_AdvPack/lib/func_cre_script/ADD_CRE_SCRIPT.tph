@@ -1,0 +1,23 @@
+DEFINE_PATCH_FUNCTION ADD_CRE_SCRIPT
+	INT_VAR offset_start	= SCRIPT_OVERRIDE
+			offset_end		= SCRIPT_DEFAULT
+	STR_VAR new_script_name	= ~None~
+BEGIN
+	FOR (script = offset_start; script <= offset_end; script += 0x8) BEGIN
+		READ_ASCII script script_name
+		PATCH_MATCH ~%script_name%~ WITH
+			~None~ ~~ BEGIN
+				WRITE_ASCIIE script ~%new_script_name%~ #8
+				SET offset_end = "-1" // break
+			END
+			~%new_script_name%~ BEGIN
+				SET offset_end = "-1" // break
+			END
+			DEFAULT
+		END
+	END
+
+	PATCH_IF offset_end != "-1" BEGIN
+		PATCH_WARN ~WARNING: Could not add script "%new_script_name%" in %DEST_FILE%!~
+	END
+END

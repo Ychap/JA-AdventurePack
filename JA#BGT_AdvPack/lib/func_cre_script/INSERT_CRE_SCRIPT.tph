@@ -1,0 +1,25 @@
+DEFINE_PATCH_FUNCTION INSERT_CRE_SCRIPT
+	INT_VAR script			= SCRIPT_OVERRIDE
+			script_limit	= SCRIPT_DEFAULT
+	STR_VAR new_script_name	= ~None~
+BEGIN
+	FOR (size = 0; script+size <= script_limit; size += 0x8) BEGIN
+		READ_ASCII script+size script_name
+		PATCH_MATCH ~%script_name%~ WITH
+			~None~ ~~ BEGIN
+				READ_ASCII script script_shift (size)
+				WRITE_ASCIIE script+0x8 ~%script_shift%~
+				WRITE_ASCIIE script ~%new_script_name%~ #8
+				SET script_limit = "-1" // break
+			END
+			~%new_script_name%~ BEGIN
+				SET script_limit = "-1" // break
+			END
+			DEFAULT
+		END
+	END
+
+	PATCH_IF script_limit != "-1" BEGIN
+		PATCH_WARN ~WARNING: Could not insert script "%new_script_name%" in %DEST_FILE%!~
+	END
+END

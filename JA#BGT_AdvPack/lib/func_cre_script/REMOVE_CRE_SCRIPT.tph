@@ -1,0 +1,11 @@
+DEFINE_PATCH_FUNCTION REMOVE_CRE_SCRIPT
+	INT_VAR offset_start	= SCRIPT_OVERRIDE
+			offset_end		= SCRIPT_DEFAULT
+	STR_VAR old_script_name	= ~None~
+BEGIN
+	LPF REPLACE_CRE_SCRIPT
+		INT_VAR offset_start
+				offset_end
+		STR_VAR old_script_name
+	END
+END
