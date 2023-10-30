@@ -2,9 +2,15 @@ BEGIN ~JA#ARKHS~
 
 IF ~StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN JA#KRAMM_CHARM
 SAY @3
-IF ~HasItem("JA#ARKKY",Myself) Global("JA#KNOW_KRAMM","LOCALS",2)~ THEN REPLY @4 DO ~GiveItem("JA#ARKKY",LastTalkedToBy(Myself))~ EXIT
+IF ~HasItem("JA#ARKKY",Myself) Global("JA#KNOW_KRAMM","LOCALS",2)~ THEN REPLY @4 GOTO JA#KRAMM_CHARM_KEY
 IF ~~ THEN REPLY @5 EXIT
 END
+
+IF ~~ THEN BEGIN JA#KRAMM_CHARM_KEY
+SAY @1
+IF ~~ THEN DO ~GiveItem("JA#ARKKY",LastTalkedToBy(Myself))~ EXIT
+END
+
 
 IF ~NumTimesTalkedTo(0) Global("SearchIronThrone","GLOBAL",0)~ THEN BEGIN JA#KRAMM_1
 SAY @6
