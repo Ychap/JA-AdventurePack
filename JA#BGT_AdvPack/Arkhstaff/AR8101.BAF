@@ -1,6 +1,7 @@
 IF
 	Global("Chapter","GLOBAL",%tutu_chapter_7%)
 	Global("ENDOFBG1","GLOBAL",0)
+	Global("DMWWOgreAmbush","GLOBAL",0) // SCS spawns Oger Magi outside of candlekeep in chapter 6
 	Global("JA#OGREM_SPAWN","%BaldursGateDocks_OgreMagiHouse_L1%",0)
 THEN
 	RESPONSE #100
