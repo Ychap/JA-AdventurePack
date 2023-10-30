@@ -1,14 +1,4 @@
 IF
-	Global("JA#SpawnIronThroneGuard","MYAREA",0)
-THEN
-	RESPONSE #100
-		CreateCreature("JA#IRONH",[397.642],15)
-		SetGlobal("JA#SpawnIronThroneGuard","MYAREA",1)
-END
-
-
-
-IF
 	Global("JA#THRONE_DOOR","%BaldursGateDocks%",0)
 	GlobalGT("EnteredIronThrone","GLOBAL",0)
 THEN
