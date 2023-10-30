@@ -8,20 +8,15 @@ THEN
 END
 
 IF
+	Range([PC],15)
 	See([PC])
-	Global("JA#SAVETHALDO","GLOBAL",2)
-THEN
-	RESPONSE #100
-		Wait(1)
-		StartDialogueNoSet([PC])
-END
-
-IF
-	See([PC])
-	Global("JA#SAVETHALDO","GLOBAL",0)
+	GlobalLT("JA#SAVETHALDO","GLOBAL",3)
+	GlobalGT("JA#KNOW_KRAMM","LOCALS",0)
+	OR(2)
+		Dead("Thaldo")
+		Global("JA#SAVETHALDO","GLOBAL",2)
 	GlobalGT("SearchIronThrone","GLOBAL",0)
 THEN
 	RESPONSE #100
-		Wait(1)
 		StartDialogueNoSet([PC])
 END

@@ -1,5 +1,5 @@
 @1    = ~Ja, natürlich, hier ist er.~
-
+@2    = ~Ich kann leider nichts versprechen. Wir werden einen anderen Weg finden, um in das Gebäude zu gelangen.~
 @3    = ~Hallo, mein Freund. Wie kann ich Euch diesmal behilflich sein?~
 @4    = ~Gebt mir den Schlüssel für den Geheimgang.~
 @5    = ~Schon gut. Lebt wohl.~
@@ -54,7 +54,7 @@
 @54   = ~Wir wissen das der Eisenthron hinter den Problemen an der Schwertküste steckt und wollen die Hintermänner aufhalten.~
 @55   = ~Nun, ich habe persönliche Gründe. Tut mir leid, aber ich kann Euch den Zugang zum Geheimgang nicht gewähren.~
 @56   = ~Dann müssen wir Euch leider mit Waffengewalt dazu zwingen.~
-@57   = ~Na gut, wir werden einen anderen Weg finden, in das Gebäude zu gelangen.~
+@57   = ~Na gut, wir werden einen anderen Weg finden, um in das Gebäude zu gelangen.~
 @58   = ~Soweit würdet Ihr gehen? Ihr würdet mich mit der Klinge bedrohen?~
 @59   = ~*Seufz* Also schön, vielleicht können wir zu einer Übereinkunft kommen. Ich glaube mich zu erinnern, dass Thaldorn Euch erwähnt hatte. Eine Gruppe von Söldnern macht dem Thron seit einiger Zeit zu schaffen. Ich nehme an, das seid Ihr?~
 @60   = ~So ist es. Mein Ruf eilt mir offensichtlich voraus.~
@@ -98,4 +98,4 @@ Krammoch war nicht erfreut, dass ich seinen Geliebten im Turm des Eisenthrons er
 @96   = ~Hätte ich doch nur meine schuppigen kleinen Lieblinge hier!~
 
 /* new for v 1.07 */
-@97 = ~Ich muss auf Eure Hilfe bestehen. Unser Vorhaben ist ehrenwert und es gibt offensichtlich keinen objektiven Grund, warum Ihr uns den Schlüssel nicht gebt!~
+@97   = ~Ich muss auf Eure Hilfe bestehen. Unser Vorhaben ist ehrenwert und es gibt offensichtlich keinen objektiven Grund, warum Ihr uns den Schlüssel nicht gebt!~
