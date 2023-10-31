@@ -184,7 +184,7 @@ END
 
 IF ~Dead("Thaldo") GlobalGT("SearchIronThrone","GLOBAL",0)~ THEN BEGIN JA#KRAMM_13
 SAY @79 = @80
-IF ~~ THEN DO ~SetGlobal("JA#SAVETHALDO","GLOBAL",10) Enemy()~ SOLVED_JOURNAL @81 EXIT
+IF ~~ THEN DO ~SetGlobal("JA#SAVETHALDO","GLOBAL",10) EraseJournalEntry(@1010) Enemy()~ SOLVED_JOURNAL @81 EXIT
 END
 
 // END ~JA#ARKHS~

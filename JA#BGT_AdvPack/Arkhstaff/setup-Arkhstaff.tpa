@@ -55,6 +55,8 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#THALDO.D~
 COMPILE ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.D~
 
+ADD_JOURNAL @81 @1010 @1019 USING ~JA#BGT_AdvPack/languages/%LANGUAGE%/ja#arkhs.tra~
+
 
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
