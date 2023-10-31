@@ -202,3 +202,9 @@ DO ~SetGlobal("JA#GUABE_BAS","%Beregost_JovialJuggler_L1%",2)~
 == JA#GUAB9 @42
 END
 IF ~~ THEN JOURNAL @1020 EXIT
+
+
+ADD_TRANS_ACTION KELDDA
+BEGIN 1 3 END
+BEGIN END
+~EraseJournalEntry(@1020)~
