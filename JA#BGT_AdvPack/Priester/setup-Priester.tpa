@@ -30,7 +30,6 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 		fj_loc_x = 2580
 		fj_loc_y = 304
 		fj_note_strref = RESOLVE_STR_REF(@2)
-		fj_color = 1
 		STR_VAR
 		fj_structure_type = note
 	END

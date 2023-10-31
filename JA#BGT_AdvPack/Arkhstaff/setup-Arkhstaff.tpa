@@ -193,3 +193,12 @@ COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
 		fj_name           = ~Iron Throne Guard~
 		fj_cre_resref     = JA#IRONH
 	END
+	//Add Mapnote
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x = 1124
+		fj_loc_y = 1236
+		fj_note_strref = RESOLVE_STR_REF(@40)
+		STR_VAR
+		fj_structure_type = note
+	END
