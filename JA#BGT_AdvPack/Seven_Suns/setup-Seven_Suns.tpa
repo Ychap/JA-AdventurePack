@@ -26,7 +26,7 @@ COPY_EXISTING ~DOPPSE.DLG~ ~override~
 		RET
 		strref
 	END
-	SET ssungu1 = strref 
+	SET ssungu1 = strref
 COPY_EXISTING ~DOPPSM.DLG~ ~override~
 	LPF READ_JOURNAL_STRREF
 		INT_VAR
@@ -34,7 +34,7 @@ COPY_EXISTING ~DOPPSM.DLG~ ~override~
 		RET
 		strref
 	END
-	SET ssungu2 = strref 
+	SET ssungu2 = strref
 COPY_EXISTING ~DOPPSE.DLG~ ~override~
 	LPF READ_JOURNAL_STRREF
 		INT_VAR
@@ -42,7 +42,7 @@ COPY_EXISTING ~DOPPSE.DLG~ ~override~
 		RET
 		strref
 	END
-	SET ssungu3 = strref 
+	SET ssungu3 = strref
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DOPPSE.D~	//Cutscene oben
 
@@ -70,7 +70,7 @@ COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR.D~
 COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#laola.D~
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
@@ -93,7 +93,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 		fj_loc_y          = 330
 		fj_dest_x         = 433
 		fj_dest_y         = 330
-		fj_orientation    = 14     
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Guard
@@ -103,7 +103,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
@@ -133,7 +133,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 356
 		fj_dest_x         = 454
 		fj_dest_y         = 356
-		fj_orientation    = 4      
+		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = JhassoDopp
@@ -146,7 +146,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 311
 		fj_dest_x         = 424
 		fj_dest_y         = 311
-		fj_orientation    = 15     
+		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = MercDopp
@@ -159,7 +159,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 342
 		fj_dest_x         = 365
 		fj_dest_y         = 342
-		fj_orientation    = 13     
+		fj_orientation    = 13
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = MercDopp
@@ -172,7 +172,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 262
 		fj_dest_x         = 628
 		fj_dest_y         = 262
-		fj_orientation    = 6      
+		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Guard
@@ -185,7 +185,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 230
 		fj_dest_x         = 519
 		fj_dest_y         = 230
-		fj_orientation    = 8      
+		fj_orientation    = 8
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = MercDopp
@@ -194,7 +194,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
@@ -227,7 +227,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_loc_y          = 417
 		fj_dest_x         = 263
 		fj_dest_y         = 417
-		fj_orientation    = 15     
+		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Guard1
@@ -240,7 +240,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_loc_y          = 366
 		fj_dest_x         = 200
 		fj_dest_y         = 366
-		fj_orientation    = 0      
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Guard2
@@ -253,7 +253,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_loc_y          = 349
 		fj_dest_x         = 368
 		fj_dest_y         = 349
-		fj_orientation    = 2      
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = Guard3
