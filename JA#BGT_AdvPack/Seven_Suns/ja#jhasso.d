@@ -180,12 +180,12 @@ IF ~~ THEN REPLY @23 DO ~SetGlobal("JA#JHASSO_QUEST","GLOBAL",1)~ GOTO 13
 IF ~~ THEN REPLY @24 EXIT
 END
 
+// BGT sets GLOBAL "TalkedToIvanne" in IVANNE.DLG
+// EE sets GLOBAL "IvanneStoryTold" in IVANNE.DLG
 IF ~Global("JA#JHASSO_QUEST","GLOBAL",1)~ THEN BEGIN JA#JHASSO_12
 SAY @25
-IF ~Global("TalkedToIvanne","GLOBAL",1)
-!Dead("JA#KIZSKA")~ THEN REPLY @26 DO ~SetGlobal("JA#JHASSO_QUEST","GLOBAL",2)~ GOTO JA#JHASSO_13
-IF ~Global("TalkedToIvanne","GLOBAL",1)
-Dead("JA#KIZSKA")~ THEN REPLY @27 DO ~SetGlobal("JA#JHASSO_QUEST","GLOBAL",3)~ GOTO JA#JHASSO_18
+IF ~OR(2) Global("TalkedToIvanne","GLOBAL",1) Global("IvanneStoryTold","GLOBAL",1) !Dead("JA#KIZSKA")~ THEN REPLY @26 DO ~SetGlobal("JA#JHASSO_QUEST","GLOBAL",2)~ GOTO JA#JHASSO_13
+IF ~OR(2) Global("TalkedToIvanne","GLOBAL",1) Global("IvanneStoryTold","GLOBAL",1)  Dead("JA#KIZSKA")~ THEN REPLY @27 DO ~SetGlobal("JA#JHASSO_QUEST","GLOBAL",3)~ GOTO JA#JHASSO_18
 IF ~~ THEN REPLY @28 EXIT
 END
 
@@ -235,15 +235,15 @@ END
 
 IF ~~ THEN BEGIN JA#JHASSO_20
 SAY @50
-IF ~~ THEN DO ~ReputationInc(1)GiveGoldForce(1000)EraseJournalEntry(@1012)EraseJournalEntry(@1013)EraseJournalEntry(@1014)EraseJournalEntry(@1015)EraseJournalEntry(@1016)EraseJournalEntry(@1017)EraseJournalEntry(@1018)~ SOLVED_JOURNAL @51 EXIT
+IF ~~ THEN DO ~ReputationInc(1) GiveGoldForce(1000) EraseJournalEntry(@1012) EraseJournalEntry(@1013)~ SOLVED_JOURNAL @51 EXIT
 END
 
 IF ~~ THEN BEGIN JA#JHASSO_21
 SAY @52
-IF ~~ THEN DO ~ReputationInc(1)EraseJournalEntry(@1012)EraseJournalEntry(@1013)EraseJournalEntry(@1014)EraseJournalEntry(@1015)EraseJournalEntry(@1016)EraseJournalEntry(@1017)EraseJournalEntry(@1018)~ SOLVED_JOURNAL @51 EXIT
+IF ~~ THEN DO ~ReputationInc(1) EraseJournalEntry(@1012) EraseJournalEntry(@1013)~ SOLVED_JOURNAL @51 EXIT
 END
 
-IF ~Global("JA#JHASSO_QUEST","GLOBAL",3)!Global("ENDOFBG1","GLOBAL",2)~ THEN BEGIN JA#JHASSO_22
+IF ~Global("JA#JHASSO_QUEST","GLOBAL",3) !Global("ENDOFBG1","GLOBAL",2)~ THEN BEGIN JA#JHASSO_22
 SAY @53
 IF ~~ THEN EXIT
 END
@@ -258,79 +258,17 @@ END
 
 //	IVANNE
 
-REPLACE_STATE_TRIGGER IVANNE 0
-~Global("TalkedToIvanne","GLOBAL",0)~
-
-ALTER_TRANS IVANNE // file name
-BEGIN 2 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("TalkedToIvanne","GLOBAL",1)~
-END
-
-ALTER_TRANS IVANNE // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("JA#JHASSO_QUEST","GLOBAL",0)~
-  "UNSOLVED_JOURNAL" ~@1014~
-END
-
-EXTEND_BOTTOM IVANNE 4
-IF ~Global("JA#JHASSO_QUEST","GLOBAL",1)~ THEN UNSOLVED_JOURNAL @1014 EXIT
-END
-
-
-
-ALTER_TRANS IVANNE // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("TalkedToIvanne","GLOBAL",1)~
-  "TRIGGER" ~!Dead("JA#KIZSKA")
-!Dead("Cythan")~
-  "UNSOLVED_JOURNAL" ~@1015~
-END
-
-ALTER_TRANS IVANNE // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~!Dead("JA#KIZSKA")
-Dead("Cythan")~
-  "UNSOLVED_JOURNAL" ~@1016~
-END
-
-ALTER_TRANS IVANNE // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 2 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Dead("JA#KIZSKA")
-!Dead("Cythan")~
-  "UNSOLVED_JOURNAL" ~@1017~
-END
-
-ALTER_TRANS IVANNE // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 3 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Dead("JA#KIZSKA")
-Dead("Cythan")~
-  "UNSOLVED_JOURNAL" ~@1018~
-END
-
-
 APPEND IVANNE
 
-IF ~Global("TalkedToIvanne","GLOBAL",1)~ THEN BEGIN IVANNE_1
+IF ~True()~ THEN BEGIN IVANNE_1
 SAY @54
 IF ~~ THEN EXIT
 END
 
-END
+END // APPEND IVANNE
+
+
 
 REPLACE_ACTION_TEXT RASHAD
 ~ApplySpell(Myself,DOPPLEGANGER_CHANGE_DEFAULT)~
 ~UseItem("JA#DPKIZ",Myself)~
-
-
