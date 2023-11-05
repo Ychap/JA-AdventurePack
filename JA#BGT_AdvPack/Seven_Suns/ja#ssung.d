@@ -14,7 +14,7 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY @5
-  IF ~~ THEN DO ~SetGlobal("JA#7SUNS_GUARDDEAD","GLOBAL",1)MoveToPoint([546.215])DestroySelf()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#7SUNS_GUARDDEAD","GLOBAL",1) MoveToPoint([546.215]) DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN 2
@@ -23,28 +23,18 @@ IF ~~ THEN BEGIN 2
 END
 
 IF ~Global("JA#DLG_GUA","LOCALS",1)~ THEN BEGIN JA#SSUNGU_03
-SAY @7
-IF ~~ THEN DO ~EscapeArea()~ EXIT
+  SAY @7
+  IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~NumTimesTalkedToGT(0)~ THEN BEGIN JA#SSUNGU_01
-SAY @8
-IF ~~ THEN REPLY @2 GOTO 1
-IF ~~ THEN REPLY @9 EXIT
+  SAY @8
+  IF ~~ THEN REPLY @2 GOTO 1
+  IF ~~ THEN REPLY @9 EXIT
 END
 
+// END JA#SSGU1
 
-BEGIN ~JA#SSGU4~
-
-IF ~~ THEN BEGIN 0
-  SAY @10
-  IF ~~ THEN EXTERN JA#SSMR3 2
-END
-
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY @11
-IF ~~ THEN DO ~EscapeArea()~ EXIT
-END
 
 
 BEGIN ~JA#SSGU3~
@@ -66,6 +56,24 @@ ActionOverride(Player6,LeaveAreaLUA("%SWBaldursGate%","",[3533.1367],14))~ EXIT
 END
 
 IF ~~ THEN BEGIN 2
-SAY @16
-IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ EXIT
+  SAY @16
+  IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ EXIT
 END
+
+// END JA#SSGU3
+
+
+
+BEGIN ~JA#SSGU4~
+
+IF ~~ THEN BEGIN 0
+  SAY @10
+  IF ~~ THEN EXTERN JA#SSMR3 2 // in ja#doppse.d
+END
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
+  SAY @11
+  IF ~~ THEN DO ~EscapeArea()~ EXIT
+END
+
+// END JA#SSGU4

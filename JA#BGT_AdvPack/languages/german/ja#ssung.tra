@@ -1,5 +1,5 @@
 /* #6388 */
-@0    = ~Ich bin nur eine angeheuerte Wache. Es ist nicht meine Aufgabe, viel zu wissen. Tut mir Leid.~
+@0    = ~Ich bin nur eine angeheuerte Wache. Es ist nicht meine Aufgabe, viel zu wissen. Tut mir leid.~
 /* #1000 */
 @1    = ~Es ist Euch nicht gestattet, dieses Gebäude zu betreten.~
 /* #1006 */
@@ -7,7 +7,7 @@
 /* #1007 */
 @3    = ~Warum nicht?~
 /* #1008 */
-@4    = ~Okay, bis später.~
+@4    = ~Gut, bis später.~
 /* #1001 */
 @5    = ~In diesem Falle bitte ich Euch, hier zu warten, während ich ihn von Eurer Ankunft in Kenntnis setze.~
 /* #1002 */
