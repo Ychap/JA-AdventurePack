@@ -125,7 +125,7 @@ IF ~~ THEN DO ~SetGlobal("JA#JHASSO_MOVE","GLOBAL",3)~ JOURNAL @19 EXIT
 END
 
 
-IF ~Global("JA#JHASSO_MOVE","GLOBAL",3) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN JA#JHASSO_10
+IF ~Global("JA#JHASSO_MOVE","GLOBAL",3) GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~ THEN BEGIN JA#JHASSO_10
 SAY @20
 IF ~~ THEN EXIT
 END
