@@ -9,7 +9,7 @@ COMPILE ~JA#BGT_AdvPack/MERCH03/JA#MERC3.BAF~
 
 COMPILE ~JA#BGT_AdvPack/MERCH03/JA#MERC3.D~
 
-ADD_JOURNAL @13 @15 @18 @1008 @1033 USING ~JA#BGT_AdvPack/languages/%LANGUAGE%/ja#merc3.tra~
+ADD_JOURNAL @13 @15 @18 @1008 @1033 USING ~JA#BGT_AdvPack/languages/%s/ja#merc3.tra~
 
 
 COPY_EXISTING ~%CoastWay%.ARE~ ~override~

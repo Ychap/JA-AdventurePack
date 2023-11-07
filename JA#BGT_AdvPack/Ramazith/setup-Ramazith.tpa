@@ -141,8 +141,8 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#jopi.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#abela.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#imp01.d~
 
-ADD_JOURNAL EXISTING @18 USING ~JA#BGT_AdvPack/languages/%LANGUAGE%/ja#ramazi.tra~
-ADD_JOURNAL @22 @39 @1023 USING ~JA#BGT_AdvPack/languages/%LANGUAGE%/ja#jopi.tra~
+ADD_JOURNAL EXISTING @18 USING ~JA#BGT_AdvPack/languages/%s/ja#ramazi.tra~
+ADD_JOURNAL @22 @39 @1023 USING ~JA#BGT_AdvPack/languages/%s/ja#jopi.tra~
 
 
 // Make CLCK07.ITM(Nymph Cloak) undroppable - can be obtained other ways
