@@ -76,6 +76,9 @@ END*/
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#JHASSO.D~
 COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR.D~
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR_bgt.D~ USING ~JA#BGT_AdvPack/languages/%s/ja#scar.tra~
+END
 COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#laola.D~
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
