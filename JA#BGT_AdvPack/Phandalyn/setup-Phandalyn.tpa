@@ -23,16 +23,8 @@ BUT_ONLY
 
 // Cycle through the existing actors, first (in case area was altered by another mod)
 COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
-	//remove Phandalyn
-	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
-	FOR (i = (SHORT_AT 0x58)-1; i >= 0; --i) BEGIN
-		READ_ASCII $actors("%i%") actor_name (32) NULL
-		PATCH_IF (~%actor_name%~ STR_EQ ~Phandalyn~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = i
-				STR_VAR fj_structure_type = ~actor~
-			END
-		END
+	LPF DELETE_AREA_ACTOR
+		STR_VAR actor_to_delete = ~Phandalyn~
 	END
 BUT_ONLY
 
