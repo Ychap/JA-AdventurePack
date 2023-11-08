@@ -354,11 +354,11 @@ BUT_ONLY
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~FECOOK~) BEGIN
 			WRITE_ASCII actors_offset+0x48 ~JA#MLCOK~
 		END
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~BRANDI~) BEGIN
 			WRITE_SHORT actors_offset+0x20  637
 			WRITE_SHORT actors_offset+0x22  734
@@ -366,7 +366,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 			WRITE_SHORT actors_offset+0x26  734
 			WRITE_SHORT actors_offset+0x34  14
 		END
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~ZORL~) BEGIN
 			WRITE_SHORT actors_offset+0x20  1352
 			WRITE_SHORT actors_offset+0x22  671
@@ -420,7 +420,7 @@ BUT_ONLY
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 	//delete not needed actors
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
+		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~DOPPLE~) BEGIN
 			LPF fj_are_structure
 				INT_VAR fj_delete_mode = EVAL %cnt%

@@ -24,7 +24,7 @@ COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 	// END
 	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
 	PHP_EACH actors AS i => actor BEGIN
-		READ_ASCII actor+0x80 actor_filename (32) NULL
+		READ_ASCII actor+0x80 actor_filename
 		PATCH_IF (~%actor_filename%~ STR_EQ ~GOLEMF~) BEGIN
 			WRITE_ASCII actor+0x00 ~Piratenskelett~ #32
 			WRITE_LONG  actor+0x30  0xEB10 // SKELETON_WARRIOR

@@ -84,9 +84,8 @@ COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#laola.D~
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~DOPPSM~) BEGIN // MERCHANT
 			WRITE_SHORT actors_offset+0x20        331
 			WRITE_SHORT actors_offset+0x22        303
@@ -117,9 +116,8 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		PATCH_IF ((~%actors_pos_x%~ = 436) AND (~%actors_filename%~ STR_EQ  ~DOPMER~)) BEGIN // MERCHANT
 			WRITE_SHORT actors_offset+0x20        360
 			WRITE_SHORT actors_offset+0x22        468
@@ -208,9 +206,8 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~JHASSO~) BEGIN
 			WRITE_SHORT actors_offset+0x20        440
 			WRITE_SHORT actors_offset+0x22        435

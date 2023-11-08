@@ -75,9 +75,8 @@ BUT_ONLY
 COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		//Flaming Fist Dialog and Script changes
 		PATCH_IF ((~%actors_pos_x%~ = 500) AND (~%actors_filename%~ STR_EQ  ~AMNIS~)) BEGIN
 			WRITE_SHORT actors_offset + 0x20        912

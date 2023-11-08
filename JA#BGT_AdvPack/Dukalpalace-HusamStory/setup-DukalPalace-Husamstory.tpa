@@ -80,7 +80,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		//Flaming Fist Dialog and Script changes
 		PATCH_IF ((~%actors_pos_x%~ = 463) AND (~%actors_filename%~ STR_EQ  ~FLAM10~)) BEGIN
 			WRITE_ASCII actors_offset + 0x48 ~JA#FLAM4~ #8
@@ -328,7 +328,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
+		READ_ASCII actors_offset+0x80 actors_filename
 		//Flaming Fist Dialog and Script changes
 		PATCH_IF ((~%actors_pos_x%~ = 710) AND (~%actors_filename%~ STR_EQ ~FLAM7~)) BEGIN
 			WRITE_SHORT actors_offset + 0x20        710

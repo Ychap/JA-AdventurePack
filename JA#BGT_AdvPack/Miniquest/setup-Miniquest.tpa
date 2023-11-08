@@ -189,7 +189,7 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 	//delete actors
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
+		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~SERWEN~) BEGIN
 			LPF fj_are_structure
 				INT_VAR fj_delete_mode = EVAL %cnt%
