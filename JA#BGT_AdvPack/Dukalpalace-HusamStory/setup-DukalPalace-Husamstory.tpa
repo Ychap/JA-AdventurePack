@@ -429,7 +429,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_vertex_3     = 611 + (308 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_destination_area	= EVAL %CentralSewers%
+		fj_destination_area	= EVAL ~%CentralSewers%~
 		fj_destination_name	= JA#7211
 		fj_name             = JA#AR7325
 	END
@@ -589,7 +589,7 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		fj_vertex_3     = 596 + (1907 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_destination_area	= EVAL %NBaldursGate_DucalPalace_Cellar%
+		fj_destination_area	= EVAL ~%NBaldursGate_DucalPalace_Cellar%~
 		fj_destination_name	= JA#7211
 		fj_name             = JA#7211
 	END
