@@ -6,8 +6,7 @@
 //Nila
 
 COPY_EXISTING ~CYTHAN.CRE~ ~override~
-	SPRINT item_to_delete ~SCRL3F~
-	LAUNCH_PATCH_MACRO DELETE_CRE_ITEM
+	LPF DELETE_CRE_ITEM STR_VAR item_to_delete = ~SCRL3F~ END
 
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#KAEM1.CRE~ ~override~
 	SAY NAME1 @2044
@@ -67,20 +66,20 @@ COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH04.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH05.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH06.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH07.CRE~ ~override~
-					 
+
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA2.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA3.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA4.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA5.CRE~ ~override~
-					 
+
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.VVC~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.WAV~ ~override~
 
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
@@ -109,7 +108,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 			WRITE_ASCII actors_offset + 0x48 ~JA#FLAM4~ #8
 			WRITE_ASCII actors_offset + 0x78 ~JA#FLM09~ #8
 		END
-	END	
+	END
 	//Delete Nobles
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
 		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
@@ -127,7 +126,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_loc_y          = 555
 		fj_dest_x         = 271
 		fj_dest_y         = 555
-		fj_orientation    = 6     
+		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Woman~
@@ -141,7 +140,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_loc_y          = 603
 		fj_dest_x         = 297
 		fj_dest_y         = 603
-		fj_orientation    = 9     
+		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Woman~
@@ -155,7 +154,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_loc_y          = 509
 		fj_dest_x         = 274
 		fj_dest_y         = 509
-		fj_orientation    = 0     
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
@@ -169,7 +168,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_loc_y          = 471
 		fj_dest_x         = 286
 		fj_dest_y         = 471
-		fj_orientation    = 6     
+		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
@@ -183,7 +182,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_loc_y          = 511
 		fj_dest_x         = 204
 		fj_dest_y         = 511
-		fj_orientation    = 14    
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
@@ -197,7 +196,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_loc_y          = 872
 		fj_dest_x         = 784
 		fj_dest_y         = 872
-		fj_orientation    = 5     
+		fj_orientation    = 5
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Lady Odelia~
@@ -231,8 +230,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_con_itm_idx    = 0 
-		fj_flags          = 0 
+		fj_con_itm_idx    = 0
+		fj_flags          = 0
 		STR_VAR
 		fj_name           = SCRL3F
 		fj_structure_type = itm
@@ -267,7 +266,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		fj_loc_y          = 700
 		fj_dest_x         = 512
 		fj_dest_y         = 700
-		fj_orientation    = 5     
+		fj_orientation    = 5
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Camerarius~
@@ -277,7 +276,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
-	//delete Flaming Fist	
+	//delete Flaming Fist
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
 		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~FLAM11~) BEGIN
@@ -294,7 +293,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_loc_y          = 695
 		fj_dest_x         = 909
 		fj_dest_y         = 695
-		fj_orientation    = 14    
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
@@ -308,7 +307,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_loc_y          = 750
 		fj_dest_x         = 836
 		fj_dest_y         = 750
-		fj_orientation    = 14    
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
@@ -322,7 +321,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_loc_y          = 435
 		fj_dest_x         = 566
 		fj_dest_y         = 435
-		fj_orientation    = 6     
+		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
@@ -336,7 +335,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_loc_y          = 476
 		fj_dest_x         = 506
 		fj_dest_y         = 476
-		fj_orientation    = 6     
+		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
@@ -348,7 +347,7 @@ BUT_ONLY
 
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
@@ -382,10 +381,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1122
-		fj_loc_y          = 396 
+		fj_loc_y          = 396
 		fj_dest_x         = 1122
-		fj_dest_y         = 396 
-		fj_orientation    = 2      
+		fj_dest_y         = 396
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gefangener~
@@ -398,7 +397,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_loc_y          = 603
 		fj_dest_x         = 297
 		fj_dest_y         = 603
-		fj_orientation    = 9     
+		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
@@ -411,7 +410,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_loc_y          = 579
 		fj_dest_x         = 383
 		fj_dest_y         = 579
-		fj_orientation    = 4     
+		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
@@ -424,7 +423,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_loc_y          = 530
 		fj_dest_x         = 353
 		fj_dest_y         = 530
-		fj_orientation    = 1     
+		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
@@ -437,7 +436,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_loc_y          = 828
 		fj_dest_x         = 895
 		fj_dest_y         = 828
-		fj_orientation    = 0     
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~JA#FLAM1~
@@ -585,7 +584,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		INT_VAR
 		fj_loc_x       = 627    //x
 		fj_loc_y       = 360   //y
-		fj_orientation = 14   
+		fj_orientation = 14
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = JA#7325
@@ -610,9 +609,9 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		fj_type         = 2    //travel
 		fj_box_left     = 420
 		fj_box_top      = 1741
-		fj_box_right    = 596 
+		fj_box_right    = 596
 		fj_box_bottom   = 1908
-		fj_cursor_idx	= 34   
+		fj_cursor_idx	= 34
 		fj_loc_x		= 572
 		fj_loc_y		= 1803
 		fj_vertex_0     = 573 + (1775 << 16)
@@ -629,7 +628,7 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		INT_VAR
 		fj_loc_x       = 667    //x
 		fj_loc_y       = 1818   //y
-		fj_orientation = 13   
+		fj_orientation = 13
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = JA#7211
