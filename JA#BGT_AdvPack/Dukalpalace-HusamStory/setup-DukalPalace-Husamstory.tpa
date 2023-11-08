@@ -604,39 +604,19 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 	END
 
 COPY_EXISTING ~HUSAM.dlg~ ~override~
-	LPF ~READ_JOURNAL_STRREF~
-		INT_VAR
-		state         = "6"  // state index
-		stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-		RET
-		strref    // returned string reference, or -1 if not available
+	LPF READ_JOURNAL_STRREF
+		INT_VAR state = 6
+		RET strref
 	END
 	SET husam1 = strref
-COPY_EXISTING ~NOBLBA.dlg~ ~override~
-	LPF ~READ_JOURNAL_STRREF~
-		INT_VAR
-		state         = "2"  // state index
-		stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-		RET
-		strref    // returned string reference, or -1 if not available
-	END
-	SET noblba1 = strref
-COPY_EXISTING ~NOBL12.dlg~ ~override~
-	LPF ~READ_JOURNAL_STRREF~
-		INT_VAR
-		state         = "2"  // state index
-		stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-		RET
-		strref    // returned string reference, or -1 if not available
-	END
-	SET noblba2 = strref
+BUT_ONLY
 
 ACTION_IF GAME_IS ~BGT~ BEGIN
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#BELT.D~
 END
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PALAST.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PRISO.D~	//noblba1 noblba2 Journalstring
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PRISO.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM.D~	//husam1 Journalstring
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#MCOOK4.D~
 

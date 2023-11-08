@@ -136,7 +136,7 @@ END
 
 IF ~RandomNum(3,3)~ THEN BEGIN JA#NOB00_2
 SAY @35
-IF ~~ THEN DO ~AddJournalEntry(%noblba1%,USER)~ EXIT
+COPY_TRANS NOBLBA 2
 END
 
 
@@ -159,7 +159,7 @@ END
 
 IF ~RandomNum(3,3)~ THEN BEGIN JA#NOB13_3
 SAY @39
-IF ~~ THEN DO ~AddJournalEntry(%noblba2%,USER)~ EXIT
+COPY_TRANS NOBL12 2
 END
 
 
@@ -167,7 +167,7 @@ BEGIN ~JA#NOBW6~
 
 IF ~StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN JA#NOBW6_0
 SAY @39
-IF ~~ THEN DO ~AddJournalEntry(%noblba2%,USER)~ EXIT
+COPY_TRANS NOBL12 2
 END
 
 IF ~RandomNum(3,1)~ THEN BEGIN JA#NOBW6_1
