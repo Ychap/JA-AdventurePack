@@ -79,7 +79,6 @@ COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.WAV~ ~override~
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
 		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
 		//Flaming Fist Dialog and Script changes
@@ -108,15 +107,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		END
 	END
 	//Delete Nobles
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF ((~%actors_filename%~ STR_EQ  ~NOBW5~) OR (~%actors_filename%~ STR_EQ  ~NOBL12~)) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-	END
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW5~ END
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW12~ END
 	//Add new Noble and Lady Odelia
 	LPF fj_are_structure
 		INT_VAR
@@ -202,7 +194,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_dlg_resref	  = JA#NOPA6
 		fj_bcs_specific	  = SARRUN
 	END
-BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 	//new position for NILA
@@ -271,19 +262,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		fj_cre_resref     = JA#KAEM1
 		fj_dlg_resref	  = JA#KAEM1
 	END
-BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 	//delete Flaming Fist
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~FLAM11~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-	END
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~FLAM11~ END
 	//Add new Flaming Fist
 	LPF fj_are_structure
 		INT_VAR
@@ -341,40 +323,29 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_dlg_resref	  = JA#FLAM3
 		fj_bcs_specific	  = JA#FLM01
 	END
-BUT_ONLY
-
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
 		READ_SHORT actors_offset+0x20 actors_pos_x
 		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
 		//Flaming Fist Dialog and Script changes
-		PATCH_IF ((~%actors_pos_x%~ = 710) AND (~%actors_filename%~ STR_EQ  ~FLAM7~)) BEGIN
-			WRITE_SHORT actors_offset + 0x20        710		//FlamFist1
+		PATCH_IF ((~%actors_pos_x%~ = 710) AND (~%actors_filename%~ STR_EQ ~FLAM7~)) BEGIN
+			WRITE_SHORT actors_offset + 0x20        710
 			WRITE_SHORT actors_offset + 0x22        1055
 			WRITE_SHORT actors_offset + 0x24        710
 			WRITE_SHORT actors_offset + 0x26        1055
 			WRITE_SHORT actors_offset + 0x34        12
 		END
-		PATCH_IF ((~%actors_pos_x%~ = 693) AND (~%actors_filename%~ STR_EQ  ~FLAM7~)) BEGIN
-			WRITE_SHORT actors_offset + 0x20        693		//FlamFist1
+		PATCH_IF ((~%actors_pos_x%~ = 693) AND (~%actors_filename%~ STR_EQ ~FLAM7~)) BEGIN
+			WRITE_SHORT actors_offset + 0x20        693
 			WRITE_SHORT actors_offset + 0x22        1072
 			WRITE_SHORT actors_offset + 0x24        693
 			WRITE_SHORT actors_offset + 0x26        1072
 			WRITE_SHORT actors_offset + 0x34        14
 		END
 	END
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~PRISON~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-	END
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~PRISON~ END // exists only in BGT
 	//add new actors
 	LPF fj_are_structure
 		INT_VAR
@@ -599,7 +570,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_name = JA#7211A
 		fj_bam_resref = JA#7211A
 	END
-BUT_ONLY
+
 COPY_EXISTING ~%CentralSewers%.are~ ~override~
 	//add region triggers
 	LPF fj_are_structure
