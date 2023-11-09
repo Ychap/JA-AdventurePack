@@ -420,9 +420,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_box_top      = 244
 		fj_box_right    = 611
 		fj_box_bottom   = 346
-		fj_cursor_idx	= 34
-		fj_loc_x		= 612
-		fj_loc_y		= 337
+		fj_cursor_idx   = 34
+		fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
+		fj_loc_x        = 612
+		fj_loc_y        = 337
 		fj_vertex_0     = 555 + (346 << 16)
 		fj_vertex_1     = 547 + (283 << 16)
 		fj_vertex_2     = 595 + (244 << 16)
@@ -440,9 +441,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_box_top      = 354
 		fj_box_right    = 458
 		fj_box_bottom   = 374
-		fj_cursor_idx	= 8
-		fj_loc_x		= 494
-		fj_loc_y		= 414
+		fj_cursor_idx   = 8
+		fj_flags        = 0b000100000000 // Trigger deactivated(8)
+		fj_loc_x        = 494
+		fj_loc_y        = 414
 		fj_vertex_0     = 450 + (374 << 16)
 		fj_vertex_1     = 448 + (363 << 16)
 		fj_vertex_2     = 458 + (354 << 16)
@@ -551,7 +553,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	//add entrance
 	LPF  ~fj_are_structure~
 		INT_VAR
-		fj_loc_x       = 627    //x
+		fj_loc_x       = 627   //x
 		fj_loc_y       = 360   //y
 		fj_orientation = 14
 		STR_VAR
@@ -564,7 +566,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_loc_x = 551
 		fj_loc_y = 246
 		fj_schedule = 0b111111111111111111111111 //Hours 0.00 - 24.00
-		fj_flags = 0b00000000000000000001000101000001	// Visible, blend colours, not covered by wall, don't remove in combat
+		fj_flags = 0b00000000000000000001000101000000 // blend colours, not covered by wall, don't remove in combat
 		STR_VAR
 		fj_structure_type = animation
 		fj_name = JA#7211A
@@ -580,9 +582,10 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		fj_box_top      = 1741
 		fj_box_right    = 596
 		fj_box_bottom   = 1908
-		fj_cursor_idx	= 34
-		fj_loc_x		= 572
-		fj_loc_y		= 1803
+		fj_cursor_idx   = 34
+		fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
+		fj_loc_x        = 572
+		fj_loc_y        = 1803
 		fj_vertex_0     = 573 + (1775 << 16)
 		fj_vertex_1     = 420 + (1741 << 16)
 		fj_vertex_2     = 454 + (1908 << 16)
@@ -590,7 +593,7 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		STR_VAR
 		fj_structure_type   = region
 		fj_destination_area	= EVAL ~%NBaldursGate_DucalPalace_Cellar%~
-		fj_destination_name	= JA#7211
+		fj_destination_name	= JA#7325
 		fj_name             = JA#7211
 	END
 	LPF  ~fj_are_structure~

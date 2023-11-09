@@ -14,16 +14,6 @@ THEN
 END
 
 IF
-	Global("JA#AR7211_ONCR","%NBaldursGate_DucalPalace_Cellar%",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#AR7211_ONCR","%NBaldursGate_DucalPalace_Cellar%",1)
-		AmbientActivate("JA#7211A",FALSE)
-		TriggerActivation("JA#CANDL",FALSE)
-		TriggerActivation("JA#AR7325",FALSE)
-END
-
-IF
 	Global("JA#SHADOW_CUT","%NBaldursGate_DucalPalace_Cellar%",1)
 THEN
 	RESPONSE #100
