@@ -1,6 +1,6 @@
 @0    = ~Gibt es irgendeine Möglichkeit in das Hauptquartier des Eisenthrons zu gelangen?~
-@1    = ~Okay, Husam, wer sind die Anführer des Eisenthrons?~
-@2    = ~Einen geheimen Weg? Oh ja, ich kenne einen, einen richtig guten. Kennt Ihr Krammoch Arkhstaff? Was soll's, nicht weiter wichtig. Der hat sein Haus direkt neben der Zitadelle von dem - (hicks) - Eisenthron. Der ist ziemlich eng mit dem Thaldorn, hehe, wisst schon, was ich meine. Jedenfalls, es gibt da einen geheimen Gang zwischen seinem Keller und dem Keller vom Eisenthron.~
+@1    = ~Na gut, Husam, wer sind die Anführer des Eisenthrons?~
+@2    = ~Kennt Ihr Krammoch Arkhstaff? Was soll's, nicht weiter wichtig. Der hat sein Haus direkt neben der Zitadelle von dem (hicks) Eisenthron. Der ist ziemlich eng mit dem Rieltar, hehe, wisst schon, was ich meine. Jedenfalls, es gibt da einen geheimen Gang zwischen seinem Keller und dem Keller vom Eisenthron.~
 @3    = ~Es geschieht heute Nacht! Im Erfolgsfall erlangt Sarevok die Herrschaft über die gesamte Stadt. Wir müssen sofort eingreifen und die Herzöge warnen, bevor es zu spät ist. Machen wir uns umgehend auf den Weg zum Palast!~
 @4    = ~Husam und die Schattendiebe
 
@@ -28,4 +28,4 @@ Wir haben den Geheimgang zum Keller geöffnet und Husams Schattendieben Zutritt v
 @19   = ~Husam und die Schattendiebe
 
 Husam hat sich für unsere Zusammenarbeit bedankt und mir viel Glück im Kampf gegen Sarevok gewünscht. Wir konnten den nötigen Beweis erbringen, dass die Schattendiebe nicht für die Mordanschläge der letzten Zeit verantwortlich sind. Sollte ich jemals nach Athkatla kommen, werde ich Husam vielleicht wiedersehen.~
-@20   = ~Das werde ich tun. Danke für die Informationen.~
+// @20   = ~Das werde ich tun. Danke für die Informationen.~

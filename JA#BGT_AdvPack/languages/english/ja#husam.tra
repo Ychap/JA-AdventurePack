@@ -1,6 +1,6 @@
 @0    = ~Is there any way to reach the Iron Throne Headquarters?~
-@1    = ~Okay, Husam, who are the Iron Throne leaders?~
-@2    = ~A secrets route. Oh ya, I know ones, a really goods one. Ya know Krammach Arhsstaff? Ah it doeshn't matter. His *hic* home's located righst beside the Iron Throne citadel. He's in close with Rieltar, he he, know what I mean. Wells anyways, he's gots a passage from hish bashement to the Throne's bashement.~
+@1    = ~Okay. Husam, who are the leaders of the Iron Throne?~
+@2    = ~Ya know Krammach Arhsstaff? Ah it doeshn't matter. His *hic* home's located righst beside the Iron Throne citadel. He's in close with Rieltar, he he, know what I mean. Wells anyways, he's gots a passage from hish bashement to the Throne's bashement.~
 @3    = ~That's happening tonight! If they succeed, Sarevok will have seized control of the entire city. We should move immediately; we have to get to the dukes before it's too late. Let's head to the palace now!~
 @4    = ~Husam and the Shadow Thieves
 
@@ -29,4 +29,4 @@ We have opened the secret passage to the basement and Husam's Shadow Thieves got
 @19   = ~Husam and the Shadow Thieves
 
 Husam thanked us for our cooperation and wished me good luck in the fight against Sarevok. We were able to provide the necessary proof that the Shadow Thieves were not responsible of the recent assassinations. Should I ever come to Athkatla, maybe I'll meet Husam.~
-@20	= ~I will do that. Thanks for the information.~
+// @20	= ~I will do that. Thanks for the information.~

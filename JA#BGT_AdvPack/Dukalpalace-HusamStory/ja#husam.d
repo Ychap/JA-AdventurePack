@@ -1,88 +1,78 @@
 
-ALTER_TRANS HUSAM // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#LEADERS","LOCALS",1)~
-END
+ADD_TRANS_ACTION HUSAM
+BEGIN 3 END
+BEGIN 0 END
+~SetGlobal("JA#LEADERS","LOCALS",1)~
 
-ALTER_TRANS HUSAM // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#PLANS","LOCALS",1)~
-END
+ADD_TRANS_ACTION HUSAM
+BEGIN 3 END
+BEGIN 1 END
+~SetGlobal("JA#PLANS","LOCALS",1)~
 
 EXTEND_BOTTOM HUSAM 3
-IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#DOOR","LOCALS",1)~ GOTO JA#HUSAM_1
+IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#DOOR","LOCALS",1) SetGlobal("JA#HUSAM_SECRET","GLOBAL",2)~ GOTO 6
 END
 
 
+ALTER_TRANS HUSAM
+BEGIN 4 END
+BEGIN 0 END
+BEGIN
+  "EPILOGUE" ~GOTO 7~
+END
 
-ALTER_TRANS HUSAM // file name
-BEGIN 7 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("JA#PLANS","LOCALS",0)~
-  "ACTION" ~SetGlobal("JA#PLANS","LOCALS",1)
-SetGlobal("AskedHusam1","GLOBAL",1)~
+
+ALTER_TRANS HUSAM
+BEGIN 5 END
+BEGIN 0 END
+BEGIN
+  "EPILOGUE" ~GOTO 7~
+END
+
+
+ADD_TRANS_TRIGGER HUSAM 7
+~Global("JA#PLANS","LOCALS",0)~ DO 1
+
+ADD_TRANS_ACTION HUSAM
+BEGIN 7 END
+BEGIN 1 END
+~SetGlobal("JA#PLANS","LOCALS",1)~
+
+ALTER_TRANS HUSAM
+BEGIN 7 END
+BEGIN 1 END
+BEGIN
   "EPILOGUE" ~GOTO 5~
 END
 
-ALTER_TRANS HUSAM // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "EPILOGUE" ~GOTO 7~
-END
-
-
-ALTER_TRANS HUSAM // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "EPILOGUE" ~GOTO 7~
-END
-
-
 EXTEND_BOTTOM HUSAM 7
-IF ~Global("JA#LEADERS","LOCALS",0)~ THEN REPLY @1 DO ~SetGlobal("JA#LEADERS","LOCALS",1)~ GOTO 5
+IF ~Global("JA#LEADERS","LOCALS",0)~ THEN REPLY @1 DO ~SetGlobal("JA#LEADERS","LOCALS",1)~ GOTO 4
+IF ~Global("JA#DOOR","LOCALS",0)~ THEN REPLY @0 DO ~SetGlobal("JA#DOOR","LOCALS",1) SetGlobal("JA#HUSAM_SECRET","GLOBAL",2)~ GOTO 6
 END
 
-EXTEND_BOTTOM HUSAM 7
-IF ~Global("JA#DOOR","LOCALS",0)~ THEN REPLY @0 DO ~SetGlobal("JA#DOOR","LOCALS",1)~ GOTO JA#HUSAM_1
+EXTEND_BOTTOM HUSAM 6
+IF ~OR(2) Global("JA#PLANS","LOCALS",0) Global("JA#LEADERS","LOCALS",0)~ THEN UNSOLVED_JOURNAL #%husam6% GOTO 7
 END
 
-
-ALTER_TRANS HUSAM // file name
-BEGIN 11 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "REPLY" ~@20~ 
-END
 
 EXTEND_BOTTOM HUSAM 11
-IF ~~ THEN REPLY @0 GOTO JA#HUSAM_2
+IF ~Global("JA#DOOR","LOCALS",0)~ THEN DO ~SetGlobal("JA#DOOR","LOCALS",1) SetGlobal("JA#HUSAM_SECRET","GLOBAL",2)~ GOTO JA#HUSAM_2
 END
-
-
 
 APPEND HUSAM
 
-IF ~~ THEN BEGIN JA#HUSAM_1
-SAY @2
-IF ~~ THEN DO ~SetGlobal("JA#HUSAM_SECRET","GLOBAL",2)
-AddJournalEntry(%husam1%,QUEST)~ GOTO 7
-END
-
 IF ~~ THEN BEGIN JA#HUSAM_2
 SAY @2
-IF ~~ THEN DO ~AddJournalEntry(%husam1%,QUEST)
-SetGlobal("JA#HUSAM_SECRET","GLOBAL",2)
-SetGlobal("HusamMove","GLOBAL",2)
-EscapeAreaDestroy(90)~ EXIT
+COPY_TRANS HUSAM 11
 END
 
+END // APPEND HUSAM
+
+ALTER_TRANS HUSAM
+BEGIN JA#HUSAM_2 END
+BEGIN END
+BEGIN
+  "UNSOLVED_JOURNAL" ~#%husam6%~
 END
 
 
@@ -91,29 +81,29 @@ END
 // HUSAM2
 
 
-ALTER_TRANS HUSAM2 // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+ALTER_TRANS HUSAM2
+BEGIN 3 END
+BEGIN 1 END
+BEGIN
   "ACTION" ~ClearAllActions()
 StartCutSceneMode()
 StartCutScene("JA#HUCU1")~
 END
 
-ALTER_TRANS HUSAM2 // file name
-BEGIN 12 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+ALTER_TRANS HUSAM2
+BEGIN 12 END
+BEGIN 0 END
+BEGIN
   "ACTION" ~ClearAllActions()
 MultiplayerSync()
 StartCutSceneMode()
 StartCutScene("JA#HUCU3")~
 END
 
-ALTER_TRANS HUSAM2 // file name
-BEGIN 16 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
+ALTER_TRANS HUSAM2
+BEGIN 16 END
+BEGIN 1 END
+BEGIN
   "EPILOGUE" ~GOTO JA#HUSAM_3~
 END
 
@@ -174,13 +164,3 @@ EraseJournalEntry(@4)
 SetGlobal("JA#HUSAM_MOVE","GLOBAL",4)
 EscapeAreaDestroy(90)~ SOLVED_JOURNAL @19 EXIT
 END
-
-
-
-
-
-
-
-
-
-
