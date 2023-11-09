@@ -51,6 +51,14 @@ EXTEND_TOP ~%BaldursGateDocks_OgreMagiHouse_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Arkhsta
 EXTEND_TOP ~%BaldursGateDocks_OgreMagiHouse_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Arkhstaff/AR8102.BAF~ EVALUATE_BUFFER
 
 
+COPY_EXISTING ~HUSAM.dlg~ ~override~
+	LPF READ_JOURNAL_STRREF
+		INT_VAR state = 6
+		RET strref
+	END
+BUT_ONLY
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#HUSAM.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#THALDO.D~
 COMPILE ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.D~

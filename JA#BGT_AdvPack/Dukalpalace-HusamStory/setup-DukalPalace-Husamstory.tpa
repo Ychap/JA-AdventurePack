@@ -603,13 +603,6 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		fj_name           = JA#7211
 	END
 
-COPY_EXISTING ~HUSAM.dlg~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR state = 6
-		RET strref
-	END
-	SET husam6 = strref
-BUT_ONLY
 
 ACTION_IF GAME_IS ~BGT~ BEGIN
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#BELT.D~
@@ -617,8 +610,9 @@ END
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PALAST.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PRISO.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM.D~	//husam6 Journalstring
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#MCOOK4.D~
+
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
