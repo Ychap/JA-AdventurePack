@@ -609,6 +609,10 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 
 ACTION_IF GAME_IS ~BGT~ BEGIN
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#BELT.D~
+	// 2 cutscenes with Husam2
+	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM_bgt.D~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU1.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU3.BAF~
 END
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PALAST.D~
@@ -660,9 +664,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7209T.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7211T.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STHFX.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CANDL.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU1.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU2.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU3.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUSAR.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
 

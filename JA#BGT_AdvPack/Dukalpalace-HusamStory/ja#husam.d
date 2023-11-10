@@ -1,23 +1,3 @@
-ALTER_TRANS HUSAM2
-BEGIN 3 END
-BEGIN 1 END
-BEGIN
-  "ACTION" ~ClearAllActions()
-StartCutSceneMode()
-StartCutScene("JA#HUCU1")~
-END
-
-ALTER_TRANS HUSAM2
-BEGIN 12 END
-BEGIN 0 END
-BEGIN
-  "ACTION" ~ClearAllActions()
-MultiplayerSync()
-StartCutSceneMode()
-StartCutScene("JA#HUCU3")~
-END
-
-
 ADD_TRANS_TRIGGER HUSAM2 16
 ~PartyHasItem("MISC78")~ DO 1
 UNLESS ~PartyHasItem("MISC78")~
