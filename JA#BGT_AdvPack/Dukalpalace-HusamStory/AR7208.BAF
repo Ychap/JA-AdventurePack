@@ -8,23 +8,6 @@ THEN
 END
 
 IF
-	!Global("JA#HUSAM_MOVE","GLOBAL",1)
-	Global("Chapter","GLOBAL",%tutu_chapter_7%)
-	Global("SarevokBehavior","GLOBAL",0)
-	PartyHasItem("SCRL3F")
-	!Exists("Sarevok")
-	!Dead("Sarevok")
-THEN
-	RESPONSE #100
-		ClearAllActions()
-		StartCutSceneMode()
-		FadeToColor([30.0],0)
-		Wait(2)
-		StartCutScene("JA#CUSAR")
-END
-
-
-IF
 	Global("NobleDopple","GLOBAL",1)
 	Global("JA#HUSAM_MOVE","GLOBAL",2)
 THEN
@@ -41,7 +24,7 @@ THEN
 		Wait(1)
 		CreateCreature("JA#STH05",[584.179],0)
 		SmallWait(5)
-		ActionOverride("JA#STH05",Attack(ThirdNearestEnemyOf(Myself))) 
+		ActionOverride("JA#STH05",Attack(ThirdNearestEnemyOf(Myself)))
 		Wait(1)
 		CreateCreature("JA#STH06",[584.179],0)
 		SmallWait(5)

@@ -3,17 +3,8 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[696.546],6)
 		Wait(1)
-		CreateCreature("SAREVO2",[581.344],14) // Sarevok
-		CreateCreature("LIIA",[680.356],14) // Liia Jannath
-		CreateCreature("BELT",[735.371],14) // Belt
-		CreateCreature("NOBLPA1",[702.485],7) // Edelmann
-		CreateCreature("NOBLPA2",[773.466],7) // Edelmann
-		CreateCreature("NOBLPA3",[823.407],6) // Edelmann
-		CreateCreature("NOBLPA4",[867.462],6) // Edelmann
-		CreateCreature("NOBLPA5",[839.518],6) // Edelmann
-		CreateCreature("NOBLPA",[769.571],6) // Edelmann
+		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[696.546],6)
 		Wait(1)
 		FaceObject("Belt")
 		FadeFromColor([30.0],0)

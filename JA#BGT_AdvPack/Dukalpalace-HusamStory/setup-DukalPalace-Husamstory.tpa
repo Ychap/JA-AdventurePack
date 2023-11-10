@@ -613,7 +613,7 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	// transport cutscene with Belt/Liia
-	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#BELT.D~
+	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.D~
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
 	// 2 cutscenes with Husam2
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM_bgt.D~
@@ -631,7 +631,10 @@ ADD_JOURNAL @4 @7 @13 @15 @19 USING ~JA#BGT_AdvPack/languages/%s/ja#husam.tra~
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~Global("SarevokBehavior","GLOBAL",0)~ ~False()~
+		REPLACE_TEXTUALLY
+		~[%WNL%%MNL%%LNL%%TAB% ]Global("SarevokBehavior","GLOBAL",0)~ ~\0 !Global("JA#HUSAM_MOVE","GLOBAL",1) PartyHasItem("SCRL3F")~
+		REPLACE_TEXTUALLY
+		~CreateCreature("NOBLPA",\[769\.571\],[0S])~ ~\0 ClearAllActions() StartCutSceneMode() FadeToColor([30.0],0) Wait(1) StartCutScene("JA#CUSAR")~
 	END
 BUT_ONLY
 
