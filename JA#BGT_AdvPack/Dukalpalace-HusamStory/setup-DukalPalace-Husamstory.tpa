@@ -59,11 +59,13 @@ COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA6.CRE~ ~override~
 	SAY NAME1 @2047
 	SAY NAME2 @2047
 
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH03.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH04.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH05.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH06.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH07.CRE~ ~override~
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH03.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH04.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH05.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH06.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH07.CRE~ ~override~
+END
 
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA2.CRE~ ~override~
@@ -607,7 +609,7 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 	END
 
 
-ACTION_IF GAME_IS ~BGT~ BEGIN
+ACTION_IF GAME_IS ~bgt~ BEGIN
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#BELT.D~
 	// 2 cutscenes with Husam2
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM_bgt.D~
@@ -649,6 +651,13 @@ COPY_EXISTING ~LIIA.BCS~ ~override~
 BUT_ONLY
 
 
+DEFINE_PATCH_MACRO EE_use_SHADOW0X BEGIN
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		REPLACE_EVALUATE ~"JA#STH0\([3-7]\)"~ BEGIN
+			--MATCH1
+		END ~"SHADOW0%MATCH1%"~
+	END
+END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM01.BAF~
@@ -665,12 +674,15 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7211T.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STHFX.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CANDL.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU2.BAF~
+	LPM EE_use_SHADOW0X
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUSAR.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
 
 EXTEND_TOP ~%NBaldursGate_DucalPalace_L1%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7208.BAF~ EVALUATE_BUFFER
+	LPM EE_use_SHADOW0X
 EXTEND_TOP ~%NBaldursGate_DucalPalace_L2%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7209.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%NBaldursGate_DucalPalace_Cellar%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7211.BAF~ EVALUATE_BUFFER
+	LPM EE_use_SHADOW0X
 EXTEND_TOP ~%NBaldursGate%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7300.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%CentralSewers%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7325.BAF~ EVALUATE_BUFFER
 
