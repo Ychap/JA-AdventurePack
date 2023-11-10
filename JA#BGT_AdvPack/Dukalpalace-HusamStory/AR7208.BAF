@@ -4,7 +4,7 @@ IF
 	!InMyArea("Sarevok")
 THEN
 	RESPONSE #100
-		ActionOverride("JA#HUSAM",StartDialogueNoSet([PC]))
+		ActionOverride("JA#HUSAM",Dialogue([PC]))
 END
 
 IF

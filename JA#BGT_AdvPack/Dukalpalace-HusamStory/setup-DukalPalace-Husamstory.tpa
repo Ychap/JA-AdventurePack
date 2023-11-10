@@ -644,6 +644,13 @@ COPY_EXISTING ~%NEBaldursGate%.BCS~ ~override~
 	END
 BUT_ONLY
 
+// Belt initiates his dialog after final dialog from JA#Husam
+COPY_EXISTING ~BELT.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",1)~ ~\0 OR(2) Global("JA#HUSAM_MOVE","GLOBAL",4) Dead("JA#HUSAM")~
+	END
+BUT_ONLY
+
 // Let Liia use her script MAGE5.BCS
 COPY_EXISTING ~LIIA.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
