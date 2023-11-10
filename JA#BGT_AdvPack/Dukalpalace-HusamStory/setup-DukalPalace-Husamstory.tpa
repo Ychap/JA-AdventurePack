@@ -651,6 +651,14 @@ COPY_EXISTING ~LIIA.BCS~ ~override~
 	END
 BUT_ONLY
 
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	COPY_EXISTING_REGEXP ~SHADOW0[2-6]\.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REFACTOR_TRIGGER EXACT_MATCH ~Global("HusamMove","GLOBAL",7)~ ~\0 !AreaCheck("%NBaldursGate_DucalPalace_L1%") !AreaCheck("%NBaldursGate_DucalPalace_Cellar%")~
+		END
+	BUT_ONLY
+END
+
 
 DEFINE_PATCH_MACRO EE_use_SHADOW0X BEGIN
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
