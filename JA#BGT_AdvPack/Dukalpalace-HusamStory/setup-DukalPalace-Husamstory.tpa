@@ -73,9 +73,11 @@ COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA3.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA4.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA5.CRE~ ~override~
 
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.VVC~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.BAM~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.WAV~ ~override~
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.VVC~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.BAM~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.WAV~ ~override~
+END
 
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
@@ -610,7 +612,9 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
+	// transport cutscene with Belt/Liia
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#BELT.D~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
 	// 2 cutscenes with Husam2
 	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM_bgt.D~
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU1.BAF~
@@ -637,6 +641,7 @@ COPY_EXISTING ~%NEBaldursGate%.BCS~ ~override~
 	END
 BUT_ONLY
 
+// Let Liia use her script MAGE5.BCS
 COPY_EXISTING ~LIIA.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~See([ENEMY])~ ~False()~
