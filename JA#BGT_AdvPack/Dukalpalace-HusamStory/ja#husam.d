@@ -1,3 +1,11 @@
+REPLACE_TRANS_ACTION HUSAM2
+BEGIN 12 END
+BEGIN END
+~Wait(10)~
+~FaceObject([PC])~
+IF ~MoveToPoint~ // only BGEE/EET
+
+
 ADD_TRANS_TRIGGER HUSAM2 16
 ~PartyHasItem("MISC78")~ DO 1
 UNLESS ~PartyHasItem("MISC78")~
@@ -14,7 +22,7 @@ END
 
 
 
-BEGIN JA#HUSAM
+BEGIN ~JA#HUSAM~
 
 IF ~Global("HusamMove","GLOBAL",7)
 Global("JA#HUSAM_MOVE","GLOBAL",0)~ THEN BEGIN JA#HUSAM2_1
@@ -52,3 +60,5 @@ EraseJournalEntry(@4)
 SetGlobal("JA#HUSAM_MOVE","GLOBAL",4)
 EscapeAreaDestroy(90)~ SOLVED_JOURNAL @19 EXIT
 END
+
+// END JA#HUSAM
