@@ -1,12 +1,7 @@
 IF
-	Killed("JA#SVLST")
+	Dead("JA#SVLST")
 THEN
 	RESPONSE #100
-		SetGlobal("SPRITE_IS_DEADJA#SVLST","GLOBAL",1)
 		Wait(2)
-		EscapeArea()
+		EscapeAreaDestroy(90)
 END
-
-
-
-

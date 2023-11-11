@@ -14,6 +14,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#SVLAST_QUEST","%FirewineBridge%",1)
+		EraseJournalEntry(@16)
+		EraseJournalEntry(@18)
 		EraseJournalEntry(@1009)
 		AddJournalEntry(@1011,QUEST_DONE)
 END

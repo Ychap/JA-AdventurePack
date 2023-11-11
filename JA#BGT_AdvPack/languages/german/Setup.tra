@@ -81,7 +81,7 @@ Eine Karawane wurde am Küstenweg von Räubern überfallen und geplündert. Die Reis
 /* #15713 */
 @1009   = ~Svlast, der gefallene Paladin
 
-Ich bin in den Ruinen von Feuerwein Zeuge trauriger Ereignisse geworden. Ein ehemaliger Paladin namens Svlast wird vom Geist seines Glaubensbruders, den er einst verraten hat, verfolgt. Noch nie habe ich eine betrübtere und beschämtere Seele gesehen als den armen Svlast. Er hat mich gebeten, mich nicht einzumischen, aber bei einer solchen Wahl wird mir das Herz schwer...~
+Ich bin in den Ruinen von Feuerwein Zeuge trauriger Ereignisse geworden. Ein ehemaliger Paladin namens Svlast wird vom Geist seines Glaubensbruders, den er einst verraten hat, verfolgt. Noch nie habe ich eine betrübtere und beschämtere Seele gesehen als den armen Svlast. Er hat mich gebeten, mich nicht einzumischen, aber bei einer solchen Wahl wird mir das Herz schwer …~
 @1010   = ~Krammoch Arkhstaff und der Eisenthron
 
 Ich habe Krammoch Arkhstaff versprochen, das Leben von Thaldorn Tenhevich zu schonen, wenn ich in das Hauptquartier des Eisenthrons eindringe. Die beiden scheinen sich recht nahe zu stehen.~
@@ -386,7 +386,7 @@ Der Träger ist immun gegen Versteinerung.
 
 Gewicht: 1~
 @2054 = ~Faizah Tin~
-/* @2055 = ~Svlast~ */
+@2055 = ~Svlast~
 @2056 = ~Velvet~
 @2057 = ~Kampfhahn~
 /* @2058 = ~Nim Furlwing~ */

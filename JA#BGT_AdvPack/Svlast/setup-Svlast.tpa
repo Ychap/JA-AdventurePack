@@ -2,16 +2,22 @@
 //RESTORED: Svlast - the fallen Paladin
 ////////////////////////////////////////
 
+
 COPY ~JA#BGT_AdvPack/Svlast/JA#SVLST.CRE~ ~override~
-	SAY NAME1 #15610 //~Svlast~ (string ref is true for BGT and BG:EE)
-	SAY NAME2 #15610 //~Svlast~ (string ref is true for BGT and BG:EE)
+	SAY NAME1 @2055
+	SAY NAME2 @2055
 
 COPY ~JA#BGT_AdvPack/Svlast/JA#ZOMB1.CRE~ ~override~
 
-EXTEND_TOP ~%FirewineBridge%.BCS~ ~JA#BGT_AdvPack/Svlast/AR3400.BAF~ EVALUATE_BUFFER
+
+EXTEND_TOP ~%FirewineBridge%.BCS~ ~JA#BGT_AdvPack/Svlast/AR3400.BAF~ EVALUATE_BUFFER USING ~JA#BGT_AdvPack/languages/%s/ja#svlst.tra~
 COMPILE ~JA#BGT_AdvPack/Svlast/JA#ZOMB1.BAF~
-COMPILE ~JA#BGT_AdvPack/Svlast/JA#SVLST.BAF~
+
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Svlast/JA#SVLST.D~
+
+ADD_JOURNAL @16 @18 @1009 @1011 USING ~JA#BGT_AdvPack/languages/%s/ja#svlst.tra~
+
 
 COPY_EXISTING ~%FirewineBridge%.ARE~ ~override~
 	//add new actors
@@ -21,10 +27,9 @@ COPY_EXISTING ~%FirewineBridge%.ARE~ ~override~
 		fj_loc_y          = 2570
 		fj_dest_x         = 3346
 		fj_dest_y         = 2570
-		fj_orientation    = 11     
+		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Svlast~
 		fj_cre_resref     = JA#SVLST
-		fj_dlg_resref	  = JA#SVLST
 	END
