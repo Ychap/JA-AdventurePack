@@ -17,7 +17,8 @@ ADD_STATE_TRIGGER RAMAZI 11
 UNLESS ~Global("AbelaTeleport","GLOBAL",1)~
 UNLESS ~Global("AbelaNotExists","GLOBAL",1)~
 
-// BGEE/EET (set "RamazithMove" as in BGT)
+
+// BGEE/EET (set "RamazithMove" to 2 as in BGT)
 ADD_TRANS_ACTION RAMAZI
 BEGIN 11 12 22 END
 BEGIN END
@@ -26,10 +27,20 @@ IF ~Enemy()~
 IF ~QUICK_TELEPORT~
 UNLESS ~SetGlobal("RamazithMove","GLOBAL",[23])~
 
+
 // BGT (only trigger while on quest)
 REPLACE_STATE_TRIGGER RAMAZI 22
 ~Global("HelpRamazith","GLOBAL",1) !PartyHasItem("MISC68")~
 IF ~True()~
+
+
+// BGT (Unlocks door to tower, when quest taken)
+ADD_TRANS_ACTION RAMAZI
+BEGIN 9 END
+BEGIN END
+~Unlock("Door0137")~
+IF ~EscapeArea\(Destroy\)?([0-9]*)~
+
 
 // BGT (spawn at same postion as in BGEE/EET)
 REPLACE_TRANS_ACTION RAMAZI
