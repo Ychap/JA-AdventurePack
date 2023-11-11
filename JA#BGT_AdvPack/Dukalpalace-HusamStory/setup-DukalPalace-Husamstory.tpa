@@ -224,7 +224,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		STR_VAR
 		container_name = ~Container 1~
 		container_script = ~NONE~
-		container_key = ~JARL~
+		lock_difficulty = 100 // will be unlocked by Nila
 	END
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
