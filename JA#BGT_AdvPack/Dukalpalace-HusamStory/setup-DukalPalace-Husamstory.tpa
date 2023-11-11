@@ -3,7 +3,6 @@
 //Restauriert: Abschluss der Husam-Storyline
 ///////////////////////////////////////////////////////////////////////
 
-//Nila
 
 COPY_EXISTING ~CYTHAN.CRE~ ~override~
 	LPF DELETE_CRE_ITEM STR_VAR item_to_delete = ~SCRL3F~ END
@@ -36,11 +35,9 @@ COPY_EXISTING ~FLAM7.CRE~ ~override~
 COPY_EXISTING ~FLAM7.CRE~ ~override~
 	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~FLAM7~ new_script_name = ~JA#FLM03~ END
 	LPF REMOVE_CRE_SCRIPT STR_VAR old_script_name = ~SEEENEMY~ END
-	// WRITE_BYTE 0x273 2
 
 COPY_EXISTING ~FLAM9.CRE~ ~override~
 	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~INITDLG~ new_script_name = ~JA#FLM03~ END
-	// WRITE_BYTE 0x273 2
 
 
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLAM1.CRE~ ~override~
@@ -632,7 +629,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.BCS~ ~override~
 		REPLACE_TEXTUALLY
 		~CreateCreature("NOBLPA",\[769\.571\],[0S])~ ~\0 ClearAllActions() StartCutSceneMode() FadeToColor([30.0],0) Wait(1) StartCutScene("JA#CUSAR")~
 	END
-BUT_ONLY
 
 COPY_EXISTING ~%NEBaldursGate%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
@@ -645,7 +641,6 @@ COPY_EXISTING ~BELT.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",1)~ ~\0 OR(2) Global("JA#HUSAM_MOVE","GLOBAL",4) Dead("JA#HUSAM")~
 	END
-BUT_ONLY
 
 // Let Liia use her script MAGE5.BCS
 COPY_EXISTING ~LIIA.BCS~ ~override~
@@ -659,7 +654,6 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 		DECOMPILE_AND_PATCH BEGIN
 			REFACTOR_TRIGGER EXACT_MATCH ~Global("HusamMove","GLOBAL",7)~ ~\0 !AreaCheck("%NBaldursGate_DucalPalace_L1%") !AreaCheck("%NBaldursGate_DucalPalace_Cellar%")~
 		END
-	BUT_ONLY
 END
 
 
