@@ -36,7 +36,7 @@ COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW00.BCS~
 		END
 	END
 //From Dukal Palace and Husam Story
-COPY_EXISTING ~ACT02.BCS~ ~override/JA#LAW05.BCS~
+COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW05.BCS~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~CreateCreature("FLAMEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("FlamingEnforcer",SetDialog("JA#FLAM2"))~
 	END
