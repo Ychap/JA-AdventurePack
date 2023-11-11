@@ -134,8 +134,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Woman~
-		fj_cre_resref     = JA#NOPA1
-		fj_dlg_resref	  = NOBW5
+		fj_cre_resref     = JA#NOPA1 // with NOBW5.DLG
 		fj_bcs_specific	  = SARRUN
 	END
 	LPF fj_are_structure
@@ -148,8 +147,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Woman~
-		fj_cre_resref     = JA#NOPA5
-		fj_dlg_resref	  = JA#NOBW6
+		fj_cre_resref     = JA#NOPA5 // with JA#NOBW6.DLG
 		fj_bcs_specific	  = SARRUN
 	END
 	LPF fj_are_structure
@@ -162,8 +160,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
-		fj_cre_resref     = JA#NOPA2
-		fj_dlg_resref	  = NOBL12
+		fj_cre_resref     = JA#NOPA2 // with NOBL12.DLG
 		fj_bcs_specific	  = SARRUN
 	END
 	LPF fj_are_structure
@@ -176,8 +173,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
-		fj_cre_resref     = JA#NOPA3
-		fj_dlg_resref	  = JA#NOB00
+		fj_cre_resref     = JA#NOPA3 // with JA#NOB00.DLG
 		fj_bcs_specific	  = SARRUN
 	END
 	LPF fj_are_structure
@@ -190,8 +186,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
-		fj_cre_resref     = JA#NOPA4
-		fj_dlg_resref	  = JA#NOB13
+		fj_cre_resref     = JA#NOPA4 // with JA#NOB13.DLG
 		fj_bcs_specific	  = SARRUN
 	END
 	LPF fj_are_structure
@@ -204,8 +199,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Lady Odelia~
-		fj_cre_resref     = JA#NOPA6
-		fj_dlg_resref	  = JA#NOPA6
+		fj_cre_resref     = JA#NOPA6 // with JA#NOPA6.DLG
 		fj_bcs_specific	  = SARRUN
 	END
 
@@ -291,7 +285,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
 		fj_cre_resref     = JA#FLAM3
-		fj_dlg_resref	  = JA#FLAM3
 		fj_bcs_specific	  = JA#FLM01
 	END
 	LPF fj_are_structure
@@ -305,7 +298,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
 		fj_cre_resref     = JA#FLAM3
-		fj_dlg_resref	  = JA#FLAM3
 		fj_bcs_specific	  = JA#FLM01
 	END
 	LPF fj_are_structure
@@ -319,7 +311,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
 		fj_cre_resref     = JA#FLAM3
-		fj_dlg_resref	  = JA#FLAM3
 		fj_bcs_specific	  = JA#FLM01
 	END
 	LPF fj_are_structure
@@ -333,7 +324,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
 		fj_cre_resref     = JA#FLAM3
-		fj_dlg_resref	  = JA#FLAM3
 		fj_bcs_specific	  = JA#FLM01
 	END
 
@@ -371,7 +361,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gefangener~
 		fj_cre_resref     = JA#PRISO
-		fj_dlg_resref	  = JA#PRISO
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -384,7 +373,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
 		fj_cre_resref     = FLAM7
-		fj_dlg_resref	  = FLAM7
 		END
 	LPF fj_are_structure
 		INT_VAR
@@ -397,7 +385,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
 		fj_cre_resref     = FLAM7
-		fj_dlg_resref	  = FLAM7
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -410,7 +397,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
 		fj_cre_resref     = FLAM7
-		fj_dlg_resref	  = FLAM7
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -423,7 +409,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~JA#FLAM1~
 		fj_cre_resref     = JA#FLAM1
-		fj_dlg_resref	  = JA#FLAM1
 	END
 	//add region triggers
 	LPF fj_are_structure
