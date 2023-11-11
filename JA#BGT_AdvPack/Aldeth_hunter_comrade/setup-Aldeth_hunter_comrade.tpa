@@ -2,27 +2,30 @@
 //RESTORED: Aldeth's hunter comrade
 /////////////////////////////////////
 
-COPY ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#PALIN.CRE~ ~override~
-	SAY NAME1 @2054
-	SAY NAME2 @2054
 
-COMPILE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#PALIN.D~
+COMPILE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#NHUNTC.D~
 
-COMPILE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#PALIN.BAF~
+// HUNTER2.CRE(Palin) with NHUNTC.DLG already exists in EE
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#PALIN.CRE~ ~override~
+		SAY NAME1 @2054
+		SAY NAME2 @2054
+		WRITE_ASCII DIALOG ~NHUNTC~ #8
 
-COPY_EXISTING ~%CloakwoodLodge%.ARE~ ~override~
-	//add new actors
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 2540
-		fj_loc_y          = 2084
-		fj_dest_x         = 2540
-		fj_dest_y         = 2084
-		fj_orientation    = 14     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Hunter~
-		fj_cre_resref     = JA#PALIN
-		fj_dlg_resref	  = JA#PALIN
-	END
+	COMPILE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#PALIN.BAF~
 
+	COPY_EXISTING ~%CloakwoodLodge%.ARE~ ~override~
+		//add new actors
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x          = 2540
+			fj_loc_y          = 2084
+			fj_dest_x         = 2540
+			fj_dest_y         = 2084
+			fj_orientation    = 14
+			STR_VAR
+			fj_structure_type = actor
+			fj_name           = ~Hunter~
+			fj_cre_resref     = JA#PALIN
+		END
+END
