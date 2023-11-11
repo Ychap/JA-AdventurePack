@@ -165,10 +165,18 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
-              ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
               ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
-	//change container scripts (dont spawn Flaming Fist Enforcer)
+	//change container scripts (spawn Flaming Fist Enforcer with dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		WRITE_ASCII container+0x48 ~JA#LAW05~ #8
 	END
+
+ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_AdvPack.tp2~ 3 BEGIN
+	COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
+		//change container scripts (spawn Flaming Fist Enforcer with dialog)
+		GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
+		PHP_EACH containers AS i => container BEGIN
+			WRITE_ASCII container+0x48 ~JA#LAW05~ #8
+		END
+END
