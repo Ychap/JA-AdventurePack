@@ -7,5 +7,3 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#ENEMY","%NBaldursGate_DucalPalace_Cellar%",1)
 END
-
-

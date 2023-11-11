@@ -112,5 +112,3 @@ THEN
 		MoveToPoint([912.1528])
 		FaceObject([PC])
 END
-
-

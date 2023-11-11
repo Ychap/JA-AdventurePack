@@ -12,7 +12,6 @@ THEN
 		ActionOverride("Belt",StartDialog("belt",[PC]))
 END
 
-
 IF
 	True()
 THEN

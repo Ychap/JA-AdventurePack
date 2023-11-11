@@ -21,7 +21,6 @@ THEN
 		TriggerActivation("JA#CANDL",TRUE)
 END
 
-
 IF
 	Global("JA#SECRET_OPEN","GLOBAL",1)
 	Global("JA#HUSAM_MOVE","GLOBAL",1)

@@ -29,5 +29,3 @@ THEN
 	RESPONSE #100
 		DisplayString(Myself,14702)
 END
-
-

@@ -6,5 +6,3 @@ THEN
 		SetGlobal("JA#CONTAINER2","%NBaldursGate_DucalPalace_L2%",1)
 		Continue()
 END
-
-

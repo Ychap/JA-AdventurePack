@@ -79,5 +79,3 @@ THEN
 		Wait(2)
 		FaceObject("Husam2")
 END
-
-

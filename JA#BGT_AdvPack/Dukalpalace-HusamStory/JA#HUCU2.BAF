@@ -32,5 +32,3 @@ THEN
 		Wait(2)
 		ActionOverride("JA#HUSAM",Dialogue([PC]))
 END
-
-

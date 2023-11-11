@@ -7,5 +7,3 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#NILA","%NBaldursGate_DucalPalace_L2%",1)
 END
-
-
