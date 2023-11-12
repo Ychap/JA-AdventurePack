@@ -4,20 +4,8 @@
 
 // Remove SHOUT script - or the whole inn will turn hostile!
 COPY_EXISTING ~PHANDA.CRE~ ~override~
-	//loop through cre scripts - remove SHOUT.BCS, add PHANDALY.BCS one time if it does not exist
-	FOR (script = 0x248 phandaly = 0; script <= 0x268; script+=0x08) BEGIN
-		READ_ASCII script script_filename
-		PATCH_MATCH ~%script_filename%~ WITH
-			~SHOUT~ BEGIN
-				WRITE_ASCII script ~None~ #8
-			END
-			~None~ ~PHANDALY~ WHEN !phandaly BEGIN
-				SET phandaly = 1
-				WRITE_ASCII script ~PHANDALY~ #8
-			END
-			DEFAULT
-		END
-	END
+	LPF REMOVE_CRE_SCRIPT STR_VAR old_script_name = ~PHANDALY~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~SHOUT~ new_script_name = ~PHANDALY~ END
 BUT_ONLY
 
 
@@ -48,11 +36,8 @@ COMPILE ~JA#BGT_AdvPack/Phandalyn/JA#Bellam.d~
 	END
 
 
-// Cycle through the existing actors, first (in case area was altered by another mod)
 COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
-	LPF DELETE_AREA_ACTOR
-		STR_VAR actor_to_delete = ~Phandalyn~
-	END
+	LPF DELETE_AREA_ACTOR STR_VAR actor_to_delete = ~Phandalyn~ END
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
