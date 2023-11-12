@@ -1,0 +1,22 @@
+/////////////////////////////
+//Yuxi: An imp for Ragefast
+/////////////////////////////
+
+
+EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Yuxi/AR7226.BAF~ EVALUATE_BUFFER
+
+
+COPY ~JA#BGT_AdvPack/Yuxi/JA#IMP01.CRE~ ~override~
+	SAY NAME1 @2042
+	SAY NAME2 @2042
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Yuxi/JA#IMP01.D~
+
+
+COMPILE ~JA#BGT_AdvPack/Yuxi/JA#IMP01.BAF~
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY ~JA#BGT_AdvPack/Yuxi/AR7226.WED~ ~override/%WBaldursGate_RagefastsHouse%.WED~
+END

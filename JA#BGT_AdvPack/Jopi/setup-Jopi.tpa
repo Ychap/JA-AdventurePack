@@ -1,0 +1,23 @@
+///////////////////////////////
+//Jopi and his uncle Ragefast
+///////////////////////////////
+
+
+// Spawn and despawn JA#JOPI.CRE(Jopi)
+EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7600.BAF~
+
+// Start cutscene with JA#JOPI(Jopi)
+EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~
+
+
+COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~
+	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~WDRUNSGT~ new_script_name = ~RUNENEMY~ END
+	WRITE_ASCII DIALOG ~JA#JOPI~ #8
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Jopi/JA#JOPI.D~
+
+ADD_JOURNAL @22 @39 @1023 USING ~JA#BGT_AdvPack/languages/%s/ja#jopi.tra~
+
+
+COMPILE ~JA#BGT_AdvPack/Jopi/JA#CUJO1.BAF~

@@ -103,22 +103,12 @@ EXTEND_TOP ~%NBaldursGate_RamazithsTower_L5%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR724
 // Hostile Ramazith will start dialogue
 EXTEND_BOTTOM ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7238.BAF~ EVALUATE_BUFFER
 
-// Spawn JA#IMP01.CRE(Yuxi) and start cutscene with JA#JOPI(Jopi)
-EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7226.BAF~ EVALUATE_BUFFER
-
-// Spawn and despawn JA#JOPI.CRE(Jopi)
-EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7600.BAF~ EVALUATE_BUFFER
-
 
 OUTER_SET default_state_during_quest = (GAME_IS ~bgt~) ? 22 : 10
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#ramazi.d~
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#jopi.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#abela.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#imp01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#RAMAZI.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#ABELA.D~
 
 ADD_JOURNAL EXISTING @18 USING ~JA#BGT_AdvPack/languages/%s/ja#ramazi.tra~
-ADD_JOURNAL @22 @39 @1023 USING ~JA#BGT_AdvPack/languages/%s/ja#jopi.tra~
 
 
 // Make CLCK07.ITM(Nymph Cloak) undroppable - can be obtained other ways
@@ -135,23 +125,16 @@ BUT_ONLY
 COPY_EXISTING ~RAGEFA.CRE~ ~override~
 	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~INITDLG~ new_script_name = ~SHOUTDLG~ END
 BUT_ONLY
-COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~WDRUNSGT~ new_script_name = ~RUNENEMY~ END
-	WRITE_ASCII DIALOG ~JA#JOPI~ #8
+
 COPY ~JA#BGT_AdvPack/Ramazith/JA#GOLC1.CRE~ ~override~
 	SAY NAME1 @2040
 	SAY NAME2 @2040
-COPY ~JA#BGT_AdvPack/Ramazith/JA#IMP01.CRE~ ~override~
-	SAY NAME1 @2042
-	SAY NAME2 @2042
+
 
 COMPILE ~JA#BGT_AdvPack/Ramazith/JA#CURA1.BAF~
-COMPILE ~JA#BGT_AdvPack/Ramazith/JA#CUJO1.BAF~
-COMPILE ~JA#BGT_AdvPack/Ramazith/JA#IMP01.BAF~
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY ~JA#BGT_AdvPack/Ramazith/AR7226.WED~ ~override/%WBaldursGate_RagefastsHouse%.WED~
 	COPY ~JA#BGT_AdvPack/Ramazith/AR7238.WED~ ~override/%NBaldursGate_RamazithsTower_L6%.WED~
 	INCLUDE ~%MOD_FOLDER%/lib/alter_searchmap.tpa~
 	LAF ALTER_SEARCHMAP

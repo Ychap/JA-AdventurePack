@@ -72,7 +72,7 @@ END
 
 IF ~~ THEN BEGIN JA#JOPI_6
 SAY @20 = @21
-IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EraseJournalEntry(@1023) AddexperienceParty(100) EscapeArea()~ SOLVED_JOURNAL @22 EXIT
+IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EraseJournalEntry(@1023) AddExperienceParty(100) EscapeArea()~ SOLVED_JOURNAL @22 EXIT
 END
 
 // END JA#JOPI
@@ -95,4 +95,4 @@ IF ~Global("JA#JOPIMOVE","GLOBAL",5)~ THEN JA#JOPI JA#JOPI_7
 == JA#JOPI @37
 == RAGEFA @38
 END
-IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EraseJournalEntry(@1023) AddexperienceParty(100) ActionOverride("Jopi",EscapeArea())~ SOLVED_JOURNAL @39 EXIT
+IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EraseJournalEntry(@1023) AddExperienceParty(100) ActionOverride("Jopi",EscapeArea())~ SOLVED_JOURNAL @39 EXIT

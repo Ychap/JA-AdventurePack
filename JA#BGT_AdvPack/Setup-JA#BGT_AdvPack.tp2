@@ -451,9 +451,9 @@ LABEL "JA#BGT_AdvPack-Black_Alarics_Cave"
 
 INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
@@ -462,14 +462,32 @@ LABEL "JA#BGT_AdvPack-Niemain_Zentarim"
 
 INCLUDE ~JA#BGT_AdvPack/Niemain_Zentarim/setup-Niemain_Zentarim.tpa~
 
-///////////////////////////////
+////////////////////////////////
 //RESTORED: Guards in Beregost
-///////////////////////////////
+////////////////////////////////
 
 BEGIN ~Guards in Beregost~ DESIGNATED 41
 LABEL "JA#BGT_AdvPack-Beregost"
 
 INCLUDE ~JA#BGT_AdvPack/Beregost/setup-Beregost.tpa~
+
+///////////////////////////////
+//Jopi and his uncle Ragefast
+///////////////////////////////
+
+BEGIN ~Jopi and his uncle Ragefast~ DESIGNATED 42
+LABEL "JA#BGT_AdvPack-Jopi"
+
+INCLUDE ~JA#BGT_AdvPack/Jopi/setup-Jopi.tpa~
+
+/////////////////////////////
+//Yuxi: An imp for Ragefast
+/////////////////////////////
+
+BEGIN ~Yuxi: An imp for Ragefast~ DESIGNATED 43
+LABEL "JA#BGT_AdvPack-Yuxi"
+
+INCLUDE ~JA#BGT_AdvPack/Yuxi/setup-Yuxi.tpa~
 
 
 ///////////////////////////////////////////////////

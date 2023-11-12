@@ -1,13 +1,4 @@
 IF
-	OnCreation()
-	Global("JA#IMPSPWN","%WBaldursGate_RagefastsHouse%",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#IMPSPWN","%WBaldursGate_RagefastsHouse%",1)
-		CreateCreatureImpassable("JA#IMP01",[134.294],13)
-END
-
-IF
 	Global("JA#JOPIMOVE","GLOBAL",4)
 	OR(2)
 		Global("AbelaTeleport","GLOBAL",1)
