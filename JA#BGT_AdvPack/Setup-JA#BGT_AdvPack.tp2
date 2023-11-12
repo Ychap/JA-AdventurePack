@@ -182,6 +182,7 @@ INCLUDE ~JA#BGT_AdvPack/velvet/setup-velvet.tpa~
 
 BEGIN ~Nim Furlwing~ DESIGNATED 11
 LABEL "JA#BGT_AdvPack-Nim_Furlwing"
+DEPRECATED ~Use BG1UB or NTotSC instead.~
 FORBID_FILE ~override/ntnimfur.cre~ ~NimFurlwing and Her Hounds is already restored by another mod.~
 FORBID_FILE ~override/ubnimfur.cre~ ~NimFurlwing and Her Hounds is already restored by another mod.~
 

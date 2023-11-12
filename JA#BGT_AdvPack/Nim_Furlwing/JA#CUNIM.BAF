@@ -17,6 +17,5 @@ THEN
 		ActionOverride("JA#DWOLF",MoveToObject("JA#HOUND"))
 		ActionOverride("JA#DWOLF",Attack("JA#NIMFU"))
 		Wait(1)
-//		DisplayStringHead(Myself,257698) //no such index
+		DisplayStringHead(Myself,999999)
 END
-
