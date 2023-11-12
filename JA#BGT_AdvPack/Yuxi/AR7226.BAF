@@ -5,4 +5,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#IMPSPWN","%WBaldursGate_RagefastsHouse%",1)
 		CreateCreatureImpassable("JA#IMP01",[134.294],13)
+		Continue()
 END

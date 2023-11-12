@@ -7,7 +7,7 @@
 EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7600.BAF~
 
 // Start cutscene with JA#JOPI(Jopi)
-EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~
+EXTEND_BOTTOM ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~
 
 
 COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~

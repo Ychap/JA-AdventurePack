@@ -1,4 +1,5 @@
 IF
+	OnCreation()
 	Global("JA#JOPIMOVE","GLOBAL",1)
 	Global("AbelaTeleport","GLOBAL",0)
 	Global("AbelaNotExists","GLOBAL",0)
@@ -9,9 +10,11 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#JOPIMOVE","GLOBAL",2)
 		CreateCreature("JA#JOPI",[2897.540],14)
+		Continue()
 END
 
 IF
+	OnCreation()
 	Global("JA#JOPIMOVE","GLOBAL",3)
 	OR(2)
 		Global("AbelaTeleport","GLOBAL",1)
@@ -25,4 +28,5 @@ THEN
 		MoveToPoint([2897.540])
 		ActionOverride("JOPI",DestroySelf())
 		SetGlobal("JA#JOPIMOVE","GLOBAL",4)
+		Continue()
 END
