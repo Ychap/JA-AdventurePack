@@ -2,6 +2,7 @@
 //Black Alaric's Cave
 ////////////////////////
 
+
 COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.CRE~ ~override~
 	SAY NAME1 @35
 	SAY NAME2 @36
@@ -13,7 +14,9 @@ COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#SKEL1.CRE~ ~override~
 	SAY NAME1 @34
 	SAY NAME2 @34
 
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.D~
+
 
 COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 	// Replace each Flesh Golem with a Pirate skeleton
@@ -31,7 +34,6 @@ COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 			WRITE_ASCII actor+0x80 ~JA#SKEL1~ #8
 		END
 	END
-
 	// Add The Red Beric
 	LPF fj_are_structure
 		INT_VAR
@@ -44,17 +46,14 @@ COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Pirat~
 		fj_cre_resref     = ~JA#PIRA1~
-		fj_dlg_resref	  = ~JA#PIRA1~
 	END
-
 	// Rest encounters
 	LPF fj_are_structure
 		INT_VAR
-		fj_cre_strref0	  = RESOLVE_STR_REF (#10148)
+		fj_cre_strref0	  = 10148 // strref fine for BGT, BGEE and EET
 		STR_VAR
 		fj_structure_type = interrupts
-		fj_name           = ~~
-		fj_cre_resref0    = JA#SKEL1
+		fj_cre_resref0    = ~JA#SKEL1~
 		fj_max_num		  = 10
 		fj_day_prob		  = 20
 		fj_night_prob 	  = 20

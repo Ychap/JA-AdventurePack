@@ -39,8 +39,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Roter Magier~
-		fj_cre_resref     = JA#TAY01
-		fj_dlg_resref	  = JA#TAY01
+		fj_cre_resref     = ~JA#TAY01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -51,11 +50,9 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Velara
-		fj_cre_resref     = JA#SSC01
-		fj_dlg_resref	  = JA#SSC01
+		fj_name           = ~Velara~
+		fj_cre_resref     = ~JA#SSC01~
 	END
-
 	// Add Ambient 1
 	LPF fj_are_structure
 		INT_VAR
@@ -68,13 +65,12 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = JA#AMSS1
+		fj_wav_resref0    = ~JA#AMSS1~
 	END
 	// Deactivate songs from outside
 	READ_LONG 0xbc ofs_songs
 	WRITE_LONG ofs_songs+0x0 0
 	WRITE_LONG ofs_songs+0x4 0
-
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 	//add new actors
@@ -87,11 +83,9 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Naiduja
-		fj_cre_resref     = JA#SSELF
-		fj_dlg_resref	  = JA#SSELF
+		fj_name           = ~Naiduja~
+		fj_cre_resref     = ~JA#SSELF~
 	END
-
 	// Add Ambient 1
 	LPF fj_are_structure
 		INT_VAR
@@ -104,7 +98,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = JA#AMSS1
+		fj_wav_resref0    = ~JA#AMSS1~
 	END
 	// Deactivate songs from outside
 	READ_LONG 0xbc ofs_songs
