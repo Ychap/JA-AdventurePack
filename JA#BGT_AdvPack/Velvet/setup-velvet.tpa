@@ -2,6 +2,7 @@
 //RESTORED: Velvet - Cockfight
 ///////////////////////////////
 
+
 //Fix Animation BGT only
 ACTION_IF GAME_IS ~bgt~ BEGIN
 
@@ -13,36 +14,33 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	END
 END
 
-//Animate.ids in BGEE and EET
-//0xEF10 MWWE	WATER_WEIRD				JA#WATW1.cre
-//0xCC00 MKG1	KEG1					JA#Keg01.cre
-//0x7D02 ACHB	CHICKEN_BROWN			JA#Cock1.cre JA#Cock1.cre
-
 
 COPY ~JA#BGT_AdvPack/velvet/JA#VELVE.CRE~ ~override~
 	SAY NAME1 @2056
 	SAY NAME2 @2056
 
 COPY ~JA#BGT_AdvPack/velvet/JA#COCK1.CRE~ ~override~
-	~JA#BGT_AdvPack/velvet/JA#COCK2.CRE~ ~override~
-	SAY NAME1 @2057
+	SAY NAME1 @2122
 	SAY NAME2 @2057
-	PATCH_IF (GAME_IS ~bgee eet~ AND ("%SOURCE_RES%" STR_EQ ~JA#COCK1~))  BEGIN
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
 		WRITE_LONG 0x28	0x7D02
 	END
 
-// COPY ~JA#BGT_AdvPack/velvet/JA#S1-2.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/velvet/JA#COCK2.CRE~ ~override~
+	SAY NAME1 @2123
+	SAY NAME2 @2057
+
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#VELVE.D~
 
+
 EXTEND_TOP ~%NashkelCarnival%.BCS~ ~JA#BGT_AdvPack/velvet/AR3800.BAF~ EVALUATE_BUFFER
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#COCK1.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#COCK2.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#VELVE.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#CCKF1.BAF~
 
+
 COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
-	//add new actors
+	//add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 2509
@@ -54,29 +52,4 @@ COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Velvet~
 		fj_cre_resref     = ~JA#VELVE~
-		fj_dlg_resref	  = ~JA#VELVE~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 2586
-		fj_loc_y          = 3399
-		fj_dest_x         = 2586
-		fj_dest_y         = 3399
-		fj_orientation    = 12
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Cock1~
-		fj_cre_resref     = ~JA#COCK1~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 2640
-		fj_loc_y          = 3405
-		fj_dest_x         = 2640
-		fj_dest_y         = 3405
-		fj_orientation    = 5
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Cock2~
-		fj_cre_resref     = ~JA#COCK2~
 	END

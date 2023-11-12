@@ -7,7 +7,7 @@
 @3    = ~Ich setze mein Geld auf den weißen.~
 @4    = ~Diese Hahnenkämpfe sind doch barbarisch! Leute wie Ihr haben einfach keinen Anstand!~
 /* #14862 */
-@5    = ~Tut mir Leid, ich spiele nicht.~
+@5    = ~Tut mir leid, ich spiele nicht.~
 /* #14863 */
 @6    = ~Doppelt oder nichts! Wie viel wollt Ihr setzen?~
 /* #14864 */
@@ -31,13 +31,13 @@
 @16   = ~Ha! Nächstes Mal klappt's bestimmt, Freund. Nächstes Mal bestimmt.~ ~Ha! Nächstes Mal klappt's bestimmt, Freundin. Nächstes Mal bestimmt.~
 /* #14873 */
 @17   = ~Ha! Keiner da außer uns Hühnern, Freund.~ ~Ha! Keiner da außer uns Hühnern, Freundin.~
-@18   = ~Tut mir Leid, mir ist nicht nach einer Wette.~
+@18   = ~Tut mir leid, mir ist nicht nach einer Wette.~
 /* #14875 */
-@19   = ~Tut mir Leid, aber mit nur einem Hahn kann man keinen Kampf austragen. Kommt morgen wieder, dann hab ich ein paar frische für Euch da.~
+@19   = ~Tut mir leid, aber mit nur einem Hahn kann man keinen Kampf austragen. Kommt morgen wieder, dann hab ich ein paar frische für Euch da.~
 /* #14888 */
 @20   = ~Gut zu hören, gut zu hören.~
 /* #15710 */
-@21   = ~Die fröhliche Atmosphäre des Karnevals in Nashkell ist ansteckend. Der Straßenhändler Velvet und seine Kampfhähne haben mich sogar dazu verleiten können, an einem freundschaftlichen Spiel teilzunehmen.~
+@21   = ~Die fröhliche Atmosphäre des Jahrmarkts in Nashkell ist ansteckend. Der Straßenhändler Velvet und seine Kampfhähne haben mich sogar dazu verleiten können, an einem freundschaftlichen Spiel teilzunehmen.~
 /* #15208 */
 @22   = ~Ich verdiene hier meinen Lebensunterhalt, und ich schätze es nicht besonders, wenn Ihr Euch da einmischt.~
 @23   = ~Das ist schade, jammerschade.~

@@ -1,9 +1,7 @@
 IF
-	Global("JA#COCKFIGHT","%NashkelCarnival%",1)
-	Global("JA#BRAUN_TOT","%NashkelCarnival%",0)
+	Die()
 THEN
 	RESPONSE #100
-		ReallyForceSpell(Myself,HEAL_NO_VISUAL)
 		SetGlobalTimer("JA#DEADCOCK","GLOBAL",SIXTEEN_HOURS)
 		SetGlobal("JA#BRAUN_TOT","%NashkelCarnival%",1)
 END
