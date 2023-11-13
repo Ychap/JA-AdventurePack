@@ -13,4 +13,5 @@ THEN
 		ActionOverride("RAMAZITH",Enemy())
 		SmallWait(2)
 		ActionOverride("RAMAZITH",StartDialogueNoSet([PC]))
+		Continue()
 END

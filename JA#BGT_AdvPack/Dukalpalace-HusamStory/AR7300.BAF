@@ -8,6 +8,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#HUSAM_SPWN","%NBaldursGate%",1)
 		CreateCreature("JA#HUSAM",[1931.2980],2)
+		Continue()
 END
 
 /* Husam should not remain in front of the Palace if Sarevok is already revealed */
@@ -19,6 +20,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("JA#HUSAM",DestroySelf())
+		Continue()
 END
 
 IF
@@ -27,4 +29,5 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("JA#HUSAM",DestroySelf())
+		Continue()
 END

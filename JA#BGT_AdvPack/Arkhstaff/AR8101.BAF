@@ -11,4 +11,5 @@ THEN
 		CreateCreature("OGREMA_B",[555.534],0)
 		CreateCreature("OGREMA_C",[629.485],0)
 		CreateCreature("OGREMA_D",[494.597],0)
+		Continue()
 END

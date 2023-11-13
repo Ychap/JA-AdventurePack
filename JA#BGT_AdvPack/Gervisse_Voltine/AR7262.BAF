@@ -20,4 +20,5 @@ THEN
 		SmallWait(3)
 		CreateCreatureAtLocation("JA#VOLT_LOCA","%NWBaldursGate_LaertasHouse_L1%","VOLTIN")
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)
+		Continue()
 END

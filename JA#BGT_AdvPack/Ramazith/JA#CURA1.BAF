@@ -23,5 +23,3 @@ THEN
 		Wait(1)
 		StartDialogueNoSet([PC])
 END
-
-

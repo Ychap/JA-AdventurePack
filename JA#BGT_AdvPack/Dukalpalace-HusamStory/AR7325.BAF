@@ -5,6 +5,7 @@ THEN
 	RESPONSE #100
 		TriggerActivation("JA#7211",TRUE)
 		SetGlobal("JA#SECRET_OP","%CentralSewers%",1)
+		Continue()
 END
 
 IF
@@ -14,4 +15,5 @@ THEN
 	RESPONSE #100
 		TriggerActivation("JA#7211",FALSE)
 		SetGlobal("JA#SECRET_OP","%CentralSewers%",0)
+		Continue()
 END

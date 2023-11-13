@@ -7,4 +7,5 @@ THEN
 		SetGlobal("JA#SPAWN_AR7239","%NBaldursGate_RamazithsTower_L2%",1)
 		CreateCreature("JELLYMU",[131.166],0)
 		CreateCreature("JELLYMU",[110.333],0)
+		Continue()
 END

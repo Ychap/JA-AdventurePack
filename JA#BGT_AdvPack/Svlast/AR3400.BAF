@@ -6,6 +6,7 @@ THEN
 		CreateCreature("JA#ZOMB1",[3069.2621],14)
 		Wait(1)
 		ActionOverride("JA#ZOMB1",Attack("JA#SVLST"))
+		Continue()
 END
 
 IF
@@ -18,4 +19,5 @@ THEN
 		EraseJournalEntry(@18)
 		EraseJournalEntry(@1009)
 		AddJournalEntry(@1011,QUEST_DONE)
+		Continue()
 END

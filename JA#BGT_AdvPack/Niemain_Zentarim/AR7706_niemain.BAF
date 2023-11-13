@@ -5,6 +5,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",2)
 		CreateCreature("JA#NIEMA",[942.617],7)
+		Continue()
 END
 
 IF
@@ -14,4 +15,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",4)
 		ActionOverride("NIEMAIN",DestroySelf())
+		Continue()
 END

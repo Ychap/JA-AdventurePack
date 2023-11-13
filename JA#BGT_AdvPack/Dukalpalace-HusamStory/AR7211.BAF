@@ -11,6 +11,7 @@ THEN
 		ActionOverride("JA#STH06",DestroySelf())
 		ActionOverride("JA#STH07",DestroySelf())
 		ActionOverride("JA#HUSAM",DestroySelf())
+		Continue()
 END
 
 IF
@@ -19,6 +20,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#SHADOW_CUT","%NBaldursGate_DucalPalace_Cellar%",2)
 		TriggerActivation("JA#CANDL",TRUE)
+		Continue()
 END
 
 IF
@@ -30,4 +32,5 @@ THEN
 		ClearAllActions()
 		StartCutSceneMode()
 		StartCutScene("JA#HUCU2")
+		Continue()
 END

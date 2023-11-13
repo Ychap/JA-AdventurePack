@@ -1,5 +1,4 @@
 IF
-	OnCreation()
 	Global("JA#JOPIMOVE","GLOBAL",1)
 	Global("AbelaTeleport","GLOBAL",0)
 	Global("AbelaNotExists","GLOBAL",0)
@@ -14,7 +13,6 @@ THEN
 END
 
 IF
-	OnCreation()
 	Global("JA#JOPIMOVE","GLOBAL",3)
 	OR(2)
 		Global("AbelaTeleport","GLOBAL",1)

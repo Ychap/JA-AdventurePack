@@ -7,4 +7,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",4)
 		CreateCreature("JA#NIEMA",[1031.460],2)
+		Continue()
 END

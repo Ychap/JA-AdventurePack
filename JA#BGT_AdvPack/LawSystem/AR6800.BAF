@@ -7,5 +7,3 @@ THEN
 		CreateCreature("JA#FACAP",[3474.1895],2)
 		Continue()
 END
-
-
