@@ -5,7 +5,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#SUTHI","%EBaldursGate_SilencesShop%",1)
 		CreateCreature("JA#SUTHI",[555.305],14)
+		Continue()
 END
-
-
-

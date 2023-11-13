@@ -14,3 +14,5 @@ IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 2
   SAY @2
   IF ~~ THEN EXIT
 END
+
+// END JA#STHIE

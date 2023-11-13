@@ -54,3 +54,5 @@ IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 8
   SAY @16
   IF ~~ THEN EXIT
 END
+
+// END JA#SUTHI
