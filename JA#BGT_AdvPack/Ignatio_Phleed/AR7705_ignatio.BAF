@@ -1,5 +1,4 @@
 IF
-	OnCreation()
 	Global("Chapter","GLOBAL",%tutu_chapter_7%)
 	Global("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",0)
 	GlobalGT("Captured","GLOBAL",0)
@@ -7,4 +6,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",1)
 		CreateCreature("JA#IGNAT",[842.653],14)
+		Continue()
 END
