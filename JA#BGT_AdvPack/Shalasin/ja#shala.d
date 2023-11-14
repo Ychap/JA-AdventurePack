@@ -15,3 +15,5 @@ IF ~~ THEN BEGIN 2
   SAY @4
   IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
+
+// END JA#SHALA
