@@ -1,4 +1,5 @@
 IF
+	OnCreation()
 	Global("JA#JACIL","%NEBaldursGate_CountingHouse_L2%",0)
 	Global("JA#COUNTING_ENEMY","GLOBAL",1)
 	!Exists("JACIL")
