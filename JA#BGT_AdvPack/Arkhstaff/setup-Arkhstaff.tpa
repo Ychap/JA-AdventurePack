@@ -112,9 +112,7 @@ COPY_EXISTING ~%BaldursGateDocks_IronThrone_Cellar%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
-	LPF DELETE_AREA_ACTOR
-		STR_VAR actor_to_delete = ~Ogre Mage~
-	END
+	LPF DELETE_AREA_ACTOR STR_VAR actor_to_delete = ~Ogre Mage~ END
 	//add region triggers
 	LPF fj_are_structure
 		INT_VAR

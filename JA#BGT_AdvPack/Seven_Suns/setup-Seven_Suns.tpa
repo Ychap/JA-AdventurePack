@@ -216,9 +216,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 			WRITE_SHORT actors_offset+0x34        7
 		END
 	END
-	LPF DELETE_AREA_ACTOR
-		STR_VAR cre_to_delete = ~DOPPSS~ // Doppelganger
-	END
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPSS~ END // Doppelganger
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
