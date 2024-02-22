@@ -1,14 +1,5 @@
 IF
 	OR(2)
-	Global("SarevokBehavior","GLOBAL",1)
-	GlobalGT("ENDOFBG1","GLOBAL",0)
-THEN
-	RESPONSE #100
-		ActionOverride(Myself,DestroySelf())
-END
-
-IF
-	OR(2)
 		Global("JA#CONTAINER2","%NBaldursGate_DucalPalace_L2%",1)
 		Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",1)
 	Global("JA#MOVE","LOCALS",0)
