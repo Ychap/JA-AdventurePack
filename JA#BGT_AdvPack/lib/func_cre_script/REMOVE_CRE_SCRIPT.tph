@@ -6,6 +6,6 @@ BEGIN
 	LPF REPLACE_CRE_SCRIPT
 		INT_VAR offset_start
 				offset_end
-		STR_VAR old_script_name = script_old
+		STR_VAR script_old
 	END
 END

@@ -4,7 +4,7 @@
 
 
 COPY_EXISTING ~JACIL.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~INITDLG~ new_script_name = ~SHOUTDLG~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
 BUT_ONLY
 
 

@@ -8,7 +8,7 @@ COPY_EXISTING ~CYTHAN.CRE~ ~override~
 	LPF DELETE_CRE_ITEM STR_VAR item_to_delete = ~SCRL3F~ END
 
 COPY_EXISTING ~SLYTHE.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~INITDLG~ new_script_name = ~SHOUTDLG~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
 
 COPY_EXISTING ~NILA.CRE~ ~override~
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#NILA~ END
@@ -22,7 +22,7 @@ COPY_EXISTING ~HUSAM2.CRE~ ~override/JA#HUSAM.CRE~
 	SAY SELECT_COMMON2 #4565
 	SAY SELECT_COMMON3 #0
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~HUSAM2~ new_script_name = ~SEEENEMY~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~HUSAM2~ script_new = ~SEEENEMY~ END
 	WRITE_ASCII DEATHVAR ~JA#HUSAM~ #32
 	WRITE_ASCII DIALOG ~JA#HUSAM~ #8
 
@@ -30,14 +30,14 @@ COPY_EXISTING ~FLAM7.CRE~ ~override~
               ~FLAM9.CRE~ ~override~
               ~FLAM10.CRE~ ~override~
               ~FLAM11.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~WDASIGHT~ new_script_name = ~WTASIGHT~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
 
 COPY_EXISTING ~FLAM7.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~FLAM7~ new_script_name = ~JA#FLM03~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~FLAM7~ script_new = ~JA#FLM03~ END
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
 
 COPY_EXISTING ~FLAM9.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~INITDLG~ new_script_name = ~JA#FLM03~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~JA#FLM03~ END
 
 
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLAM1.CRE~ ~override~
@@ -69,7 +69,7 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	              ~SHADOW05.CRE~ ~override/JA#STH05.CRE~
 	              ~SHADOW06.CRE~ ~override/JA#STH06.CRE~
 	              ~SHADOW02.CRE~ ~override/JA#STH07.CRE~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = EVAL ~%SOURCE_RES%~ new_script_name = ~JA#STHFX~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = EVAL ~%SOURCE_RES%~ script_new = ~JA#STHFX~ END
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SEEENEMY~ END
 	WRITE_ASCIIE DEATHVAR ~%DEST_RES%~ #32
 END

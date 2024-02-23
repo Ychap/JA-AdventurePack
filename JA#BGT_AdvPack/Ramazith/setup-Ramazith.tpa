@@ -115,7 +115,7 @@ COPY_EXISTING ~ABELA.CRE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~RAGEFA.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~INITDLG~ new_script_name = ~SHOUTDLG~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
 BUT_ONLY
 
 COPY ~JA#BGT_AdvPack/Ramazith/JA#GOLC1.CRE~ ~override~

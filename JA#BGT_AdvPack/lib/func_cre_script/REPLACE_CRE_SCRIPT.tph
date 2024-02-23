@@ -1,17 +1,17 @@
 DEFINE_PATCH_FUNCTION REPLACE_CRE_SCRIPT
-	INT_VAR offset_start	= SCRIPT_OVERRIDE
-			offset_end		= SCRIPT_DEFAULT
-	STR_VAR old_script_name	= ~None~
-			new_script_name	= ~None~
+	INT_VAR offset_start = SCRIPT_OVERRIDE
+			offset_end = SCRIPT_DEFAULT
+	STR_VAR script_old = ~None~
+			script_new = ~None~
 BEGIN
-	FOR (script = offset_start; script <= offset_end; script += 0x8) BEGIN
-		READ_ASCII script script_name
-		PATCH_IF ~%script_name%~ STR_EQ ~%old_script_name%~ BEGIN
-			WRITE_ASCIIE script ~%new_script_name%~ #8
+	FOR (offset = offset_start; offset <= offset_end; offset += 0x8) BEGIN
+		READ_ASCII offset script
+		PATCH_IF ~%script%~ STR_EQ ~%script_old%~ BEGIN
+			WRITE_ASCIIE offset ~%script_new%~ #8
 		END
 	END
 
-	// PATCH_IF script > offset_end BEGIN
-	// 	PATCH_WARN ~WARNING: Did not found script "%old_script_name%" in %DEST_FILE%!~
+	// PATCH_IF offset > offset_end BEGIN
+	// 	PATCH_WARN ~WARNING: Did not found script "%script_old%" in %DEST_FILE%!~
 	// END
 END

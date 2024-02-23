@@ -11,7 +11,7 @@ EXTEND_BOTTOM ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BA
 
 
 COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~WDRUNSGT~ new_script_name = ~RUNENEMY~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDRUNSGT~ script_new = ~RUNENEMY~ END
 	WRITE_ASCII DIALOG ~JA#JOPI~ #8
 
 

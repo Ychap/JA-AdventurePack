@@ -53,7 +53,7 @@ COPY ~JA#BGT_AdvPack/LawSystem/JA#FACAP.CRE~ ~override~
 COPY_EXISTING ~FAFIGHT.CRE~ ~override~
               ~FRIEND.CRE~  ~override~
               ~GELLAN.CRE~  ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~SHOUT~ new_script_name = ~JA#FRGUB~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ script_new = ~JA#FRGUB~ END
 
 /* same patching as in bg1ub */
 COPY_EXISTING ~BENTLY.CRE~ ~override~	// Bently Mirrorshade, FAI
