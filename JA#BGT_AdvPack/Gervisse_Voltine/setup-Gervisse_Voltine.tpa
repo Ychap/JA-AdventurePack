@@ -4,7 +4,7 @@
 
 COPY_EXISTING ~LAERTA.CRE~ ~override~
               ~LOUISE.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR old_script_name = ~WDRUNSGT~ END
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~WDRUNSGT~ END
 
 COPY_EXISTING ~VOLTIN.CRE~ ~override~
 	WRITE_LONG 0x14 720

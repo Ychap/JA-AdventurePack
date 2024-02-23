@@ -4,7 +4,7 @@
 
 // Remove SHOUT script - or the whole inn will turn hostile!
 COPY_EXISTING ~PHANDA.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR old_script_name = ~PHANDALY~ END
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~PHANDALY~ END
 	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~SHOUT~ new_script_name = ~PHANDALY~ END
 BUT_ONLY
 
