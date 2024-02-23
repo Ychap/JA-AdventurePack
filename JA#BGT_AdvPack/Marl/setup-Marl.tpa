@@ -8,7 +8,7 @@ COPY_EXISTING ~MARL.CRE~ ~override~
 	REMOVE_CRE_ITEM ~B1-2~
 
 COPY_EXISTING ~DUNKIN.CRE~ ~override~
-	LPF INSERT_CRE_SCRIPT STR_VAR new_script_name = ~JA#DUNKI~ END
+	LPF INSERT_CRE_SCRIPT STR_VAR script_new = ~JA#DUNKI~ END
 
 COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
 	~JA#BGT_AdvPack/Marl/JA#GUAB2.CRE~ ~override~
