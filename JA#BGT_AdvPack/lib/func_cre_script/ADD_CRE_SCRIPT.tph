@@ -1,16 +1,16 @@
 DEFINE_PATCH_FUNCTION ADD_CRE_SCRIPT
-	INT_VAR offset_start	= SCRIPT_OVERRIDE
-			offset_end		= SCRIPT_DEFAULT
-	STR_VAR new_script_name	= ~None~
+	INT_VAR offset_start = SCRIPT_OVERRIDE
+			offset_end = SCRIPT_DEFAULT
+	STR_VAR script_new = ~None~
 BEGIN
-	FOR (script = offset_start; script <= offset_end; script += 0x8) BEGIN
-		READ_ASCII script script_name
-		PATCH_MATCH ~%script_name%~ WITH
+	FOR (offset = offset_start; offset <= offset_end; offset += 0x8) BEGIN
+		READ_ASCII offset script
+		PATCH_MATCH ~%script%~ WITH
 			~None~ ~~ BEGIN
-				WRITE_ASCIIE script ~%new_script_name%~ #8
+				WRITE_ASCIIE offset ~%script_new%~ #8
 				SET offset_end = "-1" // break
 			END
-			~%new_script_name%~ BEGIN
+			~%script_new%~ BEGIN
 				SET offset_end = "-1" // break
 			END
 			DEFAULT
@@ -18,6 +18,6 @@ BEGIN
 	END
 
 	PATCH_IF offset_end != "-1" BEGIN
-		PATCH_WARN ~WARNING: Could not add script "%new_script_name%" in %DEST_FILE%!~
+		PATCH_WARN ~WARNING: Could not add script "%script_new%" in %DEST_FILE%!~
 	END
 END

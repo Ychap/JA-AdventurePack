@@ -11,7 +11,7 @@ COPY_EXISTING ~SLYTHE.CRE~ ~override~
 	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = ~INITDLG~ new_script_name = ~SHOUTDLG~ END
 
 COPY_EXISTING ~NILA.CRE~ ~override~
-	LPF ADD_CRE_SCRIPT STR_VAR new_script_name = ~JA#NILA~ END
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#NILA~ END
 
 COPY_EXISTING ~HUSAM2.CRE~ ~override/JA#HUSAM.CRE~
 	SAY INITIAL_MEETING #4561
@@ -70,7 +70,7 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	              ~SHADOW06.CRE~ ~override/JA#STH06.CRE~
 	              ~SHADOW02.CRE~ ~override/JA#STH07.CRE~
 	LPF REPLACE_CRE_SCRIPT STR_VAR old_script_name = EVAL ~%SOURCE_RES%~ new_script_name = ~JA#STHFX~ END
-	LPF ADD_CRE_SCRIPT STR_VAR new_script_name = ~SEEENEMY~ END
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SEEENEMY~ END
 	WRITE_ASCIIE DEATHVAR ~%DEST_RES%~ #32
 END
 
