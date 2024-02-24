@@ -13,18 +13,16 @@ BUT_ONLY
 // BGT version of SILENC.DLG is a lot behind the BGEE/EET version
 //  => BGT Version wird an die Version von EET angeglichen
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_bgt.D~
-		                    ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
-	USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_bgt.D~ ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
+	  USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
 	<<<<<<<< ...inlined/ja#silenc_weight.d
 		SET_WEIGHT SILENC 8 #999
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/ja#silenc_weight.d~
 END
 ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_ee.D~
-		                    ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
-	USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_ee.D~ ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
+	  USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
