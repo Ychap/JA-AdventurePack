@@ -452,37 +452,8 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgt~ BEGIN
-		SET index = "-1"
-		GET_OFFSET_ARRAY con_array ARE_V10_CONTAINERS
-		PHP_EACH con_array AS con_num => con_offset BEGIN
-			GET_OFFSET_ARRAY2 item_array con_offset ARE_V10_ITEMS
-			PHP_EACH item_array AS item_num => item_offset BEGIN
-				SET index=index+1
-				READ_ASCII item_offset item_name ( 8 ) NULL
-				PATCH_IF (~%item_name%~ STR_EQ  ~SW1H03~) BEGIN
-					LPF fj_are_structure
-						INT_VAR fj_delete_mode = EVAL %index%
-						STR_VAR fj_structure_type = itm
-					END
-				END
-			END
-		END
+	LPF REPLACE_AREA_ITEM
+		STR_VAR old_item = ~SW1H03~
+				new_item = ~SW1H02~
 	END
-	PATCH_IF GAME_IS ~eet bgee~ BEGIN
-		SET index = "-1"
-		GET_OFFSET_ARRAY con_array ARE_V10_CONTAINERS
-		PHP_EACH con_array AS con_num => con_offset BEGIN
-			GET_OFFSET_ARRAY2 item_array con_offset ARE_V10_ITEMS
-			PHP_EACH item_array AS item_num => item_offset BEGIN
-				SET index=index+1
-				READ_ASCII item_offset item_name ( 8 ) NULL
-				PATCH_IF (~%item_name%~ STR_EQ  ~SW1H02~) BEGIN
-					LPF fj_are_structure
-						INT_VAR fj_delete_mode = EVAL %index%
-						STR_VAR fj_structure_type = itm
-					END
-				END
-			END
-		END
-	END
+BUT_ONLY
