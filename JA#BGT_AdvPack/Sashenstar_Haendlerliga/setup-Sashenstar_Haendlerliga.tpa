@@ -147,11 +147,9 @@ EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/ZORL.BAF~ EVALU
 /* changed the following REPLACE_TEXTUALLY so the former extra script blocks in the area script are not needed */
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~("ALDETH",[217.491],0)~ ~("ALDETH",[1244.720],2)~
+		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[217\.491\],[0S])~ ~CreateCreature("ALDETH",[1244.720],2)~
 //    	REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Aldeth",SetNumTimesTalkedTo(1))~ ~Continue()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~NumDeadGT("DopZorl",5)~ ~NumDeadGT("DopZorl",9)
-		Dead("Zorl")
-		Dead("Irlentre")~
+		REPLACE_TEXTUALLY EXACT_MATCH ~NumDeadGT("DopZorl",5)~ ~NumDeadGT("DopZorl",9) Dead("Zorl") Dead("Irlentre")~
 	END
 BUT_ONLY
 
@@ -166,35 +164,14 @@ BUT_ONLY_IF_IT_CHANGES
 COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~SetGlobal("SpawnDabron","GLOBAL",1)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("ALDETH",[3507.2477],0)~ ~Continue()~
+		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[3507\.2477\],[0S])~ ~Continue()~
 	END
 BUT_ONLY
 
 
-/* Irlentree didn't change when attacked in game. Maybe the script was too slow?
-COPY_EXISTING ~IRLENTRE.BCS~ ~override~
-  DECOMPILE_BCS_TO_BAF
-    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[768.607],0)~ ~NoAction()~
-    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[710.673],0)~ ~NoAction()~
-    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[881.661],0)~ ~NoAction()~
-    REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[942.567],0)~ ~NoAction()~
-    REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~UseItem("JA#DPIRL",Myself)~
-  COMPILE_BAF_TO_BCS
-BUT_ONLY_IF_IT_CHANGES
-
-New try:
-*/
-
 COPY_EXISTING ~IRLENTRE.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[768.607],0)~ ~UseItem("JA#DPIRL",Myself)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[710.673],0)~ ~~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[881.661],0)~ ~~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[942.567],0)~ ~~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[768.607],S)~ ~UseItem("JA#DPIRL",Myself)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[710.673],S)~ ~~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[881.661],S)~ ~~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("DOPZORL",[942.567],S)~ ~~
+		REPLACE_TEXTUALLY EVALUATE_REGEXP ~\(CreateCreature("DOPZORL",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))[%WNL%%MNL%%LNL%%TAB% ]*\)+~ ~UseItem("JA#DPIRL",Myself)~
 		REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~~
 	END
 BUT_ONLY
@@ -211,38 +188,38 @@ EXTEND_TOP ~%EBaldursGate%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7800.B
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MLBAR.STO~ ~override~
 
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGB.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGB.CRE~ ~override~
 	SAY NAME1 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
 
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP0.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP1.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP2.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP3.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP4.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP5.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP6.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP7.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP8.CRE~ ~override~
-	~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP9.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP1.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP2.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP3.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP4.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP5.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP6.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP7.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP8.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP9.CRE~ ~override~
 	SAY NAME1 @2120
 	SAY NAME2 @2120
-	WRITE_ASCII 0x248 ~NONE~	#8
-	WRITE_ASCII 0x250 ~NONE~	#8
-	WRITE_ASCII 0x260 ~NONE~	#8
-	WRITE_ASCII 0x268 ~WTASIGHT~	#8
-	WRITE_ASCII 0x258 ~JA#DOPP1~	#8
-	WRITE_ASCII 0x280 ~DopZorl~	#32
+	WRITE_ASCII SCRIPT_OVERRIDE ~None~ #8
+	WRITE_ASCII SCRIPT_CLASS ~None~ #8
+	WRITE_ASCII SCRIPT_RACE ~JA#DOPP1~ #8
+	WRITE_ASCII SCRIPT_GENERAL ~None~ #8
+	WRITE_ASCII SCRIPT_DEFAULT ~WTASIGHT~ #8
+	WRITE_ASCII DEATHVAR ~DopZorl~ #32
 
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.CRE~ ~override~
 	SAY NAME1 @2099
 	SAY NAME2 @2099
-	WRITE_ASCII 0x280 ~Zorl~	#32
+	WRITE_ASCII DEATHVAR ~Zorl~ #32
 
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPIRL.CRE~ ~override~
 	SAY NAME1 @2100
 	SAY NAME2 @2100
-	WRITE_ASCII 0x280 ~Irlentre~	#32
+	WRITE_ASCII DEATHVAR ~Irlentre~ #32
 
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.ITM~ ~override~
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPIRL.ITM~ ~override~
@@ -270,34 +247,34 @@ COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DIRLE.ITM~ ~override~
 	SAY DESC @2108
 
 COPY_EXISTING ~IRLENT.CRE~ ~override~
-	WRITE_BYTE 0x271 255	//General
-	WRITE_BYTE 0x272 103	//Race
-	WRITE_BYTE 0x273 112	//Class
-	WRITE_BYTE 0x275 4	//Gender
+	WRITE_BYTE 0x271 255 // General: MONSTER
+	WRITE_BYTE 0x272 103 // Race: BEAR
+	WRITE_BYTE 0x273 112 // Class: DOPPLEGANGER_GREATER
+	WRITE_BYTE 0x275 4   // Gender: NIETHER
 	ADD_CRE_ITEM ~JA#DPIRL~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
 	REPLACE_CRE_ITEM ~CHAN04~ #0 #0 #0 ~NONE~ ~ARMOR~ EQUIP
 
 COPY_EXISTING ~ZORL.CRE~ ~override~
 	SAY NAME1 @2109
 	SAY NAME2 @2109
-	WRITE_BYTE 0x271 255	//General
+	WRITE_BYTE 0x271 255 // General: MONSTER
 	ADD_CRE_ITEM ~JA#ZRLKY~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
 	ADD_CRE_ITEM ~JA#DPZRL~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
 
 COPY_EXISTING ~MERCHG.CRE~ ~override~
-	WRITE_ASCII 0x250 ~NONE~	#8 //no runaway
-	WRITE_ASCII 0x258 ~JA#MGUAR~	#8
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~MERCHG~ script_new = ~JA#MGUAR~ END
 
 COPY_EXISTING ~BRANDI.CRE~ ~override~
-	WRITE_ASCII 0x258 ~JA#MGUAR~	#8
+	LPF ADD_CRE_SCRIPT INT_VAR offset_start = SCRIPT_CLASS STR_VAR script_new = ~JA#MGUAR~ END
 
 COPY_EXISTING ~ALDETH.CRE~ ~override~
-	WRITE_ASCII 0x258 ~JA#ALDET~	#8 //no runaway
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
 
 COPY_EXISTING ~DABRON.CRE~ ~override/JA#DABRO.CRE~
-	WRITE_ASCII 0x250 ~NONE~	#8 //no runaway
-	WRITE_ASCII 0x2cc ~NONE~
-	WRITE_BYTE 0x270 0xff
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~DABRON~ END
+	WRITE_ASCII DIALOG ~None~
+	WRITE_BYTE 0x270 255 // Allegiance: ENEMY
 
 
 COPY_EXISTING ~AM0704.WAV~ ~override~
@@ -313,11 +290,6 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 		STR_VAR
 		actor_name 	= ~Irlentree~
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
-	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
 	//add new actors
 	PATCH_DEFINE_ARRAY x_coord BEGIN 1103 1176 779 1048 688 632 711 219 402 1125 END
 	PATCH_DEFINE_ARRAY y_coord BEGIN 587  577  888 757  598 576 301 487 606 500 END
@@ -351,44 +323,45 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 		fj_name           = AM0704
 		fj_wav_resref0    = AM0704
 	END
+	READ_LONG 0xbc "JA#OFF_SNG"
+	WRITE_LONG "JA#OFF_SNG" ~0~
+	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
+	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
+	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset+0x80 actors_filename
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~FECOOK~) BEGIN
-			WRITE_ASCII actors_offset+0x48 ~JA#MLCOK~
-		END
-		READ_ASCII actors_offset+0x80 actors_filename
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~BRANDI~) BEGIN
-			WRITE_SHORT actors_offset+0x20  637
-			WRITE_SHORT actors_offset+0x22  734
-			WRITE_SHORT actors_offset+0x24  637
-			WRITE_SHORT actors_offset+0x26  734
-			WRITE_SHORT actors_offset+0x34  14
-		END
-		READ_ASCII actors_offset+0x80 actors_filename
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~ZORL~) BEGIN
-			WRITE_SHORT actors_offset+0x20  1352
-			WRITE_SHORT actors_offset+0x22  671
-			WRITE_SHORT actors_offset+0x24  1352
-			WRITE_SHORT actors_offset+0x26  671
-			WRITE_SHORT actors_offset+0x34  13
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_MATCH ~%actor_filename%~ WITH
+			~FECOOK~ BEGIN
+				WRITE_ASCII actor+0x48 ~JA#MLCOK~ // Dialog
+			END
+			~BRANDI~ BEGIN
+				WRITE_SHORT actor+0x20 637
+				WRITE_SHORT actor+0x22 734
+				WRITE_SHORT actor+0x24 637
+				WRITE_SHORT actor+0x26 734
+				WRITE_SHORT actor+0x34 14
+			END
+			~ZORL~ BEGIN
+				WRITE_SHORT actor+0x20 1352
+				WRITE_SHORT actor+0x22 671
+				WRITE_SHORT actor+0x24 1352
+				WRITE_SHORT actor+0x26 671
+				WRITE_SHORT actor+0x34 13
+			END
+			DEFAULT
 		END
 	END
 	//container scripts, scroll and key
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
 		container_name = ~Container 2~
-		lock_difficulty  = 100
+		lock_difficulty = 100
 		container_key = ~JA#ZRLKY~
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
-	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
 	//add new actors
 	LPF fj_are_structure
 		INT_VAR
@@ -417,24 +390,15 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		fj_name           = AM0704
 		fj_wav_resref0    = AM0704
 	END
-BUT_ONLY
-
-COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
-	//delete not needed actors
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~DOPPLE~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-	END
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
 	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
+BUT_ONLY
+
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPLE~ END
 	// Add Ambient 1
 	LPF fj_are_structure
 		INT_VAR
@@ -449,6 +413,11 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 		fj_name           = AM0704
 		fj_wav_resref0    = AM0704
 	END
+	READ_LONG 0xbc "JA#OFF_SNG"
+	WRITE_LONG "JA#OFF_SNG" ~0~
+	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
+	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
+	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
 BUT_ONLY
 
 COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
