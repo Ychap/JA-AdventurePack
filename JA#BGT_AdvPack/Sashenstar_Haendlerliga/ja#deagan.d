@@ -1,6 +1,6 @@
 BEGIN ~JA#DEAGA~
 
-IF ~StateCheck(Myself,STATE_CHARMED)!Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_0
+IF ~StateCheck(Myself,STATE_CHARMED) !Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_0
 SAY @0
 IF ~~ THEN UNSOLVED_JOURNAL @1029 EXIT
 END
@@ -30,32 +30,32 @@ END
 
 IF ~~ THEN BEGIN JA#DEAGAN_5
 SAY @11
-IF ~~ THEN DO ~ClearAllActions()StartCutSceneMode()StartCutScene("JA#CUDEA")~ UNSOLVED_JOURNAL @12 EXIT
+IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDEA")~ UNSOLVED_JOURNAL @12 EXIT
 END
 
 IF ~Global("JA#DEAGAN_SEQ","GLOBAL",1)~ THEN BEGIN JA#DEAGAN_6
 SAY @13
-IF ~~ THEN REPLY @14 DO ~SetGlobal("JA#DEAGAN_SEQ","GLOBAL",2)EscapeAreaMove("%NBaldursGate_ThreeOldKegs_L1%",309,525,9)~ EXIT
+IF ~~ THEN REPLY @14 DO ~SetGlobal("JA#DEAGAN_SEQ","GLOBAL",2) EscapeAreaMove("%NBaldursGate_ThreeOldKegs_L1%",309,525,9)~ EXIT
 IF ~~ THEN REPLY @15 EXIT
 END
 
 IF ~Global("JA#DEAGAN_SEQ","GLOBAL",3)~ THEN BEGIN JA#DEAGAN_7
 SAY @16
-IF ~NumInPartyAliveGT(5)~ THEN DO ~GiveGoldForce(30)SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4)EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
-IF ~NumInPartyAliveLT(6)~ THEN DO ~GiveGoldForce(25)SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4)EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
-IF ~NumInPartyAliveLT(5)~ THEN DO ~GiveGoldForce(20)SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4)EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
-IF ~NumInPartyAliveLT(4)~ THEN DO ~GiveGoldForce(15)SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4)EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
-IF ~NumInPartyAliveLT(3)~ THEN DO ~GiveGoldForce(10)SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4)EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
-IF ~NumInPartyAliveLT(2)~ THEN DO ~GiveGoldForce(5)SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4)EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
+IF ~NumInPartyAliveGT(5)~ THEN DO ~GiveGoldForce(30) SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4) EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
+IF ~NumInPartyAliveLT(6)~ THEN DO ~GiveGoldForce(25) SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4) EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
+IF ~NumInPartyAliveLT(5)~ THEN DO ~GiveGoldForce(20) SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4) EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
+IF ~NumInPartyAliveLT(4)~ THEN DO ~GiveGoldForce(15) SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4) EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
+IF ~NumInPartyAliveLT(3)~ THEN DO ~GiveGoldForce(10) SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4) EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
+IF ~NumInPartyAliveLT(2)~ THEN DO ~GiveGoldForce(5) SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4) EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
 END
 
-IF ~Global("JA#DEAGAN_SEQ","GLOBAL",4)!Global("AldethMove","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_8
+IF ~Global("JA#DEAGAN_SEQ","GLOBAL",4) !Global("AldethMove","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_8
 SAY @18
 IF ~~ THEN EXIT
 END
 
 
-IF ~Global("AldethMove","GLOBAL",2)!Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_10
+IF ~Global("AldethMove","GLOBAL",2) !Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_10
 SAY @19
 IF ~Global("JA#ASK_DEAGAN","LOCALS",0)~ THEN REPLY @20 DO ~SetGlobal("JA#ASK_DEAGAN","LOCALS",1)~ GOTO JA#DEAGAN_11
 IF ~~ THEN REPLY @21 EXIT
@@ -63,36 +63,33 @@ END
 
 IF ~~ THEN BEGIN JA#DEAGAN_11
 SAY @22
-IF ~~ THEN DO ~IncrementGlobal("JA#MERCLEAGUE_INSP","GLOBAL",1)AddJournalEntry(@1030,QUEST)~ EXIT
+IF ~~ THEN DO ~IncrementGlobal("JA#MERCLEAGUE_INSP","GLOBAL",1)~ UNSOLVED_JOURNAL @1030 EXIT
 END
 
-IF ~Global("HelpAldeth","GLOBAL",2)Global("JA#DEAGAN_QUDO","LOCALS",0)~ THEN BEGIN JA#DEAGAN_12
+IF ~Global("HelpAldeth","GLOBAL",2) Global("JA#DEAGAN_QUDO","LOCALS",0)~ THEN BEGIN JA#DEAGAN_12
 SAY @23
 IF ~~ THEN DO ~SetGlobal("JA#DEAGAN_QUDO","LOCALS",1)~ EXIT
 END
 
-IF ~Global("HelpAldeth","GLOBAL",2)Global("JA#DEAGAN_QUDO","LOCALS",1)~ THEN BEGIN JA#DEAGAN_13
+IF ~Global("HelpAldeth","GLOBAL",2) Global("JA#DEAGAN_QUDO","LOCALS",1)~ THEN BEGIN JA#DEAGAN_13
 SAY @24
 IF ~~ THEN EXIT
 END
 
+// END JA#DEAGA
 
 
 BEGIN ~JA#DEAGB~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN JA#DEAGB_1
-SAY @25
-= @26
+SAY @25 = @26
 IF ~~ THEN REPLY @27 GOTO JA#DEAGB_2
 IF ~~ THEN REPLY @28 GOTO JA#DEAGB_3
 END
 
 IF ~~ THEN BEGIN JA#DEAGB_2
 SAY @29
-IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",2)
-ClearAllActions()
-StartCutSceneMode()
-StartCutScene("JA#CUDEC")~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",2) ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDEC")~ EXIT
 END
 
 IF ~~ THEN BEGIN JA#DEAGB_3
@@ -104,8 +101,7 @@ END
 
 IF ~~ THEN BEGIN JA#DEAGB_4
 SAY @34
-IF ~~ THEN DO ~SetGlobal("Capture800","GLOBAL",0)SetGlobal("JA#ALDETHCHP8","GLOBAL",2)EscapeAreaDestroy(90)~ EXIT
+IF ~~ THEN DO ~SetGlobal("Capture800","GLOBAL",0) SetGlobal("JA#ALDETHCHP8","GLOBAL",2) EscapeAreaDestroy(90)~ EXIT
 END
 
-
-
+// END JA#DEAGB
