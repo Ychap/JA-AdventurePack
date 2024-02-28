@@ -11,7 +11,7 @@ REPLACE_STATE_TRIGGER ALDETH 28 ~!Global("Chapter","GLOBAL",%tutu_chapter_7%)Glo
 REPLACE_STATE_TRIGGER ALDETH 28 ~Global("HelpAldeth","GLOBAL",2)~
 
 
-/* This will be moved into the tp2 to catch all instances 
+/* This will be moved into the tp2 to catch all instances
 REPLACE_TRANS_ACTION ALDETH
 BEGIN 7 END
 BEGIN 0 END
@@ -154,9 +154,6 @@ BEGIN // list of changes, see below for flags
   "ACTION" ~SetGlobal("ZorlDopple","GLOBAL",1)~
 END
 
-EXTEND_BOTTOM ALDETH 5
-IF ~~ THEN REPLY @0 EXTERN SENIYA JA#SENIYA_00
-END
 
 EXTEND_BOTTOM ALDETH 14
 IF ~PartyHasItem("SCRL2P")~ THEN REPLY @1 DO ~SetGlobal("JA#ALDETH_KNOWDOPP","GLOBAL",1)~ UNSOLVED_JOURNAL @1025 GOTO JA#ALDETH_30
@@ -166,54 +163,6 @@ EXTEND_BOTTOM ALDETH 14
 IF ~!PartyHasItem("SCRL2P")GlobalGT("JA#DOPPELGANGER_SPAWN","GLOBAL",0)Global("JA#SENDZORL","GLOBAL",2)~ THEN REPLY @2 GOTO JA#ALDETH_31
 END
 
-
-APPEND SENIYA
-
-IF ~~ THEN BEGIN JA#SENIYA_00
-SAY @3
-IF ~~ THEN EXTERN ALDETH JA#ALDETH_20
-END
-
-IF ~~ THEN BEGIN JA#SENIYA_01
-SAY @4
-IF ~~ THEN REPLY @5 GOTO JA#SENIYA_02
-IF ~~ THEN REPLY @6 GOTO 1
-IF ~~ THEN REPLY @7 EXTERN ALDETH 6
-END
-
-IF ~~ THEN BEGIN JA#SENIYA_02
-SAY @8
-IF ~~ THEN REPLY @9 GOTO JA#SENIYA_03
-IF ~~ THEN REPLY @10 GOTO 1
-IF ~~ THEN REPLY @11 EXTERN ALDETH 6
-END
-
-IF ~~ THEN BEGIN JA#SENIYA_03
-SAY @12
-IF ~~ THEN EXTERN ALDETH JA#ALDETH_21
-END
-
-IF ~~ THEN BEGIN JA#SENIYA_04
-SAY @13
-IF ~~ THEN REPLY @14 GOTO JA#SENIYA_05
-END
-
-IF ~~ THEN BEGIN JA#SENIYA_05
-SAY @15
-IF ~~ THEN EXTERN ALDETH JA#ALDETH_22
-END
-
-IF ~~ THEN BEGIN JA#SENIYA_06
-SAY @16
-IF ~~ THEN + JA#SENIYA_07
-END
-
-IF ~~ THEN BEGIN JA#SENIYA_07
-SAY @17
-IF ~~ THEN DO ~AddexperienceParty(600)SetGlobal("SeniyadXP","GLOBAL",1)Shout(3)EscapeArea()~ EXIT
-END
-
-END
 
 APPEND ALDETH
 
@@ -243,21 +192,6 @@ END
 IF ~~ THEN BEGIN JA#ALDETH_02
 SAY @27
 IF ~~ THEN EXTERN ZORL 6
-END
-
-IF ~~ THEN BEGIN JA#ALDETH_20
-SAY @28
-IF ~~ THEN EXTERN SENIYA JA#SENIYA_01
-END
-
-IF ~~ THEN BEGIN JA#ALDETH_21
-SAY @29
-IF ~~ THEN EXTERN SENIYA JA#SENIYA_04
-END
-
-IF ~~ THEN BEGIN JA#ALDETH_22
-SAY @30
-IF ~~ THEN EXTERN SENIYA JA#SENIYA_06
 END
 
 IF ~~ THEN BEGIN JA#ALDETH_30
@@ -337,9 +271,9 @@ IF ~~ THEN REPLY @40 DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 ++ @71 /* ~Dachtet Ihr, ich würde diese Sache auf sich beruhen lassen, Aldeth? Ihr solltet mir besser einen guten Grund für Eurer Verhalten liefern – ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
 END
 
-END //APPEND ALDETH
+END // APPEND ALDETH
 
-/* take this out to activate the original dialogue state again, for compatibility with other mods 
+/* take this out to activate the original dialogue state again, for compatibility with other mods
 
 IF WEIGHT #-1
 ~Global("Chapter","GLOBAL",%tutu_chapter_7%)
@@ -378,21 +312,21 @@ IF ~~ THEN versoehnung_01
 SAY @81 /* ~Wie gerne würde ich Euch glauben, <CHARNAME>. Ihr könnt Euch sicher vorstellen, wie es für mich war, meine Freunde und Wohlltäter verraten zu müssen ... aber Ihr wurdet nunmal von vertrauenswürdigen Personen dabei gesehen, wie Ihr die Morde begangen habt und das kann ich nicht ignorieren!~ */
 ++ @82 /* ~Kam Euch nie in den Sinn, dass es sich um das Werk von Doppelgänger gehandelt haben könnte? Wie Ihr wisst, haben sie es zumindest teilweise geschafft, Euch zu unterwandern und Dinge getan, welche der Händlerliga schaden!~ */ + versoehnung_02
 ++ @83 /* ~Aldeth, ich bin einer ganz großen Sache auf der Spur. Eure "vertrauenswürdigen Personen" sind nicht so vertrauenswürdig, wie Ihr meint. Ich habe Euch bereits mehrfach geholfen. Ihr müsst mir glauben!~ */ + versoehnung_02
-++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT 
+++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_02
 SAY @85 /* ~Ihr ... habt Recht, mit dem, was Ihr sagt, <CHARNAME>. Doch selbst, wenn ich Euch glauben sollte, wie wollt Ihr beweisen, dass die Tat offensichtlich verübt wurde, um Euch in Verruf zu bringen?~ */
 ++ @86 /* ~Ich konnte mehrere Doppelgänger in Kerzenburg töten, die viele Bekannte von mir ersetzt hatten, doch ich weiß nicht, ob die Kadaver nicht schon verbrannt wurden oder die Leichen der Opfer gefunden wurden...~ */ + versoehnung_03
 ++ @87 /* ~Ich bin dabei, die Beweise gegen den Eisenthron zu sammeln. Deswegen war ich ja in Kerzenburg! Dort waren auch Doppelgänger, Aldeth. Es wimmelte nur so von ihnen!~ */ + versoehnung_03
-++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT 
+++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_03
 SAY @88 /* ~Das ... tut mir sehr leid. Ich denke, ich kann meine Kontakte nutzen, um herauszufinden, ob dort Leichen seltsamer Kreaturen oder vermisster Burgbewohner gefunden wurden...~ */
 ++ @89 /* ~Ich danke Euch, Aldeth. Dafür, dass Ihr Euch zumindest bemüht, mir zu glauben.~ */ + versoehnung_04
 ++ @90 /* ~Wenn Ihr mir dann besser glauben könnt, dann tut das.~ */ + versoehnung_04
-++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT 
+++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_04
@@ -406,7 +340,7 @@ SAY @93 /* ~Es ranken sich in der Tat viele Gerüchte über dunkle Machenschaften 
 ++ @94 /* ~Ihr wisst selbst, wieviel Macht der Eisenthron hat. Ihr habt Recht, mit dem, was Ihr sagt, aber das Gesetz sieht nicht in jeden dunklen Winkel – vor allem nicht, wenn genug klingende Münze in die richtigen Taschen fließt oder die richtigen Stellen passend besetzt werden.~ */ + versoehnung_06
 ++ @95 /* ~Aldeth, nochmal - ich habe die Anführer des Eisenthrons getötet, aber es war kein *Mord*! Streng genommen haben sie mich zuerst angegriffen. Genauso, wie sie andere aus dem Weg geräumt haben, die ihnen lästig waren.~ */ + versoehnung_07
 ++ @96 /* ~Ich sehe, dass es nichts bringt, Euch überzeugen zu wollen. Ich bin mit Euch fertig, Ihr Verräter. Solltet Ihr je wieder Hilfe brauchen, seid Ihr auf Euch gestellt!~ */ DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ EXIT
-++ @97 /* ~Genug von Euren Ausflüchten! Für Euren Verrat werdet Ihr sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT 
+++ @97 /* ~Genug von Euren Ausflüchten! Für Euren Verrat werdet Ihr sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_06
@@ -421,7 +355,7 @@ SAY @101 /* ~Ich gebe zu ... das würde in der Tat zu vielen Gerüchten passen, di
 ++ @103 /* ~Ich danke Euch, Aldeth. Ich bin froh, dass Ihr meine Gründe versteht – auch ich bedauere, dass es soweit gekommen ist. Doch noch ist es nicht vorbei. Der eigentliche Drahtzieher spinnt weiterhin seine Intrigen!~ */ + versoehnung_08
 ++ @104 /* ~Das beruhigt mich. Ich hätte Euch ungern bekämpfen müssen.~ */ + versoehnung_08
 ++ @105 /* ~Na endlich.~ */ + versoehnung_08
-++ @106 /* ~Das heißt aber nicht, dass ich Euch nicht für Euren Verrat bezahlen lasse! Zieht Eure Klinge und verteidigt Euch!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT 
+++ @106 /* ~Das heißt aber nicht, dass ich Euch nicht für Euren Verrat bezahlen lasse! Zieht Eure Klinge und verteidigt Euch!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_08
@@ -509,7 +443,7 @@ END
 APPEND BART10
 
 IF ~~ THEN BEGIN JA#BART10_00
-SAY @44 
+SAY @44
 IF ~~ THEN DO ~IncrementGlobal("JA#MERCLEAGUE_INSP","GLOBAL",1)AddJournalEntry(@1030,QUEST)~ EXIT
 END
 
@@ -610,32 +544,3 @@ IF ~Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#MLCOK_8
 SAY @67
 IF ~~ THEN EXIT
 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

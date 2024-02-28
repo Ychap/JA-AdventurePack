@@ -13,21 +13,6 @@ COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#BRANDI.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGAN.D~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP.D~
 
-COPY_EXISTING ~ALDETH.dlg~ ~override~
-  LPF READ_JOURNAL_STRREF
-    INT_VAR
-	state = 0
-//	stateResponse = 0  //is already set to "0"
-    RET strref
-  END
-  SET aldeth1 = strref
-COPY_EXISTING ~ALDETH.dlg~ ~override~
-  LPF READ_JOURNAL_STRREF
-    INT_VAR state = 13
-    RET strref
-  END
-  SET aldeth2 = strref
-
 ACTION_IF GAME_IS ~bgt~ THEN BEGIN
 	COPY_EXISTING ~IRLENT.DLG~ ~override~
 		LPF READ_JOURNAL_STRREF
@@ -53,55 +38,64 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZORL.D~
 
 /* bg1npc is installed: Viconia's interjection kills the new reply option to settle the discpute with Seniyad peacefully. Add the reply option to Viconia's new state, as well: */
 
-
 OUTER_SET vic_state = "-4"
 OUTER_SET jaheira_state = "-4"
 
 ACTION_IF ((MOD_IS_INSTALLED ~BG1NPC/BG1NPC.TP2~ "10") //bg1npc interjections and quests is installed
-		    AND (FILE_EXISTS ~bg1npc/tra/english/x#viint.tra~)) BEGIN // only checking that the bg1npc folder is still in there
+			AND (FILE_EXISTS ~bg1npc/tra/english/x#viint.tra~)) BEGIN // only checking that the bg1npc folder is still in there
+
+	PRINT ~BG1 NPC Quest und Banter Component detected~
+
+	/* look for Vici's new dialogue state. Since we don't know which language version the player installed bg1npc in, we try all of them.
+
+	We are looking for @5 in bg1npc/tra/[LANGUAGE]/x#viint.tra
 
 
-PRINT ~BG1 NPC Quest und Banter Component detected~
+	And also: to make the transition to Jaheira's Shadow Druid quest, i.e. to lead to Seniyad's reply to Jaheira's greeting: @95 in bg1npc/tra/[LANGUAGE]/x#jaqu.tra
 
-/* look for Vici's new dialogue state. Since we don't know which language version the player installed bg1npc in, we try all of them.
+	*/
 
-We are looking for @5 in bg1npc/tra/[LANGUAGE]/x#viint.tra
+	/* this will grab the correct state from the language bg1npc is installed in - this is great! */
+	OUTER_SET jaheira_state = STATE_WHICH_SAYS 95 IN ~bg1npc/tra/%s/x#jaqu.tra~ FROM ~%JAHEIRA_JOINED%.dlg~
+	OUTER_SET vic_state = STATE_WHICH_SAYS 5 IN ~bg1npc/tra/%s/x#viint.tra~ FROM ~%VICONIA_JOINED%.dlg~
 
-
-And also: to make the transition to Jaheira's Shadow Druid quest, i.e. to lead to Seniyad's reply to Jaheira's greeting: @95 in bg1npc/tra/[LANGUAGE]/x#jaqu.tra
-
-*/
-
-/* this will grab the correct state from the language bg1npc is installed in - this is great! */
-OUTER_SET jaheira_state = STATE_WHICH_SAYS 95 IN ~bg1npc/tra/%s/x#jaqu.tra~ FROM ~%JAHEIRA_JOINED%.dlg~
-OUTER_SET vic_state = STATE_WHICH_SAYS 5 IN ~bg1npc/tra/%s/x#viint.tra~ FROM ~%VICONIA_JOINED%.dlg~
-
-END //ACTION_IF bg1npc interjections is installed
-
-/* If we know the state number in viconij.dlg we append to it */
-
-<<<<<<<< ...inlined/aldeth_bg1npc.d
-
-EXTEND_BOTTOM ~%VICONIA_JOINED%~ %vic_state%
-  IF ~~ THEN REPLY @0 EXTERN SENIYA JA#SENIYA_00
-END
-
-/* more bg1npc compatibility: loop to Jaheira's quest, by Lumorus */
-
-INTERJECT SENIYA JA#SENIYA_07 JA#SENIYA_06_BG1NPC
-== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @68
-== SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @111
-== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @112
-== SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @113
-END %JAHEIRA_JOINED% %jaheira_state%
->>>>>>>>
+END // ACTION_IF bg1npc interjections is installed
 
 ACTION_IF ((vic_state >= 0) AND (jaheira_state >= 0)) BEGIN
-	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bg1npc.d~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
+	<<<<<<<< ...inlined/aldeth_bg1npc.d
+	/* If we know the state number in viconij.dlg we append to it */
+	EXTEND_TOP ~%VICONIA_JOINED%~ %vic_state% #1
+	IF ~~ THEN REPLY @0 EXTERN SENIYA JA#SENIYA_00
+	END
+	/* more bg1npc compatibility: loop to Jaheira's quest, by Lumorus */
+	INTERJECT SENIYA JA#SENIYA_07 JA#SENIYA_06_BG1NPC
+	== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @68
+	== SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @111
+	== %JAHEIRA_JOINED% IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @112
+	== SENIYA IF ~InParty("jaheira") InMyArea("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN @113
+	END %JAHEIRA_JOINED% %jaheira_state%
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bg1npc.d~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#SENIYA.D~
 	  USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 END ELSE BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
+	COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#SENIYA.D~
+	  USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 END
+
+COPY_EXISTING ~ALDETH.dlg~ ~override~
+	LPF READ_JOURNAL_STRREF
+		INT_VAR state = (GAME_IS ~bgt~ ? 0 : 4)
+		RET strref
+	END
+	SET aldeth1 = strref
+	LPF READ_JOURNAL_STRREF
+		INT_VAR state = (GAME_IS ~bgt~ ? 13 : 25) // only necessary with bgt
+		RET strref
+	END
+	SET aldeth2 = strref
+BUT_ONLY
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
 
 
 /* replace quest reward ("POTN09") with mod quest item JA#ALDET */
