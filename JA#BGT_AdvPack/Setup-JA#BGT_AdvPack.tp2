@@ -490,6 +490,15 @@ LABEL "JA#BGT_AdvPack-Yuxi"
 
 INCLUDE ~JA#BGT_AdvPack/Yuxi/setup-Yuxi.tpa~
 
+////////////////////////
+//Seniyad and Aldeth
+////////////////////////
+
+BEGIN ~Seniyad and Aldeth~ DESIGNATED 44
+LABEL "JA#BGT_AdvPack-Seniyad"
+
+INCLUDE ~JA#BGT_AdvPack/Seniyad/setup-Seniyad.tpa~
+
 
 ///////////////////////////////////////////////////
 //Animierte Fackeln und Kerzen

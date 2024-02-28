@@ -1,12 +1,8 @@
 REPLACE_STATE_TRIGGER ALDETH 28 ~Global("HelpAldeth","GLOBAL",2)~
 
-
-/* This will be moved into the tp2 to catch all instances
-REPLACE_TRANS_ACTION ALDETH
-BEGIN 7 END
-BEGIN 0 END
-~GiveItem("POTN09",LastTalkedToBy)~ ~GiveItem("JA#ALDET",LastTalkedToBy(Myself))~
-*/
+REPLACE_ACTION_TEXT ALDETH
+~GiveItem("POTN09"~
+~GiveItem("JA#ALDET"~
 
 
 ALTER_TRANS ALDETH // file name
@@ -156,15 +152,9 @@ END
 
 APPEND ALDETH
 
-IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_5%)Global("SeniyadXP","GLOBAL",1)~ THEN BEGIN JA#ALDETH_X0
-SAY @18
-= @19
-IF ~~ THEN DO ~SetGlobal("AldethMove","GLOBAL",1)GiveItem("JA#ALDET",LastTalkedToBy)AddexperienceParty(600)EraseJournalEntry(%aldeth1%)EscapeArea()~ SOLVED_JOURNAL @20 EXIT
-END
-
 IF ~~ THEN BEGIN JA#ALDETH_00
 SAY @21
-IF ~~ THEN REPLY @22 DO ~AddJournalEntry(%aldeth2%,QUEST)~ GOTO 25
+IF ~~ THEN REPLY @22 GOTO 25
 IF ~~ THEN REPLY @23 GOTO 10
 END
 
