@@ -1,13 +1,3 @@
-ALTER_TRANS ALDETH // file name
-BEGIN 0 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("TalkedToAldeth","GLOBAL",1)~
-END
-
-/*
-REPLACE_STATE_TRIGGER ALDETH 28 ~!Global("Chapter","GLOBAL",%tutu_chapter_7%)Global("HelpAldeth","GLOBAL",2)~
-*/
 REPLACE_STATE_TRIGGER ALDETH 28 ~Global("HelpAldeth","GLOBAL",2)~
 
 
