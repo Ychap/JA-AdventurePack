@@ -358,9 +358,6 @@ EXTEND_BOTTOM ALDETH 28
 Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ + @72 /* ~Ich gehe hier nicht so einfach weg. Ihr solltet mir besser einen guten Grund für Euren Verrat liefern – ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
 + ~Global("Chapter","GLOBAL",%tutu_chapter_7%)
 Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ + @74 /* ~Ich habe es mir anders überlegt. Ihr werdet für Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
-
-/* Baldurdash: in case Baldurdash is installed, this variable is set to 1. If not, it is 0 and this reply option will not show. */
-+ ~Global("VP_MyBank","GLOBAL",1)~ + @110 DO ~StartStore("aldeth",LastTalkedToBy(Myself))~ EXIT
 ++ @73 /* ~Lebt wohl.~ */ EXIT
 END
 

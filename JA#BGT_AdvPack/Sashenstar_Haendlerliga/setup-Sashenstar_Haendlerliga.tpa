@@ -78,18 +78,6 @@ OUTER_SET vic_state = STATE_WHICH_SAYS 5 IN ~bg1npc/tra/%s/x#viint.tra~ FROM ~%V
 
 END //ACTION_IF bg1npc interjections is installed
 
-
-/* Baldurdash: Aldeth's special store. The additional dialogue state for Baldurdash will be deactivated to increase compatibility. The store can be started from the original dialogue state instead.
-
-This has to be done before compiling the ja#aldeth.d */
-
-COPY_EXISTING ~aldeth.dlg~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~\(Global("VP_MyBank","GLOBAL",1)\)~
-		~False()~
-	END
-BUT_ONLY
-
 /* If we know the state number in viconij.dlg we append to it */
 
 <<<<<<<< ...inlined/aldeth_bg1npc.d
