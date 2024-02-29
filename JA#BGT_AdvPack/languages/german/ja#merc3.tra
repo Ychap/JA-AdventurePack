@@ -1,40 +1,40 @@
-@0    = ~Helft mir! Ihr müsst mir helfen, bitte. Ich habe... eine Menge Blut verloren.~
+@0    = ~Helft mir! Ihr mÃ¼sst mir helfen, bitte. Ich habe... eine Menge Blut verloren.~
 @1    = ~Was ist denn mit Euch passiert? Wer hat das getan?~
 @2    = ~Zieh Leine, toter Mann.~
-@3    = ~Ihr könnt mich doch nicht hier sterben lassen...~
-@4    = ~Räuber! Räuber am Küstenweg! Sie haben meine Karawane angegriffen... alle tot... meine arme Shelley. - (schluchz) - Ich bin so schwach... so kalt...~
+@3    = ~Ihr kÃ¶nnt mich doch nicht hier sterben lassen...~
+@4    = ~RÃ¤uber! RÃ¤uber am KÃ¼stenweg! Sie haben meine Karawane angegriffen... alle tot... meine arme Shelley. - (schluchz) - Ich bin so schwach... so kalt...~
 @5    = ~Hier, nehmt diesen Heiltrank.~
-@6    = ~Ich habe hier dieses Heilungselixier für Euch. Das wird Euch helfen.~
+@6    = ~Ich habe hier dieses Heilungselixier fÃ¼r Euch. Das wird Euch helfen.~
 @7    = ~Hier, nehmt diese Guten Beeren.~
-@8    = ~Wir werden sehen, was wir für Euch tun können. Haltet noch einen Moment aus.~
-@9    = ~Ihr seid so gut wie tot. Wir können Euch nicht helfen.~
-// @10   = ~Überfall auf die Karawane
+@8    = ~Wir werden sehen, was wir fÃ¼r Euch tun kÃ¶nnen. Haltet noch einen Moment aus.~
+@9    = ~Ihr seid so gut wie tot. Wir kÃ¶nnen Euch nicht helfen.~
+// @10   = ~Ãœberfall auf die Karawane
 
-// Eine Karawane wurde am Küstenweg von Räubern überfallen und geplündert. Die Reisenden sind allesamt tot oder verschleppt. Einer der Händler lag noch im Sterben, als wir ihn fanden, aber es gibt wohl keine Hoffnung für ihn. Vielleicht sollte ich ihn erlösen, ehe die wilden Tiere sich seiner annehmen.~
-@11   = ~Ich bin gerettet! Ihr habt mich gerettet. Die Götter mögen Euch segnen. Wie kann ich Euch das nur je vergelten?~
-@12   = ~Ihr könntet uns Geld geben, und zwar eine ganze Menge.~
-@13   = ~Überfall auf die Karawane
+// Eine Karawane wurde am KÃ¼stenweg von RÃ¤ubern Ã¼berfallen und geplÃ¼ndert. Die Reisenden sind allesamt tot oder verschleppt. Einer der HÃ¤ndler lag noch im Sterben, als wir ihn fanden, aber es gibt wohl keine Hoffnung fÃ¼r ihn. Vielleicht sollte ich ihn erlÃ¶sen, ehe die wilden Tiere sich seiner annehmen.~
+@11   = ~Ich bin gerettet! Ihr habt mich gerettet. Die GÃ¶tter mÃ¶gen Euch segnen. Wie kann ich Euch das nur je vergelten?~
+@12   = ~Ihr kÃ¶nntet uns Geld geben, und zwar eine ganze Menge.~
+@13   = ~Ãœberfall auf die Karawane
 
-Wir konnten ein Opfer des Karawanenüberfalls am Küstenweg retten. Der Händler war dem Tode nahe, als wir ihn fanden. Leider haben ihm die Räuber alles Geld abgenommen, sodass die Belohnung für unsere gute Tat ausblieb.~
-@14   = ~Ihr könntet uns noch etwas über diese Räuber erzählen, von denen Ihr gesprochen habt.~
-@15   = ~Überfall auf die Karawane
+Wir konnten ein Opfer des KarawanenÃ¼berfalls am KÃ¼stenweg retten. Der HÃ¤ndler war dem Tode nahe, als wir ihn fanden. Leider haben ihm die RÃ¤uber alles Geld abgenommen, sodass die Belohnung fÃ¼r unsere gute Tat ausblieb.~
+@14   = ~Ihr kÃ¶nntet uns noch etwas Ã¼ber diese RÃ¤uber erzÃ¤hlen, von denen Ihr gesprochen habt.~
+@15   = ~Ãœberfall auf die Karawane
 
-Wir konnten ein Opfer des Karawanenüberfalls am Küstenweg retten. Der Händler war dem Tode nahe, als wir ihn fanden. Ich würde sagen, wir kamen genau im richtigen Augenblick.~
-@16   = ~Gar nicht, aber danke für das Angebot.~
-@17   = ~Ich bezweifle, dass Ihr überhaupt etwas für uns tun könnt. Wir sind mächtige Abenteurer, und Ihr seid nur ein armseliger Bauer.~
-@18   = ~Überfall auf die Karawane
+Wir konnten ein Opfer des KarawanenÃ¼berfalls am KÃ¼stenweg retten. Der HÃ¤ndler war dem Tode nahe, als wir ihn fanden. Ich wÃ¼rde sagen, wir kamen genau im richtigen Augenblick.~
+@16   = ~Gar nicht, aber danke fÃ¼r das Angebot.~
+@17   = ~Ich bezweifle, dass Ihr Ã¼berhaupt etwas fÃ¼r uns tun kÃ¶nnt. Wir sind mÃ¤chtige Abenteurer, und Ihr seid nur ein armseliger Bauer.~
+@18   = ~Ãœberfall auf die Karawane
 
-Wir konnten ein Opfer des Karawanenüberfalls am Küstenweg retten. Der Händler war dem Tode nahe, als wir ihn fanden. Seine Dankbarkeit hielt sich jedoch unverschämterweise in Grenzen.~
-@19   = ~Ich habe kein Geld, das ich Euch geben könnte. Es... tut mir Leid, aber ich muss gehen.~
+Wir konnten ein Opfer des KarawanenÃ¼berfalls am KÃ¼stenweg retten. Der HÃ¤ndler war dem Tode nahe, als wir ihn fanden. Seine Dankbarkeit hielt sich jedoch unverschÃ¤mterweise in Grenzen.~
+@19   = ~Ich habe kein Geld, das ich Euch geben kÃ¶nnte. Es... tut mir Leid, aber ich muss gehen.~
 @20   = ~Das kann ja wohl nicht wahr sein! Es gab keinen Grund, auf einmal so arrogant zu werden. Entschuldigt, dass ich so viel Zeit Eures ach so wichtigen Lebens vergeudet habe!~
-@21   = ~Ich kann nicht viel über diese Räuber sagen. Die sind einfach aus dem Nichts gekommen. Plötzlich standen da Söldner - sowohl Hobgoblins als auch Menschen - vor uns und sagten, wir sollten uns ergeben und unsere Eisenvorräte ausliefern, aber unser Hauptmann hat sich geweigert! Dieser dämliche Idiot. Wie kann man nur so uneigennützig sein! Die sind wie ein Rudel ausgehungerter Wölfe über uns hergefallen. Ich bin nur knapp mit dem Leben davon gekommen. Das ist es, was ich zu sagen habe. Ich werde mich jetzt besser wieder auf den Weg machen, ich muss die Familien derer benachrichtigen, die gestorben sind.~
-@22   = ~Räuber!
+@21   = ~Ich kann nicht viel Ã¼ber diese RÃ¤uber sagen. Die sind einfach aus dem Nichts gekommen. PlÃ¶tzlich standen da SÃ¶ldner - sowohl Hobgoblins als auch Menschen - vor uns und sagten, wir sollten uns ergeben und unsere EisenvorrÃ¤te ausliefern, aber unser Hauptmann hat sich geweigert! Dieser dÃ¤mliche Idiot. Wie kann man nur so uneigennÃ¼tzig sein! Die sind wie ein Rudel ausgehungerter WÃ¶lfe Ã¼ber uns hergefallen. Ich bin nur knapp mit dem Leben davon gekommen. Das ist es, was ich zu sagen habe. Ich werde mich jetzt besser wieder auf den Weg machen, ich muss die Familien derer benachrichtigen, die gestorben sind.~
+@22   = ~RÃ¤uber!
 
-Nachdem ich einen schwer verletzten Händler heilte, erzählte er mir, dass die Räuber, die seine Karawane überfallen hatten, sowohl aus Menschen als auch aus Halbmenschen bestanden und es speziell auf die Eisenvorräte abgesehen hatten.~
-@23   = ~Ich hab in letzter Zeit viel gehört. Eisen scheint ziemlich knapp zu sein, wegen der Räuber und der Probleme in der Mine von Nashkell. Zwischen Baldurs Tor und Amn muss es ernste Spannungen geben. Es würde mich nicht wundern, wenn's da bald zum Krieg kommt.~
-@24   = ~Räuber!
+Nachdem ich einen schwer verletzten HÃ¤ndler heilte, erzÃ¤hlte er mir, dass die RÃ¤uber, die seine Karawane Ã¼berfallen hatten, sowohl aus Menschen als auch aus Halbmenschen bestanden und es speziell auf die EisenvorrÃ¤te abgesehen hatten.~
+@23   = ~Ich hab in letzter Zeit viel gehÃ¶rt. Eisen scheint ziemlich knapp zu sein, wegen der RÃ¤uber und der Probleme in der Mine von Nashkell. Zwischen Baldurs Tor und Amn muss es ernste Spannungen geben. Es wÃ¼rde mich nicht wundern, wenn's da bald zum Krieg kommt.~
+@24   = ~RÃ¤uber!
 
-Nachdem ich einen schwer verletzten Händler heilte, erzählte er ein paar wage Dinge über Eisenmangel, Räuber und Krieg.~
-@25   = ~Euch würde ich niemals über den Weg trauen!~
-@26   = ~Jaa? Helft mir, ich ... ah, werde schwächer...~
-@27   = ~Wir sind bald mit Hilfe zurück.~
+Nachdem ich einen schwer verletzten HÃ¤ndler heilte, erzÃ¤hlte er ein paar wage Dinge Ã¼ber Eisenmangel, RÃ¤uber und Krieg.~
+@25   = ~Euch wÃ¼rde ich niemals Ã¼ber den Weg trauen!~
+@26   = ~Jaa? Helft mir, ich ... ah, werde schwÃ¤cher...~
+@27   = ~Wir sind bald mit Hilfe zurÃ¼ck.~

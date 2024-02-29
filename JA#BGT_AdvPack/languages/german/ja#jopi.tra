@@ -1,44 +1,44 @@
-@0    = ~Na, gibts Neuigkeiten von den Räubern?~
-@1    = ~Ja, wir haben ihr Lager im Scharfzahnwald ausgeräuchert. Die Reise auf der Küstenstraße dürfte nun deutlich sicherer sein.~
+@0    = ~Na, gibts Neuigkeiten von den RÃ¤ubern?~
+@1    = ~Ja, wir haben ihr Lager im Scharfzahnwald ausgerÃ¤uchert. Die Reise auf der KÃ¼stenstraÃŸe dÃ¼rfte nun deutlich sicherer sein.~
 @2    = ~Nein, alles beim Alten.~
 @3    = ~Wunderbar, Ihr "Helden des Scharfzahnwaldes"! Dann kann ich ja endlich meine Reise nach Baldurs Tor fortsetzen. Onkel Ragefast macht sich bestimmt schon Sorgen... obwohl, wahrscheinlich hat er schon vergessen, dass ich ihn besuchen wollte, der alte Griesgram.~
-@4    = ~Hmpf! Muss hier immer noch warten, bis die Straßen mal wieder frei sind. Verdammtes Räubergesindel!~
-@5    = ~Wart Ihr draußen unterwegs? Eure Stiefel sehen so aus. Ach, ich will auch nicht länger hier drinnen versauern, aber was soll man machen?~
-@6    = ~Ich würde mir ja selbst ein Schwert zulegen, wenn ich den Mut hätte, gegen die Räuber anzutreten. Aber sowas überlässt man wohl eher Leuten wie Euch.~
+@4    = ~Hmpf! Muss hier immer noch warten, bis die StraÃŸen mal wieder frei sind. Verdammtes RÃ¤ubergesindel!~
+@5    = ~Wart Ihr drauÃŸen unterwegs? Eure Stiefel sehen so aus. Ach, ich will auch nicht lÃ¤nger hier drinnen versauern, aber was soll man machen?~
+@6    = ~Ich wÃ¼rde mir ja selbst ein Schwert zulegen, wenn ich den Mut hÃ¤tte, gegen die RÃ¤uber anzutreten. Aber sowas Ã¼berlÃ¤sst man wohl eher Leuten wie Euch.~
 @7    = ~He! Ihr da! Erinnert Ihr Euch?  Wir sind uns um Freundlichen Arm begegnet.~
-@8    = ~Äh, ja. Na klar... Wie gehts denn so?~
+@8    = ~Ã„h, ja. Na klar... Wie gehts denn so?~
 @9    = ~Verschwinde! Bettler kriegen nichts!~
-@10   = ~Na sowas! Von wegen "Helden des Scharfzahnwaldes"! Ihr seid ganz unverschämte Lumpenhunde!~
-@11   = ~Gar nicht gut. Nun ja, vielleicht seid Ihr genau die richtigen, die mir helfen können.~
-@12   = ~Ich bin hier, um meinen Onkel Ragefast zu besuchen, aber die alte Knurrhaut hat völlig den Verstand verloren. So ein kleines Elfenflittchen hat ihm den Kopf verdreht. Er hat mir sogar Gewalt angedroht, wenn ich ihr zu nahe kommen würde, und mich aus seinem Haus geworfen!~
-@13   = ~Ich habe Angst, dass er mich in ein Kaninchen verwandelt, wenn ich wieder durch seine Tür gehe. Könnt Ihr mir nicht helfen? Jemand muss unbedingt den Zauber dieser Frau von meinem Onkel nehmen, bevor noch etwas Schlimmes passiert.~
-@14   = ~Kein Problem. Das übernehmen wir.~
+@10   = ~Na sowas! Von wegen "Helden des Scharfzahnwaldes"! Ihr seid ganz unverschÃ¤mte Lumpenhunde!~
+@11   = ~Gar nicht gut. Nun ja, vielleicht seid Ihr genau die richtigen, die mir helfen kÃ¶nnen.~
+@12   = ~Ich bin hier, um meinen Onkel Ragefast zu besuchen, aber die alte Knurrhaut hat vÃ¶llig den Verstand verloren. So ein kleines Elfenflittchen hat ihm den Kopf verdreht. Er hat mir sogar Gewalt angedroht, wenn ich ihr zu nahe kommen wÃ¼rde, und mich aus seinem Haus geworfen!~
+@13   = ~Ich habe Angst, dass er mich in ein Kaninchen verwandelt, wenn ich wieder durch seine TÃ¼r gehe. KÃ¶nnt Ihr mir nicht helfen? Jemand muss unbedingt den Zauber dieser Frau von meinem Onkel nehmen, bevor noch etwas Schlimmes passiert.~
+@14   = ~Kein Problem. Das Ã¼bernehmen wir.~
 @15   = ~Glaubt Ihr, Eure Geschichte interessiert uns?! Wir haben Wichtigeres zu tun. Aus dem Weg!~
-@16   = ~Großartig, vielen Dank! Euer Ruf als "Helden des Scharfzahnwaldes" eilt Euch voraus! Bitte beeilt Euch, er wohnt gleich in diesem Haus.~
-@17   = ~Und? Habt Ihr meinen Onkel schon zur Vernunft bringen können?~
-@18   = ~Er war völlig von Sinnen und hat uns in seinem Wahn angegriffen. Wir mussten ihn leider töten. Tut mir Leid, Jopi!~
+@16   = ~GroÃŸartig, vielen Dank! Euer Ruf als "Helden des Scharfzahnwaldes" eilt Euch voraus! Bitte beeilt Euch, er wohnt gleich in diesem Haus.~
+@17   = ~Und? Habt Ihr meinen Onkel schon zur Vernunft bringen kÃ¶nnen?~
+@18   = ~Er war vÃ¶llig von Sinnen und hat uns in seinem Wahn angegriffen. Wir mussten ihn leider tÃ¶ten. Tut mir Leid, Jopi!~
 @19   = ~Nein, noch nicht.~
 @20   = ~Onkel Knurrhaut ist tot? Wie soll ich das nur meiner Mutter beibringen?!~
-@21   = ~Nun gut, habt Dank für Eure Mühe. Ich werde mich dann mal um die Erbschaftsangelegenheiten kümmern. Lebt wohl.~
-@22   = ~Der verführte Onkel Ragefast
+@21   = ~Nun gut, habt Dank fÃ¼r Eure MÃ¼he. Ich werde mich dann mal um die Erbschaftsangelegenheiten kÃ¼mmern. Lebt wohl.~
+@22   = ~Der verfÃ¼hrte Onkel Ragefast
 
-Ich habe Jopi erzählt, dass ich seinen Onkel getötet habe. Ihm schien das nicht besonders viel auszumachen. Offenbar standen sich die beiden nicht sehr nahe. Familienangelegenheiten sind eben so eine Sache...~
-@23   = ~Hallo, Knurrhaut... ähm, Onkel Ragefast.~
+Ich habe Jopi erzÃ¤hlt, dass ich seinen Onkel getÃ¶tet habe. Ihm schien das nicht besonders viel auszumachen. Offenbar standen sich die beiden nicht sehr nahe. Familienangelegenheiten sind eben so eine Sache...~
+@23   = ~Hallo, Knurrhaut... Ã¤hm, Onkel Ragefast.~
 @24   = ~Jopi? Hatte ich dich nicht angewiesen zu verschwinden?~
 @25   = ~Ja, aber das war, als Ihr noch von dieser Dirne besessen wart.~
 @26   = ~Das hatte damit rein gar nichts zu tun. Ich will dich hier nicht sehen, verschwinde!~
 @27   = ~Aber, Onkelchen, wir sind immerhin verwandt!~
 @28   = ~Ha! Deine Mutter ist zwar meine Schwester, aber das ist alles. Seit sie diesen armseligen Bastard, deinen Vater, geheiratet hat, habe ich sie nicht mehr gesehen.~
-@29   = ~Und dich kann ich auch nicht leiden. Du bist ein nutzloser Schwätzer, Jopi.~
-@30   = ~Wie Ihr wollt. Aber wenn Ihr noch etwas Zuneigung für Eure Schwester empfindet, dann solltet Ihr ihr helfen.~
+@29   = ~Und dich kann ich auch nicht leiden. Du bist ein nutzloser SchwÃ¤tzer, Jopi.~
+@30   = ~Wie Ihr wollt. Aber wenn Ihr noch etwas Zuneigung fÃ¼r Eure Schwester empfindet, dann solltet Ihr ihr helfen.~
 @31   = ~Hmpf! Was willst du Jopi?~
 @32   = ~Nun, wir haben daheim einige Schwierigkeiten, seit Papa...~
 @33   = ~Pff! Dieser Dummkopf!~
-@34   = ~Also, wieviel muss ich dir zahlen, damit du wieder abziehst und mich in Ruhe lässt?~
-@35   = ~Na, äh... drei... vierhu... fünfhundert?~
-@36   = ~Also gut, hier nimm das Geld und verschwinde! Und hör genau zu: Ich will dich hier nie wieder sehen, verstanden?!~
+@34   = ~Also, wieviel muss ich dir zahlen, damit du wieder abziehst und mich in Ruhe lÃ¤sst?~
+@35   = ~Na, Ã¤h... drei... vierhu... fÃ¼nfhundert?~
+@36   = ~Also gut, hier nimm das Geld und verschwinde! Und hÃ¶r genau zu: Ich will dich hier nie wieder sehen, verstanden?!~
 @37   = ~Alles klar, Onkelchen. Und danke!~
-@38   = ~(Jaja, hau bloß ab...)~
-@39   = ~Der verführte Onkel Ragefast
+@38   = ~(Jaja, hau bloÃŸ ab...)~
+@39   = ~Der verfÃ¼hrte Onkel Ragefast
 
-Jopi war froh, dass sein Onkel nicht länger in die Nymphe Abela vernarrt war. So hatte er Gelegenheiten, ihn um Geld anzupumpen. Ragefast scheint zwar äußerlich eine rauhe Schale zu haben, aber für seine Familie war er doch bereit, den Geldbeutel lockerzumachen. Jaja, die liebe Verwandtschaft...~
+Jopi war froh, dass sein Onkel nicht lÃ¤nger in die Nymphe Abela vernarrt war. So hatte er Gelegenheiten, ihn um Geld anzupumpen. Ragefast scheint zwar Ã¤uÃŸerlich eine rauhe Schale zu haben, aber fÃ¼r seine Familie war er doch bereit, den Geldbeutel lockerzumachen. Jaja, die liebe Verwandtschaft...~

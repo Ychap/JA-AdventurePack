@@ -1,24 +1,24 @@
-@0    = ~Ah, mein Freund! Schön Euch zu sehen. Leute wie Ihr haben von der Wache nichts zu befürchten.~ ~Ah, meine Freundin! Schön Euch zu sehen. Leute wie Ihr haben von der Wache nichts zu befürchten.~
-@1    = ~Ah, die Helden von Nashkell! Saubere Arbeit in den Minen, das kann ich Euch sagen! Wir hätten ja selbst ein paar unserer Männer runtergeschickt, aber wir können hier niemand entbehren. Baldurs Tor schickt Truppen nach Beregost, hört man.~
-@2    = ~Danke, wir müssen nun weiter.~
+@0    = ~Ah, mein Freund! SchÃ¶n Euch zu sehen. Leute wie Ihr haben von der Wache nichts zu befÃ¼rchten.~ ~Ah, meine Freundin! SchÃ¶n Euch zu sehen. Leute wie Ihr haben von der Wache nichts zu befÃ¼rchten.~
+@1    = ~Ah, die Helden von Nashkell! Saubere Arbeit in den Minen, das kann ich Euch sagen! Wir hÃ¤tten ja selbst ein paar unserer MÃ¤nner runtergeschickt, aber wir kÃ¶nnen hier niemand entbehren. Baldurs Tor schickt Truppen nach Beregost, hÃ¶rt man.~
+@2    = ~Danke, wir mÃ¼ssen nun weiter.~
 @3    = ~Kann ich Euch einige Fragen stellen?~
-@4    = ~Ah, das seid Ihr ja wieder. Macht keinen Ärger in der Stadt und genießt den Aufenthalt.~
-@5    = ~Willkommen zurück. Was führt Euch diesmal nach Nashkell?~
+@4    = ~Ah, das seid Ihr ja wieder. Macht keinen Ã„rger in der Stadt und genieÃŸt den Aufenthalt.~
+@5    = ~Willkommen zurÃ¼ck. Was fÃ¼hrt Euch diesmal nach Nashkell?~
 @6    = ~Aber ja, was wollt Ihr wissen?~
 @7    = ~Gibt es irgendwelche seltsamen Vorkommnisse in der Gegend?~
 @8    = ~Der Fluch des Hauptmanns
 
-Die Garde in Nashkell konnte nicht herausfinden, wo sich ihr verrückter Hauptmann Brage aufhält.~
-@9    = ~Was wisst Ihr über die Probleme in den Minen?~
+Die Garde in Nashkell konnte nicht herausfinden, wo sich ihr verrÃ¼ckter Hauptmann Brage aufhÃ¤lt.~
+@9    = ~Was wisst Ihr Ã¼ber die Probleme in den Minen?~
 @10   = ~Die Untersuchung der Nashkell-Mine
 
-Bardol von der Garde in Nashkell konnte mir auch nicht mehr über die Probleme in den Minen erzählen. Die Leute scheinen zu glauben, dass dort "Dämonen" am Werk sind.~
-@11   = ~Was könnt Ihr mir über die Stadt Nashkell sagen?~
+Bardol von der Garde in Nashkell konnte mir auch nicht mehr Ã¼ber die Probleme in den Minen erzÃ¤hlen. Die Leute scheinen zu glauben, dass dort "DÃ¤monen" am Werk sind.~
+@11   = ~Was kÃ¶nnt Ihr mir Ã¼ber die Stadt Nashkell sagen?~
 @12   = ~Ach, nichts. Lebt wohl.~
-@13   = ~Wir suchen unseren ehemaligen Kommandanten, Brage. Er hat eines Nachts in einem Wutanfall seine Frau, seine Kinder und alle, die ihn gesehen haben, getötet. Dann ist er in die Hügel geflohen. Er ist immer noch irgendwo da draußen, und wir betrauern ihn selbst ebenso wie seine Opfer...~
-@14   = ~Ansonsten streunen überall in der Umgebung Kobolde, Xvarte und Halbmenschen herum. Wir haben alle Hände voll zu tun, um die entlegenen Gehöfte und die Karawanen zu schützen.~
+@13   = ~Wir suchen unseren ehemaligen Kommandanten, Brage. Er hat eines Nachts in einem Wutanfall seine Frau, seine Kinder und alle, die ihn gesehen haben, getÃ¶tet. Dann ist er in die HÃ¼gel geflohen. Er ist immer noch irgendwo da drauÃŸen, und wir betrauern ihn selbst ebenso wie seine Opfer...~
+@14   = ~Ansonsten streunen Ã¼berall in der Umgebung Kobolde, Xvarte und Halbmenschen herum. Wir haben alle HÃ¤nde voll zu tun, um die entlegenen GehÃ¶fte und die Karawanen zu schÃ¼tzen.~
 @15   = ~Ich habe noch eine Frage.~
 @16   = ~Danke, lebt wohl.~
-@17   = ~Niemand weiß den Grund, warum das Eisen in letzter Zeit spröde und unbrauchbar ist, auch gehen Gerüchte, dass Dämonen in den Tiefen der Mine lauern.~
-@18   = ~Wir sind hier der nördlichste Außenposten von Amn. Aufgrund seiner Abgeschiedenheit ist Nashkel relativ unabhängig, im Winter sind die Pässe in den Wolkengipfeln meistens verschneit und wir sind vom Rest Amns völlig abgeschnitten.~
-@19   = ~Die Ghastkillfamilie hat hier momentan das Sagen, Berrun ist unser Bürgermeister, aber auch viele andere amnische Familien schicken ihre Vertreter her.~
+@17   = ~Niemand weiÃŸ den Grund, warum das Eisen in letzter Zeit sprÃ¶de und unbrauchbar ist, auch gehen GerÃ¼chte, dass DÃ¤monen in den Tiefen der Mine lauern.~
+@18   = ~Wir sind hier der nÃ¶rdlichste AuÃŸenposten von Amn. Aufgrund seiner Abgeschiedenheit ist Nashkel relativ unabhÃ¤ngig, im Winter sind die PÃ¤sse in den Wolkengipfeln meistens verschneit und wir sind vom Rest Amns vÃ¶llig abgeschnitten.~
+@19   = ~Die Ghastkillfamilie hat hier momentan das Sagen, Berrun ist unser BÃ¼rgermeister, aber auch viele andere amnische Familien schicken ihre Vertreter her.~

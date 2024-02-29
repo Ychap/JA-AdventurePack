@@ -1,11 +1,11 @@
 /* #14874 */
 @0    = ~Grumpf! So ein selbstzufriedener Paladin wie Ihr hat mir gerade noch gefehlt! Bald kann ich den Laden dichtmachen.~
 /* #14859 */
-@1    = ~Tretet näher, nur keine Hemmungen! Kommt her und macht bei den Kämpfen mit, hier bei Velvet! Na los, seid kein Frosch!~
+@1    = ~Tretet nÃ¤her, nur keine Hemmungen! Kommt her und macht bei den KÃ¤mpfen mit, hier bei Velvet! Na los, seid kein Frosch!~
 /* #14861 */
 @2    = ~Ich setze mein Geld auf den braunen.~
-@3    = ~Ich setze mein Geld auf den weißen.~
-@4    = ~Diese Hahnenkämpfe sind doch barbarisch! Leute wie Ihr haben einfach keinen Anstand!~
+@3    = ~Ich setze mein Geld auf den weiÃŸen.~
+@4    = ~Diese HahnenkÃ¤mpfe sind doch barbarisch! Leute wie Ihr haben einfach keinen Anstand!~
 /* #14862 */
 @5    = ~Tut mir leid, ich spiele nicht.~
 /* #14863 */
@@ -17,27 +17,27 @@
 /* #14866 */
 @9    = ~100 GM.~
 /* #14867 */
-@10   = ~Heh, ich habe meine Meinung geändert!~
+@10   = ~Heh, ich habe meine Meinung geÃ¤ndert!~
 @11   = ~Ich habe momentan nicht genug Geld zum Wetten!~
 /* #14868 */
-@12   = ~Ihr seid entweder ein furchtsames Huhn oder ein Paladin. Um ehrlich zu sein, Hühner sind mir lieber.~
+@12   = ~Ihr seid entweder ein furchtsames Huhn oder ein Paladin. Um ehrlich zu sein, HÃ¼hner sind mir lieber.~
 /* #14869 */
-@13   = ~Grumpf! Hier sind Eure 35 Goldmünzen und die 30, die ich Euch schulde. 5 behalte ich, für ein neues Huhn.~
+@13   = ~Grumpf! Hier sind Eure 35 GoldmÃ¼nzen und die 30, die ich Euch schulde. 5 behalte ich, fÃ¼r ein neues Huhn.~
 /* #14870 */
-@14   = ~Grumpf! Hier sind Eure 65 Goldmünzen und die 60, die ich Euch schulde. 5 behalte ich, für ein neues Huhn.~
+@14   = ~Grumpf! Hier sind Eure 65 GoldmÃ¼nzen und die 60, die ich Euch schulde. 5 behalte ich, fÃ¼r ein neues Huhn.~
 /* #14871 */
-@15   = ~Grumpf! Hier sind Eure 100 Goldmünzen und die 95, die ich Euch schulde. 5 behalte ich, für ein neues Huhn.~
+@15   = ~Grumpf! Hier sind Eure 100 GoldmÃ¼nzen und die 95, die ich Euch schulde. 5 behalte ich, fÃ¼r ein neues Huhn.~
 /* #14872 */
-@16   = ~Ha! Nächstes Mal klappt's bestimmt, Freund. Nächstes Mal bestimmt.~ ~Ha! Nächstes Mal klappt's bestimmt, Freundin. Nächstes Mal bestimmt.~
+@16   = ~Ha! NÃ¤chstes Mal klappt's bestimmt, Freund. NÃ¤chstes Mal bestimmt.~ ~Ha! NÃ¤chstes Mal klappt's bestimmt, Freundin. NÃ¤chstes Mal bestimmt.~
 /* #14873 */
-@17   = ~Ha! Keiner da außer uns Hühnern, Freund.~ ~Ha! Keiner da außer uns Hühnern, Freundin.~
+@17   = ~Ha! Keiner da auÃŸer uns HÃ¼hnern, Freund.~ ~Ha! Keiner da auÃŸer uns HÃ¼hnern, Freundin.~
 @18   = ~Tut mir leid, mir ist nicht nach einer Wette.~
 /* #14875 */
-@19   = ~Tut mir leid, aber mit nur einem Hahn kann man keinen Kampf austragen. Kommt morgen wieder, dann hab ich ein paar frische für Euch da.~
+@19   = ~Tut mir leid, aber mit nur einem Hahn kann man keinen Kampf austragen. Kommt morgen wieder, dann hab ich ein paar frische fÃ¼r Euch da.~
 /* #14888 */
-@20   = ~Gut zu hören, gut zu hören.~
+@20   = ~Gut zu hÃ¶ren, gut zu hÃ¶ren.~
 /* #15710 */
-@21   = ~Die fröhliche Atmosphäre des Jahrmarkts in Nashkell ist ansteckend. Der Straßenhändler Velvet und seine Kampfhähne haben mich sogar dazu verleiten können, an einem freundschaftlichen Spiel teilzunehmen.~
+@21   = ~Die frÃ¶hliche AtmosphÃ¤re des Jahrmarkts in Nashkell ist ansteckend. Der StraÃŸenhÃ¤ndler Velvet und seine KampfhÃ¤hne haben mich sogar dazu verleiten kÃ¶nnen, an einem freundschaftlichen Spiel teilzunehmen.~
 /* #15208 */
-@22   = ~Ich verdiene hier meinen Lebensunterhalt, und ich schätze es nicht besonders, wenn Ihr Euch da einmischt.~
+@22   = ~Ich verdiene hier meinen Lebensunterhalt, und ich schÃ¤tze es nicht besonders, wenn Ihr Euch da einmischt.~
 @23   = ~Das ist schade, jammerschade.~

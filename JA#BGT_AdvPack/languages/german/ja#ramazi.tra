@@ -1,45 +1,45 @@
-@0    = ~Nein, nein! Das seht Ihr falsch. Ich werde schon bald mit der Nymphe zurück sein!~
-@1    = ~Ihr wollt sie als Zutat? Was seid Ihr nur für ein Monster?! Lasst sie sofort frei!~
+@0    = ~Nein, nein! Das seht Ihr falsch. Ich werde schon bald mit der Nymphe zurÃ¼ck sein!~
+@1    = ~Ihr wollt sie als Zutat? Was seid Ihr nur fÃ¼r ein Monster?! Lasst sie sofort frei!~
 @2    = ~Nun gut. Dann macht mit der Nymphe, was Ihr wollt. Wir verschwinden.~
 @3    = ~Ich mache bei dieser Sache nicht mehr mit! Seht zu, wie Ihr an Eure Nymphe gelangt!~
 @4    = ~Hmpf, dann beeilt Euch! Ich kann nicht ewig auf diese Rezeptur warten.~
 @5    = ~Elende Narren! Niemand entkommt dem Netz der Spinne! Niemand!~
-@6    = ~Soso, Ihr habt es also tatsächlich ins oberste Stockwerk meines bescheidenen Refugiums geschafft! Dann wird es wohl nun an mir persönlich sein, Euch Euer schmerzhaftes Ende zu bereiten! Ich bin gespannt, welch nützliche Tinkturen ich aus der Asche Eurer Knochen gewinnen kann.~
-@7    = ~Tötet sie! Tötet sie alle, meine treuen Diener!~
+@6    = ~Soso, Ihr habt es also tatsÃ¤chlich ins oberste Stockwerk meines bescheidenen Refugiums geschafft! Dann wird es wohl nun an mir persÃ¶nlich sein, Euch Euer schmerzhaftes Ende zu bereiten! Ich bin gespannt, welch nÃ¼tzliche Tinkturen ich aus der Asche Eurer Knochen gewinnen kann.~
+@7    = ~TÃ¶tet sie! TÃ¶tet sie alle, meine treuen Diener!~
 @8    = ~Das will ich Euch auch geraten haben.~
-@9    = ~Was denn noch? Allmählich verliere ich die Geduld!~
+@9    = ~Was denn noch? AllmÃ¤hlich verliere ich die Geduld!~
 @10   = ~Euer Spiel ist aus! Lasst die Nymphe frei!~
 @11   = ~Bin schon weg!~
-@12   = ~Dann soll es so sein. Sterbt Ihr betrügerischen Missgeburten!~
-@13   = ~Verlasst jetzt mein Heim. Ich wünsche Euch einen guten Abend.~
+@12   = ~Dann soll es so sein. Sterbt Ihr betrÃ¼gerischen Missgeburten!~
+@13   = ~Verlasst jetzt mein Heim. Ich wÃ¼nsche Euch einen guten Abend.~
 @14   = ~Macht Euch bereit zu sterben, Nekromant!~
-@15   = ~Aber gerne doch. Ihr erwähntet auch noch etwas von einer Belohnung?~
+@15   = ~Aber gerne doch. Ihr erwÃ¤hntet auch noch etwas von einer Belohnung?~
 @16   = ~Bin schon wieder weg!~
-@17   = ~Ich wäre sehr an diesen magischen Gegenständen interessiert, die Ihr aus der Nymphe herstellen wollt.~
+@17   = ~Ich wÃ¤re sehr an diesen magischen GegenstÃ¤nden interessiert, die Ihr aus der Nymphe herstellen wollt.~
 @18   = ~Die gefangene Nymphe
 
-Ich brachte die Nymphe Abela wie vereinbart zu Ramazith. Der Magier hat mich gebeten, in zwei Tagen zu ihm ins oberste Stockwerk seines Turmes zu kommen, dann könne er mir magische Gegenstände anbieten, die er aus dem Körper der Nymphe gewinnt.~
-@19   = ~Oh, dann gibt es also schon Interessenten für meine Ware. Fabelhaft! Ich werde allerdings einige Zeit benötigen, um die Zutaten vorzubereiten. Kommt in zwei Tagen zu mir ins oberste Turmzimmer, dann sollt Ihr das Gewünschte gegen Gold erhalten.~
-@20   = ~Ah, der Kunde ist zurückgekehrt. Wartet einen Augenblick, meine Vorbereitungen sind noch nicht ganz abgeschlossen.~
+Ich brachte die Nymphe Abela wie vereinbart zu Ramazith. Der Magier hat mich gebeten, in zwei Tagen zu ihm ins oberste Stockwerk seines Turmes zu kommen, dann kÃ¶nne er mir magische GegenstÃ¤nde anbieten, die er aus dem KÃ¶rper der Nymphe gewinnt.~
+@19   = ~Oh, dann gibt es also schon Interessenten fÃ¼r meine Ware. Fabelhaft! Ich werde allerdings einige Zeit benÃ¶tigen, um die Zutaten vorzubereiten. Kommt in zwei Tagen zu mir ins oberste Turmzimmer, dann sollt Ihr das GewÃ¼nschte gegen Gold erhalten.~
+@20   = ~Ah, der Kunde ist zurÃ¼ckgekehrt. Wartet einen Augenblick, meine Vorbereitungen sind noch nicht ganz abgeschlossen.~
 @21   = ~In Ordnung, wir warten.~
-@22   = ~Schluss damit. Ihr werdet der Nymphe nichts tun. Dafür werde ich sorgen!~
+@22   = ~Schluss damit. Ihr werdet der Nymphe nichts tun. DafÃ¼r werde ich sorgen!~
 @23   = ~Elende Narren! Mit solcher Hinterlist verschafft Ihr Euch Zugang zu meinem Refugium?! Sterbt!~
-@24   = ~Also gut, da wären wir. Ich kann Euch einen Umhang aus dem Haar der Nymphe anbieten, der einzigartige magische Eigenschaften besitzt und Euch die Ausstrahlung verleiht, die Ihr Euch immer gewünscht habt. Ein solcher Umhang würde Euch jedoch 200 Goldmünzen kosten. Seid Ihr einverstanden?~
+@24   = ~Also gut, da wÃ¤ren wir. Ich kann Euch einen Umhang aus dem Haar der Nymphe anbieten, der einzigartige magische Eigenschaften besitzt und Euch die Ausstrahlung verleiht, die Ihr Euch immer gewÃ¼nscht habt. Ein solcher Umhang wÃ¼rde Euch jedoch 200 GoldmÃ¼nzen kosten. Seid Ihr einverstanden?~
 @25   = ~Ja, ich bin einverstanden. Gebt mir den Umhang.~
 @26   = ~Das Angebot lockt mich nicht. Ich mache mich wieder auf den Weg.~
 @27   = ~Hier, nehmt ihn.~
-@28   = ~Ganz wie Ihr wollt. Besucht mich wieder, wenn Ihr es Euch anders überlegt habt.~
-@29   = ~Wieder zurück? Habt Ihr es Euch anders überlegt?~
+@28   = ~Ganz wie Ihr wollt. Besucht mich wieder, wenn Ihr es Euch anders Ã¼berlegt habt.~
+@29   = ~Wieder zurÃ¼ck? Habt Ihr es Euch anders Ã¼berlegt?~
 @30   = ~Nein, lebt wohl.~
 @31   = ~Verschwindet von hier. Ich kann Euch derzeit keine weiteren Waren anbieten. Die Rezepturen sind kompliziert...~
-@32   = ~Ihr seid zu früh dran, Tölpel. Kehrt später zurück, die Rezepturen müssen noch vorbereitet werden.~
-@33   = ~Ähm, dürfte ich fragen, was Ihr in meinem Haus zu suchen habt?~
-@34   = ~Ihr werdet hiermit Opfer eines Raubüberfalls. Wenn ich jetzt um Euer Gold bitten dürfte!~
+@32   = ~Ihr seid zu frÃ¼h dran, TÃ¶lpel. Kehrt spÃ¤ter zurÃ¼ck, die Rezepturen mÃ¼ssen noch vorbereitet werden.~
+@33   = ~Ã„hm, dÃ¼rfte ich fragen, was Ihr in meinem Haus zu suchen habt?~
+@34   = ~Ihr werdet hiermit Opfer eines RaubÃ¼berfalls. Wenn ich jetzt um Euer Gold bitten dÃ¼rfte!~
 @35   = ~Wer seid Ihr?~
 @36   = ~Oh, ich bin schon wieder weg.~
-@37   = ~HAHA! Habt Ihr Euch so gedacht, hä? *Ich* werde Euch an die Spitze meines Turmes nageln! Niemand entkommt dem Netz der Spinne, kleine Fliege!~
+@37   = ~HAHA! Habt Ihr Euch so gedacht, hÃ¤? *Ich* werde Euch an die Spitze meines Turmes nageln! Niemand entkommt dem Netz der Spinne, kleine Fliege!~
 @38   = ~*Ihr* seid in mein Refugium eingedrungen! Niemand bedroht mich in meinem Heim.~
 
 /* Split #2661 into 2 parts */
-@40   = ~Ihr habt Euren Auftrag in jeder Hinsicht zu meiner vollsten Zufriedenheit ausgeführt. Ein schöneres Exemplar hätte ich kaum finden können. Eine Nymphe ist von allen Zauberzutaten die am schwierigsten erhältliche. Aus ihrem Körper lassen sich ein Dutzend oder mehr Tränke zur Herrschaft über Menschen sowie mindestens zwei oder drei Gegenstände der Macht gewinnen. Damit finde ich dieses Jahr und sicherlich auch noch im nächsten mein Auskommen – nur wer im Wohlstand lebt, lebt angenehm, wie es so schön heißt.~
-@41   = ~Ich bin Euch zu großem Dank verpflichtet und übergebe Euch darum diesen Gegenstand hier, der Euch hoffentlich viel Freude bereiten wird. Ihr habt, wie schon gesagt, Eure Arbeit gut gemacht. Nun, Ihr wisst, wo die Tür ist … ich habe zu tun.~
+@40   = ~Ihr habt Euren Auftrag in jeder Hinsicht zu meiner vollsten Zufriedenheit ausgefÃ¼hrt. Ein schÃ¶neres Exemplar hÃ¤tte ich kaum finden kÃ¶nnen. Eine Nymphe ist von allen Zauberzutaten die am schwierigsten erhÃ¤ltliche. Aus ihrem KÃ¶rper lassen sich ein Dutzend oder mehr TrÃ¤nke zur Herrschaft Ã¼ber Menschen sowie mindestens zwei oder drei GegenstÃ¤nde der Macht gewinnen. Damit finde ich dieses Jahr und sicherlich auch noch im nÃ¤chsten mein Auskommen â€“ nur wer im Wohlstand lebt, lebt angenehm, wie es so schÃ¶n heiÃŸt.~
+@41   = ~Ich bin Euch zu groÃŸem Dank verpflichtet und Ã¼bergebe Euch darum diesen Gegenstand hier, der Euch hoffentlich viel Freude bereiten wird. Ihr habt, wie schon gesagt, Eure Arbeit gut gemacht. Nun, Ihr wisst, wo die TÃ¼r ist â€¦ ich habe zu tun.~

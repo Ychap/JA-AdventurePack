@@ -1,38 +1,38 @@
-@0    = ~Ich heiße Deagan und stehe im Dienst von Aldeth Sashenstar. Es gab da neulich ein paar Probleme in der Händlerliga, die sich im Besitz meines Chefs befindet. Er hat mich beauftragt, jemanden zu finden, der ihm zur Seite stehen kann. Ich habe wirklich nicht viel mehr zu sagen... sofern Ihr nicht mehr über die Probleme erfahren wollt, die ich mit meiner Frau gehabt habe... Nein? Na dann ist ja gut.~
-@1    = ~Hättet Ihr mal einen Augenblick Zeit für mich?~
+@0    = ~Ich heiÃŸe Deagan und stehe im Dienst von Aldeth Sashenstar. Es gab da neulich ein paar Probleme in der HÃ¤ndlerliga, die sich im Besitz meines Chefs befindet. Er hat mich beauftragt, jemanden zu finden, der ihm zur Seite stehen kann. Ich habe wirklich nicht viel mehr zu sagen... sofern Ihr nicht mehr Ã¼ber die Probleme erfahren wollt, die ich mit meiner Frau gehabt habe... Nein? Na dann ist ja gut.~
+@1    = ~HÃ¤ttet Ihr mal einen Augenblick Zeit fÃ¼r mich?~
 @2    = ~Nein, geht mir aus den Augen.~
 @3    = ~Was wollt Ihr?~
 @4    = ~Kein Grund, gleich grob zu werden.~
-@5    = ~Ich habe gerüchteweise gehört, dass hier unlängst ein Verband von Söldnern eingetroffen ist. Seid Ihr womöglich diese Söldner?~
-@6    = ~Tut mir Leid, das sind wir nicht. Jetzt müssen wir aber gehen.~
+@5    = ~Ich habe gerÃ¼chteweise gehÃ¶rt, dass hier unlÃ¤ngst ein Verband von SÃ¶ldnern eingetroffen ist. Seid Ihr womÃ¶glich diese SÃ¶ldner?~
+@6    = ~Tut mir Leid, das sind wir nicht. Jetzt mÃ¼ssen wir aber gehen.~
 @7    = ~Ja, das sind wir. Worum geht's?~
-@8    = ~Vielleicht sollte ich mich zuerst einmal vorstellen. Ich bin Deagan und für die Händlerliga tätig. Mein Herr bedarf bestimmter Dienste, die nur Ihr zu erbringen vermögt. Solltet Ihr bereit sein, mit ihm persönlich zu reden, erhält ein jeder von Euch 5 Goldmünzen von ihm, ohne jede weitere Verpflichtung. Was haltet Ihr von diesem Angebot?~
+@8    = ~Vielleicht sollte ich mich zuerst einmal vorstellen. Ich bin Deagan und fÃ¼r die HÃ¤ndlerliga tÃ¤tig. Mein Herr bedarf bestimmter Dienste, die nur Ihr zu erbringen vermÃ¶gt. Solltet Ihr bereit sein, mit ihm persÃ¶nlich zu reden, erhÃ¤lt ein jeder von Euch 5 GoldmÃ¼nzen von ihm, ohne jede weitere Verpflichtung. Was haltet Ihr von diesem Angebot?~
 @9    = ~Ich sag nee.~
 @10   = ~Gratiskohle? Warum nicht.~
-@11   = ~So bitte ich Euch denn, mir zu folgen. Ich weise Euch den Weg. Er möchte sich in den "Drei Alten Fässern" mit Euch treffen.~
+@11   = ~So bitte ich Euch denn, mir zu folgen. Ich weise Euch den Weg. Er mÃ¶chte sich in den "Drei Alten FÃ¤ssern" mit Euch treffen.~
 @12   = ~Deagans Meister
 
-Wir haben zugestimmt, einem Mann namens Deagan ins Gasthaus "Zu den Drei alten Fässern" zu folgen, um dort seinen Meister zu treffen.~
-@13   = ~Ich dachte, Ihr wolltet mitkommen. Ihr habt es Euch doch nicht etwa anders überlegt?~
+Wir haben zugestimmt, einem Mann namens Deagan ins Gasthaus "Zu den Drei alten FÃ¤ssern" zu folgen, um dort seinen Meister zu treffen.~
+@13   = ~Ich dachte, Ihr wolltet mitkommen. Ihr habt es Euch doch nicht etwa anders Ã¼berlegt?~
 @14   = ~Immer mit der Ruhe, wir kommen ja schon.~
-@15   = ~Um die Wahrheit zu sagen, ja. Tschüss.~
+@15   = ~Um die Wahrheit zu sagen, ja. TschÃ¼ss.~
 @16   = ~Dies ist mein Meister, Aldeth Sashenstar.~
 @17   = ~Deagans Meister
 
-Wir sind Deagan zum Gasthaus "Zu den Drei alten Fässern" gefolgt und haben seinen Herrn getroffen. Wie sich herausstellt, ist dieser kein anderer als Aldeth Sashenstar, dem ich bereits im Mantelwald begegnet bin.~
-@18   = ~Hallo. Ihr solltet Euch das Angebot meines Herrn wirklich überlegen.~
+Wir sind Deagan zum Gasthaus "Zu den Drei alten FÃ¤ssern" gefolgt und haben seinen Herrn getroffen. Wie sich herausstellt, ist dieser kein anderer als Aldeth Sashenstar, dem ich bereits im Mantelwald begegnet bin.~
+@18   = ~Hallo. Ihr solltet Euch das Angebot meines Herrn wirklich Ã¼berlegen.~
 @19   = ~Hallo. Da seid Ihr ja. Konntet Ihr meinem Herrn bereits helfen?~
-@20   = ~Bisher noch nicht. Was könnt Ihr mir über die Händlerliga erzählen?~
+@20   = ~Bisher noch nicht. Was kÃ¶nnt Ihr mir Ã¼ber die HÃ¤ndlerliga erzÃ¤hlen?~
 @21   = ~Wir arbeiten noch dran. Lebt wohl.~
-@22   = ~Ich weiß auch nichts Genaues, aber anscheinend haben die Geschäftspartner meines Meisters in letzter Zeit ziemlich viel Mist gebaut. Naja, Geld rausgeschmissen und so. Ich glaube, Herr Sashenstar fürchtet, die Händlerliga könnte bald bankrott gehen, wenn die so weiter machen.~
-@23   = ~Heyho! Ein Hoch auf unsere Helden, die uns vor den grauhäutigen Spiegelgesichtern gerettet haben!~
+@22   = ~Ich weiÃŸ auch nichts Genaues, aber anscheinend haben die GeschÃ¤ftspartner meines Meisters in letzter Zeit ziemlich viel Mist gebaut. Naja, Geld rausgeschmissen und so. Ich glaube, Herr Sashenstar fÃ¼rchtet, die HÃ¤ndlerliga kÃ¶nnte bald bankrott gehen, wenn die so weiter machen.~
+@23   = ~Heyho! Ein Hoch auf unsere Helden, die uns vor den grauhÃ¤utigen Spiegelgesichtern gerettet haben!~
 @24   = ~Da seid Ihr ja wieder. Wollt Euch wohl hier von Euren Abenteuern ein wenig ausruhen, was?!~
-@25   = ~Ah, da seid Ihr ja. Ich bin's, Deagan. Endlich, ich hatte schon befürchtet, die Flammende Faust hätte Euch vor mir erwischt. Ihr seid in höchster Gefahr, meine Freunde.~
-@26   = ~Ich soll Euch unverzüglich zu Meister Aldeth Sashenstar bringen. Ihr braucht dringend die Hilfe einflussreicher Leute und Meister Sashenstar hofft, Euch nun Eure Taten der Vergangenheit gebührend vergelten zu können. Folgt mir und beeilt Euch, ich bringe Euch ins Hauptquartier der Händlerliga, wo er Euch erwartet.~
-@27   = ~Wir können die Hilfe eines guten Freundes jetzt mehr denn je gebrauchen. Bringt uns zu Aldeth.~
-@28   = ~Tut mir leid, Deagan. Aber wir haben unsere eigenen Pläne und können uns ohne fremde Hilfe durchschlagen.~
+@25   = ~Ah, da seid Ihr ja. Ich bin's, Deagan. Endlich, ich hatte schon befÃ¼rchtet, die Flammende Faust hÃ¤tte Euch vor mir erwischt. Ihr seid in hÃ¶chster Gefahr, meine Freunde.~
+@26   = ~Ich soll Euch unverzÃ¼glich zu Meister Aldeth Sashenstar bringen. Ihr braucht dringend die Hilfe einflussreicher Leute und Meister Sashenstar hofft, Euch nun Eure Taten der Vergangenheit gebÃ¼hrend vergelten zu kÃ¶nnen. Folgt mir und beeilt Euch, ich bringe Euch ins Hauptquartier der HÃ¤ndlerliga, wo er Euch erwartet.~
+@27   = ~Wir kÃ¶nnen die Hilfe eines guten Freundes jetzt mehr denn je gebrauchen. Bringt uns zu Aldeth.~
+@28   = ~Tut mir leid, Deagan. Aber wir haben unsere eigenen PlÃ¤ne und kÃ¶nnen uns ohne fremde Hilfe durchschlagen.~
 @29   = ~Also dann, folgt mit, Ihr Helden.~
-@30   = ~Die gesamte Stadtwache und zahlloses Söldnervolk ist Euch auf den Fersen. Ich muss Euch dringendst bitten, die ausgestreckte Hand meines Herrn anzunehmen.~
+@30   = ~Die gesamte Stadtwache und zahlloses SÃ¶ldnervolk ist Euch auf den Fersen. Ich muss Euch dringendst bitten, die ausgestreckte Hand meines Herrn anzunehmen.~
 @31   = ~Also gut, wahrscheinlich habt Ihr recht, Deagan. Bringt uns zu Aldeth.~
 @32   = ~Mein Entschluss steht fest. Richtet Aldeth meinen Dank aus, aber ich werde das allein durchstehen.~
 @33   = ~Ich brauche niemandes Hilfe. Geht mir aus den Augen!~

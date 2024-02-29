@@ -1,13 +1,13 @@
-@0    = ~Eine trostlose Taverne seit die Dame nicht mehr für uns singt. Ihre Stimme war von einzigartiger Schönheit, wisst Ihr?! Nie werde ich dieses Wunder vergessen. Ich kann für uns alle nur hoffen, dass die Dame bald wieder was von sich hören lässt.~
+@0    = ~Eine trostlose Taverne seit die Dame nicht mehr fÃ¼r uns singt. Ihre Stimme war von einzigartiger SchÃ¶nheit, wisst Ihr?! Nie werde ich dieses Wunder vergessen. Ich kann fÃ¼r uns alle nur hoffen, dass die Dame bald wieder was von sich hÃ¶ren lÃ¤sst.~
 /* @1 -> journal entry @1031   */
-@2    = ~Die Flammende Faust geht in letzter Zeit mit aller Härte gegen jede Art von Kriminalität vor. Als Dieb sollte man sich vorsehen dieser Tage.~
+@2    = ~Die Flammende Faust geht in letzter Zeit mit aller HÃ¤rte gegen jede Art von KriminalitÃ¤t vor. Als Dieb sollte man sich vorsehen dieser Tage.~
 /* @3 -> journal entry @1032 */
-@4    = ~Vor einigen Tagen strolchte ein ungewöhnliches Mädchen hier herum. Gab sich für eine Streunerin aus, machte aber eher den Eindruck, aus gutem Hause zu sein. Ein Gast meinte sogar, sie sei aus einer der Herzogsfamilien.~
-@5    = ~Wusstet Ihr, dass Silence einen kleinen Schrein für Mask, den Herrn der Schatten, eingerichtet hat? Geht zu ihr, wenn Ihr ihm opfern wollt. Achja, und von mir wisst Ihr das nicht.~
-@6    = ~Wenn Ihr Waren erstehen oder losschlagen wollt, die, sagen wir mal, nicht unter die Augen der Öffentlichkeit und insbesondere der Wache kommen sollten, dann wendet Euch an Silence im Geschäft der Stille. Ich bin sicher, sie kann Euch weiterhelfen.~
+@4    = ~Vor einigen Tagen strolchte ein ungewÃ¶hnliches MÃ¤dchen hier herum. Gab sich fÃ¼r eine Streunerin aus, machte aber eher den Eindruck, aus gutem Hause zu sein. Ein Gast meinte sogar, sie sei aus einer der Herzogsfamilien.~
+@5    = ~Wusstet Ihr, dass Silence einen kleinen Schrein fÃ¼r Mask, den Herrn der Schatten, eingerichtet hat? Geht zu ihr, wenn Ihr ihm opfern wollt. Achja, und von mir wisst Ihr das nicht.~
+@6    = ~Wenn Ihr Waren erstehen oder losschlagen wollt, die, sagen wir mal, nicht unter die Augen der Ã–ffentlichkeit und insbesondere der Wache kommen sollten, dann wendet Euch an Silence im GeschÃ¤ft der Stille. Ich bin sicher, sie kann Euch weiterhelfen.~
 @7    = ~Silence die Hehlerin
 
-Ich habe erfahren, dass man bei Silence im Geschäft der Stille Waren fragwürdiger Herkunft verkaufen kann, ohne dass lästige Fragen gestellt werden. Eine nützliche Information.~
-@8    = ~Schonmal in den Unterkellern gewesen? Falls es Euch nach Schwarzem Lotus oder Lustsklavinnen jeglicher Art gelüstet, solltet Ihr dort mal vorbeischauen. Aber seid auf der Hut und legt Eure Klingen nicht zu weit weg!~
-@9    = ~Einige Jugendliche haben sich vor ein paar Nächten in die Kanalisation gewagt, wohl so 'ne Art Mutprobe. Zwei von ihnen sind nicht wiedergekehrt. Da unten haust etwas Scheußliches, munkelt man.~
-@10   = ~In der Stadt geht das Gerücht, die Schattendiebe würden mit Amn gemeinsame Sache machen, aber das glaube ich nicht. Kenn' ein paar von den Typen.~
+Ich habe erfahren, dass man bei Silence im GeschÃ¤ft der Stille Waren fragwÃ¼rdiger Herkunft verkaufen kann, ohne dass lÃ¤stige Fragen gestellt werden. Eine nÃ¼tzliche Information.~
+@8    = ~Schonmal in den Unterkellern gewesen? Falls es Euch nach Schwarzem Lotus oder Lustsklavinnen jeglicher Art gelÃ¼stet, solltet Ihr dort mal vorbeischauen. Aber seid auf der Hut und legt Eure Klingen nicht zu weit weg!~
+@9    = ~Einige Jugendliche haben sich vor ein paar NÃ¤chten in die Kanalisation gewagt, wohl so 'ne Art Mutprobe. Zwei von ihnen sind nicht wiedergekehrt. Da unten haust etwas ScheuÃŸliches, munkelt man.~
+@10   = ~In der Stadt geht das GerÃ¼cht, die Schattendiebe wÃ¼rden mit Amn gemeinsame Sache machen, aber das glaube ich nicht. Kenn' ein paar von den Typen.~
