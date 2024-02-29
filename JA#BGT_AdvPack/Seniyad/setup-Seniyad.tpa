@@ -2,7 +2,7 @@
 //Seniyad and Aldeth
 ////////////////////////
 
-// In Enhanched Editions this component may not be nesseary. There is a peaceful soloution, if you have jaheira in group.
+// In Enhanched Editions this component may not be nesseary. if you have jaheira in group, there is already a peaceful solution.
 
 COPY_EXISTING ~ALDETH.dlg~ ~override~
 	LPF READ_JOURNAL_STRREF
@@ -18,6 +18,12 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY EXACT_MATCH ~EscapeAreaObject("druid_escape")~ ~EscapeAreaDestroy(90)~
 		END
+END
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	<<<<<<<< ...inlined/aldeth_ee.d
+	ADD_STATE_TRIGGER ALDETH 31 ~Global("SeniyadXP","GLOBAL",0)~
+	>>>>>>>>
+	COMPILE ~...inlined/aldeth_ee.d~
 END
 
 ADD_JOURNAL EXISTING @20 USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
