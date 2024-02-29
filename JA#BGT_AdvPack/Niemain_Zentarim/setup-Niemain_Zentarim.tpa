@@ -2,20 +2,8 @@
 // Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 //Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
-// if bg1npc is installed: Set "X#XzarBoss" or "X#MontBoss" to -1 (so the the dialogs of JAP's quest extention will be triggered)
-COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EVALUATE_REGEXP
-		~SetGlobal("X#XzarBoss","GLOBAL",1)~
-		~SetGlobal("X#XzarBoss","GLOBAL",-1)~
-		REPLACE_TEXTUALLY EVALUATE_REGEXP
-		~SetGlobal("X#MontBoss","GLOBAL",1)~
-		~SetGlobal("X#MontBoss","GLOBAL",-1)~
-	END
-BUT_ONLY
 
 COPY_EXISTING ~NIEMAIN.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
@@ -25,14 +13,14 @@ BUT_ONLY
 
 
 COPY_EXISTING ~NIEMAI.CRE~ ~override/JA#NIEMA.CRE~
-	WRITE_ASCII 0x248 ~NONE~	#8
-	WRITE_ASCII 0x250 ~NONE~	#8
-	WRITE_ASCII 0x2cc ~JA#NIEMA~	#8 //DLG
+	WRITE_ASCII 0x248 ~None~ #8
+	WRITE_ASCII 0x250 ~None~ #8
+	WRITE_ASCII 0x2cc ~JA#NIEMA~ #8 //DLG
 
 COPY_EXISTING_REGEXP ~OULAM\.CRE~ ~override~
-		~WHEBER\.CRE~ ~override~
-		~WILLIAM[1_]?\.CRE~ ~override~
-	WRITE_ASCII 0x2cc ~JA#ZENT1~	#8 //DLG
+					 ~WHEBER\.CRE~ ~override~
+					 ~WILLIAM[1_]?\.CRE~ ~override~
+	WRITE_ASCII 0x2cc ~JA#ZENT1~ #8 //DLG
 UNLESS ~NobleOrder~ // exclude WILLIAM.CRE(Sir Branet Al-Thon) of BGT/EET
 
 
