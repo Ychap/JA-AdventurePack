@@ -248,7 +248,7 @@ IF WEIGHT #-1
 SAY @38
 IF ~~ THEN REPLY @39 DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ EXIT
 IF ~~ THEN REPLY @40 DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
-++ @71 /* ~Dachtet Ihr, ich würde diese Sache auf sich beruhen lassen, Aldeth? Ihr solltet mir besser einen guten Grund für Eurer Verhalten liefern – ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
+++ @71 /* ~Dachtet Ihr, ich wÃ¼rde diese Sache auf sich beruhen lassen, Aldeth? Ihr solltet mir besser einen guten Grund fÃ¼r Eurer Verhalten liefern â€“ ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
 END
 
 END // APPEND ALDETH
@@ -259,9 +259,9 @@ IF WEIGHT #-1
 ~Global("Chapter","GLOBAL",%tutu_chapter_7%)
 Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ THEN BEGIN JA#ALDETH_37
 SAY @41
-++ @72 /* ~Ich gehe hier nicht so einfach weg. Ihr solltet mir besser einen guten Grund für Euren Verrat liefern – ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
+++ @72 /* ~Ich gehe hier nicht so einfach weg. Ihr solltet mir besser einen guten Grund fÃ¼r Euren Verrat liefern â€“ ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
 ++ @73 /* ~Lebt wohl.~ */ EXIT
-++ @74 /* ~Ich habe es mir anders überlegt. Ihr werdet für Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
+++ @74 /* ~Ich habe es mir anders Ã¼berlegt. Ihr werdet fÃ¼r Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
 END
 */
 /* patch it to state 28 instead */
@@ -269,9 +269,9 @@ ADD_TRANS_TRIGGER ALDETH 28 ~False()~ DO 0
 
 EXTEND_BOTTOM ALDETH 28
 + ~Global("Chapter","GLOBAL",%tutu_chapter_7%)
-Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ + @72 /* ~Ich gehe hier nicht so einfach weg. Ihr solltet mir besser einen guten Grund für Euren Verrat liefern – ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
+Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ + @72 /* ~Ich gehe hier nicht so einfach weg. Ihr solltet mir besser einen guten Grund fÃ¼r Euren Verrat liefern â€“ ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ + versoehnung
 + ~Global("Chapter","GLOBAL",%tutu_chapter_7%)
-Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ + @74 /* ~Ich habe es mir anders überlegt. Ihr werdet für Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
+Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ + @74 /* ~Ich habe es mir anders Ã¼berlegt. Ihr werdet fÃ¼r Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
 ++ @73 /* ~Lebt wohl.~ */ EXIT
 END
 
@@ -279,72 +279,72 @@ APPEND ALDETH
 
 
 IF ~~ THEN versoehnung
-SAY @75 /* ~Bitte missversteht mich nicht, <CHARNAME> – ich habe nicht vergessen, was Ihr alles für mich getan habt und ich bin Euch sehr dankbar dafür... aber ich bin auch ein ehrbarer Mann und kann somit niemanden gewähren lassen, der einfach so ehrbare Geschäftsleute ermordet!~ */
-= @76 /* ~Ihr werdet sicher verstehen, dass ich nicht anders handeln konnte – sowohl der Ruf der Händlerliga als auch mein eigener stünden auf dem Spiel, wenn ich die Machenschaften von Mördern dulden würde...~ */
+SAY @75 /* ~Bitte missversteht mich nicht, <CHARNAME> â€“ ich habe nicht vergessen, was Ihr alles fÃ¼r mich getan habt und ich bin Euch sehr dankbar dafÃ¼r... aber ich bin auch ein ehrbarer Mann und kann somit niemanden gewÃ¤hren lassen, der einfach so ehrbare GeschÃ¤ftsleute ermordet!~ */
+= @76 /* ~Ihr werdet sicher verstehen, dass ich nicht anders handeln konnte â€“ sowohl der Ruf der HÃ¤ndlerliga als auch mein eigener stÃ¼nden auf dem Spiel, wenn ich die Machenschaften von MÃ¶rdern dulden wÃ¼rde...~ */
 + ~!Dead("Rieltar")~ + @77 /* ~Ich habe Euch bereits gesagt, dass ich nichts mit den Morden in Kerzenburg zu tun habe! Es sollte nur so aussehen, dass ich es war!~ */ + versoehnung_01
-+ ~!Dead("Rieltar")~ + @78 /* ~Nichts hätte ich lieber getan, als diese verbrecherischen Bastarde zu töten, aber ich hatte wirklich nichts damit zu tun. Diesen Mord hat jemand begangen, um mir etwas anzuhängen!~ */ + versoehnung_01
-+ ~Dead("Rieltar")~ + @79 /* ~Ehrenhafte Leute? Der Eisenthron selbst steckt überhaupt hinter der Eisenkrise und verübt Verbrechen, ohne bestraft zu werden! Ihr solltet froh sein, dass ich diese Hunde getötet habe!~ */ + versoehnung_05
-+ ~Dead("Rieltar")~ + @80 /* ~Das verstehe ich, aber es war kein Mord. Der Eisenthron steckt hinter der Eisenkrise, und ich bin ihnen zu ungemütlich geworden. Ich habe mein eigenes Leben verteidigt!~ */ + versoehnung_05
-++ @74 /* ~Ich habe es mir anders überlegt. Ihr werdet für Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
++ ~!Dead("Rieltar")~ + @78 /* ~Nichts hÃ¤tte ich lieber getan, als diese verbrecherischen Bastarde zu tÃ¶ten, aber ich hatte wirklich nichts damit zu tun. Diesen Mord hat jemand begangen, um mir etwas anzuhÃ¤ngen!~ */ + versoehnung_01
++ ~Dead("Rieltar")~ + @79 /* ~Ehrenhafte Leute? Der Eisenthron selbst steckt Ã¼berhaupt hinter der Eisenkrise und verÃ¼bt Verbrechen, ohne bestraft zu werden! Ihr solltet froh sein, dass ich diese Hunde getÃ¶tet habe!~ */ + versoehnung_05
++ ~Dead("Rieltar")~ + @80 /* ~Das verstehe ich, aber es war kein Mord. Der Eisenthron steckt hinter der Eisenkrise, und ich bin ihnen zu ungemÃ¼tlich geworden. Ich habe mein eigenes Leben verteidigt!~ */ + versoehnung_05
+++ @74 /* ~Ich habe es mir anders Ã¼berlegt. Ihr werdet fÃ¼r Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_01
-SAY @81 /* ~Wie gerne würde ich Euch glauben, <CHARNAME>. Ihr könnt Euch sicher vorstellen, wie es für mich war, meine Freunde und Wohlltäter verraten zu müssen ... aber Ihr wurdet nunmal von vertrauenswürdigen Personen dabei gesehen, wie Ihr die Morde begangen habt und das kann ich nicht ignorieren!~ */
-++ @82 /* ~Kam Euch nie in den Sinn, dass es sich um das Werk von Doppelgänger gehandelt haben könnte? Wie Ihr wisst, haben sie es zumindest teilweise geschafft, Euch zu unterwandern und Dinge getan, welche der Händlerliga schaden!~ */ + versoehnung_02
-++ @83 /* ~Aldeth, ich bin einer ganz großen Sache auf der Spur. Eure "vertrauenswürdigen Personen" sind nicht so vertrauenswürdig, wie Ihr meint. Ich habe Euch bereits mehrfach geholfen. Ihr müsst mir glauben!~ */ + versoehnung_02
-++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
+SAY @81 /* ~Wie gerne wÃ¼rde ich Euch glauben, <CHARNAME>. Ihr kÃ¶nnt Euch sicher vorstellen, wie es fÃ¼r mich war, meine Freunde und WohlltÃ¤ter verraten zu mÃ¼ssen ... aber Ihr wurdet nunmal von vertrauenswÃ¼rdigen Personen dabei gesehen, wie Ihr die Morde begangen habt und das kann ich nicht ignorieren!~ */
+++ @82 /* ~Kam Euch nie in den Sinn, dass es sich um das Werk von DoppelgÃ¤nger gehandelt haben kÃ¶nnte? Wie Ihr wisst, haben sie es zumindest teilweise geschafft, Euch zu unterwandern und Dinge getan, welche der HÃ¤ndlerliga schaden!~ */ + versoehnung_02
+++ @83 /* ~Aldeth, ich bin einer ganz groÃŸen Sache auf der Spur. Eure "vertrauenswÃ¼rdigen Personen" sind nicht so vertrauenswÃ¼rdig, wie Ihr meint. Ich habe Euch bereits mehrfach geholfen. Ihr mÃ¼sst mir glauben!~ */ + versoehnung_02
+++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr fÃ¼r Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_02
-SAY @85 /* ~Ihr ... habt Recht, mit dem, was Ihr sagt, <CHARNAME>. Doch selbst, wenn ich Euch glauben sollte, wie wollt Ihr beweisen, dass die Tat offensichtlich verübt wurde, um Euch in Verruf zu bringen?~ */
-++ @86 /* ~Ich konnte mehrere Doppelgänger in Kerzenburg töten, die viele Bekannte von mir ersetzt hatten, doch ich weiß nicht, ob die Kadaver nicht schon verbrannt wurden oder die Leichen der Opfer gefunden wurden...~ */ + versoehnung_03
-++ @87 /* ~Ich bin dabei, die Beweise gegen den Eisenthron zu sammeln. Deswegen war ich ja in Kerzenburg! Dort waren auch Doppelgänger, Aldeth. Es wimmelte nur so von ihnen!~ */ + versoehnung_03
-++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
+SAY @85 /* ~Ihr ... habt Recht, mit dem, was Ihr sagt, <CHARNAME>. Doch selbst, wenn ich Euch glauben sollte, wie wollt Ihr beweisen, dass die Tat offensichtlich verÃ¼bt wurde, um Euch in Verruf zu bringen?~ */
+++ @86 /* ~Ich konnte mehrere DoppelgÃ¤nger in Kerzenburg tÃ¶ten, die viele Bekannte von mir ersetzt hatten, doch ich weiÃŸ nicht, ob die Kadaver nicht schon verbrannt wurden oder die Leichen der Opfer gefunden wurden...~ */ + versoehnung_03
+++ @87 /* ~Ich bin dabei, die Beweise gegen den Eisenthron zu sammeln. Deswegen war ich ja in Kerzenburg! Dort waren auch DoppelgÃ¤nger, Aldeth. Es wimmelte nur so von ihnen!~ */ + versoehnung_03
+++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr fÃ¼r Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_03
 SAY @88 /* ~Das ... tut mir sehr leid. Ich denke, ich kann meine Kontakte nutzen, um herauszufinden, ob dort Leichen seltsamer Kreaturen oder vermisster Burgbewohner gefunden wurden...~ */
-++ @89 /* ~Ich danke Euch, Aldeth. Dafür, dass Ihr Euch zumindest bemüht, mir zu glauben.~ */ + versoehnung_04
-++ @90 /* ~Wenn Ihr mir dann besser glauben könnt, dann tut das.~ */ + versoehnung_04
-++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr für Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
+++ @89 /* ~Ich danke Euch, Aldeth. DafÃ¼r, dass Ihr Euch zumindest bemÃ¼ht, mir zu glauben.~ */ + versoehnung_04
+++ @90 /* ~Wenn Ihr mir dann besser glauben kÃ¶nnt, dann tut das.~ */ + versoehnung_04
+++ @84 /* ~Mit Euch zu reden ist reine Zeitverschwendung! Nun werdet Ihr fÃ¼r Euren Verrat sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_04
-SAY @91 /* ~Das ist das mindeste, was ich nach den Ereignissen in der letzten Zeit tun kann. Eigentlich kam es mir selbst schon seltsam vor, dass Ihr so etwas Leichtsinniges tun solltet – der Eisenthron hat sehr viel Macht. Und das würde erklären, dass Ihr Euch nach Baldurs Tor wagt, obwohl Ihr von der Flammenden Faust gesucht werdet.~ */
-= @92 /* ~Mir ist klar, dass Ihr Euch nun auf die Suche nach dem Verursacher für Eure Misere machen werdet. Leider kann ich nicht viel für Euch tun, um Euch zu helfen. Passt Auf Euch auf, meine Freunde ... ich habe Euch hier nie gesehen.~ */
+SAY @91 /* ~Das ist das mindeste, was ich nach den Ereignissen in der letzten Zeit tun kann. Eigentlich kam es mir selbst schon seltsam vor, dass Ihr so etwas Leichtsinniges tun solltet â€“ der Eisenthron hat sehr viel Macht. Und das wÃ¼rde erklÃ¤ren, dass Ihr Euch nach Baldurs Tor wagt, obwohl Ihr von der Flammenden Faust gesucht werdet.~ */
+= @92 /* ~Mir ist klar, dass Ihr Euch nun auf die Suche nach dem Verursacher fÃ¼r Eure Misere machen werdet. Leider kann ich nicht viel fÃ¼r Euch tun, um Euch zu helfen. Passt Auf Euch auf, meine Freunde ... ich habe Euch hier nie gesehen.~ */
 IF ~~ THEN + versoehnung_09
 END
 
 IF ~~ THEN versoehnung_05
-SAY @93 /* ~Es ranken sich in der Tat viele Gerüchte über dunkle Machenschaften innerhalb des Eisenthrons ... doch Behauptungen wie Eure rechtfertigen – selbst, wenn sie war sind -  keinen kaltblütigen Mord! Und schon gar nicht an hochangesehenen Leuten! Gerechtigkeit ist Sache der Großherzöge und der Flammenden Faust.~ */
-++ @94 /* ~Ihr wisst selbst, wieviel Macht der Eisenthron hat. Ihr habt Recht, mit dem, was Ihr sagt, aber das Gesetz sieht nicht in jeden dunklen Winkel – vor allem nicht, wenn genug klingende Münze in die richtigen Taschen fließt oder die richtigen Stellen passend besetzt werden.~ */ + versoehnung_06
-++ @95 /* ~Aldeth, nochmal - ich habe die Anführer des Eisenthrons getötet, aber es war kein *Mord*! Streng genommen haben sie mich zuerst angegriffen. Genauso, wie sie andere aus dem Weg geräumt haben, die ihnen lästig waren.~ */ + versoehnung_07
-++ @96 /* ~Ich sehe, dass es nichts bringt, Euch überzeugen zu wollen. Ich bin mit Euch fertig, Ihr Verräter. Solltet Ihr je wieder Hilfe brauchen, seid Ihr auf Euch gestellt!~ */ DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ EXIT
-++ @97 /* ~Genug von Euren Ausflüchten! Für Euren Verrat werdet Ihr sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
+SAY @93 /* ~Es ranken sich in der Tat viele GerÃ¼chte Ã¼ber dunkle Machenschaften innerhalb des Eisenthrons ... doch Behauptungen wie Eure rechtfertigen â€“ selbst, wenn sie war sind -  keinen kaltblÃ¼tigen Mord! Und schon gar nicht an hochangesehenen Leuten! Gerechtigkeit ist Sache der GroÃŸherzÃ¶ge und der Flammenden Faust.~ */
+++ @94 /* ~Ihr wisst selbst, wieviel Macht der Eisenthron hat. Ihr habt Recht, mit dem, was Ihr sagt, aber das Gesetz sieht nicht in jeden dunklen Winkel â€“ vor allem nicht, wenn genug klingende MÃ¼nze in die richtigen Taschen flieÃŸt oder die richtigen Stellen passend besetzt werden.~ */ + versoehnung_06
+++ @95 /* ~Aldeth, nochmal - ich habe die AnfÃ¼hrer des Eisenthrons getÃ¶tet, aber es war kein *Mord*! Streng genommen haben sie mich zuerst angegriffen. Genauso, wie sie andere aus dem Weg gerÃ¤umt haben, die ihnen lÃ¤stig waren.~ */ + versoehnung_07
+++ @96 /* ~Ich sehe, dass es nichts bringt, Euch Ã¼berzeugen zu wollen. Ich bin mit Euch fertig, Ihr VerrÃ¤ter. Solltet Ihr je wieder Hilfe brauchen, seid Ihr auf Euch gestellt!~ */ DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ EXIT
+++ @97 /* ~Genug von Euren AusflÃ¼chten! FÃ¼r Euren Verrat werdet Ihr sterben!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_06
-SAY @98 /* ~Ihr... habt leider Recht, mit dem was Ihr sagt. Ich habe mich immer für einen seriösen Ruf der Händlerliga eingesetzt, aber ich kenne die Methoden einiger Handelshäuser, um sich Vorteile zu sichern.~ */
-++ @99 /* ~Was ich tat, mag wohl für viele als Mord gelten, doch wieviele sind durch die angeheuerten Räuberbanden umgekommen – oder bei der Zwangsarbeit in der Mantelwaldmine? Ganz zu schweigen von den ermordeten Bergleuten in den Minen von Nashkel ... Durch die Habgier dieser Leute droht uns nun der Krieg mit Amn!~ */ + versoehnung_07
+SAY @98 /* ~Ihr... habt leider Recht, mit dem was Ihr sagt. Ich habe mich immer fÃ¼r einen seriÃ¶sen Ruf der HÃ¤ndlerliga eingesetzt, aber ich kenne die Methoden einiger HandelshÃ¤user, um sich Vorteile zu sichern.~ */
+++ @99 /* ~Was ich tat, mag wohl fÃ¼r viele als Mord gelten, doch wieviele sind durch die angeheuerten RÃ¤uberbanden umgekommen â€“ oder bei der Zwangsarbeit in der Mantelwaldmine? Ganz zu schweigen von den ermordeten Bergleuten in den Minen von Nashkel ... Durch die Habgier dieser Leute droht uns nun der Krieg mit Amn!~ */ + versoehnung_07
 ++ @100 /* ~Der Eisenthron ist noch schlimmer, glaubt mir. Und es ist noch nicht vorbei!~ */ + versoehnung_07
 END
 
 IF ~~ THEN versoehnung_07
-SAY @101 /* ~Ich gebe zu ... das würde in der Tat zu vielen Gerüchten passen, die mir bereits zu Ohren gekommen sind. Das alles und die beseitigung von Konkurrenten wie der Händlerliga würden dem Thron sicher eine größere Vormachtstellung geben...~ */
-= @102 /* ~Ihr habt viel für mich getan, meine Freunde. Ich sollte Euch mittlerweile besser kennen, um zu wissen, dass Ihr nicht einfach so Unschuldige ermordet und dann solche Geschichten erfindet. Nicht nach allem, was ich mit Euch erlebt habe!~ */
-++ @103 /* ~Ich danke Euch, Aldeth. Ich bin froh, dass Ihr meine Gründe versteht – auch ich bedauere, dass es soweit gekommen ist. Doch noch ist es nicht vorbei. Der eigentliche Drahtzieher spinnt weiterhin seine Intrigen!~ */ + versoehnung_08
-++ @104 /* ~Das beruhigt mich. Ich hätte Euch ungern bekämpfen müssen.~ */ + versoehnung_08
+SAY @101 /* ~Ich gebe zu ... das wÃ¼rde in der Tat zu vielen GerÃ¼chten passen, die mir bereits zu Ohren gekommen sind. Das alles und die beseitigung von Konkurrenten wie der HÃ¤ndlerliga wÃ¼rden dem Thron sicher eine grÃ¶ÃŸere Vormachtstellung geben...~ */
+= @102 /* ~Ihr habt viel fÃ¼r mich getan, meine Freunde. Ich sollte Euch mittlerweile besser kennen, um zu wissen, dass Ihr nicht einfach so Unschuldige ermordet und dann solche Geschichten erfindet. Nicht nach allem, was ich mit Euch erlebt habe!~ */
+++ @103 /* ~Ich danke Euch, Aldeth. Ich bin froh, dass Ihr meine GrÃ¼nde versteht â€“ auch ich bedauere, dass es soweit gekommen ist. Doch noch ist es nicht vorbei. Der eigentliche Drahtzieher spinnt weiterhin seine Intrigen!~ */ + versoehnung_08
+++ @104 /* ~Das beruhigt mich. Ich hÃ¤tte Euch ungern bekÃ¤mpfen mÃ¼ssen.~ */ + versoehnung_08
 ++ @105 /* ~Na endlich.~ */ + versoehnung_08
-++ @106 /* ~Das heißt aber nicht, dass ich Euch nicht für Euren Verrat bezahlen lasse! Zieht Eure Klinge und verteidigt Euch!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
+++ @106 /* ~Das heiÃŸt aber nicht, dass ich Euch nicht fÃ¼r Euren Verrat bezahlen lasse! Zieht Eure Klinge und verteidigt Euch!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1)Enemy()~ EXIT
 END
 
 IF ~~ THEN versoehnung_08
-SAY @107 /* ~Ich verstehe. Obwohl ich Euren Weg wirklich nicht gutheiße, fürchte ich, dass Ihr den richtigen geht. Leider kann ich Euch nur damit helfen, dass niemand erfährt, dass Ihr hier wart.~ */
+SAY @107 /* ~Ich verstehe. Obwohl ich Euren Weg wirklich nicht gutheiÃŸe, fÃ¼rchte ich, dass Ihr den richtigen geht. Leider kann ich Euch nur damit helfen, dass niemand erfÃ¤hrt, dass Ihr hier wart.~ */
 IF ~~ THEN + versoehnung_09
 END
 
 IF ~~ THEN versoehnung_09
-SAY @108 /* ~Hier, nehmt wenigstens diese Tränke als geringe Entschädigung für das, was Ihr durchmachen musstet.~ */
+SAY @108 /* ~Hier, nehmt wenigstens diese TrÃ¤nke als geringe EntschÃ¤digung fÃ¼r das, was Ihr durchmachen musstet.~ */
 IF ~~ THEN DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",4) GiveItemCreate("POTN52",Player1,6,0,0)
 GiveItemCreate("POTN10",Player1,3,0,0)~ EXIT
 END
@@ -353,7 +353,7 @@ END
 
 IF WEIGHT #-1
 ~Global("Chapter","GLOBAL",%tutu_chapter_7%) Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",4) Global("C#JAP_AldethGreetingCH8","LOCALS",0)~ THEN versoehnung_10
-SAY @109 /* ~Schön, Euch wohlbehalten zu sehen meine Freunde. Allerdings solltet Ihr hier nicht zu lange verweilen.~ */
+SAY @109 /* ~SchÃ¶n, Euch wohlbehalten zu sehen meine Freunde. Allerdings solltet Ihr hier nicht zu lange verweilen.~ */
 IF ~~ THEN DO ~SetGlobal("C#JAP_AldethGreetingCH8","LOCALS",1)~ + 28
 END
 
