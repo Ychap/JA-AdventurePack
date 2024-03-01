@@ -170,12 +170,6 @@ COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPIRL.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.ITM~ ~override~
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPIRL.ITM~ ~override~
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDET.BAM~ ~override~
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDET.ITM~ ~override~
-	SAY NAME1 @2101
-	SAY NAME2 @2101
-	SAY DESC @2102
-
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZRLKY.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZRLKY.ITM~ ~override~
 	SAY NAME1 @2103

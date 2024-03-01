@@ -2,14 +2,7 @@
 //Seniyad and Aldeth
 ////////////////////////
 
-// In Enhanched Editions this component may not be nesseary. if you have jaheira in group, there is already a peaceful solution.
-
-COPY_EXISTING ~ALDETH.dlg~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR state = (GAME_IS ~bgt~ ? 0 : 4)
-		RET strref
-	END
-BUT_ONLY
+// Btw: In Enhanched Editions you already have a peaceful solution with jaheira in group.
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#SENIYA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
@@ -19,6 +12,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 			REPLACE_TEXTUALLY EXACT_MATCH ~EscapeAreaObject("druid_escape")~ ~EscapeAreaDestroy(90)~
 		END
 END
+
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	<<<<<<<< ...inlined/aldeth_ee.d
 	ADD_STATE_TRIGGER ALDETH 31 ~Global("SeniyadXP","GLOBAL",0)~
@@ -26,7 +20,23 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	COMPILE ~...inlined/aldeth_ee.d~
 END
 
+COPY_EXISTING ~ALDETH.dlg~ ~override~
+	LPF READ_JOURNAL_STRREF
+		INT_VAR state = (GAME_IS ~bgt~ ? 0 : 4)
+		RET strref
+	END
+BUT_ONLY
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#ALDETH_REWARD.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+
 ADD_JOURNAL EXISTING @20 USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+
+
+COPY ~JA#BGT_AdvPack/Seniyad/JA#ALDET.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Seniyad/JA#ALDET.ITM~ ~override~
+	SAY NAME1 @2101
+	SAY NAME2 @2101
+	SAY DESC @2102
 
 
 /* bg1npc is installed: Viconia's interjection kills the new reply option to settle the discpute with Seniyad peacefully. Add the reply option to Viconia's new state, as well: */

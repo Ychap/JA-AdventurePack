@@ -32,10 +32,3 @@ CHAIN SENIYA JA#SENIYA_05
 == SENIYA @16 = @17
 END
 IF ~~ THEN DO ~AddexperienceParty(600) SetGlobal("SeniyadXP","GLOBAL",1) EraseJournalEntry(%strref%) Shout(3) EscapeAreaObject("druid_escape")~ SOLVED_JOURNAL @20 EXIT
-
-
-CHAIN
-IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_5%) Global("SeniyadXP","GLOBAL",1)~ THEN ALDETH JA#ALDETH_X0
-@18 = @19
-END
-IF ~~ THEN DO ~SetGlobal("AldethMove","GLOBAL",1) GiveItem("JA#ALDET",LastTalkedToBy) Shout(5) AddexperienceParty(600) EraseJournalEntry(%strref%) EscapeArea()~ SOLVED_JOURNAL @20 EXIT

@@ -1,8 +1,5 @@
 REPLACE_STATE_TRIGGER ALDETH 28 ~Global("HelpAldeth","GLOBAL",2)~
 
-REPLACE_ACTION_TEXT ALDETH
-~GiveItem("POTN09"~
-~GiveItem("JA#ALDET"~
 
 
 ALTER_TRANS ALDETH // file name
