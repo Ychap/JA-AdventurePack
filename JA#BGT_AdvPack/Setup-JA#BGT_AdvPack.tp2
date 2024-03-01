@@ -497,6 +497,15 @@ LABEL "JA#BGT_AdvPack-Seniyad"
 
 INCLUDE ~JA#BGT_AdvPack/Seniyad/setup-Seniyad.tpa~
 
+////////////////////////////////////////////////
+//Aldeth part 3 - betrayal and reconciliation
+////////////////////////////////////////////////
+
+BEGIN ~Aldeth's betrayal and reconciliation~ DESIGNATED 45
+LABEL "JA#BGT_AdvPack-Aldeth3"
+
+INCLUDE ~JA#BGT_AdvPack/Aldeth3/setup-Aldeth3.tpa~
+
 
 ///////////////////////////////////////////////////
 //Animierte Fackeln und Kerzen

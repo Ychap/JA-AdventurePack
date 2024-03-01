@@ -1,0 +1,7 @@
+////////////////////////////////////////////////
+//Aldeth part 3 - betrayal and reconciliation
+////////////////////////////////////////////////
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#ALDETH_BETRAYAL.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#ALDETH_RECONCILIATION.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
