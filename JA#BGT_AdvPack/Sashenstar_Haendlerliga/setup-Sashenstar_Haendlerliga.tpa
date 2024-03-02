@@ -32,6 +32,8 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	COMPILE EVALUATE_BUFFER ~...inlined/irlent_bgt.d~
 END
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MERLEA.D~
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#IRLENT.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZORL.D~
 
