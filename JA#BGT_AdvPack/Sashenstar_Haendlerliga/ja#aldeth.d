@@ -1,6 +1,20 @@
 // BGT
+ADD_TRANS_ACTION IRLENT
+BEGIN 0 END
+BEGIN END
+~SetGlobal("TalkedToZorlIrenl","GLOBAL",1)~
+UNLESS ~SetGlobal("TalkedToZorlIrenl","GLOBAL",1)~
+
+// BGT
+ADD_TRANS_ACTION ZORL
+BEGIN 0 END
+BEGIN END
+~SetGlobal("TalkedToZorlIrenl","GLOBAL",1)~
+UNLESS ~SetGlobal("TalkedToZorlIrenl","GLOBAL",1)~
+
+// BGT
 ADD_TRANS_TRIGGER ALDETH 14
-~OR(2) ActionOverride("Irlentre",NumTimesTalkedToGT(0)) ActionOverride("Zorl",NumTimesTalkedToGT(0))~ DO 1
+~Global("TalkedToZorlIrenl","GLOBAL",1)~ DO 1
 UNLESS ~Global("TalkedToZorlIrenl","GLOBAL",1)~
 
 
