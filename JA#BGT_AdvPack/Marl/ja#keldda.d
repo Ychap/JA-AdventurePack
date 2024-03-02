@@ -24,7 +24,7 @@ END
 ADD_STATE_TRIGGER KELDDA 1
 ~GlobalLT("JA#MARL_GUARD","GLOBAL",1)~
 
-SET_WEIGHT KELDDA 3 #%idx_state1_trigger%
+SET_WEIGHT KELDDA 3 #%state1_weight%
 
 REPLACE_STATE_TRIGGER KELDDA 3
 ~%state1_trigger%~

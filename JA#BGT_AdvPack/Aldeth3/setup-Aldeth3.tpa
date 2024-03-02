@@ -3,5 +3,13 @@
 ////////////////////////////////////////////////
 
 
+COPY_EXISTING ~ALDETH.DLG~ ~override~
+	LPF GET_DLG_STATE_RESPONSE
+		INT_VAR idx_state = 21
+				idx_response = 1
+		RET state21_response1_action = response_action
+	END
+BUT_ONLY
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth3/JA#ALDETH_BETRAYAL.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth3/JA#ALDETH_RECONCILIATION.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~

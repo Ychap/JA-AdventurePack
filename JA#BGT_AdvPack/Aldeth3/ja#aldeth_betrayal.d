@@ -32,10 +32,7 @@ APPEND ALDETH
 
 IF ~~ THEN BEGIN JA#ALDETH_32
 SAY @34
-IF ~~ THEN DO ~CreateCreature("FLAMAL",[281.450],0)
-CreateCreature("FFHUNT",[221.425],0)
-CreateCreature("FFHUNT",[468.293],0)
-CreateCreature("FFHUNT",[503.269],0)~ GOTO 22
+IF ~~ THEN DO ~%state21_response1_action%~ GOTO 22
 END
 
 IF ~~ THEN BEGIN JA#ALDETH_33
