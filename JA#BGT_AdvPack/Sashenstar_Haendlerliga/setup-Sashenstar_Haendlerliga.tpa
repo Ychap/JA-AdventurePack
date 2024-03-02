@@ -61,7 +61,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUALD.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEA.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEB.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEC.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDED.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGB.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUIRL.BAF~
@@ -75,15 +74,6 @@ EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Ha
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7228.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7229.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%NBaldursGate%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7300.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~FLAMAL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#FFHUN.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~FFHUNT.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#FFHUN.BAF~ EVALUATE_BUFFER
-
-
-COPY_EXISTING ~FLAMAL.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("ALDETH",EscapeArea())~ ~NoAction()~
-	END
-BUT_ONLY
 
 
 EXTEND_BOTTOM ~IRLENTRE.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/IRLENTRE.BAF~ EVALUATE_BUFFER

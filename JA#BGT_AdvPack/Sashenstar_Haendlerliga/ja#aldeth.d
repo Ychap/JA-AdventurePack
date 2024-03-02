@@ -3,30 +3,6 @@ ADD_TRANS_TRIGGER ALDETH 14
 ~OR(2) ActionOverride("Irlentre",NumTimesTalkedToGT(0)) ActionOverride("Zorl",NumTimesTalkedToGT(0))~ DO 1
 UNLESS ~Global("TalkedToZorlIrenl","GLOBAL",1)~
 
-ALTER_TRANS ALDETH
-BEGIN 13 END
-BEGIN 1 END
-BEGIN
-  "EPILOGUE" ~GOTO JA#ALDETH_00~
-END
-
-ALTER_TRANS ALDETH
-BEGIN 25 END
-BEGIN 0 END
-BEGIN
-  "ACTION" ~SetGlobal("AldethMove","GLOBAL",2)
-ClearAllActions()
-StartCutSceneMode()
-StartCutScene("JA#CUALD")~
-END
-
-ALTER_TRANS ALDETH
-BEGIN 17 END
-BEGIN 1 2 END
-BEGIN
-  "TRIGGER" ~False()~
-END
-
 
 ADD_STATE_TRIGGER ALDETH 14
 ~!Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1) !Global("ZorlDopple","GLOBAL",1)~
@@ -39,6 +15,21 @@ ADD_STATE_TRIGGER ALDETH 26
 ADD_STATE_TRIGGER ALDETH 27
 ~!Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1)~
 
+
+ALTER_TRANS ALDETH
+BEGIN 13 END
+BEGIN 1 END
+BEGIN
+  "EPILOGUE" ~GOTO JA#ALDETH_00~
+END
+
+ALTER_TRANS ALDETH
+BEGIN 25 END
+BEGIN 0 END
+BEGIN
+  "ACTION" ~SetGlobal("AldethMove","GLOBAL",2) ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUALD")~
+END
+
 ADD_TRANS_ACTION ALDETH
 BEGIN 27 END
 BEGIN 0 END
@@ -48,6 +39,7 @@ EraseJournalEntry(@1027)
 EraseJournalEntry(@1028)
 EraseJournalEntry(@1029)
 EraseJournalEntry(@1030)~
+
 
 ALTER_TRANS IRLENT
 BEGIN 3 END
@@ -162,7 +154,7 @@ SAY @42
 IF ~~ THEN EXTERN IRLENT 4
 END
 
-END
+END // APPEND ZORL
 
 
 ALTER_TRANS MERLEA
@@ -238,7 +230,7 @@ IF ~~ THEN REPLY @48 EXIT
 END
 
 
-END
+END // APPEND BART10
 
 
 
@@ -270,6 +262,7 @@ BEGIN 0 END
 BEGIN
   "ACTION" ~SetGlobal("JA#MERCHG_HELP","%SWBaldursGate_MerchantLeague_L1%",1)IncrementGlobal("JA#MERCLEAGUE_INSP","GLOBAL",1)AddJournalEntry(@1030,QUEST)~
 END
+
 
 BEGIN ~JA#MLCOK~
 
@@ -317,3 +310,5 @@ IF ~Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#MLCOK_8
 SAY @67
 IF ~~ THEN EXIT
 END
+
+END // JA#MLCOK

@@ -7,18 +7,6 @@ BEGIN
 END
 
 ALTER_TRANS ALDETH
-BEGIN 21 END
-BEGIN 1 END
-BEGIN
-  "ACTION" ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDED")~
-  "EPILOGUE" ~EXIT~
-END
-
-
-ADD_STATE_TRIGGER ALDETH 22
-~Global("Chapter","GLOBAL",%tutu_chapter_7%) Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",1)~
-
-ALTER_TRANS ALDETH
 BEGIN 22 END
 BEGIN 0 END
 BEGIN
@@ -44,37 +32,25 @@ APPEND ALDETH
 
 IF ~~ THEN BEGIN JA#ALDETH_32
 SAY @34
-IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDED")~ EXIT
+IF ~~ THEN DO ~CreateCreature("FLAMAL",[281.450],0)
+CreateCreature("FFHUNT",[221.425],0)
+CreateCreature("FFHUNT",[468.293],0)
+CreateCreature("FFHUNT",[503.269],0)~ GOTO 22
 END
 
 IF ~~ THEN BEGIN JA#ALDETH_33
 SAY @35
-IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",3)
-SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)
-CreateCreature("FLAMAL",[281.450],0)
-CreateCreature("FFHUNT",[221.425],0)
-CreateCreature("FFHUNT",[468.293],0)
-CreateCreature("FFHUNT",[503.269],0)~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",3) SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
 END
 
 IF ~~ THEN BEGIN JA#ALDETH_34
 SAY @36
-IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",3)
-SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)
-CreateCreature("FLAMAL",[281.450],0)
-CreateCreature("FFHUNT",[221.425],0)
-CreateCreature("FFHUNT",[468.293],0)
-CreateCreature("FFHUNT",[503.269],0)~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",3) SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
 END
 
 IF ~~ THEN BEGIN JA#ALDETH_35
 SAY @37
-IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",3)
-SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)
-CreateCreature("FLAMAL",[281.450],0)
-CreateCreature("FFHUNT",[221.425],0)
-CreateCreature("FFHUNT",[468.293],0)
-CreateCreature("FFHUNT",[503.269],0)~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#ALDETHCHP8","GLOBAL",3) SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
 END
 
 END // APPEND ALDETH
