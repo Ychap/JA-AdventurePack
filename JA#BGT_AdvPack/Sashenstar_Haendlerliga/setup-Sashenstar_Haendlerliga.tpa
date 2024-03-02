@@ -42,6 +42,13 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZORL.D~
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
+	// Party already restored in BGEE
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH_PARTY.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+
+	COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUIRL.BAF~
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7228.BAF~ EVALUATE_BUFFER
+
+
 	COPY_EXISTING ~ALDETH.dlg~ ~override~
 		LPF READ_JOURNAL_STRREF
 			INT_VAR state = 13
@@ -62,14 +69,7 @@ END ELSE BEGIN
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
 END
 
-// Party already restored in BGEE
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH_PARTY.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
-
-	COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUIRL.BAF~
-
-	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7228.BAF~ EVALUATE_BUFFER
-END
+ADD_JOURNAL EXISTING @1025 @1026 @1027 @1028 @1029 @1030
 
 
 COPY_EXISTING_REGEXP ~\(ALDETH\|FLAMAL\)\.DLG~ ~override~
