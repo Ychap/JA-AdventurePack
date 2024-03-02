@@ -7,9 +7,44 @@ COPY_EXISTING ~ALDETH.DLG~ ~override~
 	LPF GET_DLG_STATE_RESPONSE
 		INT_VAR idx_state = 21
 				idx_response = 1
-		RET state21_response1_action = response_action
+		RET state21_weight = idx_state_trigger
+			state21_response1_action = response_action
 	END
 BUT_ONLY
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth3/JA#DEAGB.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#DEAGAN.tra~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth3/JA#ALDETH_BETRAYAL.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth3/JA#ALDETH_RECONCILIATION.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	<<<<<<<< ...inlined/flamal_bgt.d
+	ADD_TRANS_ACTION FLAMAL
+	BEGIN 1 END
+	BEGIN END
+	~ActionOverride("Aldeth",EscapeArea())
+	ActionOverride("Brandi",EscapeArea())
+	ActionOverride("JA#DEAGA",EscapeArea())
+	ActionOverride("FFHUNT",EscapeArea())
+	EscapeArea()~
+	>>>>>>>>
+	COMPILE ~...inlined/flamal_bgt.d~
+END
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth3/JA#CUDEC.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth3/JA#CUDED.BAF~
+COMPILE ~JA#BGT_AdvPack/Aldeth3/JA#DEAGB.BAF~
+
+EXTEND_TOP ~%EBaldursGate%.BCS~ ~JA#BGT_AdvPack/Aldeth3/AR7800.BAF~ EVALUATE_BUFFER
+
+
+COPY ~JA#BGT_AdvPack/Aldeth3/JA#DEAGB.CRE~ ~override~
+	SAY NAME1 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
+
+
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[217\.491\],[0S])~ ~CreateCreature("ALDETH",[1244.720],2)~
+	END
+BUT_ONLY

@@ -15,13 +15,13 @@ THEN
 		Wait(1)
 		FadeToColor([20.0],0)
 		Wait(2)
-		LeaveAreaLUAPanic("%SWBaldursGate_MerchantLeague_L2%","",[1159.750],9)
+		// LeaveAreaLUAPanic("%SWBaldursGate_MerchantLeague_L2%","",[1159.750],9)
 		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1159.750],9)
 		SetMasterArea("%SWBaldursGate%")
 		Wait(2)
 		FadeFromColor([20.0],0)
 		Wait(2)
-		ActionOverride("Aldeth",Dialogue(Player1))
+		ActionOverride("Aldeth",StartDialogNoSet(Player1))
 END
 
 IF
@@ -68,5 +68,3 @@ THEN
 		Wait(3)
 		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1128.846],9)
 END
-
-

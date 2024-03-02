@@ -7,9 +7,8 @@ THEN
 END
 
 IF
-	GlobalGT("Captured","GLOBAL",0)
+	Global("Captured","GLOBAL",1)
 THEN
 	RESPONSE #100
 		EscapeAreaDestroy(90)
 END
-

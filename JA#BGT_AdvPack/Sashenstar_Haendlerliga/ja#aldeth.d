@@ -7,7 +7,7 @@ UNLESS ~Global("TalkedToZorlIrenl","GLOBAL",1)~
 ADD_STATE_TRIGGER ALDETH 14
 ~!Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1) !Global("ZorlDopple","GLOBAL",1)~
 ADD_STATE_TRIGGER ALDETH 21
-~!Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1) Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",0)~
+~!Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1)~
 ADD_STATE_TRIGGER ALDETH 24
 ~!Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1)~
 ADD_STATE_TRIGGER ALDETH 26
@@ -310,5 +310,3 @@ IF ~Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#MLCOK_8
 SAY @67
 IF ~~ THEN EXIT
 END
-
-END // JA#MLCOK

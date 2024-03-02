@@ -1,14 +1,16 @@
-// Nessesary for compability with BG1 Mini Quests and Encounters Mod: Sea charts
+// BG1 Mini Quests and Encounters Mod does the same
 REPLACE_STATE_TRIGGER ALDETH 28 ~Global("HelpAldeth","GLOBAL",2)~
 
-ADD_TRANS_TRIGGER ALDETH 28
-~False()~ DO 0
-UNLESS ~False()~
+ALTER_TRANS ALDETH
+BEGIN 28 END
+BEGIN 0 END
+BEGIN
+  "REPLY" ~@73~
+END
 
 EXTEND_BOTTOM ALDETH 28
 IF ~Global("Chapter","GLOBAL",%tutu_chapter_7%) Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ THEN REPLY @72 /* ~Ich gehe hier nicht so einfach weg. Ihr solltet mir besser einen guten Grund für Euren Verrat liefern – ich habe Euch oft geholfen und Ihr vergeltet es mir mit Verrat!~ */ GOTO versoehnung
 IF ~Global("Chapter","GLOBAL",%tutu_chapter_7%) Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ THEN REPLY @74 /* ~Ich habe es mir anders überlegt. Ihr werdet für Euren Verrat bezahlen!~ */ DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT
-IF ~~ THEN REPLY @73 /* ~Lebt wohl.~ */ EXIT
 END
 
 

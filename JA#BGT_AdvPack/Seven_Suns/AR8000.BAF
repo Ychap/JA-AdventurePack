@@ -32,14 +32,3 @@ THEN
 		CreateCreature("JA#SSMR4",[3536.1317],14) // Kaufmann
 		Continue()
 END
-
-/* Sellout of Aldeth Sashenstar - reset the variable so Flamin Fist Enforcer inside the Mearchants' League will be gone when the PC returns inside */
-
-IF
-	Global("JA#ALDETHCHP8","GLOBAL",3)
-	InMyArea(Player1)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#ALDETHCHP8","GLOBAL",4)
-		Continue()
-END

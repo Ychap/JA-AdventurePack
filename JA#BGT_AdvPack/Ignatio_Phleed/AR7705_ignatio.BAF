@@ -1,7 +1,7 @@
 IF
 	Global("Chapter","GLOBAL",%tutu_chapter_7%)
 	Global("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",0)
-	GlobalGT("Captured","GLOBAL",0)
+	Global("Captured","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",1)

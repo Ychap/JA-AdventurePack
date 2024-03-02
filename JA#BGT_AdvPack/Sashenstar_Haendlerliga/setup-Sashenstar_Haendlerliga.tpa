@@ -10,7 +10,7 @@
 */
 
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#BRANDI.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGAN.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#DEAGAN.tra~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP.D~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
@@ -57,12 +57,16 @@ END ELSE BEGIN
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
 END
 
+COPY_EXISTING_REGEXP ~\(ALDETH\|FLAMAL\)\.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Brandi",EscapeArea())~ ~\0 ActionOverride("JA#DEAGA",EscapeArea())~
+	END
+BUT_ONLY
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUALD.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEA.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEB.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEC.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.BAF~
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGB.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUIRL.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP1.BAF~
@@ -80,22 +84,12 @@ EXTEND_BOTTOM ~IRLENTRE.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/IRLENTRE.BA
 EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/ZORL.BAF~ EVALUATE_BUFFER
 	REPLACE ~999999~ @41
 
-/* changed the following REPLACE_TEXTUALLY so the former extra script blocks in the area script are not needed */
+
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[217\.491\],[0S])~ ~CreateCreature("ALDETH",[1244.720],2)~
-//    	REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Aldeth",SetNumTimesTalkedTo(1))~ ~Continue()~
 		REPLACE_TEXTUALLY EXACT_MATCH ~NumDeadGT("DopZorl",5)~ ~NumDeadGT("DopZorl",9) Dead("Zorl") Dead("Irlentre")~
 	END
 BUT_ONLY
-
-/* not needed - the original script block will be deactivated for Global("Capture800","GLOBAL",1) after Deagan spawned
-COPY_EXISTING ~AR7800.BCS~ ~override~
-  DECOMPILE_BCS_TO_BAF
-    REPLACE_TEXTUALLY EXACT_MATCH ~Global("Capture800","GLOBAL",0)~ ~False()~
-  COMPILE_BAF_TO_BCS
-BUT_ONLY_IF_IT_CHANGES
-*/
 
 COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
@@ -119,12 +113,9 @@ COPY_EXISTING ~ZORL.BCS~ ~override~
 	END
 BUT_ONLY
 
-EXTEND_TOP ~%EBaldursGate%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7800.BAF~
-
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MLBAR.STO~ ~override~
 
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGB.CRE~ ~override~
 	SAY NAME1 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
 
