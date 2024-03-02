@@ -47,37 +47,6 @@ END // APPEND ALDETH
 
 
 
-
-ADD_STATE_TRIGGER MERCHG 0 ~NumTimesTalkedTo(0)~
-ADD_STATE_TRIGGER MERCHG 1 ~Global("JA#MERCHG_HELP","%SWBaldursGate_MerchantLeague_L1%",0)~
-ADD_STATE_TRIGGER MERCHG 5 ~!Global("HelpAldeth","GLOBAL",2)Global("JA#MERCHG_HELP","%SWBaldursGate_MerchantLeague_L1%",0)~
-ADD_STATE_TRIGGER MERCHG 6 ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~
-
-
-
-ALTER_TRANS MERCHG
-BEGIN 1 END
-BEGIN 0 END
-BEGIN
-  "ACTION" ~SetGlobal("JA#MERCHG_HELP","%SWBaldursGate_MerchantLeague_L1%",1)~
-END
-
-ALTER_TRANS MERCHG
-BEGIN 3 END
-BEGIN 0 END
-BEGIN
-  "ACTION" ~IncrementGlobal("JA#MERCLEAGUE_INSP","GLOBAL",1)AddJournalEntry(@1030,QUEST)~
-END
-
-
-ALTER_TRANS MERCHG
-BEGIN 5 END
-BEGIN 0 END
-BEGIN
-  "ACTION" ~SetGlobal("JA#MERCHG_HELP","%SWBaldursGate_MerchantLeague_L1%",1)IncrementGlobal("JA#MERCLEAGUE_INSP","GLOBAL",1)AddJournalEntry(@1030,QUEST)~
-END
-
-
 BEGIN ~JA#MLCOK~
 
 IF ~!Global("HelpAldeth","GLOBAL",2)NumTimesTalkedTo(0)~ THEN BEGIN JA#MLCOK_1

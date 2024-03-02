@@ -33,6 +33,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#BART10.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MERCHG.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MERLEA.D~
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#IRLENT.D~
