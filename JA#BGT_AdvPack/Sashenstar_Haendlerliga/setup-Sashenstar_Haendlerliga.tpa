@@ -86,7 +86,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP1.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDET.BAF~
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MGUAR.BAF~
 
 EXTEND_TOP ~%NBaldursGate_ThreeOldKegs_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7219.BAF~
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7227.BAF~ EVALUATE_BUFFER
@@ -196,20 +195,8 @@ COPY_EXISTING ~ZORL.CRE~ ~override~
 	ADD_CRE_ITEM ~JA#ZRLKY~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
 	ADD_CRE_ITEM ~JA#DPZRL~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
 
-COPY_EXISTING ~MERCHG.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~MERCHG~ script_new = ~JA#MGUAR~ END
-
-COPY_EXISTING ~BRANDI.CRE~ ~override~
-	LPF ADD_CRE_SCRIPT INT_VAR offset_start = SCRIPT_CLASS STR_VAR script_new = ~JA#MGUAR~ END
-
 COPY_EXISTING ~ALDETH.CRE~ ~override~
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
-
-COPY_EXISTING ~DABRON.CRE~ ~override/JA#DABRO.CRE~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~DABRON~ END
-	WRITE_ASCII DIALOG ~None~
-	WRITE_BYTE 0x270 255 // Allegiance: ENEMY
 
 
 COPY_EXISTING ~AM0704.WAV~ ~override~
