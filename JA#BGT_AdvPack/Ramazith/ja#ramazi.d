@@ -46,7 +46,7 @@ IF ~EscapeArea\(Destroy\)?([0-9]*)~
 REPLACE_TRANS_ACTION RAMAZI
 BEGIN 13 END
 BEGIN 0 END
-~CreateCreature("ABELA",[260.170],0)~
+~CreateCreature("ABELA",\[260.170\],0)~
 ~CreateCreature("ABELA",[376.228],2) ActionOverride("Abela",Wait(1))~
 
 
