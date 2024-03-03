@@ -101,6 +101,17 @@ BUT_ONLY
 // Restore party part only in BGT (already restored in EE)
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	INCLUDE ~JA#BGT_AdvPack/Merchants_League/party/setup-party.tpa~
+END ELSE BEGIN
+	COPY_EXISTING ~IRLENT.DLG~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~EscapeAreaMove("%SWBaldursGate_MerchantLeague_L3%",622,563,NNW)~ ~EscapeArea()~
+		END
+	BUT_ONLY
+	COPY_EXISTING ~ZORL.DLG~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~EscapeAreaMove("%SWBaldursGate_MerchantLeague_L3%",674,464,NW)~ ~EscapeArea()~
+		END
+	BUT_ONLY
 END
 
 
