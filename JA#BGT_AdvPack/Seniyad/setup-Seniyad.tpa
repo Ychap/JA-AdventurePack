@@ -38,6 +38,16 @@ COPY ~JA#BGT_AdvPack/Seniyad/JA#ALDET.ITM~ ~override~
 	SAY NAME2 @2101
 	SAY DESC @2102
 
+// If Aldeth main component is installed
+ACTION_IF FILE_EXISTS_IN_GAME ~JA#ALDET.BCS~ BEGIN
+	EXTEND_TOP ~JA#ALDET.BCS~ ~JA#BGT_AdvPack/Seniyad/JA#ALDET.BAF~ EVALUATE_BUFFER
+END ELSE BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#ALDET.BAF~
+
+	COPY_EXISTING ~ALDETH.CRE~ ~override~
+		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
+END
+
 
 /* bg1npc is installed: Viconia's interjection kills the new reply option to settle the discpute with Seniyad peacefully. Add the reply option to Viconia's new state, as well: */
 

@@ -1,0 +1,21 @@
+IF
+	AreaCheck("%CloakwoodLodge%")
+	Global("JA#ALDETH_RING","%CloakwoodLodge%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ALDETH_RING","%CloakwoodLodge%",1)
+		GiveItemCreate("JA#ALDET",Myself,0,0,0)
+END
+
+IF
+	AreaCheck("%SWBaldursGate_MerchantLeague_L2%")
+	GlobalGT("Chapter","GLOBAL",%tutu_chapter_5%)
+	Global("JA#ALDETH_RING","LOCALS",0)
+	Global("SeniyadXP","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ALDETH_RING","LOCALS",1)
+		GiveItemCreate("JA#ALDET",Myself,0,0,0)
+		SmallWait(3)
+		EquipItem("JA#ALDET")
+END
