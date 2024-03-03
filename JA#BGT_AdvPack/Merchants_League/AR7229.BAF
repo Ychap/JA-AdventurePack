@@ -9,28 +9,6 @@ THEN
 		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",2)
 END
 
-/* Zorls and Irlentree's corpse will be on the table if the feast was announced */
-IF
-	Global("C#JA#_CorpseDrop","GLOBAL",1)
-THEN
-	RESPONSE #100
-		ActionOverride("Container 1",CreateItem("JA#DIRLE",0,0,0)) // Irlentrees Leiche
-		ActionOverride("Container 1",CreateItem("JA#DZORL",0,0,0)) // Zorls Leiche
-		SetGlobal("C#JA#_CorpseDrop","GLOBAL",2)
-END
-
-/* Just in case the player only takes the corpses from the table but doesn't speak to anyone else */
-IF
-	OR(2)
-		PartyHasItem("JA#DIRLE")
-		PartyHasItem("JA#DZORL")
-	Global("ZorlDopple","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SetGlobal("ZorlDopple","GLOBAL",1)
-END
-
-
 IF
 	GlobalGT("Chapter","GLOBAL",%tutu_chapter_5%)
 	Global("DukeThanks","GLOBAL",1)
@@ -41,14 +19,24 @@ THEN
 		ActionOverride("Aldeth",DestroySelf())
 END
 
+/* Zorls and Irlentree's corpse will be on the table when doppelgangers are revealed */
+IF
+	Global("HelpBrandilar","GLOBAL",2)
+	Global("JA#Dopp_Corpse","LOCALS",0)
+THEN
+	RESPONSE #100
+		ActionOverride("Container 1",CreateItem("JA#DIRLE",0,0,0)) // Irlentrees Leiche
+		ActionOverride("Container 1",CreateItem("JA#DZORL",0,0,0)) // Zorls Leiche
+		SetGlobal("JA#Dopp_Corpse","LOCALS",1)
+END
 
 /* In case the player didn't find the bodies yet */
 IF
 	GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%)
-	Global("C#JA#_DestroyBodies","GLOBAL",0)
+	Global("JA#Dopp_Corpse","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobal("C#JA#_DestroyBodies","GLOBAL",1)
+		SetGlobal("JA#Dopp_Corpse","LOCALS",2)
 		ActionOverride("Container 1",DestroyItem("JA#DIRLE"))
 		ActionOverride("Container 1",DestroyItem("JA#DZORL"))
 END

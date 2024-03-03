@@ -25,8 +25,6 @@ THEN
 		CreateCreature("ALDETH",[353.395],11) // Aldeth Sashenstar
 		Wait(1)
 		ActionOverride("Aldeth",SetNumTimesTalkedTo(2))
-//		ActionOverride("Container 1",CreateItem("JA#DIRLE",0,0,0)) // Irlentrees Leiche
-//		ActionOverride("Container 1",CreateItem("JA#DZORL",0,0,0)) // Zorls Leiche
 		SetGlobal("HelpBrandilar","GLOBAL",2)
 		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1)
 		SetGlobal("JA#CUIRL","GLOBAL",2)
