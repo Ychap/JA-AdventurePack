@@ -330,15 +330,14 @@ LABEL "JA#BGT_AdvPack-Counting_House"
 
 INCLUDE ~JA#BGT_AdvPack/Counting_House/setup-Counting_House.tpa~
 
-///////////////////////////////////
-//ALDETH SASHENSTAR & HAENDLERLIGA
-///////////////////////////////////
+////////////////////////////////////
+//Merchants' League investigations
+////////////////////////////////////
 
-BEGIN ~Aldeth Sashenstar & the Merchant League~ DESIGNATED 27
-LABEL "JA#BGT_AdvPack-Sashenstar_Haendlerliga"
-// REQUIRE_PREDICATE GAME_IS ~bgt~ ~Not compatible with EE~
+BEGIN ~Merchants' League investigations~ DESIGNATED 27
+LABEL "JA#BGT_AdvPack-Merchants_League"
 
-INCLUDE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/setup-Sashenstar_Haendlerliga.tpa~
+INCLUDE ~JA#BGT_AdvPack/Merchants_League/setup-Merchants_League.tpa~
 
 ///////////////////////////////////////////////////
 //ERWEITERTE TENYA-HANDLUNG & TEMPEL DER UMBERLEE
