@@ -2,6 +2,11 @@ DEFINE_PATCH_FUNCTION GET_DLG_STATE_WEIGHT
 	INT_VAR idx_state = 0
 	RET weight
 BEGIN
+	READ_LONG 0x08 num_states
+	PATCH_IF (idx_state >= num_states) BEGIN
+		PATCH_FAIL ~GET_DLG_STATE_RESPONSE: State %idx_state% is out of bound!~
+	END
+
     READ_LONG 0x0c ofs_states
 
 	READ_LONG (ofs_states + (idx_state * 0x10) + 0xc) weight
