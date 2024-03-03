@@ -1,15 +1,4 @@
 IF
-	Global("ZorlDopple","GLOBAL",1)
-	Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1)
-		SetGlobal("JA#MERLEA_MYST","GLOBAL",1)
-		SetGlobal("HelpBrandilar","GLOBAL",2)
-		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",2)
-END
-
-IF
 	GlobalGT("Chapter","GLOBAL",%tutu_chapter_5%)
 	Global("DukeThanks","GLOBAL",1)
 	Exists("Aldeth")
