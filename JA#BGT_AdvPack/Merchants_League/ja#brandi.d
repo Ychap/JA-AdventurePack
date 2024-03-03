@@ -1,10 +1,12 @@
-// ADD_STATE_TRIGGER BRANDI 0 ~NumTimesTalkedTo(0)~
+ADD_STATE_TRIGGER BRANDI 0 ~NumTimesTalkedTo(0)~
 
 /* Brandilar will only inquire about the investigation if the doppelgangers aren't in the open yet */
-// ADD_STATE_TRIGGER BRANDI 7 ~Global("ZorlDopple","GLOBAL",0)~
+ADD_STATE_TRIGGER BRANDI 7 ~Global("ZorlDopple","GLOBAL",0)~
 
 /* add state trigger so Brandilar recognise the doppelganger change */
-// ADD_STATE_TRIGGER BRANDI 11 ~Global("ZorlDopple","GLOBAL",1) !Global("HelpBrandilar","GLOBAL",2)~
+ADD_STATE_TRIGGER BRANDI 11 ~Global("ZorlDopple","GLOBAL",1) Global("HelpBrandilar","GLOBAL",1)~
+
+SET_WEIGHT BRANDI 11 #1
 
 
 // BGT (set "LiedBrandilar" like in EE)
