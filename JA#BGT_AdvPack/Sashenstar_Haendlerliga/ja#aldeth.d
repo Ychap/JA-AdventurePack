@@ -44,3 +44,8 @@ IF ~PartyHasItem("JA#DIRLE") PartyHasItem("JA#DZORL")~ THEN DO ~TakePartyItem("J
 END
 
 END // APPEND ALDETH
+
+
+INTERJECT_COPY_TRANS2 IRLENT 3 JA#aldeth_party
+== ALDETH @27
+END

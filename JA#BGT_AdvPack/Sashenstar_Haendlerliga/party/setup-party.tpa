@@ -2,6 +2,14 @@
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#ALDETH.D~
 
+<<<<<<<< ...inlined/brandi_party.d
+ADD_TRANS_ACTION BRANDI
+BEGIN 11 END
+BEGIN END
+~SetGlobal("JA#CUIRL","GLOBAL",1)~
+>>>>>>>>
+COMPILE ~...inlined/brandi_party.d~
+
 
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#CUIRL.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#DPZRL.BAF~
