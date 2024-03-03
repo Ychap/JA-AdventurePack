@@ -1,0 +1,31 @@
+// Anything to process Aldeth's party
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#ALDETH.D~
+
+
+COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#CUIRL.BAF~
+
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/AR7228.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/AR7229.BAF~ EVALUATE_BUFFER
+
+EXTEND_TOP ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/ZORL.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~NumDeadGT("DopZorl",5)~ ~NumDeadGT("DopZorl",9) Dead("Zorl") Dead("Irlentre")~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~IRLENTRE.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EVALUATE_REGEXP ~\(CreateCreature("DOPZORL",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))[%WNL%%MNL%%LNL%%TAB% ]*\)+~ ~UseItem("JA#DPIRL",Myself)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~~
+	END
+BUT_ONLY
+
+
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPLE~ END
+BUT_ONLY
