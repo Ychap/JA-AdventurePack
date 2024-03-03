@@ -15,8 +15,8 @@ COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.D~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY_EXISTING ~IRLENT.DLG~ ~override~
-		LPF READ_JOURNAL_STRREF
-			INT_VAR state = 0
+		LPF GET_DLG_JOURNAL_STRREF
+			INT_VAR idx_state = 0
 			RET state0_journal = strref
 		END
 	BUT_ONLY
@@ -43,8 +43,8 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ZORL.D~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY_EXISTING ~ALDETH.dlg~ ~override~
-		LPF READ_JOURNAL_STRREF
-			INT_VAR state = 13
+		LPF GET_DLG_JOURNAL_STRREF
+			INT_VAR idx_state = 13
 			RET state13_journal = strref
 		END
 	BUT_ONLY
