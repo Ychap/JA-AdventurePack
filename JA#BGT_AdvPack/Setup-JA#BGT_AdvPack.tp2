@@ -490,23 +490,23 @@ LABEL "JA#BGT_AdvPack-Yuxi"
 
 INCLUDE ~JA#BGT_AdvPack/Yuxi/setup-Yuxi.tpa~
 
-////////////////////////
+//////////////////////
 //Seniyad and Aldeth
-////////////////////////
+//////////////////////
 
 BEGIN ~Seniyad and Aldeth~ DESIGNATED 44
 LABEL "JA#BGT_AdvPack-Seniyad"
 
 INCLUDE ~JA#BGT_AdvPack/Seniyad/setup-Seniyad.tpa~
 
-////////////////////////////////////////////////
-//Aldeth part 3 - betrayal and reconciliation
-////////////////////////////////////////////////
+////////////////////////////////////////
+//Aldeth's betrayal and reconciliation
+////////////////////////////////////////
 
 BEGIN ~Aldeth's betrayal and reconciliation~ DESIGNATED 45
-LABEL "JA#BGT_AdvPack-Aldeth3"
+LABEL "JA#BGT_AdvPack-Betrayal"
 
-INCLUDE ~JA#BGT_AdvPack/Aldeth3/setup-Aldeth3.tpa~
+INCLUDE ~JA#BGT_AdvPack/Betrayal/setup-Betrayal.tpa~
 
 
 ///////////////////////////////////////////////////
