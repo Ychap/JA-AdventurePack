@@ -34,7 +34,7 @@ IF ~~ THEN REPLY @22 GOTO 25
 IF ~~ THEN REPLY @23 GOTO 10
 END
 
-IF WEIGHT #-1
+IF WEIGHT #0
 ~!Global("Chapter","GLOBAL",%tutu_chapter_7%)
 Global("HelpAldeth","GLOBAL",2)
 OR(2)
