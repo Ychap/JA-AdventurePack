@@ -20,8 +20,6 @@ THEN
 		DisplayStringHead(Myself,999999)
 		Wait(2)
 		SetGlobal("ZorlDopple","GLOBAL",1)
-	RESPONSE #50
-		NoAction()
 END
 
 IF

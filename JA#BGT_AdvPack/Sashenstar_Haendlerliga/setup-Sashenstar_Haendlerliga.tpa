@@ -76,7 +76,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUALD.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEA.BAF~
 COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEB.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.BAF~
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDET.BAF~
 
@@ -94,12 +93,6 @@ COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~SetGlobal("SpawnDabron","GLOBAL",1)~ ~NoAction()~
 		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[3507\.2477\],[0S])~ ~Continue()~
-	END
-BUT_ONLY
-
-COPY_EXISTING ~ZORL.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~UseItem("JA#DPZRL",Myself)~
 	END
 BUT_ONLY
 
@@ -135,19 +128,6 @@ COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP0.CRE~ ~override~
 	WRITE_ASCII SCRIPT_DEFAULT ~WTASIGHT~ #8
 	WRITE_ASCII DEATHVAR ~DopZorl~ #32
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.CRE~ ~override~
-	SAY NAME1 @2099
-	SAY NAME2 @2099
-	WRITE_ASCII DEATHVAR ~Zorl~ #32
-
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPIRL.CRE~ ~override~
-	SAY NAME1 @2100
-	SAY NAME2 @2100
-	WRITE_ASCII DEATHVAR ~Irlentre~ #32
-
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPZRL.ITM~ ~override~
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DPIRL.ITM~ ~override~
-
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZRLKY.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZRLKY.ITM~ ~override~
 	SAY NAME1 @2103
@@ -169,7 +149,6 @@ COPY_EXISTING ~IRLENT.CRE~ ~override~
 	WRITE_BYTE 0x272 103 // Race: BEAR
 	WRITE_BYTE 0x273 112 // Class: DOPPLEGANGER_GREATER
 	WRITE_BYTE 0x275 4   // Gender: NIETHER
-	ADD_CRE_ITEM ~JA#DPIRL~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
 	REPLACE_CRE_ITEM ~CHAN04~ #0 #0 #0 ~NONE~ ~ARMOR~ EQUIP
 
 COPY_EXISTING ~ZORL.CRE~ ~override~
@@ -177,7 +156,6 @@ COPY_EXISTING ~ZORL.CRE~ ~override~
 	SAY NAME2 @2109
 	WRITE_BYTE 0x271 255 // General: MONSTER
 	ADD_CRE_ITEM ~JA#ZRLKY~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
-	ADD_CRE_ITEM ~JA#DPZRL~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
 
 COPY_EXISTING ~ALDETH.CRE~ ~override~
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
