@@ -4,15 +4,6 @@
 
 // Btw: In Enhanched Editions you already have a peaceful solution with jaheira in group.
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#SENIYA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
-
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY_EXISTING ~SENIYA.dlg~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY EXACT_MATCH ~EscapeAreaObject("druid_escape")~ ~EscapeAreaDestroy(90)~
-		END
-END
-
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	<<<<<<<< ...inlined/aldeth_ee.d
 	ADD_STATE_TRIGGER ALDETH 31 ~Global("SeniyadXP","GLOBAL",0)~
@@ -23,11 +14,20 @@ END
 COPY_EXISTING ~ALDETH.dlg~ ~override~
 	LPF READ_JOURNAL_STRREF
 		INT_VAR state = (GAME_IS ~bgt~ ? 0 : 4)
-		RET strref
+		RET state04_journal = strref
 	END
 BUT_ONLY
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#ALDETH_REWARD.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#SENIYA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY_EXISTING ~SENIYA.dlg~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~EscapeAreaObject("druid_escape")~ ~EscapeAreaDestroy(90)~
+		END
+END
 
 ADD_JOURNAL EXISTING @20 USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 

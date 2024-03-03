@@ -17,7 +17,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY_EXISTING ~IRLENT.DLG~ ~override~
 		LPF READ_JOURNAL_STRREF
 			INT_VAR state = 0
-			RET strref
+			RET state0_journal = strref
 		END
 	BUT_ONLY
 
@@ -26,7 +26,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	BEGIN 0 END
 	BEGIN 1 END
 	BEGIN
-	  "UNSOLVED_JOURNAL" ~%strref%~
+	  "UNSOLVED_JOURNAL" ~%state0_journal%~
 	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/irlent_bgt.d~
@@ -45,7 +45,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY_EXISTING ~ALDETH.dlg~ ~override~
 		LPF READ_JOURNAL_STRREF
 			INT_VAR state = 13
-			RET strref
+			RET state13_journal = strref
 		END
 	BUT_ONLY
 
@@ -54,7 +54,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	BEGIN JA#ALDETH_00 END
 	BEGIN 0 END
 	BEGIN
-	  "UNSOLVED_JOURNAL" ~%strref%~
+	  "UNSOLVED_JOURNAL" ~%state13_journal%~
 	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/JA#ALDETH.D~
