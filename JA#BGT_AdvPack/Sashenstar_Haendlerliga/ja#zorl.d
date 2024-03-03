@@ -1,5 +1,4 @@
 ADD_STATE_TRIGGER ZORL 0 ~AreaCheck("%SWBaldursGate_MerchantLeague_L2%")~
-ADD_STATE_TRIGGER ZORL 4 ~AreaCheck("%SWBaldursGate_MerchantLeague_L3%") Global("JA#CUIRL","GLOBAL",50) PartyHasItem("SCRL2P")~
 ADD_STATE_TRIGGER ZORL 5 ~AreaCheck("%SWBaldursGate_MerchantLeague_L2%") GlobalGT("JA#MERCLEAGUE_INSP","GLOBAL",1)~
 ADD_STATE_TRIGGER ZORL 14 ~AreaCheck("%SWBaldursGate_MerchantLeague_L2%") GlobalLT("JA#MERCLEAGUE_INSP","GLOBAL",2)~
 
@@ -69,11 +68,6 @@ END
 IF ~~ THEN BEGIN JA#ZORL_03
 SAY @7
 IF ~~ THEN DO ~SetGlobal("JA#SENDZORL","GLOBAL",2) EscapeAreaMove("%SWBaldursGate_MerchantLeague_L3%",674,464,6)~ EXIT
-END
-
-IF ~AreaCheck("%SWBaldursGate_MerchantLeague_L3%") Global("JA#CUIRL","GLOBAL",0) !PartyHasItem("SCRL2P")~ THEN BEGIN JA#ZORL_04
-SAY @8
-IF ~~ THEN EXIT
 END
 
 END // APPEND ZORL
