@@ -49,7 +49,8 @@ ALWAYS
 			~JA#BGT_AdvPack/lib/func_cre_script/REMOVE_CRE_SCRIPT.tph~
 			~JA#BGT_AdvPack/lib/func_cre_script/REPLACE_CRE_SCRIPT.tph~
 
-	INCLUDE ~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STATE_RESPONSE.tph~
+	INCLUDE ~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_JOURNAL_STRREF.tph~
+			~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STATE_RESPONSE.tph~
 			~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STATE_WEIGHT.tph~
 
 	/* ACTION.IDS and TRIGGER.IDS patching to ToB - thanks, Cam, if you read it */
