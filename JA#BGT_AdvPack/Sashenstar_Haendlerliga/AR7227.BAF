@@ -1,5 +1,5 @@
 IF
-//	!Exists("Irlentre")
+	!Exists("Irlentre")
 	Exists("Irlentre")
 	!Dead("Irlentre")
 	Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",0)
@@ -18,7 +18,7 @@ THEN
 		ActionOverride(Player4,JumpToPoint([344.480]))
 		ActionOverride(Player5,JumpToPoint([566.301]))
 		ActionOverride(Player6,JumpToPoint([299.490]))
-//		CreateCreature("IRLENT",[391.338],14)
+		CreateCreature("IRLENT",[391.338],14)
 		ActionOverride("Irlentre",JumpToPoint([391.338]))
 		SmallWait(3)
 		ActionOverride(Player1,Face(15))
