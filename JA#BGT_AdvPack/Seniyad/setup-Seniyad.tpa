@@ -12,8 +12,8 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 END
 
 COPY_EXISTING ~ALDETH.dlg~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR state = (GAME_IS ~bgt~ ? 0 : 4)
+	LPF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = (GAME_IS ~bgt~ ? 0 : 4)
 		RET state04_journal = strref
 	END
 BUT_ONLY
