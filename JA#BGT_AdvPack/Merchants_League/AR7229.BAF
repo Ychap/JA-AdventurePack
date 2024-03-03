@@ -1,21 +1,4 @@
 IF
-	Global("JA#DOPPELGANGER_SPAWN","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#DOPPELGANGER_SPAWN","GLOBAL",2)
-		CreateCreature("JA#DOPP0",[696.569],8) // Gast
-		CreateCreature("JA#DOPP1",[990.562],4) // Gast
-		CreateCreature("JA#DOPP4",[826.704],7) // Gast
-		CreateCreature("JA#DOPP2",[752.621],3) // Gast
-		CreateCreature("JA#DOPP3",[505.688],8) // Gast
-		CreateCreature("JA#DOPP5",[577.733],10) // Gast
-		CreateCreature("JA#DOPP6",[437.641],11) // Gast
-		CreateCreature("JA#DOPP8",[905.422],3) // Gast
-		CreateCreature("JA#DOPP7",[860.464],6) // Gast
-		CreateCreature("JA#DOPP9",[964.497],4) // Gast
-END
-
-IF
 	Global("ZorlDopple","GLOBAL",1)
 	Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",0)
 THEN
