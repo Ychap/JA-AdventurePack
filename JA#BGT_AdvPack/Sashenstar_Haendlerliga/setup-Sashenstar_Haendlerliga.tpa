@@ -130,6 +130,10 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 			REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~~
 		END
 	BUT_ONLY
+
+
+	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
+		LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPLE~ END
 END
 
 
@@ -327,7 +331,6 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
-	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPLE~ END
 	// Add Ambient 1
 	LPF fj_are_structure
 		INT_VAR
