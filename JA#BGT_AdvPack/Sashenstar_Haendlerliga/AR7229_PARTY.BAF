@@ -16,3 +16,14 @@ THEN
 		Wait(1)
 		StartCutScene("JA#CUIRL")
 END
+
+IF
+	NumDead("DopZorl",10)
+	Dead("Zorl")
+	Dead("Irlentre")
+	Global("AldethDopple","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",2)
+		SetGlobal("AldethDopple","GLOBAL",6)
+END

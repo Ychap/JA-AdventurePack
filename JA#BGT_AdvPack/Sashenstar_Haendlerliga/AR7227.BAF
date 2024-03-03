@@ -45,13 +45,3 @@ THEN
 		Wait(2)
 		EndCutSceneMode()
 END
-
-IF
-	NumDeadGT("DopZorl",9)
-	Dead("Zorl")
-	Dead("Irlentre")
-	Global("AldethDopple","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SetGlobal("AldethDopple","GLOBAL",6)
-END

@@ -90,27 +90,12 @@ EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/ZORL.BAF~ EVALU
 	REPLACE ~999999~ @41
 
 
-COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~NumDeadGT("DopZorl",5)~ ~NumDeadGT("DopZorl",9) Dead("Zorl") Dead("Irlentre")~
-	END
-BUT_ONLY
-
 COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~SetGlobal("SpawnDabron","GLOBAL",1)~ ~NoAction()~
 		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[3507\.2477\],[0S])~ ~Continue()~
 	END
 BUT_ONLY
-
-
-COPY_EXISTING ~IRLENTRE.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EVALUATE_REGEXP ~\(CreateCreature("DOPZORL",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))[%WNL%%MNL%%LNL%%TAB% ]*\)+~ ~UseItem("JA#DPIRL",Myself)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~~
-	END
-BUT_ONLY
-
 
 COPY_EXISTING ~ZORL.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
@@ -123,12 +108,28 @@ BUT_ONLY
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH_PARTY.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
+
 	COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUIRL.BAF~
 
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7227_PARTY.BAF~ EVALUATE_BUFFER
 	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7228_PARTY.BAF~ EVALUATE_BUFFER
 	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7229_PARTY.BAF~ EVALUATE_BUFFER
 
 	EXTEND_TOP ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/ZORL_PARTY.BAF~ EVALUATE_BUFFER
+
+
+	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~NumDeadGT("DopZorl",5)~ ~NumDeadGT("DopZorl",9) Dead("Zorl") Dead("Irlentre")~
+		END
+	BUT_ONLY
+
+	COPY_EXISTING ~IRLENTRE.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EVALUATE_REGEXP ~\(CreateCreature("DOPZORL",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))[%WNL%%MNL%%LNL%%TAB% ]*\)+~ ~UseItem("JA#DPIRL",Myself)~
+			REPLACE_TEXTUALLY EXACT_MATCH ~ForceSpell(Myself,DOPPLEGANGER_CHANGE2)~ ~~
+		END
+	BUT_ONLY
 END
 
 
