@@ -50,7 +50,7 @@ IF ~NumInPartyAliveLT(3)~ THEN DO ~GiveGoldForce(10) SetGlobal("JA#DEAGAN_SEQ","
 IF ~NumInPartyAliveLT(2)~ THEN DO ~GiveGoldForce(5) SetGlobal("JA#DEAGAN_SEQ","GLOBAL",4) EraseJournalEntry(@12)~ SOLVED_JOURNAL @17 EXTERN ALDETH 9
 END
 
-IF ~Global("JA#DEAGAN_SEQ","GLOBAL",4) !Global("AldethMove","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_8
+IF ~Global("JA#DEAGAN_SEQ","GLOBAL",4) GlobalLT("AldethMove","GLOBAL",2)~ THEN BEGIN JA#DEAGAN_8
 SAY @18
 IF ~~ THEN EXIT
 END
