@@ -1,13 +1,4 @@
 IF
-	Global("ZorlDopple","GLOBAL",1)
-	Global("JA#DOPPLE1","LOCALS",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#DOPPLE1","LOCALS",1)
-		ForceSpell(Myself,DOPPLEGANGER_CHANGE2)
-END
-
-IF
 	GlobalGT("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",3)
 	Global("JA#DOPPLE1_LEAV27","LOCALS",0)
 THEN
@@ -20,6 +11,15 @@ IF
 	AttackedBy([PC],DEFAULT)
 	Allegiance(Myself,NEUTRAL)
 	See(LastTrigger)
+THEN
+	RESPONSE #100
+		SetGlobal("ZorlDopple","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("ZorlDopple","GLOBAL",1)
+	Global("JA#DOPPLE1","LOCALS",0)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#DOPPLE1","LOCALS",1)
