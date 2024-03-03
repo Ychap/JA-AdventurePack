@@ -1,6 +1,6 @@
 // Anything to process Aldeth's party
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#ALDETH.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/JA#ALDETH.D~
 
 <<<<<<<< ...inlined/brandi_party.d
 ADD_TRANS_ACTION BRANDI
@@ -11,14 +11,14 @@ BEGIN END
 COMPILE ~...inlined/brandi_party.d~
 
 
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#CUIRL.BAF~
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#DPZRL.BAF~
+COMPILE ~JA#BGT_AdvPack/Merchants_League/party/JA#CUIRL.BAF~
+COMPILE ~JA#BGT_AdvPack/Merchants_League/party/JA#DPZRL.BAF~
 
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/AR7227.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/AR7228.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/AR7229.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/AR7228.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/AR7229.BAF~ EVALUATE_BUFFER
 
-EXTEND_TOP ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/ZORL.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~ZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/ZORL.BAF~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
@@ -41,18 +41,18 @@ COPY_EXISTING ~ZORL.BCS~ ~override~
 BUT_ONLY
 
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#DPIRL.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/party/JA#DPIRL.CRE~ ~override~
 	SAY NAME1 @2100
 	SAY NAME2 @2100
 	WRITE_ASCII DEATHVAR ~Irlentre~ #32
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#DPZRL.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/party/JA#DPZRL.CRE~ ~override~
 	SAY NAME1 @2099
 	SAY NAME2 @2099
 	WRITE_ASCII DEATHVAR ~Zorl~ #32
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#DPZRL.ITM~ ~override~
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/JA#DPIRL.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/party/JA#DPZRL.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/party/JA#DPIRL.ITM~ ~override~
 
 COPY_EXISTING ~IRLENT.CRE~ ~override~
 	ADD_CRE_ITEM ~JA#DPIRL~ #0 #0 #0 ~IDENTIFIED~ ~LRING~

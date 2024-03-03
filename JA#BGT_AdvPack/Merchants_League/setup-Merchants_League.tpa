@@ -9,9 +9,9 @@
 Änderungen in der Gilde + Verrat sind in BG:EE bereits restauriert.
 */
 
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#BRANDI.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#DEAGAN.tra~
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP.D~
+COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#BRANDI.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#DEAGAN.tra~
+COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.D~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY_EXISTING ~IRLENT.DLG~ ~override~
@@ -32,13 +32,13 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	COMPILE EVALUATE_BUFFER ~...inlined/irlent_bgt.d~
 END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#BART10.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MERCHG.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MERLEA.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MLCOK.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#BART10.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#MERCHG.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#MERLEA.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#MLCOK.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#IRLENT.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZORL.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#IRLENT.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ZORL.D~
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
@@ -57,9 +57,9 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	  "UNSOLVED_JOURNAL" ~%strref%~
 	END
 	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/JA#ALDETH.D~
 END ELSE BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDETH.D~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ALDETH.D~
 END
 
 ADD_JOURNAL EXISTING @1025 @1026 @1027 @1028 @1029 @1030
@@ -72,20 +72,20 @@ COPY_EXISTING_REGEXP ~\(ALDETH\|FLAMAL\)\.DLG~ ~override~
 BUT_ONLY
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUALD.BAF~
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEA.BAF~
-COMPILE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#CUDEB.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ALDET.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUALD.BAF~
+COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#CUDEA.BAF~
+COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#CUDEB.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ALDET.BAF~
 
-EXTEND_TOP ~%NBaldursGate_ThreeOldKegs_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7219.BAF~
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7227.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7229.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate%.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/AR7300.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_ThreeOldKegs_L1%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7219.BAF~
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7229.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7300.BAF~ EVALUATE_BUFFER
 
-EXTEND_BOTTOM ~IRLENTRE.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/IRLENTRE.BAF~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/ZORL.BAF~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~IRLENTRE.BCS~ ~JA#BGT_AdvPack/Merchants_League/IRLENTRE.BAF~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/ZORL.BAF~ EVALUATE_BUFFER
 	REPLACE ~999999~ @41
 
 
@@ -99,26 +99,26 @@ BUT_ONLY
 
 // Restore party part only in BGT (already restored in EE)
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	INCLUDE ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/party/setup-party.tpa~
+	INCLUDE ~JA#BGT_AdvPack/Merchants_League/party/setup-party.tpa~
 END
 
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#MLBAR.STO~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#MLBAR.STO~ ~override~
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DEAGA.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.CRE~ ~override~
 	SAY NAME1 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP0.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP1.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP2.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP3.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP4.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP5.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP6.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP7.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP8.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP9.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DOPP0.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP1.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP2.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP3.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP4.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP5.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP6.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP7.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP8.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP9.CRE~ ~override~
 	SAY NAME1 @2120
 	SAY NAME2 @2120
 	WRITE_ASCII SCRIPT_OVERRIDE ~None~ #8
@@ -128,18 +128,18 @@ COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DOPP0.CRE~ ~override~
 	WRITE_ASCII SCRIPT_DEFAULT ~WTASIGHT~ #8
 	WRITE_ASCII DEATHVAR ~DopZorl~ #32
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZRLKY.BAM~ ~override~
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#ZRLKY.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#ZRLKY.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#ZRLKY.ITM~ ~override~
 	SAY NAME1 @2103
 	SAY NAME2 @2103
 	SAY DESC @2104
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DZORL.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DZORL.ITM~ ~override~
 	SAY NAME1 @2105
 	SAY NAME2 @2105
 	SAY DESC @2106
 
-COPY ~JA#BGT_AdvPack/Sashenstar_Haendlerliga/JA#DIRLE.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DIRLE.ITM~ ~override~
 	SAY NAME1 @2107
 	SAY NAME2 @2107
 	SAY DESC @2108
