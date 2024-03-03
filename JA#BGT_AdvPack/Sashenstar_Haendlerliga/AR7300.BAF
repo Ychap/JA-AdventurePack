@@ -8,5 +8,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#DEAGA_SPWN","%NBaldursGate%",1)
 		SetGlobal("SpawnDabron","GLOBAL",1)
-		CreateCreature("JA#DEAGA",[570.1880],2)
+		CreateCreature("JA#DEAGA",[2350.3000],2)
 END
