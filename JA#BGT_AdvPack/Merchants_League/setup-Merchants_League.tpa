@@ -255,7 +255,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
 		container_name = ~Container 2~
-		lock_difficulty = 100
+		lock_difficulty = 80
 		container_key = ~JA#ZRLKY~
 	END
 	//add new actors
