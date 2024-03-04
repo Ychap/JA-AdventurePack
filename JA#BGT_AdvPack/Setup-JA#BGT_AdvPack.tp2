@@ -92,14 +92,16 @@ LABEL "JA#BGT_AdvPack-Law"
 
 INCLUDE ~JA#BGT_AdvPack/Lawsystem/setup-lawsystem.tpa~
 
-/////////////////////////
+
+//////////////////
 //Ramaziths Turm
-/////////////////////////
+//////////////////
 
 BEGIN ~Ramazith~ DESIGNATED 2
 LABEL "JA#BGT_AdvPack-Ramazith"
 
 INCLUDE ~JA#BGT_AdvPack/Ramazith/setup-Ramazith.tpa~
+
 
 ///////////////////////////////////////////////////////////////////////
 //Komplett überarbeitete Herzogspalast-Szene mit restaurierten Inhalten
@@ -111,27 +113,30 @@ LABEL "JA#BGT_AdvPack-Husam"
 
 INCLUDE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/setup-DukalPalace-Husamstory.tpa~
 
-//////////////////////////////
-//Gervisse und Voltine
-//////////////////////////////
+
+////////////////////////
+//Gervisse and Voltine
+////////////////////////
 
 BEGIN ~Gervisse and Voltine~ DESIGNATED 4
 LABEL "JA#BGT_AdvPack-Gervisse_Voltine"
 
 INCLUDE ~JA#BGT_AdvPack/Gervisse_Voltine/setup-Gervisse_Voltine.tpa~
 
-//////////////////////////////
-//SIEBEN SONNEN / SEVEN SUNS
-//////////////////////////////
+
+//////////////
+//Seven Suns
+//////////////
 
 BEGIN ~Seven Suns~ DESIGNATED 5
 LABEL "JA#BGT_AdvPack-Seven_Suns"
 
 INCLUDE ~JA#BGT_AdvPack/Seven_Suns/setup-Seven_Suns.tpa~
 
-/////////////////
-//ARKHSTAFF
-/////////////////
+
+/////////////
+//Arkhstaff
+/////////////
 
 BEGIN ~Arkhstuff~ DESIGNATED 6
 LABEL "JA#BGT_AdvPack-Arkhstuff"
@@ -139,18 +144,19 @@ LABEL "JA#BGT_AdvPack-Arkhstuff"
 INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
 
 
-/////////////////////////////////////
-//RESTORED: Aldeth's hunter comrade
-/////////////////////////////////////
+/////////////////////////////////////////////
+//RESTORED: Palin (Aldeth's hunter comrade)
+/////////////////////////////////////////////
 
-BEGIN ~Aldeth's hunter comrade~ DESIGNATED 7
-LABEL "JA#BGT_AdvPack-Aldeth"
+BEGIN ~Palin (Aldeth's hunter comrade)~ DESIGNATED 7
+LABEL "JA#BGT_AdvPack-Palin"
 
-INCLUDE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/setup-Aldeth_hunter_comrade.tpa~
+INCLUDE ~JA#BGT_AdvPack/Palin/setup-Palin.tpa~
 
-////////////////////////////////////////
+
+/////////////////////////////////////////
 //RESTORED: Svlast - the fallen Paladin
-////////////////////////////////////////
+/////////////////////////////////////////
 
 BEGIN ~Svlast - the fallen Paladin~ DESIGNATED 8
 LABEL "JA#BGT_AdvPack-Svlast"
@@ -159,18 +165,20 @@ FORBID_FILE ~override/UBSVLAST.CRE~ ~Svlast, the Fallen Paladin is already resto
 
 INCLUDE ~JA#BGT_AdvPack/Svlast/setup-Svlast.tpa~
 
-////////////////////////////////////
+
+/////////////////////////////////////
 //RESTORED: AMNIS2 - Amnish Soldier
-////////////////////////////////////
+/////////////////////////////////////
 
 BEGIN ~Amnis2 - Amnish Soldier~ DESIGNATED 9
 LABEL "JA#BGT_AdvPack-Amnis2"
 
 INCLUDE ~JA#BGT_AdvPack/AMNIS2/setup-AMNIS2.tpa~
 
-///////////////////////////////
+
+////////////////////////////////
 //RESTORED: Velvet - Cockfight
-///////////////////////////////
+////////////////////////////////
 
 BEGIN ~Velvet - Cockfight~ DESIGNATED 10
 LABEL "JA#BGT_AdvPack-Velvet"
@@ -178,9 +186,10 @@ REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~set
 
 INCLUDE ~JA#BGT_AdvPack/velvet/setup-velvet.tpa~
 
-////////////////////////////
+
+//////////////////////////
 //RESTORED: Nim Furlwing
-////////////////////////////
+//////////////////////////
 
 BEGIN ~Nim Furlwing~ DESIGNATED 11
 LABEL "JA#BGT_AdvPack-Nim_Furlwing"
@@ -190,45 +199,50 @@ FORBID_FILE ~override/ubnimfur.cre~ ~NimFurlwing and Her Hounds is already resto
 
 INCLUDE ~JA#BGT_AdvPack/Nim_Furlwing/setup-Nim_Furlwing.tpa~
 
-////////////////////////////////////////
+
+/////////////////////////////////////////
 //RESTORED: MERCH03 - Caravane Merchant
-////////////////////////////////////////
+/////////////////////////////////////////
 
 BEGIN ~Merch03 - Caravane Merchant~ DESIGNATED 12
 LABEL "JA#BGT_AdvPack-Merch03"
 
 INCLUDE ~JA#BGT_AdvPack/Merch03/setup-Merch03.tpa~
 
-//////////////////////////////////
+
+/////////////////////////////////
 //RESTORED: Galtoth - the fence
-//////////////////////////////////
+/////////////////////////////////
 
 BEGIN ~Galtoth - the fence~ DESIGNATED 13
 LABEL "JA#BGT_AdvPack-Galtoth"
 
 INCLUDE ~JA#BGT_AdvPack/Galtoth/setup-Galtoth.tpa~
 
-///////////////////////////////////////////////
+
+////////////////////////////////////////////////
 //RESTORED: SUTHIE & STHIEF at Silence's Store
-///////////////////////////////////////////////
+////////////////////////////////////////////////
 
 BEGIN ~Suthie & Sthief at Silence's Store~ DESIGNATED 14
 LABEL "JA#BGT_AdvPack-Suthie_Sthief"
 
 INCLUDE ~JA#BGT_AdvPack/Suthie_Sthief/setup-Suthie_Sthief.tpa~
 
-////////////////////////////////
+
+///////////////////////////////
 //RESTORED: WAREHOUSE WORKERS
-////////////////////////////////
+///////////////////////////////
 
 BEGIN ~Warehouse Workers~ DESIGNATED 15
 LABEL "JA#BGT_AdvPack-Warehouse_Workers"
 
 INCLUDE ~JA#BGT_AdvPack/Warehouse_Workers/setup-Warehouse_Workers.tpa~
 
-////////////////////////////////
+
+////////////////////
 //RESTORED: Nobles
-////////////////////////////////
+////////////////////
 
 //NOBLAY.CRE (Undercellars), NOBL15.CRE (3 Old Kegs), FTOWB3.CRE (Bl. Merm.), BOYBA3, LOWLGU
 

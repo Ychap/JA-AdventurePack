@@ -1,18 +1,18 @@
-/////////////////////////////////////
-//RESTORED: Aldeth's hunter comrade
-/////////////////////////////////////
+/////////////////////////////////////////////
+//RESTORED: Palin (Aldeth's hunter comrade)
+/////////////////////////////////////////////
 
 
-COMPILE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#NHUNTC.D~
+COMPILE ~JA#BGT_AdvPack/Palin/JA#NHUNTC.D~
 
 // HUNTER2.CRE(Palin) with NHUNTC.DLG already exists in EE
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#PALIN.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Palin/JA#PALIN.CRE~ ~override~
 		SAY NAME1 @2054
 		SAY NAME2 @2054
 		WRITE_ASCII DIALOG ~NHUNTC~ #8
 
-	COMPILE ~JA#BGT_AdvPack/Aldeth_hunter_comrade/JA#PALIN.BAF~
+	COMPILE ~JA#BGT_AdvPack/Palin/JA#PALIN.BAF~
 
 	COPY_EXISTING ~%CloakwoodLodge%.ARE~ ~override~
 		//add new actors
