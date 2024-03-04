@@ -16,20 +16,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.D~ USING ~JA#BGT_AdvPa
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#ALDETH_BETRAYAL.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#ALDETH_RECONCILIATION.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	<<<<<<<< ...inlined/flamal_bgt.d
-	ADD_TRANS_ACTION FLAMAL
-	BEGIN 1 END
-	BEGIN END
-	~ActionOverride("Aldeth",EscapeArea())
-	ActionOverride("Brandi",EscapeArea())
-	ActionOverride("JA#DEAGA",EscapeArea())
-	ActionOverride("FFHUNT",EscapeArea())
-	EscapeArea()~
-	>>>>>>>>
-	COMPILE ~...inlined/flamal_bgt.d~
-END
-
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#CUDEC.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#CUDED.BAF~
@@ -51,6 +37,22 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
 	END
 BUT_ONLY
 
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_EVALUATE ~OR(\([0-9]+\))[%WNL%%MNL%%LNL%%TAB% ]+Exists("Aldeth")~ BEGIN
+				SET result = MATCH1 - 1
+			END ~OR(%result%)~
+			REPLACE_TEXTUALLY EXACT_MATCH ~ApplySpellRES("ohdestbg","Aldeth")~ ~NoAction()~
+			REPLACE_TEXTUALLY ~\([%WNL%%MNL%%LNL%%TAB% ]\)Global("AldethMove","GLOBAL",2)~ ~\1GlobalGT("AldethMove","GLOBAL",1)~
+		END
+	BUT_ONLY
+	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Aldeth",EscapeAreaMove("BG0128",217,491,S))~ ~ActionOverride("Aldeth",EscapeAreaMove("BG0128",1244,720,S))~
+		END
+	BUT_ONLY
+END
 
 COPY_EXISTING ~MERCHG.CRE~ ~override~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
