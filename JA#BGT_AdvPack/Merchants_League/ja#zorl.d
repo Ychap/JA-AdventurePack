@@ -57,7 +57,7 @@ END
 
 IF ~~ THEN BEGIN JA#ZORL_03
 SAY @7
-IF ~~ THEN DO ~SetGlobal("JA#SENDZORL","GLOBAL",2) EscapeAreaMove("%SWBaldursGate_MerchantLeague_L3%",674,464,6)~ EXIT
+IF ~~ THEN DO ~SetGlobal("JA#SENDZORL","GLOBAL",2) EscapeArea()~ EXIT
 END
 
 END // APPEND ZORL

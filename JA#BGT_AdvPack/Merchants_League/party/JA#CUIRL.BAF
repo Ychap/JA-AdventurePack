@@ -9,6 +9,8 @@ THEN
 		ActionOverride(Player5,MoveToPoint([531.335]))
 		ActionOverride(Player6,MoveToPoint([382.447]))
 		MoveToPoint([603.515])
+        CreateCreature("Zorl",[658.547],6)
+        CreateCreature("Irlent",[612.577],6)
 		Wait(2)
 		StartDialogueNoSet([PC])
 END
@@ -20,4 +22,3 @@ THEN
 		CutSceneId(Player1)
 		MoveToPoint([586.471])
 END
-

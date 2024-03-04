@@ -25,8 +25,7 @@ END
 
 IF ~~ THEN BEGIN JA#IRLENT_02
 SAY @2
-IF ~~ THEN DO ~SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",6) SetGlobal("JA#SENDZORL","GLOBAL",1)
-EscapeAreaMove("%SWBaldursGate_MerchantLeague_L3%",622,563,7)~ UNSOLVED_JOURNAL @1027 EXIT
+IF ~~ THEN DO ~SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",6) SetGlobal("JA#SENDZORL","GLOBAL",1) EscapeArea()~ UNSOLVED_JOURNAL @1027 EXIT
 END
 
 END // APPEND IRLENT
