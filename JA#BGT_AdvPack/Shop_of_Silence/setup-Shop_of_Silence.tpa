@@ -4,8 +4,8 @@
 
 
 COPY_EXISTING ~SILENC.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR state = 4
+	LPF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 4
 		RET state4_journal = strref
 	END
 BUT_ONLY

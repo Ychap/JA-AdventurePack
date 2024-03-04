@@ -52,8 +52,8 @@ EXTEND_TOP ~%BaldursGateDocks_OgreMagiHouse_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Arkhsta
 
 
 COPY_EXISTING ~HUSAM.dlg~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR state = 6
+	LPF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 6
 		RET strref
 	END
 BUT_ONLY

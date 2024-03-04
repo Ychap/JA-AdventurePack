@@ -23,31 +23,22 @@ COPY_EXISTING ~DOPPGR.CRE~ ~override/JA#DPKIZ.CRE~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.ITM~ ~override~
 
 COPY_EXISTING ~DOPPSE.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 1
-		RET
-		strref
+	LPF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 1
+		RET ssungu1 = strref
 	END
-	SET ssungu1 = strref
 BUT_ONLY
 COPY_EXISTING ~DOPPSM.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 3
-		RET
-		strref
+	LPF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 3
+		RET ssungu2 = strref
 	END
-	SET ssungu2 = strref
 BUT_ONLY
 COPY_EXISTING ~DOPPSE.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 3
-		RET
-		strref
+	LPF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 3
+		RET ssungu3 = strref
 	END
-	SET ssungu3 = strref
 BUT_ONLY
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DOPPSE.D~ // Doppelganger + merchants
