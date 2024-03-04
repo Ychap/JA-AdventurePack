@@ -16,7 +16,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",2)
-		Wait(1)
 		StartDialogueNoSet([PC])
 END
 
@@ -27,6 +26,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",5)
-		Wait(1)
 		Dialogue([PC])
 END

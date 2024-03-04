@@ -4,7 +4,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#DOPPLE1_LEAV27","LOCALS",1)
-		ActionOverride(Myself,EscapeArea())
+		MoveToPoint([394.342])
+		DestroySelf()
 END
 
 IF
