@@ -1,11 +1,11 @@
-/////////////////////////////////////////////////
-//PRIESTER DES OGHMA, GOND UND ILMATER IN BALDURS TOR
-/////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+//Priests of Oghma, Gond and Ilmater in Baldur's Gate
+///////////////////////////////////////////////////////
 
 //OGHMA
-COMPILE ~JA#BGT_AdvPack/Priester/JA#OGHM1.D~
-COPY ~JA#BGT_AdvPack/Priester/JA#OGHM1.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Priester/JA#OGHM1.STO~ ~override~
+COMPILE ~JA#BGT_AdvPack/Priests/JA#OGHM1.D~
+COPY ~JA#BGT_AdvPack/Priests/JA#OGHM1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Priests/JA#OGHM1.STO~ ~override~
 	SAY 0xc @2
 
 COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
@@ -20,7 +20,7 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 		fj_schedule 	  = 0b111111111111111111100000
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Priester des Oghma~
+		fj_name           = ~Priest of Oghma~
 		fj_cre_resref     = JA#OGHM1
 		fj_dlg_resref	  = JA#OGHM1
 	END
@@ -33,10 +33,11 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = note
 	END
+
 //ILMATER
-COMPILE ~JA#BGT_AdvPack/Priester/JA#PILL1.D~
-COPY ~JA#BGT_AdvPack/Priester/JA#PILL1.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Priester/JA#ILMA1.STO~ ~override~
+COMPILE ~JA#BGT_AdvPack/Priests/JA#PILL1.D~
+COPY ~JA#BGT_AdvPack/Priests/JA#PILL1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Priests/JA#ILMA1.STO~ ~override~
 	SAY 0xc @3
 COPY_EXISTING ~%NEBaldursGate_IlmatersShrine%.ARE~ ~override~
 	//add new actors
@@ -49,10 +50,10 @@ COPY_EXISTING ~%NEBaldursGate_IlmatersShrine%.ARE~ ~override~
 		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Priester von Illmater~
+		fj_name           = ~Priest of Illmater~
 		fj_cre_resref     = JA#PILL1
 		fj_dlg_resref	  = JA#PILL1
 	END
 
 //GOND
-COMPILE ~JA#BGT_AdvPack/Priester/JA#PGOND.d~
+COMPILE ~JA#BGT_AdvPack/Priests/JA#PGOND.d~
