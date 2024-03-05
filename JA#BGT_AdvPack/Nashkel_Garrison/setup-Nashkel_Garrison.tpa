@@ -1,13 +1,13 @@
-////////////////////////////////////
-//RESTORED: AMNIS2 - Amnish Soldier
-////////////////////////////////////
+//////////////////////////////////////
+//RESTORED: Nashkel Garrison Soldier
+//////////////////////////////////////
+
+
+COMPILE ~JA#BGT_AdvPack/Nashkel_Garrison/JA#AMNI2.D~
 
 
 COPY_EXISTING ~AMNIS.CRE~ ~override/JA#AMNI2.CRE~
 	WRITE_ASCII DIALOG ~JA#AMNI2~ #8
-
-
-COMPILE ~JA#BGT_AdvPack/AMNIS2/JA#AMNI2.D~
 
 
 COPY_EXISTING ~%Nashkel_Garrison%.ARE~ ~override~
