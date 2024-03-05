@@ -3,20 +3,20 @@
 ///////////////////////////////
 
 
-COPY ~JA#BGT_AdvPack/Beregost/JA#GUAB4.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost/JA#GUAB5.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost/JA#GUAB6.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost/JA#GUAB7.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost/JA#GUAB8.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost/JA#GUAB9.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB4.CRE~ ~override~
+	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB5.CRE~ ~override~
+	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB6.CRE~ ~override~
+	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB7.CRE~ ~override~
+	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB8.CRE~ ~override~
+	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB9.CRE~ ~override~
 	SAY NAME1 @2085
 	SAY NAME2 @2085
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost/JA#GUAB8.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB8.BAF~
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost/JA#GUABE.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/JA#GUABE.D~
 
 
 COPY_EXISTING ~%Beregost%.ARE~ ~override~

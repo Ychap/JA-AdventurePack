@@ -468,11 +468,11 @@ REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~set
 INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
 
-////////////////////////////////////
-//Move Phandalyn to Elfsong Tavern
-////////////////////////////////////
+/////////////////////////////////////
+//Phandalyn waits in Elfsong Tavern
+/////////////////////////////////////
 
-BEGIN ~Phandalyn to Elfsong Tavern~ DESIGNATED 38
+BEGIN ~Phandalyn waits in Elfsong Tavern~ DESIGNATED 38
 LABEL "JA#BGT_AdvPack-Phandalyn"
 
 INCLUDE ~JA#BGT_AdvPack/Phandalyn/setup-Phandalyn.tpa~
@@ -505,9 +505,9 @@ INCLUDE ~JA#BGT_AdvPack/Niemain_Zentarim/setup-Niemain_Zentarim.tpa~
 /////////////////////////////
 
 BEGIN ~Beregost guards~ DESIGNATED 41
-LABEL "JA#BGT_AdvPack-Beregost"
+LABEL "JA#BGT_AdvPack-Beregost_guards"
 
-INCLUDE ~JA#BGT_AdvPack/Beregost/setup-Beregost.tpa~
+INCLUDE ~JA#BGT_AdvPack/Beregost_guards/setup-Beregost_guards.tpa~
 
 
 ///////////////////////////////
