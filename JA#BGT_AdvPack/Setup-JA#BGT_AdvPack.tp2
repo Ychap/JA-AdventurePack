@@ -200,14 +200,14 @@ FORBID_FILE ~override/ubnimfur.cre~ ~NimFurlwing and Her Hounds is already resto
 INCLUDE ~JA#BGT_AdvPack/Nim_Furlwing/setup-Nim_Furlwing.tpa~
 
 
-/////////////////////////////////////////
-//RESTORED: MERCH03 - Caravane Merchant
-/////////////////////////////////////////
+//////////////////////////////
+//RESTORED: Caravan merchant
+//////////////////////////////
 
-BEGIN ~Merch03 - Caravane Merchant~ DESIGNATED 12
-LABEL "JA#BGT_AdvPack-Merch03"
+BEGIN ~Caravan merchant~ DESIGNATED 12
+LABEL "JA#BGT_AdvPack-Caravan_merchant"
 
-INCLUDE ~JA#BGT_AdvPack/Merch03/setup-Merch03.tpa~
+INCLUDE ~JA#BGT_AdvPack/Caravan_merchant/setup-Caravan_merchant.tpa~
 
 
 /////////////////////////////////
