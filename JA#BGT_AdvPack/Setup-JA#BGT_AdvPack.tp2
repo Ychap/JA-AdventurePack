@@ -406,20 +406,20 @@ LABEL "JA#BGT_AdvPack-Priests"
 INCLUDE ~JA#BGT_AdvPack/Priests/setup-Priests.tpa~
 
 
-//////////////////////////////////////
-//Extended/Improved Dialogues in BG1
-//////////////////////////////////////
+///////////////////////////////
+//Extended/Improved dialogues
+///////////////////////////////
 
 
-BEGIN ~Extended/Improved Dialogues in BG1~ DESIGNATED 32
-LABEL "JA#BGT_AdvPack-Improved_Dialogue"
+BEGIN ~Extended/Improved dialogues~ DESIGNATED 32
+LABEL "JA#BGT_AdvPack-Improved_dialogues"
 
-INCLUDE ~JA#BGT_AdvPack/Improved_Dialogue/setup-Improved_Dialogue.tpa~
+INCLUDE ~JA#BGT_AdvPack/Improved_dialogues/setup-Improved_dialogues.tpa~
 
 
-/////////////////////////
-//HULRIK UND SEINE KUEHE
-/////////////////////////
+///////////////////////
+//Hulrik and his cows
+///////////////////////
 
 BEGIN ~Hulrik and his cows~ DESIGNATED 33
 LABEL "JA#BGT_AdvPack-Hulrik"
@@ -427,11 +427,11 @@ LABEL "JA#BGT_AdvPack-Hulrik"
 INCLUDE ~JA#BGT_AdvPack/Hulrik/setup-Hulrik.tpa~
 
 
-///////////////////////////////////////
-//VERBESSERTES GESCHAEFT DER STILLE
-///////////////////////////////////////
+////////////////////////////
+//Improved Shop of Silence
+////////////////////////////
 
-BEGIN ~Improved Business of Silence~ DESIGNATED 34
+BEGIN ~Improved Shop of Silence~ DESIGNATED 34
 LABEL "JA#BGT_AdvPack-Shop_of_Silence"
 
 INCLUDE ~JA#BGT_AdvPack/Shop_of_Silence/setup-Shop_of_Silence.tpa~
