@@ -1,8 +1,8 @@
-////////////////////////
-//Seniyad and Aldeth
-////////////////////////
+////////////////////
+//Seniyad & Aldeth
+////////////////////
 
-// Btw: In Enhanched Editions you already have a peaceful solution with jaheira in group.
+// FYI: In Enhanched Editions with jaheira in group you already have a peaceful solution.
 
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	<<<<<<<< ...inlined/aldeth_ee.d
@@ -22,9 +22,9 @@ COPY_EXISTING ~ALDETH.dlg~ ~override~
 	END
 BUT_ONLY
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#ALDETH_REWARD.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDETH_REWARD.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#SENIYA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#SENIYA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY_EXISTING ~SENIYA.dlg~ ~override~
@@ -36,17 +36,17 @@ END
 ADD_JOURNAL EXISTING @20 USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
 
-COPY ~JA#BGT_AdvPack/Seniyad/JA#ALDET.BAM~ ~override~
-COPY ~JA#BGT_AdvPack/Seniyad/JA#ALDET.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.ITM~ ~override~
 	SAY NAME1 @2101
 	SAY NAME2 @2101
 	SAY DESC @2102
 
 // If Aldeth main component is installed
 ACTION_IF FILE_EXISTS_IN_GAME ~JA#ALDET.BCS~ BEGIN
-	EXTEND_TOP ~JA#ALDET.BCS~ ~JA#BGT_AdvPack/Seniyad/JA#ALDET.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~JA#ALDET.BCS~ ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.BAF~ EVALUATE_BUFFER
 END ELSE BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad/JA#ALDET.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.BAF~
 
 	COPY_EXISTING ~ALDETH.CRE~ ~override~
 		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
