@@ -221,7 +221,7 @@ INCLUDE ~JA#BGT_AdvPack/Galtoth/setup-Galtoth.tpa~
 
 
 ////////////////////////////////////////////////
-//RESTORED: SUTHIE & STHIEF at Silence's Store
+//RESTORED: Suthie & Sthief at Silence's Store
 ////////////////////////////////////////////////
 
 BEGIN ~Suthie & Sthief at Silence's Store~ DESIGNATED 14
@@ -231,7 +231,7 @@ INCLUDE ~JA#BGT_AdvPack/Suthie_Sthief/setup-Suthie_Sthief.tpa~
 
 
 ///////////////////////////////
-//RESTORED: WAREHOUSE WORKERS
+//RESTORED: Warehouse Workers
 ///////////////////////////////
 
 BEGIN ~Warehouse Workers~ DESIGNATED 15
