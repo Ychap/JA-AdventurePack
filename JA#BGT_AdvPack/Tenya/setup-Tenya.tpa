@@ -4,12 +4,18 @@
 
 COPY ~JA#BGT_AdvPack/Tenya/JA#C02.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L1%~ #8
+
 		LPF ALTER_AREA_REGION
 			STR_VAR region_name			= ~Door8200~
 					destination_area	= EVAL ~%SEBaldursGate%~
 		END
 	END
+
 COPY ~JA#BGT_AdvPack/Tenya/JA#C03.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L2%~ #8
+	END
 
 COPY ~JA#BGT_AdvPack/Tenya/JA#WATW1.ITM~ ~override~
 
@@ -24,8 +30,8 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	END
 END
 
-COPY_EXISTING ~WATERELE.ITM~ ~override~
-  WRITE_BYTE 0x72 1 // melee instead of range
+// COPY_EXISTING ~WATERELE.ITM~ ~override~
+//   WRITE_BYTE 0x72 1 // melee instead of range
 
 COPY ~JA#BGT_AdvPack/Tenya/JA#SUTY1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Tenya/JA#SUTY2.CRE~ ~override~
@@ -67,7 +73,7 @@ COPY_EXISTING ~%SEBaldursGate%.are~ ~override~
 		INT_VAR
 		fj_loc_x       = 978   //x
 		fj_loc_y       = 781   //y
-		fj_orientation = 7    
+		fj_orientation = 7
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = FRJA#C02
@@ -76,40 +82,40 @@ COPY_EXISTING ~%SEBaldursGate%.are~ ~override~
 COPY_EXISTING ~SONNER.dlg~ ~override~
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "5"  
-		stateResponse = 0     
+		state         = "5"
+		stateResponse = 0
 		RET
 		strref
 	END
 	SET tenya1 = strref
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "14"  
-		stateResponse = 0     
+		state         = "14"
+		stateResponse = 0
 		RET
 		strref
 	END
 	SET tenya2 = strref
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "14"  
-		stateResponse = 1     
+		state         = "14"
+		stateResponse = 1
 		RET
 		strref
 	END
 	SET tenya3 = strref
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "17"  
-		stateResponse = 0     
+		state         = "17"
+		stateResponse = 0
 		RET
 		strref
 	END
 	SET tenya4 = strref
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "19"  
-		stateResponse = 0     
+		state         = "19"
+		stateResponse = 0
 		RET
 		strref
 	END
@@ -119,16 +125,16 @@ COPY_EXISTING ~TENYA.dlg~ ~override~
 	PATCH_IF GAME_IS ~eet bgee~ BEGIN
 		LPF ~READ_JOURNAL_STRREF~
 			INT_VAR
-			state         = "7"  
-			stateResponse = 0     
+			state         = "7"
+			stateResponse = 0
 			RET
 			strref
 		END
 		SET tenya6 = strref
 		LPF ~READ_JOURNAL_STRREF~
 			INT_VAR
-			state         = "9"  
-			stateResponse = 0     
+			state         = "9"
+			stateResponse = 0
 			RET
 			strref
 		END
@@ -136,16 +142,16 @@ COPY_EXISTING ~TENYA.dlg~ ~override~
 	END ELSE PATCH_IF GAME_IS ~bgt~ BEGIN
 		LPF ~READ_JOURNAL_STRREF~
 			INT_VAR
-			state         = "5"  
-			stateResponse = 0     
+			state         = "5"
+			stateResponse = 0
 			RET
 			strref
 		END
 		SET tenya6 = strref
 		LPF ~READ_JOURNAL_STRREF~
 			INT_VAR
-			state         = "8"  
-			stateResponse = 2     
+			state         = "8"
+			stateResponse = 2
 			RET
 			strref
 		END
@@ -153,25 +159,25 @@ COPY_EXISTING ~TENYA.dlg~ ~override~
 	END
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "13"  
-		stateResponse = 0     
+		state         = "13"
+		stateResponse = 0
 		RET
 		strref
 	END
 	SET tenya8 = strref
-	
+
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "5"  
-		stateResponse = 2     
+		state         = "5"
+		stateResponse = 2
 		RET
 		strref
 	END
 	SET tenya9 = strref
 	LPF ~READ_JOURNAL_STRREF~
 		INT_VAR
-		state         = "28"  
-		stateResponse = 0     
+		state         = "28"
+		stateResponse = 0
 		RET
 		strref
 	END
@@ -183,7 +189,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#SONNER.D~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	<<<<<<<< ...inlined/JA#Sonner_bgt.d
-	
+
 	ALTER_TRANS SONNER
 	BEGIN 8 END BEGIN 0 END BEGIN "ACTION" ~SetGlobal("HelpJebadoh","GLOBAL",2)~ END
 	ALTER_TRANS SONNER BEGIN 13 END BEGIN 0 END BEGIN "ACTION" ~SetGlobal("HostileFishermen","GLOBAL",1)
@@ -198,7 +204,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	ActionOverride("Jebadoh",EscapeAreaDestroy(90))
 	ActionOverride("Telman",EscapeAreaDestroy(90))
 	EscapeAreaDestroy(90)~
-	END 
+	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/JA#Sonner_bgt.d~
 END
@@ -218,13 +224,13 @@ COMPILE ~JA#BGT_AdvPack/Tenya/JA#STORWYN.D~
 COMPILE EVALUATE_BUFFER  ~JA#BGT_AdvPack/Tenya/JA#TENYA2.D~
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	<<<<<<<< ...inlined/JA#TENYA2_bgt.d
-	
+
 	ALTER_TRANS TENYA2 // file name
 	BEGIN 11 END BEGIN 0 END BEGIN "JOURNAL" ~#%tenya10%~ END
-	ALTER_TRANS TENYA 
+	ALTER_TRANS TENYA
 	BEGIN 2 END BEGIN 0 END BEGIN "ACTION" ~Enemy()~ END
 	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/JA#TENYA2_bgt.d~ 
+	COMPILE EVALUATE_BUFFER ~...inlined/JA#TENYA2_bgt.d~
 END
 
 COPY_EXISTING ~FISHER.BCS~ ~override~
@@ -277,7 +283,7 @@ COPY_EXISTING ~TENYA2.CRE~ ~override~
 	WRITE_ASCII 0x250 ~JA#TENYA~	#8
 
 COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
+	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
 	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
 		READ_SHORT actors_offset+0x20 actors_pos_x
 		READ_ASCII actors_offset+0x80 actors_filename
@@ -304,7 +310,7 @@ COMPILE ~JA#BGT_AdvPack/TENYA/JA#TENYA.BAF~
 /* cpmpatibility with Garrick Tales of a Troubadour - if installed, Tenya's questvariable and initiate dialogue will only happen if Tenya did not flirt with Garrick before.
 This prevents:
 1. unfinished quest in case the PC comes first without and then with Garrick
-2. loop of Tenya initiating dialogue by JAP but triggering text of GToaT 
+2. loop of Tenya initiating dialogue by JAP but triggering text of GToaT
 
 Variable from GToaT:
 Global("gtt#tenyagarrick","GLOBAL",2) */
