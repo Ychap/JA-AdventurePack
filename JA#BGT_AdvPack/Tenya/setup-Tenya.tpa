@@ -184,37 +184,36 @@ COPY_EXISTING ~TENYA.dlg~ ~override~
 	SET tenya10 = strref
 
 
-//Sonner.dlg Dialog
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#SONNER.D~
+COPY_EXISTING ~SONNER.DLG~ ~override~
+	LPF GET_DLG_STATE_RESPONSE
+		INT_VAR idx_state = 18
+		RET state18_response0_action = response_action
+	END
+BUT_ONLY
+OUTER_PATCH_SAVE ~state18_response0_action_end~ ~%state18_response0_action%~ BEGIN
+	REPLACE_TEXTUALLY ~\(.\|[%WNL%%MNL%%LNL%]\)*GiveItem("BLUN03",\[PC\])~ ~~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#sonner.d~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	<<<<<<<< ...inlined/JA#Sonner_bgt.d
-
-	ALTER_TRANS SONNER
-	BEGIN 8 END BEGIN 0 END BEGIN "ACTION" ~SetGlobal("HelpJebadoh","GLOBAL",2)~ END
-	ALTER_TRANS SONNER BEGIN 13 END BEGIN 0 END BEGIN "ACTION" ~SetGlobal("HostileFishermen","GLOBAL",1)
-	EraseJournalEntry(%tenya1%)
-	EraseJournalEntry(%tenya2%)
-	EraseJournalEntry(%tenya3%)
-	EraseJournalEntry(%tenya4%)
-	EraseJournalEntry(%tenya5%)
-	EraseJournalEntry(%tenya6%)
-	EraseJournalEntry(%tenya7%)
-	EraseJournalEntry(%tenya9%)
-	ActionOverride("Jebadoh",EscapeAreaDestroy(90))
-	ActionOverride("Telman",EscapeAreaDestroy(90))
-	EscapeAreaDestroy(90)~
-	END
+	REPLACE_TRANS_ACTION SONNER
+	BEGIN 8 END
+	BEGIN END
+	~ActionOverride("Telman",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("Jebadoh",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*EscapeAreaDestroy(90)~
+	~NoAction()~
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/JA#Sonner_bgt.d~
 END
-
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COPY_EXISTING ~SONNER.DLG~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY EXACT_MATCH  ~SetGlobal("HelpJebadoh","GLOBAL",3)~ ~SetGlobal("HelpJebadoh","GLOBAL",2)~
-		END
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#SONNER_ee.D~
+	<<<<<<<< ...inlined/JA#Sonner_ee.d
+	ADD_TRANS_ACTION SONNER
+	BEGIN 10 END
+	BEGIN END
+	~%state18_response0_action_end%~
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/JA#Sonner_ee.d~
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#JALANT.D~
