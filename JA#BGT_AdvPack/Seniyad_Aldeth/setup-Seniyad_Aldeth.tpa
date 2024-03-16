@@ -16,16 +16,15 @@ LAF GET_DLG_JOURNAL_STRREF
 	STR_VAR dlg_file = ~ALDETH.DLG~
 	RET aldeth_state04_journal = strref
 END
-COPY_EXISTING ~ALDETH.dlg~ ~override~
-	LPF GET_DLG_STATE_WEIGHT
-		INT_VAR idx_state = 7
-		RET state7_weight = weight
-	END
-BUT_ONLY
+LAF GET_DLG_STATE_WEIGHT
+	INT_VAR idx_state = 7
+	STR_VAR dlg_file = ~ALDETH.DLG~
+	RET state07_weight = weight
+END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDETH_REWARD.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/ja#aldeth_reward.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#SENIYA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/ja#seniya.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	COPY_EXISTING ~SENIYA.dlg~ ~override~
