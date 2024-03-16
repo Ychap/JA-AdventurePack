@@ -1,14 +1,3 @@
-ADD_STATE_TRIGGER PUMBER2 1
-~Dead("Tenya")~
-
-ALTER_TRANS PUMBER2 // file name
-BEGIN 1 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
-Enemy()~
-END
-
 ALTER_TRANS PUMBERL // file name
 BEGIN 2 END // state number (can be more than one)
 BEGIN 0 END // transition number (can be more than one)

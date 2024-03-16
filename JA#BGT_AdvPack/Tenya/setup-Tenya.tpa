@@ -195,6 +195,7 @@ OUTER_PATCH_SAVE ~fishermenEscapeArea~ ~%state18_response0_action%~ BEGIN
 END
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#sonner.d~
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#pumber2.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#JALANT.D~
 COMPILE ~JA#BGT_AdvPack/Tenya/ja#tlos1.d~
 
