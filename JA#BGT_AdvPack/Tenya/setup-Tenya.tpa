@@ -223,24 +223,48 @@ END
 ADD_JOURNAL @22 @1022 USING ~JA#BGT_AdvPack/languages/%s/ja#tenya2.tra~
 
 
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY_EXISTING ~TENYA.DLG~ ~override~
+		LPF GET_DLG_STATE_RESPONSE
+			INT_VAR idx_state = 8
+					idx_response = 4
+			RET EraseJournalEntry_action = response_action
+		END
+	BUT_ONLY
+END
+ACTION_IF GAME_IS ~eet bgee~ BEGIN
+	COPY_EXISTING ~TELMAN.DLG~ ~override~
+		LPF GET_DLG_STATE_RESPONSE
+			INT_VAR idx_state = 3
+					idx_response = 0
+			RET EraseJournalEntry_action = response_action
+		END
+	BUT_ONLY
+END
+
+<<<<<<<< ...inlined/failedFisherQuest.baf
+IF
+	Dead("Tenya")
+	Global("HostileFishermen","GLOBAL",1)
+	Global("JA#FISHERQUEST","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#FISHERQUEST","MYAREA",1)
+		%EraseJournalEntry_action%
+		Continue()
+END
+>>>>>>>>
+EXTEND_TOP_REGEXP ~\(%WyrmsCrossing_BCS%\|%FishingVillage_BCS%\)\.BCS~ ~...inlined/failedFisherQuest.baf~ EVALUATE_BUFFER
+
 COPY_EXISTING ~FISHER.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~DestroySelf()~ ~DestroyItem("MISC53") Wait(1) Kill(Myself)~
 	END
 BUT_ONLY
 
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	OUTER_SPRINT bgt_journal_entry  EVAL ~EraseJournalEntry(%tenya9%)~
-END
-
-ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	OUTER_SPRINT bgt_journal_entry  ~~
-END
-
 EXTEND_TOP ~PUMBER.BCS~ ~JA#BGT_AdvPack/Tenya/JA#PUMB1.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%BaldursGateDocks_WaterQueensHouse%.BCS~ ~JA#BGT_AdvPack/Tenya/AR7609.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%WyrmsCrossing%.BCS~ ~JA#BGT_AdvPack/Tenya/AR7900.BAF~ EVALUATE_BUFFER
-EXTEND_TOP	~%FishingVillage%.BCS~ ~JA#BGT_AdvPack/Tenya/AR8300.BAF~ EVALUATE_BUFFER
+
 
 COPY ~JA#BGT_AdvPack/Tenya/JA#TLOS1.CRE~ ~override~
 	SAY NAME1 @2116
