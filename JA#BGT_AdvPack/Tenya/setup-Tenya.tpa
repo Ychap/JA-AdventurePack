@@ -295,22 +295,4 @@ BUT_ONLY
 
 COMPILE ~JA#BGT_AdvPack/TENYA/JA#TENYA.BAF~
 
-/* cpmpatibility with Garrick Tales of a Troubadour - if installed, Tenya's questvariable and initiate dialogue will only happen if Tenya did not flirt with Garrick before.
-This prevents:
-1. unfinished quest in case the PC comes first without and then with Garrick
-2. loop of Tenya initiating dialogue by JAP but triggering text of GToaT
-
-Variable from GToaT:
-Global("gtt#tenyagarrick","GLOBAL",2) */
-
-ACTION_IF (MOD_IS_INSTALLED ~GARRICK-TT/SETUP-GARRICK-TT.TP2~ "0") BEGIN
-
-	COPY_EXISTING ~JA#TENYA.BCS~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY ~\(Global("ReturnedBook","GLOBAL",1)\)~
-							  ~\1 Global("gtt#tenyagarrick","GLOBAL",0)~
-		END
-	BUT_ONLY
-END
-
 COMPILE ~JA#BGT_AdvPack/TENYA/JA#WATW1.BAF~
