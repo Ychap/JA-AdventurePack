@@ -3,14 +3,13 @@
 ////////////////////////////////////////
 
 
-COPY_EXISTING ~ALDETH.DLG~ ~override~
-	LPF GET_DLG_STATE_RESPONSE
-		INT_VAR idx_state = 21
-				idx_response = 1
-		RET state21_weight = idx_state_trigger
-			state21_response1_action = response_action
-	END
-BUT_ONLY
+LAF GET_DLG_STATE_RESPONSE
+	INT_VAR idx_state = 21
+			idx_response = 1
+	STR_VAR dlg_file = ~ALDETH.DLG~
+	RET state21_weight = idx_state_trigger
+		state21_response1_action = response_action
+END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#DEAGAN.tra~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#ALDETH_BETRAYAL.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~

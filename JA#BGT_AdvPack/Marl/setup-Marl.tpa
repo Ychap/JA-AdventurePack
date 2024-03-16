@@ -17,15 +17,13 @@ COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
 	SAY NAME2 @2085
 
 
-COPY_EXISTING ~KELDDA.DLG~ ~override~
-	LPF GET_DLG_STATE_RESPONSE
-		INT_VAR idx_state = 1
-		RET state1_weight = idx_state_trigger
-			state1_trigger = state_trigger
-			state1_response0_action = response_action
-	END
-BUT_ONLY
-
+LAF GET_DLG_STATE_RESPONSE
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~KELDDA.DLG~
+	RET state1_weight = idx_state_trigger
+		state1_trigger = state_trigger
+		state1_response0_action = response_action
+END
 OUTER_PATCH_SAVE ~state1_response0_action~ ~%state1_response0_action%~ BEGIN
 	REPLACE_TEXTUALLY ~GiveGoldForce([0-9]+)~ ~GiveGoldForce(2000)~
 	REPLACE_EVALUATE ~AddexperienceParty(\([0-9]+\))~ BEGIN
