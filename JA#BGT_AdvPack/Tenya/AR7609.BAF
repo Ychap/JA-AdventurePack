@@ -33,12 +33,10 @@ END
 IF
 	!Dead("Tenya")
 	!InParty("tenya") //compatibility with Tenya NPC mod
-	Global("HelpJalantha","GLOBAL",2)
+	Global("ReturnedBook","GLOBAL",1)
 	Global("TENAPPEAR","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetGlobal("TENAPPEAR","GLOBAL",1)
 		CreateCreature("TENYA2",[536.648],3)
 END
-
-

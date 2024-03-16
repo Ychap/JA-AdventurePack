@@ -307,7 +307,7 @@ ACTION_IF (MOD_IS_INSTALLED ~GARRICK-TT/SETUP-GARRICK-TT.TP2~ "0") BEGIN
 
 	COPY_EXISTING ~JA#TENYA.BCS~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY ~\(Global("HelpJalantha","GLOBAL",2)\)~
+			REPLACE_TEXTUALLY ~\(Global("ReturnedBook","GLOBAL",1)\)~
 							  ~\1 Global("gtt#tenyagarrick","GLOBAL",0)~
 		END
 	BUT_ONLY

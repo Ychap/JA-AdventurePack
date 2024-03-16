@@ -1,17 +1,15 @@
 IF
-	Global("HelpJalantha","GLOBAL",2)
-	Global("JA#TENYA_QUEST","GLOBAL",0)
 	Global("HelpTenya","GLOBAL",2)
+	Global("ReturnedBook","GLOBAL",1)
+	Global("JA#TENYA_QUEST","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#TENYA_QUEST","GLOBAL",1)
 END
 
-
 IF
 	Global("JA#TENYA_QUEST","GLOBAL",1)
 THEN
 	RESPONSE #100
-		StartDialogueNoSet([PC])
+		Dialogue([PC])
 END
-
