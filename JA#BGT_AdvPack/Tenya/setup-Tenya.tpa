@@ -2,20 +2,6 @@
 //ERWEITERTE TENYA-HANDLUNG & TEMPEL DER UMBERLEE
 ///////////////////////////////////////////////////
 
-COPY ~JA#BGT_AdvPack/Tenya/JA#C02.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L1%~ #8
-
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door8200~
-					destination_area	= EVAL ~%SEBaldursGate%~
-		END
-	END
-
-COPY ~JA#BGT_AdvPack/Tenya/JA#C03.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L2%~ #8
-	END
 
 COPY ~JA#BGT_AdvPack/Tenya/JA#WATW1.ITM~ ~override~
 
@@ -45,39 +31,6 @@ COPY ~JA#BGT_AdvPack/Tenya/JA#TENYA.ITM~ ~override~
 	SAY NAME2 @2113
 	SAY UNIDENTIFIED_DESC @2115
 	SAY DESC @2114
-
-COPY_EXISTING ~%SEBaldursGate%.are~ ~override~
-	//add region triggers
-	LPF fj_are_structure
-		INT_VAR
-		fj_type         = 2    //travel
-		fj_box_left     = 1030
-		fj_box_top      = 806
-		fj_box_right    = 1260
-		fj_box_bottom   = 990
-		fj_cursor_idx	= 30
-		fj_loc_x		= 1068
-		fj_loc_y		= 850
-		fj_vertex_0     = 1133 + (806 << 16)
-		fj_vertex_1     = 1030 + (881 << 16)
-		fj_vertex_2     = 1114 + (990 << 16)
-		fj_vertex_3     = 1260 + (886 << 16)
-		STR_VAR
-		fj_structure_type   = region
-		fj_destination_area	= JA#C02
-		fj_destination_name	= FR8200
-		fj_name             = DOORJA#C02
-	END
-	//add entrance
-	LPF  ~fj_are_structure~
-		INT_VAR
-		fj_loc_x       = 978   //x
-		fj_loc_y       = 781   //y
-		fj_orientation = 7
-		STR_VAR
-		fj_structure_type = entrance
-		fj_name           = FRJA#C02
-	END
 
 
 COPY_EXISTING ~SONNER.DLG~ ~override~
@@ -188,6 +141,54 @@ COPY_EXISTING ~JALANT.CRE~ ~override~
 
 COPY_EXISTING ~TENYA2.CRE~ ~override~
 	WRITE_ASCII 0x250 ~JA#TENYA~	#8
+
+
+COPY ~JA#BGT_AdvPack/Tenya/JA#C02.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L1%~ #8
+		LPF ALTER_AREA_REGION
+			STR_VAR region_name			= ~Door8200~
+					destination_area	= EVAL ~%SEBaldursGate%~
+		END
+	END
+
+COPY ~JA#BGT_AdvPack/Tenya/JA#C03.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L2%~ #8
+	END
+
+COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
+	//add region triggers
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 2    //travel
+		fj_box_left     = 1030
+		fj_box_top      = 806
+		fj_box_right    = 1260
+		fj_box_bottom   = 990
+		fj_cursor_idx	= 30
+		fj_loc_x		= 1068
+		fj_loc_y		= 850
+		fj_vertex_0     = 1133 + (806 << 16)
+		fj_vertex_1     = 1030 + (881 << 16)
+		fj_vertex_2     = 1114 + (990 << 16)
+		fj_vertex_3     = 1260 + (886 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_destination_area	= JA#C02
+		fj_destination_name	= FR8200
+		fj_name             = DOORJA#C02
+	END
+	//add entrance
+	LPF  ~fj_are_structure~
+		INT_VAR
+		fj_loc_x       = 978   //x
+		fj_loc_y       = 781   //y
+		fj_orientation = 7
+		STR_VAR
+		fj_structure_type = entrance
+		fj_name           = FRJA#C02
+	END
 
 COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
