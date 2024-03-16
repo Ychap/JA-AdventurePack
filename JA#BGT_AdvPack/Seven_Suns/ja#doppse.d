@@ -24,7 +24,7 @@ IF ~Global("JA#DOPPSE_TALK","GLOBAL",0)~ THEN JA#DPSS1 ja#doppse_01
   == JA#DPSS3 @8
   == JA#DPSS1 @9
 END
-IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ UNSOLVED_JOURNAL #%ssungu3% EXIT
+IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ UNSOLVED_JOURNAL #%doppse_state03_journal% EXIT
 
 
 
@@ -39,7 +39,7 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY @14
-  IF ~~ THEN UNSOLVED_JOURNAL #%ssungu1% EXTERN JA#SSGU4 0 // in ja#ssung.d
+  IF ~~ THEN UNSOLVED_JOURNAL #%doppse_state01_journal% EXTERN JA#SSGU4 0 // in ja#ssung.d
 END
 
 IF ~~ THEN BEGIN 2
@@ -67,7 +67,7 @@ END
 
 IF ~~ THEN BEGIN 2
 SAY @22 = @23
-IF ~~ THEN DO ~EscapeArea()~ UNSOLVED_JOURNAL #%ssungu2% EXIT
+IF ~~ THEN DO ~EscapeArea()~ UNSOLVED_JOURNAL #%doppsm_state03_journal% EXIT
 END
 
 // END JA#SSMR3

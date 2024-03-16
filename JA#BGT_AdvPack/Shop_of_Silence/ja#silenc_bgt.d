@@ -69,11 +69,11 @@ BEGIN 6 7 END
 BEGIN 0 END
 BEGIN
   "REPLY" ~@10~
-  "JOURNAL" ~#%state4_journal%~
+  "JOURNAL" ~#%silenc_state04_journal%~
 END
 
 EXTEND_TOP SILENC 6 7 #1
-IF ~~ THEN REPLY @0 JOURNAL #%state4_journal% EXIT
+IF ~~ THEN REPLY @0 JOURNAL #%silenc_state04_journal% EXIT
 END
 
 EXTEND_TOP SILENC 7 #1

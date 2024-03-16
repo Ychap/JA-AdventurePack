@@ -22,29 +22,35 @@ COPY_EXISTING ~DOPPGR.CRE~ ~override/JA#DPKIZ.CRE~
 
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.ITM~ ~override~
 
-COPY_EXISTING ~DOPPSE.DLG~ ~override~
-	LPF GET_DLG_JOURNAL_STRREF
-		INT_VAR idx_state = 1
-		RET ssungu1 = strref
-	END
-BUT_ONLY
-COPY_EXISTING ~DOPPSM.DLG~ ~override~
-	LPF GET_DLG_JOURNAL_STRREF
-		INT_VAR idx_state = 3
-		RET ssungu2 = strref
-	END
-BUT_ONLY
-COPY_EXISTING ~DOPPSE.DLG~ ~override~
-	LPF GET_DLG_JOURNAL_STRREF
-		INT_VAR idx_state = 3
-		RET ssungu3 = strref
-	END
-BUT_ONLY
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DOPPSE.D~ // Doppelganger + merchants
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DOPPSE_bgt.D~
+LAF GET_DLG_JOURNAL_STRREF
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~DOPPSE.DLG~
+	RET doppse_state01_journal = strref
 END
+LAF GET_DLG_JOURNAL_STRREF
+	INT_VAR idx_state = 3
+	STR_VAR dlg_file = ~DOPPSE.DLG~
+	RET doppse_state03_journal = strref
+END
+LAF GET_DLG_JOURNAL_STRREF
+	INT_VAR idx_state = 3
+	STR_VAR dlg_file = ~DOPPSM.DLG~
+	RET doppsm_state03_journal = strref
+END
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	<<<<<<<< ...inlined/doppsm_bgt.d
+	ALTER_TRANS DOPPSM
+	BEGIN 3 7 8 END
+	BEGIN END
+	BEGIN
+	  "UNSOLVED_JOURNAL" ~#%doppse_state01_journal%~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/doppsm_bgt.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#doppse.d~ // Doppelganger + merchants
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSUNG.D~ // Guards
 

@@ -11,11 +11,12 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	COMPILE ~...inlined/aldeth_ee.d~
 END
 
+LAF GET_DLG_JOURNAL_STRREF
+	INT_VAR idx_state = (GAME_IS ~bgt~ ? 0 : 4)
+	STR_VAR dlg_file = ~ALDETH.DLG~
+	RET aldeth_state04_journal = strref
+END
 COPY_EXISTING ~ALDETH.dlg~ ~override~
-	LPF GET_DLG_JOURNAL_STRREF
-		INT_VAR idx_state = (GAME_IS ~bgt~ ? 0 : 4)
-		RET state04_journal = strref
-	END
 	LPF GET_DLG_STATE_WEIGHT
 		INT_VAR idx_state = 7
 		RET state7_weight = weight

@@ -3,12 +3,11 @@
 ////////////////////////////
 
 
-COPY_EXISTING ~SILENC.DLG~ ~override~
-	LPF GET_DLG_JOURNAL_STRREF
-		INT_VAR idx_state = 4
-		RET state4_journal = strref
-	END
-BUT_ONLY
+LAF GET_DLG_JOURNAL_STRREF
+	INT_VAR idx_state = 4
+	STR_VAR dlg_file = ~SILENC.DLG~
+	RET silenc_state04_journal = strref
+END
 
 // BGT version of SILENC.DLG is a lot behind the BGEE/EET version
 //  => BGT Version wird an die Version von EET angeglichen

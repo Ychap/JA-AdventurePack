@@ -74,24 +74,22 @@ COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
 COPY_EXISTING ~AMB_E14A.WAV~ ~override~
 
 
-COPY_EXISTING ~LAERTA.DLG~ ~override~
-	LPF GET_DLG_JOURNAL_STRREF
-		INT_VAR idx_state = 0
-		RET strref
-	END
-BUT_ONLY
+LAF GET_DLG_JOURNAL_STRREF
+	INT_VAR idx_state = 0
+	STR_VAR dlg_file = ~LAERTA.DLG~
+	RET laerta_state00_journal = strref
+END
 
 <<<<<<<< ...inlined/ja#replace_action.d
 REPLACE_ACTION_TEXT_PROCESS LAERTA // BGEE/EET
-~EraseJournalEntry(%strref%)~
-~EraseJournalEntry(@43) EraseJournalEntry(%strref%)~
+~EraseJournalEntry(%laerta_state00_journal%)~
+~EraseJournalEntry(@43) EraseJournalEntry(%laerta_state00_journal%)~
 GERVIS VOLTIN // BGT
 
 REPLACE_ACTION_TEXT GERVIS
 ~CreateCreature("VOLTIN",\[[0-9]+\.[0-9]+\],[^,)]+)~
 ~SetGlobal("JA#GERVIS_QUEST","GLOBAL",1)~
 >>>>>>>>
-
 COMPILE EVALUATE_BUFFER ~...inlined/ja#replace_action.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~

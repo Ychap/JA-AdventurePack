@@ -14,19 +14,18 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.D~ USING ~JA#B
 COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.D~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY_EXISTING ~IRLENT.DLG~ ~override~
-		LPF GET_DLG_JOURNAL_STRREF
-			INT_VAR idx_state = 0
-			RET state0_journal = strref
-		END
-	BUT_ONLY
+	LAF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 0
+		STR_VAR dlg_file = ~IRLENT.DLG~
+		RET aldeth_state00_journal = strref
+	END
 
 	<<<<<<<< ...inlined/irlent_bgt.d
 	ALTER_TRANS IRLENT
 	BEGIN 0 END
 	BEGIN 1 END
 	BEGIN
-	  "UNSOLVED_JOURNAL" ~%state0_journal%~
+	  "UNSOLVED_JOURNAL" ~%aldeth_state00_journal%~
 	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/irlent_bgt.d~
@@ -42,19 +41,18 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ZORL.D~
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY_EXISTING ~ALDETH.dlg~ ~override~
-		LPF GET_DLG_JOURNAL_STRREF
-			INT_VAR idx_state = 13
-			RET state13_journal = strref
-		END
-	BUT_ONLY
+	LAF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 13
+		STR_VAR dlg_file = ~ALDETH.DLG~
+		RET aldeth_state13_journal = strref
+	END
 
 	<<<<<<<< ...inlined/aldeth_bgt.d
 	ALTER_TRANS ALDETH
 	BEGIN JA#ALDETH_00 END
 	BEGIN 0 END
 	BEGIN
-	  "UNSOLVED_JOURNAL" ~%state13_journal%~
+	  "UNSOLVED_JOURNAL" ~%aldeth_state13_journal%~
 	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/JA#ALDETH.D~
