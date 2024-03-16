@@ -22,5 +22,5 @@ CHAIN SONNER JA#SONNER_1
 == JEBADO @3
 == SONNER @4
 == TELMAN @5
-DO ~SetGlobal("HostileFishermen","GLOBAL",1) SetGlobal("JA#KillFishermen","%FishingVillage%",1)~
+DO ~SetGlobal("HostileFishermen","GLOBAL",1)~
 EXIT
