@@ -17,11 +17,10 @@ EXTEND_BOTTOM SONNER 14
 IF ~~ THEN REPLY @0 EXTERN SONNER JA#SONNER_1
 END
 
-CHAIN
-IF ~~ THEN SONNER JA#SONNER_1
- @1 DO ~SetGlobal("HostileFishermen","GLOBAL",1) SetGlobal("JA#KillFishermen","%FishingVillage%",1)~
-  = @2
-  == JEBADO @3
-  == SONNER @4
-  == TELMAN @5
+CHAIN SONNER JA#SONNER_1
+@1 = @2
+== JEBADO @3
+== SONNER @4
+== TELMAN @5
+DO ~SetGlobal("HostileFishermen","GLOBAL",1) SetGlobal("JA#KillFishermen","%FishingVillage%",1)~
 EXIT
