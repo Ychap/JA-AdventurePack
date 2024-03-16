@@ -1,7 +1,0 @@
-IF
-	Allegiance(Myself,ENEMY)
-	See([ENEMY])
-THEN
-	RESPONSE #100
-		Panic()
-END
