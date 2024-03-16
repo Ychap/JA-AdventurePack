@@ -1,166 +1,39 @@
-REPLACE_STATE_TRIGGER TENYA2 0 ~Global("JA#TENYA_QUEST","GLOBAL",0) Global("HelpTenya","GLOBAL",2)~
+REPLACE_ACTION_TEXT TENYA2
+~EscapeArea\(Destroy\)?([0-9]*)~
+~NoAction()~
 
-/* this is a fix */
-ALTER_TRANS TENYA2 // file name
-BEGIN 0 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("HelpTremain","GLOBAL",1)
-ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-Global("BOYBODY","GLOBAL",0)~
-END
 
-/* this is a fix */
-ALTER_TRANS TENYA2 // file name
-BEGIN 0 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("HelpTremain","GLOBAL",1)
-ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-Global("BOYBODY","GLOBAL",0)~
-END
+// BGT
+ADD_STATE_TRIGGER TENYA2 0 ~GlobalLT("BOYBODY","GLOBAL",1)~ UNLESS ~GlobalLT("BOYBODY","GLOBAL",1)~
+ADD_STATE_TRIGGER TENYA2 6 ~GlobalLT("BOYBODY","GLOBAL",1)~ UNLESS ~GlobalLT("BOYBODY","GLOBAL",1)~
 
-ALTER_TRANS TENYA2 // file name
-BEGIN 0 END // state number (can be more than one)
-BEGIN 2 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~GlobalGT("JA#FISHER_KILLS","GLOBAL",0)~
+ADD_TRANS_TRIGGER TENYA2 0
+~Global("HelpTremain","GLOBAL",1)~ DO 0 1 4
+ADD_TRANS_TRIGGER TENYA2 6
+~Global("HelpTremain","GLOBAL",1)~ DO 0 1 2 3
+
+
+ADD_TRANS_ACTION TENYA2
+BEGIN 3 5 7 10 END
+BEGIN 0 END
+~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)~
+
+
+ALTER_TRANS TENYA2
+BEGIN 0 END
+BEGIN 2 END
+BEGIN
   "EPILOGUE" ~GOTO 11~
 END
 
-ALTER_TRANS TENYA2 // file name
-BEGIN 0 END // state number (can be more than one)
-BEGIN 3 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("JA#FISHER_KILLS","GLOBAL",0)~
+// BEE/EET (like in BGT)
+ALTER_TRANS TENYA2
+BEGIN 0 END
+BEGIN 3 END
+BEGIN
+  "EPILOGUE" ~GOTO 10~
 END
 
-/* this is a fix */
-ALTER_TRANS TENYA2 // file name
-BEGIN 0 END // state number (can be more than one)
-BEGIN 4 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("HelpTremain","GLOBAL",1)
-Global("BOYBODY","GLOBAL",0)~
-END
-
-/* ## this is for removing the EscapeAreaDestroy(90) */
-ALTER_TRANS TENYA2 // file name
-BEGIN 2 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("BOYBODY","GLOBAL",1)
-GiveItemCreate("MISC54",LastTalkedToBy,0,0,0)~
-END
-
-/* ## this is for removing the EscapeAreaDestroy(90) and setting SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1) */
-ALTER_TRANS TENYA2 // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("BOYBODY","GLOBAL",1)
-GiveItemCreate("MISC54",LastTalkedToBy,0,0,0)
-SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
-Enemy()~
-END
-
-/* ## this is for removing the EscapeAreaDestroy(90) */
-ALTER_TRANS TENYA2 // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("BOYBODY","GLOBAL",1)
-GiveItemCreate("MISC54",LastTalkedToBy,0,0,0)~
-END
-
-/* ## this is for removing the EscapeAreaDestroy(90) and setting SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1) */
-ALTER_TRANS TENYA2 // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("BOYBODY","GLOBAL",1)
-GiveItemCreate("MISC54",LastTalkedToBy,0,0,0)
-SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
-Enemy()~
-END
-
-/* ## this is for removing the EscapeAreaDestroy(90) and setting SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1) */
-ALTER_TRANS TENYA2 // file name
-BEGIN 7 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("BOYBODY","GLOBAL",1)
-GiveItemCreate("MISC54",LastTalkedToBy,0,0,0)
-SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
-Enemy()~
-END
-
-/* ## this is for removing the EscapeAreaDestroy(90) */
-ALTER_TRANS TENYA2 // file name
-BEGIN 8 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("BOYBODY","GLOBAL",1)
-GiveItemCreate("MISC54",LastTalkedToBy,0,0,0)~
-END
-
-/* ## this is for removing the EscapeAreaDestroy(90) */
-ALTER_TRANS TENYA2 // file name
-BEGIN 9 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("BOYBODY","GLOBAL",1)
-GiveItemCreate("MISC54",LastTalkedToBy,0,0,0)~
-END
-
-ALTER_TRANS TENYA2 // file name
-BEGIN 10 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
-Enemy()~
-END
-
-
-REPLACE_STATE_TRIGGER TENYA2 11 ~Global("Chapter","GLOBAL",%tutu_chapter_7%)~
-
-REPLACE_STATE_TRIGGER TENYA2 6 ~Global("JA#TENYA_QUEST","GLOBAL",0) Global("HelpTenya","GLOBAL",1)~
-
-ALTER_TRANS TENYA2 // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("HelpTremain","GLOBAL",1)
-ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-Global("BOYBODY","GLOBAL",0)~
-END
-
-ALTER_TRANS TENYA2 // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("HelpTremain","GLOBAL",1)
-ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-Global("BOYBODY","GLOBAL",0)~
-END
-
-ALTER_TRANS TENYA2 // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 2 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("HelpTremain","GLOBAL",1)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
-Global("BOYBODY","GLOBAL",0)~
-END
-
-ALTER_TRANS TENYA2 // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 3 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "TRIGGER" ~Global("HelpTremain","GLOBAL",1)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-Global("BOYBODY","GLOBAL",0)~
-END
 
 EXTEND_BOTTOM TENYA2 0
 IF ~~ THEN REPLY @0 EXIT
@@ -170,18 +43,15 @@ EXTEND_BOTTOM TENYA2 6
 IF ~~ THEN REPLY @1 GOTO JA#TENYA_X0
 END
 
-
 APPEND TENYA2
 
 IF ~~ THEN BEGIN JA#TENYA_X0
 SAY @2
-IF ~~ THEN DO ~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)Enemy()~ EXIT
+COPY_TRANS_LATE TENYA2 10
 END
 
-IF ~Global("JA#TENYA_QUEST","GLOBAL",1)~ THEN BEGIN JA#TENYA_00
-SAY @3
-= @4
-= @5
+IF WEIGHT #-2 ~Global("JA#TENYA_QUEST","GLOBAL",1)~ THEN BEGIN JA#TENYA_00
+SAY @3 = @4 = @5
 IF ~~ THEN REPLY @6 GOTO JA#TENYA_02
 IF ~~ THEN REPLY @7 GOTO JA#TENYA_03
 IF ~~ THEN REPLY @8 GOTO JA#TENYA_01
@@ -193,8 +63,7 @@ IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN JA#TENYA_02
-SAY @10
-= @11
+SAY @10 = @11
 IF ~~ THEN DO ~SetGlobal("JA#TENYA_QUEST","GLOBAL",2)~ UNSOLVED_JOURNAL @1022 EXIT
 END
 
@@ -209,7 +78,7 @@ SAY @15
 IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
-IF ~Global("JA#TENYA_QUEST","GLOBAL",2)~ THEN BEGIN JA#TENYA_05
+IF WEIGHT #-1 ~Global("JA#TENYA_QUEST","GLOBAL",2)~ THEN BEGIN JA#TENYA_05
 SAY @16
 IF ~!Dead("JA#TLOS1")~ THEN REPLY @17 GOTO JA#TENYA_09
 IF ~Dead("JA#TLOS1")~ THEN REPLY @18 GOTO JA#TENYA_07
@@ -219,17 +88,17 @@ END
 
 IF ~~ THEN BEGIN JA#TENYA_07
 SAY @21
-IF ~~ THEN DO ~EraseJournalEntry(@1022)SetGlobal("JA#TENYA_QUEST","GLOBAL",3)AddExperienceParty(1000)GiveItemCreate("JA#TENYA",LastTalkedToBy,1,0,0)~ SOLVED_JOURNAL @22 EXIT
+IF ~~ THEN DO ~EraseJournalEntry(@1022) SetGlobal("JA#TENYA_QUEST","GLOBAL",3) AddExperienceParty(1000) GiveItemCreate("JA#TENYA",LastTalkedToBy,1,0,0)~ SOLVED_JOURNAL @22 EXIT
 END
 
-IF ~!Global("Chapter","GLOBAL",%tutu_chapter_7%)Global("JA#TENYA_QUEST","GLOBAL",3)~ THEN BEGIN JA#TENYA_08
+IF ~OR(2) Global("BOYBODY","GLOBAL",1) Global("JA#TENYA_QUEST","GLOBAL",3)~ THEN BEGIN JA#TENYA_08
 SAY @23
 IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN JA#TENYA_09
 SAY @24
-IF ~~ THEN DO ~EraseJournalEntry(@1022)SetGlobal("JA#TENYA_QUEST","GLOBAL",10)SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)Enemy()~ EXIT
+IF ~~ THEN DO ~EraseJournalEntry(@1022) SetGlobal("JA#TENYA_QUEST","GLOBAL",10) SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1) Enemy()~ EXIT
 END
 
 END // APPEND TENYA2
