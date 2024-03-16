@@ -198,10 +198,10 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#sonner.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#JALANT.D~
 COMPILE ~JA#BGT_AdvPack/Tenya/ja#tlos1.d~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#TENYA.D~ USING ~JA#BGT_AdvPack/languages/%s/ja#tenya2.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/JA#TENYA2.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#tenya.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#tenya2.d~
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	<<<<<<<< ...inlined/JA#TENYA2_bgt.d
+	<<<<<<<< ...inlined/ja#tenya2_bgt.d
 	ADD_TRANS_TRIGGER TENYA2 11 ~False()~
 
 	EXTEND_BOTTOM TENYA2 11
@@ -215,7 +215,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	  "ACTION" ~Enemy()~
 	END
 	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/JA#TENYA2_bgt.d~
+	COMPILE EVALUATE_BUFFER ~...inlined/ja#tenya2_bgt.d~
 END
 
 ADD_JOURNAL @22 @1022 USING ~JA#BGT_AdvPack/languages/%s/ja#tenya2.tra~
