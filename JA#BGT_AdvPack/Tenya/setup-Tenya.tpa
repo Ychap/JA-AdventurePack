@@ -225,7 +225,7 @@ ADD_JOURNAL @22 @1022 USING ~JA#BGT_AdvPack/languages/%s/ja#tenya2.tra~
 
 COPY_EXISTING ~FISHER.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~DestroySelf()~ ~Continue()~
+		REPLACE_TEXTUALLY EXACT_MATCH ~DestroySelf()~ ~DestroyItem("MISC53") Wait(1) Kill(Myself)~
 	END
 BUT_ONLY
 

@@ -1,17 +1,4 @@
 IF
-	Global("JA#KillFishermen2","%FishingVillage%",0)
-	Global("KillFishermen","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#KillFishermen2","%FishingVillage%",1)
-		ActionOverride("Sonner",DestroyItem("MISC53"))
-		Wait(1)
-		Kill("Sonner")
-		Kill("Jebadoh")
-		Kill("Telman")
-END
-
-IF
 	Global("JA#FISHERQUEST","%FishingVillage%",0)
 	Global("HostileFishermen","GLOBAL",1)
 	Dead("Tenya")
@@ -27,4 +14,3 @@ THEN
 		EraseJournalEntry(%tenya7%)
 		%bgt_journal_entry%
 END
-
