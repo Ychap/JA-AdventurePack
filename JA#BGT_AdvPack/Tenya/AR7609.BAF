@@ -5,6 +5,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JALAPPEAR","GLOBAL",1)
 		CreateCreature("JALANT",[459.531],3)
+		ActionOverride("Jalantha",SetNumTimesTalkedTo(1))
 		ActionOverride("Jalantha",Enemy())
 END
 
@@ -27,6 +28,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("TENAPPEAR","GLOBAL",1)
 		CreateCreature("TENYA2",[536.648],3)
+		ActionOverride("Tenya2",SetNumTimesTalkedTo(1))
 		ActionOverride("Tenya2",Enemy())
 END
 
