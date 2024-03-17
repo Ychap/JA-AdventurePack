@@ -366,11 +366,11 @@ LABEL "JA#BGT_AdvPack-Merchants_League"
 INCLUDE ~JA#BGT_AdvPack/Merchants_League/setup-Merchants_League.tpa~
 
 
-///////////////////////////////////////////////////
-//ERWEITERTE TENYA-HANDLUNG & TEMPEL DER UMBERLEE
-///////////////////////////////////////////////////
+///////////////////////////
+//Tenya and the fishermen
+///////////////////////////
 
-BEGIN ~Tenya Extended Plot & Temple of Umberlee~ DESIGNATED 28
+BEGIN ~Tenya and the fishermen~ DESIGNATED 28
 LABEL "JA#BGT_AdvPack-Tenya"
 
 INCLUDE ~JA#BGT_AdvPack/Tenya/setup-Tenya.tpa~
@@ -548,6 +548,16 @@ BEGIN ~Aldeth's betrayal and reconciliation~ DESIGNATED 45
 LABEL "JA#BGT_AdvPack-Betrayal"
 
 INCLUDE ~JA#BGT_AdvPack/Betrayal/setup-Betrayal.tpa~
+
+
+/////////////////////////////////////
+//Tenya quest in Temple of Umberlee
+/////////////////////////////////////
+
+BEGIN ~Tenya quest in Temple of Umberlee~ DESIGNATED 46
+LABEL "JA#BGT_AdvPack-Tenya2"
+
+INCLUDE ~JA#BGT_AdvPack/Tenya2/setup-Tenya2.tpa~
 
 
 ////////////////////////////////////////////////////////

@@ -5,7 +5,7 @@ BEGIN END
 ~ActionOverride("Telman",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("Jebadoh",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*EscapeAreaDestroy(90)~
 ~NoAction()~
 
-// state 10 only BGEE/EET
+// state 10 in BGT already fine
 ADD_TRANS_ACTION SONNER
 BEGIN 10 13 17 END
 BEGIN END
