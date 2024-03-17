@@ -1,11 +1,26 @@
-// BGT
+// BGT (make in SONNER.DLG state 9 available)
 REPLACE_TRANS_ACTION SONNER
 BEGIN 8 END
 BEGIN END
 ~ActionOverride("Telman",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("Jebadoh",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*EscapeAreaDestroy(90)~
 ~NoAction()~
 
-// state 10 in BGT already fine
+// BGEE/EET (make in SONNER.DLG state 9 available)
+REPLACE_TRANS_ACTION SONNER
+BEGIN 8 END
+BEGIN END
+~SetGlobal("HelpJebadoh","GLOBAL",3)~
+~SetGlobal("HelpJebadoh","GLOBAL",2)~
+
+
+// Fishermen escape area instead of turning hostile
+REPLACE_TRANS_ACTION SONNER
+BEGIN 10 13 17 END
+BEGIN END
+~SetGlobal("HostileFishermen","GLOBAL",1)~
+~NoAction()~
+
+// Change state 10 only in BGEE/EET
 ADD_TRANS_ACTION SONNER
 BEGIN 10 13 17 END
 BEGIN END
