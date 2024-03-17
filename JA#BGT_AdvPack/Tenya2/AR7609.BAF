@@ -10,16 +10,6 @@ THEN
 END
 
 IF
-	Global("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
-	Global("JA#WATW1SPWN","%BaldursGateDocks_WaterQueensHouse%",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#WATW1SPWN","%BaldursGateDocks_WaterQueensHouse%",1)
-		CreateCreatureImpassable("JA#WATW1",[710.356],0)
-		CreateCreatureImpassable("JA#WATW1",[590.716],0)
-END
-
-IF
 	!Dead("Tenya")
 	!InParty("tenya") //compatibility with Tenya NPC mod
 	Global("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
