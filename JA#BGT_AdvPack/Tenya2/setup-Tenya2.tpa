@@ -52,29 +52,24 @@ EXTEND_TOP ~PUMBER.BCS~ ~JA#BGT_AdvPack/Tenya2/JA#PUMBE.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%BaldursGateDocks_WaterQueensHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Tenya2/AR7609.BAF~ EVALUATE_BUFFER
 
 
+LAF GET_DLG_JOURNAL_STRREF
+	INT_VAR idx_state = 28
+	STR_VAR dlg_file = ~TENYA.DLG~
+	RET tenya_state28_journal = strref
+END
+LAF GET_DLG_STATE_RESPONSE
+	INT_VAR idx_state = 0
+			idx_response = 2
+	STR_VAR dlg_file = ~TENYA2.DLG~
+	RET tenya2_state0_weight = idx_state_trigger
+		tenya2_state0_response2_strref = response_strref
+END
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumber2.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumberl.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#jalant.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#tlos1.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#tenya2.d~
-
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	LAF GET_DLG_JOURNAL_STRREF
-		INT_VAR idx_state = 28
-		STR_VAR dlg_file = ~TENYA.DLG~
-		RET tenya_state28_journal = strref
-	END
-
-	<<<<<<<< ...inlined/ja#tenya2_bgt.d
-	ALTER_TRANS TENYA2
-	BEGIN 11 END
-	BEGIN END
-	BEGIN
-	  "JOURNAL" ~#%tenya_state28_journal%~
-	END
-	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/ja#tenya2_bgt.d~
-END
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#tlos1.d~
 
 ADD_JOURNAL @22 @1022 USING ~JA#BGT_AdvPack/languages/%s/ja#tenya2.tra~
 

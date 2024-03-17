@@ -23,5 +23,24 @@
 @22   = ~Zwischen Wasser und Sturm
 
 Ich habe der Umberlee-Priesterin Tenya geholfen, den Tod ihrer Mutter zu rächen, indem ich den Taloniten Storwyn tötete. Sollte ich auch Talos' Rache fürchten müssen, bin ich zumindest sicher, dass mir Umberlee, die königliche Schlampe, gewogen ist.~
-@23   = ~Umberlee ist Euch weiterhin gewogen, Eure Taten werden nicht vergessen werden. Ihr dürft Euch in diesem Heiligtum sicher fühlen.~
-@24   = ~Ihr wagt es, so mit mir zu sprechen?! Hier im Reich der Wasserkönigin?! Wellendienerinnen! Tötet diese Frevler!~
+// from TENYA.DLG (state 23)
+/* #1856 */
+@23   = ~Ihr seid es! Ist es Wagemut, der Euch herführt? Nein, wohl eher Dummheit! Wart nicht Ihr es, die Umberlee im Stich ließen? Ihr habt Euch sichtlich verändert, doch Ihr seid es. Ich sehe mit den Augen der Mutter! Eure Untätigkeit ist folgenlos geblieben, denn die Mutter und ich, wir sind mit ihnen allen fertiggeworden. Nun wird Euch dasselbe Schicksal ereilen!~
+/* #1857 */
+@24   = ~Wir wollten Euch oder Eurem Tempel nichts Böses! Bitte glaubt uns! Es ist eine Tat der Barmherzigkeit, die wir ausführen! Wir suchen die Leiche eines Kindes, das hier getötet wurde. Seine Eltern vermissen es so sehr.~
+/* #6333 */
+@25   = ~Ich wollte Euch nicht beleidigen oder Euren Tempel entweihen! Bitte, ich flehe Euch an, ich bin im Auftrag der Barmherzigkeit hier. Ich suche ein Kind, das hier umkam. Seine Eltern vermissen es so sehr.~
+/* #1858 */
+@26   = ~Es war nicht unser Kampf. Es liegt uns fern, den Weg Eurer selbstgerechten Rachegöttin zu kreuzen. Unser Vorhaben hier ist jetzt nicht unangenehmer, als es bei unserem letzten Treffen war. Ihr habt die Leiche eines Kindes hier. Eurer Gerechtigkeit wurde Genüge getan. Wir sind gekommen, um das Kind nach Hause zu bringen.~
+/* #6334 */
+@27   = ~Es war nicht mein Kampf. Möge es mir fern liegen, mich Eurem gerechten Zorn in den Weg zu stellen. Ich werde Euch nicht mehr Umstände bereiten, als bei unserem letzten Zusammentreffen. Ihr habt ein totes Kind hier. Der Gerechtigkeit wurde genüge getan, nun will ich es nach Hause bringen.~
+/* #1859 */
+@28   = ~Hört auf mit dem Gejammer! Es kommt einer Beleidigung gleich, vor Umberlees Augen ein solches Theater zu veranstalten. Ihr sollt Gelegenheit haben, Euren Mut unter Beweis zu stellen und den armseligen Anblick vergessen zu machen, den Ihr hier bietet. Die Leiche, die Ihr sucht, befindet sich am vorderen Tor. Wenn Ihr dort hingelangt, so soll sie Euch überlassen sein. Selbstverständlich werden meine Wellendiener alles daransetzen, Euer Fortkommen zu behindern. Das wird sicherlich eine amüsante Abwechslung für die Königin der Meere.~
+/* #1860 */
+@29   = ~Tun sie das? Nicht anders, als ein Kind seine Eltern vermissen würde, vermute ich … Nehmt ihn und geht. Dies soll das letzte Mal sein, dass ich Milde mit Euch walten lasse. Kehrt niemals wieder, es sei denn, man ruft Euch!~
+/* #1861 */
+@30   = ~Weise Worte, in der Tat. Ihr seid Euch dessen wohl bewusst, was sich geziemt. Solch ordentliches Betragen muss belohnt werden. Hier ist die Leiche, nach der Ihr sucht. Sicherlich ist es Eure Absicht, das Kind wieder zum Leben zu erwecken? So soll es sein, denn seine Lektion hat es allemal gelernt. Kommt nicht noch einmal her, sofern Ihr nicht gerufen werdet. Der Empfang, den Ihr hier vorfändet, wäre sonst ein weitaus … kühlerer.~
+/* #1862 */
+@31   = ~Wisst Ihr nicht, wo Ihr hier seid? Dies ist der Sitz von Umberlee! Ihr befindet Euch gleichsam in der Höhle des Löwen! Es steht Euch nicht zu, hier Forderungen aufzustellen. Wellendiener, nehmt Euch dieses Treibguts an! Ich ertrage den Anblick nicht mehr!~
+@32   = ~Umberlee ist Euch weiterhin gewogen, Eure Taten werden nicht vergessen werden. Ihr dürft Euch in diesem Heiligtum sicher fühlen.~
+@33   = ~Ihr wagt es, so mit mir zu sprechen?! Hier im Reich der Wasserkönigin?! Wellendienerinnen! Tötet diese Frevler!~
