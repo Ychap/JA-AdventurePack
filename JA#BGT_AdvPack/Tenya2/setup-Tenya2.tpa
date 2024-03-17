@@ -120,7 +120,7 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_name             = DOORJA#C02
 	END
 	//add entrance
-	LPF  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 978   //x
 		fj_loc_y       = 781   //y
@@ -132,24 +132,30 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename
-		//Flaming Fist Dialog and Script changes
-		PATCH_IF ((~%actors_pos_x%~ = 1029) AND (~%actors_filename%~ STR_EQ  ~PUMBER2~)) BEGIN
-			WRITE_SHORT actors_offset + 0x20        1143
-			WRITE_SHORT actors_offset + 0x22        610
-			WRITE_SHORT actors_offset + 0x24        1143
-			WRITE_SHORT actors_offset + 0x26        610
-			WRITE_SHORT actors_offset + 0x34        5
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 936) AND (~%actors_filename%~ STR_EQ  ~PUMBER2~)) BEGIN
-			WRITE_SHORT actors_offset + 0x20        395
-			WRITE_SHORT actors_offset + 0x22        825
-			WRITE_SHORT actors_offset + 0x24        395
-			WRITE_SHORT actors_offset + 0x26        825
-			WRITE_SHORT actors_offset + 0x34        11
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
+
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			349 WHEN ~%actor_filename%~ STR_EQ ~PUMBER2~ BEGIN
+				WRITE_SHORT actor+0x34 13
+			END
+			1029 WHEN ~%actor_filename%~ STR_EQ ~PUMBER2~ BEGIN
+				WRITE_SHORT actor+0x20 1143
+				WRITE_SHORT actor+0x22 610
+				WRITE_SHORT actor+0x24 1143
+				WRITE_SHORT actor+0x26 610
+				WRITE_SHORT actor+0x34 6
+			END
+			936 WHEN ~%actor_filename%~ STR_EQ ~PUMBER2~ BEGIN
+				WRITE_SHORT actor+0x20 395
+				WRITE_SHORT actor+0x22 825
+				WRITE_SHORT actor+0x24 395
+				WRITE_SHORT actor+0x26 825
+				WRITE_SHORT actor+0x34 10
+			END
+			DEFAULT
 		END
 	END
 BUT_ONLY
