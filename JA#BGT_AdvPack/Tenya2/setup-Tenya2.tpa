@@ -39,14 +39,21 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumber2.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumberl.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#jalant.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#tlos1.d~
-
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#tenya2.d~
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	<<<<<<<< ...inlined/ja#tenya2_bgt.d
-	ADD_TRANS_TRIGGER TENYA2 11 ~False()~
 
-	EXTEND_BOTTOM TENYA2 11
-	COPY_TRANS TENYA 28
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	LAF GET_DLG_JOURNAL_STRREF
+		INT_VAR idx_state = 28
+		STR_VAR dlg_file = ~TENYA.DLG~
+		RET tenya_state28_journal = strref
+	END
+
+	<<<<<<<< ...inlined/ja#tenya2_bgt.d
+	ALTER_TRANS TENYA2
+	BEGIN 11 END
+	BEGIN END
+	BEGIN
+	  "JOURNAL" ~#%tenya_state28_journal%~
 	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/ja#tenya2_bgt.d~
