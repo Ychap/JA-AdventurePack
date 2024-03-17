@@ -2,16 +2,14 @@
 //Extended/Improved Dialogues
 ///////////////////////////////
 
-// In BGEE/EET: Fix state connection for specific response
-COPY_EXISTING ~HALBAZ.DLG~ ~override~
-    READ_LONG 0x14 ofs_responses
-    READ_LONG 0x10 num_responses
-	SET responses_end = ofs_responses + (num_responses * 0x20)
 
-	FOR (response = ofs_responses; response < responses_end; response+=0x20) BEGIN
+// BGEE/EET: Connect specific response text to state 7 (Smart version of ALTER_TRANS ... BEGIN "EPILOGUE" ~GOTO 7~ END)
+COPY_EXISTING ~HALBAZ.DLG~ ~override~
+	GET_OFFSET_ARRAY responses 0x14 4 0x10 4 0 0 0x20
+	PHP_EACH responses AS i => response BEGIN
 		READ_LONG (response + 0x04) strref
-		PATCH_IF ((strref MODULO 20000) = 192) BEGIN
-			WRITE_BYTE (response + 0x1c) 7 // next state
+		PATCH_IF ((strref MODULO 200000) = 192) BEGIN
+			WRITE_LONG (response + 0x1c) 7 // Next dialogue state
 		END
 	END
 BUT_ONLY
