@@ -3,6 +3,26 @@
 /////////////////////////
 
 
+COPY ~JA#BGT_AdvPack/Ramazith/JA#GOLC1.CRE~ ~override~
+	SAY NAME1 @2040
+	SAY NAME2 @2040
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#CURA1.BAF~
+
+
+// Spawn creatures in Ramazith's tower when he turns hostile
+EXTEND_TOP ~%NBaldursGate_RamazithsTower_L2%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7239.BAF~ EVALUATE_BUFFER
+ACTION_IF NOT (MOD_IS_INSTALLED ~setup-FotD.tp2~ 0) BEGIN
+	EXTEND_TOP ~%NBaldursGate_RamazithsTower_L3%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7240.BAF~ EVALUATE_BUFFER
+END
+EXTEND_TOP ~%NBaldursGate_RamazithsTower_L4%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7241.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_RamazithsTower_L5%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7242.BAF~ EVALUATE_BUFFER
+
+// Hostile Ramazith will start dialogue
+EXTEND_BOTTOM ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7238.BAF~ EVALUATE_BUFFER
+
+
 // BGT (coord fix)
 COPY_EXISTING ~AR7238.BCS~ ~override~ // %NBaldursGate_RamazithsTower_L6%
 	DECOMPILE_AND_PATCH BEGIN
@@ -12,7 +32,7 @@ COPY_EXISTING ~AR7238.BCS~ ~override~ // %NBaldursGate_RamazithsTower_L6%
 	END
 IF_EXISTS BUT_ONLY
 
-
+// BGT (Ramazith moves into his tower when Abela is gone)
 <<<<<<<< ...inlined/AR7300_old.baf
 IF
 	Exists("Ramazith")
@@ -35,7 +55,6 @@ THEN
 		SetGlobal("RamazithMove","GLOBAL",1)
 END
 >>>>>>>>
-// BGT (Ramazith moves into his tower when Abela is gone)
 COPY_EXISTING ~AR7300.BCS~ ~override~ // %NBaldursGate%
 	REPLACE_BCS_BLOCK
 		~...inlined/AR7300_old.baf~
@@ -66,39 +85,9 @@ COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 BUT_ONLY
 
 
-// Replace in Ramazith's tower L2 existing creatures with spawns
-COPY_EXISTING ~%NBaldursGate_RamazithsTower_L2%.ARE~ ~override~
-	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~JELLYMU~ END
-BUT_ONLY
-EXTEND_TOP ~%NBaldursGate_RamazithsTower_L2%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7239.BAF~ EVALUATE_BUFFER
-
-// Replace in Ramazith's tower L3 existing creatures with spawns
-ACTION_IF NOT (MOD_IS_INSTALLED ~setup-FotD.tp2~ 0) BEGIN
-	COPY_EXISTING ~%NBaldursGate_RamazithsTower_L3%.ARE~ ~override~
-		LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~GHAST~ END
-	BUT_ONLY
-	EXTEND_TOP ~%NBaldursGate_RamazithsTower_L3%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7240.BAF~ EVALUATE_BUFFER
-END
-
-// Replace in Ramazith's tower L4 existing creatures with spawns
-COPY_EXISTING ~%NBaldursGate_RamazithsTower_L4%.ARE~ ~override~
-	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~HOBELITE~ END
-BUT_ONLY
-EXTEND_TOP ~%NBaldursGate_RamazithsTower_L4%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7241.BAF~ EVALUATE_BUFFER
-
-// Replace in Ramazith's tower L5 existing creatures with spawns
-COPY_EXISTING ~%NBaldursGate_RamazithsTower_L5%.ARE~ ~override~
-	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~KOBCOMM~ END
-BUT_ONLY
-EXTEND_TOP ~%NBaldursGate_RamazithsTower_L5%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7242.BAF~ EVALUATE_BUFFER
-
-// Hostile Ramazith will start dialogue
-EXTEND_BOTTOM ~%NBaldursGate_RamazithsTower_L6%.BCS~ ~JA#BGT_AdvPack/Ramazith/AR7238.BAF~ EVALUATE_BUFFER
-
-
 OUTER_SET default_state_during_quest = (GAME_IS ~bgt~) ? 22 : 10
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#RAMAZI.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/JA#ABELA.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#ramazi.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#abela.d~
 
 ADD_JOURNAL EXISTING @18 USING ~JA#BGT_AdvPack/languages/%s/ja#ramazi.tra~
 
@@ -118,12 +107,24 @@ COPY_EXISTING ~RAGEFA.CRE~ ~override~
 	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
 BUT_ONLY
 
-COPY ~JA#BGT_AdvPack/Ramazith/JA#GOLC1.CRE~ ~override~
-	SAY NAME1 @2040
-	SAY NAME2 @2040
 
+COPY_EXISTING ~%NBaldursGate_RamazithsTower_L2%.ARE~ ~override~
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~JELLYMU~ END
+BUT_ONLY
 
-COMPILE ~JA#BGT_AdvPack/Ramazith/JA#CURA1.BAF~
+ACTION_IF NOT (MOD_IS_INSTALLED ~setup-FotD.tp2~ 0) BEGIN
+	COPY_EXISTING ~%NBaldursGate_RamazithsTower_L3%.ARE~ ~override~
+		LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~GHAST~ END
+	BUT_ONLY
+END
+
+COPY_EXISTING ~%NBaldursGate_RamazithsTower_L4%.ARE~ ~override~
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~HOBELITE~ END
+BUT_ONLY
+
+COPY_EXISTING ~%NBaldursGate_RamazithsTower_L5%.ARE~ ~override~
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~KOBCOMM~ END
+BUT_ONLY
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
