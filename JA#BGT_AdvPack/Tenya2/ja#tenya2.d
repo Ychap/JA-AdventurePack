@@ -29,6 +29,12 @@ ADD_TRANS_TRIGGER TENYA2 6
 ~Global("HelpTremain","GLOBAL",1)~
 
 
+ADD_TRANS_ACTION TENYA2
+BEGIN 3 5 7 10 END
+BEGIN 0 END
+~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)~
+
+
 // BGT (like in BEE/EET)
 ALTER_TRANS TENYA2
 BEGIN 0 END
@@ -46,20 +52,8 @@ BEGIN
 END
 
 
-ADD_TRANS_ACTION TENYA2
-BEGIN 0 END
-BEGIN 2 3 END
-~SetGlobal("JA#TENYA_PAYMENT","LOCALS",1)~
-
-
-ADD_TRANS_ACTION TENYA2
-BEGIN 3 5 7 10 END
-BEGIN 0 END
-~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)~
-
-
 EXTEND_BOTTOM TENYA2 0
-  IF ~!Global("HelpTremain","GLOBAL",1) Global("JA#TENYA_PAYMENT","LOCALS",0)~ THEN REPLY #%tenya2_state0_response2_strref% DO ~SetGlobal("JA#TENYA_PAYMENT","LOCALS",1)~ GOTO JA#TENYA_08
+  IF ~!Global("HelpTremain","GLOBAL",1)~ THEN REPLY #%tenya2_state0_response2_strref% GOTO JA#TENYA_08
   IF ~~ THEN REPLY @0 EXIT
 END
 
