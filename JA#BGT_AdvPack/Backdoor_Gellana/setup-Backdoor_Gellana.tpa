@@ -1,0 +1,66 @@
+/////////////////////////////////
+//Backdoor for Gellana's temple
+/////////////////////////////////
+
+
+COPY_EXISTING ~%FriendlyArmInn%.are~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 2    //travel
+		fj_box_left     = 3965
+		fj_box_top      = 2051
+		fj_box_right    = 4075
+		fj_box_bottom   = 2165
+		fj_cursor_idx   = 30
+		fj_vertex_0     = 3965 + (2131 << 16)
+		fj_vertex_1     = 3978 + (2051 << 16)
+		fj_vertex_2     = 4075 + (2061 << 16)
+		fj_vertex_3     = 4045 + (2165 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_name             = ~JA#DOOR6804~
+		fj_destination_area = EVAL ~%FriendlyArmInn_TempleofWisdom%~
+		fj_destination_name = ~JA#FR6800~
+	END
+  	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x       = 4066
+		fj_loc_y       = 2152
+		fj_orientation = 11
+		STR_VAR
+		fj_structure_type = entrance
+		fj_name           = ~JA#FR6804~
+  	END
+BUT_ONLY
+
+COPY_EXISTING ~%FriendlyArmInn_TempleofWisdom%.are~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 2    //travel
+		fj_box_left     = 488
+		fj_box_top      = 112
+		fj_box_right    = 606
+		fj_box_bottom   = 250
+		fj_cursor_idx   = 30
+		fj_vertex_0     = 549 + (250 << 16)
+		fj_vertex_1     = 604 + (186 << 16)
+		fj_vertex_2     = 604 + (145 << 16)
+		fj_vertex_3     = 534 + (112 << 16)
+		fj_vertex_4     = 489 + (166 << 16)
+		fj_vertex_5     = 489 + (225 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_name             = ~JA#DOOR6804~
+		fj_destination_area = EVAL ~%FriendlyArmInn%~
+		fj_destination_name = ~JA#FR6804~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x       = 478
+		fj_loc_y       = 279
+		fj_orientation = 2
+		STR_VAR
+		fj_structure_type = entrance
+		fj_name           = ~JA#FR6800~
+	END
+BUT_ONLY
