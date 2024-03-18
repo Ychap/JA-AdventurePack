@@ -42,6 +42,7 @@ COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.are~ ~override~
 		fj_box_right    = 342
 		fj_box_bottom   = 675
 		fj_cursor_idx   = 30
+		fj_flags        = (GAME_IS ~bgt~ ? 0 : 0b001000000000) // Cannot be passed by NPC(9)
 		fj_vertex_0     = 342 + (624 << 16)
 		fj_vertex_1     = 298 + (675 << 16)
 		fj_vertex_2     = 298 + (606 << 16)
