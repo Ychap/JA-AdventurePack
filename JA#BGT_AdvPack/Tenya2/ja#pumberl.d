@@ -1,9 +1,14 @@
 SET_WEIGHT PUMBERL 11 #-1 // IF ~StateCheck(Myself,STATE_CHARMED)~
 
 
-ALTER_TRANS PUMBERL
-BEGIN 2 4 END
+REPLACE_ACTION_TEXT PUMBERL
+~Wait(10)[%WNL%%MNL%%LNL%%TAB% ]*Enemy()~
+~NoAction()~
+
+
+// BGEE/EET
+REPLACE_TRANS_TRIGGER PUMBERL
 BEGIN 0 END
-BEGIN
-  "ACTION" ~NoAction()~ // Replace ~Wait(10) Enemy()~
-END
+BEGIN 3 END
+~Global("TremainQuest","GLOBAL",1)~
+~~
