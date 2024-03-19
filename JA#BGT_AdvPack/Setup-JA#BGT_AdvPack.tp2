@@ -50,8 +50,8 @@ ALWAYS
 			~JA#BGT_AdvPack/lib/func_cre_script/REPLACE_CRE_SCRIPT.tph~
 
 	INCLUDE ~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_SCRIPT.tph~
-			~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STATE_WEIGHT.tph~
 			~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STRREF.tph~
+			~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_WEIGHT.tph~
 
 	/* ACTION.IDS and TRIGGER.IDS patching to ToB - thanks, Cam, if you read it */
 	/* and GTIMES.IDS, ANIMATE.IDS patching to ToB, courtesy of the BG2 Fix Pack */
