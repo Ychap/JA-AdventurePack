@@ -14,10 +14,10 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.D~ USING ~JA#B
 COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.D~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	LAF GET_DLG_JOURNAL_STRREF
+	LAF GET_DLG_STRREF
 		INT_VAR idx_state = 0
 		STR_VAR dlg_file = ~IRLENT.DLG~
-		RET aldeth_state00_journal = strref
+		RET aldeth_state00_journal = journal_strref
 	END
 
 	<<<<<<<< ...inlined/irlent_bgt.d
@@ -41,10 +41,10 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ZORL.D~
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	LAF GET_DLG_JOURNAL_STRREF
+	LAF GET_DLG_STRREF
 		INT_VAR idx_state = 13
 		STR_VAR dlg_file = ~ALDETH.DLG~
-		RET aldeth_state13_journal = strref
+		RET aldeth_state13_journal = journal_strref
 	END
 
 	<<<<<<<< ...inlined/aldeth_bgt.d

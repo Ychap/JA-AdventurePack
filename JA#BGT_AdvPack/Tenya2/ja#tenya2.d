@@ -53,7 +53,7 @@ END
 
 
 EXTEND_BOTTOM TENYA2 0
-  IF ~!Global("HelpTremain","GLOBAL",1)~ THEN REPLY #%tenya2_state0_response2_strref% GOTO JA#TENYA_08
+  IF ~!Global("HelpTremain","GLOBAL",1)~ THEN REPLY #%tenya2_state00_response2% GOTO JA#TENYA_08
   IF ~~ THEN REPLY @0 EXIT
 END
 

@@ -74,10 +74,10 @@ COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
 COPY_EXISTING ~AMB_E14A.WAV~ ~override~
 
 
-LAF GET_DLG_JOURNAL_STRREF
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 0
 	STR_VAR dlg_file = ~LAERTA.DLG~
-	RET laerta_state00_journal = strref
+	RET laerta_state00_journal = journal_strref
 END
 
 <<<<<<<< ...inlined/ja#replace_action.d

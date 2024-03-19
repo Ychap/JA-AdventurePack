@@ -3,10 +3,10 @@
 ////////////////////////////
 
 
-LAF GET_DLG_JOURNAL_STRREF
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 4
 	STR_VAR dlg_file = ~SILENC.DLG~
-	RET silenc_state04_journal = strref
+	RET silenc_state04_journal = journal_strref
 END
 
 // BGT version of SILENC.DLG is a lot behind the BGEE/EET version

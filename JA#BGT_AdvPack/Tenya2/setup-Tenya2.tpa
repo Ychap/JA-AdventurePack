@@ -47,16 +47,16 @@ COPY_EXISTING ~JALANT.DLG~ ~override~
 BUT_ONLY
 
 
-LAF GET_DLG_JOURNAL_STRREF
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 28
 	STR_VAR dlg_file = ~TENYA.DLG~
-	RET tenya_state28_journal = strref
+	RET tenya_state28_journal = journal_strref
 END
-LAF GET_DLG_STATE_RESPONSE
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 0
 			idx_response = 2
 	STR_VAR dlg_file = ~TENYA2.DLG~
-	RET tenya2_state0_response2_strref = response_strref
+	RET tenya2_state00_response2 = response_strref
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumber2.d~

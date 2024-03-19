@@ -54,10 +54,10 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#ALYTH.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#BARTLEY.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#BRULGON.D~
 
-LAF GET_DLG_JOURNAL_STRREF
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 4
 	STR_VAR dlg_file = ~SILENC.DLG~
-	RET silenc_state04_journal = strref
+	RET silenc_state04_journal = journal_strref
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#RUM01.D~

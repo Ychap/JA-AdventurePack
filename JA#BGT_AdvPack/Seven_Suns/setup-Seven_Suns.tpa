@@ -22,20 +22,20 @@ COPY_EXISTING ~DOPPGR.CRE~ ~override/JA#DPKIZ.CRE~
 
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.ITM~ ~override~
 
-LAF GET_DLG_JOURNAL_STRREF
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 1
 	STR_VAR dlg_file = ~DOPPSE.DLG~
-	RET doppse_state01_journal = strref
+	RET doppse_state01_journal = journal_strref
 END
-LAF GET_DLG_JOURNAL_STRREF
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 3
 	STR_VAR dlg_file = ~DOPPSE.DLG~
-	RET doppse_state03_journal = strref
+	RET doppse_state03_journal = journal_strref
 END
-LAF GET_DLG_JOURNAL_STRREF
+LAF GET_DLG_STRREF
 	INT_VAR idx_state = 3
 	STR_VAR dlg_file = ~DOPPSM.DLG~
-	RET doppsm_state03_journal = strref
+	RET doppsm_state03_journal = journal_strref
 END
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
