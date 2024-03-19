@@ -1,12 +1,9 @@
-DEFINE_ACTION_FUNCTION GET_DLG_STATE_RESPONSE
+DEFINE_ACTION_FUNCTION GET_DLG_SCRIPT
 	INT_VAR idx_state = 0
 			idx_response = 0
 	STR_VAR dlg_file = ~~
 	RET idx_state_trigger // state weight
-		state_strref
 		state_trigger
-		response_strref
-		// response_journal
 		response_trigger
 		response_action
 BEGIN
@@ -23,7 +20,7 @@ BEGIN
 		READ_LONG 0x28 ofs_actions
 
 		SET state = ofs_states + (idx_state * 0x10)
-		READ_LONG (state + 0x0) state_strref
+		// READ_LONG (state + 0x0) state_strref
 		READ_LONG (state + 0x4) idx_first_response
 		READ_LONG (state + 0x8) num_responses
 		READ_LONG (state + 0xc) idx_state_trigger
@@ -41,11 +38,11 @@ BEGIN
 
 		SET response = ofs_responses + ((idx_first_response + idx_response) * 0x20)
 		READ_LONG (response + 0x0) response_flags
-		READ_LONG (response + 0x4) response_strref
+		// READ_LONG (response + 0x4) response_strref
 		// READ_LONG (response + 0x8) response_journal
 
 		TEXT_SPRINT response_trigger ~~
-		PATCH_IF (response_flags & 0b0010) BEGIN
+		PATCH_IF (response_flags & BIT1) BEGIN
 			READ_LONG (response + 0x0c) idx_response_trigger
 
 			SET trigger = ofs_response_triggers + (idx_response_trigger * 0x8)
@@ -55,7 +52,7 @@ BEGIN
 		END
 
 		TEXT_SPRINT response_action ~~
-		PATCH_IF (response_flags & 0b0100) BEGIN
+		PATCH_IF (response_flags & BIT2) BEGIN
 			READ_LONG (response + 0x10) idx_action
 
 			SET action = ofs_actions + (idx_action * 0x8)

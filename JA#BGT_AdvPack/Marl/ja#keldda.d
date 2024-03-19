@@ -24,15 +24,15 @@ END
 ADD_STATE_TRIGGER KELDDA 1
 ~GlobalLT("JA#MARL_GUARD","GLOBAL",1)~
 
-SET_WEIGHT KELDDA 3 #%state1_weight%
+SET_WEIGHT KELDDA 3 #%state01_weight%
 
 REPLACE_STATE_TRIGGER KELDDA 3
-~%state1_trigger%~
+~%state01_trigger%~
 
 ALTER_TRANS KELDDA
 BEGIN 3 END
 BEGIN END
 BEGIN
-  "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5) %state1_response0_action%~
+  "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5) %state01_response0_action%~
   "SOLVED_JOURNAL" ~@0~
 END

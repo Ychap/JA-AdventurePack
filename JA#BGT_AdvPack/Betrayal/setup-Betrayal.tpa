@@ -3,7 +3,7 @@
 ////////////////////////////////////////
 
 
-LAF GET_DLG_STATE_RESPONSE
+LAF GET_DLG_SCRIPT
 	INT_VAR idx_state = 21
 			idx_response = 1
 	STR_VAR dlg_file = ~ALDETH.DLG~

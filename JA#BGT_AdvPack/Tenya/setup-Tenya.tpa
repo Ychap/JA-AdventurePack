@@ -4,19 +4,19 @@
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	LAF GET_DLG_STATE_RESPONSE
+	LAF GET_DLG_SCRIPT
 		INT_VAR idx_state = 8
 				idx_response = 4
 		STR_VAR dlg_file = ~TENYA.DLG~
-		RET EraseJournalEntries = response_action
+		RET EraseJournalEntry_action = response_action
 	END
 END
-ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	LAF GET_DLG_STATE_RESPONSE
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	LAF GET_DLG_SCRIPT
 		INT_VAR idx_state = 3
 				idx_response = 0
 		STR_VAR dlg_file = ~TELMAN.DLG~
-		RET EraseJournalEntries = response_action
+		RET EraseJournalEntry_action = response_action
 	END
 END
 
@@ -28,7 +28,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#FISHERQUEST","MYAREA",1)
-		%EraseJournalEntries%
+		%EraseJournalEntry_action%
 		Continue()
 END
 >>>>>>>>
@@ -42,7 +42,7 @@ COPY_EXISTING ~FISHER.BCS~ ~override~
 BUT_ONLY
 
 
-LAF GET_DLG_STATE_RESPONSE
+LAF GET_DLG_SCRIPT
 	INT_VAR idx_state = 18
 	STR_VAR dlg_file = ~SONNER.DLG~
 	RET state18_response0_action = response_action

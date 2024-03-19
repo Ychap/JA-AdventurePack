@@ -49,7 +49,7 @@ ALWAYS
 			~JA#BGT_AdvPack/lib/func_cre_script/REMOVE_CRE_SCRIPT.tph~
 			~JA#BGT_AdvPack/lib/func_cre_script/REPLACE_CRE_SCRIPT.tph~
 
-	INCLUDE ~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STATE_RESPONSE.tph~
+	INCLUDE ~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_SCRIPT.tph~
 			~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STATE_WEIGHT.tph~
 			~JA#BGT_AdvPack/lib/func_dlg/GET_DLG_STRREF.tph~
 
