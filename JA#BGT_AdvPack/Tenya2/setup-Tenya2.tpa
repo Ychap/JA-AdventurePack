@@ -56,8 +56,7 @@ LAF GET_DLG_STATE_RESPONSE
 	INT_VAR idx_state = 0
 			idx_response = 2
 	STR_VAR dlg_file = ~TENYA2.DLG~
-	RET tenya2_state0_weight = idx_state_trigger
-		tenya2_state0_response2_strref = response_strref
+	RET tenya2_state0_response2_strref = response_strref
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumber2.d~
