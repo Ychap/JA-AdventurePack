@@ -14,6 +14,12 @@ COPY_EXISTING ~HALBAZ.DLG~ ~override~
 	END
 BUT_ONLY
 
+COPY_EXISTING ~VAI.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~Enemy()~ ~\0 ActionOverride("FLAMVAI",Enemy())~
+	END
+BUT_ONLY
+
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bellam.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#centeo.d~
@@ -30,6 +36,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#prsbx.d~	// JA#PRS
 COPY_EXISTING ~FLAMVAI.CRE~ ~override~
 	WRITE_ASCII DEATHVAR ~FLAMVAI~	#32
 BUT_ONLY
+
 COPY_EXISTING ~MTOWBASC.CRE~ ~override~
 	WRITE_ASCII DIALOG ~MTOWBASC~	#8
 BUT_ONLY
@@ -40,8 +47,9 @@ COPY_EXISTING ~MTOWBAST.CRE~ ~override~
 	WRITE_ASCII DIALOG ~MTOWBAST~	#8
 BUT_ONLY
 COPY_EXISTING ~MTOWUBSC.CRE~ ~override~
-	WRITE_ASCII DIALOG ~MTOWUB~	#8	// BGT
+	WRITE_ASCII DIALOG ~MTOWUB~		#8
 BUT_ONLY
+
 COPY_EXISTING ~PRSBAX_A.CRE~ ~override~
 	WRITE_ASCII DIALOG ~JA#PRS01~	#8
 BUT_ONLY
@@ -54,7 +62,6 @@ BUT_ONLY
 
 
 //misc.d
-COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Vai.D~
 COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Bently.D~
 COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Greywo.d~
 // COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Jondal.d~
