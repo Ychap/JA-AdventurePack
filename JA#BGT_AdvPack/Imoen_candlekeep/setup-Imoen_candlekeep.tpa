@@ -1,6 +1,0 @@
-///////////////////////////////////////////////
-//IMOENS ERWEITERTER AUFTRITT IN KERZENBURG
-///////////////////////////////////////////////
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Imoen_candlekeep/JA#IMOEN1.D~
-EXTEND_TOP ~%IMOEN_BCS%.BCS~ ~JA#BGT_AdvPack/Imoen_candlekeep/JA#IMOEN1.BAF~ EVALUATE_BUFFER

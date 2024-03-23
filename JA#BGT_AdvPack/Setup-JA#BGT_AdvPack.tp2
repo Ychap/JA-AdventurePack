@@ -386,14 +386,14 @@ LABEL "JA#BGT_AdvPack-Nashkel"
 INCLUDE ~JA#BGT_AdvPack/Nashkel/setup-Nashkel.tpa~
 
 
-///////////////////////////////////////
-//Imoen's extended Play in Candlekeep
-///////////////////////////////////////
+///////////////////////////
+//Imoen at Winthrop's inn
+///////////////////////////
 
-BEGIN ~Imoen's extended Play in Candlekeep~ DESIGNATED 30
-LABEL "JA#BGT_AdvPack-Imoen_candlekeep"
+BEGIN ~Imoen at Winthrop's inn~ DESIGNATED 30
+LABEL "JA#BGT_AdvPack-Imoen_Winthrop"
 
-INCLUDE ~JA#BGT_AdvPack/Imoen_candlekeep/setup-Imoen_candlekeep.tpa~
+INCLUDE ~JA#BGT_AdvPack/Imoen_Winthrop/setup-Imoen_Winthrop.tpa~
 
 
 ///////////////////////////////////////////////////////
