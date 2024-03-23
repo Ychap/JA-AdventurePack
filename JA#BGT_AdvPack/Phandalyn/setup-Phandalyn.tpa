@@ -1,13 +1,9 @@
-////////////////////////////////////////
-//FIXED: Moved Phandalyn to the Elfsong
-////////////////////////////////////////
+/////////////////////////////////////
+//Phandalyn waits in Elfsong Tavern
+/////////////////////////////////////
 
-// Remove SHOUT script - or the whole inn will turn hostile!
-COPY_EXISTING ~PHANDA.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~PHANDALY~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ script_new = ~PHANDALY~ END
-BUT_ONLY
 
+EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/JA#PHANDALY.BAF~ EVALUATE_BUFFER
 
 // Correct Phandalyn's script: should talk before attacking evil party members
 COPY_EXISTING ~PHANDALY.bcs~ ~override~
@@ -23,20 +19,28 @@ COPY_EXISTING ~PHANDALY.bcs~ ~override~
 	END
 BUT_ONLY
 
-EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/JA#PHANDALY.BAF~
 
-
-COMPILE ~JA#BGT_AdvPack/Phandalyn/JA#Phanda.d~
-COMPILE ~JA#BGT_AdvPack/Phandalyn/JA#Bellam.d~
-	PATCH_IF GAME_IS ~bgt~ BEGIN
-		REPLACE_TEXTUALLY ~#26870~ ~@1~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Phandalyn/JA#Phanda.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Phandalyn/JA#Bellam.d~
+	PATCH_MATCH _ WITH
+		ANY GAME_IS ~bgt~ BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~#26870~ ~@1~
+		END
+		ANY GAME_IS ~eet~ BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~#26870~ ~#226870~
+		END
+		DEFAULT
 	END
-	PATCH_IF GAME_IS ~eet~ BEGIN
-		REPLACE_TEXTUALLY ~#26870~ ~#226870~
-	END
 
 
-COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
+// Remove SHOUT script - or the whole inn will turn hostile!
+COPY_EXISTING ~PHANDA.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~PHANDALY~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ script_new = ~PHANDALY~ END
+BUT_ONLY
+
+
+COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.ARE~ ~override~
 	LPF DELETE_AREA_ACTOR STR_VAR actor_to_delete = ~Phandalyn~ END
 BUT_ONLY
 
@@ -55,3 +59,4 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_name           = ~Phandalyn~
 		fj_cre_resref     = ~PHANDA~
 	END
+BUT_ONLY
