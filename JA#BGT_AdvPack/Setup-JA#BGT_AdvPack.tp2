@@ -57,16 +57,16 @@ ALWAYS
 	/* and GTIMES.IDS, ANIMATE.IDS patching to ToB, courtesy of the BG2 Fix Pack */
 	INCLUDE ~JA#BGT_AdvPack/lib/ids_entries_cleanup.tph~
 
-	ACTION_DEFINE_ARRAY tra#reload BEGIN setup END
-	ACTION_DEFINE_ARRAY tra#noconvert BEGIN END
+	ACTION_DEFINE_ARRAY ja#noconvert BEGIN END
+	ACTION_DEFINE_ARRAY ja#reload BEGIN ~setup~ END
 	LAF HANDLE_CHARSETS
 		INT_VAR
-			infer_charsets = 1
-			from_utf8 = 1
+			infer_charsets  = 1
+			from_utf8       = 1
 		STR_VAR
-			tra_path = ~JA#BGT_AdvPack/languages~
-			noconvert_array = tra#noconvert
-			reload_array = tra#reload
+			tra_path        = ~JA#BGT_AdvPack/languages~
+			noconvert_array = ja#noconvert
+			reload_array    = ja#reload
 	END
 END
 
@@ -74,11 +74,11 @@ AUTO_TRA ~JA#BGT_AdvPack/Languages/%s~
 
 LANGUAGE ~Deutsch~
          ~german~
-         ~JA#BGT_AdvPack/languages/german/Setup.tra~
+         ~JA#BGT_AdvPack/languages/german/setup.tra~
 
 LANGUAGE ~English~
          ~english~
-         ~JA#BGT_AdvPack/languages/english/Setup.tra~
+         ~JA#BGT_AdvPack/languages/english/setup.tra~
 
 
 
