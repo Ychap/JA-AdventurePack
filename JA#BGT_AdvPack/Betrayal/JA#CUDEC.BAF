@@ -21,7 +21,7 @@ THEN
 		Wait(2)
 		FadeFromColor([20.0],0)
 		Wait(2)
-		ActionOverride("Aldeth",StartDialogNoSet(Player1))
+		ActionOverride("Aldeth",StartDialogueNoSet(Player1))
 END
 
 IF

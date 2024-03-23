@@ -7,7 +7,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#IMOEN","LOCALS",1)
 		SmallWait(2)
-		StartDialogNoSet([PC])
+		StartDialogueNoSet([PC])
 END
 
 IF
@@ -18,5 +18,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#IMOEN","LOCALS",2)
-		Dialog([PC])
+		Dialogue([PC])
 END

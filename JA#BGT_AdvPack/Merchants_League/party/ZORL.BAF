@@ -16,5 +16,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#CUIRL","GLOBAL",50)
 		Wait(2)
-		StartDialogNoSet([PC])
+		StartDialogueNoSet([PC])
 END

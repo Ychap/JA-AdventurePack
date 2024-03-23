@@ -6,7 +6,7 @@ THEN
 		Wait(3)
 		Polymorph(FAT_MAN)
 		Wait(1)
-		StartDialogNoSet([PC])
+		StartDialogueNoSet([PC])
 END
 
 IF
