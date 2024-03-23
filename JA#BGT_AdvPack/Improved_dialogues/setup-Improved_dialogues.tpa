@@ -21,6 +21,7 @@ COPY_EXISTING ~VAI.DLG~ ~override~
 BUT_ONLY
 
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bently.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bellam.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#centeo.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#cauter.d~
@@ -62,7 +63,6 @@ BUT_ONLY
 
 
 //misc.d
-COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Bently.D~
 COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Greywo.d~
 // COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Jondal.d~
 COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Zordral.D~
