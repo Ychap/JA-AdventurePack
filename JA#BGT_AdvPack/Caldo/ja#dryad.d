@@ -1,6 +1,6 @@
 REPLACE_ACTION_TEXT DRYAD
 ~EscapeArea\(Destroy\)?([0-9]*)~
-~ForceSpell(Myself,DRYAD_TELEPORT) Wait(1) DestroySelf()~
+~ForceSpell(Myself,DRYAD_TELEPORT)~
 
 
 APPEND DRYAD
