@@ -1,5 +1,5 @@
 ///////////////////////////////
-//Extended/Improved Dialogues
+//Extended/Improved dialogues
 ///////////////////////////////
 
 
@@ -26,12 +26,15 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bellam.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#centeo.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#cauter.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#connol.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#greywo.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#halbaz.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#jondal.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#mtowba.d~	// MTOWBASC.DLG MTOWBASN.DLG MTOWBAST.DLG
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#norale.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#nobl2.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#phlydi.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#prsbx.d~	// JA#PRS01.DLG JA#PRS02.DLG JA#PRS03.DLG
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#zordral.d~
 
 
 COPY_EXISTING ~FLAMVAI.CRE~ ~override~
@@ -60,9 +63,3 @@ BUT_ONLY
 COPY_EXISTING ~PRSBAX_C.CRE~ ~override~
 	WRITE_ASCII DIALOG ~JA#PRS03~	#8
 BUT_ONLY
-
-
-//misc.d
-COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Greywo.d~
-// COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Jondal.d~
-COMPILE ~JA#BGT_AdvPack/Improved_dialogues/JA#Zordral.D~
