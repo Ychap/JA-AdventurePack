@@ -560,6 +560,16 @@ LABEL "JA#BGT_AdvPack-Tenya2"
 INCLUDE ~JA#BGT_AdvPack/Tenya2/setup-Tenya2.tpa~
 
 
+////////////////////////
+//Caldo can be charmed
+////////////////////////
+
+BEGIN ~Caldo can be charmed~ DESIGNATED 47
+LABEL "JA#BGT_AdvPack-Caldo"
+
+INCLUDE ~JA#BGT_AdvPack/Caldo/setup-Caldo.tpa~
+
+
 ////////////////////////////////////////////////////////
 //Graphical improvements: Animated torches and candles
 ////////////////////////////////////////////////////////
