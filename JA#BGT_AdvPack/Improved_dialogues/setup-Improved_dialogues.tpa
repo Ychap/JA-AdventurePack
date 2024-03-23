@@ -3,13 +3,13 @@
 ///////////////////////////////
 
 
-// BGEE/EET: Connect specific response text to state 7 (Smart version of ALTER_TRANS ... BEGIN "EPILOGUE" ~GOTO 7~ END)
+// BGEE/EET: Connect specific response text to state 7 (Edit any COPY_TRANS HALBAZ done by other mods)
 COPY_EXISTING ~HALBAZ.DLG~ ~override~
 	GET_OFFSET_ARRAY responses 0x14 4 0x10 4 0 0 0x20
 	PHP_EACH responses AS i => response BEGIN
 		READ_LONG (response + 0x04) strref
 		PATCH_IF ((strref MODULO 200000) = 192) BEGIN
-			WRITE_LONG (response + 0x1c) 7 // Next dialogue state
+			WRITE_LONG (response + 0x1c) 7 // Point to next state
 		END
 	END
 BUT_ONLY
