@@ -5,10 +5,10 @@ IF
 	Global("JA#MOVE","LOCALS",0)
 THEN
 	RESPONSE #100
-		DialogueInterrupt(FALSE)
+		DialogInterrupt(FALSE)
 		MoveToPoint([522.640])
 		SetGlobal("JA#MOVE","LOCALS",1)
-		DialogueInterrupt(TRUE)
+		DialogInterrupt(TRUE)
 END
 
 IF

@@ -1,7 +1,3 @@
 REPLACE_ACTION_TEXT ZORDRAL
-~Kill("BENTHA")~
-~DialogueInterrupt(FALSE)
-FaceObject("BENTHA")
-CreateVisualEffectObject("SPFINGER","BENTHA")
-Kill("BENTHA")
-DialogueInterrupt(TRUE)~
+~Kill(\("BENTHA"\))~
+~DialogInterrupt(FALSE) FaceObject(\1) CreateVisualEffectObject("SPFINGER",\1) \0 DialogInterrupt(TRUE)~

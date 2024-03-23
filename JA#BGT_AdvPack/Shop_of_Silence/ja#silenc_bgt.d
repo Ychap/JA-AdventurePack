@@ -123,7 +123,7 @@ REPLACE_STATE_TRIGGER SILENC 10
 ADD_TRANS_ACTION SILENC
 BEGIN 10 END
 BEGIN END
-~DialogueInterrupt(FALSE)
+~DialogInterrupt(FALSE)
 Wait(3)
 ActionOverride("Mongo",Enemy())
 Enemy()~
