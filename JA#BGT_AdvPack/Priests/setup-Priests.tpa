@@ -1,12 +1,21 @@
-///////////////////////////////////////////////////////
-//Priests of Oghma, Gond and Ilmater in Baldur's Gate
-///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//Priest of Oghma, Gond and Ilmater in Baldur's Gate
+//////////////////////////////////////////////////////
 
-//OGHMA
-COMPILE ~JA#BGT_AdvPack/Priests/JA#OGHM1.D~
+
 COPY ~JA#BGT_AdvPack/Priests/JA#OGHM1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Priests/JA#OGHM1.STO~ ~override~
-	SAY 0xc @2
+	SAY STORE_NAME @2
+
+COPY ~JA#BGT_AdvPack/Priests/JA#PILL1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Priests/JA#ILMA1.STO~ ~override~
+	SAY STORE_NAME @3
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Priests/ja#oghm1.d~ // Oghma
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Priests/ja#pgond.d~ // Gond
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Priests/ja#pill1.d~ // Ilmater
+
 
 COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 	//add new actors
@@ -21,24 +30,20 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Priest of Oghma~
-		fj_cre_resref     = JA#OGHM1
-		fj_dlg_resref	  = JA#OGHM1
+		fj_cre_resref     = ~JA#OGHM1~
+		fj_dlg_resref	  = ~JA#OGHM1~
 	END
-	//Add Mapnote
+	//add mapnote
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x = 2580
-		fj_loc_y = 304
-		fj_note_strref = RESOLVE_STR_REF(@2)
+		fj_loc_x          = 2580
+		fj_loc_y          = 304
+		fj_note_strref    = RESOLVE_STR_REF(@2)
 		STR_VAR
 		fj_structure_type = note
 	END
+BUT_ONLY
 
-//ILMATER
-COMPILE ~JA#BGT_AdvPack/Priests/JA#PILL1.D~
-COPY ~JA#BGT_AdvPack/Priests/JA#PILL1.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Priests/JA#ILMA1.STO~ ~override~
-	SAY 0xc @3
 COPY_EXISTING ~%NEBaldursGate_IlmatersShrine%.ARE~ ~override~
 	//add new actors
 	LPF fj_are_structure
@@ -51,9 +56,7 @@ COPY_EXISTING ~%NEBaldursGate_IlmatersShrine%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Priest of Illmater~
-		fj_cre_resref     = JA#PILL1
-		fj_dlg_resref	  = JA#PILL1
+		fj_cre_resref     = ~JA#PILL1~
+		fj_dlg_resref	  = ~JA#PILL1~
 	END
-
-//GOND
-COMPILE ~JA#BGT_AdvPack/Priests/JA#PGOND.d~
+BUT_ONLY

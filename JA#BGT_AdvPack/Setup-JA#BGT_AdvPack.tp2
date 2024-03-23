@@ -396,9 +396,9 @@ LABEL "JA#BGT_AdvPack-Imoen_Winthrop"
 INCLUDE ~JA#BGT_AdvPack/Imoen_Winthrop/setup-Imoen_Winthrop.tpa~
 
 
-///////////////////////////////////////////////////////
-//Priests of Oghma, Gond and Ilmater in Baldur's Gate
-///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//Priest of Oghma, Gond and Ilmater in Baldur's Gate
+//////////////////////////////////////////////////////
 
 BEGIN ~Priest of Oghma, Gond and Ilmater in Baldur's Gate~ DESIGNATED 31
 LABEL "JA#BGT_AdvPack-Priests"
