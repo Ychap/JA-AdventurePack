@@ -2,14 +2,16 @@
 //RESTORED: Ignatio Phleed
 /////////////////////////////
 
+
 COPY ~JA#BGT_AdvPack/Ignatio_Phleed/JA#IGNAT.CRE~ ~override~
 	SAY NAME1 #11740 // ~Ignatio Phleed~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #11740 // ~Ignatio Phleed~ (string ref is true for BGT and BG:EE)
-	// IF MOD_IS_INSTALLED ~c#endlessbg1.tp2~ 0
-    PATCH_IF FILE_EXISTS ~c#stdstr.bcs~ BEGIN
+    PATCH_IF FILE_EXISTS ~override/c#stdstr.bcs~ BEGIN // IF MOD_IS_INSTALLED ~c#endlessbg1.tp2~ 0
 		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~c#stdstr~ END
 	END
 
-COMPILE ~JA#BGT_AdvPack/Ignatio_Phleed/JA#IGNAT.D~
 
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Ignatio_Phleed/AR7705_ignatio.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Ignatio_Phleed/AR7705.BAF~ EVALUATE_BUFFER
+
+
+COMPILE ~JA#BGT_AdvPack/Ignatio_Phleed/ja#ignat.d~
