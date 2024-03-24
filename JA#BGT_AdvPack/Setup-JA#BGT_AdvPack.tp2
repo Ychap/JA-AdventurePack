@@ -150,6 +150,7 @@ INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
 
 BEGIN ~Palin (Aldeth's hunter comrade)~ DESIGNATED 7
 LABEL "JA#BGT_AdvPack-Palin"
+REQUIRE_PREDICATE !GAME_IS ~bgee eet~ ~Already restored in BG:EE~
 
 INCLUDE ~JA#BGT_AdvPack/Palin/setup-Palin.tpa~
 
