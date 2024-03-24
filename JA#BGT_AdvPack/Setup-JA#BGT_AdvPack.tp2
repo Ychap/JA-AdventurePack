@@ -244,8 +244,6 @@ INCLUDE ~JA#BGT_AdvPack/Warehouse_Workers/setup-Warehouse_Workers.tpa~
 //RESTORED: Nobles
 ////////////////////
 
-//NOBLAY.CRE (Undercellars), NOBL15.CRE (3 Old Kegs), FTOWB3.CRE (Bl. Merm.), BOYBA3, LOWLGU
-
 BEGIN ~Nobles~ DESIGNATED 16
 LABEL "JA#BGT_AdvPack-nobles"
 
