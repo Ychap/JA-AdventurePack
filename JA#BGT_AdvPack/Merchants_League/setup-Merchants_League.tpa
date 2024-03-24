@@ -2,110 +2,12 @@
 //Merchants' League investigations
 ////////////////////////////////////
 
-/* für BTG:EE könnte hier übertragen werden (genaues Einfügen muss noch überprüft werden):
--Extradialog, um Senyiad zu beschwichtigen
--Begegnung mit Aldeth über Deagan in Baldurs Tor (Drei alte Krüge)
--Möglichkeit, Aldeth auf seinen Verrat anzusprechen.
-Änderungen in der Gilde + Verrat sind in BG:EE bereits restauriert.
-*/
-
-COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#BRANDI.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#DEAGAN.tra~
-COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.D~
-
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	LAF GET_DLG_STRREF
-		INT_VAR idx_state = 0
-		STR_VAR dlg_file = ~IRLENT.DLG~
-		RET aldeth_state00_journal = journal_strref
-	END
-
-	<<<<<<<< ...inlined/irlent_bgt.d
-	ALTER_TRANS IRLENT
-	BEGIN 0 END
-	BEGIN 1 END
-	BEGIN
-	  "UNSOLVED_JOURNAL" ~%aldeth_state00_journal%~
-	END
-	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/irlent_bgt.d~
-END
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#BART10.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#MERCHG.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#MERLEA.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#MLCOK.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#IRLENT.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ZORL.D~
-
-
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	LAF GET_DLG_STRREF
-		INT_VAR idx_state = 13
-		STR_VAR dlg_file = ~ALDETH.DLG~
-		RET aldeth_state13_journal = journal_strref
-	END
-
-	<<<<<<<< ...inlined/aldeth_bgt.d
-	ALTER_TRANS ALDETH
-	BEGIN JA#ALDETH_00 END
-	BEGIN 0 END
-	BEGIN
-	  "UNSOLVED_JOURNAL" ~%aldeth_state13_journal%~
-	END
-	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/JA#ALDETH.D~
-END ELSE BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ALDETH.D~
-END
-
-ADD_JOURNAL @12 @17 USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
-ADD_JOURNAL EXISTING @1025 @1026 @1027 @1028 @1029 @1030
-
-
-COPY_EXISTING_REGEXP ~\(ALDETH\|FLAMAL\)\.DLG~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Brandi",EscapeArea())~ ~\0 ActionOverride("JA#DEAGA",EscapeArea())~
-	END
-BUT_ONLY
-
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUALD.BAF~
-COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#CUDEA.BAF~
-COMPILE ~JA#BGT_AdvPack/Merchants_League/JA#CUDEB.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ALDET.BAF~
-
-EXTEND_TOP ~%NBaldursGate_ThreeOldKegs_L1%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7219.BAF~
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7227.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7229.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7300.BAF~ EVALUATE_BUFFER
-
-EXTEND_BOTTOM ~IRLENTRE.BCS~ ~JA#BGT_AdvPack/Merchants_League/IRLENTRE.BAF~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/ZORL.BAF~ EVALUATE_BUFFER
-
-
-COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~SetGlobal("SpawnDabron","GLOBAL",1)~ ~NoAction()~
-		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[3507\.2477\],[0S])~ ~Continue()~
-	END
-BUT_ONLY
-
-
-// Restore party part only in BGT (already restored in EE)
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	INCLUDE ~JA#BGT_AdvPack/Merchants_League/party/setup-party.tpa~
-END
-
 
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#MLBAR.STO~ ~override~
 
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.CRE~ ~override~
-	SAY NAME1 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
-	SAY NAME2 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
+	SAY NAME1 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
 
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#DOPP0.CRE~ ~override~
 	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP1.CRE~ ~override~
@@ -142,21 +44,111 @@ COPY ~JA#BGT_AdvPack/Merchants_League/JA#DIRLE.ITM~ ~override~
 	SAY NAME2 @2107
 	SAY DESC @2108
 
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ALDET.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUALD.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUDEA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUDEB.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.BAF~
+
+
+EXTEND_BOTTOM ~IRLENTRE.BCS~ ~JA#BGT_AdvPack/Merchants_League/IRLENTRE.BAF~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/ZORL.BAF~ EVALUATE_BUFFER
+
+EXTEND_TOP ~%NBaldursGate_ThreeOldKegs_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7219.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7229.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7300.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%SWBaldursGate_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~SetGlobal("SpawnDabron","GLOBAL",1)~ ~NoAction()~
+		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[3507\.2477\],[0S])~ ~Continue()~
+	END
+BUT_ONLY
+
+
+COPY_EXISTING ~ALDETH.DLG~ ~override~
+			  ~FLAMAL.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Brandi",EscapeArea())~ ~\0 ActionOverride("JA#DEAGA",EscapeArea())~
+	END
+BUT_ONLY
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	LAF GET_DLG_STRREF
+		INT_VAR idx_state = 13
+		STR_VAR dlg_file = ~ALDETH.DLG~
+		RET aldeth_state13_journal = journal_strref
+	END
+
+	<<<<<<<< ...inlined/aldeth_bgt.d
+	ALTER_TRANS ALDETH
+	BEGIN JA#ALDETH_00 END
+	BEGIN 0 END
+	BEGIN
+	  "UNSOLVED_JOURNAL" ~%aldeth_state13_journal%~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
+END ELSE BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#bart10.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#brandi.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#deaga.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#dopp.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#merchg.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#merlea.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#mlcok.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	LAF GET_DLG_STRREF
+		INT_VAR idx_state = 0
+		STR_VAR dlg_file = ~IRLENT.DLG~
+		RET irlent_state00_journal = journal_strref
+	END
+
+	<<<<<<<< ...inlined/irlent_bgt.d
+	ALTER_TRANS IRLENT
+	BEGIN 0 END
+	BEGIN 1 END
+	BEGIN
+	  "UNSOLVED_JOURNAL" ~%irlent_state00_journal%~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/irlent_bgt.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#irlent.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#zorl.d~
+
+ADD_JOURNAL @12 @17 USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
+ADD_JOURNAL EXISTING @1025 @1026 @1027 @1028 @1029 @1030
+
+
 COPY_EXISTING ~IRLENT.CRE~ ~override~
 	WRITE_BYTE 0x271 255 // General: MONSTER
 	WRITE_BYTE 0x272 103 // Race: BEAR
 	WRITE_BYTE 0x273 112 // Class: DOPPLEGANGER_GREATER
 	WRITE_BYTE 0x275 4   // Gender: NIETHER
 	REPLACE_CRE_ITEM ~CHAN04~ #0 #0 #0 ~NONE~ ~ARMOR~ EQUIP
+BUT_ONLY
 
 COPY_EXISTING ~ZORL.CRE~ ~override~
 	SAY NAME1 @2109
 	SAY NAME2 @2109
 	WRITE_BYTE 0x271 255 // General: MONSTER
 	ADD_CRE_ITEM ~JA#ZRLKY~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
+BUT_ONLY
 
 COPY_EXISTING ~ALDETH.CRE~ ~override~
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
+BUT_ONLY
 
 
 COPY_EXISTING ~AM0704.WAV~ ~override~
@@ -186,7 +178,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 			fj_orientation    = $orient("%index%")
 			STR_VAR
 			fj_structure_type = actor
-			fj_name           = Gast
+			fj_name           = ~Gast~
 			fj_cre_resref     = EVAL ~JA#DOPP%index%~
 			fj_dlg_resref 	  = EVAL ~JA#DOPP%index%~
 		END
@@ -202,8 +194,8 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 		fj_flags 		   = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
-		fj_name           = AM0704
-		fj_wav_resref0    = AM0704
+		fj_name           = ~AM0704~
+		fj_wav_resref0    = ~AM0704~
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
@@ -269,8 +261,8 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		fj_flags 		   = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
-		fj_name           = AM0704
-		fj_wav_resref0    = AM0704
+		fj_name           = ~AM0704~
+		fj_wav_resref0    = ~AM0704~
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
@@ -291,8 +283,8 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 		fj_flags 		   = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
-		fj_name           = AM0704
-		fj_wav_resref0    = AM0704
+		fj_name           = ~AM0704~
+		fj_wav_resref0    = ~AM0704~
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
@@ -302,8 +294,11 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
-	LPF REPLACE_AREA_ITEM
-		STR_VAR old_item = ~SW1H03~
-				new_item = ~SW1H02~
-	END
+	LPF REPLACE_AREA_ITEM STR_VAR old_item = ~SW1H03~ new_item = ~SW1H02~ END
 BUT_ONLY
+
+
+// Restore party part only in BGT (already restored in EE)
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	INCLUDE ~JA#BGT_AdvPack/Merchants_League/party/setup-party.tpa~
+END
