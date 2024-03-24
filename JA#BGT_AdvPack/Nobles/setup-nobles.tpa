@@ -2,28 +2,22 @@
 //RESTORED: Nobles
 ////////////////////
 
-//RESTORED: BOYBA3, FTOWB3.CRE (Bl. Merm.), LOWLGU, NOBL15.CRE (3 Old Kegs), NOBLAY.CRE (Undercellars)
+//RESTORED: BOYBA3, FTOWB3.CRE (Bl. Merm.), NOBL15.CRE (3 Old Kegs), NOBLAY.CRE (Undercellars)
 
 COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~
 	WRITE_ASCII DIALOG ~BOYBA3~ #8
 BUT_ONLY
 
 COPY ~JA#BGT_AdvPack/Nobles/JA#FTOB3.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Nobles/JA#LOWLG.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Nobles/JA#NOBLY.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Nobles/JA#NOB15.CRE~ ~override~
 
 
-COMPILE ~JA#BGT_AdvPack/Nobles/JA#LOWLG.BAF~
-
-
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#dillar.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#ftob3.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#lowlg.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nob15.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nobl14.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nobly.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#yago.d~
 
 
 COPY_EXISTING ~%BaldursGate_Undercellars%.ARE~ ~override~
@@ -71,22 +65,6 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~FTOWB3~
 		fj_cre_resref     = ~JA#FTOB3~
-	END
-BUT_ONLY
-
-COPY_EXISTING ~%BaldursGate_DocksLowLantern_D1%.ARE~ ~override~
-	//add new actor
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 425
-		fj_loc_y          = 295
-		fj_dest_x         = 425
-		fj_dest_y         = 295
-		fj_orientation    = 3
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Wache~
-		fj_cre_resref     = ~JA#LOWLG~
 	END
 BUT_ONLY
 

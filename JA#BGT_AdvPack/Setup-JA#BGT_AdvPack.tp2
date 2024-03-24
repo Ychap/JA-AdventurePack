@@ -568,6 +568,16 @@ LABEL "JA#BGT_AdvPack-Caldo"
 INCLUDE ~JA#BGT_AdvPack/Caldo/setup-Caldo.tpa~
 
 
+/////////////////////////////////////////
+//RESTORED: Yago's guard in Low Lantern
+/////////////////////////////////////////
+
+BEGIN ~Yago's guard in Low Lantern~ DESIGNATED 48
+LABEL "JA#BGT_AdvPack-Yago"
+
+INCLUDE ~JA#BGT_AdvPack/Yago/setup-Yago.tpa~
+
+
 ////////////////////////////////////////////////////////
 //Graphical improvements: Animated torches and candles
 ////////////////////////////////////////////////////////
