@@ -3,31 +3,20 @@
 ////////////////////////////////////////
 
 
-LAF GET_DLG_SCRIPT
-	INT_VAR idx_state = 21
-			idx_response = 1
-	STR_VAR dlg_file = ~ALDETH.DLG~
-	RET state21_weight = idx_state_trigger
-		state21_response1_action = response_action
-END
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#DEAGAN.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#ALDETH_BETRAYAL.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#ALDETH_RECONCILIATION.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+COPY ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.CRE~ ~override~
+	SAY NAME1 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#CUDEC.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#CUDED.BAF~
-COMPILE ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.BAF~
-COMPILE ~JA#BGT_AdvPack/Betrayal/JA#MGUAR.BAF~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#MGUAR.BAF~
+
 
 EXTEND_TOP ~%EBaldursGate%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7800.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7227.BAF~ EVALUATE_BUFFER
-
-
-COPY ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.CRE~ ~override~
-	SAY NAME1 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
-	SAY NAME2 #3224 //~Deagan~ (string ref is true for BGT and BG:EE)
 
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
@@ -53,14 +42,32 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	BUT_ONLY
 END
 
-COPY_EXISTING ~MERCHG.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~MERCHG~ script_new = ~JA#MGUAR~ END
+
+LAF GET_DLG_SCRIPT
+	INT_VAR idx_state = 21
+			idx_response = 1
+	STR_VAR dlg_file = ~ALDETH.DLG~
+	RET state21_weight = idx_state_trigger
+		state21_response1_action = response_action
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/ja#aldeth_betrayal.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/ja#aldeth_reconciliation.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/ja#deagb.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
+
 
 COPY_EXISTING ~BRANDI.CRE~ ~override~
 	LPF ADD_CRE_SCRIPT INT_VAR offset_start = SCRIPT_CLASS STR_VAR script_new = ~JA#MGUAR~ END
+BUT_ONLY
 
 COPY_EXISTING ~DABRON.CRE~ ~override/JA#DABRO.CRE~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~DABRON~ END
-	WRITE_ASCII DIALOG ~None~ #8
+
 	WRITE_BYTE 0x270 255 // Allegiance: ENEMY
+	WRITE_ASCII DIALOG ~None~ #8
+BUT_ONLY
+
+COPY_EXISTING ~MERCHG.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~MERCHG~ script_new = ~JA#MGUAR~ END
+BUT_ONLY
