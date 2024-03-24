@@ -9,7 +9,21 @@ COPY ~JA#BGT_AdvPack/Yago/JA#LOWLG.CRE~ ~override~
 COMPILE ~JA#BGT_AdvPack/Yago/JA#LOWLG.BAF~
 
 
+COPY_EXISTING ~BRIELB.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~SetGlobal("BrielbaraMove","GLOBAL",1)~ ~\0 SetGlobal("JA#LOWLG","GLOBAL",0)~
+	END
+BUT_ONLY
+
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Yago/ja#lowlg.d~
+	REPLACE_TEXTUALLY EXACT_MATCH ~MOVEPARTY~
+	~ActionOverride(Player1,LeaveAreaLUA("%BaldursGateDocks%","",[3464.3054],8))
+	 ActionOverride(Player2,LeaveAreaLUA("%BaldursGateDocks%","",[2891.2715],8))
+	 ActionOverride(Player3,LeaveAreaLUA("%BaldursGateDocks%","",[3416.3091],8))
+	 ActionOverride(Player4,LeaveAreaLUA("%BaldursGateDocks%","",[3480.3090],8))
+	 ActionOverride(Player5,LeaveAreaLUA("%BaldursGateDocks%","",[3384.3114],8))
+	 ActionOverride(Player6,LeaveAreaLUA("%BaldursGateDocks%","",[3432.3150],8))~
 
 
 COPY_EXISTING ~%BaldursGate_DocksLowLantern_D1%.ARE~ ~override~
