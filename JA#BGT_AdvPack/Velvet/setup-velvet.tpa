@@ -1,11 +1,10 @@
-///////////////////////////////
+////////////////////////////////
 //RESTORED: Velvet - Cockfight
-///////////////////////////////
+////////////////////////////////
 
 
 //Fix Animation BGT only
 ACTION_IF GAME_IS ~bgt~ BEGIN
-
 	APPEND ~ANIMATE.IDS~ ~0x547C CHICKEN_BROWN~ UNLESS ~^0x547C~  //0x547C £AC BGT+Infinity		0x7D2 ACHB BGEE
 	APPEND ~ANISND.IDS~ ~0x547C £AC      CGAMEANIMATIONTYPE_CHICKEN_BROWN~ UNLESS ~^0x547C~
 
@@ -14,29 +13,29 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	END
 END
 
-
-COPY ~JA#BGT_AdvPack/velvet/JA#VELVE.CRE~ ~override~
-	SAY NAME1 @2056
-	SAY NAME2 @2056
-
 COPY ~JA#BGT_AdvPack/velvet/JA#COCK1.CRE~ ~override~
 	SAY NAME1 @2122
 	SAY NAME2 @2057
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_LONG 0x28	0x7D02
+		WRITE_LONG 0x28	0x7D02 // Animation: CHICKEN_BROWN
 	END
 
 COPY ~JA#BGT_AdvPack/velvet/JA#COCK2.CRE~ ~override~
 	SAY NAME1 @2123
 	SAY NAME2 @2057
 
+COPY ~JA#BGT_AdvPack/velvet/JA#VELVE.CRE~ ~override~
+	SAY NAME1 @2056
+	SAY NAME2 @2056
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#VELVE.D~
 
-
-EXTEND_TOP ~%NashkelCarnival%.BCS~ ~JA#BGT_AdvPack/velvet/AR3800.BAF~ EVALUATE_BUFFER
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#VELVE.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#CCKF1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/JA#VELVE.BAF~
+
+EXTEND_TOP ~%NashkelCarnival_BCS%.BCS~ ~JA#BGT_AdvPack/velvet/AR3800.BAF~ EVALUATE_BUFFER
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/ja#velve.d~
 
 
 COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
@@ -53,3 +52,4 @@ COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
 		fj_name           = ~Velvet~
 		fj_cre_resref     = ~JA#VELVE~
 	END
+BUT_ONLY
