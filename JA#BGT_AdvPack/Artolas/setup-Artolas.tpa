@@ -2,13 +2,20 @@
 //RESTORED: Sir Artolas
 /////////////////////////
 
+
 COPY ~JA#BGT_AdvPack/Artolas/JA#ARTOL.CRE~ ~override~
 	SAY NAME1 @2065
 	SAY NAME2 @2065
-COMPILE ~JA#BGT_AdvPack/Artolas/JA#ARTOL.D~
+
+
 COMPILE ~JA#BGT_AdvPack/Artolas/JA#ARTOL.BAF~
+
+
+COMPILE ~JA#BGT_AdvPack/Artolas/ja#artol.d~
+
+
 COPY_EXISTING ~%ESewers%.ARE~ ~override~
-	//add new actors
+	//add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1266
@@ -20,5 +27,5 @@ COPY_EXISTING ~%ESewers%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Sir Artolas~
 		fj_cre_resref     = ~JA#ARTOL~
-		fj_dlg_resref	  = ~JA#ARTOL~
 	END
+BUT_ONLY
