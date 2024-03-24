@@ -3,7 +3,7 @@
 /////////////////////////////
 
 
-EXTEND_TOP ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Yuxi/AR7226.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%WBaldursGate_RagefastsHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Yuxi/AR7226.BAF~ EVALUATE_BUFFER
 
 
 COPY ~JA#BGT_AdvPack/Yuxi/JA#IMP01.CRE~ ~override~

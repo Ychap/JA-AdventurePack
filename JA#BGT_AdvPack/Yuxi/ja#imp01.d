@@ -2,6 +2,18 @@ BEGIN ~JA#IMP01~
 // END JA#IMP01
 
 
+CHAIN IF ~GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%) Global("JA#IMP01X","LOCALS",0)~ THEN JA#IMP01 JA#IMP01_X
+  @1
+  == RAGEFA @2
+  == JA#IMP01 @3
+  == RAGEFA @4
+  == JA#IMP01 @5
+  == RAGEFA @6
+  == JA#IMP01 @7
+  == RAGEFA @8 DO ~SetGlobal("JA#IMP01X","LOCALS",1) ForceSpell("JA#IMP01",WIZARD_POWER_WORD_SILENCE)~
+EXIT
+
+
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN JA#IMP01 JA#IMP01_0
   @9
   == RAGEFA @10
@@ -39,18 +51,6 @@ CHAIN IF ~NumTimesTalkedTo(5)~ THEN JA#IMP01 JA#IMP01_5
   @25
   == RAGEFA @26
 EXIT
-
-CHAIN IF ~GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%) Global("JA#IMP01X","LOCALS",0)~ THEN JA#IMP01 JA#IMP01_X
-  @1
-  == RAGEFA @2
-  == JA#IMP01 @3
-  == RAGEFA @4
-  == JA#IMP01 @5
-  == RAGEFA @6
-  == JA#IMP01 @7
-  == RAGEFA @8
-END
-  IF ~~ THEN DO ~SetGlobal("JA#IMP01X","LOCALS",1) ActionOverride("Ragefast",ForceSpell("JA#IMP01",WIZARD_POWER_WORD_SILENCE))~ EXIT
 
 
 APPEND JA#IMP01
