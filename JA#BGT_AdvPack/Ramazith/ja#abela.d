@@ -14,7 +14,7 @@ UNLESS ~SetGlobal("RagefastDead","GLOBAL",1)~
 
 APPEND ABELA
 
-IF ~!Dead("Ramazith") Global("HelpRamazith","GLOBAL",3)~ THEN BEGIN JA#ABELA_1
+IF ~!Dead("Ramazith") Global("HelpRamazith","GLOBAL",3)~ THEN JA#ABELA_1
 SAY @0
 IF ~~ THEN EXIT
 END

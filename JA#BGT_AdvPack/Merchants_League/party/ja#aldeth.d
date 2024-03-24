@@ -16,12 +16,12 @@ SAY @25 = @26
 IF ~~ THEN EXTERN ZORL JA#ZORL_100
 END
 
-IF ~~ THEN BEGIN JA#ALDETH_30
+IF ~~ THEN JA#ALDETH_30
 SAY @31 = @32
 IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) SetGlobal("JA#ALD_MOVE1","%SWBaldursGate_MerchantLeague_L2%",1) EscapeArea()~ EXIT
 END
 
-IF ~~ THEN BEGIN JA#ALDETH_31
+IF ~~ THEN JA#ALDETH_31
 SAY @33
 IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) SetGlobal("JA#ALD_MOVE1","%SWBaldursGate_MerchantLeague_L2%",1) EscapeArea()~ EXIT
 END
@@ -62,12 +62,12 @@ END
 
 APPEND ZORL
 
-IF ~~ THEN BEGIN JA#ZORL_100
+IF ~~ THEN JA#ZORL_100
 SAY @42
 IF ~~ THEN EXTERN IRLENT 4
 END
 
-IF ~AreaCheck("%SWBaldursGate_MerchantLeague_L3%") Global("JA#CUIRL","GLOBAL",0)~ THEN BEGIN JA#ZORL_04
+IF ~AreaCheck("%SWBaldursGate_MerchantLeague_L3%") Global("JA#CUIRL","GLOBAL",0)~ THEN JA#ZORL_04
 SAY @110
 IF ~~ THEN EXIT
 END

@@ -1,18 +1,18 @@
 BEGIN ~JA#KEELO~
 
-IF ~NumTimesTalkedTo(0)HPLT(Myself,2)~ THEN BEGIN 5
+IF ~NumTimesTalkedTo(0)HPLT(Myself,2)~ THEN 5
   SAY @0
   IF ~~ THEN DO ~SetGlobalTimer("JA#KEELX","GLOBAL",TEN_HOURS)~ EXIT
 END
 
-IF ~HPLT(Myself,2)~ THEN BEGIN 6
+IF ~HPLT(Myself,2)~ THEN 6
   SAY @0
   IF ~~ THEN EXIT
 END
 
 BEGIN ~JA#KEELX~
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 3
+IF ~NumTimesTalkedTo(0)~ THEN 3
   SAY @1
   IF ~PartyHasItem("POTN08")~ THEN REPLY @2 DO ~TakePartyItemNum("POTN08",1)~ EXIT
   IF ~PartyHasItem("POTN52")~ THEN REPLY @17 DO ~TakePartyItemNum("POTN52",1)~ EXIT
@@ -23,7 +23,7 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN 3
   IF ~~ THEN REPLY @7 GOTO 6
 END
 
-IF ~Global("JA#KEELOR","LOCALS",0)~ THEN BEGIN JA#KEELX_1
+IF ~Global("JA#KEELOR","LOCALS",0)~ THEN JA#KEELX_1
   SAY @8
   IF ~PartyHasItem("POTN08")~ THEN REPLY @2 DO ~TakePartyItemNum("POTN08",1)~ EXIT
   IF ~PartyHasItem("POTN52")~ THEN REPLY @17 DO ~TakePartyItemNum("POTN52",1)~ EXIT
@@ -34,28 +34,28 @@ IF ~Global("JA#KEELOR","LOCALS",0)~ THEN BEGIN JA#KEELX_1
   IF ~~ THEN REPLY @7 GOTO 6
 END
 
-IF ~Global("JA#KEELOR","LOCALS",1)HPPercentLT(Myself,51)~ THEN BEGIN 0
+IF ~Global("JA#KEELOR","LOCALS",1)HPPercentLT(Myself,51)~ THEN 0
   SAY @9
   IF ~~ THEN DO ~GiveItem("AX1H02",LastTalkedToBy)SetGlobal("JA#KEELOR","LOCALS",2)ReputationInc(1)AddExperienceParty(150)EscapeAreaMove("%Beregost_RedSheaf_L1%",532,444,11)~ JOURNAL @10 EXIT
 END
 
-IF ~Global("JA#KEELOR","LOCALS",1)HPPercentGT(Myself,50)HPPercentLT(Myself,91)~ THEN BEGIN 1
+IF ~Global("JA#KEELOR","LOCALS",1)HPPercentGT(Myself,50)HPPercentLT(Myself,91)~ THEN 1
   SAY @11
   IF ~~ THEN DO ~GiveItem("JA#KEELX",LastTalkedToBy)SetGlobal("JA#KEELOR","LOCALS",2)ReputationInc(1)AddExperienceParty(150)EscapeAreaMove("%Beregost_RedSheaf_L1%",532,444,11)~ JOURNAL @12 EXIT
 END
 
-IF ~Global("JA#KEELOR","LOCALS",1)HPPercentGT(Myself,90)~ THEN BEGIN 2
+IF ~Global("JA#KEELOR","LOCALS",1)HPPercentGT(Myself,90)~ THEN 2
   SAY @13
   IF ~~ THEN DO ~SetGlobal("JA#KEELOR","LOCALS",2)SetGlobal("JA#NASHA","GLOBAL",1)ReputationInc(1)AddExperienceParty(150)EscapeAreaMove("%Beregost_RedSheaf_L1%",532,444,11)~ JOURNAL @14 EXIT
 END
 
-IF ~Global("JA#KEELOR","LOCALS",2)~ THEN BEGIN 4
+IF ~Global("JA#KEELOR","LOCALS",2)~ THEN 4
   SAY @15
   IF ~~ THEN EXIT
 END
 
 
-IF ~~ THEN BEGIN 6
+IF ~~ THEN 6
   SAY @16
   IF ~~ THEN DO ~EquipMostDamagingMelee()Enemy()~ EXIT
 END

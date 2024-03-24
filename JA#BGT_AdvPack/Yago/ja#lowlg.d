@@ -1,16 +1,16 @@
 BEGIN ~JA#LOWLG~
 
-IF ~!StateCheck(Myself,STATE_CHARMED) Global("YagoFight","GLOBAL",1)~ THEN BEGIN 6
+IF ~!StateCheck(Myself,STATE_CHARMED) Global("YagoFight","GLOBAL",1)~ THEN 6
   SAY @1
   IF ~~ THEN EXIT
 END
 
-IF ~OR(2) StateCheck(Myself,STATE_CHARMED) Global("JA#LOWLG","GLOBAL",1)~ THEN BEGIN 5
+IF ~OR(2) StateCheck(Myself,STATE_CHARMED) Global("JA#LOWLG","GLOBAL",1)~ THEN 5
   SAY @0
   IF ~~ THEN EXIT
 END
 
-IF ~Global("JA#LOWLG","GLOBAL",0)~ THEN BEGIN 0
+IF ~Global("JA#LOWLG","GLOBAL",0)~ THEN 0
   SAY @2
   IF ~~ THEN REPLY @3 GOTO 1
   IF ~Global("BrielbaraMove","GLOBAL",1)~ THEN REPLY @4 GOTO 2
@@ -18,7 +18,7 @@ IF ~Global("JA#LOWLG","GLOBAL",0)~ THEN BEGIN 0
   IF ~~ THEN REPLY @6 DO ~MOVEPARTY~ EXIT
 END
 
-IF ~~ THEN BEGIN 1
+IF ~~ THEN 1
   SAY @7
   IF ~PartyGoldGT(0) NumInPartyAlive(1)~                        THEN REPLY @15 DO ~TakePartyGold(1)~ GOTO JA#LOWLG_1
   IF ~PartyGoldGT(1) NumInPartyAliveGT(1) NumInPartyAliveLT(3)~ THEN REPLY @15 DO ~TakePartyGold(2)~ GOTO JA#LOWLG_1
@@ -30,24 +30,24 @@ IF ~~ THEN BEGIN 1
   IF ~~ THEN REPLY @17 DO ~MOVEPARTY~ EXIT
 END
 
-IF ~~ THEN BEGIN 2
+IF ~~ THEN 2
   SAY @8
   IF ~~ THEN REPLY @9 GOTO 1
   IF ~~ THEN REPLY @10 GOTO 3
 END
 
-IF ~~ THEN BEGIN 3
+IF ~~ THEN 3
   SAY @11
   IF ~~ THEN REPLY @9 GOTO 1
   IF ~~ THEN REPLY @12 DO ~MOVEPARTY~ EXIT
 END
 
-IF ~~ THEN BEGIN 4
+IF ~~ THEN 4
   SAY @13
   IF ~~ THEN DO ~MOVEPARTY~ EXIT
 END
 
-IF ~~ THEN BEGIN JA#LOWLG_1
+IF ~~ THEN JA#LOWLG_1
   SAY @14
   IF ~~ THEN DO ~SetGlobal("JA#LOWLG","GLOBAL",1)~ EXIT
 END

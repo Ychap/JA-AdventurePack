@@ -60,27 +60,27 @@ END
 
 APPEND ALDETH
 
-IF ~~ THEN BEGIN JA#ALDETH_32
+IF ~~ THEN JA#ALDETH_32
 SAY @34
 IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDED")~ EXIT
 END
 
-IF ~~ THEN BEGIN JA#ALDETH_32X
+IF ~~ THEN JA#ALDETH_32X
 SAY @41
 IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDED")~ EXIT
 END
 
-IF ~~ THEN BEGIN JA#ALDETH_33
+IF ~~ THEN JA#ALDETH_33
 SAY @35
 IF ~~ THEN DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
 END
 
-IF ~~ THEN BEGIN JA#ALDETH_34
+IF ~~ THEN JA#ALDETH_34
 SAY @36
 IF ~~ THEN DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
 END
 
-IF ~~ THEN BEGIN JA#ALDETH_35
+IF ~~ THEN JA#ALDETH_35
 SAY @37
 IF ~~ THEN DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
 END

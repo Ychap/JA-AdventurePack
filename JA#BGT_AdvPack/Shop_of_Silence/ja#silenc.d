@@ -1,7 +1,7 @@
 APPEND SILENC
 
 // Right after states with ~StateCheck(Myself,STATE_CHARMED)~ or ~NumTimesTalkedTo(0)~
-IF WEIGHT #3 ~Global("SeenSanctuary","GLOBAL",1) Global("JA#KNOW_MASKTEMPLE","GLOBAL",1) Global("JA#SILENCE_MASK","LOCALS",0)~ THEN BEGIN JA#SILENC_1
+IF WEIGHT #3 ~Global("SeenSanctuary","GLOBAL",1) Global("JA#KNOW_MASKTEMPLE","GLOBAL",1) Global("JA#SILENCE_MASK","LOCALS",0)~ THEN JA#SILENC_1
 SAY @3
 IF ~~ THEN REPLY @4 DO ~StartStore("stosilen",LastTalkedToBy(Myself))~ EXIT
 IF ~!InParty("TIAX")~ THEN REPLY @5 DO ~SetGlobal("JA#SILENCE_MASK","LOCALS",1)~ GOTO JA#SILENC_2
@@ -9,12 +9,12 @@ IF ~InParty("TIAX")~ THEN REPLY @5 DO ~SetGlobal("JA#SILENCE_MASK","LOCALS",1)~ 
 IF ~~ THEN REPLY @0 EXIT
 END
 
-IF ~~ THEN BEGIN JA#SILENC_2
+IF ~~ THEN JA#SILENC_2
 SAY @6
 IF ~~ THEN DO ~StartStore("JA#MASK1",LastTalkedToBy(Myself))~ EXIT
 END
 
-IF ~~ THEN BEGIN JA#SILENC_3
+IF ~~ THEN JA#SILENC_3
 SAY @7
 IF ~~ THEN EXIT
 END

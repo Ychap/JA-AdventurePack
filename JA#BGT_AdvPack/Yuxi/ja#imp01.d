@@ -62,12 +62,12 @@ IF ~~ THEN DO ~SetGlobal("JA#IMP01X","LOCALS",1) ActionOverride("Ragefast",Force
 
 APPEND JA#IMP01
 
-IF ~RandomNum(2,1)~ THEN BEGIN JA#IMP01_6
+IF ~RandomNum(2,1)~ THEN JA#IMP01_6
 SAY @27
 IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)~ THEN BEGIN JA#IMP01_7
+IF ~RandomNum(2,2)~ THEN JA#IMP01_7
 SAY @28
 IF ~~ THEN EXIT
 END

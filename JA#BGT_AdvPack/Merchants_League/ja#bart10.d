@@ -18,23 +18,23 @@ END
 
 APPEND BART10
 
-IF ~~ THEN BEGIN JA#BART10_00
+IF ~~ THEN JA#BART10_00
 SAY @44
 IF ~~ THEN DO ~IncrementGlobal("JA#MERCLEAGUE_INSP","GLOBAL",1)~ UNSOLVED_JOURNAL @1030 EXIT
 END
 
-IF ~!Global("HelpAldeth","GLOBAL",2)~ THEN BEGIN JA#BART10_01
+IF ~!Global("HelpAldeth","GLOBAL",2)~ THEN JA#BART10_01
 SAY @45
 IF ~~ THEN EXIT
 END
 
-IF ~Global("HelpAldeth","GLOBAL",2)Global("JA#BART10","LOCALS",0)~ THEN BEGIN JA#BART10_02
+IF ~Global("HelpAldeth","GLOBAL",2)Global("JA#BART10","LOCALS",0)~ THEN JA#BART10_02
 SAY @46
 IF ~~ THEN REPLY @47 DO ~SetGlobal("JA#BART10","LOCALS",1) StartStore("ja#mlbar",LastTalkedToBy(Myself))~ EXIT
 IF ~~ THEN REPLY @48 DO ~SetGlobal("JA#BART10","LOCALS",1)~ EXIT
 END
 
-IF ~Global("HelpAldeth","GLOBAL",2) Global("JA#BART10","LOCALS",1)~ THEN BEGIN JA#BART10_03
+IF ~Global("HelpAldeth","GLOBAL",2) Global("JA#BART10","LOCALS",1)~ THEN JA#BART10_03
 SAY @49
 IF ~~ THEN REPLY @50 DO ~StartStore("ja#mlbar",LastTalkedToBy(Myself))~ EXIT
 IF ~~ THEN REPLY @48 EXIT

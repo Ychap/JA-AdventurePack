@@ -40,7 +40,7 @@ END
 
 APPEND NILA
 
-IF WEIGHT #-1 ~Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",1)~ THEN BEGIN JA#NILA_1
+IF WEIGHT #-1 ~Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",1)~ THEN JA#NILA_1
 SAY @2
 IF ~~ THEN DO ~SetGlobal("JA#NILA","%NBaldursGate_DucalPalace_L2%",2)
 DialogInterrupt(FALSE)
@@ -54,25 +54,25 @@ DialogInterrupt(TRUE)
 Dialogue([PC])~ EXIT
 END
 
-IF WEIGHT #-1 ~Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",2)~ THEN BEGIN JA#NILA_2
+IF WEIGHT #-1 ~Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",2)~ THEN JA#NILA_2
 SAY @3
 IF ~~ THEN DO ~SetGlobal("JA#NILA","%NBaldursGate_DucalPalace_L2%",3) MoveToPoint([522.640])~ EXIT
 END
 
 
-IF ~~ THEN BEGIN JA#NILA_3
+IF ~~ THEN JA#NILA_3
 SAY @4
 IF ~Global("JA#SARE","LOCALS",0)~ THEN REPLY @0 DO ~SetGlobal("JA#SARE","LOCALS",1)~ GOTO JA#NILA_4
 IF ~~ THEN REPLY @1 GOTO JA#NILA_5
 END
 
-IF ~~ THEN BEGIN JA#NILA_4
+IF ~~ THEN JA#NILA_4
 SAY @5
 IF ~Global("JA#NILA_WHO","LOCALS",0)~ THEN REPLY @6 DO ~SetGlobal("JA#NILA_WHO","LOCALS",1)~ GOTO JA#NILA_3
 IF ~~ THEN REPLY @1 GOTO JA#NILA_5
 END
 
-IF ~~ THEN BEGIN JA#NILA_5
+IF ~~ THEN JA#NILA_5
 SAY @7
 COPY_TRANS NILA 0
 END

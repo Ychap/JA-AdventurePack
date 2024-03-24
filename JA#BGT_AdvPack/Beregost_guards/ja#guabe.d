@@ -1,16 +1,16 @@
 BEGIN ~JA#GUAB4~
 
-IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%) NumTimesTalkedTo(0)~ THEN BEGIN 1
+IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%) NumTimesTalkedTo(0)~ THEN 1
   SAY @5
   IF ~~ THEN EXIT
 END
 
-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
+IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 15
   SAY @6
   IF ~~ THEN EXIT
 END
 
-IF ~True()~ THEN BEGIN 4
+IF ~True()~ THEN 4
   SAY @7
   IF ~~ THEN EXIT
 END
@@ -20,22 +20,22 @@ END
 
 BEGIN ~JA#GUAB5~
 
-IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%) NumTimesTalkedTo(0)~ THEN BEGIN 2
+IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%) NumTimesTalkedTo(0)~ THEN 2
   SAY @8
   IF ~~ THEN JOURNAL @9 GOTO 3
 END
 
-IF ~~ THEN BEGIN 3
+IF ~~ THEN 3
   SAY @10
   IF ~~ THEN EXIT
 END
 
-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
+IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 15
   SAY @6
   IF ~~ THEN EXIT
 END
 
-IF ~True()~ THEN BEGIN 4
+IF ~True()~ THEN 4
   SAY @7
   IF ~~ THEN EXIT
 END
@@ -50,43 +50,43 @@ IF ~OR(4)
 Global("wyvernp","GLOBAL",0)
 !Dead("Mulahey")
 GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)
-NumTimesTalkedTo(0)~ THEN BEGIN JA#GUAB4_1
+NumTimesTalkedTo(0)~ THEN JA#GUAB4_1
   SAY @11
   IF ~~ THEN REPLY @12 GOTO 14
   IF ~~ THEN REPLY @13 EXIT
 END
 
-IF ~~ THEN BEGIN JA#GUAB4_2
+IF ~~ THEN JA#GUAB4_2
   SAY @14
   IF ~~ THEN GOTO 10
 END
 
-IF ~~ THEN BEGIN 0
+IF ~~ THEN 0
   SAY @15
   IF ~~ THEN JOURNAL @16 EXIT
 END
 
-IF ~~ THEN BEGIN 6
+IF ~~ THEN 6
   SAY @17
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 7
+IF ~~ THEN 7
   SAY @18
   IF ~~ THEN GOTO 8
 END
 
-IF ~~ THEN BEGIN 8
+IF ~~ THEN 8
   SAY @19
   IF ~~ THEN JOURNAL @20 EXIT
 END
 
-IF ~~ THEN BEGIN 10
+IF ~~ THEN 10
   SAY @21
   IF ~~ THEN JOURNAL @22 EXIT
 END
 
-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 15
+IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 15
   SAY @6
   IF ~~ THEN EXIT
 END
@@ -95,7 +95,7 @@ IF ~OR(4)
 !Dead("Bassilus")
 Global("wyvernp","GLOBAL",0)
 !Dead("Mulahey")
-GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)~ THEN BEGIN 14
+GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)~ THEN 14
   SAY @23
   IF ~!Dead("Bassilus")~ THEN REPLY @24 GOTO JA#GUAB4_2
   IF ~Global("wyvernp","GLOBAL",0)~ THEN REPLY @25 GOTO 0
@@ -105,7 +105,7 @@ GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)~ THEN BEGIN 14
 END
 
 
-IF ~True()~ THEN BEGIN 4
+IF ~True()~ THEN 4
   SAY @7
   IF ~~ THEN EXIT
 END
@@ -115,17 +115,17 @@ END
 
 BEGIN ~JA#GUAB7~
 
-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 1
+IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 1
   SAY @6
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,1)~ THEN BEGIN 2
+IF ~RandomNum(2,1)~ THEN 2
   SAY @7
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)~ THEN BEGIN 3
+IF ~RandomNum(2,2)~ THEN 3
   SAY @29
   IF ~~ THEN EXIT
 END
@@ -135,12 +135,12 @@ END
 
 BEGIN ~JA#GUAB8~
 
-IF ~RandomNum(2,1)~ THEN BEGIN 1
+IF ~RandomNum(2,1)~ THEN 1
   SAY @30
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)~ THEN BEGIN 2
+IF ~RandomNum(2,2)~ THEN 2
   SAY @31
   IF ~~ THEN EXIT
 END
@@ -149,12 +149,12 @@ END
 
 BEGIN ~JA#GUAB9~
 
-IF ~RandomNum(2,1)~ THEN BEGIN 1
+IF ~RandomNum(2,1)~ THEN 1
   SAY @32
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(2,2)~ THEN BEGIN 2
+IF ~RandomNum(2,2)~ THEN 2
   SAY @33
   IF ~~ THEN EXIT
 END

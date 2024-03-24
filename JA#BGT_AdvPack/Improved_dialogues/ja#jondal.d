@@ -1,6 +1,6 @@
 APPEND JONDAL
 
-IF WEIGHT #-1 ~NumTimesTalkedTo(0) Global("JonHit","GLOBAL",1)~ THEN BEGIN JA#JONDAL_0
+IF WEIGHT #-1 ~NumTimesTalkedTo(0) Global("JonHit","GLOBAL",1)~ THEN JA#JONDAL_0
   SAY @10
   COPY_TRANS JONDAL 3
 END

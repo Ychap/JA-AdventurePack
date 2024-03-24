@@ -17,7 +17,7 @@ END
 APPEND ALDETH
 
 IF WEIGHT #-1
-~Global("Chapter","GLOBAL",%tutu_chapter_7%) Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ THEN BEGIN JA#ALDETH_36
+~Global("Chapter","GLOBAL",%tutu_chapter_7%) Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ THEN JA#ALDETH_36
 SAY @38
 IF ~~ THEN REPLY @39 DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",3)~ EXIT
 IF ~~ THEN REPLY @40 DO ~SetGlobal("JA#MGUAR","GLOBAL",1) Enemy()~ EXIT

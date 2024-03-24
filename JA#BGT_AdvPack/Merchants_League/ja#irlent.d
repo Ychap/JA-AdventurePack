@@ -18,12 +18,12 @@ END
 
 APPEND IRLENT
 
-IF WEIGHT #0 ~Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",2)~ THEN BEGIN JA#IRLENT_01
+IF WEIGHT #0 ~Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",2)~ THEN JA#IRLENT_01
 SAY @0 = @1
 IF ~~ THEN DO ~SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",3) SetGlobal("JA#DOPPELGANGER_SPAWN","GLOBAL",1)~ EXIT
 END
 
-IF ~~ THEN BEGIN JA#IRLENT_02
+IF ~~ THEN JA#IRLENT_02
 SAY @2
 IF ~~ THEN DO ~SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",6) SetGlobal("JA#SENDZORL","GLOBAL",1) EscapeArea()~ UNSOLVED_JOURNAL @1027 EXIT
 END

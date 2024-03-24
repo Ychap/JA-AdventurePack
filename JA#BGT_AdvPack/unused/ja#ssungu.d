@@ -68,18 +68,18 @@ END
 
 APPEND SSUNGU
 
-IF ~AreaCheck("AR7601")Global("JA#SSGU1_LEAVE","AR7601",2)~ THEN BEGIN JA#SSUNGU_03
+IF ~AreaCheck("AR7601")Global("JA#SSGU1_LEAVE","AR7601",2)~ THEN JA#SSUNGU_03
 SAY ~Das... das waren die ganze Zeit Gestaltwandler? Was für ein Glück, dass wir überlebt haben. Aber nochmal brauch ich das nicht!~
 IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
-IF ~AreaCheck("AR7601")NumTimesTalkedToGT(0)~ THEN BEGIN JA#SSUNGU_01
+IF ~AreaCheck("AR7601")NumTimesTalkedToGT(0)~ THEN JA#SSUNGU_01
 SAY ~Ihr schon wieder? Der Zutritt ist im Augenblick nur Mitgliedern der Sieben Sonnen gestattet.~
 IF ~~ THEN REPLY ~Wir sind gekommen, um Jhasso zu sprechen.~ GOTO 1
 IF ~~ THEN REPLY ~Okay. Dann gehen wir wieder.~ EXIT
 END
 
-IF ~~ THEN BEGIN JA#SSUNGU_02
+IF ~~ THEN JA#SSUNGU_02
 SAY ~Dann war dies Eure letzte Dummheit!~
 IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ EXIT
 END
@@ -95,14 +95,12 @@ END
 
 BEGIN ~JA#SSGU4~
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+IF ~NumTimesTalkedTo(0)~ THEN 0
 SAY ~Von gestaltwandelnden Monstern hat niemand was gesagt. Dafür ist der Sold zu niedrig, ich verdrück mich.~
 IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
-IF ~~ THEN BEGIN 1
+IF ~~ THEN 1
 SAY ~Sie töten? Aber das verstößt gegen das Gesetz.~
 IF ~~ THEN DO ~SetGlobal("JA#SSGU4_LEAVE","AR7602",1)~ EXTERN DOPPSM 6
 END
-
-

@@ -1,45 +1,45 @@
 BEGIN ~JA#DRUDC~
 
 IF ~NumTimesTalkedTo(0)
-ReactionLT(LastTalkedToBy(),FRIENDLY_LOWER)~ THEN BEGIN 0
+ReactionLT(LastTalkedToBy(),FRIENDLY_LOWER)~ THEN 0
   SAY @0
   IF ~~ THEN EXIT
 END
 
 IF ~NumTimesTalkedTo(0)
-ReactionGT(LastTalkedToBy(),NEUTRAL_UPPER)~ THEN BEGIN 1
+ReactionGT(LastTalkedToBy(),NEUTRAL_UPPER)~ THEN 1
   SAY @1
   IF ~~ THEN REPLY @2 GOTO 2
   IF ~~ THEN REPLY @3 GOTO 3
   IF ~~ THEN REPLY @4 EXIT
 END
 
-IF ~~ THEN BEGIN 2
+IF ~~ THEN 2
   SAY @5
   IF ~~ THEN JOURNAL @6 EXIT
 END
 
-IF ~~ THEN BEGIN 3
+IF ~~ THEN 3
   SAY @7
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 4
+IF ~~ THEN 4
   SAY @8
   IF ~~ THEN EXIT
 END
 
-IF ~StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN 5
+IF ~StateCheck(Myself,STATE_CHARMED)~ THEN 5
   SAY @9
   IF ~~ THEN JOURNAL @6 EXIT
 END
 
-IF ~NumTimesTalkedTo(1)~ THEN BEGIN 6
+IF ~NumTimesTalkedTo(1)~ THEN 6
   SAY @10
   IF ~~ THEN DO ~Enemy()~ EXIT
 END
 
-IF ~~ THEN BEGIN 7
+IF ~~ THEN 7
   SAY @11
   IF ~~ THEN EXIT
 END
