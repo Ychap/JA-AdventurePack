@@ -29,13 +29,12 @@ UNLESS ~EscapeArea~
 
 
 EXTEND_BOTTOM SONNER 14
-IF ~~ THEN REPLY @0 EXTERN SONNER JA#SONNER_1
+  IF ~~ THEN REPLY @0 EXTERN SONNER JA#SONNER_1
 END
 
 CHAIN SONNER JA#SONNER_1
-@1 = @2
-== JEBADO @3
-== SONNER @4
-== TELMAN @5
-DO ~SetGlobal("HostileFishermen","GLOBAL",1)~
+  @1 = @2
+  == JEBADO @3
+  == SONNER @4
+  == TELMAN @5 DO ~SetGlobal("HostileFishermen","GLOBAL",1)~
 EXIT

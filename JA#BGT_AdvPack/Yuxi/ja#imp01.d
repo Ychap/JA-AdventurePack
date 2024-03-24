@@ -2,74 +2,67 @@ BEGIN ~JA#IMP01~
 // END JA#IMP01
 
 
-CHAIN
-IF ~NumTimesTalkedTo(0)~ THEN JA#IMP01 JA#IMP01_0
-@9
-== RAGEFA @10
-== JA#IMP01 @11
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN JA#IMP01 JA#IMP01_0
+  @9
+  == RAGEFA @10
+  == JA#IMP01 @11
 EXIT
 
-CHAIN
-IF ~NumTimesTalkedTo(1)~ THEN JA#IMP01 JA#IMP01_1
-@12
-== RAGEFA @2
-== JA#IMP01 @13
-== RAGEFA @14
-== JA#IMP01 @15
-== RAGEFA @16
+CHAIN IF ~NumTimesTalkedTo(1)~ THEN JA#IMP01 JA#IMP01_1
+  @12
+  == RAGEFA @2
+  == JA#IMP01 @13
+  == RAGEFA @14
+  == JA#IMP01 @15
+  == RAGEFA @16
 EXIT
 
-CHAIN
-IF ~NumTimesTalkedTo(2)~ THEN JA#IMP01 JA#IMP01_2
-@17
-== RAGEFA @18
-== JA#IMP01 @19
-== RAGEFA @14
+CHAIN IF ~NumTimesTalkedTo(2)~ THEN JA#IMP01 JA#IMP01_2
+  @17
+  == RAGEFA @18
+  == JA#IMP01 @19
+  == RAGEFA @14
 EXIT
 
-CHAIN
-IF ~NumTimesTalkedTo(3)~ THEN JA#IMP01 JA#IMP01_3
-@20
-== RAGEFA @21
-== JA#IMP01 @22
+CHAIN IF ~NumTimesTalkedTo(3)~ THEN JA#IMP01 JA#IMP01_3
+  @20
+  == RAGEFA @21
+  == JA#IMP01 @22
 EXIT
 
-CHAIN
-IF ~NumTimesTalkedTo(4)~ THEN JA#IMP01 JA#IMP01_4
-@23
-== RAGEFA @24
+CHAIN IF ~NumTimesTalkedTo(4)~ THEN JA#IMP01 JA#IMP01_4
+  @23
+  == RAGEFA @24
 EXIT
 
-CHAIN
-IF ~NumTimesTalkedTo(5)~ THEN JA#IMP01 JA#IMP01_5
-@25
-== RAGEFA @26
+CHAIN IF ~NumTimesTalkedTo(5)~ THEN JA#IMP01 JA#IMP01_5
+  @25
+  == RAGEFA @26
 EXIT
 
-CHAIN
-IF ~GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%) Global("JA#IMP01X","LOCALS",0)~ THEN JA#IMP01 JA#IMP01_X
-@1
-== RAGEFA @2
-== JA#IMP01 @3
-== RAGEFA @4
-== JA#IMP01 @5
-== RAGEFA @6
-== JA#IMP01 @7
-== RAGEFA @8
+CHAIN IF ~GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%) Global("JA#IMP01X","LOCALS",0)~ THEN JA#IMP01 JA#IMP01_X
+  @1
+  == RAGEFA @2
+  == JA#IMP01 @3
+  == RAGEFA @4
+  == JA#IMP01 @5
+  == RAGEFA @6
+  == JA#IMP01 @7
+  == RAGEFA @8
 END
-IF ~~ THEN DO ~SetGlobal("JA#IMP01X","LOCALS",1) ActionOverride("Ragefast",ForceSpell("JA#IMP01",WIZARD_POWER_WORD_SILENCE))~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#IMP01X","LOCALS",1) ActionOverride("Ragefast",ForceSpell("JA#IMP01",WIZARD_POWER_WORD_SILENCE))~ EXIT
 
 
 APPEND JA#IMP01
 
 IF ~RandomNum(2,1)~ THEN JA#IMP01_6
-SAY @27
-IF ~~ THEN EXIT
+  SAY @27
+  IF ~~ THEN EXIT
 END
 
 IF ~RandomNum(2,2)~ THEN JA#IMP01_7
-SAY @28
-IF ~~ THEN EXIT
+  SAY @28
+  IF ~~ THEN EXIT
 END
 
 END // APPEND JA#IMP01

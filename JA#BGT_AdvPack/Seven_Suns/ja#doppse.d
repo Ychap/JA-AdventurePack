@@ -1,5 +1,3 @@
-////For Translators: Strings can be found in Bg1 "DOPPSE.DLG"
-
 BEGIN ~JA#DPSS1~
 // END JA#DPSS1
 
@@ -10,8 +8,7 @@ BEGIN ~JA#DPSS3~
 // END JA#DPSS3
 
 
-CHAIN
-IF ~Global("JA#DOPPSE_TALK","GLOBAL",0)~ THEN JA#DPSS1 ja#doppse_01
+CHAIN IF ~Global("JA#DOPPSE_TALK","GLOBAL",0)~ THEN JA#DPSS1 ja#doppse_01
   @0
   DO ~SetGlobal("JA#DOPPSE_TALK","GLOBAL",1)~
   == JA#DPSS1 @1
@@ -24,7 +21,7 @@ IF ~Global("JA#DOPPSE_TALK","GLOBAL",0)~ THEN JA#DPSS1 ja#doppse_01
   == JA#DPSS3 @8
   == JA#DPSS1 @9
 END
-IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ UNSOLVED_JOURNAL #%doppse_state03_journal% EXIT
+  IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ UNSOLVED_JOURNAL #%doppse_state03_journal% EXIT
 
 
 
@@ -66,8 +63,8 @@ IF ~~ THEN 1
 END
 
 IF ~~ THEN 2
-SAY @22 = @23
-IF ~~ THEN DO ~EscapeArea()~ UNSOLVED_JOURNAL #%doppsm_state03_journal% EXIT
+  SAY @22 = @23
+  IF ~~ THEN DO ~EscapeArea()~ UNSOLVED_JOURNAL #%doppsm_state03_journal% EXIT
 END
 
 // END JA#SSMR3
