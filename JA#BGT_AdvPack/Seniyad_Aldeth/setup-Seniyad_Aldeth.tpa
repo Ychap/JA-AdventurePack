@@ -32,7 +32,7 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	<<<<<<<< ...inlined/aldeth_ee.d
 	ADD_STATE_TRIGGER ALDETH 31 ~Global("SeniyadXP","GLOBAL",0)~
 	>>>>>>>>
-	COMPILE ~...inlined/aldeth_ee.d~
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_ee.d~
 END
 
 LAF GET_DLG_STRREF
@@ -80,7 +80,8 @@ COPY_EXISTING ~%CloakwoodLodge%.ARE~ ~override~
 UNLESS ~druid_escape~
 
 
-/* bg1npc is installed: Viconia's interjection kills the new reply option to settle the discpute with Seniyad peacefully. Add the reply option to Viconia's new state, as well: */
+
+/* [DEPRECATED] bg1npc is installed: Viconia's interjection kills the new reply option to settle the discpute with Seniyad peacefully. Add the reply option to Viconia's new state, as well: */
 
 ACTION_IF ((MOD_IS_INSTALLED ~BG1NPC/BG1NPC.TP2~ "10") //bg1npc interjections and quests is installed
 			AND (FILE_EXISTS ~bg1npc/tra/english/x#viint.tra~)) BEGIN // only checking that the bg1npc folder is still in there
