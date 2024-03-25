@@ -5,15 +5,11 @@
 @4    = ~Verbreitet Eure Frömmigkeiten woanders, sie sind hier nicht angebracht.~
 @5    = ~Eine alte „Freundin“ von mir mochte ein Paar meiner Stiefel zu gerne. Sie heißt Pilar, und so, wie ich sie kenne, versteckt sie sich vermutlich im Freundlichen Arm. Mir ist gleichgültig, wie Ihr es anstellt, aber ich muss diese Stiefel wiederhaben.~
 @6    = ~Wir werden sehen, was wir tun können.~
-@7    = ~Pilar und Gheldehar
-
-Ich bin heute in einem Gässchen einem schmutzigen kleinen Gnom namens Gheldehar begegnet. Er behauptet, dass Pilar, eine „alte Freundin“, die zurzeit im Freundlichen Arm abgestiegen ist, seine Stiefel gestohlen haben soll, und er möchte sie zurückhaben. Gheldehar schien es nichts auszumachen, welcher Methoden ich mich dazu bediene, und ich traue daher der Bezeichnung „Freundin“ nicht so ganz.~
+/* @7 -> journal entry @1037 */
 @8    = ~Ich werde für Euch nicht den Dieb spielen. Guten Tag!~
 @9    = ~Wie ich sehe, habt Ihr meine Stiefel nicht dabei. Stellt meine Geduld nicht auf die Probe, denn meine Feinde haben nichts zu lachen.~
 @10   = ~Meine Stiefel … Ich muss sie unbedingt gleich anziehen …~
-@11   = ~Pilar und Gheldehar
-
-Ich habe dem Gnomenpriester Gheldehar seine Stiefel von Pilar wiederbeschafft. Ich glaube jedoch nicht, dass dadurch die merkwürdige Fehde zwischen den Beiden beendet ist.~
+/* @11 -> journal entry @1038 */
 @12   = ~Ihr habt mir einen außerordentlichen Dienst erwiesen. Hier habt Ihr 90 Goldmünzen, macht Euch einen schönen Tag …~
 @13   = ~Ah, meine Stiefel. Das habt Ihr gut gemacht. Erlaubt mir, als Bezahlung ein paar Eurer Wunden zu heilen.~
 @14   = ~Eure ständigen Besuche sind mehr als unangebracht. Ich fordere Euch auf, sie unverzüglich einzustellen.~

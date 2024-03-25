@@ -154,6 +154,22 @@ Der verwundete Kaufmann ist nun tot. Wenn ich ihn hätte retten wollen, hätte i
 @1034    = ~Böse Taten werden bestraft
 
 Bellamy, ein äußerst geheimnisvoller Halblingsbarde, hat mich vor einem Paladin gewarnt, der hinter einer der Hafentavernen hier in Baldurs Tor herumlungert. Es sieht ganz so aus, als ob mir mein Ruf vorausgeeilt wäre.~
+/* #15800 + Titel */
+@1035   = ~Pilar und Gheldehar
+
+Bei einem kühlen Bierchen im Freundlichen Arm hat mich die Halbelfe Pilar vor Gheldehar, einem alten Gnomenpriester in Baldurs Tor, gewarnt. Er hat noch einen alten Ring von ihr, und wenn ich ihr diesen zurückbringe, hat sie versprochen, mir das reichlich zu vergelten.~
+@1036   = ~Pilar und Gheldehar
+
+Ich habe Pilar ihren Ring zurückgebracht, den ich von dem Gnomenpriester Gheldehar wiederbeschafft habe. Was ich von der Feindschaft zwischen den beiden halten soll, ist mir aber immer noch nicht klar.~
+/* #15797 + Titel */
+@1037   = ~Pilar und Gheldehar
+
+Ich bin heute in einem Gässchen einem schmutzigen kleinen Gnom namens Gheldehar begegnet. Er behauptet, dass Pilar, eine „alte Freundin“, die zurzeit im Freundlichen Arm abgestiegen ist, seine Stiefel gestohlen haben soll, und er möchte sie zurückhaben. Gheldehar schien es nichts auszumachen, welcher Methoden ich mich dazu bediene, und ich traue daher der Bezeichnung „Freundin“ nicht so ganz.~
+@1038   = ~Pilar und Gheldehar
+
+Ich habe dem Gnomenpriester Gheldehar seine Stiefel von Pilar wiederbeschafft. Ich glaube jedoch nicht, dass dadurch die merkwürdige Fehde zwischen den Beiden beendet ist.~
+
+
 
 
 @2000   = ~Die Geschichte dieser Waffe verlor ihre Bedeutung in dem Meer der großartigen Geschichten, die man sich über den Hochwald erzählt, aber das Lied des herausragenden Bogenschützen Adaniss Rhyte wird noch heute von vielen Barden gesungen.
@@ -412,7 +428,9 @@ Gewicht: 1~
 
 EIGENSCHAFTEN:
 
-Druidenzauber: +1 (Grad 1 bis 3)~
+Druidenzauber: +1 (Grad 1 bis 3)
+
+Gewicht: 1~
 /* @2074 = ~Llindellyn~ */
 @2075 = ~Llindellyns Pfeil~
 @2076 = ~Dies ist der Lieblingspfeil von Llindellyn, dem elfischen Bogenschützen, dem Ihr im Mantelwald begegnet seid. Das Geschoss scheint nicht besonders gut ausbalanciert und von schlechter Verarbeitung zu sein. Vermutlich hat der Pfeil für seinen Besitzer eher einen sentimentalen Wert, der sich Euch jedoch nicht erschließt.

@@ -8,10 +8,7 @@
 /* #15508 */
 @7    = ~Travelers are you? Takes one to know one, I guess... I don't know if you're heading that way but, if you ever end up in Baldur's Gate, keep your eyes open for Gheldehar, an old gnomish cleric. Trickier than an old wyrm, that one. He's still got an old ring of mine which I'd love to have back, actually. Oh, and in case you didn't catch it... that was a subtle hint.~
 @8    = ~We'll see what we can do.~
-/* #15800 - without title */
-@9    = ~Pilar and Gheldehar
-
-Over a frothy ale at the Friendly Arm Inn, Pilar the half-elf has warned me of Gheldehar, an old gnomish cleric in Baldur's Gate. He still has an old ring of hers and, if I could ever get it back to her, she has promised to make the journey worth my while.~
+/* @9 -> journal entry @1035 */
 @10   = ~Settle this matter yourself. I can't play the errand boy for each resident of the Sword Coast.~
 /* #15509 */
 @11   = ~Thanks for the ale, sucker.~
@@ -19,9 +16,7 @@ Over a frothy ale at the Friendly Arm Inn, Pilar the half-elf has warned me of G
 @12   = ~Been to Baldur's Gate yet? Watch your back for Gheldehar when you do...~
 /* #15511 */
 @13   = ~Thanks for your help! Just let me put this ring on. It's been so long...~
-@14   = ~Pilar and Gheldehar
-
-I returned Pilar her ring, which I retrieved from the gnomish cleric Gheldehar. I still don't understand the reason of the hostility between the two, though.~
+/* @14 -> journal entry @1036 */
 /* #15512 */
 @15   = ~You've done well. Here, let me give you another in return.~
 /* #15513 */

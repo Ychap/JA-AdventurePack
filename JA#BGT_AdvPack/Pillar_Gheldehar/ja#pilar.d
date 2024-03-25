@@ -1,6 +1,6 @@
 BEGIN ~JA#PILAR~
 
-IF ~StateCheck(Myself,STATE_CHARMED)Global("JA#GHELD_JOB","GLOBAL",1)~ THEN JA_CHARM1
+IF ~StateCheck(Myself,STATE_CHARMED) Global("JA#GHELD_JOB","GLOBAL",1)~ THEN JA_CHARM1
   SAY @0
   IF ~Global("JA#PILARCHARM","LOCALS",0)~ THEN REPLY @1 DO ~SetGlobal("JA#PILARCHARM","LOCALS",1)~ GOTO JA_CHARM2
   IF ~~ THEN REPLY @2 EXIT
@@ -19,7 +19,7 @@ END
 
 IF ~~ THEN 1
   SAY @7
-  IF ~~ THEN REPLY @8 DO ~SetGlobal("JA#PILAR_JOB","GLOBAL",1)~ UNSOLVED_JOURNAL @9 EXIT
+  IF ~~ THEN REPLY @8 DO ~SetGlobal("JA#PILAR_JOB","GLOBAL",1)~ UNSOLVED_JOURNAL @1035 EXIT
   IF ~~ THEN REPLY @10 GOTO 2
 END
 
@@ -28,19 +28,19 @@ IF ~~ THEN 2
   IF ~~ THEN EXIT
 END
 
-IF ~!PartyHasItem("JA#PILAR")Global("JA#PILAR_JOB","GLOBAL",1)~ THEN 3
+IF ~!PartyHasItem("JA#PILAR") Global("JA#PILAR_JOB","GLOBAL",1)~ THEN 3
   SAY @12
   IF ~~ THEN EXIT
 END
 
-IF ~PartyHasItem("JA#PILAR")Global("JA#PILAR_JOB","GLOBAL",1)Dead("JA#GHELD")~ THEN 4
+IF ~PartyHasItem("JA#PILAR") Global("JA#PILAR_JOB","GLOBAL",1) Dead("JA#GHELD")~ THEN 4
   SAY @13
-  IF ~~ THEN DO ~TakePartyItem("JA#PILAR")SetGlobal("JA#PILAR_JOB","GLOBAL",2)DestroyItem("JA#PILAR")EraseJournalEntry(@9)AddexperienceParty(280)~ SOLVED_JOURNAL @14 EXIT
+  IF ~~ THEN DO ~TakePartyItem("JA#PILAR") SetGlobal("JA#PILAR_JOB","GLOBAL",2) DestroyItem("JA#PILAR") EraseJournalEntry(@1035) EraseJournalEntry(@1037) AddexperienceParty(280)~ SOLVED_JOURNAL @1036 EXIT
 END
 
-IF ~PartyHasItem("JA#PILAR")Global("JA#PILAR_JOB","GLOBAL",1)~ THEN 5
+IF ~PartyHasItem("JA#PILAR") Global("JA#PILAR_JOB","GLOBAL",1)~ THEN 5
   SAY @15
-  IF ~~ THEN DO ~TakePartyItem("JA#PILAR")SetGlobal("JA#PILAR_JOB","GLOBAL",2)DestroyItem("JA#PILAR")EraseJournalEntry(@9)GiveItem("JA#PILAX",LastTalkedToBy)AddexperienceParty(280)ReputationInc(1)~ SOLVED_JOURNAL @14 EXIT
+  IF ~~ THEN DO ~TakePartyItem("JA#PILAR") SetGlobal("JA#PILAR_JOB","GLOBAL",2) DestroyItem("JA#PILAR") EraseJournalEntry(@1035) GiveItem("JA#PILAX",LastTalkedToBy) AddexperienceParty(280) ReputationInc(1)~ SOLVED_JOURNAL @1036 EXIT
 END
 
 IF ~~ THEN 6

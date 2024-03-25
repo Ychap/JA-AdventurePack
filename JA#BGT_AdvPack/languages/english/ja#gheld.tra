@@ -2,22 +2,18 @@
 @1    = ~Give me that old ring you've got there, please.~
 @2    = ~Oh, all right. Farewell.~
 @3    = ~Hmm, this ring? For all I care. Hehe, the little Pilar won't be happy about it, hehehe.~
+/* #15499 */
 @4    = ~Take your piety elsewhere. It has no place here.~
 /* #15500 */
 @5    = ~An old "friend" of mine took too close of a liking to some boots of mine. Her name's Pilar and she's probably hiding out at the Friendly Arm Inn, if I know her right. I don't care how you have to do it but I must have those boots back.~
 @6    = ~We'll see what we can do.~
-/*#15797 + title */
-@7    = ~Pilar and Gheldehar
-
-I stumbled across a dirty little gnome called Gheldehar in an alleyway today. He claims that Pilar, an old "friend" currently staying at the Friendly Arm Inn, has stolen his boots, and he would like to have them returned. As Gheldehar didn't seem to care how I may acquire them, I suspect his use of the term "friend" was little more than window-dressing.~
+/* @7 -> journal entry @1037 */
 @8    = ~I won't play the thief for you. Good day!~
 /* #15501 */
 @9    = ~I see you don't have my boots with you. Do not test my patience as I do not take well to enemies.~
 /* #15502 */
 @10   = ~My boots... Just let me put these on for a moment...~
-@11   = ~Pilar and Gheldehar
-
-I have retrieved the gnome priest Gheldehar's boots from Pilar. I don't think this will end the strange feud the two are having, though.~
+/* @11 -> journal entry @1038 */
 /* #15503 */
 @12   = ~Your service has been exemplary. Here is 90 gold pieces for a rainy day...~
 /* #15504 */

@@ -153,9 +153,20 @@ The wounded merchant died. I should have helped him sooner to save him.~
 @1034   = ~Evil deeds go punished.
 
 Bellamy, a decidedly mysterious halfling bard, has warned me to steer clear of a paladin lurking behind one of the dockside taverns here in Baldur's Gate. His name is Phandalyn, and, from the sound of it, my reputation has preceded me.~
+/* #15800 + title */
+@1035   = ~Pilar and Gheldehar
 
+Over a frothy ale at the Friendly Arm Inn, Pilar the half-elf has warned me of Gheldehar, an old gnomish cleric in Baldur's Gate. He still has an old ring of hers and, if I could ever get it back to her, she has promised to make the journey worth my while.~
+@1036  = ~Pilar and Gheldehar
 
+I returned Pilar her ring, which I retrieved from the gnomish cleric Gheldehar. I still don't understand the reason of the hostility between the two, though.~
+/* #15797 + title */
+@1037    = ~Pilar and Gheldehar
 
+I stumbled across a dirty little gnome called Gheldehar in an alleyway today. He claims that Pilar, an old "friend" currently staying at the Friendly Arm Inn, has stolen his boots, and he would like to have them returned. As Gheldehar didn't seem to care how I may acquire them, I suspect his use of the term "friend" was little more than window-dressing.~
+@1038   = ~Pilar and Gheldehar
+
+I have retrieved the gnome priest Gheldehar's boots from Pilar. I don't think this will end the strange feud the two are having, though.~
 
 @2000 = ~The history of this weapon lost its significance in the great ocean of stories that are told about the High Forest, but the song of the outstanding archer Adaniss Rhyte is still sung by many bards:
 

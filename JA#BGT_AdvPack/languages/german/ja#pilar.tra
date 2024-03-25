@@ -8,10 +8,7 @@
 /* #15508 */
 @7    = ~Ihr seid Reisende? Was Ihr nicht sagt! Ich habe zwar keine Ahnung, ob Ihr nach Baldurs Tor geht, aber falls Ihr dorthin kommt, nehmt Euch vor Gheldehar in Acht. Der ist hinterhältiger als eine Schlange! Er besitzt immer noch einen alten Ring von mir, den ich übrigens gerne zurück hätte. Oh, und falls Ihr es nicht gemerkt habt: Das war ein Wink mit dem Zaunpfahl.~
 @8    = ~Wir werden sehen, was wir tun können.~
-/* #15800 - ohne Titel */
-@9    = ~Pilar und Gheldehar
-
-Bei einem kühlen Bierchen im Freundlichen Arm hat mich die Halbelfe Pilar vor Gheldehar, einem alten Gnomenpriester in Baldurs Tor, gewarnt. Er hat noch einen alten Ring von ihr, und wenn ich ihr diesen zurückbringe, hat sie versprochen, mir das reichlich zu vergelten.~
+/* @9 -> journal entry @1035 */
 @10   = ~Erledigt Euren Kram selbst. Ich kann nicht für jeden Bewohner der Schwertküste den Laufburschen spielen.~
 /* #15509 */
 @11   = ~Danke für das Bier, Vollidiot.~
@@ -19,9 +16,7 @@ Bei einem kühlen Bierchen im Freundlichen Arm hat mich die Halbelfe Pilar vor G
 @12   = ~Wart Ihr schon in Baldurs Tor? Falls Ihr hinkommt, hütet Euch vor Gheldehar …~
 /* #15511 */
 @13   = ~Danke für Eure Hilfe! Den Ring muss ich gleich anziehen, es ist so lange her …~
-@14   = ~Pilar und Gheldehar
-
-Ich habe Pilar ihren Ring zurückgebracht, den ich von dem Gnomenpriester Gheldehar wiederbeschafft habe. Was ich von der Feindschaft zwischen den beiden halten soll, ist mir aber immer noch nicht klar.~
+/* @14 -> journal entry @1036 */
 /* #15512 */
 @15   = ~Das habt Ihr gut gemacht. Hier, lasst mich ihn gegen einen anderen eintauschen.~
 /* #15513 */
