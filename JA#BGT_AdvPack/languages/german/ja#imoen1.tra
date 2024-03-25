@@ -1,9 +1,9 @@
-@0    = ~...~
-@1    = ~Na gut, ich wollte dein Gespräch mit Gorion belauschen. Was ist los mit dir, <CHARNAME>?! Du warst mal cool...~
+@0    = ~…~
+@1    = ~Na gut, ich wollte dein Gespräch mit Gorion belauschen. Was ist los mit dir, <CHARNAME>?! Du warst mal cool …~
 @2    = ~Hey, Wampe! Du solltest ein Schild ins Fenster hängen - 'Harte Betten und lebhaftes Ungeziefer für den großen Geldbeutel'!~
 @3    = ~Immer mit der Ruhe, mein Dicker! Sonst platzt du gleich noch vor lauter Aufregung.~
 @4    = ~Mensch, Wampe! Du kennst mich doch, so etwas könnte ich nie tun! Und jetzt entschuldige mich, ich muss meinen Pflichten nachkommen.~
-@5    = ~Hey, <CHARNAME>! Gibt es schon Neuigkeiten von Gorion? Weißt du schon, wo es hingeht? Jaja, du darfst nichts verraten...~
+@5    = ~Hey, <CHARNAME>! Gibt es schon Neuigkeiten von Gorion? Weißt du schon, wo es hingeht? Jaja, du darfst nichts verraten …~
 @6    = ~Naja, jedenfalls vielen Dank, dass du gegenüber Winthrop die Klappe gehalten hast. Dafür bekommst du jetzt deinen Anteil.~
 @7    = ~Was? Heißt das, du hast diesen Gast wirklich bestohlen?~
 @8    = ~Kein Problem, Imoen. Wir sind ein gutes Team.~
@@ -13,7 +13,7 @@
 @12   = ~Also gut, nimm diese Goldmünzen. Ich wünsche dir eine gute Reise mit dem alten Zausel und erzähl mir später alles ganz genau, okay?!~
 @13   = ~Danke, Imoen. Das werde ich. Leb wohl.~
 @14   = ~Wie du willst. Ich wünsche dir eine gute Reise mit dem alten Zausel und erzähl mir später alles ganz genau, okay?!~
-@15   = ~Leb wohl, <CHARNAME>! Ohne dich werden mir diese Mauern noch kälter erscheinen...~
+@15   = ~Leb wohl, <CHARNAME>! Ohne dich werden mir diese Mauern noch kälter erscheinen …~
 @16   = ~Imoen! Verflucht sei das Kind! Ich habe schon den ganzen Tag nach dir gesucht. Wo hast du gesteckt?~
 @17   = ~Du freche Göre! Glaub ja nicht, dass du damit ungestraft davonkommst! Und außerdem habe ich noch ein Hühnchen mit dir zu rupfen!~
-@18   = ~Einer der Gäste hat sich beschwert, dass zwar sein Bett ordnungsgemäß gelüftet war, aber ebenso seine Reisekasse... Wenn ich herausfinde, dass du wieder dahinter steckst...~
+@18   = ~Einer der Gäste hat sich beschwert, dass zwar sein Bett ordnungsgemäß gelüftet war, aber ebenso seine Reisekasse … Wenn ich herausfinde, dass du wieder dahinter steckst …~

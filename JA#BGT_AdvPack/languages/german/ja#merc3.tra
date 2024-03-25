@@ -1,8 +1,8 @@
-@0    = ~Helft mir! Ihr müsst mir helfen, bitte. Ich habe... eine Menge Blut verloren.~
+@0    = ~Helft mir! Ihr müsst mir helfen, bitte. Ich habe … eine Menge Blut verloren.~
 @1    = ~Was ist denn mit Euch passiert? Wer hat das getan?~
 @2    = ~Zieh Leine, toter Mann.~
-@3    = ~Ihr könnt mich doch nicht hier sterben lassen...~
-@4    = ~Räuber! Räuber am Küstenweg! Sie haben meine Karawane angegriffen... alle tot... meine arme Shelley. - (schluchz) - Ich bin so schwach... so kalt...~
+@3    = ~Ihr könnt mich doch nicht hier sterben lassen …~
+@4    = ~Räuber! Räuber am Küstenweg! Sie haben meine Karawane angegriffen … alle tot … meine arme Shelley. - (schluchz) - Ich bin so schwach … so kalt …~
 @5    = ~Hier, nehmt diesen Heiltrank.~
 @6    = ~Ich habe hier dieses Heilungselixier für Euch. Das wird Euch helfen.~
 @7    = ~Hier, nehmt diese Guten Beeren.~
@@ -25,7 +25,7 @@ Wir konnten ein Opfer des Karawanenüberfalls am Küstenweg retten. Der Händler
 @18   = ~Überfall auf die Karawane
 
 Wir konnten ein Opfer des Karawanenüberfalls am Küstenweg retten. Der Händler war dem Tode nahe, als wir ihn fanden. Seine Dankbarkeit hielt sich jedoch unverschämterweise in Grenzen.~
-@19   = ~Ich habe kein Geld, das ich Euch geben könnte. Es... tut mir Leid, aber ich muss gehen.~
+@19   = ~Ich habe kein Geld, das ich Euch geben könnte. Es … tut mir Leid, aber ich muss gehen.~
 @20   = ~Das kann ja wohl nicht wahr sein! Es gab keinen Grund, auf einmal so arrogant zu werden. Entschuldigt, dass ich so viel Zeit Eures ach so wichtigen Lebens vergeudet habe!~
 @21   = ~Ich kann nicht viel über diese Räuber sagen. Die sind einfach aus dem Nichts gekommen. Plötzlich standen da Söldner - sowohl Hobgoblins als auch Menschen - vor uns und sagten, wir sollten uns ergeben und unsere Eisenvorräte ausliefern, aber unser Hauptmann hat sich geweigert! Dieser dämliche Idiot. Wie kann man nur so uneigennützig sein! Die sind wie ein Rudel ausgehungerter Wölfe über uns hergefallen. Ich bin nur knapp mit dem Leben davon gekommen. Das ist es, was ich zu sagen habe. Ich werde mich jetzt besser wieder auf den Weg machen, ich muss die Familien derer benachrichtigen, die gestorben sind.~
 @22   = ~Räuber!
@@ -36,5 +36,5 @@ Nachdem ich einen schwer verletzten Händler heilte, erzählte er mir, dass die 
 
 Nachdem ich einen schwer verletzten Händler heilte, erzählte er ein paar wage Dinge über Eisenmangel, Räuber und Krieg.~
 @25   = ~Euch würde ich niemals über den Weg trauen!~
-@26   = ~Jaa? Helft mir, ich ... ah, werde schwächer...~
+@26   = ~Jaa? Helft mir, ich … ah, werde schwächer …~
 @27   = ~Wir sind bald mit Hilfe zurück.~
