@@ -1,7 +1,7 @@
 @0    = ~Ich würde Euch gern einige Fragen stellen.~
 @1    = ~Danke. Aber im Moment brauche ich nichts. Lebt wohl.~
 @2    = ~Fragt frei heraus!~
-@3    = ~Warum heißt Eure Taverne "Elfgesang"? Nur wegen des schönen Klangs?~
+@3    = ~Warum heißt Eure Taverne „Elfgesang“? Nur wegen des schönen Klangs?~
 /* @4    = */
 @5    = ~Was hat es mit der Geisterstimme auf sich, die in letzter Zeit verschwunden sein soll?~
 @6    = ~Ich hörte, Ihr habt das Elfgesang einem Mann namens Wilyn abgekauft. Glaubt Ihr, er könnte etwas mit dem Verschwinden der Geisterstimme zu tun haben?~
@@ -31,12 +31,12 @@
 @31   = ~Also gut, ich muss weiter. Lebt wohl.~
 @32   = ~Die Wache hat erkannt, dass ein gewisses Maß an zwielichten Machenschaften oder auch Verbrechen Vorteile für eine Stadt wie Baldurs Tor hat. Man mag sie nur nicht vor aller Augen haben, das würde wohl das Gewissen der *Edlen* schmerzen. Das Elfgesang bietet das richtige Umfeld für deratige Geschäfte und Umtriebe. So läuft alles seinen geordneten Gang - das Gleichgewicht von Licht und Schatten, wenn Ihr so wollt.~
 @33   = ~Hmm, eine interessante Sichtweise. Ich habe noch weitere Fragen.~
-@34   = ~Warum? Weil mir die Wampe nicht bis zum Schoß hängt? *zwinker* Natürlich habt Ihr Recht. Ich war früher im selben Gewerbe wie die meisten meiner Gäste, aber irgendwann wurde ich dessen überdrüssig und ich kaufte mir von meinen "Ersparnissen" dieses Etablissement.~
+@34   = ~Warum? Weil mir die Wampe nicht bis zum Schoß hängt? *zwinker* Natürlich habt Ihr Recht. Ich war früher im selben Gewerbe wie die meisten meiner Gäste, aber irgendwann wurde ich dessen überdrüssig und ich kaufte mir von meinen „Ersparnissen“ dieses Etablissement.~
 @35   = ~Ich habe noch weitere Fragen.~
 @36   = ~Nein, das kann nicht sein. Wilyn liebt den Gesang. Er hätte das niemals tun können, kam jeden Abend nur hierher, um die Dame zu hören.~
 @37   = ~Vielleicht wollte er die Stimme nur für sich haben?~
 @38   = ~Könnt Ihr mir trotzdem sagen, wo ich ihn finden kann?~
-@39   = ~Das kann ich mir nicht vorstellen. Wilyn hat sein ganzes Leben an dieser Taverne gehangen und würde die Geisterstimme niemals "stehlen". Wie sollte er das denn auch bewerkstelligen?~
+@39   = ~Das kann ich mir nicht vorstellen. Wilyn hat sein ganzes Leben an dieser Taverne gehangen und würde die Geisterstimme niemals „stehlen“. Wie sollte er das denn auch bewerkstelligen?~
 @40   = ~Keine Ahnung. Aber er ist bisher meine einzige Spur. Könnt Ihr mir sagen, wo ich ihn finden kann?~
 @41   = ~Puuh! Lasst mich überlegen, ich glaube, er wohnt nun irgendwo am Hafen, aber ganz sicher bin ich mir nicht. Tut mir Leid.~
 @42   = ~Schon gut. Ich werde ihn schon finden. Lebt wohl.~
@@ -69,4 +69,4 @@
 @69   = ~Danke. Lasst mich sehen, was Ihr anzubieten habt.~
 @70   = ~Das Rätsel um die verstummte Geisterstimme
 
-Ich habe das mysteriöse Verschwinden des Geistergesangs in der Taverne Elfgesang aufgeklärt und der "Dame" ihre Stimme zurückgegeben. Alyth war mir äußerst dankbar, ist der Gesang doch für die meisten Gäste der wichtigste Grund herzukommen. Wenn ich in ein paar Tagen nochmal zu ihr gehe, wird sie eine besondere Belohnung für mich haben.~
+Ich habe das mysteriöse Verschwinden des Geistergesangs in der Taverne Elfgesang aufgeklärt und der „Dame“ ihre Stimme zurückgegeben. Alyth war mir äußerst dankbar, ist der Gesang doch für die meisten Gäste der wichtigste Grund herzukommen. Wenn ich in ein paar Tagen nochmal zu ihr gehe, wird sie eine besondere Belohnung für mich haben.~

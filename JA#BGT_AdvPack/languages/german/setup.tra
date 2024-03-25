@@ -12,7 +12,7 @@
 @12   = ~BG1 Unfinished Business Komponente #19 wird benötigt.~
 @13   = ~Vaalahors Harfe~
 @14   = ~Dies ist die Harfe von Vaalahor. Der Magier hat versucht, die Geisterstimme aus der Taverne Elfgesang an dieses Instrument zu binden, was ihm jedoch nicht so recht geglückt ist, denn das Instrument blieb stumm.~
-@15   = ~Dies war die Harfe von Vaalahor, dem Magier, der versucht hatte, den Geistergesang der Taverne Elfgesang zu stehlen. Nachdem Ihr den Fall aufgeklärt hattet, schenkte Euch die Inhaberin "Lady" Alyth Elendara das Instrument, das sie zuvor von einem befreundeten Magier hatte bezaubern lassen, sodass nun magische Kräfte durch die morsche Harfe fließen.
+@15   = ~Dies war die Harfe von Vaalahor, dem Magier, der versucht hatte, den Geistergesang der Taverne Elfgesang zu stehlen. Nachdem Ihr den Fall aufgeklärt hattet, schenkte Euch die Inhaberin „Lady“ Alyth Elendara das Instrument, das sie zuvor von einem befreundeten Magier hatte bezaubern lassen, sodass nun magische Kräfte durch die morsche Harfe fließen.
 
 EIGENSCHAFTEN:
 
@@ -53,10 +53,10 @@ Kann nur verwendet werden von:
 @44   = ~Honk~
 @1000   = ~Das Rätsel um die verstummte Geisterstimme
 
-Das berühmte nächtliche Geisterlied in der Taverne Elfgesang ist seit einiger Zeit verstummt. Ich habe der Inhaberin "Lady" Alyth Elendara angeboten, nach Hinweisen zu suchen, um der Sache auf den Grund zu gehen. Vielleicht wissen einige Gäste des Elfgesangs mehr und können etwas Licht in das Dunkel bringen. Im Moment stehe ich jedenfalls noch ohne jeden Anhaltspunkt da.~
+Das berühmte nächtliche Geisterlied in der Taverne Elfgesang ist seit einiger Zeit verstummt. Ich habe der Inhaberin „Lady“ Alyth Elendara angeboten, nach Hinweisen zu suchen, um der Sache auf den Grund zu gehen. Vielleicht wissen einige Gäste des Elfgesangs mehr und können etwas Licht in das Dunkel bringen. Im Moment stehe ich jedenfalls noch ohne jeden Anhaltspunkt da.~
 @1001   = ~Das Rätsel um die verstummte Geisterstimme
 
-Keiner der Gäste konnte mir viel über das Verschwinden der Geisterstimme erzählen. Aber anscheinend hat der ehemalige Besitzer des Elfgesangs "Wilyn" ein besonderes Interesse an der singenden Elfendame gezeigt. Vielleicht ist das ja eine Spur.~
+Keiner der Gäste konnte mir viel über das Verschwinden der Geisterstimme erzählen. Aber anscheinend hat der ehemalige Besitzer des Elfgesangs „Wilyn“ ein besonderes Interesse an der singenden Elfendame gezeigt. Vielleicht ist das ja eine Spur.~
 @1002   = ~Das Rätsel um die verstummte Geisterstimme
 
 Nathan berichtete mir gegen einen kleinen Obolus, dass der alte Wilyn nun in einem kleinen Haus nördlich des großen Turmes auf der östlichen Seite der Hafeneinfahrt wohne, gleich neben einer kleinen Taverne.~
@@ -90,13 +90,13 @@ Ich habe Krammoch Arkhstaff versprochen, das Leben von Thaldorn Tenhevich zu sch
 Der bedauernswerte Paladin Svlast ist tot. Auch wenn dies das Ende war, das er sich gewünscht hatte, erfüllen mich die Ereignisse doch mit Trauer. Es scheint unmöglich, die wehmütige Stimmung über diesen Ruinen von sich fernzuhalten.~
 @1012   = ~Scars Ermordung
 
-Jhasso bat uns herauszufinden, was es mit der rätselhaften Krankheit des Großherzogs Eltan auf sich hat. Er befürchtet eine Intrige, zu der er auch Scars Ermordung rechnet. Er schlug uns vor, wir sollten Ermittlungen in der "Errötenden Nixe" anstellen, denn dort könnte es Hinweise zum Mord an Scar geben.~
+Jhasso bat uns herauszufinden, was es mit der rätselhaften Krankheit des Großherzogs Eltan auf sich hat. Er befürchtet eine Intrige, zu der er auch Scars Ermordung rechnet. Er schlug uns vor, wir sollten Ermittlungen in der „Errötenden Nixe“ anstellen, denn dort könnte es Hinweise zum Mord an Scar geben.~
 @1013   = ~Scars Ermordung
 
 Jhasso glaubt, dass die Doppelgänger, die für Scars Tod verantwortlich sind, auch hinter Eltans mysteriöser Krankheit stecken. Ich sollte ihn sofort im Hauptquartier der Flammenden Faust einen Besuch abstatten.~
 // @1014   = ~Scars Ermordung
 
-// In seiner Ecke in der Taverne "Zur Errötenden Nixe" verlangt Ivanne 10 Goldmünzen für seine finstere Geschichte. Scar wurde offensichtlich in meiner Abwesenheit ermordet, und sollte ich je Genaueres darüber erfahren wollen, muss dies wohl aus Ivannes Mund kommen. Es wäre gut, hierher zurückzukehren, wenn ich mehr Zeit zum Zuhören habe.~
+// In seiner Ecke in der Taverne „Zur Errötenden Nixe“ verlangt Ivanne 10 Goldmünzen für seine finstere Geschichte. Scar wurde offensichtlich in meiner Abwesenheit ermordet, und sollte ich je Genaueres darüber erfahren wollen, muss dies wohl aus Ivannes Mund kommen. Es wäre gut, hierher zurückzukehren, wenn ich mehr Zeit zum Zuhören habe.~
 // @1015   = ~Scars Ermordung
 
 // Ich habe die Erzählung von Ivanne gehört, dem einzigen Zeugen von Scars Tod, mit Ausnahme des Mörders. Demzufolge wurde Scar von einem weiteren Doppelgänger, der ohne Zweifel vom Eisenthron bezahlt wurde, in seinen grausamen Tod gelockt, obwohl Ivanne meinte, dass Angelo ein gutes Motiv hätte. Glücklicherweise musste Scar nur kurz leiden, doch mehr aus Gründen der List denn aus Mitleid. Ja, ich habe in letzter Zeit so viele dieser miesen Spiegelwesen gesehen, doch ich bete, dass ich mich nie an ihre verfluchten, sich wandelnden Gesichter gewöhne. Um diesem Mord auf den Grund zu kommen, gibt es nur zwei Orte, an denen ich suchen kann - den Turm des Eisenthrons oder die Kaserne der Flammenden Faust, wo Herzog Eltan angeblich bleich wie der Tod danieder liegt. Sonst scheint alles andere bedeutungslos.~
@@ -118,7 +118,7 @@ Krammoch Arkhstaff war überaus glücklich, dass ich seinen Geliebten Thaldorn b
 Die Räuber, die auf dem Küstenweg ihr Unwesen treiben, sind mehr an Eisen interessiert als an Gold.~
 @1022   = ~Zwischen Wasser und Sturm
 
-Ich habe der zwölfjährigen Umberlee-Priesterin Tenya versprochen den Tod ihrer Mutter zu rächen. Ein Talos-Anhänger namens Storwyn steckt dahinter. Er wohnt nahe des Gasthauses "Zur Funkelnden Klinge" - aber nicht mehr lange …~
+Ich habe der zwölfjährigen Umberlee-Priesterin Tenya versprochen den Tod ihrer Mutter zu rächen. Ein Talos-Anhänger namens Storwyn steckt dahinter. Er wohnt nahe des Gasthauses „Zur Funkelnden Klinge“ - aber nicht mehr lange …~
 @1023   = ~Der verführte Onkel Ragefast
 
 Ich habe Jopi, den Reisenden aus dem Freundlichen Arm, in Baldurs Tor wiedergetroffen. Er macht sich Sorgen um seinen Onkel Ragefast, dem anscheinend irgendein junges Ding den Kopf verdreht hat. Der Liebe bin ich auf meinen Reisen bisher wahrlich nicht zu oft begegnet, könnte eine nette Abwechslung im Abenteuereinerlei sein …~
@@ -143,7 +143,7 @@ Nachdem ich Deagan bezauberte, erfuhr ich, dass es bei der Händlerliga viele Un
 @1030   = ~Die Untersuchung der Händlerliga
 
 Ich habe erfahren, dass Zorl und Irlentree sich in letzter Zeit seltsam verhalten haben und mit ihren Geschäften die Händlerliga in den Ruin treiben, als wollten sie der Organisation gezielt Schaden zufügen.~
-@1031   = ~Anscheinend ist die elfische Geisterstimme, welche die Taverne "Elfgesang" so berühmt gemacht hat, seit einiger Zeit verstummt. Niemand scheint den Grund dafür zu kennen. Nach allem, was ich gehört habe, ist die Stimme von unbeschreiblicher Schönheit und jeder, der sich getraut, seinen Fuß in den Elfgesang zu setzen, sollte sich die Zeit nehmen, ihr zu lauschen. Wer weiß, möglicherweise taucht der Geistergesang ja in einigen Tagen wieder von selbst auf.~
+@1031   = ~Anscheinend ist die elfische Geisterstimme, welche die Taverne „Elfgesang“ so berühmt gemacht hat, seit einiger Zeit verstummt. Niemand scheint den Grund dafür zu kennen. Nach allem, was ich gehört habe, ist die Stimme von unbeschreiblicher Schönheit und jeder, der sich getraut, seinen Fuß in den Elfgesang zu setzen, sollte sich die Zeit nehmen, ihr zu lauschen. Wer weiß, möglicherweise taucht der Geistergesang ja in einigen Tagen wieder von selbst auf.~
 // @1032   = ~Die Probleme der Diebesgilde
 
 // Die Flammende Faust hat in letzter Zeit bei der Diebesgilde ganz schön hart durchgegriffen.~
@@ -406,7 +406,7 @@ Gewicht: 1~
 @2068 = ~Gheldehars Stiefel~
 @2069 = ~Ein Paar abgetragener Stiefel, die Ihr im Auftrag von Gheldehar der Halbelfe Pilar abgenommen habt. Ihr habt jedoch starke Zweifel, ob der Aufwand hierfür gerechtfertigt war.~
 @2070 = ~Pilars Ring~
-@2071 = ~Der Ring der Halbelfe Pilar, den Ihr von Gheldehar "zurückgewinnen" konntet. Es handelt sich um einen ganz normalen Goldring, an dem Ihr keine besonderen oder gar magischen Fähigkeiten ausmachen könnt.~
+@2071 = ~Der Ring der Halbelfe Pilar, den Ihr von Gheldehar „zurückgewinnen“ konntet. Es handelt sich um einen ganz normalen Goldring, an dem Ihr keine besonderen oder gar magischen Fähigkeiten ausmachen könnt.~
 @2072 = ~Ring des Naturdieners~
 @2073 = ~Dieser verzauberte Ring stammt von einem Druidenzirkel aus der Gegend des Hochmoores. Eine Gruppe von Plünderern, die auf der Suche nach Schätzen des längst untergegangenen Reiches von Athalantar war und dabei wenig Erfolg hatte, überfiel die Behausungen der Druiden und raubte sämtliche Wertgegenstände, um sie dann später in der Gegend von Tiefwasser zu verkaufen.
 
@@ -457,7 +457,9 @@ Gewicht: 1~
 
 EIGENSCHAFTEN:
 
-Der Träger ist immun gegen alle Effekt, die seine Bewegungsfreiheit auf magische oder andere Weise beeinflussen, wie "Netz", "Personen festhalten", "Schmieren", "Verstricken", "Verlangsamen", "Lähmen" und "Betäuben".~
+Der Träger ist immun gegen alle Effekte, die seine Bewegungsfreiheit beeinflussen. Dies gilt beispielsweise für „Hast“ und „Verlangsamen“.
+
+Gewicht: 0~
 @2103 = ~Zorls Schlüssel~
 @2104 = ~Dieser Schlüssel gehört Zorl Miyar, einem der Anführer der Händlerliga. Er dürfte von Nutzen sein, um an Zorls private Habseligkeiten zu gelangen.~
 @2105 = ~Zorls Leiche~
