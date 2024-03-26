@@ -29,7 +29,7 @@ APPEND ~ACTION.IDS~ ~319 ForceSpellPointRangeRES(S:RES*,P:Target)~
              UNLESS ~319 ForceSpellPointRangeRES(S:RES\*,P:Target)~
 APPEND ~ACTION.IDS~ ~337 ReallyForceSpellPointRES(S:RES*,P:Target*)~
              UNLESS ~337 ReallyForceSpellPointRES(S:RES\*,P:Target\*)~
-			 
+
 COPY_EXISTING ~action.ids~ ~override~
 	REPLACE_TEXTUALLY ~^106 Shout(.*$~ ~106 Shout(I:ID*SHOUTIDS)~
 BUT_ONLY_IF_IT_CHANGES
@@ -47,13 +47,13 @@ APPEND ~TRIGGER.IDS~ ~0x4031 HaveSpellRES(S:Spell*)~
               UNLESS ~0x4031 HaveSpellRES(S:Spell\*)~
 APPEND ~TRIGGER.IDS~ ~0x40D5 ActuallyInCombat()~
               UNLESS ~0x40D5 ActuallyInCombat()~
-			  
+
 COPY_EXISTING ~trigger.ids~ ~override~
 	REPLACE_TEXTUALLY ~\bHeard(O:Object\*,I:ID\*)~ ~Heard(O:Object*,I:ID*SHOUTIDS)~
 BUT_ONLY_IF_IT_CHANGES
 
 /* SHOUT.IDS creation if it does not exist */
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~shoutids.ids~ THEN BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~shoutids.ids~ BEGIN
 <<<<<<<<shoutids.ids
 90
 123 HEALME

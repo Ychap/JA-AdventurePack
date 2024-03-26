@@ -17,7 +17,7 @@ VERSION ~0.9.0 beta3~
 
 ALWAYS
 	/* check for a ready SoD */
-	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
+	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) BEGIN
 		FAIL @90000
 	END
 

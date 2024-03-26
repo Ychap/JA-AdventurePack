@@ -1,5 +1,5 @@
 /* Declaration of BGT Platform Variables */
-ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+ACTION_IF GAME_IS ~bgt~ BEGIN
 	/* tp2, d, and baf parsing variables */
 	OUTER_SPRINT "tutorbgt" "bgt"
 	OUTER_SPRINT "tutubgtbgee" "bgt"
@@ -87,7 +87,7 @@ ACTION_IF GAME_IS ~bgt~ THEN BEGIN
 	OUTER_SET xanpstate3 = 3
 	OUTER_SET xanpstate4 = 4
 
-	ACTION_IF FILE_EXISTS ~BGT/Compat/BG1NPC/FluidStates.tpa~ THEN BEGIN
+	ACTION_IF FILE_EXISTS ~BGT/Compat/BG1NPC/FluidStates.tpa~ BEGIN
 		INCLUDE ~BGT/Compat/BG1NPC/FluidStates.tpa~ // BGT1.06 and higher
 	END ELSE BEGIN // BGT1.05 and lower
 		//BGT Dialogues always appended

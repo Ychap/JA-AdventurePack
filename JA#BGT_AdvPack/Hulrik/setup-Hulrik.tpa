@@ -10,7 +10,7 @@ COPY_EXISTING ~HULRIK.CRE~ ~override~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Hulrik/JA#HULRIK.D~
 
 
-ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+ACTION_IF GAME_IS ~bgt~ BEGIN
 	/* prevent Hulrik and his cow from disappearing - BGT */
 	COPY_EXISTING ~%LonelyPeaks_BCS%.BCS~ ~override~
 		DECOMPILE_AND_PATCH BEGIN

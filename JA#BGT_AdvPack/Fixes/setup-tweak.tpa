@@ -14,7 +14,7 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 	COPY ~JA#BGT_AdvPack/fixes/JA#SKULL.BAM~ ~override~
 	COPY_EXISTING ~MISC50.ITM~    ~override~
 		WRITE_ASCII 0x3a ~JA#SKULL~ #8
-	
+
 	/////////////////////////////////////////////////////////////
 	//dagger of poison & shadow armor moved from taerom to silence
 	/////////////////////////////////////////////////////////////
@@ -26,7 +26,7 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 	COPY_EXISTING ~STOSILEN.STO~ ~override~
 		ADD_STORE_ITEM ~LEAT08~ AFTER ~LEAT05~ #0 #0 #0 ~IDENTIFIED~ #1
 		ADD_STORE_ITEM ~MISC75~ AFTER ~DAGG01~ #0 #0 #0 ~IDENTIFIED~ #1
-	
+
 	/////////////////////////////////////////////////////////////
 	//Mulahey Half-Orc
 	/////////////////////////////////////////////////////////////
@@ -34,11 +34,11 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 		WRITE_SHORT 0x28 24581
 		WRITE_SHORT 0x272 7
 		WRITE_BYTE 0x2f 15
-	
+
 	/////////////////////////////////////////////////////////////
 	//Tazok - Orog
 	/////////////////////////////////////////////////////////////
-	ACTION_IF GAME_IS ~eet~ THEN BEGIN
+	ACTION_IF GAME_IS ~eet~ BEGIN
 		COPY_EXISTING ~TAZOK_.CRE~ ~override~
 					~TAZOK2.CRE~ ~override~
 			WRITE_SHORT 0x28 59168
@@ -51,7 +51,7 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 			WRITE_BYTE 0x32 0
 			WRITE_BYTE 0x272 143
 	END
-	ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+	ACTION_IF GAME_IS ~bgt~ BEGIN
 		COPY_EXISTING ~BGTAZOK.CRE~ ~override~
 					~TAZOK2.CRE~ ~override~
 			WRITE_SHORT 0x28 59168
@@ -84,13 +84,13 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 		path_to_2da_file = EVAL ~%MOD_FOLDER%/Fixes/areas/AR3700SR_changes.2da~ 	// full path to the *changes.2da file containing your icons, e.g. ~mymod/bam/AR3700SR_changes_ee.2da~
 		areaname = EVAL ~%Nashkel%~ 							  		 			// area name, e.g. ~AR3700~
 	END
-	
+
 	LAF ALTER_SEARCHMAP
 		STR_VAR
 		path_to_2da_file = EVAL ~%MOD_FOLDER%/Fixes/areas/AR4100SR_changes.2da~ 	// full path to the *changes.2da file containing your icons, e.g. ~mymod/bam/AR3700SR_changes_ee.2da~
 		areaname = EVAL ~%GnollStronghold%~ 							  		 			// area name, e.g. ~AR3700~
-	END	
-	
+	END
+
 	LAF ALTER_SEARCHMAP
 		STR_VAR
 		path_to_2da_file = EVAL ~%MOD_FOLDER%/Fixes/areas/AR8100SR_changes.2da~ 	// full path to the *changes.2da file containing your icons, e.g. ~mymod/bam/AR3700SR_changes_ee.2da~
