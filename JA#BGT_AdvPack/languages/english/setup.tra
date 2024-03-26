@@ -418,13 +418,19 @@ Weight: 1~
 @2068 = ~Gheldehar's Boots~
 @2069 = ~A pair of worn boots, which you have taken from the Half-elf Pilar on behalf of Gheldehar. You have strong doubts, however, whether the effort for this purpose was justified.~
 @2070 = ~Pilar's Ring~
-@2071 = ~The ring of the Half-elf Pilar that you could "retrieve" from Gheldehar. It's a normal golden ring with no detectable special or even magical effects.~
+@2071 = ~The ring of the Half-elf Pilar that you could "retrieve" from Gheldehar. It's a normal golden ring with no detectable special or even magical effects.
+
+STATISTICS:
+
+Weight: 0~
 @2072 = ~Ring of the Nature Servant~
 @2073 = ~This enchanted ring comes from a druid circle from the area of High Moor. A group of looters who were searching for the long disappeared treasures of the Realm of Athalantar but had little success, raided the dwellings of the druids and looted all valuables to sell them later in the area of Waterdeep.
 
 STATISTICS:
 
-Druid magic: +1 (Level 1 to 3)~
+Druid magic: +1 (Level 1 to 3)
+
+Weight: 0~
 /* @2074 = ~Llindellyn~ */
 @2075 = ~Llindellyn's Arrow~
 @2076 = ~This is the favorite arrow of Llindellyn, the elven archer you met in the Cloakwood Forest. The missile is neither well balanced nor crafted. Presumably, the value of this arrow is of a sentimal original you cannot name by looking at it.

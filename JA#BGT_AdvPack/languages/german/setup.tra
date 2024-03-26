@@ -422,7 +422,11 @@ Gewicht: 1~
 @2068 = ~Gheldehars Stiefel~
 @2069 = ~Ein Paar abgetragener Stiefel, die Ihr im Auftrag von Gheldehar der Halbelfe Pilar abgenommen habt. Ihr habt jedoch starke Zweifel, ob der Aufwand hierfür gerechtfertigt war.~
 @2070 = ~Pilars Ring~
-@2071 = ~Der Ring der Halbelfe Pilar, den Ihr von Gheldehar „zurückgewinnen“ konntet. Es handelt sich um einen ganz normalen Goldring, an dem Ihr keine besonderen oder gar magischen Fähigkeiten ausmachen könnt.~
+@2071 = ~Der Ring der Halbelfe Pilar, den Ihr von Gheldehar „zurückgewinnen“ konntet. Es handelt sich um einen ganz normalen Goldring, an dem Ihr keine besonderen oder gar magischen Fähigkeiten ausmachen könnt.
+
+EIGENSCHAFTEN:
+
+Gewicht: 0~
 @2072 = ~Ring des Naturdieners~
 @2073 = ~Dieser verzauberte Ring stammt von einem Druidenzirkel aus der Gegend des Hochmoores. Eine Gruppe von Plünderern, die auf der Suche nach Schätzen des längst untergegangenen Reiches von Athalantar war und dabei wenig Erfolg hatte, überfiel die Behausungen der Druiden und raubte sämtliche Wertgegenstände, um sie dann später in der Gegend von Tiefwasser zu verkaufen.
 
@@ -430,7 +434,7 @@ EIGENSCHAFTEN:
 
 Druidenzauber: +1 (Grad 1 bis 3)
 
-Gewicht: 1~
+Gewicht: 0~
 /* @2074 = ~Llindellyn~ */
 @2075 = ~Llindellyns Pfeil~
 @2076 = ~Dies ist der Lieblingspfeil von Llindellyn, dem elfischen Bogenschützen, dem Ihr im Mantelwald begegnet seid. Das Geschoss scheint nicht besonders gut ausbalanciert und von schlechter Verarbeitung zu sein. Vermutlich hat der Pfeil für seinen Besitzer eher einen sentimentalen Wert, der sich Euch jedoch nicht erschließt.
