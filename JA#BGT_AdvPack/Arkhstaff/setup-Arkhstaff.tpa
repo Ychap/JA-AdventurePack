@@ -18,12 +18,12 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.ARE~ ~override~
 		LPF ALTER_AREA_REGION
 			STR_VAR region_name			= ~IronThrone~
 					destination_area	= EVAL ~%BaldursGateDocks_IronThrone_Cellar%~
-					entrance_name 		= ~Exit0224~ // previously entrance to WSewers
+					entrance_name		= ~Exit0224~ // previously entrance to WSewers
 		END
 		LPF ALTER_AREA_REGION
 			STR_VAR region_name			= ~Sewers~
 					destination_area	= EVAL ~%WSewers%~
-					entrance_name 		= ~Exit0611~ // previously entrance to BaldursGateDocks_IronThrone_Cellar
+					entrance_name		= ~Exit0611~ // previously entrance to BaldursGateDocks_IronThrone_Cellar
 		END
 	END
 
@@ -37,8 +37,6 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.CRE~ ~override~
 
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.CRE~ ~override~
 
-COPY_EXISTING ~THALDO.CRE~ ~override~
-	WRITE_ASCII DEATHVAR ~Thaldo~ #32
 COPY_EXISTING ~THALDO.CRE~ ~override/JA#THALD.CRE~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~LEAVECH7~ END
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SHOUT~ END
@@ -92,21 +90,26 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#husam.d~
 ADD_JOURNAL @81 @1010 @1019 USING ~JA#BGT_AdvPack/languages/%s/ja#arkhs.tra~
 
 
+COPY_EXISTING ~THALDO.CRE~ ~override~
+	WRITE_ASCII DEATHVAR ~Thaldo~ #32
+BUT_ONLY
+
+
 COPY_EXISTING ~%WSewers%.ARE~ ~override~
 	SNPRINT "-4" IronThrone_Cellar_num ~%BaldursGateDocks_IronThrone_Cellar%~
 	LPF	ALTER_AREA_REGION
 		STR_VAR region_name			= EVAL ~Door%IronThrone_Cellar_num%~
 				destination_area	= ~JA#C04~
-				entrance_name 		= ~Fr7324~
+				entrance_name		= ~Fr7324~
 	END
 BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks_IronThrone_Cellar%.ARE~ ~override~
 	SNPRINT "-4" WSewers_num ~%WSewers%~
 	LPF	ALTER_AREA_REGION
-		STR_VAR region_name         = EVAL ~Door%WSewers_num%~
+		STR_VAR region_name			= EVAL ~Door%WSewers_num%~
 				destination_area	= ~JA#C04~
-				entrance_name 		= ~Fr7611~
+				entrance_name		= ~Fr7611~
 	END
 	LPF fj_are_structure
 		INT_VAR
