@@ -437,16 +437,11 @@ Weight: 0~
 
 STATISTICS:
 
-Damage: 1D6-2 (missile)
-THAC0-Penalty: +2
-Weight: 0
+THAC0: -2
+Damage: 1d6-2 (missile)
 Launcher: Bow
 
-Not Usable By:
-- Druid
-- Cleric
-- Mage
-- Monk~
+Weight: 0~
 /* @2077 = ~Mal-Kalen~ */
 @2078 = ~Wounded dwarf~
 /* @2079 = ~Keelor~ */

@@ -441,16 +441,11 @@ Gewicht: 0~
 
 EIGENSCHAFTEN:
 
-Schaden: 1W6-2 (Geschoss)
 ETW0-Malus: +2
-Gewicht: 0
+Schaden: 1W6 -2 (Geschoss)
 Schusswaffe: Bogen
 
-Kann nicht verwendet werden von:
-- Druiden
-- Klerikern
-- Magiern
-- Mönchen~
+Gewicht: 0~
 /* @2077 = ~Mal-Kalen~ */
 @2078 = ~Verwundeter Zwerg~
 /* @2079 = ~Keelor~ */
