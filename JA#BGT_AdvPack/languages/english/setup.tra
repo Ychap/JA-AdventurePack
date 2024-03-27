@@ -451,8 +451,10 @@ Weight: 0~
 
 STATISTICS:
 
-AC-Bonus: -1, -2 vs. Sword
-Saving Throws-Bonus: -1
+Equipped abilities:
+– Armor Class: +1, an extra +1 vs. slashing attacks
+– Saving Throws: +1
+
 Weight: 1~
 @2085 = ~Guardsman~
 @2093 = ~The Protector of the Unworthy~

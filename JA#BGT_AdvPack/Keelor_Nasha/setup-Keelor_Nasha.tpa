@@ -1,42 +1,51 @@
-///////////////////////////////
+////////////////////////////
 //RESTORED: Keelor & Nasha
-///////////////////////////////
+////////////////////////////
 
-COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELO.CRE~ ~override~
-	SAY NAME1 @2078
-	SAY NAME2 @2078
-COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELX.CRE~ ~override~
-	SAY NAME1 #15625 //~Keelor~ (string ref is true for BGT and BG:EE)
-	SAY NAME2 #15625 //~Keelor~ (string ref is true for BGT and BG:EE)
-COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#NASHA.CRE~ ~override~
-	SAY NAME1 #15671 //~Nasha~ (string ref is true for BGT and BG:EE)
-	SAY NAME2 #15671 //~Nasha~ (string ref is true for BGT and BG:EE)
 
-COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELX.BAM~ ~override~
-COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELX.ITM~ ~override~
-	SAY NAME1 #6852 //Amulet (string ref is true for BGT and BG:EE)
-	SAY NAME2 @2081
-	SAY DESC @2082
-	SAY UNIDENTIFIED_DESC #6900
-/*
-COPY_EXISTING ~AR7269.ARE~ ~override~
-SPRINT ~item_to_delete~ ~AMUL14~
-LAUNCH_PATCH_MACRO ~DELETE_AREA_ITEM~
-*/
 COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#C05.ARE~ ~override~
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_PheirkasHouse_L1%~ #8
+
 		LPF ALTER_AREA_REGION
 			STR_VAR region_name			= ~Door8100~
 					destination_area	= EVAL ~%BaldursGateDocks%~
 		END
 	END
-COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#C06.ARE~ ~override~
 
-COMPILE ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELO.BAF~
+COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#C06.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_ASCIIE 0x8 ~%NWBaldursGate_PheirkasHouse_L2%~ #8
+	END
+
+COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELO.CRE~ ~override~
+	SAY NAME1 @2078
+	SAY NAME2 @2078
+
+COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELX.CRE~ ~override~
+	SAY NAME1 #15625 // ~Keelor~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #15625 // ~Keelor~ (string ref is true for BGT and BG:EE)
+
+COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#NASHA.CRE~ ~override~
+	SAY NAME1 #15671 // ~Nasha~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #15671 // ~Nasha~ (string ref is true for BGT and BG:EE)
+
+COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELX.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELX.ITM~ ~override~
+	SAY NAME1 #6852
+	SAY NAME2 @2081
+	SAY UNIDENTIFIED_DESC #6900
+	SAY IDENTIFIED_DESC @2082
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELO.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELX.BAF~
-COMPILE ~JA#BGT_AdvPack/Keelor_Nasha/JA#NASHA.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Keelor_Nasha/JA#KEELO.D~
-COMPILE ~JA#BGT_AdvPack/Keelor_Nasha/JA#NASHA.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Keelor_Nasha/JA#NASHA.BAF~
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Keelor_Nasha/ja#keelo.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Keelor_Nasha/ja#nasha.d~
+
 
 COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 	//add new actors
@@ -46,12 +55,11 @@ COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 		fj_loc_y          = 2640
 		fj_dest_x         = 1741
 		fj_dest_y         = 2640
-		fj_orientation    = 2   
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Keelor~  
+		fj_name           = ~Keelor~
 		fj_cre_resref     = ~JA#KEELO~
-		fj_dlg_resref	  = ~JA#KEELO~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -59,7 +67,7 @@ COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 		fj_loc_y          = 3546
 		fj_dest_x         = 1114
 		fj_dest_y         = 3546
-		fj_orientation    = 11  
+		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gnoll~
@@ -71,7 +79,7 @@ COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 		fj_loc_y          = 3589
 		fj_dest_x         = 1179
 		fj_dest_y         = 3589
-		fj_orientation    = 8   
+		fj_orientation    = 8
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gnoll~
@@ -83,7 +91,7 @@ COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 		fj_loc_y          = 3595
 		fj_dest_x         = 1151
 		fj_dest_y         = 3595
-		fj_orientation    = 13  
+		fj_orientation    = 13
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gnoll~
@@ -95,7 +103,7 @@ COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 		fj_loc_y          = 3628
 		fj_dest_x         = 1069
 		fj_dest_y         = 3628
-		fj_orientation    = 0   
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gnoll~
@@ -107,7 +115,7 @@ COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 		fj_loc_y          = 3641
 		fj_dest_x         = 1128
 		fj_dest_y         = 3641
-		fj_orientation    = 3   
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gnoll~
@@ -119,16 +127,16 @@ COPY_EXISTING ~%BearRiver%.ARE~ ~override~
 		fj_loc_y          = 3601
 		fj_dest_x         = 1004
 		fj_dest_y         = 3601
-		fj_orientation    = 3   
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gnoll~
 		fj_cre_resref     = ~GNOLL~
 	END
+BUT_ONLY
 
-/* BG Docks District: Nasha's temple */
-COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~ 
-	LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
+COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~
+	LPF fj_are_structure
 		INT_VAR
 		fj_type         = 2    //travel
 		fj_box_left     = 147  //kleinstes x
@@ -142,18 +150,18 @@ COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~
 		fj_vertex_3     = 147 + (3179 << 16)   //kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = DOORJA#C05
-		fj_destination_area = JA#C05
-		fj_destination_name = FR8100
+		fj_name             = ~DOORJA#C05~
+		fj_destination_area = ~JA#C05~
+		fj_destination_name = ~FR8100~
 	END
 	/* add entrance from JA#C05 to Docks District */
-	LAUNCH_PATCH_FUNCTION  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 191    //x
 		fj_loc_y       = 3255   //y
-		fj_orientation = 10   
+		fj_orientation = 10
 		STR_VAR
 		fj_structure_type = entrance
-		fj_name           = FRJA#C05
+		fj_name           = ~FRJA#C05~
 	END
 BUT_ONLY
