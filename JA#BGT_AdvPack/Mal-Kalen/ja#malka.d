@@ -2,7 +2,7 @@ BEGIN ~JA#MALKA~
 
 IF ~Global("JA#MALKA","LOCALS",0)~ THEN 0
   SAY @0
-  IF ~~ THEN DO ~SetGlobal("JA#MALKA","LOCALS",1)CreateVisualEffectObject("JA#SPWN1",Myself)Wait(1)MoveBetweenAreas("%UlcasterRuins%",[695.394],10)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#MALKA","LOCALS",1) CreateVisualEffectObject("JA#SPWN1",Myself) Wait(1) MoveBetweenAreas("%UlcasterRuins%",[695.394],10)~ EXIT
 END
 
 IF ~Global("JA#MALKA","LOCALS",2)~ THEN 1
@@ -59,7 +59,7 @@ END
 
 IF ~Global("JA#MALKA","LOCALS",5)~ THEN 9
   SAY @19
-  IF ~~ THEN DO ~SetGlobal("JA#MALKA","LOCALS",6)Enemy()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#MALKA","LOCALS",6) Enemy()~ EXIT
 END
 
 IF ~~ THEN 10
@@ -82,3 +82,5 @@ IF ~~ THEN 13
   SAY @20
   IF ~~ THEN REPLY @13 GOTO 8
 END
+
+// END JA#MALKA
