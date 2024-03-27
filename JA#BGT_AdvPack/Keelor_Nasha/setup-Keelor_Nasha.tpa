@@ -138,15 +138,15 @@ COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_type         = 2    //travel
-		fj_box_left     = 147  //kleinstes x
-		fj_box_top      = 3001  //kleinstes y
-		fj_box_right    = 293  //größtes x
-		fj_box_bottom   = 3179   //größtes y
+		fj_box_left     = 25  //kleinstes x
+		fj_box_top      = 2810  //kleinstes y
+		fj_box_right    = 100  //größtes x
+		fj_box_bottom   = 2960   //größtes y
 		fj_cursor_idx   = 30   //door
-		fj_vertex_0     = 147 + (3001 << 16)   //kleinstes x +  kleinstes y
-		fj_vertex_1     = 293 + (3001 << 16)   //größtes x + kleinstes y
-		fj_vertex_2     = 293 + (3179 << 16)   //größtes x + größtes y
-		fj_vertex_3     = 147 + (3179 << 16)   //kleinstes x + größtes y
+		fj_vertex_0     =  25 + (2810 << 16)   //kleinstes x +  kleinstes y
+		fj_vertex_1     = 100 + (2810 << 16)   //größtes x + kleinstes y
+		fj_vertex_2     = 100 + (2960 << 16)   //größtes x + größtes y
+		fj_vertex_3     =  25 + (2960 << 16)   //kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
 		fj_name             = ~DOORJA#C05~
@@ -156,9 +156,9 @@ COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~
 	/* add entrance from JA#C05 to Docks District */
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x       = 191    //x
-		fj_loc_y       = 3255   //y
-		fj_orientation = 10
+		fj_loc_x       = 160    //x
+		fj_loc_y       = 2868   //y
+		fj_orientation = 9
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = ~FRJA#C05~
