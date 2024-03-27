@@ -1,10 +1,12 @@
-////////////////////////////////////
+/////////////////////////////////////
 //RESTORED: Llindellyn - the archer
-////////////////////////////////////
+/////////////////////////////////////
+
 
 COPY ~JA#BGT_AdvPack/Llindellyn/JA#LLIND.CRE~ ~override~
-	SAY NAME1 #15620 //~Llindellyn~ (string ref is true for BGT and BG:EE)
-	SAY NAME2 #15620 //~Llindellyn~ (string ref is true for BGT and BG:EE)
+	SAY NAME1 #15620 // ~Llindellyn~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #15620 // ~Llindellyn~ (string ref is true for BGT and BG:EE)
+
 COPY ~JA#BGT_AdvPack/Llindellyn/JA#TASL1.CRE~ ~override~
 
 COPY ~JA#BGT_AdvPack/Llindellyn/JA#LLIND.BAM~ ~override~
@@ -13,7 +15,11 @@ COPY ~JA#BGT_AdvPack/Llindellyn/JA#LLIND.ITM~ ~override~
 	SAY NAME2 @2075
 	SAY UNIDENTIFIED_DESC @2076
 
-COMPILE ~JA#BGT_AdvPack/Llindellyn/JA#LLIND.D~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Llindellyn/ja#llind.d~
+
+ADD_JOURNAL @6 @9 USING ~JA#BGT_AdvPack/languages/%s/ja#llind.tra~
+
 
 COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
 	//add new actors
@@ -23,22 +29,22 @@ COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
 		fj_loc_y          = 2692
 		fj_dest_x         = 3674
 		fj_dest_y         = 2692
-		fj_orientation    = 7      
+		fj_orientation    = 7
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Llindellyn~
-		fj_cre_resref     = ~JA#LLIND~  
-		fj_dlg_resref	  = ~JA#LLIND~  
+		fj_cre_resref     = ~JA#LLIND~
 	END
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1390
-		fj_loc_y          = 310 
+		fj_loc_y          = 310
 		fj_dest_x         = 1390
-		fj_dest_y         = 310 
-		fj_orientation    = 2      
+		fj_dest_y         = 310
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Tasloi~  
+		fj_name           = ~Tasloi~
 		fj_cre_resref     = ~JA#TASL1~
 	END
+BUT_ONLY
