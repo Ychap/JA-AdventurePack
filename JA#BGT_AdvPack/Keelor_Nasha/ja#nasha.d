@@ -7,7 +7,7 @@ END
 
 IF ~Global("JA#NASHA","GLOBAL",1)~ THEN 1
   SAY @1
-  IF ~~ THEN DO ~SetGlobal("JA#NASHA","GLOBAL",2)SetGlobal("JA#NASHA_HEAL","LOCALS",1)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#NASHA","GLOBAL",2) SetGlobal("JA#NASHA_HEAL","LOCALS",1)~ EXIT
 END
 
 IF ~Global("JA#NASHA","GLOBAL",2)
@@ -32,7 +32,9 @@ HPPercent(Player6,100)~ THEN 3
   IF ~~ THEN EXIT
 END
 
-IF ~false()~ THEN 4
+IF ~False()~ THEN 4
   SAY @4
   IF ~~ THEN DO ~~ EXIT
 END
+
+// END JA#NASHA

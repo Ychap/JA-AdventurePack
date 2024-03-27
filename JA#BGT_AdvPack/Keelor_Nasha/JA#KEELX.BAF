@@ -50,5 +50,3 @@ THEN
 	RESPONSE #100
 		UseItem("POTN52",Myself) // Konzentrierter Heiltrank
 END
-
-
