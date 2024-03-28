@@ -37,7 +37,7 @@ THEN
 		Continue()
 END
 >>>>>>>>
-EXTEND_TOP ~%Nashkel_BCS%.BCS~ ~...inlined/bardolan_ar4800_bg1re.baf~
+EXTEND_TOP ~%Nashkel_BCS%.BCS~ ~...inlined/bardolan_ar4800_bg1re.baf~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~INNKN2.CRE~ ~override~

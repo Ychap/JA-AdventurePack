@@ -4,10 +4,10 @@
 
 
 // Spawn and despawn JA#JOPI.CRE(Jopi)
-EXTEND_TOP ~%WBaldursGate%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7600.BAF~
+EXTEND_TOP ~%WBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7600.BAF~ EVALUATE_BUFFER
 
 // Start cutscene with JA#JOPI(Jopi)
-EXTEND_BOTTOM ~%WBaldursGate_RagefastsHouse%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~
+EXTEND_BOTTOM ~%WBaldursGate_RagefastsHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~

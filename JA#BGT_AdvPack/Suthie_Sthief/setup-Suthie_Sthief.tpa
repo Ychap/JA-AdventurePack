@@ -17,7 +17,7 @@ COPY ~JA#BGT_AdvPack/Suthie_Sthief/JA#SUTHI.CRE~ ~override~
 COMPILE ~JA#BGT_AdvPack/Suthie_Sthief/JA#SUTHI.D~
 
 
-EXTEND_TOP ~%EBaldursGate_SilencesShop%.BCS~ ~JA#BGT_AdvPack/Suthie_Sthief/AR7809.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_SilencesShop_BCS%.BCS~ ~JA#BGT_AdvPack/Suthie_Sthief/AR7809.BAF~ EVALUATE_BUFFER
 
 COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 	//add new actors
