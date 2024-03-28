@@ -75,9 +75,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
 	PHP_EACH actors AS i => actor BEGIN
-		READ_ASCII actor actor_name (32) NULL
+		READ_ASCII actor+0x00 actor_name (32) NULL
 		READ_SHORT actor+0x20 actor_pos_x
-		PATCH_IF (~%actor_name%~ STR_EQ ~Guard~) AND (~%actor_pos_x%~ = 1406) BEGIN
+		PATCH_IF (~%actor_pos_x%~ = 1406) AND (~%actor_name%~ STR_EQ ~Guard~) BEGIN
 			WRITE_ASCII actor+0x60 ~JA#FRINI~ #8 // Class script
 		END
 	END

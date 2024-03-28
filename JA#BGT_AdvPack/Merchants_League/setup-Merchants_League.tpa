@@ -168,19 +168,19 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 	PATCH_DEFINE_ARRAY x_coord BEGIN 1103 1176 779 1048 688 632 711 219 402 1125 END
 	PATCH_DEFINE_ARRAY y_coord BEGIN 587  577  888 757  598 576 301 487 606 500 END
 	PATCH_DEFINE_ARRAY orient  BEGIN 11   2    6   8    5   13  0   14  6   3 END
-	PATCH_PHP_EACH x_coord AS index => x BEGIN
+	PHP_EACH x_coord AS i => x BEGIN
 		LPF fj_are_structure
 			INT_VAR
-			fj_loc_x          = $x_coord("%index%")
-			fj_loc_y          = $y_coord("%index%")
-			fj_dest_x         = $x_coord("%index%")
-			fj_dest_y         = $y_coord("%index%")
-			fj_orientation    = $orient("%index%")
+			fj_loc_x          = $x_coord("%i%")
+			fj_loc_y          = $y_coord("%i%")
+			fj_dest_x         = $x_coord("%i%")
+			fj_dest_y         = $y_coord("%i%")
+			fj_orientation    = $orient("%i%")
 			STR_VAR
 			fj_structure_type = actor
 			fj_name           = ~Gast~
-			fj_cre_resref     = EVAL ~JA#DOPP%index%~
-			fj_dlg_resref 	  = EVAL ~JA#DOPP%index%~
+			fj_cre_resref     = EVAL ~JA#DOPP%i%~
+			fj_dlg_resref 	  = EVAL ~JA#DOPP%i%~
 		END
 	END
 	// Add Ambient 1

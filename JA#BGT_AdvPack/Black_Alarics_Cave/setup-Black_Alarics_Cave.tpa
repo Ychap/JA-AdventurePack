@@ -20,11 +20,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.D~
 
 COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 	// Replace each Flesh Golem with a Pirate skeleton
-	// LPF ALTER_AREA_ACTOR
-	// 	INT_VAR animation = 0xEB10
-	// 	STR_VAR actor_name = ~Flesh Golem~
-	// 			cre_file = ~JA#SKEL1~
-	// END
 	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
 	PHP_EACH actors AS i => actor BEGIN
 		READ_ASCII actor+0x80 actor_filename
