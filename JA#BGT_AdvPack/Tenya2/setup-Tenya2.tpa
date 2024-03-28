@@ -121,19 +121,18 @@ COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.ARE~ ~override~
 	PHP_EACH actors AS i => actor BEGIN
 		READ_SHORT actor+0x20 actor_pos_x
 		READ_ASCII actor+0x80 actor_filename
-
 		PATCH_MATCH ~%actor_pos_x%~ WITH
-			349 WHEN ~%actor_filename%~ STR_EQ ~PUMBER2~ BEGIN
+			349 WHEN (~%actor_filename%~ STR_EQ ~PUMBER2~) BEGIN
 				WRITE_SHORT actor+0x34 13
 			END
-			1029 WHEN ~%actor_filename%~ STR_EQ ~PUMBER2~ BEGIN
+			1029 WHEN (~%actor_filename%~ STR_EQ ~PUMBER2~) BEGIN
 				WRITE_SHORT actor+0x20 1143
 				WRITE_SHORT actor+0x22 610
 				WRITE_SHORT actor+0x24 1143
 				WRITE_SHORT actor+0x26 610
 				WRITE_SHORT actor+0x34 6
 			END
-			936 WHEN ~%actor_filename%~ STR_EQ ~PUMBER2~ BEGIN
+			936 WHEN (~%actor_filename%~ STR_EQ ~PUMBER2~) BEGIN
 				WRITE_SHORT actor+0x20 395
 				WRITE_SHORT actor+0x22 825
 				WRITE_SHORT actor+0x24 395

@@ -6,7 +6,7 @@ DEFINE_PATCH_FUNCTION REPLACE_CRE_SCRIPT
 BEGIN
 	FOR (offset = offset_start; offset <= offset_end; offset += 0x8) BEGIN
 		READ_ASCII offset script
-		PATCH_IF ~%script%~ STR_EQ ~%script_old%~ BEGIN
+		PATCH_IF (~%script%~ STR_EQ ~%script_old%~) BEGIN
 			WRITE_ASCIIE offset ~%script_new%~ #8
 		END
 	END
