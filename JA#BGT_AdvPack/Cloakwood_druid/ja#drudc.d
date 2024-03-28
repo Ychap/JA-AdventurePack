@@ -1,13 +1,11 @@
 BEGIN ~JA#DRUDC~
 
-IF ~NumTimesTalkedTo(0)
-ReactionLT(LastTalkedToBy(),FRIENDLY_LOWER)~ THEN 0
+IF ~NumTimesTalkedTo(0) ReactionLT(LastTalkedToBy(),FRIENDLY_LOWER)~ THEN 0
   SAY @0
   IF ~~ THEN EXIT
 END
 
-IF ~NumTimesTalkedTo(0)
-ReactionGT(LastTalkedToBy(),NEUTRAL_UPPER)~ THEN 1
+IF ~NumTimesTalkedTo(0) ReactionGT(LastTalkedToBy(),NEUTRAL_UPPER)~ THEN 1
   SAY @1
   IF ~~ THEN REPLY @2 GOTO 2
   IF ~~ THEN REPLY @3 GOTO 3
@@ -43,3 +41,5 @@ IF ~~ THEN 7
   SAY @11
   IF ~~ THEN EXIT
 END
+
+// END JA#DRUDC

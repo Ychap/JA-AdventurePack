@@ -579,6 +579,16 @@ LABEL "JA#BGT_AdvPack-Yago"
 INCLUDE ~JA#BGT_AdvPack/Yago/setup-Yago.tpa~
 
 
+/////////////////////////////
+//RESTORED: Cloakwood druid
+/////////////////////////////
+
+BEGIN ~Cloakwood druid~ DESIGNATED 49
+LABEL "JA#BGT_AdvPack-Cloakwood_druid"
+
+INCLUDE ~JA#BGT_AdvPack/Cloakwood_druid/setup-Cloakwood_druid.tpa~
+
+
 ////////////////////////////////////////////////////////
 //Graphical improvements: Animated torches and candles
 ////////////////////////////////////////////////////////
