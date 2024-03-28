@@ -8,10 +8,10 @@ COPY ~JA#BGT_AdvPack/Artolas/JA#ARTOL.CRE~ ~override~
 	SAY NAME2 @2065
 
 
-COMPILE ~JA#BGT_AdvPack/Artolas/JA#ARTOL.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Artolas/JA#ARTOL.BAF~
 
 
-COMPILE ~JA#BGT_AdvPack/Artolas/ja#artol.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Artolas/ja#artol.d~
 
 
 COPY_EXISTING ~%ESewers%.ARE~ ~override~

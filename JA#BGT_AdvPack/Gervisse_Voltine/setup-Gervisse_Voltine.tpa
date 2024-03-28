@@ -96,8 +96,8 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#TWINS.D~
 ADD_JOURNAL EXISTING @43 @57 @58 @81 USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
                                            ~JA#BGT_AdvPack/languages/%s/ja#twins.tra~
 
-COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
-COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
-COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.BAF~
 EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~ EVALUATE_BUFFER

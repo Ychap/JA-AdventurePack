@@ -3,7 +3,7 @@
 //////////////////////////////////////
 
 
-COMPILE ~JA#BGT_AdvPack/Nashkel_Garrison/JA#AMNI2.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nashkel_Garrison/JA#AMNI2.D~
 
 
 COPY_EXISTING ~AMNIS.CRE~ ~override/JA#AMNI2.CRE~

@@ -8,7 +8,7 @@ COPY_EXISTING ~JACIL.CRE~ ~override~
 BUT_ONLY
 
 
-COMPILE ~JA#BGT_AdvPack/Counting_House/JA#ULF.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Counting_House/JA#ULF.D~
 
 
 COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1%.BCS~ ~override~

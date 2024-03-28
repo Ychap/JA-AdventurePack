@@ -25,9 +25,9 @@ ACTION_IF GAME_IS ~eet bgee~ BEGIN
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.D~
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.D~
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILC1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILC1.BAF~
 
 COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.CRE~ ~override~

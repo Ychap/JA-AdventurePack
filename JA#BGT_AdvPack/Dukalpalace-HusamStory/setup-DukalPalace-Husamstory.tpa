@@ -604,10 +604,10 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	// transport cutscene with Belt/Liia
-	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.D~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.D~
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
 	// 2 cutscenes with Husam2
-	COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM_bgt.D~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM_bgt.D~
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU1.BAF~
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU3.BAF~
 END
@@ -616,8 +616,8 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PALAST.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PRISO.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM.D~
 //misc.d
-COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#MCOOK4.D~
-COMPILE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#DENKOD.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#MCOOK4.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#DENKOD.D~
 
 ADD_JOURNAL @4 @7 @13 @15 @19 USING ~JA#BGT_AdvPack/languages/%s/ja#husam.tra~
 

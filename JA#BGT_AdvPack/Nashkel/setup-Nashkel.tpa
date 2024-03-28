@@ -3,7 +3,7 @@
 ///////////
 
 
-COMPILE ~JA#BGT_AdvPack/Nashkel/JA#BARDOL.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nashkel/JA#BARDOL.D~
 
 // Add Bardolan's respawn to Nashkel area if he disappeared because of bg1re encounter
 COPY_EXISTING ~BARDOL.CRE~ ~override~

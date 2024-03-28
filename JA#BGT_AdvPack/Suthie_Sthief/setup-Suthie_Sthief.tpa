@@ -7,14 +7,14 @@ COPY ~JA#BGT_AdvPack/Suthie_Sthief/JA#STHIE.CRE~ ~override~
 	SAY NAME1 #1082 //~Dieb~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #1082 //~Dieb~ (string ref is true for BGT and BG:EE)
 
-COMPILE ~JA#BGT_AdvPack/Suthie_Sthief/JA#STHIE.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Suthie_Sthief/JA#STHIE.D~
 
 
 COPY ~JA#BGT_AdvPack/Suthie_Sthief/JA#SUTHI.CRE~ ~override~
 	SAY NAME1 #1082 //~Dieb~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #1082 //~Dieb~ (string ref is true for BGT and BG:EE)
 
-COMPILE ~JA#BGT_AdvPack/Suthie_Sthief/JA#SUTHI.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Suthie_Sthief/JA#SUTHI.D~
 
 
 EXTEND_TOP ~%EBaldursGate_SilencesShop_BCS%.BCS~ ~JA#BGT_AdvPack/Suthie_Sthief/AR7809.BAF~ EVALUATE_BUFFER

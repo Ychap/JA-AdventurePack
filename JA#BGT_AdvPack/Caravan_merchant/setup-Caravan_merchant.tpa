@@ -5,10 +5,10 @@
 
 COPY ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.CRE~ ~override~
 
-COMPILE ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.BAF~
 
 
-COMPILE ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.D~
 
 ADD_JOURNAL @13 @15 @18 @1008 @1033 USING ~JA#BGT_AdvPack/languages/%s/ja#merc3.tra~
 

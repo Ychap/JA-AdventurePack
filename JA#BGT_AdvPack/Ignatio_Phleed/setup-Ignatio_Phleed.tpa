@@ -14,4 +14,4 @@ COPY ~JA#BGT_AdvPack/Ignatio_Phleed/JA#IGNAT.CRE~ ~override~
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Ignatio_Phleed/AR7705.BAF~ EVALUATE_BUFFER
 
 
-COMPILE ~JA#BGT_AdvPack/Ignatio_Phleed/ja#ignat.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ignatio_Phleed/ja#ignat.d~

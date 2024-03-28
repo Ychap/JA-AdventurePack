@@ -6,7 +6,7 @@
 COPY ~JA#BGT_AdvPack/Yago/JA#LOWLG.CRE~ ~override~
 
 
-COMPILE ~JA#BGT_AdvPack/Yago/JA#LOWLG.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Yago/JA#LOWLG.BAF~
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Yago/ja#lowlg.d~

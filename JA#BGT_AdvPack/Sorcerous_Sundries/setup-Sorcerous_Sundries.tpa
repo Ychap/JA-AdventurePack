@@ -4,7 +4,7 @@
 
 /* ~Allerlei Zauberei: Neue Personen, neue Ambients~ */
 
-COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
 
 COPY_EXISTING ~HALBAZ.CRE~ ~override~
 	WRITE_ASCII 0x268 ~JA#HLBZ1~ #8
@@ -23,8 +23,8 @@ COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.CRE~ ~override~
 	SAY NAME2 @10
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.D~
-COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.D~
-COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
 
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
