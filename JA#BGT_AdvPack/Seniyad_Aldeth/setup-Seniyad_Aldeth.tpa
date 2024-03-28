@@ -8,7 +8,7 @@ COPY ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.ITM~ ~override~
 	SAY NAME1 @2101
 	SAY NAME2 @2101
-	SAY DESC @2102
+	SAY IDENTIFIED_DESC @2102
 
 
 // If Aldeth main component is installed
