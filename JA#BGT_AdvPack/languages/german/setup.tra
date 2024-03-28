@@ -247,21 +247,18 @@ Kein Schuss war für Adaniss Rhyte zu schwer.“
 
 EIGENSCHAFTEN:
 
-Schaden: 1W6 +3 (Klinge/Geschoss)
+Kehrt sofort zum Werfer zurück.
+
+Chance auf kritischen Treffer: +5 % mit dieser Waffe
+
 ETW0-Bonus: -2
-(Kehrt sofort zum Werfer zurück)
-Gewicht: 3
+Schaden: 1W6 +3 (Klinge/Geschoss)
 Initiativefaktor: 2
-Mindeststärke: 4
 Fertigkeit: Axt
 Typ: 1-händig
+Mindeststärke: 4
 
-Kann nicht verwendet werden von:
-- Dieben
-- Druiden
-- Klerikern
-- Magiern
-- Mönchen~
+Gewicht: 3~
 
 
 @2015	= ~Der finstere Fürst Hertious, ein untoter Kriegsherr von Bane, trug dieses Stück Rüstung vor über 500 Jahren. Man munkelt, das er während dieser Zeit in einem Schloss irgendwo im Erdlaufgebirge gewohnt hat. Wie seine Rüstung ohne ihn in andere Länder gelangte ist ungewiss, aber die Trennung der beiden war sicher nicht angenehm.
@@ -375,7 +372,9 @@ Kann nicht verwendet werden von:
 - Klerikern
 - Magiern
 - Mönchen~
-@2023	= ~Rhytes letzter Pfeil~
+
+
+@2023	= ~Rhytes letzter Pfeil +2~
 @2024	= ~Durlags Stolz~
 @2025	= ~Der Rand der Welt~
 @2026	= ~Das pfeifende Schwert~

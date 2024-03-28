@@ -168,96 +168,98 @@ I stumbled across a dirty little gnome called Gheldehar in an alleyway today. He
 
 I have retrieved the gnome priest Gheldehar's boots from Pilar. I don't think this will end the strange feud the two are having, though.~
 
-@2000 = ~The history of this weapon lost its significance in the great ocean of stories that are told about the High Forest, but the song of the outstanding archer Adaniss Rhyte is still sung by many bards:
+@2000 = ~The tale of this weapon lost its significance in the sea of great stories that are told about the High Forest, but some bards still sing the song of the skilled archer Adaniss Rhyte.
 
-Shocked by the power of his bow
-Quickly falls the game struck by Adaniss
-Many years ago at the time of the Quiet Earth
-During the hunt in the legendary High Forest.
+"Oh, shocked from the strike of his powerful bow,
+The slain game sought by Adaniss falls.
+Long ago in the time of the Quiet Earth,
+The hunt from the famed High Forest calls.
 
-The Duke of Everlund always boasted very much
-The trophies, which he lined up
-But his anger was inflamed by another hunter
-Whose prey of a year exceeded his own.
+The Duke of Everlund known for his boast
+Of the trophies held in his pride as dear.
+Intensely enraged at his rival hunter
+Whose bounty by far surpassed his one year.
 
-A dark tragedy befell one morning the land
-The death of the Duke's most magnificent dog.
-Fallen at the foot of a great elm tree
-The arrow still stuck in its throat.
+One morn tragedy befell the land
+With the misconceived death of the Duke's prized hound.
+Fallen at the base of a great elm tree
+A bow's shot death in its heart was found.
 
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
 
-That same evening Adaniss turned to the Duke.
-To atone for grave mistake that he had made.
-But the anger of the nobleman demanded ten pounds of meat
-And they pulled the archer's arm out of its joints.
+The same eve Adaniss called on the Duke,
+His solemn mistake he wished to repay.
+But the noble's rage claimed ten pounds of flesh
+And an archer's arm hit the ground that day.
 
-Unlawfulness for justice demands the Duke
-The worst spell cursing his arm.
-He sought revenge for price he had paid
-And so Rhyte swore the arrow for the dog was not the last.
+"The evil lord demanded justice unjust
+The most vile curse on his arm to be cast.
+Vengeance he sought for the price he had paid
+Rhyte vowed the hound's arrow not to be his last.
 
-Worried the city helped forge an ax
-Blessed to prove him the honor a famed day.
-The scar of Rhytes arrow as a guide for the ax
-And they say, it also kills with one hit.
+In sorrow the town helped him forge an axe
+Blessed to honor his most glorious day.
+With the mark of Rhyte's arrow to guide its strike
+And reputed to kill in the very same way.
 
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
 
-Again, the Forest called with its precious wild
-In search of prey  Adaniss roamed the lands.
-The Blood Falcon was the price that he wanted
-And on the Lost Peaks was where he would find it.
+Again called the forest with its precious game,
+And a prize Adaniss with thrill did he seek.
+But none could be finer than the great clawed falcon
+Sought by all amidst the forest's Lost Peaks.
 
-Once again, the rivalry of the Duke was stirring
-Confident of his strength with the bow of Rhyte
-His focus on the magnificent bird
-The next heir is safe from all harm.
+Once more the rivalry of the Duke did stir,
+For he thought of his skills with Rhyte's bow to be best.
+And set his sights on the glorious bird
+To emerge as the holder of its sainted crest.
 
-Both climbed the summit and sought for endless days
-Their will power was of the strength of stones.
-They met by chance at a rocky cliff
-Both full of hatred running deep in their bones.
+The two climbed the peaks and searched days on end,
+Each of their wills set as strong as the stone.
+They found each other at a cliff by chance;
+Both of their hatreds ran as deep as the bone.
 
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
 
-The Duke drew the bow and pulled the string
-But before flew Adaniss' ax so very quick.
-His skull split, the Duke stumbled to the rocky edge and fell
-Defeated by Rhytes last arrow...
+The Duke drew the bow and pulled the string taut,
+But first flew Adaniss's axe with its blow.
+Cleaved, the lord stumbled to cliff's edge and off,
+Defeated by Rhyte's last arrow...
 
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
-No shot was too difficult for Adaniss Rhyte.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
+None could match the marksmanship of Adaniss Rhyte."
 
 STATISTICS:
 
-Damage: 1d6 +3 (slashing / projectile)
-THAC0 Bonus: -2
-(Returns immediately to the thrower)
-Weight: 3
+Equipped abilities:
+– Chance to score a critical hit: +5% (with this weapon only)
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+
+THAC0: +2
+Damage: 1d6+3
+Damage type (melee): Slashing
+Damage type (thrown): Missile
 Speed Factor: 2
-Requires: 4 Strength
 Proficiency Type: Axe
-Type: 1-handed
+Type: One-handed
+Requires:
+ 4 Strength
 
-Can not be used by:
-Thieves, druids, clerics, mages, monks~
-
-
-
-
+Weight: 3~
 
 
 @2015 = ~The dark Lord Hertious, an undead warlord of Bane, wore this piece of armor over 500 years ago. It is rumored that he lived during that time in a castle somewhere in the Spine of the World. How his armor arrived without him in a different country is unknown, but the separation of the two was certainly not pleasant.
@@ -368,9 +370,7 @@ Can not be used by:
 Thieves, druids, sorcerer, clerics, mages, monks~
 
 
-
-
-@2023 = ~Rhyte's Last Arrow~
+@2023 = ~Rhyte's Last Arrow +2~
 @2024 = ~Durlag's Pride~
 @2025 = ~The Edge of the World~
 @2026 = ~The whistling sword~
