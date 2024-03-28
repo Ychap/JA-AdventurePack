@@ -109,19 +109,19 @@ END
 
 IF ~~ THEN JA#NIEMAI_x21
   SAY @52
-  IF ~~ THEN DO ~EscapeAreaDestroy(90)~ JOURNAL @53 EXIT
+  IF ~~ THEN DO ~EscapeArea()~ JOURNAL @53 EXIT
 END
 
 
 IF ~Dead("XZAR")~ THEN JA#NIEMAI_13
   SAY @20 = @21
-  IF ~~ THEN DO ~EraseJournalEntry(@1024) EscapeAreaDestroy(90)~ EXIT
+  IF ~~ THEN DO ~EraseJournalEntry(@1024) EscapeArea()~ EXIT
 END
 
 
 IF ~!InParty("XZAR")~ THEN JA#NIEMAI_xx0
   SAY @47
-  IF ~~ THEN DO ~EraseJournalEntry(@1024) EscapeAreaDestroy(90)~ EXIT
+  IF ~~ THEN DO ~EraseJournalEntry(@1024) EscapeArea()~ EXIT
 END
 
 // END JA#NIEMA
@@ -148,7 +148,7 @@ END
 
 IF ~~ THEN JA#NIEMAI_18
   SAY @29 = @30
-  IF ~~ THEN DO ~SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",3) EraseJournalEntry(@1024) AddExperienceParty(400) EscapeAreaDestroy(90)~ SOLVED_JOURNAL @31 EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",3) EraseJournalEntry(@1024) AddExperienceParty(400) EscapeArea()~ SOLVED_JOURNAL @31 EXIT
 END
 
 END // APPEND JA#NIEMA

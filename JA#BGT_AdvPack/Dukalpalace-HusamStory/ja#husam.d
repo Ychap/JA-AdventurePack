@@ -58,7 +58,7 @@ EraseJournalEntry(@13)
 EraseJournalEntry(@7)
 EraseJournalEntry(@4)
 SetGlobal("JA#HUSAM_MOVE","GLOBAL",4)
-EscapeAreaDestroy(90)~ SOLVED_JOURNAL @19 EXIT
+EscapeArea()~ SOLVED_JOURNAL @19 EXIT
 END
 
 // END JA#HUSAM

@@ -45,22 +45,22 @@ END
 
 IF ~~ THEN JA#FACAP_02
 SAY @10
-IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
+IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~~ THEN JA#FACAP_03
 SAY @11
-IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
+IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~~ THEN JA#FACAP_04
 SAY @12
-IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
+IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~~ THEN JA#FACAP_05
 SAY @13
-IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
+IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 // END JA#FACAP

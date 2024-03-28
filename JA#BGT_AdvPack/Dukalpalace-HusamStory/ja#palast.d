@@ -69,12 +69,12 @@ END
 
 IF ~~ THEN JA#KAEM1_3
 SAY @22
-IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
+IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~~ THEN JA#KAEM1_4
 SAY @23
-IF ~~ THEN DO ~EscapeAreaDestroy(90)~ EXIT
+IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~~ THEN JA#KAEM1_5

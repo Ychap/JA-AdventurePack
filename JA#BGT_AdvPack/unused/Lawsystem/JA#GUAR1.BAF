@@ -27,7 +27,7 @@ IF
 	Global("JA#DESTOYGUA","MYAREA",1)
 THEN
 	RESPONSE #100
-		EscapeAreaDestroy(90)
+		EscapeArea()
 END
 
 IF

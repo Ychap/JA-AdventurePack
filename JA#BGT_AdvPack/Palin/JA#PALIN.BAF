@@ -3,7 +3,7 @@ IF
 	Global("AldethMove","GLOBAL",1)
 THEN
 	RESPONSE #100
-		EscapeAreaDestroy(90)
+		EscapeArea()
 END
 
 IF
