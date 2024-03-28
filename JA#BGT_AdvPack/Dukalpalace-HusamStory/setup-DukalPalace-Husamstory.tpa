@@ -88,33 +88,36 @@ END
 
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
 		//Flaming Fist Dialog and Script changes
-		PATCH_IF ((~%actors_pos_x%~ = 463) AND (~%actors_filename%~ STR_EQ  ~FLAM10~)) BEGIN
-			WRITE_ASCII actors_offset + 0x48 ~JA#FLAM4~ #8
-			WRITE_ASCII actors_offset + 0x78 ~JA#FLM04~ #8
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 829) AND (~%actors_filename%~ STR_EQ  ~FLAM10~)) BEGIN
-			WRITE_ASCII actors_offset + 0x48 ~JA#FLAM4~ #8
-			WRITE_ASCII actors_offset + 0x78 ~JA#FLM05~ #8
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 625) AND (~%actors_filename%~ STR_EQ  ~FLAM10~)) BEGIN
-			WRITE_ASCII actors_offset + 0x48 ~JA#FLAM4~ #8
-			WRITE_ASCII actors_offset + 0x78 ~JA#FLM06~ #8
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 507) AND (~%actors_filename%~ STR_EQ  ~FLAM10~)) BEGIN
-			WRITE_ASCII actors_offset + 0x78 ~JA#FLM07~ #8
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 1019) AND (~%actors_filename%~ STR_EQ  ~FLAM10~)) BEGIN
-			WRITE_ASCII actors_offset + 0x48 ~JA#FLAM4~ #8
-			WRITE_ASCII actors_offset + 0x78 ~JA#FLM08~ #8
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 396) AND (~%actors_filename%~ STR_EQ  ~FLAM10~)) BEGIN
-			WRITE_ASCII actors_offset + 0x48 ~JA#FLAM4~ #8
-			WRITE_ASCII actors_offset + 0x78 ~JA#FLM09~ #8
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			463 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM04~ #8
+			END
+			829 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM05~ #8
+			END
+			625 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM06~ #8
+			END
+			507 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x78 ~JA#FLM07~ #8
+			END
+			1019 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM08~ #8
+			END
+			396 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM09~ #8
+			END
+			DEFAULT
 		END
 	END
 	//Delete Nobles
@@ -325,24 +328,26 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename
-		//Flaming Fist Dialog and Script changes
-		PATCH_IF ((~%actors_pos_x%~ = 710) AND (~%actors_filename%~ STR_EQ ~FLAM7~)) BEGIN
-			WRITE_SHORT actors_offset + 0x20        710
-			WRITE_SHORT actors_offset + 0x22        1055
-			WRITE_SHORT actors_offset + 0x24        710
-			WRITE_SHORT actors_offset + 0x26        1055
-			WRITE_SHORT actors_offset + 0x34        12
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 693) AND (~%actors_filename%~ STR_EQ ~FLAM7~)) BEGIN
-			WRITE_SHORT actors_offset + 0x20        693
-			WRITE_SHORT actors_offset + 0x22        1072
-			WRITE_SHORT actors_offset + 0x24        693
-			WRITE_SHORT actors_offset + 0x26        1072
-			WRITE_SHORT actors_offset + 0x34        14
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			710 WHEN (~%actor_filename%~ STR_EQ ~FLAM7~) BEGIN
+				WRITE_SHORT actor+0x20 710
+				WRITE_SHORT actor+0x22 1055
+				WRITE_SHORT actor+0x24 710
+				WRITE_SHORT actor+0x26 1055
+				WRITE_SHORT actor+0x34 12
+			END
+			693 WHEN (~%actor_filename%~ STR_EQ ~FLAM7~) BEGIN
+				WRITE_SHORT actor+0x20 693
+				WRITE_SHORT actor+0x22 1072
+				WRITE_SHORT actor+0x24 693
+				WRITE_SHORT actor+0x26 1072
+				WRITE_SHORT actor+0x34 14
+			END
+			DEFAULT
 		END
 	END
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~PRISON~ END // exists only in BGT

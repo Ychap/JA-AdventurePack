@@ -79,16 +79,15 @@ END
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#laola.D~
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~DOPPSM~) BEGIN // MERCHANT
-			WRITE_SHORT actors_offset+0x20        331
-			WRITE_SHORT actors_offset+0x22        303
-			WRITE_SHORT actors_offset+0x24        331
-			WRITE_SHORT actors_offset+0x26        303
-			WRITE_SHORT actors_offset+0x34        15
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_IF (~%actor_filename%~ STR_EQ ~DOPPSM~) BEGIN // MERCHANT
+			WRITE_SHORT actor+0x20 331
+			WRITE_SHORT actor+0x22 303
+			WRITE_SHORT actor+0x24 331
+			WRITE_SHORT actor+0x26 303
+			WRITE_SHORT actor+0x34 15
 		END
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
@@ -111,23 +110,23 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename
-		PATCH_IF ((~%actors_pos_x%~ = 436) AND (~%actors_filename%~ STR_EQ  ~DOPMER~)) BEGIN // MERCHANT
-			WRITE_SHORT actors_offset+0x20        360
-			WRITE_SHORT actors_offset+0x22        468
-			WRITE_SHORT actors_offset+0x24        360
-			WRITE_SHORT actors_offset+0x26        468
-			WRITE_SHORT actors_offset+0x34        11
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_IF ((~%actor_pos_x%~ = 436) AND (~%actor_filename%~ STR_EQ ~DOPMER~)) BEGIN // MERCHANT
+			WRITE_SHORT actor+0x20 360
+			WRITE_SHORT actor+0x22 468
+			WRITE_SHORT actor+0x24 360
+			WRITE_SHORT actor+0x26 468
+			WRITE_SHORT actor+0x34 11
 		END
-		PATCH_IF ((~%actors_pos_x%~ = 523) AND (~%actors_filename%~ STR_EQ  ~DOPMER~)) BEGIN // MERCHANT
-			WRITE_SHORT actors_offset+0x20        281
-			WRITE_SHORT actors_offset+0x22        255
-			WRITE_SHORT actors_offset+0x24        281
-			WRITE_SHORT actors_offset+0x26        255
-			WRITE_SHORT actors_offset+0x34        1
+		PATCH_IF ((~%actor_pos_x%~ = 523) AND (~%actor_filename%~ STR_EQ ~DOPMER~)) BEGIN // MERCHANT
+			WRITE_SHORT actor+0x20 281
+			WRITE_SHORT actor+0x22 255
+			WRITE_SHORT actor+0x24 281
+			WRITE_SHORT actor+0x26 255
+			WRITE_SHORT actor+0x34 1
 		END
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
@@ -201,16 +200,15 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~JHASSO~) BEGIN
-			WRITE_SHORT actors_offset+0x20        440
-			WRITE_SHORT actors_offset+0x22        435
-			WRITE_SHORT actors_offset+0x24        440
-			WRITE_SHORT actors_offset+0x26        435
-			WRITE_SHORT actors_offset+0x34        7
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_IF (~%actor_filename%~ STR_EQ ~JHASSO~) BEGIN
+			WRITE_SHORT actor+0x20 440
+			WRITE_SHORT actor+0x22 435
+			WRITE_SHORT actor+0x24 440
+			WRITE_SHORT actor+0x26 435
+			WRITE_SHORT actor+0x34 7
 		END
 	END
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPSS~ END // Doppelganger
