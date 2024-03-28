@@ -104,9 +104,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard
-		fj_cre_resref     = JA#SSGU1
-		fj_dlg_resref	  = JA#SSGU1
+		fj_name           = ~Guard~
+		fj_cre_resref     = ~JA#SSGU1~
+		fj_dlg_resref	  = ~JA#SSGU1~
 	END
 
 
@@ -143,9 +143,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = JhassoDopp
-		fj_cre_resref     = JA#JHASS
-		fj_dlg_resref	  = JA#DPSS3
+		fj_name           = ~JhassoDopp~
+		fj_cre_resref     = ~JA#JHASS~
+		fj_dlg_resref	  = ~JA#DPSS3~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -156,9 +156,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR2
-		fj_dlg_resref	  = JA#DPSS2
+		fj_name           = ~MercDopp~
+		fj_cre_resref     = ~JA#SSMR2~
+		fj_dlg_resref	  = ~JA#DPSS2~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -169,9 +169,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_orientation    = 13
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR1
-		fj_dlg_resref	  = JA#DPSS1
+		fj_name           = ~MercDopp~
+		fj_cre_resref     = ~JA#SSMR1~
+		fj_dlg_resref	  = ~JA#DPSS1~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -182,9 +182,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard
-		fj_cre_resref     = JA#SSGU4
-		fj_dlg_resref	  = JA#SSGU4
+		fj_name           = ~Guard~
+		fj_cre_resref     = ~JA#SSGU4~
+		fj_dlg_resref	  = ~JA#SSGU4~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -195,9 +195,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_orientation    = 8
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR3
-		fj_dlg_resref	  = JA#SSMR3
+		fj_name           = ~MercDopp~
+		fj_cre_resref     = ~JA#SSMR3~
+		fj_dlg_resref	  = ~JA#SSMR3~
 	END
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
@@ -227,9 +227,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard1
-		fj_cre_resref     = JA#SSGU2
-		fj_dlg_resref	  = JA#SSGU3
+		fj_name           = ~Guard1~
+		fj_cre_resref     = ~JA#SSGU2~
+		fj_dlg_resref	  = ~JA#SSGU3~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -240,9 +240,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard2
-		fj_cre_resref     = JA#SSGU3
-		fj_dlg_resref	  = JA#SSGU3
+		fj_name           = ~Guard2~
+		fj_cre_resref     = ~JA#SSGU3~
+		fj_dlg_resref	  = ~JA#SSGU3~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -253,9 +253,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard3
-		fj_cre_resref     = JA#SSGU3
-		fj_dlg_resref	  = JA#SSGU3
+		fj_name           = ~Guard3~
+		fj_cre_resref     = ~JA#SSGU3~
+		fj_dlg_resref	  = ~JA#SSGU3~
 	END
 BUT_ONLY
 

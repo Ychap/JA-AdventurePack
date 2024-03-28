@@ -117,8 +117,8 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 		fj_vertex_3     = 1430 + (2963 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#FRGUA
-		fj_reg_script		= JA#FRGUA
+		fj_name             = ~JA#FRGUA~
+		fj_reg_script		= ~JA#FRGUA~
 	END
 
 COPY_EXISTING ~%FriendlyArmInn_L1%.ARE~ ~override~

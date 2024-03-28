@@ -100,9 +100,9 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_vertex_3     = 1260 + (886 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_destination_area	= JA#C02
-		fj_destination_name	= FR8200
-		fj_name             = DOORJA#C02
+		fj_destination_area	= ~JA#C02~
+		fj_destination_name	= ~FR8200~
+		fj_name             = ~DOORJA#C02~
 	END
 	//add entrance
 	LPF fj_are_structure
@@ -112,7 +112,7 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_orientation = 7
 		STR_VAR
 		fj_structure_type = entrance
-		fj_name           = FRJA#C02
+		fj_name           = ~FRJA#C02~
 	END
 BUT_ONLY
 

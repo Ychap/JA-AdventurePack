@@ -171,9 +171,9 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_vertex_3     = 1908 + (1896 << 16)   //kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = DOORJA#C00
-		fj_destination_area = JA#C00
-		fj_destination_name = FR8200
+		fj_name             = ~DOORJA#C00~
+		fj_destination_area = ~JA#C00~
+		fj_destination_name = ~FR8200~
 	END
 	LPF  ~fj_are_structure~
 		INT_VAR
@@ -182,7 +182,7 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_orientation = 13
 		STR_VAR
 		fj_structure_type = entrance
-		fj_name           = Frja#C00
+		fj_name           = ~Frja#C00~
 	END
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
@@ -216,9 +216,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Nathan
-		fj_cre_resref     = JA#NATHA
-		fj_dlg_resref	  = JA#NATHA
+		fj_name           = ~Nathan~
+		fj_cre_resref     = ~JA#NATHA~
+		fj_dlg_resref	  = ~JA#NATHA~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -229,9 +229,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Brulgon
-		fj_cre_resref     = JA#BRULG
-		fj_dlg_resref	  = JA#BRULG
+		fj_name           = ~Brulgon~
+		fj_cre_resref     = ~JA#BRULG~
+		fj_dlg_resref	  = ~JA#BRULG~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -242,9 +242,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 8
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Bekki
-		fj_cre_resref     = JA#SERW1
-		fj_dlg_resref	  = JA#SERW1
+		fj_name           = ~Bekki~
+		fj_cre_resref     = ~JA#SERW1~
+		fj_dlg_resref	  = ~JA#SERW1~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -255,9 +255,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 13
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Koch
-		fj_cre_resref     = JA#COOK1
-		fj_dlg_resref	  = JA#COOK1
+		fj_name           = ~Koch~
+		fj_cre_resref     = ~JA#COOK1~
+		fj_dlg_resref	  = ~JA#COOK1~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -268,9 +268,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC01
-		fj_dlg_resref	  = JA#ETC01
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC01~
+		fj_dlg_resref	  = ~JA#ETC01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -281,9 +281,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC03
-		fj_dlg_resref	  = JA#ETC03
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC03~
+		fj_dlg_resref	  = ~JA#ETC03~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -294,9 +294,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC01
-		fj_dlg_resref	  = JA#ETC01
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC01~
+		fj_dlg_resref	  = ~JA#ETC01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -307,9 +307,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC02
-		fj_dlg_resref	  = JA#ETC02
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC02~
+		fj_dlg_resref	  = ~JA#ETC02~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -320,9 +320,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC04
-		fj_dlg_resref	  = JA#ETC04
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC04~
+		fj_dlg_resref	  = ~JA#ETC04~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -333,9 +333,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC02
-		fj_dlg_resref	  = JA#ETC02
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC02~
+		fj_dlg_resref	  = ~JA#ETC02~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -347,9 +347,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_schedule		  = 0b111111100000000000011111
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Wilyn
-		fj_cre_resref     = JA#WILY1
-		fj_dlg_resref	  = JA#WILY1
+		fj_name           = ~Wilyn~
+		fj_cre_resref     = ~JA#WILY1~
+		fj_dlg_resref	  = ~JA#WILY1~
 	END
 	//add region triggers
 	LPF fj_are_structure
@@ -369,7 +369,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_vertex_3          = 882 + (252 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#BEHOL
+		fj_name             = ~JA#BEHOL~
 	END
 	// Add Ambient 1
 	LPF fj_are_structure
@@ -383,7 +383,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = AMB_M08A
+		fj_wav_resref0    = ~AMB_M08A~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -398,13 +398,13 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~SS-Glass Break 1~
-		fj_wav_resref0    = AM0406D1
-		fj_wav_resref1    = AM0406D2
-		fj_wav_resref2    = AM0406D3
-		fj_wav_resref3    = AM0406D4
-		fj_wav_resref4    = AM0406D5
-		fj_wav_resref5    = AM0406D6
-		fj_wav_resref6    = AM0406D7
+		fj_wav_resref0    = ~AM0406D1~
+		fj_wav_resref1    = ~AM0406D2~
+		fj_wav_resref2    = ~AM0406D3~
+		fj_wav_resref3    = ~AM0406D4~
+		fj_wav_resref4    = ~AM0406D5~
+		fj_wav_resref5    = ~AM0406D6~
+		fj_wav_resref6    = ~AM0406D7~
 	END
 	//animation
 	LPF fj_are_structure
@@ -415,8 +415,8 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_flags = 0b0001000011
 		STR_VAR
 		fj_structure_type = animation
-		fj_name = Beholder
-		fj_bam_resref = JA#BEHOL
+		fj_name = ~Beholder~
+		fj_bam_resref = ~JA#BEHOL~
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
@@ -440,7 +440,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = AMB_M08A
+		fj_wav_resref0    = ~AMB_M08A~
 	END
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~

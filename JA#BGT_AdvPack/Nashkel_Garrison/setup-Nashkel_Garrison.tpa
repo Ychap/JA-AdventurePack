@@ -22,5 +22,5 @@ COPY_EXISTING ~%Nashkel_Garrison%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Amnish Soldier~
-		fj_cre_resref     = JA#AMNI2
+		fj_cre_resref     = ~JA#AMNI2~
 	END

@@ -131,8 +131,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Woman~
-		fj_cre_resref     = JA#NOPA1 // with NOBW5.DLG
-		fj_bcs_specific	  = SARRUN
+		fj_cre_resref     = ~JA#NOPA1~ // with NOBW5.DLG
+		fj_bcs_specific	  = ~SARRUN~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -144,8 +144,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Woman~
-		fj_cre_resref     = JA#NOPA5 // with JA#NOBW6.DLG
-		fj_bcs_specific	  = SARRUN
+		fj_cre_resref     = ~JA#NOPA5~ // with JA#NOBW6.DLG
+		fj_bcs_specific	  = ~SARRUN~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -157,8 +157,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
-		fj_cre_resref     = JA#NOPA2 // with NOBL12.DLG
-		fj_bcs_specific	  = SARRUN
+		fj_cre_resref     = ~JA#NOPA2~ // with NOBL12.DLG
+		fj_bcs_specific	  = ~SARRUN~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -170,8 +170,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
-		fj_cre_resref     = JA#NOPA3 // with JA#NOB00.DLG
-		fj_bcs_specific	  = SARRUN
+		fj_cre_resref     = ~JA#NOPA3~ // with JA#NOB00.DLG
+		fj_bcs_specific	  = ~SARRUN~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -183,8 +183,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Noble Man~
-		fj_cre_resref     = JA#NOPA4 // with JA#NOB13.DLG
-		fj_bcs_specific	  = SARRUN
+		fj_cre_resref     = ~JA#NOPA4~ // with JA#NOB13.DLG
+		fj_bcs_specific	  = ~SARRUN~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -196,8 +196,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Lady Odelia~
-		fj_cre_resref     = JA#NOPA6 // with JA#NOPA6.DLG
-		fj_bcs_specific	  = SARRUN
+		fj_cre_resref     = ~JA#NOPA6~ // with JA#NOPA6.DLG
+		fj_bcs_specific	  = ~SARRUN~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
@@ -227,8 +227,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		fj_con_itm_idx    = 0
 		fj_flags          = 0
 		STR_VAR
-		fj_name           = SCRL3F
 		fj_structure_type = itm
+		fj_name           = ~SCRL3F~
 	END
 	//new trap
 	LPF fj_are_structure
@@ -250,8 +250,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		fj_vertex_3     = 538 + (576 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#TRAP1
-		fj_reg_script		= JA#7209T
+		fj_name             = ~JA#TRAP1~
+		fj_reg_script		= ~JA#7209T~
 	END
 	//add actor
 	LPF fj_are_structure
@@ -264,7 +264,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Camerarius~
-		fj_cre_resref     = JA#KAEM1
+		fj_cre_resref     = ~JA#KAEM1~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
@@ -281,8 +281,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
-		fj_cre_resref     = JA#FLAM3
-		fj_bcs_specific	  = JA#FLM01
+		fj_cre_resref     = ~JA#FLAM3~
+		fj_bcs_specific	  = ~JA#FLM01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -294,8 +294,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
-		fj_cre_resref     = JA#FLAM3
-		fj_bcs_specific	  = JA#FLM01
+		fj_cre_resref     = ~JA#FLAM3~
+		fj_bcs_specific	  = ~JA#FLM01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -307,8 +307,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
-		fj_cre_resref     = JA#FLAM3
-		fj_bcs_specific	  = JA#FLM01
+		fj_cre_resref     = ~JA#FLAM3~
+		fj_bcs_specific	  = ~JA#FLM01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -320,8 +320,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Flammende Faust~
-		fj_cre_resref     = JA#FLAM3
-		fj_bcs_specific	  = JA#FLM01
+		fj_cre_resref     = ~JA#FLAM3~
+		fj_bcs_specific	  = ~JA#FLM01~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
@@ -357,7 +357,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Gefangener~
-		fj_cre_resref     = JA#PRISO
+		fj_cre_resref     = ~JA#PRISO~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -369,7 +369,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
-		fj_cre_resref     = FLAM7
+		fj_cre_resref     = ~FLAM7~
 		END
 	LPF fj_are_structure
 		INT_VAR
@@ -381,7 +381,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
-		fj_cre_resref     = FLAM7
+		fj_cre_resref     = ~FLAM7~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -393,7 +393,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~FLAM7~
-		fj_cre_resref     = FLAM7
+		fj_cre_resref     = ~FLAM7~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -405,7 +405,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~JA#FLAM1~
-		fj_cre_resref     = JA#FLAM1
+		fj_cre_resref     = ~JA#FLAM1~
 	END
 	//add region triggers
 	LPF fj_are_structure
@@ -426,8 +426,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type   = region
 		fj_destination_area	= EVAL ~%CentralSewers%~
-		fj_destination_name	= JA#7211
-		fj_name             = JA#AR7325
+		fj_destination_name	= ~JA#7211~
+		fj_name             = ~JA#AR7325~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -446,8 +446,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_vertex_3     = 455 + (374 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_reg_script		= JA#CANDL
-		fj_name             = JA#CANDL
+		fj_reg_script		= ~JA#CANDL~
+		fj_name             = ~JA#CANDL~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -470,8 +470,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_vertex_3     = 691 + (1020 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#TRAP1
-		fj_reg_script		= GSPEAR
+		fj_name             = ~JA#TRAP1~
+		fj_reg_script		= ~GSPEAR~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -494,8 +494,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_vertex_3     = 606 + (963 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#TRAP2
-		fj_reg_script		= GTLB
+		fj_name             = ~JA#TRAP2~
+		fj_reg_script		= ~GTLB~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -518,8 +518,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_vertex_3     = 557 + (356 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#TRAP3
-		fj_reg_script		= GTCK
+		fj_name             = ~JA#TRAP3~
+		fj_reg_script		= ~GTCK~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -542,8 +542,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_vertex_3     = 683 + (957 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#TRAP4
-		fj_reg_script		= JA#7211T
+		fj_name             = ~JA#TRAP4~
+		fj_reg_script		= ~JA#7211T~
 	END
 	//add entrance
 	LPF  ~fj_are_structure~
@@ -553,7 +553,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_orientation = 14
 		STR_VAR
 		fj_structure_type = entrance
-		fj_name           = JA#7325
+		fj_name           = ~JA#7325~
 	END
 	//bam as optical entrance JA#7325
 	LPF fj_are_structure
@@ -564,8 +564,8 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_flags = 0b00000000000000000001000101000000 // blend colours, not covered by wall, don't remove in combat
 		STR_VAR
 		fj_structure_type = animation
-		fj_name = JA#7211A
-		fj_bam_resref = JA#7211A
+		fj_name = ~JA#7211A~
+		fj_bam_resref = ~JA#7211A~
 	END
 
 COPY_EXISTING ~%CentralSewers%.are~ ~override~
@@ -588,8 +588,8 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		STR_VAR
 		fj_structure_type   = region
 		fj_destination_area	= EVAL ~%NBaldursGate_DucalPalace_Cellar%~
-		fj_destination_name	= JA#7325
-		fj_name             = JA#7211
+		fj_destination_name	= ~JA#7325~
+		fj_name             = ~JA#7211~
 	END
 	LPF  ~fj_are_structure~
 		INT_VAR
@@ -598,7 +598,7 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		fj_orientation = 13
 		STR_VAR
 		fj_structure_type = entrance
-		fj_name           = JA#7211
+		fj_name           = ~JA#7211~
 	END
 
 

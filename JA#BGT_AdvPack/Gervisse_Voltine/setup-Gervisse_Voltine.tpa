@@ -54,9 +54,9 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_vertex_3     = 4000 + (1950 << 16)   //kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = DOORJA#C07
-		fj_destination_area = JA#C07
-		fj_destination_name = FR7200
+		fj_name             = ~DOORJA#C07~
+		fj_destination_area = ~JA#C07~
+		fj_destination_name = ~FR7200~
 	END
 	//add entrance
 	LPF fj_are_structure
@@ -66,7 +66,7 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_orientation = 8
 		STR_VAR
 		fj_structure_type = entrance
-		fj_name           = Frja#c07
+		fj_name           = ~Frja#c07~
 	END
 BUT_ONLY
 
