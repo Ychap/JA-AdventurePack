@@ -2,6 +2,19 @@
 //Gervisse und Voltine
 //////////////////////////////
 
+
+COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L1%~ #8 // WED resource
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name = ~Door7200~
+		destination_area = EVAL ~%NWBaldursGate%~
+	END
+
+COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L2%~ #8 // WED resource
+
+
 COPY_EXISTING ~LAERTA.CRE~ ~override~
               ~LOUISE.CRE~ ~override~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~WDRUNSGT~ END
@@ -55,23 +68,7 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_structure_type = entrance
 		fj_name           = Frja#c07
 	END
-
-COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L1%~ #8
-
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door7200~
-					destination_area	= EVAL ~%NWBaldursGate%~
-		END
-	END
-
-COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L2%~ #8
-	END
-
-COPY_EXISTING ~AMB_E14A.WAV~ ~override~
+BUT_ONLY
 
 
 LAF GET_DLG_STRREF
