@@ -72,9 +72,9 @@ Ich habe den Magier Vaalahor im Allerlei Zauberei getroffen. Es stellte sich her
 @1006   = ~Das Rätsel um die verstummte Geisterstimme
 
 Im oberen Stockwerk des Elfgesangs ist mir der Geist der Elfendame erschienen. Sie schien zu ihrer vermissten Liebe zu sprechen und nahm mich nur am Rande war. Als sich die Erscheinung wieder auflöste, war mit ihr die Harfe von Vaalahor verschwunden. Ich denke, damit dürfte die Dame ihre Stimme wiedergefunden haben. Jetzt muss ich nur noch Alyth von meinem Erfolg berichten.~
-@1007   = ~Der Baum der Dryade
+// @1007   = ~Der Baum der Dryade
 
-Als ich durch die Wolkengipfel reiste, traf ich eine Dryade. Sie bat mich darum, ihren Baum zu beschützen. Wie hätte ich eine solche Bitte ablehnen können?~
+// Als ich durch die Wolkengipfel reiste, traf ich eine Dryade. Sie bat mich darum, ihren Baum zu beschützen. Wie hätte ich eine solche Bitte ablehnen können?~
 @1008   = ~Überfall auf die Karawane
 
 Eine Karawane wurde am Küstenweg von Räubern überfallen und geplündert. Die Reisenden sind allesamt tot oder verschleppt, wir fanden jedoch einen schwer verletzten Händler, der unsere Hilfe benötigt.~
@@ -168,7 +168,6 @@ Ich bin heute in einem Gässchen einem schmutzigen kleinen Gnom namens Gheldehar
 @1038   = ~Pilar und Gheldehar
 
 Ich habe dem Gnomenpriester Gheldehar seine Stiefel von Pilar wiederbeschafft. Ich glaube jedoch nicht, dass dadurch die merkwürdige Fehde zwischen den Beiden beendet ist.~
-
 
 
 

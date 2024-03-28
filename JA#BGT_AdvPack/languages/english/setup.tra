@@ -71,9 +71,9 @@ I met the mage Vaalahor at the Sorcerous Sundries. It turned out that he had tri
 @1006 = ~The mystery of the silent ghostly voice
 
 In the upper floor of the Elfsong the spirit of the elven lady appeared to me. She seemed to speak to her missing love and only noticed me vaguely. When her manifestation dissolved again, the harp of Vaalahor went with her. I think that the lady should have gotten her voice back. Now I just have to report to Alyth of my success.~
-@1007 = ~The Tree of the Dryad
+// @1007 = ~The Tree of the Dryad
 
-While traveling the Cloudpeaks I met a Dryad. She asked that I help protect her tree. How could I refuse such a request?~
+// While traveling the Cloudpeaks I met a Dryad. She asked that I help protect her tree. How could I refuse such a request?~
 @1008 = ~Attack on the caravan
 
 A caravan was attacked by bandits on the coastal road and looted. The passengers are all dead or abducted, but we found a seriously injured trader who needs our help.~
@@ -167,6 +167,8 @@ I stumbled across a dirty little gnome called Gheldehar in an alleyway today. He
 @1038   = ~Pilar and Gheldehar
 
 I have retrieved the gnome priest Gheldehar's boots from Pilar. I don't think this will end the strange feud the two are having, though.~
+
+
 
 @2000 = ~The tale of this weapon lost its significance in the sea of great stories that are told about the High Forest, but some bards still sing the song of the skilled archer Adaniss Rhyte.
 
