@@ -1,4 +1,4 @@
-//Bentley - Reaction to Chapter 3
+// Bentley's reaction to chapter 3
 
 ADD_STATE_TRIGGER BENTLY 3 ~Dead("Mulahey")~
 

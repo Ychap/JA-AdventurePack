@@ -1,6 +1,6 @@
-///////////////////////////////
-//RESTORED: Guards in Beregost
-///////////////////////////////
+////////////////////////////////
+// RESTORED: Guards in Beregost
+////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB4.CRE~ ~override~
@@ -20,7 +20,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/JA#GUABE.D~
 
 
 COPY_EXISTING ~%Beregost%.ARE~ ~override~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 4194
@@ -101,7 +101,7 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 700

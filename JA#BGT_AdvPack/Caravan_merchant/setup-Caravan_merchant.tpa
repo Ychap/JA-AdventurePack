@@ -1,6 +1,6 @@
-//////////////////////////////
-//RESTORED: Caravan merchant
-//////////////////////////////
+///////////////////////////////
+// RESTORED: Caravan merchant
+///////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.CRE~ ~override~
@@ -14,7 +14,7 @@ ADD_JOURNAL @13 @15 @18 @1008 @1033 USING ~JA#BGT_AdvPack/languages/%s/ja#merc3.
 
 
 COPY_EXISTING ~%CoastWay%.ARE~ ~override~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 3711

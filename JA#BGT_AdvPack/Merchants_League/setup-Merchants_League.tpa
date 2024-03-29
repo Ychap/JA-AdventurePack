@@ -1,6 +1,6 @@
-////////////////////////////////////
-//Merchants' League investigations
-////////////////////////////////////
+/////////////////////////////////////
+// Merchants' League investigations
+/////////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#MLBAR.STO~ ~override~
@@ -164,7 +164,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 		STR_VAR
 		actor_name 	= ~Irlentree~
 	END
-	//add new actors
+	// add new actors
 	PATCH_DEFINE_ARRAY x_coord BEGIN 1103 1176 779 1048 688 632 711 219 402 1125 END
 	PATCH_DEFINE_ARRAY y_coord BEGIN 587  577  888 757  598 576 301 487 606 500 END
 	PATCH_DEFINE_ARRAY orient  BEGIN 11   2    6   8    5   13  0   14  6   3 END
@@ -229,14 +229,14 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 			DEFAULT
 		END
 	END
-	//container scripts, scroll and key
+	// container scripts, scroll and key
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
 		container_name = ~Container 2~
 		lock_difficulty = 80
 		container_key = ~JA#ZRLKY~
 	END
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 807

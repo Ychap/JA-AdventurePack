@@ -1,6 +1,6 @@
-///////////////////////////
-//Imoen at Winthrop's inn
-///////////////////////////
+////////////////////////////
+// Imoen at Winthrop's inn
+////////////////////////////
 
 
 EXTEND_TOP ~%IMOEN_BCS%.BCS~ ~JA#BGT_AdvPack/Imoen_Winthrop/JA#IMOEN1.BAF~ EVALUATE_BUFFER

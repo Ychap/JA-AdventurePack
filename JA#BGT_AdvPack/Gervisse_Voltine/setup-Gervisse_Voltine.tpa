@@ -1,6 +1,6 @@
-//////////////////////////////
-//Gervisse und Voltine
-//////////////////////////////
+/////////////////////////
+// Gervisse und Voltine
+/////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
@@ -39,26 +39,26 @@ COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.CRE~ ~override~
 
 
 COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
-	//add region triggers
+	// add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2     //travel
-		fj_box_left     = 4000  //kleinstes x
-		fj_box_top      = 1780  //kleinstes y
-		fj_box_right    = 4200  //größtes x
-		fj_box_bottom   = 1950  //größtes y
-		fj_cursor_idx   = 30    //door
-		fj_vertex_0     = 4000 + (1780 << 16)   //kleinstes x +  kleinstes y
-		fj_vertex_1     = 4200 + (1780 << 16)   //größtes x + kleinstes y
-		fj_vertex_2     = 4200 + (1950 << 16)   //größtes x + größtes y
-		fj_vertex_3     = 4000 + (1950 << 16)   //kleinstes x + größtes y
+		fj_type         = 2     // travel
+		fj_box_left     = 4000  // kleinstes x
+		fj_box_top      = 1780  // kleinstes y
+		fj_box_right    = 4200  // größtes x
+		fj_box_bottom   = 1950  // größtes y
+		fj_cursor_idx   = 30    // door
+		fj_vertex_0     = 4000 + (1780 << 16)   // kleinstes x +  kleinstes y
+		fj_vertex_1     = 4200 + (1780 << 16)   // größtes x + kleinstes y
+		fj_vertex_2     = 4200 + (1950 << 16)   // größtes x + größtes y
+		fj_vertex_3     = 4000 + (1950 << 16)   // kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
 		fj_name             = ~DOORJA#C07~
 		fj_destination_area = ~JA#C07~
 		fj_destination_name = ~FR7200~
 	END
-	//add entrance
+	// add entrance
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 4135

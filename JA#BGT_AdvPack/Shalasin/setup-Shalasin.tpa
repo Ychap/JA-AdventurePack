@@ -1,6 +1,6 @@
-////////////////////////
-//RESTORED: Shalasin
-////////////////////////
+///////////////////////
+// RESTORED: Shalasin
+///////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Shalasin/JA#SHALA.CRE~ ~override~
@@ -12,7 +12,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shalasin/ja#shala.d~
 
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 488

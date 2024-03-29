@@ -1,6 +1,6 @@
-///////////////////////////////
-//RESTORED: Warehouse Workers
-///////////////////////////////
+////////////////////////////////
+// RESTORED: Warehouse Workers
+////////////////////////////////
 
 COPY ~JA#BGT_AdvPack/Warehouse_Workers/JA#WARE1.CRE~ ~override~
 	 ~JA#BGT_AdvPack/Warehouse_Workers/JA#WARE2.CRE~ ~override~

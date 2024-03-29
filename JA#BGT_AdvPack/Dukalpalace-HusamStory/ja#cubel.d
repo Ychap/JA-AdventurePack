@@ -9,7 +9,7 @@ END
 
 
 
-//LIIA
+// LIIA
 
 ALTER_TRANS LIIA // file name
 BEGIN 11 END // state number (can be more than one)

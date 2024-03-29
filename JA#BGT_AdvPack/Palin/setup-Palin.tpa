@@ -1,6 +1,6 @@
-/////////////////////////////////////////////
-//RESTORED: Palin (Aldeth's hunter comrade)
-/////////////////////////////////////////////
+//////////////////////////////////////////////
+// RESTORED: Palin (Aldeth's hunter comrade)
+//////////////////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Palin/JA#PALIN.CRE~ ~override~
@@ -17,7 +17,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Palin/ja#nhuntc.d~
 
 
 COPY_EXISTING ~%CloakwoodLodge%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 2540

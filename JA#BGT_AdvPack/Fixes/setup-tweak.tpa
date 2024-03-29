@@ -1,7 +1,7 @@
-//INCLUDE ~JA#BGT_AdvPack/tph/ja#area_macro.tph~
+// INCLUDE ~JA#BGT_AdvPack/tph/ja#area_macro.tph~
 
 /* ## included in Tweakpack
-//BG1-Item descriptions restored
+// BG1-Item descriptions restored
 ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 31 BEGIN
 INCLUDE ~JA#BGT_AdvPack/fixes/items/bgtitems.tph~
 END
@@ -9,14 +9,14 @@ END
 
 ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 	/////////////////////////////////////////////////////////////
-	//BG1-Skull - black item icon (Melicamp-Quest) restored
+	// BG1-Skull - black item icon (Melicamp-Quest) restored
 	/////////////////////////////////////////////////////////////
 	COPY ~JA#BGT_AdvPack/fixes/JA#SKULL.BAM~ ~override~
 	COPY_EXISTING ~MISC50.ITM~    ~override~
 		WRITE_ASCII 0x3a ~JA#SKULL~ #8
 
 	/////////////////////////////////////////////////////////////
-	//dagger of poison & shadow armor moved from taerom to silence
+	// dagger of poison & shadow armor moved from taerom to silence
 	/////////////////////////////////////////////////////////////
 	COPY_EXISTING ~TAERUM.STO~ ~override~
 		SPRINT ~item_to_delete~ ~MISC75~
@@ -28,7 +28,7 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 		ADD_STORE_ITEM ~MISC75~ AFTER ~DAGG01~ #0 #0 #0 ~IDENTIFIED~ #1
 
 	/////////////////////////////////////////////////////////////
-	//Mulahey Half-Orc
+	// Mulahey Half-Orc
 	/////////////////////////////////////////////////////////////
 	COPY_EXISTING ~MULAHE.CRE~ ~override~
 		WRITE_SHORT 0x28 24581
@@ -36,7 +36,7 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 		WRITE_BYTE 0x2f 15
 
 	/////////////////////////////////////////////////////////////
-	//Tazok - Orog
+	// Tazok - Orog
 	/////////////////////////////////////////////////////////////
 	ACTION_IF GAME_IS ~eet~ BEGIN
 		COPY_EXISTING ~TAZOK_.CRE~ ~override~
@@ -76,7 +76,7 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 		SAY SELECT_ACTION6 #4472
 
 	/////////////////////////////////////////////////////////////
-	//Nashkel & Gnollfortress - improved Searchmap and Wallgroups, ar8100
+	// Nashkel & Gnollfortress - improved Searchmap and Wallgroups, ar8100
 	/////////////////////////////////////////////////////////////
 	INCLUDE ~%MOD_FOLDER%/lib/alter_searchmap.tpa~
 	LAF ALTER_SEARCHMAP
@@ -97,10 +97,10 @@ ACTION_IF NOT MOD_IS_INSTALLED ~Setup-JA#BGT_Tweak.tp2~ 20 BEGIN
 		areaname = EVAL ~%BaldursGateDocks%~ 							  		 			// area name, e.g. ~AR3700~
 	END
 	COPY ~JA#BGT_AdvPack/fixes/Areas/AR3700.wed~ ~override/%Nashkel%.wed~
-	COPY ~JA#BGT_AdvPack/fixes/Areas/AR4100.wed~ ~override/%GnollStronghold%.wed~	//wed Dateien
+	COPY ~JA#BGT_AdvPack/fixes/Areas/AR4100.wed~ ~override/%GnollStronghold%.wed~	// wed Dateien
 
 	/////////////////////////////////////////////////////////////
-	//Firebead's avatar colours
+	// Firebead's avatar colours
 	/////////////////////////////////////////////////////////////
 	COPY_EXISTING ~FIREBE.CRE~ ~override~
 		WRITE_BYTE 0x2c 102

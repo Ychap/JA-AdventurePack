@@ -11,7 +11,7 @@ END
 
 IF
 	!Dead("Tenya")
-	!InParty("tenya") //compatibility with Tenya NPC mod
+	!InParty("tenya") // compatibility with Tenya NPC mod
 	Global("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
 	Global("TENAPPEAR","GLOBAL",0)
 THEN
@@ -24,7 +24,7 @@ END
 
 IF
 	!Dead("Tenya")
-	!InParty("tenya") //compatibility with Tenya NPC mod
+	!InParty("tenya") // compatibility with Tenya NPC mod
 	Global("ReturnedBook","GLOBAL",1)
 	Global("TENAPPEAR","GLOBAL",0)
 THEN

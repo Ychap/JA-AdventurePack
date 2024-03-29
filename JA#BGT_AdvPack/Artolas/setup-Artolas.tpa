@@ -1,6 +1,6 @@
-/////////////////////////
-//RESTORED: Sir Artolas
-/////////////////////////
+//////////////////////////
+// RESTORED: Sir Artolas
+//////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Artolas/JA#ARTOL.CRE~ ~override~
@@ -15,7 +15,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Artolas/ja#artol.d~
 
 
 COPY_EXISTING ~%ESewers%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1266

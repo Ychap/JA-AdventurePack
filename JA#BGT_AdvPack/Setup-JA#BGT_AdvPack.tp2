@@ -9,7 +9,7 @@ known issues:
 
 
 BACKUP ~weidu_external/backup/JA#BGT_AdvPack~
-//AUTHOR ~Jarl~
+// AUTHOR ~Jarl~
 SUPPORT ~Please post at G3 or Kerzenburgforum, refer to readme.~
 
 VERSION ~0.9.0 beta3~
@@ -70,7 +70,7 @@ ALWAYS
 	END
 END
 
-AUTO_TRA ~JA#BGT_AdvPack/Languages/%s~
+AUTO_TRA ~JA#BGT_AdvPack/languages/%s~
 
 LANGUAGE ~Deutsch~
          ~german~
@@ -83,9 +83,9 @@ LANGUAGE ~English~
 
 
 
-////////////////////////////////////////////////////////////////////////////////
-//LAW-SYSTEM in FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID and DUKAL PALACE
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+// LAW-SYSTEM in FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID and DUKAL PALACE
+/////////////////////////////////////////////////////////////////////////////////
 
 BEGIN ~Extended Tavern Guard System~ DESIGNATED 1
 LABEL "JA#BGT_AdvPack-Law"
@@ -93,9 +93,9 @@ LABEL "JA#BGT_AdvPack-Law"
 INCLUDE ~JA#BGT_AdvPack/Lawsystem/setup-lawsystem.tpa~
 
 
-//////////////////
-//Ramaziths Turm
-//////////////////
+/////////////////////
+// Ramazith's Tower
+/////////////////////
 
 BEGIN ~Ramazith~ DESIGNATED 2
 LABEL "JA#BGT_AdvPack-Ramazith"
@@ -103,10 +103,10 @@ LABEL "JA#BGT_AdvPack-Ramazith"
 INCLUDE ~JA#BGT_AdvPack/Ramazith/setup-Ramazith.tpa~
 
 
-///////////////////////////////////////////////////////////////////////
-//Komplett überarbeitete Herzogspalast-Szene mit restaurierten Inhalten
-//Restauriert: Abschluss der Husam-Storyline
-///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+// Komplett überarbeitete Herzogspalast-Szene mit restaurierten Inhalten
+// Restauriert: Abschluss der Husam-Storyline
+//////////////////////////////////////////////////////////////////////////
 
 BEGIN ~Dukal Palace and Husam Story~ DESIGNATED 3
 LABEL "JA#BGT_AdvPack-Husam"
@@ -114,9 +114,9 @@ LABEL "JA#BGT_AdvPack-Husam"
 INCLUDE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/setup-DukalPalace-Husamstory.tpa~
 
 
-////////////////////////
-//Gervisse and Voltine
-////////////////////////
+/////////////////////////
+// Gervisse and Voltine
+/////////////////////////
 
 BEGIN ~Gervisse and Voltine~ DESIGNATED 4
 LABEL "JA#BGT_AdvPack-Gervisse_Voltine"
@@ -124,9 +124,9 @@ LABEL "JA#BGT_AdvPack-Gervisse_Voltine"
 INCLUDE ~JA#BGT_AdvPack/Gervisse_Voltine/setup-Gervisse_Voltine.tpa~
 
 
-//////////////
-//Seven Suns
-//////////////
+///////////////
+// Seven Suns
+///////////////
 
 BEGIN ~Seven Suns~ DESIGNATED 5
 LABEL "JA#BGT_AdvPack-Seven_Suns"
@@ -134,9 +134,9 @@ LABEL "JA#BGT_AdvPack-Seven_Suns"
 INCLUDE ~JA#BGT_AdvPack/Seven_Suns/setup-Seven_Suns.tpa~
 
 
-/////////////
-//Arkhstaff
-/////////////
+//////////////
+// Arkhstaff
+//////////////
 
 BEGIN ~Arkhstuff~ DESIGNATED 6
 LABEL "JA#BGT_AdvPack-Arkhstuff"
@@ -144,9 +144,9 @@ LABEL "JA#BGT_AdvPack-Arkhstuff"
 INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
 
 
-/////////////////////////////////////////////
-//RESTORED: Palin (Aldeth's hunter comrade)
-/////////////////////////////////////////////
+//////////////////////////////////////////////
+// RESTORED: Palin (Aldeth's hunter comrade)
+//////////////////////////////////////////////
 
 BEGIN ~Palin (Aldeth's hunter comrade)~ DESIGNATED 7
 LABEL "JA#BGT_AdvPack-Palin"
@@ -155,9 +155,9 @@ REQUIRE_PREDICATE !GAME_IS ~bgee eet~ ~Already restored in BG:EE~
 INCLUDE ~JA#BGT_AdvPack/Palin/setup-Palin.tpa~
 
 
-/////////////////////////////////////////
-//RESTORED: Svlast - the fallen Paladin
-/////////////////////////////////////////
+//////////////////////////////////////////
+// RESTORED: Svlast - the fallen Paladin
+//////////////////////////////////////////
 
 BEGIN ~Svlast - the fallen Paladin~ DESIGNATED 8
 LABEL "JA#BGT_AdvPack-Svlast"
@@ -167,9 +167,9 @@ FORBID_FILE ~override/UBSVLAST.CRE~ ~Svlast, the Fallen Paladin is already resto
 INCLUDE ~JA#BGT_AdvPack/Svlast/setup-Svlast.tpa~
 
 
-//////////////////////////////////////
-//RESTORED: Nashkel Garrison Soldier
-//////////////////////////////////////
+///////////////////////////////////////
+// RESTORED: Nashkel Garrison Soldier
+///////////////////////////////////////
 
 BEGIN ~Nashkel Garrison Soldier~ DESIGNATED 9
 LABEL "JA#BGT_AdvPack-Nashkel_Garrison"
@@ -177,9 +177,9 @@ LABEL "JA#BGT_AdvPack-Nashkel_Garrison"
 INCLUDE ~JA#BGT_AdvPack/Nashkel_Garrison/setup-Nashkel_Garrison.tpa~
 
 
-////////////////////////////////
-//RESTORED: Velvet - Cockfight
-////////////////////////////////
+/////////////////////////////////
+// RESTORED: Velvet - Cockfight
+/////////////////////////////////
 
 BEGIN ~Velvet - Cockfight~ DESIGNATED 10
 LABEL "JA#BGT_AdvPack-Velvet"
@@ -188,9 +188,9 @@ REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~set
 INCLUDE ~JA#BGT_AdvPack/velvet/setup-velvet.tpa~
 
 
-//////////////////////////
-//RESTORED: Nim Furlwing
-//////////////////////////
+///////////////////////////
+// RESTORED: Nim Furlwing
+///////////////////////////
 
 BEGIN ~Nim Furlwing~ DESIGNATED 11
 LABEL "JA#BGT_AdvPack-Nim_Furlwing"
@@ -201,9 +201,9 @@ FORBID_FILE ~override/ubnimfur.cre~ ~NimFurlwing and Her Hounds is already resto
 INCLUDE ~JA#BGT_AdvPack/Nim_Furlwing/setup-Nim_Furlwing.tpa~
 
 
-//////////////////////////////
-//RESTORED: Caravan merchant
-//////////////////////////////
+///////////////////////////////
+// RESTORED: Caravan merchant
+///////////////////////////////
 
 BEGIN ~Caravan merchant~ DESIGNATED 12
 LABEL "JA#BGT_AdvPack-Caravan_merchant"
@@ -211,9 +211,9 @@ LABEL "JA#BGT_AdvPack-Caravan_merchant"
 INCLUDE ~JA#BGT_AdvPack/Caravan_merchant/setup-Caravan_merchant.tpa~
 
 
-/////////////////////////////////
-//RESTORED: Galtoth - the fence
-/////////////////////////////////
+//////////////////////////////////
+// RESTORED: Galtoth - the fence
+//////////////////////////////////
 
 BEGIN ~Galtoth - the fence~ DESIGNATED 13
 LABEL "JA#BGT_AdvPack-Galtoth"
@@ -221,9 +221,9 @@ LABEL "JA#BGT_AdvPack-Galtoth"
 INCLUDE ~JA#BGT_AdvPack/Galtoth/setup-Galtoth.tpa~
 
 
-////////////////////////////////////////////////
-//RESTORED: Suthie & Sthief at Silence's Store
-////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// RESTORED: Suthie & Sthief at Silence's Store
+/////////////////////////////////////////////////
 
 BEGIN ~Suthie & Sthief at Silence's Store~ DESIGNATED 14
 LABEL "JA#BGT_AdvPack-Suthie_Sthief"
@@ -231,9 +231,9 @@ LABEL "JA#BGT_AdvPack-Suthie_Sthief"
 INCLUDE ~JA#BGT_AdvPack/Suthie_Sthief/setup-Suthie_Sthief.tpa~
 
 
-///////////////////////////////
-//RESTORED: Warehouse Workers
-///////////////////////////////
+////////////////////////////////
+// RESTORED: Warehouse Workers
+////////////////////////////////
 
 BEGIN ~Warehouse Workers~ DESIGNATED 15
 LABEL "JA#BGT_AdvPack-Warehouse_Workers"
@@ -241,9 +241,9 @@ LABEL "JA#BGT_AdvPack-Warehouse_Workers"
 INCLUDE ~JA#BGT_AdvPack/Warehouse_Workers/setup-Warehouse_Workers.tpa~
 
 
-////////////////////
-//RESTORED: Nobles
-////////////////////
+/////////////////////
+// RESTORED: Nobles
+/////////////////////
 
 BEGIN ~Nobles~ DESIGNATED 16
 LABEL "JA#BGT_AdvPack-nobles"
@@ -251,9 +251,9 @@ LABEL "JA#BGT_AdvPack-nobles"
 INCLUDE ~JA#BGT_AdvPack/nobles/setup-nobles.tpa~
 
 
-////////////////////////////
-//RESTORED: Ignatio Phleed
-////////////////////////////
+/////////////////////////////
+// RESTORED: Ignatio Phleed
+/////////////////////////////
 
 BEGIN ~Ignatio Phleed~ DESIGNATED 17
 LABEL "JA#BGT_AdvPack-Ignatio_Phleed"
@@ -261,9 +261,9 @@ LABEL "JA#BGT_AdvPack-Ignatio_Phleed"
 INCLUDE ~JA#BGT_AdvPack/Ignatio_Phleed/setup-Ignatio_Phleed.tpa~
 
 
-//////////////////////
-//RESTORED: Shalasin
-//////////////////////
+///////////////////////
+// RESTORED: Shalasin
+///////////////////////
 
 BEGIN ~Shalasin~ DESIGNATED 18
 LABEL "JA#BGT_AdvPack-Shalasin"
@@ -271,9 +271,9 @@ LABEL "JA#BGT_AdvPack-Shalasin"
 INCLUDE ~JA#BGT_AdvPack/Shalasin/setup-Shalasin.tpa~
 
 
-/////////////////////////
-//RESTORED: Sir Artolas
-/////////////////////////
+//////////////////////////
+// RESTORED: Sir Artolas
+//////////////////////////
 
 BEGIN ~Artola - Sir Artolas~ DESIGNATED 19
 LABEL "JA#BGT_AdvPack-Artolas"
@@ -281,9 +281,9 @@ LABEL "JA#BGT_AdvPack-Artolas"
 INCLUDE ~JA#BGT_AdvPack/Artolas/setup-Artolas.tpa~
 
 
-///////////////////////////////
-//RESTORED: Pilar & Gheldehar
-///////////////////////////////
+////////////////////////////////
+// RESTORED: Pilar & Gheldehar
+////////////////////////////////
 
 BEGIN ~Pilar & Gheldehar~ DESIGNATED 20
 LABEL "JA#BGT_AdvPack-Pillar_Gheldehar"
@@ -292,9 +292,9 @@ FORBID_FILE ~override/ntghelde.cre~ ~Pilar und Gheldehar is already restored by 
 INCLUDE ~JA#BGT_AdvPack/Pillar_Gheldehar/setup-Pillar_Gheldehar.tpa~
 
 
-/////////////////////////////////////
-//RESTORED: Llindellyn - the archer
-/////////////////////////////////////
+//////////////////////////////////////
+// RESTORED: Llindellyn - the archer
+//////////////////////////////////////
 
 BEGIN ~Llindellyn - the archer~ DESIGNATED 21
 LABEL "JA#BGT_AdvPack-Llindellyn"
@@ -303,9 +303,9 @@ FORBID_FILE ~override/ntllinde.cre~ ~Llyndellyn's Lucky Arrow is already restore
 INCLUDE ~JA#BGT_AdvPack/Llindellyn/setup-Llindellyn.tpa~
 
 
-//////////////////////////////////////////
-//RESTORED: Mal-Kalen - Ulcaster's Adept
-//////////////////////////////////////////
+///////////////////////////////////////////
+// RESTORED: Mal-Kalen - Ulcaster's Adept
+///////////////////////////////////////////
 
 BEGIN ~Mal-Kalen - Ulcaster's Adept~ DESIGNATED 22
 LABEL "JA#BGT_AdvPack-Mal-Kalen"
@@ -314,9 +314,9 @@ FORBID_FILE ~override/UBMALKAL.CRE~ ~Mal-Kalen, the Ulcaster Ghost is already re
 INCLUDE ~JA#BGT_AdvPack/Mal-Kalen/setup-Mal-Kalen.tpa~
 
 
-////////////////////////////
-//RESTORED: Keelor & Nasha
-////////////////////////////
+/////////////////////////////
+// RESTORED: Keelor & Nasha
+/////////////////////////////
 
 BEGIN ~Keelor & Nasha~ DESIGNATED 23
 LABEL "JA#BGT_AdvPack-Keelor_Nasha"
@@ -325,9 +325,9 @@ FORBID_FILE ~override/ntkeelor.cre~ ~Keelor & Nasha is already restored by anoth
 INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
 
-//////////////////////////////////
-//RESTORED: Marl - tarvern brawl
-//////////////////////////////////
+///////////////////////////////////
+// RESTORED: Marl - tarvern brawl
+///////////////////////////////////
 
 BEGIN ~Marl - tarvern brawl~ DESIGNATED 24
 LABEL "JA#BGT_AdvPack-Marl"
@@ -335,9 +335,9 @@ LABEL "JA#BGT_AdvPack-Marl"
 INCLUDE ~JA#BGT_AdvPack/Marl/setup-Marl.tpa~
 
 
-////////////////////////////////////////////////////
-//RESTORED: Item-descriptions - Rythe's Last Arrow
-////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+// RESTORED: Item-descriptions - Rythe's Last Arrow
+/////////////////////////////////////////////////////
 
 BEGIN ~Item-descriptions - Rythe's Last Arrow~ DESIGNATED 25
 LABEL "JA#BGT_AdvPack-RythesLastArrow"
@@ -345,9 +345,9 @@ LABEL "JA#BGT_AdvPack-RythesLastArrow"
 INCLUDE ~JA#BGT_AdvPack/RythesLastArrow/setup-RythesLastArrow.tpa~
 
 
-//////////////////////////////////
-//IMPROVED/FIXED: Counting House
-//////////////////////////////////
+///////////////////////////////////
+// IMPROVED/FIXED: Counting House
+///////////////////////////////////
 
 BEGIN ~IMPROVED/FIXED: Counting House~ DESIGNATED 26
 LABEL "JA#BGT_AdvPack-Counting_House"
@@ -355,9 +355,9 @@ LABEL "JA#BGT_AdvPack-Counting_House"
 INCLUDE ~JA#BGT_AdvPack/Counting_House/setup-Counting_House.tpa~
 
 
-////////////////////////////////////
-//Merchants' League investigations
-////////////////////////////////////
+/////////////////////////////////////
+// Merchants' League investigations
+/////////////////////////////////////
 
 BEGIN ~Merchants' League investigations~ DESIGNATED 27
 LABEL "JA#BGT_AdvPack-Merchants_League"
@@ -365,9 +365,9 @@ LABEL "JA#BGT_AdvPack-Merchants_League"
 INCLUDE ~JA#BGT_AdvPack/Merchants_League/setup-Merchants_League.tpa~
 
 
-///////////////////////////
-//Tenya and the fishermen
-///////////////////////////
+////////////////////////////
+// Tenya and the fishermen
+////////////////////////////
 
 BEGIN ~Tenya and the fishermen~ DESIGNATED 28
 LABEL "JA#BGT_AdvPack-Tenya"
@@ -375,9 +375,9 @@ LABEL "JA#BGT_AdvPack-Tenya"
 INCLUDE ~JA#BGT_AdvPack/Tenya/setup-Tenya.tpa~
 
 
-///////////
-//Nashkel
-///////////
+////////////
+// Nashkel
+////////////
 
 BEGIN ~Nashkel~ DESIGNATED 29
 LABEL "JA#BGT_AdvPack-Nashkel"
@@ -385,9 +385,9 @@ LABEL "JA#BGT_AdvPack-Nashkel"
 INCLUDE ~JA#BGT_AdvPack/Nashkel/setup-Nashkel.tpa~
 
 
-///////////////////////////
-//Imoen at Winthrop's inn
-///////////////////////////
+////////////////////////////
+// Imoen at Winthrop's inn
+////////////////////////////
 
 BEGIN ~Imoen at Winthrop's inn~ DESIGNATED 30
 LABEL "JA#BGT_AdvPack-Imoen_Winthrop"
@@ -395,9 +395,9 @@ LABEL "JA#BGT_AdvPack-Imoen_Winthrop"
 INCLUDE ~JA#BGT_AdvPack/Imoen_Winthrop/setup-Imoen_Winthrop.tpa~
 
 
-//////////////////////////////////////////////////////
-//Priest of Oghma, Gond and Ilmater in Baldur's Gate
-//////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+// Priest of Oghma, Gond and Ilmater in Baldur's Gate
+///////////////////////////////////////////////////////
 
 BEGIN ~Priest of Oghma, Gond and Ilmater in Baldur's Gate~ DESIGNATED 31
 LABEL "JA#BGT_AdvPack-Priests"
@@ -405,9 +405,9 @@ LABEL "JA#BGT_AdvPack-Priests"
 INCLUDE ~JA#BGT_AdvPack/Priests/setup-Priests.tpa~
 
 
-///////////////////////////////
-//Extended/Improved dialogues
-///////////////////////////////
+////////////////////////////////
+// Extended/Improved dialogues
+////////////////////////////////
 
 
 BEGIN ~Extended/Improved dialogues~ DESIGNATED 32
@@ -416,9 +416,9 @@ LABEL "JA#BGT_AdvPack-Improved_dialogues"
 INCLUDE ~JA#BGT_AdvPack/Improved_dialogues/setup-Improved_dialogues.tpa~
 
 
-///////////////////////
-//Hulrik and his cows
-///////////////////////
+////////////////////////
+// Hulrik and his cows
+////////////////////////
 
 BEGIN ~Hulrik and his cows~ DESIGNATED 33
 LABEL "JA#BGT_AdvPack-Hulrik"
@@ -426,9 +426,9 @@ LABEL "JA#BGT_AdvPack-Hulrik"
 INCLUDE ~JA#BGT_AdvPack/Hulrik/setup-Hulrik.tpa~
 
 
-////////////////////////////
-//Improved Shop of Silence
-////////////////////////////
+/////////////////////////////
+// Improved Shop of Silence
+/////////////////////////////
 
 BEGIN ~Improved Shop of Silence~ DESIGNATED 34
 LABEL "JA#BGT_AdvPack-Shop_of_Silence"
@@ -436,9 +436,9 @@ LABEL "JA#BGT_AdvPack-Shop_of_Silence"
 INCLUDE ~JA#BGT_AdvPack/Shop_of_Silence/setup-Shop_of_Silence.tpa~
 
 
-///////////////////////////////////
-//Ender Sai in Baldur's Gate city
-///////////////////////////////////
+////////////////////////////////////
+// Ender Sai in Baldur's Gate city
+////////////////////////////////////
 
 BEGIN ~Ender Sai in Baldur's Gate city~ DESIGNATED 35
 LABEL "JA#BGT_AdvPack-Ender_Sai"
@@ -446,9 +446,9 @@ LABEL "JA#BGT_AdvPack-Ender_Sai"
 INCLUDE ~JA#BGT_AdvPack/Ender_Sai/setup-Ender_Sai.tpa~
 
 
-//////////////////////
-//Sorcerous Sundries
-//////////////////////
+///////////////////////
+// Sorcerous Sundries
+///////////////////////
 
 BEGIN ~Sorcerous Sundries~ DESIGNATED 36
 LABEL "JA#BGT_AdvPack-Sorcerous_Sundries"
@@ -456,9 +456,9 @@ LABEL "JA#BGT_AdvPack-Sorcerous_Sundries"
 INCLUDE ~JA#BGT_AdvPack/Sorcerous_Sundries/setup-Sorcerous_Sundries.tpa~
 
 
-/////////////////////////////////////////////////////////
-//Mini-Quest: "The mystery of the silent ghostly voice"
-/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+// Mini-Quest: "The mystery of the silent ghostly voice"
+//////////////////////////////////////////////////////////
 
 BEGIN ~Mini-Quest: "The mystery of the silent ghostly voice"~ DESIGNATED 37
 LABEL "JA#BGT_AdvPack-Miniquest"
@@ -467,9 +467,9 @@ REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~set
 INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
 
-/////////////////////////////////////
-//Phandalyn waits in Elfsong Tavern
-/////////////////////////////////////
+//////////////////////////////////////
+// Phandalyn waits in Elfsong Tavern
+//////////////////////////////////////
 
 BEGIN ~Phandalyn waits in Elfsong Tavern~ DESIGNATED 38
 LABEL "JA#BGT_AdvPack-Phandalyn"
@@ -477,9 +477,9 @@ LABEL "JA#BGT_AdvPack-Phandalyn"
 INCLUDE ~JA#BGT_AdvPack/Phandalyn/setup-Phandalyn.tpa~
 
 
-///////////////////////
-//Black Alaric's Cave
-///////////////////////
+////////////////////////
+// Black Alaric's Cave
+////////////////////////
 
 BEGIN ~Black Alaric's Cave~ DESIGNATED 39
 LABEL "JA#BGT_AdvPack-Black_Alarics_Cave"
@@ -487,11 +487,11 @@ LABEL "JA#BGT_AdvPack-Black_Alarics_Cave"
 INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
+// Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
 BEGIN @2121 DESIGNATED 40
 LABEL "JA#BGT_AdvPack-Niemain_Zentarim"
@@ -499,9 +499,9 @@ LABEL "JA#BGT_AdvPack-Niemain_Zentarim"
 INCLUDE ~JA#BGT_AdvPack/Niemain_Zentarim/setup-Niemain_Zentarim.tpa~
 
 
-/////////////////////////////
-//RESTORED: Beregost guards
-/////////////////////////////
+//////////////////////////////
+// RESTORED: Beregost guards
+//////////////////////////////
 
 BEGIN ~Beregost guards~ DESIGNATED 41
 LABEL "JA#BGT_AdvPack-Beregost_guards"
@@ -509,9 +509,9 @@ LABEL "JA#BGT_AdvPack-Beregost_guards"
 INCLUDE ~JA#BGT_AdvPack/Beregost_guards/setup-Beregost_guards.tpa~
 
 
-///////////////////////////////
-//Jopi and his uncle Ragefast
-///////////////////////////////
+////////////////////////////////
+// Jopi and his uncle Ragefast
+////////////////////////////////
 
 BEGIN ~Jopi and his uncle Ragefast~ DESIGNATED 42
 LABEL "JA#BGT_AdvPack-Jopi"
@@ -519,9 +519,9 @@ LABEL "JA#BGT_AdvPack-Jopi"
 INCLUDE ~JA#BGT_AdvPack/Jopi/setup-Jopi.tpa~
 
 
-/////////////////////////////
-//Yuxi: An imp for Ragefast
-/////////////////////////////
+//////////////////////////////
+// Yuxi: An imp for Ragefast
+//////////////////////////////
 
 BEGIN ~Yuxi: An imp for Ragefast~ DESIGNATED 43
 LABEL "JA#BGT_AdvPack-Yuxi"
@@ -529,9 +529,9 @@ LABEL "JA#BGT_AdvPack-Yuxi"
 INCLUDE ~JA#BGT_AdvPack/Yuxi/setup-Yuxi.tpa~
 
 
-////////////////////
-//Seniyad & Aldeth
-////////////////////
+/////////////////////
+// Seniyad & Aldeth
+/////////////////////
 
 BEGIN ~Seniyad & Aldeth~ DESIGNATED 44
 LABEL "JA#BGT_AdvPack-Seniyad_Aldeth"
@@ -539,9 +539,9 @@ LABEL "JA#BGT_AdvPack-Seniyad_Aldeth"
 INCLUDE ~JA#BGT_AdvPack/Seniyad_Aldeth/setup-Seniyad_Aldeth.tpa~
 
 
-////////////////////////////////////////
-//Aldeth's betrayal and reconciliation
-////////////////////////////////////////
+/////////////////////////////////////////
+// Aldeth's betrayal and reconciliation
+/////////////////////////////////////////
 
 BEGIN ~Aldeth's betrayal and reconciliation~ DESIGNATED 45
 LABEL "JA#BGT_AdvPack-Betrayal"
@@ -549,9 +549,9 @@ LABEL "JA#BGT_AdvPack-Betrayal"
 INCLUDE ~JA#BGT_AdvPack/Betrayal/setup-Betrayal.tpa~
 
 
-/////////////////////////////////////
-//Tenya quest in Temple of Umberlee
-/////////////////////////////////////
+//////////////////////////////////////
+// Tenya quest in Temple of Umberlee
+//////////////////////////////////////
 
 BEGIN ~Tenya quest in Temple of Umberlee~ DESIGNATED 46
 LABEL "JA#BGT_AdvPack-Tenya2"
@@ -559,9 +559,9 @@ LABEL "JA#BGT_AdvPack-Tenya2"
 INCLUDE ~JA#BGT_AdvPack/Tenya2/setup-Tenya2.tpa~
 
 
-////////////////////////
-//Caldo can be charmed
-////////////////////////
+/////////////////////////
+// Caldo can be charmed
+/////////////////////////
 
 BEGIN ~Caldo can be charmed~ DESIGNATED 47
 LABEL "JA#BGT_AdvPack-Caldo"
@@ -569,9 +569,9 @@ LABEL "JA#BGT_AdvPack-Caldo"
 INCLUDE ~JA#BGT_AdvPack/Caldo/setup-Caldo.tpa~
 
 
-/////////////////////////////////////////
-//RESTORED: Yago's guard in Low Lantern
-/////////////////////////////////////////
+//////////////////////////////////////////
+// RESTORED: Yago's guard in Low Lantern
+//////////////////////////////////////////
 
 BEGIN ~Yago's guard in Low Lantern~ DESIGNATED 48
 LABEL "JA#BGT_AdvPack-Yago"
@@ -579,9 +579,9 @@ LABEL "JA#BGT_AdvPack-Yago"
 INCLUDE ~JA#BGT_AdvPack/Yago/setup-Yago.tpa~
 
 
-/////////////////////////////
-//RESTORED: Cloakwood druid
-/////////////////////////////
+//////////////////////////////
+// RESTORED: Cloakwood druid
+//////////////////////////////
 
 BEGIN ~Cloakwood druid~ DESIGNATED 49
 LABEL "JA#BGT_AdvPack-Cloakwood_druid"
@@ -589,9 +589,9 @@ LABEL "JA#BGT_AdvPack-Cloakwood_druid"
 INCLUDE ~JA#BGT_AdvPack/Cloakwood_druid/setup-Cloakwood_druid.tpa~
 
 
-////////////////////////////////////////////////////////
-//Graphical improvements: Animated torches and candles
-////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+// Graphical improvements: Animated torches and candles
+/////////////////////////////////////////////////////////
 
 BEGIN ~Graphical improvements: Animated torches and candles~ DESIGNATED 100
 LABEL "JA#BGT_AdvPack-Graphical"
@@ -599,9 +599,9 @@ LABEL "JA#BGT_AdvPack-Graphical"
 INCLUDE ~JA#BGT_AdvPack/Graphical/setup-Graphical.tpa~
 
 
-/////////////////////////////////
-//Backdoor for Gellana's temple
-/////////////////////////////////
+//////////////////////////////////
+// Backdoor for Gellana's temple
+//////////////////////////////////
 
 // Gellanas Tempel kann jetzt auch durch die Hintertür betreten/verlassen werden.
 BEGIN ~Backdoor for Gellana's temple~ DESIGNATED 101
@@ -610,9 +610,9 @@ LABEL "JA#BGT_AdvPack-Backdoor_Gellana"
 INCLUDE ~JA#BGT_AdvPack/Backdoor_Gellana/setup-Backdoor_Gellana.tpa~
 
 
-///////////////////////////////////
-//Backdoor for Waterqueen's House
-///////////////////////////////////
+////////////////////////////////////
+// Backdoor for Waterqueen's House
+////////////////////////////////////
 
 // Das Haus der Wasserkönigin kann jetzt auch durch die Hintertür betreten/verlassen werden.
 BEGIN ~Backdoor for Waterqueen's House~ DESIGNATED 102

@@ -1,6 +1,6 @@
-//////////////////////////////
-//SIEBEN SONNEN / SEVEN SUNS
-//////////////////////////////
+///////////////
+// Seven Suns
+///////////////
 
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU4.CRE~ ~override~
@@ -93,7 +93,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 433
@@ -132,7 +132,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 454
@@ -215,7 +215,7 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 	READ_LONG 0xbc "JA#OFF_SNG"
 	WRITE_LONG "JA#OFF_SNG" ~0~
 	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 263

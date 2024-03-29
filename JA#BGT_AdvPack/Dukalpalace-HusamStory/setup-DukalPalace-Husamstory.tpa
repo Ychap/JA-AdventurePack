@@ -1,7 +1,7 @@
-///////////////////////////////////////////////////////////////////////
-//Komplett überarbeitete Herzogspalast-Szene mit restaurierten Inhalten
-//Restauriert: Abschluss der Husam-Storyline
-///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+// Komplett überarbeitete Herzogspalast-Szene mit restaurierten Inhalten
+// Restauriert: Abschluss der Husam-Storyline
+//////////////////////////////////////////////////////////////////////////
 
 
 COPY_EXISTING ~CYTHAN.CRE~ ~override~
@@ -92,7 +92,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 	PHP_EACH actors AS i => actor BEGIN
 		READ_SHORT actor+0x20 actor_pos_x
 		READ_ASCII actor+0x80 actor_filename
-		//Flaming Fist Dialog and Script changes
+		// Flaming Fist Dialog and Script changes
 		PATCH_MATCH ~%actor_pos_x%~ WITH
 			463 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
 				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
@@ -120,10 +120,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 			DEFAULT
 		END
 	END
-	//Delete Nobles
+	// Delete Nobles
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW5~ END
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW12~ END
-	//Add new Noble and Lady Odelia
+	// Add new Noble and Lady Odelia
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 271
@@ -204,7 +204,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
-	//new position for NILA
+	// new position for NILA
 	LPF ALTER_AREA_ACTOR
 		INT_VAR x_coord = 264
 				y_coord = 523
@@ -213,7 +213,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 				orient = 13
 		STR_VAR actor_name = ~Nila~
 	END
-	//container scripts, scroll and key
+	// container scripts, scroll and key
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
 		container_name = ~Container 1~
@@ -233,10 +233,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		fj_structure_type = itm
 		fj_name           = ~SCRL3F~
 	END
-	//new trap
+	// new trap
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 0    //trap
+		fj_type         = 0    // trap
 		fj_box_left     = 538
 		fj_box_top      = 545
 		fj_box_right    = 616
@@ -256,7 +256,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		fj_name             = ~JA#TRAP1~
 		fj_reg_script		= ~JA#7209T~
 	END
-	//add actor
+	// add actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 512
@@ -271,9 +271,9 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
-	//delete Flaming Fist
+	// delete Flaming Fist
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~FLAM11~ END
-	//Add new Flaming Fist
+	// Add new Flaming Fist
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 909
@@ -351,7 +351,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		END
 	END
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~PRISON~ END // exists only in BGT
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1122
@@ -412,10 +412,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_name           = ~JA#FLAM1~
 		fj_cre_resref     = ~JA#FLAM1~
 	END
-	//add region triggers
+	// add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2    // travel
 		fj_box_left     = 547
 		fj_box_top      = 244
 		fj_box_right    = 611
@@ -436,7 +436,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 1    //info
+		fj_type         = 1    // info
 		fj_box_left     = 448
 		fj_box_top      = 354
 		fj_box_right    = 458
@@ -456,7 +456,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 0    //trap
+		fj_type         = 0    // trap
 		fj_box_left     = 599
 		fj_box_top      = 1007
 		fj_box_right    = 691
@@ -480,7 +480,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 0    //trap
+		fj_type         = 0    // trap
 		fj_box_left     = 514
 		fj_box_top      = 950
 		fj_box_right    = 606
@@ -504,7 +504,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 0    //trap
+		fj_type         = 0    // trap
 		fj_box_left     = 484
 		fj_box_top      = 356
 		fj_box_right    = 592
@@ -528,7 +528,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 0    //trap
+		fj_type         = 0    // trap
 		fj_box_left     = 624
 		fj_box_top      = 528
 		fj_box_right    = 1199
@@ -550,22 +550,22 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_name             = ~JA#TRAP4~
 		fj_reg_script		= ~JA#7211T~
 	END
-	//add entrance
+	// add entrance
 	LPF  ~fj_are_structure~
 		INT_VAR
-		fj_loc_x       = 627   //x
-		fj_loc_y       = 360   //y
+		fj_loc_x       = 627   // x
+		fj_loc_y       = 360   // y
 		fj_orientation = 14
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = ~JA#7325~
 	END
-	//bam as optical entrance JA#7325
+	// bam as optical entrance JA#7325
 	LPF fj_are_structure
 	  INT_VAR
 		fj_loc_x = 551
 		fj_loc_y = 246
-		fj_schedule = 0b111111111111111111111111 //Hours 0.00 - 24.00
+		fj_schedule = 0b111111111111111111111111 // Hours 0.00 - 24.00
 		fj_flags = 0b00000000000000000001000101000000 // blend colours, not covered by wall, don't remove in combat
 		STR_VAR
 		fj_structure_type = animation
@@ -574,10 +574,10 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%CentralSewers%.are~ ~override~
-	//add region triggers
+	// add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2    // travel
 		fj_box_left     = 420
 		fj_box_top      = 1741
 		fj_box_right    = 596
@@ -598,8 +598,8 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 	END
 	LPF  ~fj_are_structure~
 		INT_VAR
-		fj_loc_x       = 667    //x
-		fj_loc_y       = 1818   //y
+		fj_loc_x       = 667    // x
+		fj_loc_y       = 1818   // y
 		fj_orientation = 13
 		STR_VAR
 		fj_structure_type = entrance
@@ -620,7 +620,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PALAST.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PRISO.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM.D~
-//misc.d
+// misc.d
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#MCOOK4.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#DENKOD.D~
 

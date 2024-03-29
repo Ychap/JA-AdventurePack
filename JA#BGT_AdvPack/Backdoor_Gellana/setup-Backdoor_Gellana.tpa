@@ -1,12 +1,12 @@
-/////////////////////////////////
-//Backdoor for Gellana's temple
-/////////////////////////////////
+//////////////////////////////////
+// Backdoor for Gellana's temple
+//////////////////////////////////
 
 
 COPY_EXISTING ~%FriendlyArmInn%.are~ ~override~
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2    // travel
 		fj_box_left     = 3965
 		fj_box_top      = 2051
 		fj_box_right    = 4075
@@ -36,7 +36,7 @@ BUT_ONLY
 COPY_EXISTING ~%FriendlyArmInn_TempleofWisdom%.are~ ~override~
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2    // travel
 		fj_box_left     = 488
 		fj_box_top      = 112
 		fj_box_right    = 606

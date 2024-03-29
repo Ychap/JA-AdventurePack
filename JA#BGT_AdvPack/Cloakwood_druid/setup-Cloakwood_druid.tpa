@@ -1,6 +1,6 @@
-/////////////////////////////
-//RESTORED: Cloakwood druid
-/////////////////////////////
+//////////////////////////////
+// RESTORED: Cloakwood druid
+//////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Cloakwood_druid/JA#DRUDC.CRE~ ~override~
@@ -10,7 +10,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Cloakwood_druid/ja#drudc.d~
 
 
 COPY_EXISTING ~%CloakwoodDruids%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 3760

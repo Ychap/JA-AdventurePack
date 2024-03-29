@@ -1,5 +1,5 @@
 ///////////////////////
-//SORCEROUS SUNDRIES
+// Sorcerous Sundries
 ///////////////////////
 
 /* ~Allerlei Zauberei: Neue Personen, neue Ambients~ */
@@ -28,7 +28,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
 
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 238
@@ -73,7 +73,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 	WRITE_LONG ofs_songs+0x4 0
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 709
@@ -106,10 +106,10 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 	WRITE_LONG ofs_songs+0x4 0
 
 
-//COPY_EXISTING ~STO0703.STO~ ~override~
-//ADD_STORE_ITEM ~SCRL6N~ AFTER ~SCRL1Z~ #0 #0 #0 ~IDENTIFIED~ #1 //Roter Feuerschild
-//ADD_STORE_ITEM ~SCRL6F~ BEFORE ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #3 //Strahl der Schwächung
-//ADD_STORE_ITEM ~SCRLA3~ AFTER ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #4 //Glitzerstaub
-//ADD_STORE_ITEM ~SCRLA7~ AFTER ~SCRLA6~ #0 #0 #0 ~IDENTIFIED~ #2 //Magie zerstören
+// COPY_EXISTING ~STO0703.STO~ ~override~
+// ADD_STORE_ITEM ~SCRL6N~ AFTER ~SCRL1Z~ #0 #0 #0 ~IDENTIFIED~ #1 // Roter Feuerschild
+// ADD_STORE_ITEM ~SCRL6F~ BEFORE ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #3 // Strahl der Schwächung
+// ADD_STORE_ITEM ~SCRLA3~ AFTER ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #4 // Glitzerstaub
+// ADD_STORE_ITEM ~SCRLA7~ AFTER ~SCRLA6~ #0 #0 #0 ~IDENTIFIED~ #2 // Magie zerstören
 
 COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#AMSS1.WAV~ ~override~

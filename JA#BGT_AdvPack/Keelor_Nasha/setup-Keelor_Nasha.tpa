@@ -1,6 +1,6 @@
-////////////////////////////
-//RESTORED: Keelor & Nasha
-////////////////////////////
+/////////////////////////////
+// RESTORED: Keelor & Nasha
+/////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#C05.ARE~ ~override~
@@ -44,7 +44,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Keelor_Nasha/ja#nasha.d~
 
 
 COPY_EXISTING ~%BearRiver%.ARE~ ~override~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1741
@@ -134,16 +134,16 @@ BUT_ONLY
 COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
-		fj_box_left     = 25  //kleinstes x
-		fj_box_top      = 2810  //kleinstes y
-		fj_box_right    = 100  //größtes x
-		fj_box_bottom   = 2960   //größtes y
-		fj_cursor_idx   = 30   //door
-		fj_vertex_0     =  25 + (2810 << 16)   //kleinstes x +  kleinstes y
-		fj_vertex_1     = 100 + (2810 << 16)   //größtes x + kleinstes y
-		fj_vertex_2     = 100 + (2960 << 16)   //größtes x + größtes y
-		fj_vertex_3     =  25 + (2960 << 16)   //kleinstes x + größtes y
+		fj_type         = 2    // travel
+		fj_box_left     = 25  // kleinstes x
+		fj_box_top      = 2810  // kleinstes y
+		fj_box_right    = 100  // größtes x
+		fj_box_bottom   = 2960   // größtes y
+		fj_cursor_idx   = 30   // door
+		fj_vertex_0     =  25 + (2810 << 16)   // kleinstes x +  kleinstes y
+		fj_vertex_1     = 100 + (2810 << 16)   // größtes x + kleinstes y
+		fj_vertex_2     = 100 + (2960 << 16)   // größtes x + größtes y
+		fj_vertex_3     =  25 + (2960 << 16)   // kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
 		fj_name             = ~DOORJA#C05~
@@ -153,8 +153,8 @@ COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~
 	/* add entrance from JA#C05 to Docks District */
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x       = 160    //x
-		fj_loc_y       = 2868   //y
+		fj_loc_x       = 160    // x
+		fj_loc_y       = 2868   // y
 		fj_orientation = 9
 		STR_VAR
 		fj_structure_type = entrance

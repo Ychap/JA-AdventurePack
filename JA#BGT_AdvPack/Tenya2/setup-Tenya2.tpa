@@ -1,6 +1,6 @@
-/////////////////////////////////////
-//Tenya Quest in Temple of Umberlee
-/////////////////////////////////////
+//////////////////////////////////////
+// Tenya Quest in Temple of Umberlee
+//////////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Tenya2/JA#C02.ARE~ ~override~
@@ -83,10 +83,10 @@ BUT_ONLY
 
 
 COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
-	//add region triggers
+	// add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2    // travel
 		fj_box_left     = 1030
 		fj_box_top      = 806
 		fj_box_right    = 1260
@@ -104,11 +104,11 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_destination_name	= ~FR8200~
 		fj_name             = ~DOORJA#C02~
 	END
-	//add entrance
+	// add entrance
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x       = 978   //x
-		fj_loc_y       = 781   //y
+		fj_loc_x       = 978   // x
+		fj_loc_y       = 781   // y
 		fj_orientation = 7
 		STR_VAR
 		fj_structure_type = entrance

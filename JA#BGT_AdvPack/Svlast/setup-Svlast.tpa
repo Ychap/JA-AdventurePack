@@ -1,6 +1,6 @@
-/////////////////////////////////////////
-//RESTORED: Svlast - the fallen Paladin
-/////////////////////////////////////////
+//////////////////////////////////////////
+// RESTORED: Svlast - the fallen Paladin
+//////////////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Svlast/JA#SVLST.CRE~ ~override~
@@ -21,7 +21,7 @@ ADD_JOURNAL @16 @18 @1009 @1011 USING ~JA#BGT_AdvPack/languages/%s/ja#svlst.tra~
 
 
 COPY_EXISTING ~%FirewineBridge%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 3346

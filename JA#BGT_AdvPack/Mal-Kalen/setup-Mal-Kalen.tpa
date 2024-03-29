@@ -1,6 +1,6 @@
-//////////////////////////////////////////
-//RESTORED: Mal-Kalen - Ulcaster's Adept
-//////////////////////////////////////////
+///////////////////////////////////////////
+// RESTORED: Mal-Kalen - Ulcaster's Adept
+///////////////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Mal-Kalen/JA#MALKA.CRE~ ~override~
@@ -18,7 +18,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Mal-Kalen/ja#malka.d~
 
 
 COPY_EXISTING ~%Ulcaster%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 3560

@@ -1,6 +1,6 @@
-///////////////////////////////
-//RESTORED: Pilar & Gheldehar
-///////////////////////////////
+////////////////////////////////
+// RESTORED: Pilar & Gheldehar
+////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#GHELD.CRE~ ~override~
@@ -47,7 +47,7 @@ ADD_JOURNAL @1035 @1036 @1037 @1038
 
 
 COPY_EXISTING ~%SWBaldursGate%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 2836

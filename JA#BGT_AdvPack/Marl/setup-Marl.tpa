@@ -1,10 +1,10 @@
 ///////////////////////////////
-//RESTORED: Marl & the Guard
+// RESTORED: Marl & the Guard
 ///////////////////////////////
 
 
 COPY_EXISTING ~MARL.CRE~ ~override~
-	// WRITE_BYTE 0x273 155	//innocent - reputation
+	// WRITE_BYTE 0x273 155	// innocent - reputation
 	REMOVE_CRE_ITEM ~B1-2~
 
 COPY_EXISTING ~DUNKIN.CRE~ ~override~

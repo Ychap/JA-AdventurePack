@@ -16,7 +16,7 @@ END
 IF
 	Exists("JA#HUSAM")
 	Global("SarevokBehavior","GLOBAL",1)
-	Global("JA#HUSAM_MOVE","GLOBAL",0) //He is still in front of the Palace
+	Global("JA#HUSAM_MOVE","GLOBAL",0) // He is still in front of the Palace
 THEN
 	RESPONSE #100
 		ActionOverride("JA#HUSAM",DestroySelf())

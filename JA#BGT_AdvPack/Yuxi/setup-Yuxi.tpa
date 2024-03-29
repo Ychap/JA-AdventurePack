@@ -1,6 +1,6 @@
-/////////////////////////////
-//Yuxi: An imp for Ragefast
-/////////////////////////////
+//////////////////////////////
+// Yuxi: An imp for Ragefast
+//////////////////////////////
 
 
 EXTEND_TOP ~%WBaldursGate_RagefastsHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Yuxi/AR7226.BAF~ EVALUATE_BUFFER

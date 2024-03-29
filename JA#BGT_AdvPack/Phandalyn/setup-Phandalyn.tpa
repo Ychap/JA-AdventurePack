@@ -1,6 +1,6 @@
-/////////////////////////////////////
-//Phandalyn waits in Elfsong Tavern
-/////////////////////////////////////
+//////////////////////////////////////
+// Phandalyn waits in Elfsong Tavern
+//////////////////////////////////////
 
 
 EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/JA#PHANDALY.BAF~ EVALUATE_BUFFER
@@ -45,7 +45,7 @@ COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 980

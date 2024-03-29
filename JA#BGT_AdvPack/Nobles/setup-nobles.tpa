@@ -1,8 +1,8 @@
-////////////////////
-//RESTORED: Nobles
-////////////////////
+/////////////////////
+// RESTORED: Nobles
+/////////////////////
 
-//RESTORED: BOYBA3, FTOWB3.CRE (Bl. Merm.), NOBL15.CRE (3 Old Kegs), NOBLAY.CRE (Undercellars)
+// RESTORED: BOYBA3, FTOWB3.CRE (Bl. Merm.), NOBL15.CRE (3 Old Kegs), NOBLAY.CRE (Undercellars)
 
 COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~
 	WRITE_ASCII DIALOG ~BOYBA3~ #8
@@ -22,7 +22,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nobly.d~
 
 
 COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 634
@@ -39,7 +39,7 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1071
@@ -56,7 +56,7 @@ COPY_EXISTING ~%NBaldursGate%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 2756
@@ -73,7 +73,7 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%WBaldursGate%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1800
@@ -90,7 +90,7 @@ COPY_EXISTING ~%WBaldursGate%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L2%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 545
@@ -106,7 +106,7 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L2%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_ThreeOldKegs_L3%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1014
@@ -122,7 +122,7 @@ COPY_EXISTING ~%NBaldursGate_ThreeOldKegs_L3%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%BaldursGate_Undercellars%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1369

@@ -1,12 +1,12 @@
-///////////////////////////////////
-//Backdoor for Waterqueen's House
-///////////////////////////////////
+////////////////////////////////////
+// Backdoor for Waterqueen's House
+////////////////////////////////////
 
 
 COPY_EXISTING ~%BaldursGateDocks%.are~ ~override~
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2    // travel
 		fj_box_left     = 605
 		fj_box_top      = 2264
 		fj_box_right    = 683
@@ -36,7 +36,7 @@ BUT_ONLY
 COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.are~ ~override~
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
+		fj_type         = 2    // travel
 		fj_box_left     = 298
 		fj_box_top      = 559
 		fj_box_right    = 342

@@ -1,6 +1,6 @@
-////////////////////////////
-//Improved Shop of Silence
-////////////////////////////
+/////////////////////////////
+// Improved Shop of Silence
+/////////////////////////////
 
 
 LAF GET_DLG_STRREF
@@ -49,7 +49,7 @@ COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MASK1.STO~ ~override~
 	SAY 0xc @5
 
 COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 556
@@ -70,7 +70,7 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		STR_VAR actor_name = ~Silence~
 				script_specifics = ~JA#SILC1~
 	END
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 317

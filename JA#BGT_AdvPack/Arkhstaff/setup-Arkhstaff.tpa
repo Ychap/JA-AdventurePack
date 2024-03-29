@@ -1,6 +1,6 @@
-/////////////
-//Arkhstaff
-/////////////
+//////////////
+// Arkhstaff
+//////////////
 
 
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.TIS~ ~override~
@@ -115,7 +115,7 @@ COPY_EXISTING ~%BaldursGateDocks_IronThrone_Cellar%.ARE~ ~override~
 		INT_VAR
 		fj_loc_x          = 687
 		fj_loc_y          = 507
-		fj_schedule       = 0b111111111111111111111111 //Hours 0.00 - 24.00
+		fj_schedule       = 0b111111111111111111111111 // Hours 0.00 - 24.00
 		fj_flags          = 0b00000000000000000001000001000011 // Visible, blend colours, not covered by wall, don't remove in combat
 		STR_VAR
 		fj_structure_type = animation
@@ -126,10 +126,10 @@ BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 	LPF DELETE_AREA_ACTOR STR_VAR actor_to_delete = ~Ogre Mage~ END
-	//add region triggers
+	// add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type             = 2    //travel
+		fj_type             = 2    // travel
 		fj_box_left         = 278
 		fj_box_top          = 380
 		fj_box_right        = 312
@@ -147,7 +147,7 @@ COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 		fj_destination_name	= ~FR8101~
 		fj_name             = ~STJA#C04~
 	END
-	//add entrance
+	// add entrance
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 288
@@ -161,7 +161,7 @@ COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 		INT_VAR
 		fj_loc_x          = 276
 		fj_loc_y          = 370
-		fj_schedule       = 0b111111111111111111111111 //Hours 0.00 - 24.00
+		fj_schedule       = 0b111111111111111111111111 // Hours 0.00 - 24.00
 		fj_flags          = 0b00000000000000000001000101000001 // Visible, blend colours, not covered by wall, don't remove in combat
 		STR_VAR
 		fj_structure_type = animation
@@ -171,7 +171,7 @@ COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L2%.are~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 835
@@ -192,7 +192,7 @@ COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
 				lock_difficulty	= 100
 		STR_VAR	door_name		= ~Door0616~ // Correct door in BGT, BGEE and EET
 	END
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 397
@@ -205,7 +205,7 @@ COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
 		fj_name           = ~Iron Throne Guard~
 		fj_cre_resref     = ~JA#IRONH~
 	END
-	//add mapnote
+	// add mapnote
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1124

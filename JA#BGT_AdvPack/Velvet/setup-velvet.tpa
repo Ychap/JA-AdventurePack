@@ -1,11 +1,10 @@
-////////////////////////////////
-//RESTORED: Velvet - Cockfight
-////////////////////////////////
+/////////////////////////////////
+// RESTORED: Velvet - Cockfight
+/////////////////////////////////
 
 
-//Fix Animation BGT only
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	APPEND ~ANIMATE.IDS~ ~0x547C CHICKEN_BROWN~ UNLESS ~^0x547C~  //0x547C £AC BGT+Infinity		0x7D2 ACHB BGEE
+	APPEND ~ANIMATE.IDS~ ~0x547C CHICKEN_BROWN~ UNLESS ~^0x547C~  // 0x547C £AC BGT+Infinity		0x7D2 ACHB BGEE
 	APPEND ~ANISND.IDS~ ~0x547C £AC      CGAMEANIMATIONTYPE_CHICKEN_BROWN~ UNLESS ~^0x547C~
 
 	ACTION_IF NOT FILE_EXISTS ~£ACG1.bam~ BEGIN
@@ -39,7 +38,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/velvet/ja#velve.d~
 
 
 COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
-	//add new actor
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 2509

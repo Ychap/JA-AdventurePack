@@ -1,6 +1,6 @@
-/////////////////////////////////////
-//RESTORED: Llindellyn - the archer
-/////////////////////////////////////
+//////////////////////////////////////
+// RESTORED: Llindellyn - the archer
+//////////////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Llindellyn/JA#LLIND.CRE~ ~override~
@@ -22,7 +22,7 @@ ADD_JOURNAL @6 @9 USING ~JA#BGT_AdvPack/languages/%s/ja#llind.tra~
 
 
 COPY_EXISTING ~%CloakwoodWyverns%.ARE~ ~override~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 3674

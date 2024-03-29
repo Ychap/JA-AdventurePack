@@ -1,8 +1,8 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
+// Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
 
 COPY_EXISTING ~NIEMAIN.BCS~ ~override~
@@ -15,12 +15,12 @@ BUT_ONLY
 COPY_EXISTING ~NIEMAI.CRE~ ~override/JA#NIEMA.CRE~
 	WRITE_ASCII 0x248 ~None~ #8
 	WRITE_ASCII 0x250 ~None~ #8
-	WRITE_ASCII 0x2cc ~JA#NIEMA~ #8 //DLG
+	WRITE_ASCII 0x2cc ~JA#NIEMA~ #8 // DLG
 
 COPY_EXISTING_REGEXP ~OULAM\.CRE~ ~override~
 					 ~WHEBER\.CRE~ ~override~
 					 ~WILLIAM[1_]?\.CRE~ ~override~
-	WRITE_ASCII 0x2cc ~JA#ZENT1~ #8 //DLG
+	WRITE_ASCII 0x2cc ~JA#ZENT1~ #8 // DLG
 UNLESS ~NobleOrder~ // exclude WILLIAM.CRE(Sir Branet Al-Thon) of BGT/EET
 
 

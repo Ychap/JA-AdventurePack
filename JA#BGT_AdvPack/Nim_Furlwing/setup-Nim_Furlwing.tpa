@@ -1,6 +1,6 @@
-////////////////////////////
-//RESTORED: Nim Furlwing
-////////////////////////////
+///////////////////////////
+// RESTORED: Nim Furlwing
+///////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Nim_Furlwing/JA#NIMFU.CRE~ ~override~
@@ -25,7 +25,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nim_Furlwing/ja#nimfu.d~
 
 
 COPY_EXISTING ~%Peldvale%.ARE~ ~override~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 4080

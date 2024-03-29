@@ -7,12 +7,12 @@ COPY_EXISTING ~husam.dlg~ ~override~
   LPF READ_JOURNAL_STRREF
   INT_VAR
     state = 6
-//    stateResponse = 1 //As an example: This would be reply option #2 from top
+//    stateResponse = 1 // As an example: This would be reply option #2 from top
   RET
     strref
 END
 
-    SET myUniqueVar = strref //adapt "myUniqueVar" as necessary
+    SET myUniqueVar = strref // adapt "myUniqueVar" as necessary
 
   // just for debugging purposes: fetch journal text from strref and output it in console
   GET_STRREF strref journalText

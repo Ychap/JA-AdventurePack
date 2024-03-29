@@ -130,7 +130,7 @@ SAY @20
 IF ~~ THEN EXIT
 END
 
-//JHASSO-QUEST:
+// JHASSO-QUEST:
 
 
 IF ~Global("JA#JHASSO_TALK","LOCALS",100)~ THEN JA#JHASSO_HOSTILE
@@ -218,8 +218,6 @@ END // APPEND JHASSO
 
 ///////////////////////////////////
 ///////////////////////////////////
-
-//	IVANNE
 
 APPEND IVANNE
 
