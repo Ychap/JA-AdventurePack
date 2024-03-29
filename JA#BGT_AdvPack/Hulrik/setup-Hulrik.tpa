@@ -18,6 +18,12 @@ COPY_EXISTING ~XVARTH.BCS~ ~override~
 BUT_ONLY
 
 
+LAF GET_DLG_WEIGHT
+	INT_VAR idx_state = 3
+	STR_VAR dlg_file = ~HULRIK.DLG~
+	RET hulrik_state03_weight = weight
+END
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Hulrik/ja#hulrik.d~
 
 
