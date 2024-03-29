@@ -3,25 +3,24 @@
 ////////////////////////
 
 
+// BGT only - prevent Hulrik and his cow from disappearing
+COPY_EXISTING ~%LonelyPeaks_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~Dead("Mulahey")[%WNL%%MNL%%LNL%%TAB% ]*Exists("Hulrik\(sCow\)?")~ ~False()~
+	END
+BUT_ONLY
+
+// BGT only - prevent Xvarts from disappearing
+COPY_EXISTING ~XVARTH.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REFACTOR_TRIGGER ~Dead("Mulahey")~ ~False()~
+	END
+BUT_ONLY
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Hulrik/ja#hulrik.d~
+
+
 COPY_EXISTING ~HULRIK.CRE~ ~override~
 	SAY SELECT_COMMON1 #11082
-
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Hulrik/JA#HULRIK.D~
-
-
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	/* prevent Hulrik and his cow from disappearing - BGT */
-	COPY_EXISTING ~%LonelyPeaks_BCS%.BCS~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY CASE_INSENSITIVE ~\([%WNL%%MNL%%LNL%%TAB% ]+\)Dead("Mulahey")\([%WNL%%MNL%%LNL%%TAB% ]+Exists("Hulrik\(sCow\)?")\)~ ~\1False()\2~
-		END
-	BUT_ONLY
-
-	/* prevent Xvarts from disappearing - BGT */
-	COPY_EXISTING ~XVARTH.BCS~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REFACTOR_TRIGGER CASE_INSENSITIVE ~Dead("Mulahey")~ ~False()~
-		END
-	BUT_ONLY
-END
+BUT_ONLY
