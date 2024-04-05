@@ -5,10 +5,11 @@
 
 COPY ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.CRE~ ~override~
 
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.BAF~
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Caravan_merchant/JA#MERC3.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Caravan_merchant/ja#merc3.d~
 
 ADD_JOURNAL @13 @15 @18 @1008 @1033 USING ~JA#BGT_AdvPack/languages/%s/ja#merc3.tra~
 
@@ -27,3 +28,4 @@ COPY_EXISTING ~%CoastWay%.ARE~ ~override~
 		fj_name           = ~Merchant~
 		fj_cre_resref     = ~JA#MERC3~
 	END
+BUT_ONLY
