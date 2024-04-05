@@ -17,7 +17,7 @@ IF ~~ THEN 2
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #2 ~ReactionGT(LastTalkedToBy(Myself),9)~ THEN 3
+IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER)~ THEN 3
   SAY @6
   IF ~~ THEN EXIT
 END
@@ -27,7 +27,7 @@ IF WEIGHT #1 ~StateCheck(Myself,STATE_CHARMED)~ THEN 4
   IF ~~ THEN EXIT
 END
 
-IF ~ReactionLT(LastTalkedToBy(Myself),10)~ THEN 5
+IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 5
   SAY @8
   IF ~~ THEN EXIT
 END

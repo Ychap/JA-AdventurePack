@@ -168,10 +168,10 @@ INCLUDE ~JA#BGT_AdvPack/Svlast/setup-Svlast.tpa~
 
 
 ///////////////////////////////////////
-// RESTORED: Nashkel Garrison Soldier
+// RESTORED: Nashkel Garrison soldier
 ///////////////////////////////////////
 
-BEGIN ~Nashkel Garrison Soldier~ DESIGNATED 9
+BEGIN ~Nashkel Garrison soldier~ DESIGNATED 9
 LABEL "JA#BGT_AdvPack-Nashkel_Garrison"
 
 INCLUDE ~JA#BGT_AdvPack/Nashkel_Garrison/setup-Nashkel_Garrison.tpa~

@@ -1,9 +1,9 @@
 ///////////////////////////////////////
-// RESTORED: Nashkel Garrison Soldier
+// RESTORED: Nashkel Garrison soldier
 ///////////////////////////////////////
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nashkel_Garrison/JA#AMNI2.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nashkel_Garrison/ja#amni2.d~
 
 
 COPY_EXISTING ~AMNIS.CRE~ ~override/JA#AMNI2.CRE~
@@ -24,3 +24,4 @@ COPY_EXISTING ~%Nashkel_Garrison%.ARE~ ~override~
 		fj_name           = ~Amnish Soldier~
 		fj_cre_resref     = ~JA#AMNI2~
 	END
+BUT_ONLY
