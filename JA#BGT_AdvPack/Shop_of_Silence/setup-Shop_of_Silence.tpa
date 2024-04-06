@@ -3,47 +3,65 @@
 /////////////////////////////
 
 
-LAF GET_DLG_STRREF
-	INT_VAR idx_state = 4
-	STR_VAR dlg_file = ~SILENC.DLG~
-	RET silenc_state04_journal = journal_strref
-END
-
-// BGT version of SILENC.DLG is a lot behind the BGEE/EET version
-//  => BGT Version wird an die Version von EET angeglichen
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_bgt.D~ ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
-	  USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
-	<<<<<<<< ...inlined/ja#silenc_weight.d
-		SET_WEIGHT SILENC 8 #999
-	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/ja#silenc_weight.d~
-END
-ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_ee.D~ ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
-	  USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
-END
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.D~
-
-
-ACTION_IF FILE_EXISTS_IN_GAME ~MONGO.CRE~ BEGIN
-	COPY_EXISTING ~MONGO.CRE~ ~override/JA#MONGO.CRE~
-END ELSE BEGIN
-	COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.CRE~ ~override~
-		SAY NAME1 @4
-		SAY NAME2 @4
-END
-COPY_EXISTING ~JA#MONGO.CRE~ ~override~
-	WRITE_BYTE  0x238 17 // More strength to match his dialog
-	WRITE_BYTE  0x270 128
-	WRITE_ASCII 0x2cc ~JA#MONGO~ #8
-
-
 COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MASK1.STO~ ~override~
-	SAY 0xc @5
+	SAY STORE_NAME @5
+
+COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.CRE~ ~override~
+	SAY NAME1 @4
+	SAY NAME2 @4
+	WRITE_BYTE 0x238 17 // More strength to match his dialog
+	WRITE_BYTE 0x270 128 // Allegiance: NEUTRAL
+	WRITE_ASCII DIALOG ~JA#MONGO~ #8
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	OUTER_SET silenc_initial_friendly_state = 0
+	OUTER_SET silenc_initial_neutral_state = 1
+	OUTER_SET silenc_last_chapter_not_seen_state = 6
+	OUTER_SET silenc_last_chapter_has_seen_state = 7
+	OUTER_SET silenc_payday_state = 3
+	OUTER_SET silenc_turn_hostile_state = 10
+	OUTER_SET silenc_default_state = 8
+END
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	OUTER_SET silenc_initial_friendly_state = 1
+	OUTER_SET silenc_initial_neutral_state = 2
+	OUTER_SET silenc_last_chapter_not_seen_state = 4
+	OUTER_SET silenc_last_chapter_has_seen_state = 5
+	OUTER_SET silenc_payday_state = 7
+	OUTER_SET silenc_turn_hostile_state = 8
+	OUTER_SET silenc_default_state = 9
+END
+
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = silenc_last_chapter_not_seen_state
+	STR_VAR dlg_file = ~SILENC.DLG~
+	RET silenc_flaming_fist_journal = journal_strref
+END
+LAF GET_DLG_WEIGHT
+	INT_VAR idx_state = silenc_last_chapter_not_seen_state
+	STR_VAR dlg_file = ~SILENC.DLG~
+	RET silenc_last_chapter_not_seen_state_weight = weight
+END
+
+// Orphan states in SILENC.DLG are already restored in BGEE/EET
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#silenc_bgt.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#silenc.d~
+
+// Must be processed in separate after ja#silenc.d due to WEIDU bugs
+<<<<<<<< ...inlined/silenc_late.d
+// BGT
+SET_WEIGHT SILENC %silenc_default_state% #999
+>>>>>>>>
+COMPILE EVALUATE_BUFFER ~...inlined/silenc_late.d~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#mongo.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#sth01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#sth02.d~
+
 
 COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
 	// add new actor
@@ -75,6 +93,7 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Thief~
 		fj_cre_resref     = ~THIEF~
+		fj_bcs_specific   = ~SHOUT~
 		fj_dlg_resref	  = ~JA#STH01~
 	END
 	LPF fj_are_structure

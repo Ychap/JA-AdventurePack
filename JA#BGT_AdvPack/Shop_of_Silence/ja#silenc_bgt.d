@@ -1,143 +1,57 @@
-REPLACE_ACTION_TEXT SILENC
-~CreateCreature("GUARD",[^)]+)~
-~~
+REPLACE_STATE_TRIGGER SILENC 5 // threaten Mongo
+~Global("NoPayment","GLOBAL",1) GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
+
+REPLACE_STATE_TRIGGER SILENC 3 // payday
+~Global("NoPayment","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%) NumTimesTalkedToGT(4) ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~
+
+REPLACE_STATE_TRIGGER SILENC 10 // turn hostile
+~Global("NoPayment","GLOBAL",2)~
+
+
+ADD_TRANS_TRIGGER SILENC 1 // initial neutral
+~PartyGoldGT(4)~ DO 1
+
+ADD_TRANS_TRIGGER SILENC 3 // payday
+~PartyGoldGT(4)~ DO 1
+
+
+ADD_TRANS_ACTION SILENC
+BEGIN 9 0 6 END // charmed + initial friendly + last chapter not seen
+BEGIN END
+~SetGlobal("SeenSanctuary","GLOBAL",1)~
+
+ADD_TRANS_ACTION SILENC
+BEGIN 1 END // initial neutral
+BEGIN 1 END
+~SetGlobal("SeenSanctuary","GLOBAL",1)~
+
 
 REPLACE_TRANS_ACTION SILENC
-BEGIN 4 END
+BEGIN 4 END // follow up initial neutral
 BEGIN END
-~Wait([0-9]+)[%WNL%%MNL%%LNL%%TAB% ]*$~
-~~
+~Wait([0-9]+)[%WNL%%MNL%%LNL%%TAB% ]*CreateCreature("GUARD",[^)]+)~
+~NoAction()~
 
-
-ADD_TRANS_ACTION SILENC
-BEGIN 9 END
-BEGIN END
-~SetGlobal("SeenSanctuary","GLOBAL",1)~
-
-
-ADD_STATE_TRIGGER SILENC 0
-~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-
-ADD_TRANS_ACTION SILENC
-BEGIN 0 END
-BEGIN END
-~SetGlobal("SeenSanctuary","GLOBAL",1)~
 
 ALTER_TRANS SILENC
-BEGIN 0 END
-BEGIN 0 END
-BEGIN
-  "REPLY" ~@8~
-END
-
-EXTEND_TOP SILENC 0 #1
-IF ~~ THEN REPLY @0 DO ~SetGlobal("SeenSanctuary","GLOBAL",1)~ EXIT
-END
-
-
-ADD_STATE_TRIGGER SILENC 1
-~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-
-ADD_TRANS_TRIGGER SILENC 1
-~PartyGoldGT(4)~ DO 1
-UNLESS ~PartyGoldGT(4)~
-
-ADD_TRANS_ACTION SILENC
-BEGIN 1 END
-BEGIN 1 END
-~SetGlobal("SeenSanctuary","GLOBAL",1)~
-
-
-ADD_STATE_TRIGGER SILENC 2
-~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-
-ALTER_TRANS SILENC
-BEGIN 2 END
+BEGIN 2 END // initial hostile
 BEGIN 0 END
 BEGIN
   "ACTION" ~SetGlobal("NoPayment","GLOBAL",1)~
 END
 
 
-ADD_TRANS_ACTION SILENC
-BEGIN 6 END
-BEGIN END
-~SetGlobal("SeenSanctuary","GLOBAL",1)~
-
 ALTER_TRANS SILENC
-BEGIN 6 7 END
-BEGIN 0 END
+BEGIN 5 END // threaten Mongo
+BEGIN END
 BEGIN
-  "REPLY" ~@10~
-  "JOURNAL" ~#%silenc_state04_journal%~
+  "ACTION" ~SetGlobal("NoPayment","GLOBAL",2)~
 END
 
-EXTEND_TOP SILENC 6 7 #1
-IF ~~ THEN REPLY @0 JOURNAL #%silenc_state04_journal% EXIT
-END
-
-EXTEND_TOP SILENC 7 #1
-IF ~Global("JA#SILENCE_MASK","LOCALS",1) !InParty("TIAX")~ THEN REPLY @2 DO ~StartStore("JA#MASK1",LastTalkedToBy(Myself))~ EXIT
-IF ~Global("JA#SILENCE_MASK","LOCALS",1) InParty("TIAX")~ THEN REPLY @2 GOTO JA#SILENC_3
-END
-
-
-REPLACE_STATE_TRIGGER SILENC 5
-~Global("NoPayment","GLOBAL",1)
-GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-
-ADD_TRANS_ACTION SILENC
-BEGIN 5 END
-BEGIN END
-~SetGlobal("NoPayment","GLOBAL",2)~
-UNLESS ~SetGlobal("NoPayment","GLOBAL",2)~
-
-
-REPLACE_STATE_TRIGGER SILENC 3
-~Global("NoPayment","GLOBAL",0)
-GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
-NumTimesTalkedToGT(4)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~
-
-ADD_TRANS_TRIGGER SILENC 3
-~PartyGoldGT(4)~ DO 1
-UNLESS ~PartyGoldGT(4)~
-
-ADD_TRANS_ACTION SILENC
-BEGIN 3 END
-BEGIN 1 END
-~TakePartyGold(5) SetNumTimesTalkedTo(1) StartStore("stosilen",LastTalkedToBy(Myself))~
-UNLESS ~TakePartyGold(5)~
 
 ALTER_TRANS SILENC
-BEGIN 3 END
+BEGIN 3 END // payday
 BEGIN 1 END
 BEGIN
-  "REPLY" ~@9~
-END
-
-
-REPLACE_STATE_TRIGGER SILENC 10
-~Global("NoPayment","GLOBAL",2)~
-
-ADD_TRANS_ACTION SILENC
-BEGIN 10 END
-BEGIN END
-~DialogInterrupt(FALSE)
-Wait(3)
-ActionOverride("Mongo",Enemy())
-Enemy()~
-
-
-ALTER_TRANS SILENC
-BEGIN 8 END
-BEGIN 0 END
-BEGIN
-  "REPLY" ~@10~
-END
-
-EXTEND_TOP SILENC 8 #1
-IF ~Global("JA#SILENCE_MASK","LOCALS",1) !InParty("TIAX")~ THEN REPLY @2 DO ~StartStore("JA#MASK1",LastTalkedToBy(Myself))~ EXIT
-IF ~Global("JA#SILENCE_MASK","LOCALS",1) InParty("TIAX")~ THEN REPLY @2 GOTO JA#SILENC_3
-IF ~~ THEN REPLY @0 EXIT
+  "ACTION" ~TakePartyGold(5) SetNumTimesTalkedTo(1) StartStore("stosilen",LastTalkedToBy(Myself))~
 END
