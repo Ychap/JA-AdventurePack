@@ -27,7 +27,6 @@ END
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILC1.BAF~
 
 
 ACTION_IF FILE_EXISTS_IN_GAME ~MONGO.CRE~ BEGIN
@@ -64,10 +63,6 @@ COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
-	LPF ALTER_AREA_ACTOR
-		STR_VAR actor_name = ~Silence~
-				script_specifics = ~JA#SILC1~
-	END
 	// add new actors
 	LPF fj_are_structure
 		INT_VAR
