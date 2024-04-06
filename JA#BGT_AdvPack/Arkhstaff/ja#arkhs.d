@@ -8,7 +8,7 @@ END
 
 IF ~~ THEN JA#ARKHS_CHARM_KEY
   SAY @1
-  IF ~~ THEN DO ~GiveItem("JA#ARKKY",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN DO ~GiveItem("JA#ARKKY",LastTalkedToBy)~ EXIT
 END
 
 
@@ -154,12 +154,12 @@ END
 
 IF ~~ THEN JA#ARKHS_8
   SAY @68
-  IF ~~ THEN DO ~GiveItem("JA#ARKKY",LastTalkedToBy(Myself)) SetGlobal("JA#KNOW_KRAMM","LOCALS",3)~ UNSOLVED_JOURNAL @1010 EXIT
+  IF ~~ THEN DO ~GiveItem("JA#ARKKY",LastTalkedToBy) SetGlobal("JA#KNOW_KRAMM","LOCALS",3)~ UNSOLVED_JOURNAL @1010 EXIT
 END
 
 IF ~~ THEN JA#ARKHS_9
   SAY @69
-  IF ~~ THEN DO ~GiveItem("JA#ARKKY",LastTalkedToBy(Myself)) SetGlobal("JA#KNOW_KRAMM","LOCALS",3)~ UNSOLVED_JOURNAL @1010 EXIT
+  IF ~~ THEN DO ~GiveItem("JA#ARKKY",LastTalkedToBy) SetGlobal("JA#KNOW_KRAMM","LOCALS",3)~ UNSOLVED_JOURNAL @1010 EXIT
 END
 
 IF ~~ THEN JA#ARKHS_10

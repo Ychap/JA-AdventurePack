@@ -12,7 +12,7 @@ END
 
 IF ~NumDeadLT("JA#HOUND",2) Global("JA#CUNIM","%Peldvale%",1)~ THEN 2
   SAY @3
-  IF ~~ THEN DO ~SetGlobal("JA#CUNIM","%Peldvale%",2) AddExperienceParty(280) GiveItem("JA#PR402",LastTalkedToBy(Myself))~ JOURNAL @4 EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#CUNIM","%Peldvale%",2) AddExperienceParty(280) GiveItem("JA#PR402",LastTalkedToBy)~ JOURNAL @4 EXIT
 END
 
 IF ~NumTimesTalkedToGT(0)~ THEN 3

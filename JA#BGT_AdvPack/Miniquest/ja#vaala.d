@@ -60,7 +60,7 @@ IF ~~ THEN JA#VAALA_10
 SAY @28
 = @29
 IF ~~ THEN DO ~SetGlobal("JA#ELFSONG_QUEST","GLOBAL",7)
-GiveItem("JA#HRP01",LastTalkedToBy(Myself))
+GiveItem("JA#HRP01",LastTalkedToBy)
 EscapeArea()~ UNSOLVED_JOURNAL @1005 EXIT
 END
 
@@ -74,13 +74,13 @@ IF ~~ THEN JA#VAALA_12
 SAY @34
 = @35
 IF ~~ THEN DO ~SetGlobal("JA#ELFSONG_QUEST","GLOBAL",7)
-GiveItem("JA#HRP01",LastTalkedToBy(Myself))
+GiveItem("JA#HRP01",LastTalkedToBy)
 EscapeArea()~ UNSOLVED_JOURNAL @1005 EXIT
 END
 
 IF ~~ THEN JA#VAALA_13
 SAY @36
 IF ~~ THEN DO ~SetGlobal("JA#ELFSONG_QUEST","GLOBAL",7)
-GiveItem("JA#HRP01",LastTalkedToBy(Myself))
+GiveItem("JA#HRP01",LastTalkedToBy)
 EscapeArea()~ UNSOLVED_JOURNAL @1005 EXIT
 END

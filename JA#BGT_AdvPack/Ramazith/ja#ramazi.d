@@ -103,7 +103,7 @@ END
 
 IF ~~ THEN JA#RAMAZITH_X3
 SAY @27
-IF ~~ THEN DO ~TakePartyGold(200) GiveItemCreate("CLCK07",LastTalkedToBy(Myself),0,0,0)~ EXIT
+IF ~~ THEN DO ~TakePartyGold(200) GiveItemCreate("CLCK07",LastTalkedToBy,0,0,0)~ EXIT
 END
 
 IF ~~ THEN JA#RAMAZITH_X4

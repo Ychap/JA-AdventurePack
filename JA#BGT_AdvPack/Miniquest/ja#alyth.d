@@ -182,14 +182,14 @@ END
 
 IF ~~ THEN JA#ALYTH_23
 SAY @64
-IF ~~ THEN REPLY @65 DO ~GiveItem("JA#HRP02",LastTalkedToBy(Myself))~ EXIT
+IF ~~ THEN REPLY @65 DO ~GiveItem("JA#HRP02",LastTalkedToBy)~ EXIT
 END
 
 
 IF ~~ THEN JA#ALYTH_24
 SAY @66
-IF ~~ THEN REPLY @67 DO ~GiveItem("JA#HRP02",LastTalkedToBy(Myself))~ EXIT
-IF ~~ THEN REPLY @68 DO ~GiveItem("JA#HRP02",LastTalkedToBy(Myself))~ EXIT
+IF ~~ THEN REPLY @67 DO ~GiveItem("JA#HRP02",LastTalkedToBy)~ EXIT
+IF ~~ THEN REPLY @68 DO ~GiveItem("JA#HRP02",LastTalkedToBy)~ EXIT
 END
 
 END

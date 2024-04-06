@@ -23,17 +23,17 @@ END
 
 IF ~PartyHasItem("JA#LLIND") ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 4
   SAY @8
-  IF ~~ THEN DO ~TakePartyItem("JA#LLIND") GiveItem("AROW11",LastTalkedToBy(Myself)) SetGlobal("JA#LLIND_JOB","LOCALS",2) AddexperienceParty(150) EraseJournalEntry(@6)~ SOLVED_JOURNAL @9 EXIT
+  IF ~~ THEN DO ~TakePartyItem("JA#LLIND") GiveItem("AROW11",LastTalkedToBy) SetGlobal("JA#LLIND_JOB","LOCALS",2) AddexperienceParty(150) EraseJournalEntry(@6)~ SOLVED_JOURNAL @9 EXIT
 END
 
 IF ~PartyHasItem("JA#LLIND") ReactionGT(LastTalkedToBy,HOSTILE_UPPER) ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~ THEN 5
   SAY @10
-  IF ~~ THEN DO ~TakePartyItem("JA#LLIND") GiveItem("AROW10",LastTalkedToBy(Myself)) SetGlobal("JA#LLIND_JOB","LOCALS",2) AddexperienceParty(150) EraseJournalEntry(@6)~ SOLVED_JOURNAL @9 EXIT
+  IF ~~ THEN DO ~TakePartyItem("JA#LLIND") GiveItem("AROW10",LastTalkedToBy) SetGlobal("JA#LLIND_JOB","LOCALS",2) AddexperienceParty(150) EraseJournalEntry(@6)~ SOLVED_JOURNAL @9 EXIT
 END
 
 IF ~PartyHasItem("JA#LLIND") ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)~ THEN 6
   SAY @11
-  IF ~~ THEN DO ~TakePartyItem("JA#LLIND") GiveItem("AROW06",LastTalkedToBy(Myself)) SetGlobal("JA#LLIND_JOB","LOCALS",2) AddexperienceParty(150) EraseJournalEntry(@6)~ SOLVED_JOURNAL @9 EXIT
+  IF ~~ THEN DO ~TakePartyItem("JA#LLIND") GiveItem("AROW06",LastTalkedToBy) SetGlobal("JA#LLIND_JOB","LOCALS",2) AddexperienceParty(150) EraseJournalEntry(@6)~ SOLVED_JOURNAL @9 EXIT
 END
 
 IF ~~ THEN 7
