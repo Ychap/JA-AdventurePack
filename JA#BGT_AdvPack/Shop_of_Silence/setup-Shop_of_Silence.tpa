@@ -29,8 +29,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILC1.BAF~
 
-COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.CRE~ ~override~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~MONGO.CRE~ BEGIN
 	COPY_EXISTING ~MONGO.CRE~ ~override/JA#MONGO.CRE~
@@ -59,8 +57,8 @@ COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
 		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Schattendieb~
-		fj_cre_resref     = ~JA#STH02~
+		fj_name           = ~Thief~
+		fj_cre_resref     = ~THIEF~
 		fj_dlg_resref	  = ~JA#STH02~
 	END
 BUT_ONLY
@@ -80,8 +78,8 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Schattendieb~
-		fj_cre_resref     = ~JA#STH01~
+		fj_name           = ~Thief~
+		fj_cre_resref     = ~THIEF~
 		fj_dlg_resref	  = ~JA#STH01~
 	END
 	LPF fj_are_structure
@@ -95,9 +93,8 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Mongo~
 		fj_cre_resref     = ~JA#MONGO~
-		fj_dlg_resref	  = ~JA#MONGO~
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 90
