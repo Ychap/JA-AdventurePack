@@ -19,6 +19,43 @@ COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.CRE~ ~override~
 
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.BAF~
+
+EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~ EVALUATE_BUFFER
+
+
+LAF GET_DLG_WEIGHT
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~GERVIS.DLG~
+	RET gervis_state01_weight = weight
+END
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~GERVIS.DLG~
+	RET gervis_state01_strref = state_strref
+		gervis_state01_journal = journal_strref
+END
+
+<<<<<<<< ...inlined/ja#replace_action.d
+REPLACE_ACTION_TEXT_PROCESS LAERTA
+~EraseJournalEntry(%gervis_state01_journal%)~
+~EraseJournalEntry(%gervis_state01_journal%) EraseJournalEntry(@43)~
+GERVIS VOLTIN // BGT
+>>>>>>>>
+COMPILE EVALUATE_BUFFER ~...inlined/ja#replace_action.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#gervis.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#voltin.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#twins.d~
+
+ADD_JOURNAL EXISTING @43 @57 @58 @81 USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
+                                           ~JA#BGT_AdvPack/languages/%s/ja#twins.tra~
+
+
 COPY_EXISTING ~LAERTA.CRE~ ~override~
               ~LOUISE.CRE~ ~override~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~WDRUNSGT~ END
@@ -65,36 +102,3 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_name           = ~Frja#c07~
 	END
 BUT_ONLY
-
-
-LAF GET_DLG_STRREF
-	INT_VAR idx_state = 0
-	STR_VAR dlg_file = ~LAERTA.DLG~
-	RET laerta_state00_journal = journal_strref
-END
-
-<<<<<<<< ...inlined/ja#replace_action.d
-REPLACE_ACTION_TEXT_PROCESS LAERTA // BGEE/EET
-~EraseJournalEntry(%laerta_state00_journal%)~
-~EraseJournalEntry(@43) EraseJournalEntry(%laerta_state00_journal%)~
-GERVIS VOLTIN // BGT
-
-REPLACE_ACTION_TEXT GERVIS
-~CreateCreature("VOLTIN",\[[0-9]+\.[0-9]+\],[^,)]+)~
-~SetGlobal("JA#GERVIS_QUEST","GLOBAL",1)~
->>>>>>>>
-COMPILE EVALUATE_BUFFER ~...inlined/ja#replace_action.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTIN.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#TWINS.D~
-
-ADD_JOURNAL EXISTING @43 @57 @58 @81 USING ~JA#BGT_AdvPack/languages/%s/ja#voltin.tra~
-                                           ~JA#BGT_AdvPack/languages/%s/ja#twins.tra~
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.BAF~
-EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~ EVALUATE_BUFFER

@@ -1,4 +1,6 @@
 REPLACE_STATE_TRIGGER VOLTIN 0 ~AreaCheck("JA#C08")~
+// REPLACE_STATE_TRIGGER VOLTIN 3 ~False()~ // State is linked in response of gervisse_is_dead
+
 
 ADD_TRANS_ACTION VOLTIN
 BEGIN 0 END
@@ -13,23 +15,14 @@ BEGIN 0 END
 
 /* Faldorn will not tolerate if Voltine is attacked. Taken from bg1npc Project */
 INTERJECT_COPY_TRANS2 VOLTIN 4 JA#FalMadVoltine
-== %FALDORN_JOINED% IF ~InParty("faldorn") InMyArea("faldorn") !StateCheck("faldorn",CD_STATE_NOTVALID)~ THEN @90
-DO ~ActionOverride("voltine",Enemy()) LeaveParty() SetLeavePartyDialogFile() ChangeAIScript("",DEFAULT) Enemy()~
+  == %FALDORN_JOINED% IF ~InParty("faldorn") InMyArea("faldorn") !StateCheck("faldorn",CD_STATE_NOTVALID)~ THEN @90
+  DO ~ActionOverride("voltine",Enemy()) LeaveParty() SetLeavePartyDialogFile() ChangeAIScript("",DEFAULT) Enemy()~
 END
 
 
 APPEND VOLTIN
 
-IF WEIGHT #0
-~Dead("Gervisse") Global("HelpVoltine","GLOBAL",0)~ THEN gervisse_is_dead
-SAY @88
-IF ~~ THEN REPLY @89 GOTO 3
-IF ~~ THEN REPLY @29 GOTO 4
-END
-
-
-IF WEIGHT #0
-~Global("JA#VOLT_QUEST","GLOBAL",0) !Dead("Gervisse")~ THEN JA_VOLTIN_1
+IF WEIGHT #0 ~!Dead("Gervisse") Global("JA#VOLT_QUEST","GLOBAL",0)~ THEN JA_VOLTIN_1
   SAY @30
   IF ~Global("JA#GERVIS_QUEST","GLOBAL",1)~ THEN REPLY @31 GOTO JA_VOLTIN_2
   IF ~Global("JA#GERVIS_QUEST","GLOBAL",10)~ THEN REPLY @32 GOTO JA_VOLTIN_3
@@ -63,18 +56,16 @@ IF ~~ THEN JA_VOLTIN_5
 END
 
 
-IF WEIGHT #0
-~Global("JA#VOLT_QUEST","GLOBAL",1) !Dead("Gervisse")~ THEN JA_VOLTIN_6
+IF WEIGHT #0 ~!Dead("Gervisse") Global("JA#VOLT_QUEST","GLOBAL",1)~ THEN JA_VOLTIN_6
   SAY @46
   IF ~Global("JA#GERVIS_QUEST","GLOBAL",1)~ THEN REPLY @31 GOTO JA_VOLTIN_2
-  IF ~~ THEN REPLY @32 GOTO JA_VOLTIN_3
+  IF ~Global("JA#GERVIS_QUEST","GLOBAL",10)~ THEN REPLY @32 GOTO JA_VOLTIN_3
   IF ~~ THEN REPLY @33 GOTO 4
   IF ~~ THEN REPLY @34 GOTO JA_VOLTIN_5
 END
 
 
-IF WEIGHT #0
-~Global("JA#VOLT_QUEST","GLOBAL",2) !Dead("Gervisse")~ THEN JA_VOLTIN_7
+IF WEIGHT #0 ~!Dead("Gervisse") Global("JA#VOLT_QUEST","GLOBAL",2)~ THEN JA_VOLTIN_7
   SAY @47
   IF ~~ THEN REPLY @48 GOTO JA_VOLTIN_8
   IF ~~ THEN REPLY @49 GOTO 4
@@ -85,6 +76,13 @@ END
 IF ~~ THEN JA_VOLTIN_8
   SAY @51
   IF ~~ THEN EXIT
+END
+
+
+IF WEIGHT #0 ~Dead("Gervisse") Global("HelpVoltine","GLOBAL",0)~ THEN gervisse_is_dead
+  SAY @88
+  IF ~~ THEN REPLY @89 GOTO 3
+  IF ~~ THEN REPLY @29 GOTO 4
 END
 
 END // APPEND VOLTIN
