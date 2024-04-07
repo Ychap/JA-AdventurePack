@@ -227,6 +227,7 @@ INCLUDE ~JA#BGT_AdvPack/Galtoth/setup-Galtoth.tpa~
 
 BEGIN ~Suthie & Sthief at Silence's Store~ DESIGNATED 14
 LABEL "JA#BGT_AdvPack-Suthie_Sthief"
+REQUIRE_PREDICATE !GAME_IS ~bgee eet~ ~Already restored in BG:EE~
 
 INCLUDE ~JA#BGT_AdvPack/Suthie_Sthief/setup-Suthie_Sthief.tpa~
 
