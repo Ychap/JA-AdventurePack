@@ -12,10 +12,7 @@
 @40 = ~You make an honest impression. I will have a talk with Gervisse.~
 @41 = ~For me, the priority is the security of the girls and as I can't know which of you is the real danger to them, I'll have to kill you both.~
 @42 = ~That you should do, but be careful. I don't know how powerful this man is. Better prepare yourself for a fight!~
-@43 = ~Laerta and Louise
-
-Voltine has enlightened me about the true nature of Gervisse and I promised her to protect the girls from his doings.~
-
+/* @43 -> journal entry @1043 */
 @44 = ~Then you are just an unscrupulous bastard like Gervisse. Leave now!~
 // @45 = ~Laerta and Louise
 
