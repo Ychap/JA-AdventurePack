@@ -1,0 +1,10 @@
+IF
+	See([PC])
+	Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",53)
+		Wait(3)
+		StartDialogueNoSet([PC])
+END
