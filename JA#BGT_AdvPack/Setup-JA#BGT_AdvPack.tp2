@@ -590,6 +590,16 @@ LABEL "JA#BGT_AdvPack-Cloakwood_druid"
 INCLUDE ~JA#BGT_AdvPack/Cloakwood_druid/setup-Cloakwood_druid.tpa~
 
 
+////////////////////////////////
+// Stationary Nashkel soldiers
+////////////////////////////////
+
+BEGIN ~Stationary Nashkel soldiers~ DESIGNATED 50
+LABEL "JA#BGT_AdvPack-Nashkel_soldiers"
+
+INCLUDE ~JA#BGT_AdvPack/Nashkel_soldiers/setup-Nashkel_soldiers.tpa~
+
+
 /////////////////////////////////////////////////////////
 // Graphical improvements: Animated torches and candles
 /////////////////////////////////////////////////////////
