@@ -4,6 +4,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#SUTHI","%EBaldursGate_SilencesShop%",1)
-		CreateCreature("JA#SUTHI",[555.305],14)
+		CreateCreature("JA#SUTHI",[603.195],0)
 		Continue()
 END

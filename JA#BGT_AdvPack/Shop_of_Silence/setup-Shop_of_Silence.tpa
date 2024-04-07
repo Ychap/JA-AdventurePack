@@ -11,6 +11,7 @@ COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.CRE~ ~override~
 	SAY NAME2 @4
 	WRITE_BYTE 0x238 17 // More strength to match his dialog
 	WRITE_BYTE 0x270 128 // Allegiance: NEUTRAL
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
 	WRITE_ASCII DIALOG ~JA#MONGO~ #8
 
 
@@ -98,11 +99,11 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 581
-		fj_loc_y          = 164
-		fj_dest_x         = 581
-		fj_dest_y         = 164
-		fj_orientation    = 1
+		fj_loc_x          = 555
+		fj_loc_y          = 305
+		fj_dest_x         = 555
+		fj_dest_y         = 305
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Mongo~
