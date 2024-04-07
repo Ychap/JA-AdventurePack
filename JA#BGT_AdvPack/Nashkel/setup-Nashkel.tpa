@@ -30,7 +30,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("C#JA#_BardolanRespawn","MYAREA",1)
-		CreateCreature("bardol",[1104.722],11)
+		CreateCreature("BARDOL",[1104.722],11)
 		ActionOverride("Bardolan",SetNumTimesTalkedTo(1))
 		Continue()
 END
@@ -38,12 +38,33 @@ END
 EXTEND_TOP ~%Nashkel_BCS%.BCS~ ~...inlined/bardolan_ar4800_bg1re.baf~ EVALUATE_BUFFER
 
 
+COPY_EXISTING ~%NashkelMines_L4_BCS%.BCS~ ~override~
+			  ~%NashkelMines_MulaheysCave_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~IncrementChapter("Chptxt-?3")~ ~\0 EraseJournalEntry(@1039)~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~NALIN.DLG~ ~override~
+			  ~OUBLEK.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~SetGlobal("OublekBounty1","GLOBAL",1)~ ~EraseJournalEntry(999999) \0~
+		REPLACE 999999 @1040 // extra step only necessary in *.DLG
+	END
+BUT_ONLY
+
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nashkel/ja#bardol.d~
+
+ADD_JOURNAL EXISTING @1039
+ADD_JOURNAL EXISTING @1040
 
 
 COPY_EXISTING ~INNKN2.CRE~ ~override~
 	SAY NAME1 @2118
 	SAY NAME2 @2118
+BUT_ONLY
 
 COPY_EXISTING ~INN4801.STO~ ~override~
 	SAY STORE_NAME @2119
+BUT_ONLY
