@@ -50,6 +50,14 @@ COMPILE EVALUATE_BUFFER ~...inlined/laerta_quest_finish.d~
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#gervis.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#voltin.d~
+
+LAF GET_DLG_SCRIPT
+	INT_VAR idx_state = 4
+	STR_VAR dlg_file = ~LAERTA.DLG~
+	RET state04_response0_trigger = response_trigger
+		state04_response0_action = response_action
+END
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#twins.d~
 
 ADD_JOURNAL EXISTING @57 @58 @81 @1043 USING ~JA#BGT_AdvPack/languages/%s/ja#twins.tra~

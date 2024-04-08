@@ -1,3 +1,6 @@
+ADD_STATE_TRIGGER LOUISE 1 ~Global("HelpLaerta","GLOBAL",0) !Dead("Laerta")~
+
+
 ALTER_TRANS LAERTA
 BEGIN 1 END
 BEGIN 0 END
@@ -5,46 +8,33 @@ BEGIN
   "REPLY" ~@87~
 END
 
-EXTEND_TOP LAERTA 1 #1
-IF ~~ THEN REPLY @53 GOTO JA_LAERTA_3
-IF ~~ THEN REPLY @54 GOTO JA_LAERTA_1
-IF ~Global("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#KNOWGERVIS","%NWBaldursGate_LaertasHouse_L1%",1)~ THEN REPLY @55 DO ~SetGlobal("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",1)~ GOTO JA_LAERTA_8
-IF ~Global("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)~ THEN REPLY @56 DO ~SetGlobal("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",1)~ GOTO JA_LAERTA_9
-END
-
-
-// Assume that state 4 has initially one response!
-EXTEND_BOTTOM LAERTA 4
-COPY_TRANS LAERTA 4
-COPY_TRANS LAERTA 4
-COPY_TRANS LAERTA 4
-END
-
-ALTER_TRANS LAERTA
-BEGIN 4 END
+ALTER_TRANS LOUISE
 BEGIN 1 END
+BEGIN 0 END
 BEGIN
-  "SOLVED_JOURNAL" ~@57~
+  "REPLY" ~@87~
 END
 
-ALTER_TRANS LAERTA
-BEGIN 4 END
-BEGIN 2 END
-BEGIN
-  "SOLVED_JOURNAL" ~@58~
+
+EXTEND_BOTTOM LAERTA 1
+  IF ~!Dead("Louise")~ THEN REPLY @53 GOTO JA_LAERTA_3
+  IF ~~ THEN REPLY @54 GOTO JA_LAERTA_1
+  IF ~Global("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#KNOWGERVIS","%NWBaldursGate_LaertasHouse_L1%",1)~ THEN REPLY @55 DO ~SetGlobal("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",1)~ GOTO JA_LAERTA_8
+  IF ~Global("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)~ THEN REPLY @56 DO ~SetGlobal("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",1)~ GOTO JA_LAERTA_9
 END
 
-ALTER_TRANS LAERTA
-BEGIN 4 END
-BEGIN 3 END
-BEGIN
-  "SOLVED_JOURNAL" ~@81~
+EXTEND_BOTTOM LOUISE 1
+  IF ~~ THEN REPLY @53 EXTERN LAERTA JA_LAERTA_3
+  IF ~~ THEN REPLY @54 EXTERN LAERTA JA_LAERTA_1
+  IF ~Global("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#KNOWGERVIS","%NWBaldursGate_LaertasHouse_L1%",1)~ THEN REPLY @55 DO ~SetGlobal("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",1)~ EXTERN LAERTA JA_LAERTA_8
+  IF ~Global("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)~ THEN REPLY @56 DO ~SetGlobal("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",1)~ EXTERN LAERTA JA_LAERTA_9
 END
 
-ADD_TRANS_TRIGGER LAERTA 4
-~Dead("Voltine")~ DO 1 3
-ADD_TRANS_TRIGGER LAERTA 4
-~Dead("Gervisse")~DO 2 3
+EXTEND_BOTTOM LAERTA 4
+  IF ~Dead("Voltine") %state04_response0_trigger%~ THEN DO ~%state04_response0_action%~ SOLVED_JOURNAL @57 EXIT
+  IF ~Dead("Gervisse") %state04_response0_trigger%~ THEN DO ~%state04_response0_action%~ SOLVED_JOURNAL @58 EXIT
+  IF ~Dead("Gervisse") Dead("Voltine") %state04_response0_trigger%~ THEN DO ~%state04_response0_action%~ SOLVED_JOURNAL @81 EXIT
+END
 
 
 APPEND LAERTA
@@ -57,7 +47,7 @@ END
 
 IF ~~ THEN JA_LAERTA_2
   SAY @62
-  IF ~~ THEN REPLY @63 GOTO JA_LAERTA_3
+  IF ~!Dead("Louise")~ THEN REPLY @63 GOTO JA_LAERTA_3
   IF ~Global("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#KNOWGERVIS","%NWBaldursGate_LaertasHouse_L1%",1)~ THEN REPLY @55 DO ~SetGlobal("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",1)~ GOTO JA_LAERTA_8
   IF ~Global("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)~ THEN REPLY @56 GOTO JA_LAERTA_9
   IF ~~ THEN REPLY @64 EXIT
@@ -126,24 +116,6 @@ END
 END // APPEND LAERTA
 
 
-
-ADD_STATE_TRIGGER LOUISE 1 ~Global("HelpLaerta","GLOBAL",0) !Dead("Laerta")~
-
-ALTER_TRANS LOUISE
-BEGIN 1 END
-BEGIN 0 END
-BEGIN
-  "REPLY" ~@87~
-END
-
-EXTEND_TOP LOUISE 1 #1
-IF ~~ THEN REPLY @53 EXTERN LAERTA JA_LAERTA_3
-IF ~~ THEN REPLY @54 EXTERN LAERTA JA_LAERTA_1
-IF ~Global("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",0)Global("JA#KNOWGERVIS","%NWBaldursGate_LaertasHouse_L1%",1)~ THEN REPLY @55 DO ~SetGlobal("JA#LAERTA_GERV","%NWBaldursGate_LaertasHouse_L1%",1)~ EXTERN LAERTA JA_LAERTA_8
-IF ~Global("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",0)Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)~ THEN REPLY @56 DO ~SetGlobal("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",1)~ EXTERN LAERTA JA_LAERTA_9
-END
-
-
 APPEND LOUISE
 
 IF ~Global("HelpLaerta","GLOBAL",1) !Dead("Laerta")~ THEN JA_LOUISE_2
@@ -155,7 +127,6 @@ IF ~Global("HelpLaerta","GLOBAL",2)~ THEN JA_LOUISE_SAVED
   SAY @78
   IF ~~ THEN EXIT
 END
-
 
 IF ~~ THEN JA_LOUISE_1
   SAY @79 = @80
