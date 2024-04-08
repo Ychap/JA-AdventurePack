@@ -30,6 +30,7 @@ EXTEND_BOTTOM LOUISE 1
   IF ~Global("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",0) Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)~ THEN REPLY @56 DO ~SetGlobal("JA#LAERTA_VOLT","%NWBaldursGate_LaertasHouse_L1%",1)~ EXTERN LAERTA JA_LAERTA_9
 END
 
+
 EXTEND_BOTTOM LAERTA 4
   IF ~Dead("Voltine") %state04_response0_trigger%~ THEN DO ~%state04_response0_action%~ SOLVED_JOURNAL @57 EXIT
   IF ~Dead("Gervisse") %state04_response0_trigger%~ THEN DO ~%state04_response0_action%~ SOLVED_JOURNAL @58 EXIT
