@@ -2,11 +2,12 @@ IF
 	Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",0)
 	OR(2)
 		Global("JA#GERVIS_QUEST","GLOBAL",1)
-		Global("JA#GERVIS_QUEST","GLOBAL",10)
+		Global("JA#VOLT_QUEST","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",1)
 		CreateCreature("JA#VOLTJ",[781.478],5)
+		ActionOverride("JA#VOLTJ",DialogInterrupt(FALSE))
 		Continue()
 END
 
