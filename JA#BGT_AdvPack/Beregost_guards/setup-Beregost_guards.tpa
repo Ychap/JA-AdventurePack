@@ -1,14 +1,14 @@
-////////////////////////////////
-// RESTORED: Guards in Beregost
-////////////////////////////////
+//////////////////////////////
+// RESTORED: Beregost guards
+//////////////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB4.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB5.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB6.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB7.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB8.CRE~ ~override~
-	~JA#BGT_AdvPack/Beregost_guards/JA#GUAB9.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB5.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB6.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB7.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB8.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB9.CRE~ ~override~
 	SAY NAME1 @2085
 	SAY NAME2 @2085
 
@@ -16,7 +16,7 @@ COPY ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB4.CRE~ ~override~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB8.BAF~
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/JA#GUABE.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/ja#guabe.d~
 
 
 COPY_EXISTING ~%Beregost%.ARE~ ~override~
@@ -32,7 +32,6 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB4~
-		fj_dlg_resref	  = ~JA#GUAB4~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -45,7 +44,6 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB5~
-		fj_dlg_resref	  = ~JA#GUAB5~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -58,7 +56,6 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB6~
-		fj_dlg_resref	  = ~JA#GUAB6~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -71,7 +68,6 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB7~
-		fj_dlg_resref	  = ~JA#GUAB7~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -84,7 +80,6 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB7~
-		fj_dlg_resref	  = ~JA#GUAB7~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -97,8 +92,8 @@ COPY_EXISTING ~%Beregost%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB7~
-		fj_dlg_resref	  = ~JA#GUAB7~
 	END
+BUT_ONLY
 
 COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 	// add new actors
@@ -114,7 +109,6 @@ COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB9~
-		fj_dlg_resref	  = ~JA#GUAB9~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -128,5 +122,5 @@ COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#GUAB8~
-		fj_dlg_resref	  = ~JA#GUAB8~
 	END
+BUT_ONLY

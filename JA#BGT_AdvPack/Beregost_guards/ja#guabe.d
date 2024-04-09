@@ -154,8 +154,7 @@ END
 
 
 CHAIN IF WEIGHT #-1 ~Global("JA#GUABE_ROB","%Beregost_JovialJuggler_L1%",1)~ THEN JA#GUAB8 JA#GUAB8_2
-  @49
-  DO ~SetGlobal("JA#GUABE_ROB","%Beregost_JovialJuggler_L1%",2)~
+  @49 DO ~SetGlobal("JA#GUABE_ROB","%Beregost_JovialJuggler_L1%",2)~
   == JA#GUAB9 @50
   == JA#GUAB8 @51
   == JA#GUAB9 @52
