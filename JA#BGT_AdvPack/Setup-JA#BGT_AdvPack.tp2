@@ -327,10 +327,10 @@ INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
 
 ///////////////////////////////////
-// RESTORED: Marl - tarvern brawl
+// RESTORED: Marl (tarvern brawl)
 ///////////////////////////////////
 
-BEGIN ~Marl - tarvern brawl~ DESIGNATED 24
+BEGIN ~Marl (tarvern brawl)~ DESIGNATED 24
 LABEL "JA#BGT_AdvPack-Marl"
 
 INCLUDE ~JA#BGT_AdvPack/Marl/setup-Marl.tpa~

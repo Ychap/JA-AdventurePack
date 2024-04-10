@@ -1,20 +1,22 @@
-///////////////////////////////
-// RESTORED: Marl & the Guard
-///////////////////////////////
+///////////////////////////////////
+// RESTORED: Marl (tarvern brawl)
+///////////////////////////////////
 
-
-COPY_EXISTING ~MARL.CRE~ ~override~
-	// WRITE_BYTE 0x273 155	// innocent - reputation
-	REMOVE_CRE_ITEM ~B1-2~
-
-COPY_EXISTING ~DUNKIN.CRE~ ~override~
-	LPF INSERT_CRE_SCRIPT STR_VAR script_new = ~JA#DUNKI~ END
 
 COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB2.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB3.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Marl/JA#GUAB2.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Marl/JA#GUAB3.CRE~ ~override~
 	SAY NAME1 @2085
 	SAY NAME2 @2085
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#DUNKI.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#GBECU.BAF~
+
+
+EXTEND_BOTTOM ~MARL.BCS~ ~JA#BGT_AdvPack/Marl/MARL.BAF~ EVALUATE_BUFFER
+
+EXTEND_TOP ~%Beregost_FeldepostsInn_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Marl/AR6751.BAF~ EVALUATE_BUFFER
 
 
 LAF GET_DLG_SCRIPT
@@ -31,15 +33,19 @@ OUTER_PATCH_SAVE ~state01_response0_action~ ~%state01_response0_action%~ BEGIN
 	END ~AddexperienceParty(%result%)~
 END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#KELDDA.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#keldda.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#marl.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#dunkin.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#guab1.d~
+
 ADD_JOURNAL EXISTING @0 USING ~JA#BGT_AdvPack/languages/%s/ja#keldda.tra~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#MARL.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#DUNKIN.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#GUAB1.D~
 
+COPY_EXISTING ~MARL.CRE~ ~override~
+	WRITE_BYTE 0x273 155 // Class: innocent (reputation loss when killed)
+	REMOVE_CRE_ITEM ~B1-2~
+BUT_ONLY
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#DUNKI.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#GBECU.BAF~
-EXTEND_BOTTOM ~MARL.BCS~ ~JA#BGT_AdvPack/Marl/MARL.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%Beregost_FeldepostsInn_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Marl/AR6751.BAF~ EVALUATE_BUFFER
+COPY_EXISTING ~DUNKIN.CRE~ ~override~
+	LPF INSERT_CRE_SCRIPT INT_VAR offset = SCRIPT_OVERRIDE STR_VAR script_new = ~JA#DUNKI~ END
+BUT_ONLY
