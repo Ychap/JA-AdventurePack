@@ -1,5 +1,6 @@
 REPLACE_SAY NIEMAI 2 @1
 
+
 EXTEND_BOTTOM NIEMAI 3
   IF ~~ THEN GOTO JA#NIEMAI_3
 END
@@ -9,16 +10,16 @@ EXTEND_BOTTOM NIEMAI 4
 END
 
 
-EXTEND_BOTTOM NIEMAI 9
-  IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#TalkedNiemai","LOCALS",1)~ EXIT
-END
-
-
 REPLACE_TRANS_ACTION NIEMAI
 BEGIN 13 END
 BEGIN END
 ~ActionOverride("WHEBER",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("OULAM",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("WILLIAM",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*EscapeArea\(Destroy\)?([0-9]*)~
 ~SetGlobal("JA#TalkedNiemai","LOCALS",1)~
+
+
+EXTEND_BOTTOM NIEMAI 9
+  IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#TalkedNiemai","LOCALS",1)~ EXIT
+END
 
 
 APPEND NIEMAI

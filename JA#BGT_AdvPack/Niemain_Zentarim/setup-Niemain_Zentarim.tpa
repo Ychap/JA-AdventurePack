@@ -5,6 +5,10 @@
 // Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
 
 
+EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7704.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7706.BAF~ EVALUATE_BUFFER
+
+
 COPY_EXISTING ~NIEMAIN.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~See([PC])~ ~Range([PC],15)~
@@ -12,22 +16,19 @@ COPY_EXISTING ~NIEMAIN.BCS~ ~override~
 BUT_ONLY
 
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Niemain_Zentarim/ja#niemai.d~
+
+ADD_JOURNAL @31 @1024 USING ~JA#BGT_AdvPack/languages/%s/ja#niemai.tra~
+
+
 COPY_EXISTING ~NIEMAI.CRE~ ~override/JA#NIEMA.CRE~
-	WRITE_ASCII 0x248 ~None~ #8
-	WRITE_ASCII 0x250 ~None~ #8
-	WRITE_ASCII 0x2cc ~JA#NIEMA~ #8 // DLG
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ END
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~NIEMAIN~ END
+	WRITE_ASCII DIALOG ~JA#NIEMA~ #8
+BUT_ONLY
 
 COPY_EXISTING_REGEXP ~OULAM\.CRE~ ~override~
 					 ~WHEBER\.CRE~ ~override~
 					 ~WILLIAM[1_]?\.CRE~ ~override~
-	WRITE_ASCII 0x2cc ~JA#ZENT1~ #8 // DLG
+	WRITE_ASCII DIALOG ~JA#ZENT1~ #8
 UNLESS ~NobleOrder~ // exclude WILLIAM.CRE(Sir Branet Al-Thon) of BGT/EET
-
-
-EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7704_niemain.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7706_niemain.BAF~ EVALUATE_BUFFER
-
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Niemain_Zentarim/JA#NIEMAI.D~
-
-ADD_JOURNAL @31 @1024 USING ~JA#BGT_AdvPack/languages/%s/ja#niemai.tra~
