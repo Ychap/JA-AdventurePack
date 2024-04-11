@@ -6,6 +6,15 @@
 COPY ~JA#BGT_AdvPack/Mal-Kalen/JA#MALKA.CRE~ ~override~
 	SAY NAME1 #12701 // ~Mal-Kalen~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #12701 // ~Mal-Kalen~ (string ref is true for BGT and BG:EE)
+	PATCH_IF GAME_IS ~BGEE~ BEGIN
+		GET_OFFSET_ARRAY items CRE_V10_ITEMS
+		PHP_EACH items AS i => item BEGIN
+			READ_ASCII item item_filename
+			PATCH_IF (~%item_filename%~ STR_EQ ~RNDTRE08~) BEGIN // Wealthy treasure
+				WRITE_ASCII item ~RNDTRE04~ #8
+			END
+		END
+	END
 
 COPY ~JA#BGT_AdvPack/Mal-Kalen/JA#SPWN1.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Mal-Kalen/JA#SPWN1.VVC~ ~override~
