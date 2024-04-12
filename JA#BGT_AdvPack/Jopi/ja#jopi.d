@@ -6,7 +6,7 @@ REPLACE_TRANS_ACTION JOPI
 BEGIN 2 3 4 END
 BEGIN END
 ~EscapeArea\(Destroy\)?([0-9]*)~
-~~
+~NoAction()~
 
 
 APPEND JOPI
