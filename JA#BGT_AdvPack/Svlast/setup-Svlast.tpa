@@ -4,8 +4,8 @@
 
 
 COPY ~JA#BGT_AdvPack/Svlast/JA#SVLST.CRE~ ~override~
-	SAY NAME1 @2055
-	SAY NAME2 @2055
+	SAY NAME1 #15610 // ~Svlast~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #15610 // ~Svlast~ (string ref is true for BGT and BG:EE)
 
 COPY_EXISTING ~REVENT.CRE~ ~override/JA#REVEN.CRE~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG2~ END

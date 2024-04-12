@@ -415,7 +415,7 @@ The wearer gets immunity to petrification.
 
 Weight: 1~
 @2054 = ~Palin~
-@2055 = ~Svlast~
+/* @2055 = ~Svlast~ */
 @2056 = ~Velvet~
 @2057 = ~Fighting cock~
 /* @2058 = ~Nim Furlwing~ */
