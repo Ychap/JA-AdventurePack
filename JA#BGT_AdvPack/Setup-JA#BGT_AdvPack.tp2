@@ -468,11 +468,11 @@ REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~set
 INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
 
-//////////////////////////////////////
-// Phandalyn waits in Elfsong Tavern
-//////////////////////////////////////
+///////////////////////////////////////
+// Phandalyn waits in Jopalins Tavern
+///////////////////////////////////////
 
-BEGIN ~Phandalyn waits in Elfsong Tavern~ DESIGNATED 38
+BEGIN ~Phandalyn waits in Jopalins Tavern~ DESIGNATED 38
 LABEL "JA#BGT_AdvPack-Phandalyn"
 
 INCLUDE ~JA#BGT_AdvPack/Phandalyn/setup-Phandalyn.tpa~
