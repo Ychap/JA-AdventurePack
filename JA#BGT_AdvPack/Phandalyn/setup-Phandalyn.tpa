@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 
 
-EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/JA#PHANDALY.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/PHANDALY.BAF~ EVALUATE_BUFFER
 
 // Correct Phandalyn's script: should talk before attacking evil party members
 COPY_EXISTING ~PHANDALY.BCS~ ~override~
