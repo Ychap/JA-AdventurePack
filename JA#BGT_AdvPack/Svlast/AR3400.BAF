@@ -1,11 +1,11 @@
 IF
-	Global("JA#ZOMBI1","%FirewineBridge%",1)
+	Global("JA#REVEN_SPWN","%FirewineBridge%",1)
 THEN
 	RESPONSE #100
-		SetGlobal("JA#ZOMBI1","%FirewineBridge%",2)
-		CreateCreature("JA#ZOMB1",[3069.2621],14)
+		SetGlobal("JA#REVEN_SPWN","%FirewineBridge%",2)
+		CreateCreature("JA#REVEN",[3069.2621],14)
 		Wait(1)
-		ActionOverride("JA#ZOMB1",Attack("JA#SVLST"))
+		ActionOverride("JA#REVEN",Attack("JA#SVLST"))
 		Continue()
 END
 
