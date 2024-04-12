@@ -23,5 +23,3 @@ THEN
 	RESPONSE #100
 		ForceSpell(Myself,DOPPLEGANGER_CHANGE)
 END
-
-

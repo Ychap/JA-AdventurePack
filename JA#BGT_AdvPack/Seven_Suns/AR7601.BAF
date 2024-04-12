@@ -4,24 +4,20 @@ IF
 	Global("JA#DOPPSE_TALK","GLOBAL",0)
 THEN
 	RESPONSE #100
-		SetGlobal("JA#JHASSO_MOVE","GLOBAL",2)
-		CreateCreature("JHASSO",[283.406],12)
 		CreateCreature("DOPPSS",[337.393],6)
 		CreateCreature("DOPPSS",[266.373],4)
-		SmallWait(5)
-		ActionOverride("DoppSS",Attack("jhasso"))
-		ActionOverride("DoppSS",Attack("jhasso"))
 		Continue()
 END
 
 IF
 	OnCreation()
 	Global("JA#JHASSO_MOVE","GLOBAL",1)
-	Global("JA#DOPPSE_TALK","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#JHASSO_MOVE","GLOBAL",2)
 		CreateCreature("JHASSO",[283.406],12)
+		SmallWait(5)
+		ActionOverride("DoppSS",Attack("jhasso"))
+		ActionOverride("SSDopple",Attack("jhasso"))
 		Continue()
 END
-

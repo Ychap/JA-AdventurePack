@@ -5,6 +5,11 @@ IF ~StateCheck(Myself,STATE_CHARMED)~ THEN 6
   IF ~~ THEN EXIT
 END
 
+IF ~Global("JA#DLG_GUA","LOCALS",1)~ THEN JA#SSUNGU_03
+  SAY @7
+  IF ~~ THEN DO ~EscapeArea()~ EXIT
+END
+
 IF ~NumTimesTalkedTo(0)~ THEN 0
   SAY @1
   IF ~~ THEN REPLY @2 GOTO 1
@@ -20,11 +25,6 @@ END
 IF ~~ THEN 2
   SAY @6
   IF ~~ THEN EXIT
-END
-
-IF ~Global("JA#DLG_GUA","LOCALS",1)~ THEN JA#SSUNGU_03
-  SAY @7
-  IF ~~ THEN DO ~EscapeArea()~ EXIT
 END
 
 IF ~NumTimesTalkedToGT(0)~ THEN JA#SSUNGU_01
@@ -47,7 +47,8 @@ END
 IF ~~ THEN 1
   SAY @13
   IF ~~ THEN REPLY @14 GOTO 2
-  IF ~~ THEN REPLY @15 DO ~ActionOverride(Player1,LeaveAreaLUA("%SWBaldursGate%","",[3648.1404],14))
+  IF ~~ THEN REPLY @15 DO ~
+ActionOverride(Player1,LeaveAreaLUA("%SWBaldursGate%","",[3648.1404],14))
 ActionOverride(Player2,LeaveAreaLUA("%SWBaldursGate%","",[3596.1427],14))
 ActionOverride(Player3,LeaveAreaLUA("%SWBaldursGate%","",[3615.1374],14))
 ActionOverride(Player4,LeaveAreaLUA("%SWBaldursGate%","",[3567.1389],14))

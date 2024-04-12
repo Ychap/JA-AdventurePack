@@ -1,31 +1,7 @@
 IF
-	Global("Doppleganger","GLOBAL",0)
-	Global("JA#JHASSO_MOVE","GLOBAL",0)
-	Global("LaolaSpawn","GLOBAL",0)
-	GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
-	!Exists("LAOLA")
-	OR(2)
-		Global("laola","GLOBAL",1)
-		Global("CheckedSevenSuns","GLOBAL",2)
-	OR(6)
-		InMyArea(Player1)
-		InMyArea(Player2)
-		InMyArea(Player3)
-		InMyArea(Player4)
-		InMyArea(Player5)
-		InMyArea(Player6)
-THEN
-	RESPONSE #100
-		CreateCreature("LAOLA",[3909.1387],0) // Laola Axehand
-		SetGlobal("LaolaSpawn","GLOBAL",1)
-		Continue()
-END
-
-IF
 	GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
 	Global("ScarMission","GLOBAL",1)
 	Global("JA#SSMR4_SPWN","%SWBaldursGate%",0)
-	Global("CheckedSevenSuns","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#SSMR4_SPWN","%SWBaldursGate%",1)

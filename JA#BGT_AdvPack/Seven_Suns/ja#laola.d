@@ -1,10 +1,9 @@
-
 ADD_TRANS_TRIGGER LAOLA 0
 ~Global("ScarMission","GLOBAL",0)~ DO 1 2
 
 
 EXTEND_BOTTOM LAOLA 0
-IF ~Global("ScarMission","GLOBAL",1)~ THEN REPLY @0 GOTO JA#LAOLA_1
+  IF ~Global("ScarMission","GLOBAL",1)~ THEN REPLY @0 GOTO JA#LAOLA_1
 END
 
 

@@ -2,6 +2,7 @@
 // Seven Suns
 ///////////////
 
+
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU4.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#JHASS.CRE~ ~override~
@@ -16,11 +17,33 @@ COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSMR4.CRE~ ~override~
 COPY_EXISTING ~DOPPGR.CRE~ ~override/JA#DPKIZ.CRE~
 	SAY NAME1 @2048
 	SAY NAME2 @2048
-	WRITE_SHORT 0x24 (THIS+10) // Current HP
-	WRITE_SHORT 0x26 (THIS+10) // Maximum HP
+	WRITE_SHORT 0x24 (THIS+25) // Current HP
+	WRITE_SHORT 0x26 (THIS+25) // Maximum HP
 	WRITE_ASCII DEATHVAR ~RASHAD~ #32
 
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.ITM~ ~override~
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSDOP.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSGUA.BAF~ // used by JA#SSGU1.CRE and JA#SSGU4.CRE
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSMER.BAF~ // used in DOPPSM.CRE
+
+
+EXTEND_TOP ~%SWBaldursGate_SevenSuns_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7601.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_SevenSuns_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7602.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR8000.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%SWBaldursGate_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EVALUATE_REGEXP
+		~Global("laola","GLOBAL",1)[%WNL%%MNL%%LNL%%TAB% ]*Global("LaolaSpawn","GLOBAL",0)[%WNL%%MNL%%LNL%%TAB% ]*Global("ScarMission","GLOBAL",1)~
+		~Global("LaolaSpawn","GLOBAL",0) Global("ScarMission","GLOBAL",0)~
+		REPLACE_TEXTUALLY ~CreateCreature("LAOLA",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))~ ~CreateCreature("LAOLA",[3909.1387],0)~
+	END
+BUT_ONLY
+
 
 LAF GET_DLG_STRREF
 	INT_VAR idx_state = 1
@@ -38,6 +61,9 @@ LAF GET_DLG_STRREF
 	RET doppsm_state03_journal = journal_strref
 END
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#doppse.d~ // Doppelganger + merchants
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#ssung.d~ // Guards
+
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	<<<<<<<< ...inlined/doppsm_bgt.d
 	ALTER_TRANS DOPPSM
@@ -48,21 +74,21 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/doppsm_bgt.d~
+
+	// Done in JA#BGT_AdvPack/Seven_Suns/ja#scar_bgt.d
+	// COPY_EXISTING ~SCAR.DLG~ ~override~
+	// 	DECOMPILE_AND_PATCH BEGIN
+	// 		REPLACE_EVALUATE ~Global\(GT\)?("KilledDopple","GLOBAL",\([0-9]+\))~ BEGIN
+	// 			SET num = (~%MATCH1%~ STR_EQ ~GT~) ? MATCH2 : MATCH2 - 1
+	// 		END ~NumDeadGT("SSDOPPLE",%num%)~
+	// 	END
+	// BUT_ONLY
+
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#scar_bgt.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#scar.tra~
 END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#doppse.d~ // Doppelganger + merchants
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSUNG.D~ // Guards
-
-COPY_EXISTING ~DOPPSM.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ END
-	WRITE_BYTE 0x271 1
-	WRITE_BYTE 0x272 1
-	WRITE_BYTE 0x273 155
-
-COPY_EXISTING ~RASHAD.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~GDCHANGE~ script_new = ~JA#DPKIZ~ END
-	ADD_CRE_ITEM ~JA#DPKIZ~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#laola.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#jhasso.d~
 
 /*ACTION_IF GAME_IS ~eet~ BEGIN
 	ADD_JOURNAL EXISTING TITLE (#231394) @1012 @1013
@@ -71,43 +97,37 @@ ACTION_IF GAME_IS ~bgee~ BEGIN
 	ADD_JOURNAL EXISTING TITLE (#31394) @1012 @1013
 END*/
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#JHASSO.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR.D~
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR_bgt.D~ USING ~JA#BGT_AdvPack/languages/%s/ja#scar.tra~
-END
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#laola.D~
+
+COPY_EXISTING ~DOPPSM.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ END
+	LPF INSERT_CRE_SCRIPT INT_VAR offset = SCRIPT_OVERRIDE STR_VAR script_new = ~JA#SSMER~ END
+	WRITE_BYTE 0x271 1 // General: HUMANOID
+	WRITE_BYTE 0x272 1 // Race: HUMAN
+	WRITE_BYTE 0x273 155 // Class: INNOCENT
+BUT_ONLY
+
+COPY_EXISTING ~RASHAD.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~GDCHANGE~ script_new = ~JA#DPKIZ~ END
+	ADD_CRE_ITEM ~JA#DPKIZ~ #0 #0 #0 ~IDENTIFIED~ ~LRING~ // Turn into JA#DPKIZ.CRE (Kizska)
+BUT_ONLY
+
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
-	PHP_EACH actors AS i => actor BEGIN
-		READ_ASCII actor+0x80 actor_filename
-		PATCH_IF (~%actor_filename%~ STR_EQ ~DOPPSM~) BEGIN // MERCHANT
-			WRITE_SHORT actor+0x20 331
-			WRITE_SHORT actor+0x22 303
-			WRITE_SHORT actor+0x24 331
-			WRITE_SHORT actor+0x26 303
-			WRITE_SHORT actor+0x34 15
-		END
-	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	// add new actor
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 433
-		fj_loc_y          = 330
-		fj_dest_x         = 433
-		fj_dest_y         = 330
-		fj_orientation    = 14
+		fj_loc_x          = 472
+		fj_loc_y          = 272
+		fj_dest_x         = 472
+		fj_dest_y         = 272
+		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#SSGU1~
-		fj_dlg_resref	  = ~JA#SSGU1~
 	END
-
+	LPF MUTE_AREA_SONG END
+BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
@@ -129,9 +149,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 			WRITE_SHORT actor+0x34 1
 		END
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	// add new actors
 	LPF fj_are_structure
 		INT_VAR
@@ -144,7 +161,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~JhassoDopp~
 		fj_cre_resref     = ~JA#JHASS~
-		fj_dlg_resref	  = ~JA#DPSS3~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -157,7 +173,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~MercDopp~
 		fj_cre_resref     = ~JA#SSMR2~
-		fj_dlg_resref	  = ~JA#DPSS2~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -170,7 +185,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~MercDopp~
 		fj_cre_resref     = ~JA#SSMR1~
-		fj_dlg_resref	  = ~JA#DPSS1~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -183,7 +197,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard~
 		fj_cre_resref     = ~JA#SSGU4~
-		fj_dlg_resref	  = ~JA#SSGU4~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -196,8 +209,9 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~MercDopp~
 		fj_cre_resref     = ~JA#SSMR3~
-		fj_dlg_resref	  = ~JA#SSMR3~
 	END
+	LPF MUTE_AREA_SONG END
+BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
@@ -212,9 +226,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		END
 	END
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPSS~ END // Doppelganger
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
 	// add new actors
 	LPF fj_are_structure
 		INT_VAR
@@ -227,7 +238,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard1~
 		fj_cre_resref     = ~JA#SSGU2~
-		fj_dlg_resref	  = ~JA#SSGU3~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -240,7 +250,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard2~
 		fj_cre_resref     = ~JA#SSGU3~
-		fj_dlg_resref	  = ~JA#SSGU3~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -253,22 +262,6 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Guard3~
 		fj_cre_resref     = ~JA#SSGU3~
-		fj_dlg_resref	  = ~JA#SSGU3~
 	END
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
-
-COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~Global("laola","GLOBAL",1)~ ~False()~
-	END
-BUT_ONLY
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#INITD.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#INITF.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSDOP.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSGUA.BAF~
-
-EXTEND_TOP ~%SWBaldursGate_SevenSuns_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7601.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_SevenSuns_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7602.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR8000.BAF~ EVALUATE_BUFFER

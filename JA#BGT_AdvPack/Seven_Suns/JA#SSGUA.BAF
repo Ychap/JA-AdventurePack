@@ -1,22 +1,12 @@
 IF
-	!See("SSDopple")
+	See([PC])
+	StateCheck("SSDopple", STATE_DEAD)
 	!See([ENEMY])
 	Global("JA#DLG_GUA","LOCALS",0)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#DLG_GUA","LOCALS",1)
 		Dialogue([PC])
-END
-
-IF
-	OR(2)
-		Killed("SSDopple")
-		Killed("DoppSS")
-THEN
-	RESPONSE #100
-		IncrementGlobal("SPRITE_IS_DEADDOPPSS","GLOBAL",1)
-		Wait(1)
-		Continue()
 END
 
 IF
@@ -29,6 +19,13 @@ THEN
 		AttackReevaluate([ENEMY],30)
 END
 
-
-
-
+IF
+	Range([PC],5)
+	See([PC])
+	NumberOfTimesTalkedTo(0)
+	Allegiance(Myself,NEUTRAL)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END

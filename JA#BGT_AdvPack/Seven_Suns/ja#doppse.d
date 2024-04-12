@@ -8,10 +8,8 @@ BEGIN ~JA#DPSS3~
 // END JA#DPSS3
 
 
-CHAIN IF ~Global("JA#DOPPSE_TALK","GLOBAL",0)~ THEN JA#DPSS1 ja#doppse_01
-  @0
-  DO ~SetGlobal("JA#DOPPSE_TALK","GLOBAL",1)~
-  == JA#DPSS1 @1
+CHAIN IF ~True()~ THEN JA#DPSS1 ja#doppse_01
+  @0 = @1
   == JA#DPSS2 @2
   == JA#DPSS3 @3
   == JA#DPSS1 @4
@@ -21,7 +19,7 @@ CHAIN IF ~Global("JA#DOPPSE_TALK","GLOBAL",0)~ THEN JA#DPSS1 ja#doppse_01
   == JA#DPSS3 @8
   == JA#DPSS1 @9
 END
-  IF ~~ THEN DO ~SetGlobal("Doppleganger","GLOBAL",1)~ UNSOLVED_JOURNAL #%doppse_state03_journal% EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#DOPPSE_TALK","GLOBAL",1) SetGlobal("Doppleganger","GLOBAL",1)~ UNSOLVED_JOURNAL #%doppse_state03_journal% EXIT
 
 
 
@@ -36,12 +34,12 @@ END
 
 IF ~~ THEN 1
   SAY @14
-  IF ~~ THEN UNSOLVED_JOURNAL #%doppse_state01_journal% EXTERN JA#SSGU4 0 // in ja#ssung.d
+  IF ~~ THEN EXTERN JA#SSGU4 0 // in ja#ssung.d
 END
 
 IF ~~ THEN 2
   SAY @15
-  IF ~~ THEN DO ~ForceSpell(Myself,DOPPLEGANGER_CHANGE)~ EXIT
+  IF ~~ THEN DO ~ForceSpell(Myself,DOPPLEGANGER_CHANGE_DEFAULT_LESSER)~ EXIT
 END
 
 // END JA#SSMR3
@@ -67,4 +65,4 @@ IF ~~ THEN 2
   IF ~~ THEN DO ~EscapeArea()~ UNSOLVED_JOURNAL #%doppsm_state03_journal% EXIT
 END
 
-// END JA#SSMR3
+// END JA#SSMR4
