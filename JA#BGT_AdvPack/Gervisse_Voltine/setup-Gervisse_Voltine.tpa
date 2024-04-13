@@ -87,15 +87,15 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_type         = 2     // travel
-		fj_box_left     = 4000  // kleinstes x
-		fj_box_top      = 1780  // kleinstes y
-		fj_box_right    = 4200  // größtes x
-		fj_box_bottom   = 1950  // größtes y
+		fj_box_left     = 4020  //kleinstes x
+		fj_box_top      = 1810  //kleinstes y
+		fj_box_right    = 4143  //größtes x
+		fj_box_bottom   = 1953   //größtes y
 		fj_cursor_idx   = 30    // door
-		fj_vertex_0     = 4000 + (1780 << 16)   // kleinstes x +  kleinstes y
-		fj_vertex_1     = 4200 + (1780 << 16)   // größtes x + kleinstes y
-		fj_vertex_2     = 4200 + (1950 << 16)   // größtes x + größtes y
-		fj_vertex_3     = 4000 + (1950 << 16)   // kleinstes x + größtes y
+		fj_vertex_0     = 4020 + (1810 << 16)   //kleinstes x +  kleinstes y
+		fj_vertex_1     = 4020 + (1894 << 16)   //größtes x + kleinstes y
+		fj_vertex_2     = 4143 + (1953 << 16)   //größtes x + größtes y
+		fj_vertex_3     = 4143 + (1867 << 16)   //kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
 		fj_name             = ~DOORJA#C07~

@@ -87,21 +87,21 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_type         = 2    // travel
-		fj_box_left     = 1030
-		fj_box_top      = 806
-		fj_box_right    = 1260
-		fj_box_bottom   = 990
-		fj_cursor_idx	= 30
-		fj_loc_x		= 1068
-		fj_loc_y		= 850
-		fj_vertex_0     = 1133 + (806 << 16)
-		fj_vertex_1     = 1030 + (881 << 16)
-		fj_vertex_2     = 1114 + (990 << 16)
-		fj_vertex_3     = 1260 + (886 << 16)
+		fj_box_left     = 970
+		fj_box_top      = 750
+		fj_box_right    = 1133
+		fj_box_bottom   = 908
+		fj_cursor_idx   = 30
+		fj_loc_x        = 1068
+		fj_loc_y        = 850
+		fj_vertex_0     = 1042 + (750 << 16)
+		fj_vertex_1     = 970 + (830 << 16)
+		fj_vertex_2     = 1053 + (908 << 16)
+		fj_vertex_3     = 1133 + (826 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_destination_area	= ~JA#C02~
-		fj_destination_name	= ~FR8200~
+		fj_destination_area = ~JA#C02~
+		fj_destination_name = ~FR8200~
 		fj_name             = ~DOORJA#C02~
 	END
 	// add entrance
