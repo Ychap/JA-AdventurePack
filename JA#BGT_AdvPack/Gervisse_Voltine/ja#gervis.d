@@ -41,13 +41,6 @@ END
 
 APPEND GERVIS
 
-IF WEIGHT #%gervis_state01_weight% ~Global("JA#GERVIS_QUEST","GLOBAL",1) Dead("Voltine")~ THEN voltine_is_dead
-  SAY @91
-  IF ~~ THEN REPLY @92 GOTO 2
-  IF ~~ THEN REPLY @6 GOTO 4
-END
-
-
 IF ~~ THEN JA_GERVIS_0
   SAY #%gervis_state01_strref%
   IF ~~ THEN REPLY @83 GOTO JA_GERVIS_5
@@ -86,7 +79,14 @@ END
 
 IF ~~ THEN JA_GERVIS_5
   SAY @15 = @16
-  IF ~~ THEN DO ~SetGlobal("JA#GERVIS_QUEST","GLOBAL",1)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#GERVIS_QUEST","GLOBAL",1)~ UNSOLVED_JOURNAL #%gervis_state01_journal% EXIT
+END
+
+
+IF WEIGHT #%gervis_state01_weight% ~Global("JA#GERVIS_QUEST","GLOBAL",1) Dead("Voltine")~ THEN voltine_is_dead
+  SAY @91
+  IF ~~ THEN REPLY @92 GOTO 2
+  IF ~~ THEN REPLY @6 GOTO 4
 END
 
 
