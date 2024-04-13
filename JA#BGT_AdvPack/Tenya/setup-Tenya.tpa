@@ -48,7 +48,7 @@ LAF GET_DLG_SCRIPT
 	RET state18_response0_action = response_action
 END
 OUTER_PATCH_SAVE ~fishermenEscapeArea~ ~%state18_response0_action%~ BEGIN
-	REPLACE_TEXTUALLY ~\([%WNL%%MNL%%LNL%]\|.\)*GiveItem("BLUN03",\[PC\])~ ~~
+	REPLACE_TEXTUALLY ~\([%WNL%%MNL%%LNL%]\|.\)*GiveItem("BLUN03",\[PC\])~ ~NoAction()~
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#sonner.d~
