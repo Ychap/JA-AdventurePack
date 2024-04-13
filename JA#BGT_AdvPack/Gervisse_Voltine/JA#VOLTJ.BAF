@@ -21,7 +21,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",2)
-		MoveToPoint([838.401])
+		MoveToPoint([991.375])
 		Wait(4)
 END
 
@@ -31,7 +31,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",3)
-		MoveToPoint([905.311])
 		Wait(4)
 END
 

@@ -6,7 +6,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",1)
-		CreateCreature("JA#VOLTJ",[781.478],5)
+		CreateCreature("JA#VOLTJ",[991.375],7)
 		ActionOverride("JA#VOLTJ",DialogInterrupt(FALSE))
 		Continue()
 END
