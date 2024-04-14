@@ -2,7 +2,20 @@
 // Mini-Quest: "The mystery of the silent ghostly voice"
 //////////////////////////////////////////////////////////
 
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#C00.ARE~ ~override~
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		LPF ALTER_AREA_REGION
+			STR_VAR region_name			= ~Door8200~
+					destination_area	= EVAL ~%SEBaldursGate%~
+		END
+	END
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#C01.ARE~ ~override~
+
+
 COPY ~JA#BGT_AdvPack/Miniquest/JA#BEHOL.BAM~ ~override~
+
 COPY ~JA#BGT_AdvPack/Miniquest/JA#HRP01.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Miniquest/JA#CHRP1.BAM~ ~override~
 
@@ -24,22 +37,18 @@ COPY_EXISTING ~BART8.CRE~ ~override~
 
 COPY_EXISTING ~ALYTH.CRE~ ~override~
 	SAY NAME1 @17
-	SAY NAME2 @18
+	SAY NAME2 @17
 	// WRITE_SHORT 0x28 0x1163 // make her halfelf
 	// WRITE_SHORT 0x272 0x03
 	// WRITE_SHORT 0x273 0x0c
 
-ACTION_IF (FILE_EXISTS_IN_GAME tavern.mve) OR (FILE_EXISTS_IN_GAME ubtavern.mve) BEGIN
-	// with EET or bg1ub
+ACTION_IF (FILE_EXISTS_IN_GAME ~TAVERN.WBM~) OR (FILE_EXISTS_IN_GAME ~UBTAVERN.MVE~) BEGIN // EET or BG1UB
 	PRINT ~Skipping Restored Elfsong Tavern Movie: Is already restored by another mod.~
 END ELSE BEGIN
 	COPY ~JA#BGT_AdvPack/Miniquest/JA#TAVER.MVE~ ~override~
 END
 
 
-EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7704.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706.BAF~ EVALUATE_BUFFER
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#CUKEG.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#KEG01.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#ESELY.BAF~
@@ -50,9 +59,14 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY2.BAF~
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#ALYTH.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#BARTLEY.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#BRULGON.D~
+EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7704.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706.BAF~ EVALUATE_BUFFER
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#alyth.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#bartley.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#brulgon.d~
 
 LAF GET_DLG_STRREF
 	INT_VAR idx_state = 4
@@ -60,54 +74,54 @@ LAF GET_DLG_STRREF
 	RET silenc_state04_journal = journal_strref
 END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#RUM01.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#rum01.d~
 COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT)
 			  ~INN0705.STO~ ~override~ // BART8.DLG(EE)
 	WRITE_ASCII 0x44 ~JA#RUM01~ #8
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#NATHAN.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#SERW1.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#COOK1.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#MTOB5.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY2.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILYN.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#VAALA.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#ESELY.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#ETC00.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#nathan.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#serw1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#cook1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#mtob5.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily2.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wilyn.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#vaala.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#esely.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#etc00.d~
 
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#THF01.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF02.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF03.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF04.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF05.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF06.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF02.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF03.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF04.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF05.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF06.CRE~ ~override~
 	SAY NAME1 @19
 	SAY NAME2 @19
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override~
 	SAY NAME1 @20
 	SAY NAME2 @20
 
 COPY_EXISTING ~JA#ETC01.CRE~ ~override/JA#ETC03.CRE~
-	WRITE_ASCII 0x2CC ~JA#ETC03~ #8 // DLG
+	WRITE_ASCII DIALOG ~JA#ETC03~ #8
 COPY_EXISTING ~JA#ETC02.CRE~ ~override/JA#ETC04.CRE~
-	WRITE_ASCII 0x2CC ~JA#ETC04~ #8 // DLG
+	WRITE_ASCII DIALOG ~JA#ETC04~ #8
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#BRULG.CRE~ ~override~
 	SAY NAME1 @21
-	SAY NAME2 @22
-	WRITE_ASCII 0x2CC ~JA#BRULG~ #8 // DLG
+	SAY NAME2 @21
+	WRITE_ASCII DIALOG ~JA#BRULG~ #8
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#NATHA.CRE~ ~override~
 	SAY NAME1 @23
 	SAY NAME2 @23
-	WRITE_ASCII 0x2CC ~JA#NATHA~ #8 // DLG
+	WRITE_ASCII DIALOG ~JA#NATHA~ #8
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#WILYN.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#WILY1.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#WILY1.CRE~ ~override~
 	SAY NAME1 @24
 	SAY NAME2 @24
 
@@ -122,7 +136,7 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#ESELY.CRE~ ~override~
 COPY_EXISTING ~SERWEN.CRE~ ~override/JA#SERW1.CRE~
 	SAY NAME1 @27
 	SAY NAME2 @28
-	WRITE_ASCII 0x2cc ~JA#SERW1~ #8 // DLG
+	WRITE_ASCII DIALOG ~JA#SERW1~ #8
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
@@ -134,7 +148,7 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#KEG01.CRE~ ~override~
 	SAY NAME1 @29
 	SAY NAME2 @29
 	PATCH_IF GAME_IS ~eet bgee~ BEGIN
-		WRITE_LONG 0x28	0xCC00
+		WRITE_LONG 0x28	0xCC00 // Animation: KEG1
 	END
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#KEG02.CRE~ ~override~
@@ -142,20 +156,12 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#KEG02.CRE~ ~override~
 	SAY NAME2 @31
 
 COPY_EXISTING ~MCOOK2.CRE~ ~override/JA#COOK1.CRE~
-	WRITE_ASCII 0x280 ~JA#MCOOK2~ #32
-	WRITE_ASCII 0x2cc ~JA#COOK1~ #8 // DLG
+	WRITE_ASCII DEATHVAR ~JA#MCOOK2~ #32
+	WRITE_ASCII DIALOG ~JA#COOK1~ #8
 
-COPY ~JA#BGT_AdvPack/Miniquest/JA#C00.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door8200~
-					destination_area	= EVAL ~%SEBaldursGate%~
-		END
-	END
-COPY ~JA#BGT_AdvPack/Miniquest/JA#C01.ARE~ ~override~
 
 COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
-	LPF  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
 		fj_type         = 2     // travel
 		fj_box_left     = 1819  // kleinstes x
@@ -175,7 +181,7 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_destination_area = ~JA#C00~
 		fj_destination_name = ~FR8200~
 	END
-	LPF  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 1730
 		fj_loc_y       = 1828
@@ -360,7 +366,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_box_right         = 931
 		fj_box_bottom        = 279
 		fj_cursor_idx        = 22
-		fj_info_point_strref = RESOLVE_STR_REF (@32)
+		fj_info_point_strref = RESOLVE_STR_REF(@32)
 		fj_loc_x             = 891
 		fj_loc_y             = 203
 		fj_vertex_0          = 891 + (203 << 16)

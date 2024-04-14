@@ -3,14 +3,14 @@ IF
 	Global("BG_AttackedThieves","GLOBAL",1)
 	Global("JA#THIEVES_REVENGE","%EBaldursGate_ElfsongTavern_L1%",0)
 	OR(6)
-	Entered(Player1)
-	Entered(Player2)
-	Entered(Player3)
-	Entered(Player4)
-	Entered(Player5)
-	Entered(Player6)
-	!StateCheck(LastTrigger,STATE_INVISIBLE)
-	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+		Entered(Player1)
+		Entered(Player2)
+		Entered(Player3)
+		Entered(Player4)
+		Entered(Player5)
+		Entered(Player6)
+		!StateCheck(LastTrigger,STATE_INVISIBLE)
+		!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#THIEVES_REVENGE","%EBaldursGate_ElfsongTavern_L1%",1)
@@ -21,5 +21,3 @@ THEN
 		CreateCreature("JA#THF05",[559.647],14)
 		CreateCreature("JA#THF06",[535.490],13)
 END
-
-
