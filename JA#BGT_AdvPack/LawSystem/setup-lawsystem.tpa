@@ -26,19 +26,19 @@ COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW00.BCS~
 		PATCH_MATCH ~%DEST_RES%~ WITH
 			~JA#LAW00~ BEGIN
 				REPLACE_TEXTUALLY ~Wait(3)\([%WNL%%MNL%%LNL%%TAB% ]+CreateCreature\)~ ~Wait(1) ActionOverride("Alyth",DisplayString(Myself,@39)) Wait(2)\1~
-				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW01"))~
+				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1\.-1\],[0S])~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW01"))~
 			END
 			~JA#LAW04~ BEGIN
-				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW05"))~
+				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1\.-1\],[0S])~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW05"))~
 			END
 			DEFAULT
-				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW03"))~
+				REPLACE_TEXTUALLY ~CreateCreature("HOUSEN",\[-1\.-1\],[0S])~ ~\0 ActionOverride("HouseEnforcer",SetDialog("JA#LAW03"))~
 		END
 	END
 // From Dukal Palace and Husam Story
 COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW05.BCS~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~CreateCreature("FLAMEN",\[-1.-1\],[^)]+)~ ~\0 ActionOverride("FlamingEnforcer",SetDialog("JA#FLAM2"))~
+		REPLACE_TEXTUALLY ~CreateCreature("FLAMEN",\[-1\.-1\],[0S])~ ~\0 ActionOverride("FlamingEnforcer",SetDialog("JA#FLAM2"))~
 	END
 
 
