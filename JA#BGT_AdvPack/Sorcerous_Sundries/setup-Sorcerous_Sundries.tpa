@@ -28,6 +28,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
 
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
+	LPF MUTE_AREA_SONG END
 	// add new actors
 	LPF fj_are_structure
 		INT_VAR
@@ -67,12 +68,10 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = ~JA#AMSS1~
 	END
-	// Deactivate songs from outside
-	READ_LONG 0xbc ofs_songs
-	WRITE_LONG ofs_songs+0x0 0
-	WRITE_LONG ofs_songs+0x4 0
+BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
+	LPF MUTE_AREA_SONG END
 	// add new actor
 	LPF fj_are_structure
 		INT_VAR
@@ -100,10 +99,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = ~JA#AMSS1~
 	END
-	// Deactivate songs from outside
-	READ_LONG 0xbc ofs_songs
-	WRITE_LONG ofs_songs+0x0 0
-	WRITE_LONG ofs_songs+0x4 0
+BUT_ONLY
 
 
 // COPY_EXISTING ~STO0703.STO~ ~override~
