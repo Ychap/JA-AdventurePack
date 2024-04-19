@@ -39,7 +39,7 @@ COPY_EXISTING ~%SWBaldursGate_BCS%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EVALUATE_REGEXP
 		~Global("laola","GLOBAL",1)[%WNL%%MNL%%LNL%%TAB% ]*Global("LaolaSpawn","GLOBAL",0)[%WNL%%MNL%%LNL%%TAB% ]*Global("ScarMission","GLOBAL",1)~
-		~Global("LaolaSpawn","GLOBAL",0) Global("ScarMission","GLOBAL",0)~
+		~Global("LaolaSpawn","GLOBAL",0)~
 		REPLACE_TEXTUALLY ~CreateCreature("LAOLA",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))~ ~CreateCreature("LAOLA",[3909.1387],0)~
 	END
 BUT_ONLY
