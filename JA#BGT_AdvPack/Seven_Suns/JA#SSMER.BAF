@@ -4,12 +4,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#LEAVE_AREA","LOCALS",1)
+		SmallWait(5)
+		DisplayStringHead(Myself,46151) // Hilfe!
 		EscapeArea()
 END
 
 IF
 	Global("ScarMission","GLOBAL",1)
-	Global("CheckedSevenSuns","GLOBAL",1)
     See([PC])
     NumberOfTimesTalkedTo(0)
 	Global("JA#SSMER_DLG","GLOBAL",0)
