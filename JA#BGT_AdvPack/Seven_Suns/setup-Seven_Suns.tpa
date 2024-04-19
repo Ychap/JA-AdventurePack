@@ -96,13 +96,40 @@ END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#laola.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#jhasso.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#ivanne.d~
 
-/*ACTION_IF GAME_IS ~eet~ BEGIN
-	ADD_JOURNAL EXISTING TITLE (#231394) @1012 @1013
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	WITH_TRA ~JA#BGT_AdvPack/languages/%s/ja#jhasso.tra~ BEGIN
+		OUTER_SET JA#JHASSO_20 = STATE_WHICH_SAYS @50 FROM ~JHASSO.DLG~
+		OUTER_SET JA#JHASSO_21 = STATE_WHICH_SAYS @52 FROM ~JHASSO.DLG~
+
+		<<<<<<<< ...inlined/jhasso_bgt.d
+		ADD_TRANS_ACTION JHASSO
+		BEGIN %JA#JHASSO_20% %JA#JHASSO_21% END
+		BEGIN END
+		~EraseJournalEntry(@1012) EraseJournalEntry(@1013) EraseJournalEntry(@1014)~
+
+		ALTER_TRANS JHASSO
+		BEGIN %JA#JHASSO_20% %JA#JHASSO_21% END
+		BEGIN 0 END
+		BEGIN
+		  "SOLVED_JOURNAL" ~@51~
+		END
+		>>>>>>>>
+		COMPILE EVALUATE_BUFFER ~...inlined/jhasso_bgt.d~
+	END
 END
-ACTION_IF GAME_IS ~bgee~ BEGIN
-	ADD_JOURNAL EXISTING TITLE (#31394) @1012 @1013
-END*/
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	<<<<<<<< ...inlined/harbor_bgt.d
+	ADD_TRANS_ACTION HARBOR
+	BEGIN 9 END
+	BEGIN END
+	~EraseJournalEntry(@1012) EraseJournalEntry(@1013) EraseJournalEntry(@1014)~
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/harbor_bgt.d~
+
+	ADD_JOURNAL EXISTING @1012 @1013 @1014
+END
 
 
 COPY_EXISTING ~DOPPSM.CRE~ ~override~
