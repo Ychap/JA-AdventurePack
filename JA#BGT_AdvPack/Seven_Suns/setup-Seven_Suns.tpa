@@ -13,6 +13,9 @@ COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU2.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU5.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSMR3.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSMR4.CRE~ ~override~
+	PATCH_IF GAME_IS ~bgee~ BEGIN
+		SAY INITIAL_MEETING ~~ [TANNER20]
+	END
 
 COPY_EXISTING ~DOPPGR.CRE~ ~override/JA#DPKIZ.CRE~
 	SAY NAME1 @2048
