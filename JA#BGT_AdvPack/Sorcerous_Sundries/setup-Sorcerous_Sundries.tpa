@@ -27,8 +27,9 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.D~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
 
 
+COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#AMSS1.WAV~ ~override~
+
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
-	LPF MUTE_AREA_SONG END
 	// add new actors
 	LPF fj_are_structure
 		INT_VAR
@@ -54,7 +55,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_name           = ~Velara~
 		fj_cre_resref     = ~JA#SSC01~
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
@@ -68,10 +69,10 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = ~JA#AMSS1~
 	END
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
-	LPF MUTE_AREA_SONG END
 	// add new actor
 	LPF fj_are_structure
 		INT_VAR
@@ -85,7 +86,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		fj_name           = ~Naiduja~
 		fj_cre_resref     = ~JA#SSELF~
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
@@ -99,6 +100,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = ~JA#AMSS1~
 	END
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 
@@ -107,5 +109,3 @@ BUT_ONLY
 // ADD_STORE_ITEM ~SCRL6F~ BEFORE ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #3 // Strahl der Schwächung
 // ADD_STORE_ITEM ~SCRLA3~ AFTER ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #4 // Glitzerstaub
 // ADD_STORE_ITEM ~SCRLA7~ AFTER ~SCRLA6~ #0 #0 #0 ~IDENTIFIED~ #2 // Magie zerstören
-
-COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#AMSS1.WAV~ ~override~
