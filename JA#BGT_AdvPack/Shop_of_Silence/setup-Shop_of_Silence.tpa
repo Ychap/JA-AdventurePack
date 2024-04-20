@@ -121,6 +121,6 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = ~GAHOUSE3~
+		fj_wav_resref0    = ~GAHOUSE2~
 	END
 BUT_ONLY
