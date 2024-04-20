@@ -13,6 +13,8 @@ THEN
 		CreateCreature("JA#DOPP8",[905.422],3) // Gast
 		CreateCreature("JA#DOPP7",[860.464],6) // Gast
 		CreateCreature("JA#DOPP9",[964.497],4) // Gast
+		ActionOverride("DOPZORL",NoAction()) // Compatibility with SCS
+		Continue()
 END
 
 IF
@@ -44,7 +46,7 @@ THEN
 END
 
 IF
-	NumDead("DopZorl",10)
+	NumDeadGT("DopZorl",9)
 	Dead("Zorl")
 	Dead("Irlentre")
 	Global("AldethDopple","GLOBAL",0)
