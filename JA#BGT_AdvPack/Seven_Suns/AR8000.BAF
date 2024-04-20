@@ -1,6 +1,7 @@
 IF
 	GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
 	Global("ScarMission","GLOBAL",1)
+	Global("Doppleganger","GLOBAL",0)
 	Global("JA#SSMR4_SPWN","%SWBaldursGate%",0)
 THEN
 	RESPONSE #100
