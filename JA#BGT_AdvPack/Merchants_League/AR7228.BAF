@@ -1,0 +1,9 @@
+IF
+	Global("AldethMove","GLOBAL",2)
+	!Exists("JA#DEAGA")
+	!Dead("JA#DEAGA")
+THEN
+	RESPONSE #100
+		CreateCreature("JA#DEAGA",[807.736],14)
+		Continue()
+END
