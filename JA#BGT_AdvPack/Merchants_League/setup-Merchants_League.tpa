@@ -3,6 +3,12 @@
 /////////////////////////////////////
 
 
+// Restore party part only in BGT (already restored in EE)
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	INCLUDE ~JA#BGT_AdvPack/Merchants_League/party/setup-party.tpa~
+END
+
+
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#MLBAR.STO~ ~override~
 
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.CRE~ ~override~
@@ -296,9 +302,3 @@ BUT_ONLY
 COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
 	LPF REPLACE_AREA_ITEM STR_VAR old_item = ~SW1H03~ new_item = ~SW1H02~ END
 BUT_ONLY
-
-
-// Restore party part only in BGT (already restored in EE)
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	INCLUDE ~JA#BGT_AdvPack/Merchants_League/party/setup-party.tpa~
-END

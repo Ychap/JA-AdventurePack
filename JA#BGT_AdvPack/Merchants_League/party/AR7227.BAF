@@ -6,5 +6,4 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("AldethDopple","GLOBAL",6)
-		Continue()
 END

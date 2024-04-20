@@ -1,5 +1,4 @@
-ADD_STATE_TRIGGER ZORL 4
-~AreaCheck("%SWBaldursGate_MerchantLeague_L3%") Global("JA#CUIRL","GLOBAL",50)~
+ADD_STATE_TRIGGER ZORL 4 ~AreaCheck("%SWBaldursGate_MerchantLeague_L3%") Global("JA#CUIRL","GLOBAL",50)~
 
 
 ALTER_TRANS ZORL
