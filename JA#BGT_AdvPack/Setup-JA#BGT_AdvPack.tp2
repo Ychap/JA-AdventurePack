@@ -363,6 +363,7 @@ INCLUDE ~JA#BGT_AdvPack/Counting_House/setup-Counting_House.tpa~
 
 BEGIN ~Merchants' League investigations~ DESIGNATED 27
 LABEL "JA#BGT_AdvPack-Merchants_League"
+FORBID_COMPONENT ~stratagems/setup-stratagems.tp2~ 7000 ~This component cannot be installed after Sword Coast Stratagems component "Improved doppelgangers"~
 
 INCLUDE ~JA#BGT_AdvPack/Merchants_League/setup-Merchants_League.tpa~
 

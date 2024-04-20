@@ -2,9 +2,8 @@
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/JA#CUIRL.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/JA#ZORL.BAF~
 
-
-EXTEND_TOP ~ZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/ZORL.BAF~ EVALUATE_BUFFER
 
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/AR7227.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/AR7228.BAF~ EVALUATE_BUFFER
@@ -21,6 +20,7 @@ BUT_ONLY
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/ja#aldeth.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/ja#zorl.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
 
+// JA#ZORL.BCS is added to ZORL.CRE in ../setup-Merchants_League.tpa
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPLE~ END
