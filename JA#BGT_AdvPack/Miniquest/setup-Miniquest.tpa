@@ -371,7 +371,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type   = region
 		fj_name             = ~JA#BEHOL~
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 384
@@ -418,9 +418,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_name = ~Beholder~
 		fj_bam_resref = ~JA#BEHOL~
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
@@ -428,7 +426,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 		INT_VAR fj_delete_mode = 0
 		STR_VAR fj_structure_type = ambient
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 384
@@ -442,9 +440,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 		fj_name           = ~Main Ambient~
 		fj_wav_resref0    = ~AMB_M08A~
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 MKDIR ~Music\JA#ESTA~

@@ -177,8 +177,6 @@ COPY_EXISTING ~ALDETH.CRE~ ~override~
 BUT_ONLY
 
 
-COPY_EXISTING ~AM0704.WAV~ ~override~
-
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 	LPF ALTER_AREA_ACTOR
 		INT_VAR
@@ -209,25 +207,23 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 			fj_dlg_resref 	  = EVAL ~JA#DOPP%i%~
 		END
 	END
-	// Add Ambient 1
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x           = 50
-		fj_loc_y           = 50
-		fj_radius          = 500
-		fj_volume_variance = 40
-		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
-		STR_VAR
-		fj_structure_type = ambient
-		fj_name           = ~AM0704~
-		fj_wav_resref0    = ~AM0704~
+	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
+		// add ambient
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x           = 50
+			fj_loc_y           = 50
+			fj_radius          = 500
+			fj_volume_variance = 40
+			fj_sound_num       = 1
+			fj_flags 		   = 0b0000000111
+			STR_VAR
+			fj_structure_type = ambient
+			fj_name           = ~Main Ambient~
+			fj_wav_resref0    = ~AM0704~
+		END
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
-	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
@@ -262,47 +258,43 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		lock_difficulty = 80
 		container_key = ~JA#ZRLKY~
 	END
-	// Add Ambient 1
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x           = 50
-		fj_loc_y           = 50
-		fj_radius          = 500
-		fj_volume_variance = 20
-		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
-		STR_VAR
-		fj_structure_type = ambient
-		fj_name           = ~AM0704~
-		fj_wav_resref0    = ~AM0704~
+	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
+		// add ambient
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x           = 50
+			fj_loc_y           = 50
+			fj_radius          = 500
+			fj_volume_variance = 20
+			fj_sound_num       = 1
+			fj_flags 		   = 0b0000000111
+			STR_VAR
+			fj_structure_type = ambient
+			fj_name           = ~Main Ambient~
+			fj_wav_resref0    = ~AM0704~
+		END
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
-	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
-	// Add Ambient 1
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x           = 50
-		fj_loc_y           = 50
-		fj_radius          = 500
-		fj_volume_variance = 20
-		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
-		STR_VAR
-		fj_structure_type = ambient
-		fj_name           = ~AM0704~
-		fj_wav_resref0    = ~AM0704~
+	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
+		// add ambient
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x           = 50
+			fj_loc_y           = 50
+			fj_radius          = 500
+			fj_volume_variance = 20
+			fj_sound_num       = 1
+			fj_flags 		   = 0b0000000111
+			STR_VAR
+			fj_structure_type = ambient
+			fj_name           = ~Main Ambient~
+			fj_wav_resref0    = ~AM0704~
+		END
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	WRITE_ASCII "JA#OFF_SNG" + 0x28 ~NONE~ #8
-	WRITE_ASCII "JA#OFF_SNG" + 0x3c ~NONE~ #8
+	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
