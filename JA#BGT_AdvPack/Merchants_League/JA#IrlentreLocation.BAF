@@ -1,0 +1,11 @@
+IF
+	OR(2)
+		Global("LetThePartyBegin","GLOBAL",1)
+		Global("ZorlDopple","GLOBAL",1)
+	Exists("Irlentre")
+	!Dead("Irlentre")
+THEN
+	RESPONSE #100
+		SaveObjectLocation("MYAREA","JA#IrlentreLocation","Irlentre")
+		Continue()
+END

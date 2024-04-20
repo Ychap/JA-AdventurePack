@@ -59,6 +59,15 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.BAF~
 
 
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	// On doppelganger reveal, set names ~Shalak~ and ~Jased~
+	EXTEND_TOP ~DOPZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/DOPZORL.BAF~ EVALUATE_BUFFER
+
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#IrlentreLocation.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#ZorlLocation.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#IrlentreLocation.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#ZorlLocation.BAF~ EVALUATE_BUFFER
+END
 EXTEND_BOTTOM ~IRLENTRE.BCS~ ~JA#BGT_AdvPack/Merchants_League/IRLENTRE.BAF~ EVALUATE_BUFFER
 EXTEND_BOTTOM ~ZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/ZORL.BAF~ EVALUATE_BUFFER
 
@@ -68,6 +77,12 @@ EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7229.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%NBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7300.BAF~ EVALUATE_BUFFER
 
+
+COPY_EXISTING ~IRLENTRE.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~CreateCreature("DOPZORL",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))~ ~NoAction()~
+	END
+BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_BCS%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
