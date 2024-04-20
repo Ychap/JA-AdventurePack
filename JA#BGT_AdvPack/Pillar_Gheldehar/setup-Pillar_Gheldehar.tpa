@@ -37,6 +37,7 @@ COPY ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#PILAX.ITM~ ~override~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#GHELD.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Pillar_Gheldehar/JA#PILAR.BAF~
 
+
 EXTEND_TOP ~%FriendlyArmInn_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Pillar_Gheldehar/AR6801.BAF~ EVALUATE_BUFFER
 
 
@@ -59,6 +60,5 @@ COPY_EXISTING ~%SWBaldursGate%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gheldehar~
 		fj_cre_resref     = ~JA#GHELD~
-		fj_dlg_resref	  = ~JA#GHELD~
 	END
 BUT_ONLY
