@@ -173,19 +173,22 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 	PHP_EACH actors AS i => actor BEGIN
 		READ_SHORT actor+0x20 actor_pos_x
 		READ_ASCII actor+0x80 actor_filename
-		PATCH_IF ((~%actor_pos_x%~ = 436) AND (~%actor_filename%~ STR_EQ ~DOPMER~)) BEGIN // MERCHANT
-			WRITE_SHORT actor+0x20 360
-			WRITE_SHORT actor+0x22 468
-			WRITE_SHORT actor+0x24 360
-			WRITE_SHORT actor+0x26 468
-			WRITE_SHORT actor+0x34 11
-		END
-		PATCH_IF ((~%actor_pos_x%~ = 523) AND (~%actor_filename%~ STR_EQ ~DOPMER~)) BEGIN // MERCHANT
-			WRITE_SHORT actor+0x20 281
-			WRITE_SHORT actor+0x22 255
-			WRITE_SHORT actor+0x24 281
-			WRITE_SHORT actor+0x26 255
-			WRITE_SHORT actor+0x34 1
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			436 WHEN (~%actor_filename%~ STR_EQ ~DOPMER~) BEGIN
+				WRITE_SHORT actor+0x20 360
+				WRITE_SHORT actor+0x22 468
+				WRITE_SHORT actor+0x24 360
+				WRITE_SHORT actor+0x26 468
+				WRITE_SHORT actor+0x34 11
+			END
+			523 WHEN (~%actor_filename%~ STR_EQ ~DOPMER~) BEGIN
+				WRITE_SHORT actor+0x20 281
+				WRITE_SHORT actor+0x22 255
+				WRITE_SHORT actor+0x24 281
+				WRITE_SHORT actor+0x26 255
+				WRITE_SHORT actor+0x34 1
+			END
+			DEFAULT
 		END
 	END
 	// add new actors
@@ -253,18 +256,17 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
-	PHP_EACH actors AS i => actor BEGIN
-		READ_ASCII actor+0x80 actor_filename
-		PATCH_IF (~%actor_filename%~ STR_EQ ~JHASSO~) BEGIN
-			WRITE_SHORT actor+0x20 440
-			WRITE_SHORT actor+0x22 435
-			WRITE_SHORT actor+0x24 440
-			WRITE_SHORT actor+0x26 435
-			WRITE_SHORT actor+0x34 7
-		END
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord		= 440
+		y_coord		= 435
+		dest_x		= 440
+		dest_y		= 435
+		orient		= 7
+		STR_VAR
+		actor_name 	= ~Jhasso~
 	END
-	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPSS~ END // Doppelganger
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPSS~ END
 	// add new actors
 	LPF fj_are_structure
 		INT_VAR

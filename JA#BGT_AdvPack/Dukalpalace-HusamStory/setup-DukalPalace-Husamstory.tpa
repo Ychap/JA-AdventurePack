@@ -204,7 +204,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 	END
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
-	// new position for NILA
 	LPF ALTER_AREA_ACTOR
 		INT_VAR x_coord = 264
 				y_coord = 523

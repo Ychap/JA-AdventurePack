@@ -227,29 +227,30 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
-	PHP_EACH actors AS i => actor BEGIN
-		READ_ASCII actor+0x80 actor_filename
-		PATCH_MATCH ~%actor_filename%~ WITH
-			~FECOOK~ BEGIN
-				WRITE_ASCII actor+0x48 ~JA#MLCOK~ // Dialog
-			END
-			~BRANDI~ BEGIN
-				WRITE_SHORT actor+0x20 637
-				WRITE_SHORT actor+0x22 734
-				WRITE_SHORT actor+0x24 637
-				WRITE_SHORT actor+0x26 734
-				WRITE_SHORT actor+0x34 14
-			END
-			~ZORL~ BEGIN
-				WRITE_SHORT actor+0x20 1352
-				WRITE_SHORT actor+0x22 671
-				WRITE_SHORT actor+0x24 1352
-				WRITE_SHORT actor+0x26 671
-				WRITE_SHORT actor+0x34 13
-			END
-			DEFAULT
-		END
+	LPF ALTER_AREA_ACTOR
+		STR_VAR
+		dlg_file	= ~JA#MLCOK~
+		actor_name	= ~Female Cook~
+	END
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord		= 637
+		y_coord		= 734
+		dest_x		= 637
+		dest_y		= 734
+		orient		= 14
+		STR_VAR
+		actor_name	= ~Brandilar~
+	END
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord		= 1352
+		y_coord		= 671
+		dest_x		= 1352
+		dest_y		= 671
+		orient		= 13
+		STR_VAR
+		actor_name	= ~Zorl~
 	END
 	// container scripts, scroll and key
 	LPF ALTER_AREA_CONTAINER
