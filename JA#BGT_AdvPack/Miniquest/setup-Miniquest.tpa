@@ -46,6 +46,17 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~TAVERN.WBM~) OR (FILE_EXISTS_IN_GAME ~UBTAVERN.M
 	PRINT ~Skipping Restored Elfsong Tavern Movie: Is already restored by another mod.~
 END ELSE BEGIN
 	COPY ~JA#BGT_AdvPack/Miniquest/JA#TAVER.MVE~ ~override~
+
+	<<<<<<<< ...inlined/EnteredElfsong.baf
+	IF
+		Global("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",0)
+	THEN
+		RESPONSE #100
+			SetGlobal("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",1)
+			StartMovie("JA#TAVER")
+	END
+	>>>>>>>>
+	EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~...inlined/EnteredElfsong.baf~ EVALUATE_BUFFER
 END
 
 

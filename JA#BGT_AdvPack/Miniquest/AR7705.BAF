@@ -1,12 +1,4 @@
 IF
-	Global("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",0)
-THEN
-	RESPONSE #100
-		StartMovie("JA#TAVER")
-		SetGlobal("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",1)
-END
-
-IF
 	OnCreation()
 	GlobalTimerNotExpired("JA#ELFSBLOCKED","GLOBAL")
 THEN
