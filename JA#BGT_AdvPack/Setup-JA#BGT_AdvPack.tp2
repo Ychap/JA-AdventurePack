@@ -90,6 +90,7 @@ LANGUAGE ~English~
 
 BEGIN ~Extended Tavern Guard System~ DESIGNATED 1
 LABEL "JA#BGT_AdvPack-Law"
+FORBID_COMPONENT ~JA#BGT_AdvPack/Setup-JA#BGT_AdvPack.tp2~ 3 ~This component cannot be installed after "Dukal Palace and Husam Story"~
 
 INCLUDE ~JA#BGT_AdvPack/Lawsystem/setup-lawsystem.tpa~
 
