@@ -17,27 +17,16 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#MGUAR.BAF~
 
 EXTEND_TOP ~%EBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7800.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7228.BAF~ EVALUATE_BUFFER
 
-
-COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[217\.491\],[0S])~ ~CreateCreature("ALDETH",[1244.720],2)~
-	END
-BUT_ONLY
 
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.BCS~ ~override~
+	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_EVALUATE ~OR(\([0-9]+\))[%WNL%%MNL%%LNL%%TAB% ]+Exists("Aldeth")~ BEGIN
 				SET result = MATCH1 - 1
 			END ~OR(%result%)~
 			REPLACE_TEXTUALLY EXACT_MATCH ~ApplySpellRES("ohdestbg","Aldeth")~ ~NoAction()~
-			REPLACE_TEXTUALLY ~\([%WNL%%MNL%%LNL%%TAB% ]\)Global("AldethMove","GLOBAL",2)~ ~\1GlobalGT("AldethMove","GLOBAL",1)~
-		END
-	BUT_ONLY
-	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.BCS~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Aldeth",EscapeAreaMove("BG0128",217,491,S))~ ~ActionOverride("Aldeth",EscapeAreaMove("BG0128",1244,720,S))~
 		END
 	BUT_ONLY
 END

@@ -1,0 +1,11 @@
+IF
+	Global("HelpAldeth","GLOBAL",2)
+	Exists("Aldeth")
+	Global("JA#ALDETHDONE_MOVE","%SWBaldursGate_MerchantLeague_L2%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ALDETHDONE_MOVE","%SWBaldursGate_MerchantLeague_L2%",1)
+		MoveToPointNoInterrupt([526.1193])
+		Face(2)
+		Continue()
+END
