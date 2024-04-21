@@ -1,0 +1,11 @@
+IF
+	OnCreation()
+	GlobalTimerNotExpired("JA#ELFSBLOCKED","GLOBAL")
+THEN
+	RESPONSE #100
+		CreateCreature("GUARD",[729.868],12)
+		CreateCreature("GUARD",[975.558],0)
+		CreateCreature("GUARD",[868.557],14)
+		CreateCreature("GUARD",[734.695],12)
+		Continue()
+END
