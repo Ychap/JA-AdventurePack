@@ -1,17 +1,4 @@
 IF
-	HasItem("JA#ZRLKY",Myself)
-	AreaCheck("%SWBaldursGate_MerchantLeague_L3%")
-	OR(4)
-		PartyHasItem("JA#ZRLKY")
-		PartyHasItem("SCRL2O")
-		PartyHasItem("SCRL2P")
-		PartyHasItem("SCRL2Q")
-THEN
-	RESPONSE #100
-		DestroyItem("JA#ZRLKY")
-END
-
-IF
 	PickPocketFailed([PC])
 	Global("ZorlDopple","GLOBAL",0)
 	See(LastTrigger)
