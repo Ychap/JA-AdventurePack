@@ -65,7 +65,7 @@ END ELSE BEGIN
 END
 
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	// On doppelganger reveal, set names ~Shalak~ and ~Jased~
+	// On doppelganger reveal, change Zorl(Shalak) and Irlentree(Jased) to DOPPLEGANGER_GREATER
 	EXTEND_TOP ~DOPZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/DOPZORL.BAF~ EVALUATE_BUFFER
 
 	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#IrlentreLocation.BAF~ EVALUATE_BUFFER

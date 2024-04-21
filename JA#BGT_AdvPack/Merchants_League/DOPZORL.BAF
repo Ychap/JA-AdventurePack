@@ -5,6 +5,9 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#ZorlLocation","MYAREA",0)
 		SetName(@2099)
+		Polymorph(DOPPLEGANGER_GREATER)
+		ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
+		ApplySpell(Myself,WIZARD_HASTE)
 END
 
 IF
@@ -14,4 +17,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#IrlentreLocation","MYAREA",0)
 		SetName(@2100)
+		Polymorph(DOPPLEGANGER_GREATER)
+		ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
+		ApplySpell(Myself,WIZARD_HASTE)
 END
