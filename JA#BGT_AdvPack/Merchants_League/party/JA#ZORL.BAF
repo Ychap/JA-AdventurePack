@@ -11,6 +11,7 @@ END
 IF
 	AreaCheck("%SWBaldursGate_MerchantLeague_L3%")
 	PartyHasItem("SCRL2P")
+	See([PC])
 	Global("JA#CUIRL","GLOBAL",0)
 THEN
 	RESPONSE #100

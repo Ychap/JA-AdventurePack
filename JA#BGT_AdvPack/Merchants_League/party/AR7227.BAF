@@ -1,3 +1,4 @@
+// Block negligible? Aldeth and Brandilar are never present in %SWBaldursGate_MerchantLeague_L1%
 IF
 	NumDeadGT("DopZorl",9)
 	Dead("Zorl")
