@@ -6,7 +6,7 @@
 COPY ~JA#BGT_AdvPack/Ignatio_Phleed/JA#IGNAT.CRE~ ~override~
 	SAY NAME1 #11740 // ~Ignatio Phleed~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #11740 // ~Ignatio Phleed~ (string ref is true for BGT and BG:EE)
-    PATCH_IF FILE_EXISTS ~override/c#stdstr.bcs~ BEGIN // IF MOD_IS_INSTALLED ~c#endlessbg1.tp2~ 0
+    PATCH_IF FILE_EXISTS_IN_GAME ~c#stdstr.bcs~ BEGIN // IF MOD_IS_INSTALLED ~c#endlessbg1.tp2~ 0
 		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~c#stdstr~ END
 	END
 

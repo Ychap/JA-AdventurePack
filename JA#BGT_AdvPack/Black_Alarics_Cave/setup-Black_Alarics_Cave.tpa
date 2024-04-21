@@ -22,7 +22,7 @@ COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 		READ_ASCII actor+0x80 actor_filename
 		PATCH_IF (~%actor_filename%~ STR_EQ ~GOLEMF~) BEGIN
 			WRITE_ASCII actor+0x00 ~Piratenskelett~ #32
-			WRITE_LONG  actor+0x30  0xEB10 // SKELETON_WARRIOR
+			WRITE_LONG  actor+0x30  0xEB10 // Animation: SKELETON_WARRIOR
 			WRITE_ASCII actor+0x80 ~JA#SKEL1~ #8
 		END
 	END
