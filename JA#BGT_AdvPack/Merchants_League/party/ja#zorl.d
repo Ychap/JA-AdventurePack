@@ -18,6 +18,11 @@ BEGIN
   "EPILOGUE" ~GOTO 11~
 END
 
+ADD_TRANS_ACTION ZORL
+BEGIN 11 END
+BEGIN END
+~SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",2)~ // Cutescene is over
+
 
 APPEND ZORL
 
