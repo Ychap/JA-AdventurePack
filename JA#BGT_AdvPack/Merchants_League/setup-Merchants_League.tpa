@@ -234,21 +234,10 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 	END
 	LPF ALTER_AREA_ACTOR
 		INT_VAR
-		x_coord		= 637
-		y_coord		= 734
-		dest_x		= 637
-		dest_y		= 734
-		orient		= 14
-		STR_VAR
-		actor_name	= ~Brandilar~
-	END
-	LPF ALTER_AREA_ACTOR
-		INT_VAR
 		x_coord		= 1352
 		y_coord		= 671
 		dest_x		= 1352
 		dest_y		= 671
-		orient		= 13
 		STR_VAR
 		actor_name	= ~Zorl~
 	END
