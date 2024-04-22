@@ -20,12 +20,44 @@ EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7228.BAF~ EVALUATE_BUFFER
 
 
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	<<<<<<<< ...inlined/Aldeth_despawn_del.baf
+	IF
+		GlobalGT("Chapter","GLOBAL",6)
+		Global("DukeThanks","GLOBAL",1)
+		Exists("Aldeth")
+		!Dead("Aldeth")
+	THEN
+		RESPONSE #100
+			ActionOverride("Aldeth",DestroySelf())
+	END
+	>>>>>>>>
+	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~override~
+		REPLACE_BCS_BLOCK
+			~...inlined/Aldeth_despawn_del.baf~
+			~JA#BGT_AdvPack/empty~
+		ON_MISMATCH
+			PATCH_WARN ~WARNING: Something went wrong while patching %SOURCE_FILE%! Trying to replace only Aldeth's despawn in file...~
+			DECOMPILE_AND_PATCH BEGIN
+				SPRINT textToReplace ~ActionOverride("Aldeth",DestroySelf())~
+				COUNT_REGEXP_INSTANCES EXACT_MATCH ~%textToReplace%~ num_matches
+
+				PATCH_IF (num_matches > 1) BEGIN
+					PATCH_FAIL ~Found too many matches (%num_matches%) of %textToReplace% in %SOURCE_FILE%!~
+				END ELSE BEGIN
+					REPLACE_TEXTUALLY EXACT_MATCH ~%textToReplace%~ ~Continue()~
+				END
+			END
+		END
+	BUT_ONLY
+END
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_EVALUATE ~OR(\([0-9]+\))[%WNL%%MNL%%LNL%%TAB% ]+Exists("Aldeth")~ BEGIN
 				SET result = MATCH1 - 1
 			END ~OR(%result%)~
+
 			REPLACE_TEXTUALLY EXACT_MATCH ~ApplySpellRES("ohdestbg","Aldeth")~ ~NoAction()~
 		END
 	BUT_ONLY

@@ -17,7 +17,7 @@ COPY_EXISTING ~AMNISNA.BCS~ ~override~
 		~...inlined/amnisna_del.baf~
 		~JA#BGT_AdvPack/empty~
 	ON_MISMATCH
-		PATCH_WARN ~WARNING: Something went wrong while patching AMNISNA.BCS! Trying to replace with variable coords...~
+		PATCH_WARN ~WARNING: Something went wrong while patching %SOURCE_FILE%! Trying to replace with variable coords...~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY EVALUATE_REGEXP
 			~IF[%WNL%%MNL%%LNL%%TAB% ]+!See(NearestEnemyOf(Myself))[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+\(MoveToPoint(\[[0-9]+\.[0-9]+\])[%WNL%%MNL%%LNL%%TAB% ]+\)+END~

@@ -60,7 +60,7 @@ COPY_EXISTING ~AR7300.BCS~ ~override~ // %NBaldursGate%
 		~...inlined/AR7300_old.baf~
 		~...inlined/AR7300_new.baf~
 	ON_MISMATCH
-		PATCH_WARN ~WARNING: Something went wrong while patching AR7300.BCS! Trying to replace each part separately...~
+		PATCH_WARN ~WARNING: Something went wrong while patching %SOURCE_FILE%! Trying to replace each part separately...~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY EXACT_MATCH
 			~[%WNL%%MNL%%LNL%%TAB% ]Global("HelpRamazith","GLOBAL",0)~

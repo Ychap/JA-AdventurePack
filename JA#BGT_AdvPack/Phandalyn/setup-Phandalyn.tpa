@@ -5,13 +5,15 @@
 
 EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/PHANDALY.BAF~ EVALUATE_BUFFER
 
+
 // Correct Phandalyn's script: should talk before attacking evil party members
 COPY_EXISTING ~PHANDALY.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		SPRINT textToReplace ~Attack(\[0\.0\.0\.0\.0\.0\.MASK_EVIL\])~
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+
 		PATCH_IF (num_matches > 0) BEGIN
-			REPLACE_TEXTUALLY ~\(%textToReplace%\)~ ~Dialogue([PC])~
+			REPLACE_TEXTUALLY ~%textToReplace%~ ~Dialogue([PC])~
 			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
 		END ELSE BEGIN
 			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
