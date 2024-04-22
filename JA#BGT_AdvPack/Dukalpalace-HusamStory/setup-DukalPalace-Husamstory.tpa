@@ -626,7 +626,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#DENKOD.D~
 ADD_JOURNAL @4 @7 @13 @15 @19 USING ~JA#BGT_AdvPack/languages/%s/ja#husam.tra~
 
 
-COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.BCS~ ~override~
+COPY_EXISTING ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY
 		~[%WNL%%MNL%%LNL%%TAB% ]Global("SarevokBehavior","GLOBAL",0)~ ~\0 !Global("JA#HUSAM_MOVE","GLOBAL",1) PartyHasItem("SCRL3F")~
@@ -634,7 +634,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.BCS~ ~override~
 		~CreateCreature("NOBLPA",\[769\.571\],[0S])~ ~\0 ClearAllActions() StartCutSceneMode() FadeToColor([30.0],0) Wait(1) StartCutScene("JA#CUSAR")~
 	END
 
-COPY_EXISTING ~%NEBaldursGate%.BCS~ ~override~
+COPY_EXISTING ~%NEBaldursGate_BCS%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~CreateCreature("HUSAM2",\[199\.2039\],[0S])~ ~CreateCreature("HUSAM2",[358.1961],2)~
 	END
