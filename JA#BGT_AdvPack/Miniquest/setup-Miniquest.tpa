@@ -118,12 +118,10 @@ COPY_EXISTING ~JA#ETC02.CRE~ ~override/JA#ETC04.CRE~
 COPY ~JA#BGT_AdvPack/Miniquest/JA#BRULG.CRE~ ~override~
 	SAY NAME1 @21
 	SAY NAME2 @21
-	WRITE_ASCII DIALOG ~JA#BRULG~ #8
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#NATHA.CRE~ ~override~
 	SAY NAME1 @23
 	SAY NAME2 @23
-	WRITE_ASCII DIALOG ~JA#NATHA~ #8
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#WILYN.CRE~ ~override~
 	 ~JA#BGT_AdvPack/Miniquest/JA#WILY1.CRE~ ~override~
