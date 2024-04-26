@@ -79,12 +79,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#alyth.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#bartley.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#brulgon.d~
 
-LAF GET_DLG_STRREF
-	INT_VAR idx_state = 4
-	STR_VAR dlg_file = ~SILENC.DLG~
-	RET silenc_state04_journal = journal_strref
-END
-
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#rum01.d~
 COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT)
 			  ~INN0705.STO~ ~override~ // BART8.DLG(EE)
