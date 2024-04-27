@@ -95,6 +95,8 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#vaala.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#esely.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#etc00.d~
 
+ADD_JOURNAL @1000 @1001 @1002 @1003 @1004 @1005 @1006
+
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#THF01.CRE~ ~override~
 	 ~JA#BGT_AdvPack/Miniquest/JA#THF02.CRE~ ~override~
@@ -459,6 +461,4 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~Music~
 ADD_MUSIC ~JA#ESTA~ ~Music\JA#ESTA.mus~
 
 EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705B.BAF~ EVALUATE_BUFFER
-	REPLACE_TEXTUALLY 999999 ~%JA#ESTA%~
 EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706B.BAF~ EVALUATE_BUFFER
-	REPLACE_TEXTUALLY 999999 ~%JA#ESTA%~
