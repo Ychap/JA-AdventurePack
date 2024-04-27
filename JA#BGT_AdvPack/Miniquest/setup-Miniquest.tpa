@@ -4,14 +4,15 @@
 
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#C00.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door8200~
-					destination_area	= EVAL ~%SEBaldursGate%~
-		END
+	WRITE_ASCIIE 0x8 ~%Beregost_House13_L1%~ #8 // WED resource
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name = ~Door8200~
+		destination_area = EVAL ~%SEBaldursGate%~
 	END
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#C01.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%Beregost_House13_L2%~ #8 // WED resource
 
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#BEHOL.BAM~ ~override~
