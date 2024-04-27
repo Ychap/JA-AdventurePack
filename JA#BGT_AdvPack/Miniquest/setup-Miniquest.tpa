@@ -60,8 +60,6 @@ END ELSE BEGIN
 END
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#CUKEG.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#KEG01.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#ESELY.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#THF01.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#THF02.BAF~
@@ -71,7 +69,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY2.BAF~
 
 
 EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7704.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706.BAF~ EVALUATE_BUFFER
 
 
@@ -86,7 +83,6 @@ COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT)
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#nathan.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#serw1.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#cook1.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#mtob5.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily1.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily2.d~
@@ -144,27 +140,6 @@ COPY_EXISTING ~SERWEN.CRE~ ~override/JA#SERW1.CRE~
 	WRITE_ASCII DIALOG ~JA#SERW1~ #8
 
 
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	ACTION_IF NOT FILE_EXISTS ~µbea1.bam~ BEGIN		// 0x525B µbe BGT+Infinity   0xCC00 MKG1 BGEE
-		COPY ~JA#BGT_AdvPack/Miniquest/Keg1~ ~override~
-	END
-END
-COPY ~JA#BGT_AdvPack/Miniquest/JA#KEG01.CRE~ ~override~
-	SAY NAME1 @29
-	SAY NAME2 @29
-	PATCH_IF GAME_IS ~eet bgee~ BEGIN
-		WRITE_LONG 0x28	0xCC00 // Animation: KEG1
-	END
-
-COPY ~JA#BGT_AdvPack/Miniquest/JA#KEG02.CRE~ ~override~
-	SAY NAME1 @30
-	SAY NAME2 @31
-
-COPY_EXISTING ~MCOOK2.CRE~ ~override/JA#COOK1.CRE~
-	WRITE_ASCII DEATHVAR ~JA#COOK1~ #32
-	WRITE_ASCII DIALOG ~JA#COOK1~ #8
-
-
 COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
@@ -201,12 +176,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
 		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename
 		PATCH_IF (~%actors_filename%~ STR_EQ  ~SERWEN~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~MCOOK2~) BEGIN
 			LPF fj_are_structure
 				INT_VAR fj_delete_mode = EVAL %cnt%
 				STR_VAR fj_structure_type = actor
@@ -256,19 +225,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_name           = ~Bekki~
 		fj_cre_resref     = ~JA#SERW1~
 		fj_dlg_resref	  = ~JA#SERW1~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 409
-		fj_loc_y          = 418
-		fj_dest_x         = 409
-		fj_dest_y         = 418
-		fj_orientation    = 13
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Koch~
-		fj_cre_resref     = ~JA#COOK1~
-		fj_dlg_resref	  = ~JA#COOK1~
 	END
 	LPF fj_are_structure
 		INT_VAR

@@ -466,7 +466,6 @@ INCLUDE ~JA#BGT_AdvPack/Sorcerous_Sundries/setup-Sorcerous_Sundries.tpa~
 
 BEGIN ~Mini-Quest: "The mystery of the silent ghostly voice"~ DESIGNATED 37
 LABEL "JA#BGT_AdvPack-Miniquest"
-REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~setup-infinityanimations.tp2~ 0) @37
 
 INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
@@ -601,6 +600,17 @@ BEGIN ~Stationary Nashkel soldiers~ DESIGNATED 50
 LABEL "JA#BGT_AdvPack-Nashkel_soldiers"
 
 INCLUDE ~JA#BGT_AdvPack/Nashkel_soldiers/setup-Nashkel_soldiers.tpa~
+
+
+//////////////////////////////////
+// Special keg in Elfsong Tavern
+//////////////////////////////////
+
+BEGIN ~Special keg in Elfsong Tavern~ DESIGNATED 51
+LABEL "JA#BGT_AdvPack-Special_keg"
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~setup-infinityanimations.tp2~ 0) @37
+
+INCLUDE ~JA#BGT_AdvPack/Special_keg/setup-Special_keg.tpa~
 
 
 /////////////////////////////////////////////////////////
