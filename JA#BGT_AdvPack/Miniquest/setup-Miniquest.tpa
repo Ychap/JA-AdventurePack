@@ -31,16 +31,49 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#HRP02.ITM~ ~override~
 	SAY IDENTIFIED_DESC @15
 
 
-COPY_EXISTING ~BART8.CRE~ ~override~
-	SAY NAME1 @16
-	SAY NAME2 @16
+COPY ~JA#BGT_AdvPack/Miniquest/JA#THF01.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF02.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF03.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF04.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF05.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#THF06.CRE~ ~override~
+	SAY NAME1 @19
+	SAY NAME2 @19
 
-COPY_EXISTING ~ALYTH.CRE~ ~override~
-	SAY NAME1 @17
-	SAY NAME2 @17
-	// WRITE_SHORT 0x28 0x1163 // make her halfelf
-	// WRITE_SHORT 0x272 0x03
-	// WRITE_SHORT 0x273 0x0c
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override/JA#ETC03.CRE~
+	 ~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override/JA#ETC04.CRE~
+	SAY NAME1 @20
+	SAY NAME2 @20
+	WRITE_ASCIIE DIALOG ~%DEST_RES%~ #8
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#BRULG.CRE~ ~override~
+	SAY NAME1 @21
+	SAY NAME2 @21
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#NATHA.CRE~ ~override~
+	SAY NAME1 @23
+	SAY NAME2 @23
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#WILYN.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#WILY1.CRE~ ~override~
+	SAY NAME1 @24
+	SAY NAME2 @24
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#VAALA.CRE~ ~override~
+	SAY NAME1 @25
+	SAY NAME2 @25
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ESELY.CRE~ ~override~
+	SAY NAME1 @26
+	SAY NAME2 @26
+
+COPY_EXISTING ~SERWEN.CRE~ ~override/JA#SERW1.CRE~
+	SAY NAME1 @27
+	SAY NAME2 @28
+	WRITE_ASCII DIALOG ~JA#SERW1~ #8
+
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~TAVERN.WBM~) OR (FILE_EXISTS_IN_GAME ~UBTAVERN.MVE~) BEGIN // EET or BG1UB
 	PRINT ~Skipping Restored Elfsong Tavern Movie: Is already restored by another mod.~
@@ -75,12 +108,7 @@ EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/A
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#alyth.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#bartley.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#brulgon.d~
-
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#rum01.d~
-COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT)
-			  ~INN0705.STO~ ~override~ // BART8.DLG(EE)
-	WRITE_ASCII 0x44 ~JA#RUM01~ #8
-
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#nathan.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#serw1.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#mtob5.d~
@@ -94,50 +122,23 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#etc00.d~
 ADD_JOURNAL @1000 @1001 @1002 @1003 @1004 @1005 @1006
 
 
-COPY ~JA#BGT_AdvPack/Miniquest/JA#THF01.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF02.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF03.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF04.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF05.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF06.CRE~ ~override~
-	SAY NAME1 @19
-	SAY NAME2 @19
+COPY_EXISTING ~ALYTH.CRE~ ~override~
+	SAY NAME1 @17
+	SAY NAME2 @17
+	// WRITE_LONG 0x28 0x1163 // make her halfelf
+	// WRITE_BYTE 0x272 03 // Race: HALF_ELF
+	// WRITE_BYTE 0x273 12 // Class: RANGER
+BUT_ONLY
 
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override~
-	SAY NAME1 @20
-	SAY NAME2 @20
+COPY_EXISTING ~BART8.CRE~ ~override~
+	SAY NAME1 @16
+	SAY NAME2 @16
+BUT_ONLY
 
-COPY_EXISTING ~JA#ETC01.CRE~ ~override/JA#ETC03.CRE~
-	WRITE_ASCII DIALOG ~JA#ETC03~ #8
-COPY_EXISTING ~JA#ETC02.CRE~ ~override/JA#ETC04.CRE~
-	WRITE_ASCII DIALOG ~JA#ETC04~ #8
-
-COPY ~JA#BGT_AdvPack/Miniquest/JA#BRULG.CRE~ ~override~
-	SAY NAME1 @21
-	SAY NAME2 @21
-
-COPY ~JA#BGT_AdvPack/Miniquest/JA#NATHA.CRE~ ~override~
-	SAY NAME1 @23
-	SAY NAME2 @23
-
-COPY ~JA#BGT_AdvPack/Miniquest/JA#WILYN.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#WILY1.CRE~ ~override~
-	SAY NAME1 @24
-	SAY NAME2 @24
-
-COPY ~JA#BGT_AdvPack/Miniquest/JA#VAALA.CRE~ ~override~
-	SAY NAME1 @25
-	SAY NAME2 @25
-
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ESELY.CRE~ ~override~
-	SAY NAME1 @26
-	SAY NAME2 @26
-
-COPY_EXISTING ~SERWEN.CRE~ ~override/JA#SERW1.CRE~
-	SAY NAME1 @27
-	SAY NAME2 @28
-	WRITE_ASCII DIALOG ~JA#SERW1~ #8
+COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT)
+			  ~INN0705.STO~ ~override~ // BART8.DLG(EE)
+	WRITE_ASCII 0x44 ~JA#RUM01~ #8
+BUT_ONLY
 
 
 COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
@@ -170,21 +171,20 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_structure_type = entrance
 		fj_name           = ~Frja#C00~
 	END
+BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
-	// delete actors
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~SERWEN~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-	END
-	LPF fj_are_structure
-		INT_VAR fj_delete_mode = 0
-		STR_VAR fj_structure_type = ambient
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord     = 560
+		y_coord     = 725
+		dest_x      = 560
+		dest_y      = 725
+		orient      = 8
+		STR_VAR
+		actor_name  = ~Serving Wench~
+		cre_file    = ~JA#SERW1~
+		dlg_file    = ~~
 	END
 	// add new actors
 	LPF fj_are_structure
@@ -212,19 +212,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_name           = ~Brulgon~
 		fj_cre_resref     = ~JA#BRULG~
 		fj_dlg_resref	  = ~JA#BRULG~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 560
-		fj_loc_y          = 725
-		fj_dest_x         = 560
-		fj_dest_y         = 725
-		fj_orientation    = 8
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Bekki~
-		fj_cre_resref     = ~JA#SERW1~
-		fj_dlg_resref	  = ~JA#SERW1~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -338,6 +325,10 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type   = region
 		fj_name             = ~JA#BEHOL~
 	END
+	LPF fj_are_structure
+		INT_VAR fj_delete_mode = 0
+		STR_VAR fj_structure_type = ambient
+	END
 	// add ambient
 	LPF fj_are_structure
 		INT_VAR
@@ -410,11 +401,12 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
-MKDIR ~Music\JA#ESTA~
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTAA.ACM~ ~Music\JA#ESTA~
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~Music~
 
-ADD_MUSIC ~JA#ESTA~ ~Music\JA#ESTA.mus~
+MKDIR ~music/JA#ESTA~
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTAA.ACM~ ~music/JA#ESTA~
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~music~
+
+ADD_MUSIC ~JA#ESTA~ ~music/JA#ESTA.MUS~
 
 EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705B.BAF~ EVALUATE_BUFFER
 EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706B.BAF~ EVALUATE_BUFFER
