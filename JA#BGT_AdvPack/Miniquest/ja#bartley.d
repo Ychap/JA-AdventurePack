@@ -28,7 +28,7 @@ IF ~~ THEN JA#BART8_1
   IF ~Global("JA#ELFSONG_QUEST","GLOBAL",3) Global("JA#WILYN_WO","LOCALS",0)~ THEN REPLY @5 DO ~SetGlobal("JA#WILYN_WO","LOCALS",1)~ GOTO JA#BART8_6
   IF ~Global("JA#ELFSONG_QUEST","GLOBAL",5) Global("JA#VALA_WHO","LOCALS",0)~ THEN REPLY @6 DO ~SetGlobal("JA#VALA_WHO","LOCALS",1)~ GOTO JA#BART8_8
   IF ~Global("JA#ELFSONG_QUEST","GLOBAL",6) Global("JA#VALA_WO","LOCALS",0)~ THEN REPLY @7 DO ~SetGlobal("JA#VALA_WO","LOCALS",1)~ GOTO JA#BART8_7
-  IF ~~ THEN REPLY @8 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @8 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 
@@ -43,49 +43,49 @@ END
 IF ~~ THEN JA#BART8_3
   SAY @15
   IF ~~ THEN REPLY @13 GOTO JA#BART8_1
-  IF ~~ THEN REPLY @8 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @8 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 
 IF ~~ THEN JA#BART8_4
   SAY @16
   IF ~~ THEN REPLY @13 GOTO JA#BART8_1
-  IF ~~ THEN REPLY @8 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @8 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 
 IF ~~ THEN JA#BART8_5
   SAY @17 = @18
   IF ~~ THEN REPLY @13 GOTO JA#BART8_1
-  IF ~~ THEN REPLY @19 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @19 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 
 IF ~~ THEN JA#BART8_6
   SAY @20 = @21
   IF ~~ THEN REPLY @13 GOTO JA#BART8_1
-  IF ~~ THEN REPLY @19 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @19 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 
 IF ~~ THEN JA#BART8_7
   SAY @22
   IF ~~ THEN REPLY @13 GOTO JA#BART8_1
-  IF ~~ THEN REPLY @19 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @19 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 
 IF ~~ THEN JA#BART8_8
   SAY @23
   IF ~~ THEN REPLY @13 GOTO JA#BART8_1
-  IF ~~ THEN REPLY @19 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @19 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 
 IF ~~ THEN JA#BART8_9
   SAY @24 = @25
   IF ~~ THEN REPLY @13 GOTO JA#BART8_1
-  IF ~~ THEN REPLY @19 DO ~StartStore("%storename%",LastTalkedToBy(Myself))~ EXIT
+  IF ~~ THEN REPLY @19 DO ~%bart8_startstore_action%~ EXIT
   IF ~~ THEN REPLY @9 EXIT
 END
 

@@ -106,6 +106,12 @@ EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Minique
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706.BAF~ EVALUATE_BUFFER
 
 
+LAF GET_DLG_SCRIPT
+	INT_VAR idx_state = 0
+	STR_VAR dlg_file = ~BART8.DLG~
+	RET bart8_startstore_action = response_action
+END
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#alyth.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#bartley.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#brulgon.d~
@@ -136,8 +142,8 @@ COPY_EXISTING ~BART8.CRE~ ~override~
 	SAY NAME2 @16
 BUT_ONLY
 
-COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT)
-			  ~INN0705.STO~ ~override~ // BART8.DLG(EE)
+COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT/EE with bg1ub)
+			  ~INN0705.STO~ ~override~ // BART8.DLG(EE without bg1ub)
 	WRITE_ASCII 0x44 ~JA#RUM01~ #8
 BUT_ONLY
 
