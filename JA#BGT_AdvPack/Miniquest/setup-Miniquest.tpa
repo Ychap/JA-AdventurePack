@@ -205,7 +205,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Nathan~
 		fj_cre_resref     = ~JA#NATHA~
-		fj_dlg_resref	  = ~JA#NATHA~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -218,7 +217,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Brulgon~
 		fj_cre_resref     = ~JA#BRULG~
-		fj_dlg_resref	  = ~JA#BRULG~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -231,7 +229,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gast~
 		fj_cre_resref     = ~JA#ETC01~
-		fj_dlg_resref	  = ~JA#ETC01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -244,7 +241,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gast~
 		fj_cre_resref     = ~JA#ETC03~
-		fj_dlg_resref	  = ~JA#ETC03~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -257,7 +253,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gast~
 		fj_cre_resref     = ~JA#ETC01~
-		fj_dlg_resref	  = ~JA#ETC01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -270,7 +265,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gast~
 		fj_cre_resref     = ~JA#ETC02~
-		fj_dlg_resref	  = ~JA#ETC02~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -283,7 +277,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gast~
 		fj_cre_resref     = ~JA#ETC04~
-		fj_dlg_resref	  = ~JA#ETC04~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -296,7 +289,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gast~
 		fj_cre_resref     = ~JA#ETC02~
-		fj_dlg_resref	  = ~JA#ETC02~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -310,7 +302,6 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Wilyn~
 		fj_cre_resref     = ~JA#WILY1~
-		fj_dlg_resref	  = ~JA#WILY1~
 	END
 	// add region trigger
 	LPF fj_are_structure
