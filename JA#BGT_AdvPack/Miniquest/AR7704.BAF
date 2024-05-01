@@ -5,4 +5,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#VAALAHOR_SPWN","%EBaldursGate_SorcerousSundries_L2%",1)
 		CreateCreature("JA#VAALA",[948.450],8)
+		Continue()
 END
