@@ -12,10 +12,10 @@ BUT_ONLY
 IF
 	Exists("Bardolan")
 	Global("C#LC_BardolanMoves","GLOBAL",1)
-	Global("C#JA#_BardolanDespawn","MYAREA",0)
+	Global("C#JA#BardolanDespawn","MYAREA",0)
 THEN
 RESPONSE #100
-	SetGlobal("C#JA#_BardolanDespawn","MYAREA",1)
+	SetGlobal("C#JA#BardolanDespawn","MYAREA",1)
 	ActionOverride("Bardolan",EscapeArea())
 	Continue()
 END
@@ -26,10 +26,10 @@ IF
 	OR(2)
 		Global("C#LC_BardolanMoves","GLOBAL",0)
 		Global("C#LC_BardolanMoves","GLOBAL",5)
-	Global("C#JA#_BardolanRespawn","MYAREA",0)
+	Global("C#JA#BardolanRespawn","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("C#JA#_BardolanRespawn","MYAREA",1)
+		SetGlobal("C#JA#BardolanRespawn","MYAREA",1)
 		CreateCreature("BARDOL",[1104.722],11)
 		ActionOverride("Bardolan",SetNumTimesTalkedTo(1))
 		Continue()
