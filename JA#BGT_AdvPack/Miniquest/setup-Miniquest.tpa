@@ -125,7 +125,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#vaala.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#esely.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#etc00.d~
 
-ADD_JOURNAL @1000 @1001 @1002 @1003 @1004 @1005 @1006
+ADD_JOURNAL @70 @1000 @1001 @1002 @1003 @1004 @1005 @1006 USING ~JA#BGT_AdvPack/languages/%s/ja#alyth.tra~
 
 
 COPY_EXISTING ~ALYTH.CRE~ ~override~
