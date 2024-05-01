@@ -1,8 +1,0 @@
-IF
-	See([PC])
-	Global("JA#TLK","LOCALS",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#TLK","LOCALS",1)
-		StartDialog("JA#ESELY",[PC])
-END
