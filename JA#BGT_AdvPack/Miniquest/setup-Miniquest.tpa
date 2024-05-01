@@ -101,6 +101,15 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY2.BAF~
 
 
+MKDIR ~music/JA#ESTA~
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTAA.ACM~ ~music/JA#ESTA~
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~music~
+
+ADD_MUSIC ~JA#ESTA~ ~music/JA#ESTA.MUS~
+
+EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/JA#ESTA_REPEAT.BAF~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/JA#ESTA_REPEAT.BAF~ EVALUATE_BUFFER
+
 EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7704.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706.BAF~ EVALUATE_BUFFER
 
@@ -397,13 +406,3 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 	END
 	LPF MUTE_AREA_SONG END
 BUT_ONLY
-
-
-MKDIR ~music/JA#ESTA~
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTAA.ACM~ ~music/JA#ESTA~
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~music~
-
-ADD_MUSIC ~JA#ESTA~ ~music/JA#ESTA.MUS~
-
-EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705B.BAF~ EVALUATE_BUFFER
-EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706B.BAF~ EVALUATE_BUFFER
