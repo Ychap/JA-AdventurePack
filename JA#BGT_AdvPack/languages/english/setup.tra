@@ -16,12 +16,13 @@
 
 STATISTICS:
 
-Charm Person (3x daily)
- Duration: 5 rounds
- Range: 1 person
+Charge abilities:
+– Charm Person three times per day (Save vs. Spell negates)
+  Range: 25 ft.
+  Duration: 5 rounds
+  Area of Effect: 1 creature
 
-Usable By:
-- Bard~
+Weight: 3~
 @16   = ~Bartley~
 @17   = ~"Lady" Alyth Elendara~
 /* @18   = ~"Lady" Alyth Elendara~ */
