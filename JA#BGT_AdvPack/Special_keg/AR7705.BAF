@@ -1,13 +1,14 @@
 IF
+	OR(3)
+		Global("BrevlikRobbed","GLOBAL",2)
+		Global("HelpBrevlik","GLOBAL",2)
+		GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
 	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",0)
-	GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",1)
 		CreateCreature("JA#KEG01",[648.257],0) // Fass
-		ActionOverride("JA#COOK1",JumpToPoint([562.458]))
-		MoveToObject([PC])
-		ActionOverride("JA#COOK1",Dialogue([PC]))
+		Continue()
 END
 
 IF

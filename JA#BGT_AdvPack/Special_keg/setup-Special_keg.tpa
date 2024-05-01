@@ -20,16 +20,13 @@ COPY ~JA#BGT_AdvPack/Special_keg/JA#KEG02.CRE~ ~override~
 	SAY NAME1 @30
 	SAY NAME2 @31
 
-COPY_EXISTING ~MCOOK2.CRE~ ~override/JA#COOK1.CRE~
-	WRITE_ASCII DEATHVAR ~JA#COOK1~ #32
-	WRITE_ASCII DIALOG ~JA#COOK1~ #8
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#COOK1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#CUKEG.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#KEG01.BAF~
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/ja#cook1.d~
-
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#CUKEG.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#KEG01.BAF~
 
 
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Special_keg/AR7705.BAF~ EVALUATE_BUFFER
@@ -45,7 +42,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		orient  = 13
 		STR_VAR
 		actor_name = ~Cook~
-		cre_file = ~JA#COOK1~
-		dlg_file = ~~
+		dlg_file = ~JA#COOK1~
+		script_specifics = ~JA#COOK1~
 	END
 BUT_ONLY
