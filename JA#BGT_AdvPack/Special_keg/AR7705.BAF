@@ -20,7 +20,7 @@ THEN
 		SmallWait(5)
 		CreateCreature("JA#KEG02",[648.257],0) // Diebin - Halblingsfrau
 		Wait(1)
-		ActionOverride("JA#KEG02",StartDialog("JA#KEG02",[PC]))
+		ActionOverride("JA#KEG02",StartDialogueNoSet([PC]))
 END
 
 IF

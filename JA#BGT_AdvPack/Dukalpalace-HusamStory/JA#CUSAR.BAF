@@ -9,7 +9,7 @@ THEN
 		FaceObject("Belt")
 		FadeFromColor([30.0],0)
 		Wait(2)
-		ActionOverride("Belt",StartDialog("belt",[PC]))
+		ActionOverride("Belt",StartDialogueNoSet([PC]))
 END
 
 IF
