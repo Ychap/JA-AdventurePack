@@ -3,12 +3,7 @@
 //////////////////////////////////
 
 
-COPY_EXISTING ~JACIL.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
-BUT_ONLY
-
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Counting_House/JA#ULF.D~
+EXTEND_TOP ~%NEBaldursGate_CountingHouse_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Counting_House/AR7408.BAF~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1_BCS%.BCS~ ~override~
@@ -24,4 +19,10 @@ COPY_EXISTING ~%NEBaldursGate_CountingHouse_L2_BCS%.BCS~ ~override~
 	END
 BUT_ONLY
 
-EXTEND_TOP ~%NEBaldursGate_CountingHouse_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Counting_House/AR7408.BAF~ EVALUATE_BUFFER
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Counting_House/ja#ulf.d~
+
+
+COPY_EXISTING ~JACIL.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
+BUT_ONLY
