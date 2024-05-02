@@ -32,15 +32,6 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#HRP02.ITM~ ~override~
 	SAY IDENTIFIED_DESC @15
 
 
-COPY ~JA#BGT_AdvPack/Miniquest/JA#THF01.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF02.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF03.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF04.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF05.CRE~ ~override~
-	 ~JA#BGT_AdvPack/Miniquest/JA#THF06.CRE~ ~override~
-	SAY NAME1 @19
-	SAY NAME2 @19
-
 COPY ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override~
 	 ~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override~
 	 ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override/JA#ETC03.CRE~
@@ -94,9 +85,6 @@ END ELSE BEGIN
 END
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#THF01.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#THF02.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#705TR.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY2.BAF~
 
