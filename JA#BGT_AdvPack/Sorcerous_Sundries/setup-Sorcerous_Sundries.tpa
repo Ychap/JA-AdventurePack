@@ -2,13 +2,6 @@
 // Sorcerous Sundries
 ///////////////////////
 
-/* ~Allerlei Zauberei: Neue Personen, neue Ambients~ */
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
-
-COPY_EXISTING ~HALBAZ.CRE~ ~override~
-	WRITE_ASCII 0x268 ~JA#HLBZ1~ #8
-
 
 COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.CRE~ ~override~
 	SAY NAME1 @6
@@ -22,9 +15,18 @@ COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.CRE~ ~override~
 	SAY NAME1 @10
 	SAY NAME2 @10
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/ja#tay01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/ja#ssc01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/ja#sself.d~
+
+
+COPY_EXISTING ~HALBAZ.CRE~ ~override~
+	WRITE_ASCII SCRIPT_DEFAULT ~JA#HLBZ1~ #8
+BUT_ONLY
 
 
 COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#AMSS1.WAV~ ~override~
@@ -102,10 +104,3 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 	END
 	LPF MUTE_AREA_SONG END
 BUT_ONLY
-
-
-// COPY_EXISTING ~STO0703.STO~ ~override~
-// ADD_STORE_ITEM ~SCRL6N~ AFTER ~SCRL1Z~ #0 #0 #0 ~IDENTIFIED~ #1 // Roter Feuerschild
-// ADD_STORE_ITEM ~SCRL6F~ BEFORE ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #3 // Strahl der Schwächung
-// ADD_STORE_ITEM ~SCRLA3~ AFTER ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #4 // Glitzerstaub
-// ADD_STORE_ITEM ~SCRLA7~ AFTER ~SCRLA6~ #0 #0 #0 ~IDENTIFIED~ #2 // Magie zerstören
