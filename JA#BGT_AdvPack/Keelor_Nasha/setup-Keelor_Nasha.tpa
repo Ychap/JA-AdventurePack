@@ -7,7 +7,7 @@ COPY ~JA#BGT_AdvPack/Keelor_Nasha/JA#C05.ARE~ ~override~
 	WRITE_ASCIIE 0x8 ~%NWBaldursGate_PheirkasHouse_L1%~ #8 // WED resource
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~Door8100~
+		region_name      = ~Door8100~
 		destination_area = EVAL ~%BaldursGateDocks%~
 	END
 

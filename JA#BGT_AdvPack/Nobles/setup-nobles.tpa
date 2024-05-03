@@ -30,7 +30,7 @@ COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
 		fj_dest_x         = 634
 		fj_dest_y         = 1303
 		fj_orientation    = 2
-		fj_schedule 	  = 0b000111111111111111110000
+		fj_schedule       = 0b000111111111111111110000
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Junge~
@@ -47,7 +47,7 @@ COPY_EXISTING ~%NBaldursGate%.ARE~ ~override~
 		fj_dest_x         = 1071
 		fj_dest_y         = 1252
 		fj_orientation    = 15
-		fj_schedule		  = 0b000111111111111111110000
+		fj_schedule	      = 0b000111111111111111110000
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Junge~
@@ -63,7 +63,7 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_loc_y          = 2769
 		fj_dest_x         = 2756
 		fj_dest_y         = 2769
-		fj_schedule		  = 0b000111111111111111110000
+		fj_schedule	      = 0b000111111111111111110000
 		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
@@ -81,7 +81,7 @@ COPY_EXISTING ~%WBaldursGate%.ARE~ ~override~
 		fj_dest_x         = 1800
 		fj_dest_y         = 376
 		fj_orientation    = 10
-		fj_schedule		  = 0b000111111111111111110000
+		fj_schedule	      = 0b000111111111111111110000
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Junge~

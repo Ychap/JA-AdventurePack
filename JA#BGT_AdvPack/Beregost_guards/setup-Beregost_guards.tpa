@@ -104,7 +104,7 @@ COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 		fj_dest_x         = 700
 		fj_dest_y         = 638
 		fj_orientation    = 5
-		fj_schedule 	  = 0b111100000000000001111111
+		fj_schedule       = 0b111100000000000001111111
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Guard~
@@ -117,7 +117,7 @@ COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
 		fj_dest_x         = 709
 		fj_dest_y         = 591
 		fj_orientation    = 1
-		fj_schedule 	  = 0b111100000000000001111111
+		fj_schedule       = 0b111100000000000001111111
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Guard~

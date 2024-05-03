@@ -28,7 +28,7 @@ IF ~!Global("HelpAldeth","GLOBAL",2)~ THEN JA#BART10_01
   IF ~~ THEN EXIT
 END
 
-IF ~Global("HelpAldeth","GLOBAL",2)Global("JA#BART10","LOCALS",0)~ THEN JA#BART10_02
+IF ~Global("HelpAldeth","GLOBAL",2) Global("JA#BART10","LOCALS",0)~ THEN JA#BART10_02
   SAY @46
   IF ~~ THEN REPLY @47 DO ~SetGlobal("JA#BART10","LOCALS",1) StartStore("ja#mlbar",LastTalkedToBy(Myself))~ EXIT
   IF ~~ THEN REPLY @48 DO ~SetGlobal("JA#BART10","LOCALS",1)~ EXIT

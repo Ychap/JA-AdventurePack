@@ -180,13 +180,13 @@ BUT_ONLY
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 	LPF ALTER_AREA_ACTOR
 		INT_VAR
-		x_coord		= 914
-		y_coord		= 528
-		dest_x		= 914
-		dest_y		= 528
-		orient		= 0
+		x_coord     = 914
+		y_coord     = 528
+		dest_x      = 914
+		dest_y      = 528
+		orient      = 0
 		STR_VAR
-		actor_name 	= ~Irlentree~
+		actor_name  = ~Irlentree~
 	END
 	// add new actors
 	PATCH_DEFINE_ARRAY x_coord BEGIN 1103 1176 779 1048 688 632 711 219 402 1125 END
@@ -204,7 +204,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 			fj_structure_type = actor
 			fj_name           = ~Gast~
 			fj_cre_resref     = EVAL ~JA#DOPP%i%~
-			fj_dlg_resref 	  = EVAL ~JA#DOPP%i%~
+			fj_dlg_resref     = EVAL ~JA#DOPP%i%~
 		END
 	END
 	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
@@ -216,7 +216,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 			fj_radius          = 500
 			fj_volume_variance = 40
 			fj_sound_num       = 1
-			fj_flags 		   = 0b0000000111
+			fj_flags           = 0b0000000111
 			STR_VAR
 			fj_structure_type = ambient
 			fj_name           = ~Main Ambient~
@@ -229,24 +229,24 @@ BUT_ONLY
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 	LPF ALTER_AREA_ACTOR
 		STR_VAR
-		dlg_file	= ~JA#MLCOK~
-		actor_name	= ~Female Cook~
+		dlg_file    = ~JA#MLCOK~
+		actor_name  = ~Female Cook~
 	END
 	LPF ALTER_AREA_ACTOR
 		INT_VAR
-		x_coord		= 1352
-		y_coord		= 671
-		dest_x		= 1352
-		dest_y		= 671
+		x_coord     = 1352
+		y_coord     = 671
+		dest_x      = 1352
+		dest_y      = 671
 		STR_VAR
-		actor_name	= ~Zorl~
+		actor_name  = ~Zorl~
 	END
 	// container scripts, scroll and key
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
-		container_name = ~Container 2~
+		container_name  = ~Container 2~
 		lock_difficulty = 80
-		container_key = ~JA#ZRLKY~
+		container_key   = ~JA#ZRLKY~
 	END
 	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
 		// add ambient
@@ -257,7 +257,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 			fj_radius          = 500
 			fj_volume_variance = 20
 			fj_sound_num       = 1
-			fj_flags 		   = 0b0000000111
+			fj_flags           = 0b0000000111
 			STR_VAR
 			fj_structure_type = ambient
 			fj_name           = ~Main Ambient~
@@ -277,7 +277,7 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 			fj_radius          = 500
 			fj_volume_variance = 20
 			fj_sound_num       = 1
-			fj_flags 		   = 0b0000000111
+			fj_flags           = 0b0000000111
 			STR_VAR
 			fj_structure_type = ambient
 			fj_name           = ~Main Ambient~

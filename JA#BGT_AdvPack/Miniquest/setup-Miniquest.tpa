@@ -7,7 +7,7 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#C00.ARE~ ~override~
 	WRITE_ASCIIE 0x8 ~%Beregost_House13_L1%~ #8 // WED resource
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~Door8200~
+		region_name      = ~Door8200~
 		destination_area = EVAL ~%SEBaldursGate%~
 	END
 
@@ -153,8 +153,8 @@ COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
 		fj_box_right    = 1945  // größtes x
 		fj_box_bottom   = 1896  // größtes y
 		fj_cursor_idx   = 30    // door
-		fj_loc_x		= 1817
-		fj_loc_y		= 1847
+		fj_loc_x        = 1817
+		fj_loc_y        = 1847
 		fj_vertex_0     = 1819 + (1875 << 16)   // kleinstes x +  kleinstes y
 		fj_vertex_1     = 1863 + (1769 << 16)   // größtes x + kleinstes y
 		fj_vertex_2     = 1945 + (1780 << 16)   // größtes x + größtes y
@@ -293,7 +293,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_dest_x         = 594
 		fj_dest_y         = 506
 		fj_orientation    = 1
-		fj_schedule		  = 0b111111100000000000011111
+		fj_schedule       = 0b111111100000000000011111
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Wilyn~
@@ -308,7 +308,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_box_right         = 931
 		fj_box_bottom        = 279
 		fj_cursor_idx        = 22
-		fj_info_point_strref = RESOLVE_STR_REF(@32)
+		fj_info_point_strref = RESOLVE_STR_REF (@32)
 		fj_loc_x             = 891
 		fj_loc_y             = 203
 		fj_vertex_0          = 891 + (203 << 16)
@@ -331,7 +331,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_radius          = 500
 		fj_volume_variance = 100
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags            = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
@@ -344,9 +344,9 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_radius          = 500
 		fj_volume_variance = 100
 		fj_sound_num       = 7
-		fj_flags 		   = 0b0000001001
-		fj_delay		   = 150
-		fj_variation 	   = 25
+		fj_flags           = 0b0000001001
+		fj_delay           = 150
+		fj_variation       = 25
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~SS-Glass Break 1~
@@ -386,7 +386,7 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 		fj_radius          = 500
 		fj_volume_variance = 70
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~

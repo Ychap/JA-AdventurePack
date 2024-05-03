@@ -16,7 +16,7 @@ COPY ~JA#BGT_AdvPack/velvet/JA#COCK1.CRE~ ~override~
 	SAY NAME1 @2122
 	SAY NAME2 @2057
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		WRITE_LONG 0x28	0x7D02 // Animation: CHICKEN_BROWN
+		WRITE_LONG 0x28 0x7D02 // Animation: CHICKEN_BROWN
 	END
 
 COPY ~JA#BGT_AdvPack/velvet/JA#COCK2.CRE~ ~override~

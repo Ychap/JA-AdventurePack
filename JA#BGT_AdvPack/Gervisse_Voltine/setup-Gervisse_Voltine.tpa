@@ -7,7 +7,7 @@ COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
 	WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L1%~ #8 // WED resource
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~Door7200~
+		region_name      = ~Door7200~
 		destination_area = EVAL ~%NWBaldursGate%~
 	END
 

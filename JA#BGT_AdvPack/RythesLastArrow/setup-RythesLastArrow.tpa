@@ -8,12 +8,12 @@ COPY_EXISTING ~AX1H05.ITM~ ~override/JA#AX1H5.ITM~
 	SAY IDENTIFIED_DESC @2000
 	LPF ADD_ITEM_EQEFFECT
 		INT_VAR
-		opcode = 301		// Critical hit bonus
-		target = 1			// Self
-		timing = 2			// Instant/While equipped
-		parameter1 = 1		// Crits on 19 rolls
-		parameter2 = 1		// By this weapon only
-		insert_point = ~-1~	// Last effect
+		opcode       = 301  // Critical hit bonus
+		target       = 1    // Self
+		timing       = 2    // Instant/While equipped
+		parameter1   = 1    // Crits on 19 rolls
+		parameter2   = 1    // By this weapon only
+		insert_point = ~-1~ // Last effect
 	END
 
 COPY ~JA#BGT_AdvPack/RythesLastArrow/JA#BELT1.BAM~ ~override~
@@ -29,5 +29,5 @@ COPY_EXISTING ~PRAT.CRE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~STO4906.STO~ ~override~
-	ADD_STORE_ITEM ~JA#BELT1~ AFTER  ~RING21~ #1 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~JA#BELT1~ AFTER ~RING21~ #1 #0 #0 ~IDENTIFIED~ #1
 BUT_ONLY

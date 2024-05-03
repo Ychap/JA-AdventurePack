@@ -57,9 +57,9 @@ COPY_EXISTING ~ALYTH.CRE~ ~override~
 BUT_ONLY
 
 /* same patching as in bg1ub */
-COPY_EXISTING ~BENTLY.CRE~ ~override~	// Bently Mirrorshade, FAI
-	WRITE_ASCII 0x248 ~BENTLY~ #8		// Assigns BENTLY.BCS as the OVERRIDE script
-	WRITE_ASCII 0x250 ~SHOUT~  #8		// Assigns SHOUT.BCS as the Class script
+COPY_EXISTING ~BENTLY.CRE~ ~override~ // Bently Mirrorshade, FAI
+	WRITE_ASCII 0x248 ~BENTLY~ #8     // Assigns BENTLY.BCS as the OVERRIDE script
+	WRITE_ASCII 0x250 ~SHOUT~  #8     // Assigns SHOUT.BCS as the Class script
 BUT_ONLY
 
 COPY_EXISTING ~FAFIGHT.CRE~ ~override~
@@ -92,41 +92,41 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 	// change container script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~REPTRAP1~
+		region_name   = ~REPTRAP1~
 		region_script = ~None~
 	END
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~REPTRAP2~
+		region_name   = ~REPTRAP2~
 		region_script = ~None~
 	END
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~REPTRAP3~
+		region_name   = ~REPTRAP3~
 		region_script = ~None~
 	END
 	// new trap
 	LPF fj_are_structure
 		INT_VAR
-		fj_type			= 0    // trap
-		fj_box_left		= 1414
-		fj_box_top		= 2963
-		fj_box_right	= 1670
-		fj_box_bottom	= 3113
-		fj_trap_detect	= 100
-		fj_trap_remove	= 100
-		fj_trap_active	= 1
-		fj_trap_status	= 0
-		fj_loc_x		= 1558
-		fj_loc_y		= 2924
-		fj_vertex_0		= 1414 + (3053 << 16)
-		fj_vertex_1		= 1649 + (3113 << 16)
-		fj_vertex_2		= 1670 + (3018 << 16)
-		fj_vertex_3		= 1430 + (2963 << 16)
+		fj_type        = 0    // trap
+		fj_box_left    = 1414
+		fj_box_top     = 2963
+		fj_box_right   = 1670
+		fj_box_bottom  = 3113
+		fj_trap_detect = 100
+		fj_trap_remove = 100
+		fj_trap_active = 1
+		fj_trap_status = 0
+		fj_loc_x       = 1558
+		fj_loc_y       = 2924
+		fj_vertex_0    = 1414 + (3053 << 16)
+		fj_vertex_1    = 1649 + (3113 << 16)
+		fj_vertex_2    = 1670 + (3018 << 16)
+		fj_vertex_3    = 1430 + (2963 << 16)
 		STR_VAR
-		fj_structure_type	= region
-		fj_name				= ~JA#FRGUA~
-		fj_reg_script		= ~JA#FRGUA~
+		fj_structure_type = region
+		fj_name           = ~JA#FRGUA~
+		fj_reg_script     = ~JA#FRGUA~
 	END
 BUT_ONLY
 
@@ -136,7 +136,7 @@ COPY_EXISTING ~%FriendlyArmInn_L1%.ARE~ ~override~
 	// change container script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~REPTRAP~
+		region_name   = ~REPTRAP~
 		region_script = ~None~
 	END
 	// change container scripts (change Guard Enforcer dialog)
@@ -162,7 +162,7 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
 	// change container script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
-		region_name = ~REPTRAP~
+		region_name   = ~REPTRAP~
 		region_script = ~None~
 	END
 	// change container scripts (change Guard Enforcer dialog)

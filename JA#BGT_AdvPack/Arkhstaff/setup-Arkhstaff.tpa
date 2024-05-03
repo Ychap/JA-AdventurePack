@@ -10,21 +10,22 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04HT.BMP~ ~override~
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04LM.BMP~ ~override~
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04SR.BMP~ ~override~
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~OgreMagiHouse~
-					destination_area	= EVAL ~%BaldursGateDocks_OgreMagiHouse_L1%~
-		END
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~IronThrone~
-					destination_area	= EVAL ~%BaldursGateDocks_IronThrone_Cellar%~
-					entrance_name		= ~Exit0224~ // previously entrance to WSewers
-		END
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Sewers~
-					destination_area	= EVAL ~%WSewers%~
-					entrance_name		= ~Exit0611~ // previously entrance to BaldursGateDocks_IronThrone_Cellar
-		END
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = ~OgreMagiHouse~
+		destination_area = EVAL ~%BaldursGateDocks_OgreMagiHouse_L1%~
+	END
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = ~IronThrone~
+		destination_area = EVAL ~%BaldursGateDocks_IronThrone_Cellar%~
+		entrance_name    = ~Exit0224~ // previously entrance to WSewers
+	END
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = ~Sewers~
+		destination_area = EVAL ~%WSewers%~
+		entrance_name    = ~Exit0611~ // previously entrance to BaldursGateDocks_IronThrone_Cellar
 	END
 
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#7611D.BAM~ ~override~
@@ -97,19 +98,21 @@ BUT_ONLY
 
 COPY_EXISTING ~%WSewers%.ARE~ ~override~
 	SNPRINT "-4" IronThrone_Cellar_num ~%BaldursGateDocks_IronThrone_Cellar%~
-	LPF	ALTER_AREA_REGION
-		STR_VAR region_name			= EVAL ~Door%IronThrone_Cellar_num%~
-				destination_area	= ~JA#C04~
-				entrance_name		= ~Fr7324~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = EVAL ~Door%IronThrone_Cellar_num%~
+		destination_area = ~JA#C04~
+		entrance_name    = ~Fr7324~
 	END
 BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks_IronThrone_Cellar%.ARE~ ~override~
 	SNPRINT "-4" WSewers_num ~%WSewers%~
-	LPF	ALTER_AREA_REGION
-		STR_VAR region_name			= EVAL ~Door%WSewers_num%~
-				destination_area	= ~JA#C04~
-				entrance_name		= ~Fr7611~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = EVAL ~Door%WSewers_num%~
+		destination_area = ~JA#C04~
+		entrance_name    = ~Fr7611~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -143,8 +146,8 @@ COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L1%.are~ ~override~
 		fj_vertex_3         = 278 + (380 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_destination_area	= ~JA#C04~
-		fj_destination_name	= ~FR8101~
+		fj_destination_area = ~JA#C04~
+		fj_destination_name = ~FR8101~
 		fj_name             = ~STJA#C04~
 	END
 	// add entrance
@@ -188,9 +191,11 @@ BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
 	LPF ALTER_AREA_DOOR
-		INT_VAR	flag_locked		= 1
-				lock_difficulty	= 100
-		STR_VAR	door_name		= ~Door0616~ // Correct door in BGT, BGEE and EET
+		INT_VAR
+		flag_locked     = 1
+		lock_difficulty = 100
+		STR_VAR
+		door_name       = ~Door0616~ // Correct door in BGT, BGEE and EET
 	END
 	// add new actor
 	LPF fj_are_structure

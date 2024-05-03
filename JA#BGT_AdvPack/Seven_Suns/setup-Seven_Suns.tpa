@@ -93,7 +93,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	// 		REPLACE_EVALUATE ~Global\(GT\)?("KilledDopple","GLOBAL",\([0-9]+\))~ BEGIN
 	// 			SET num = (~%MATCH1%~ STR_EQ ~GT~) ? MATCH2 : MATCH2 - 1
 	// 		END ~NumDeadGT("SSDOPPLE",%num%)~
-	// 	END
+	//    END
 	// BUT_ONLY
 
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#scar_bgt.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#scar.tra~
@@ -258,13 +258,13 @@ BUT_ONLY
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 	LPF ALTER_AREA_ACTOR
 		INT_VAR
-		x_coord		= 440
-		y_coord		= 435
-		dest_x		= 440
-		dest_y		= 435
-		orient		= 7
+		x_coord     = 440
+		y_coord     = 435
+		dest_x      = 440
+		dest_y      = 435
+		orient      = 7
 		STR_VAR
-		actor_name 	= ~Jhasso~
+		actor_name  = ~Jhasso~
 	END
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPSS~ END
 	// add new actors

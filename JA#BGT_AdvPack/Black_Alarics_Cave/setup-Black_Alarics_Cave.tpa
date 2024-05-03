@@ -42,12 +42,12 @@ COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
 	// Rest encounters
 	LPF fj_are_structure
 		INT_VAR
-		fj_cre_strref0	  = 10148 // strref fine for BGT, BGEE and EET
+		fj_cre_strref0    = 10148 // strref fine for BGT, BGEE and EET
 		STR_VAR
 		fj_structure_type = interrupts
 		fj_cre_resref0    = ~JA#SKEL1~
-		fj_max_num		  = 10
-		fj_day_prob		  = 20
-		fj_night_prob 	  = 20
+		fj_max_num        = 10
+		fj_day_prob       = 20
+		fj_night_prob     = 20
 	END
 BUT_ONLY

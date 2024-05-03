@@ -63,7 +63,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_radius          = 500
 		fj_volume_variance = 100
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
@@ -94,7 +94,7 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
 		fj_radius          = 500
 		fj_volume_variance = 80
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~

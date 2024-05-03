@@ -77,7 +77,7 @@ COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Thief~
 		fj_cre_resref     = ~THIEF~
-		fj_dlg_resref	  = ~JA#STH02~
+		fj_dlg_resref     = ~JA#STH02~
 	END
 BUT_ONLY
 
@@ -95,7 +95,7 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_name           = ~Thief~
 		fj_cre_resref     = ~THIEF~
 		fj_bcs_specific   = ~SHOUT~
-		fj_dlg_resref	  = ~JA#STH01~
+		fj_dlg_resref     = ~JA#STH01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -117,7 +117,7 @@ COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
 		fj_radius          = 500
 		fj_volume_variance = 90
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
