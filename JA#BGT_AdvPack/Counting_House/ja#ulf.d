@@ -1,10 +1,6 @@
-REPLACE_ACTION_TEXT ULF
-~^Enemy()~
-~SetGlobal("JA#COUNTING_ENEMY","GLOBAL",1) Enemy()~
-
-
+// Check for c#q14rng.itm to avoid similar response of bgqe at the same time
 EXTEND_BOTTOM ULF 0
-  IF ~GlobalGT("AldethMove","GLOBAL",0)~ THEN REPLY @0 GOTO JA#ULF_0
+  IF ~!PartyHasItem("c#q14rng") GlobalGT("AldethMove","GLOBAL",0)~ THEN REPLY @0 GOTO JA#ULF_0
 END
 
 
