@@ -101,6 +101,9 @@ INCLUDE ~JA#BGT_AdvPack/Lawsystem/setup-lawsystem.tpa~
 
 BEGIN ~Ramazith~ DESIGNATED 2
 LABEL "JA#BGT_AdvPack-Ramazith"
+FORBID_COMPONENT ~bg1re/setup-bg1re.tp2~ 6 ~This component cannot be installed after Baldur's Gate Romantic Encounters~
+FORBID_COMPONENT ~bg1re/setup-bg1re.tp2~ 30 ~This component cannot be installed after Baldur's Gate Romantic Encounters~
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
 INCLUDE ~JA#BGT_AdvPack/Ramazith/setup-Ramazith.tpa~
 
@@ -122,6 +125,7 @@ INCLUDE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/setup-DukalPalace-Husamstory.tpa~
 
 BEGIN ~Gervisse and Voltine~ DESIGNATED 4
 LABEL "JA#BGT_AdvPack-Gervisse_Voltine"
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
 INCLUDE ~JA#BGT_AdvPack/Gervisse_Voltine/setup-Gervisse_Voltine.tpa~
 
@@ -334,6 +338,7 @@ INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
 BEGIN ~Marl (tarvern brawl)~ DESIGNATED 24
 LABEL "JA#BGT_AdvPack-Marl"
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
 INCLUDE ~JA#BGT_AdvPack/Marl/setup-Marl.tpa~
 
@@ -375,6 +380,7 @@ INCLUDE ~JA#BGT_AdvPack/Merchants_League/setup-Merchants_League.tpa~
 
 BEGIN ~Tenya and the fishermen~ DESIGNATED 28
 LABEL "JA#BGT_AdvPack-Tenya"
+FORBID_COMPONENT ~GARRICK-TT/SETUP-GARRICK-TT.TP2~ 0 ~This component cannot be installed after Garrick Tales of a Troubadour~
 
 INCLUDE ~JA#BGT_AdvPack/Tenya/setup-Tenya.tpa~
 
@@ -436,6 +442,7 @@ INCLUDE ~JA#BGT_AdvPack/Hulrik/setup-Hulrik.tpa~
 
 BEGIN ~Improved Shop of Silence~ DESIGNATED 34
 LABEL "JA#BGT_AdvPack-Shop_of_Silence"
+FORBID_COMPONENT ~GARRICK-TT/SETUP-GARRICK-TT.TP2~ 0 ~This component cannot be installed after Garrick Tales of a Troubadour~
 
 INCLUDE ~JA#BGT_AdvPack/Shop_of_Silence/setup-Shop_of_Silence.tpa~
 
@@ -466,6 +473,8 @@ INCLUDE ~JA#BGT_AdvPack/Sorcerous_Sundries/setup-Sorcerous_Sundries.tpa~
 
 BEGIN ~Mini-Quest: "The mystery of the silent ghostly voice"~ DESIGNATED 37
 LABEL "JA#BGT_AdvPack-Miniquest"
+FORBID_COMPONENT ~bg1re/setup-bg1re.tp2~ 41 ~This component cannot be installed after Baldur's Gate Romantic Encounters~
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
 INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
@@ -498,6 +507,7 @@ INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 
 BEGIN @2121 DESIGNATED 40
 LABEL "JA#BGT_AdvPack-Niemain_Zentarim"
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
 INCLUDE ~JA#BGT_AdvPack/Niemain_Zentarim/setup-Niemain_Zentarim.tpa~
 
@@ -538,6 +548,7 @@ INCLUDE ~JA#BGT_AdvPack/Yuxi/setup-Yuxi.tpa~
 
 BEGIN ~Seniyad & Aldeth~ DESIGNATED 44
 LABEL "JA#BGT_AdvPack-Seniyad_Aldeth"
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
 INCLUDE ~JA#BGT_AdvPack/Seniyad_Aldeth/setup-Seniyad_Aldeth.tpa~
 
@@ -558,6 +569,8 @@ INCLUDE ~JA#BGT_AdvPack/Betrayal/setup-Betrayal.tpa~
 
 BEGIN ~Tenya quest in Temple of Umberlee~ DESIGNATED 46
 LABEL "JA#BGT_AdvPack-Tenya2"
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
+FORBID_COMPONENT ~GARRICK-TT/SETUP-GARRICK-TT.TP2~ 0 ~This component cannot be installed after Garrick Tales of a Troubadour~
 
 INCLUDE ~JA#BGT_AdvPack/Tenya2/setup-Tenya2.tpa~
 
@@ -568,6 +581,7 @@ INCLUDE ~JA#BGT_AdvPack/Tenya2/setup-Tenya2.tpa~
 
 BEGIN ~Caldo can be charmed~ DESIGNATED 47
 LABEL "JA#BGT_AdvPack-Caldo"
+FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
 INCLUDE ~JA#BGT_AdvPack/Caldo/setup-Caldo.tpa~
 
