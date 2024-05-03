@@ -3,17 +3,6 @@
 ////////////////////////////////
 
 
-// BGEE/EET: Connect specific response text to state 7 (Edit any COPY_TRANS HALBAZ done by other mods)
-COPY_EXISTING ~HALBAZ.DLG~ ~override~
-	GET_OFFSET_ARRAY responses 0x14 4 0x10 4 0 0 0x20
-	PHP_EACH responses AS i => response BEGIN
-		READ_LONG (response + 0x04) strref
-		PATCH_IF ((strref MODULO 200000) = 192) BEGIN
-			WRITE_LONG (response + 0x1c) 7 // Point to next state
-		END
-	END
-BUT_ONLY
-
 COPY_EXISTING ~VAI.DLG~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~Enemy()~ ~\0 ActionOverride("FLAMVAI",Enemy())~
@@ -27,7 +16,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#centeo.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#cauter.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#connol.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#greywo.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#halbaz.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#jondal.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#mtowba.d~ // MTOWBASC.DLG MTOWBASN.DLG MTOWBAST.DLG
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#norale.d~
