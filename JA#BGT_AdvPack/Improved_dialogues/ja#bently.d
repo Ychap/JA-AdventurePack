@@ -1,8 +1,8 @@
-// Bentley's reaction to chapter 3
+// Bentley's reaction to chapter 3 - Commented out, to make responeses in BENTLY 0 1 from SotSC and bg1re still accessible
 
-ADD_STATE_TRIGGER BENTLY 3 ~Dead("Mulahey")~
+// ADD_STATE_TRIGGER BENTLY 3 ~Dead("Mulahey")~
 
-SET_WEIGHT BENTLY 3 #0
+// SET_WEIGHT BENTLY 3 #0
 
 
 ALTER_TRANS BENTLY
