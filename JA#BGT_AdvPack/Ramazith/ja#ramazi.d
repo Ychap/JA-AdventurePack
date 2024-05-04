@@ -50,13 +50,17 @@ BEGIN 0 END
 ~CreateCreature("ABELA",[376.228],2) ActionOverride("Abela",Wait(1))~
 
 
-REPLACE_SAY RAMAZI 15 @40
 
-ADD_TRANS_TRIGGER RAMAZI 15 ~False()~
+ALTER_TRANS RAMAZI
+BEGIN 15 END
+BEGIN 0 END
+BEGIN
+  "REPLY" ~@15~
+  "ACTION" ~ReputationInc(-2) AddexperienceParty(400) %state15_response0_action%~
+END
 
 EXTEND_BOTTOM RAMAZI 15
-  IF ~~ THEN REPLY @15 DO ~ReputationInc(-1)~ GOTO JA#RAMAZITH_15_PART2
-  IF ~~ THEN REPLY @1 GOTO 17
+  IF ~~ THEN REPLY @1 DO ~AddexperienceParty(400) %state15_response0_action%~ GOTO 17
 END
 
 
@@ -65,19 +69,30 @@ EXTEND_BOTTOM RAMAZI 16 18
 END
 
 
-ADD_TRANS_TRIGGER RAMAZI 19 ~False()~ // state 17 has exact same transition
+ALTER_TRANS RAMAZI
+BEGIN 19 END
+BEGIN 0 END
+BEGIN
+  "REPLY" ~@14~
+  "ACTION" ~~ // state 17 has exact same trans action
+  "EPILOGUE" ~GOTO JA#RAMAZITH_6~
+END
 
 EXTEND_BOTTOM RAMAZI 19
-  IF ~~ THEN REPLY @14 GOTO JA#RAMAZITH_6
   IF ~~ THEN REPLY @2 GOTO JA#RAMAZITH_4
   IF ~InMyArea("Abela")~ THEN REPLY @17 GOTO JA#RAMAZITH_8
 END
 
 
-ADD_TRANS_TRIGGER RAMAZI %default_state_during_quest% ~False()~
+ALTER_TRANS RAMAZI
+BEGIN %fallback_state_during_quest% END // 10(BGEE/EET) or 22(BGT)
+BEGIN 0 END
+BEGIN
+  "REPLY" ~@16~
+  "EPILOGUE" ~GOTO JA#RAMAZITH_10_22~
+END
 
-EXTEND_BOTTOM RAMAZI %default_state_during_quest% // 10(BGEE/EET) or 22(BGT)
-  IF ~~ THEN REPLY @16 GOTO JA#RAMAZITH_10_22
+EXTEND_BOTTOM RAMAZI %fallback_state_during_quest% // 10(BGEE/EET) or 22(BGT)
   IF ~~ THEN REPLY @3 GOTO JA#RAMAZITH_7
 END
 
@@ -205,15 +220,9 @@ IF ~~ THEN JA#RAMAZITH_15
 END
 
 
-IF ~~ THEN JA#RAMAZITH_15_PART2
-  SAY @41
-  COPY_TRANS RAMAZI 15 // Get quest reward
-END
-
-
 IF ~~ THEN JA#RAMAZITH_10_22
   SAY @4
-  COPY_TRANS RAMAZI %default_state_during_quest% // 10(BGEE/EET) or 22(BGT)
+  IF ~~ THEN EXIT
 END
 
 END // APPEND RAMAZI

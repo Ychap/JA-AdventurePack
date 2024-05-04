@@ -75,7 +75,13 @@ COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 BUT_ONLY
 
 
-OUTER_SET default_state_during_quest = (GAME_IS ~bgt~ ? 22 : 10)
+LAF GET_DLG_SCRIPT
+	INT_VAR idx_state = 15
+	STR_VAR dlg_file = ~RAMAZI.DLG~
+	RET state15_response0_action = response_action
+END
+
+OUTER_SET fallback_state_during_quest = (GAME_IS ~bgt~ ? 22 : 10)
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#ramazi.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#abela.d~

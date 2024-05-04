@@ -13,12 +13,12 @@
 @12	= ~Then so shall it be. Die fraudulent bastard!~
 @13	= ~I must insist that you do not tarry in my home. Good eve to you.~
 @14	= ~Prepare to die, necromancer!~
-@15	= ~I'll be happy to do it. You mentioned something about a reward?~
+@15	= ~It was a pleasure to do business with you. Farewell.~
 @16	= ~I'm already gone!~
 @17	= ~I would be very interested in the magical items you are going to make out of the nymph.~
 @18	= ~The captive nymph
 
-I brought the nymph Abela to Ramazith as agreed. The mage told me to return to him at the top floor of his tower in two days, then he will be able to offer me magic items that he will have made out of the nymph's body.~
+Ramazith told me to return to him at the top floor of his tower in two days. Then he will be able to offer me magic items that he will have made out of the nymph's body.~
 @19	= ~Oh, then there are already prospective customers for my goods. Fabulous! However, I will need some time to prepare the ingredients. Come back in two days to the top floor of my tower, then you shall get what you want in exchange for some gold.~
 @20	= ~Ah, the customer has returned. Wait a moment, my preparations are nearly complete.~
 @21	= ~All right, we're waiting.~
@@ -39,7 +39,3 @@ I brought the nymph Abela to Ramazith as agreed. The mage told me to return to h
 @36	= ~Oh, I'm already gone.~
 @37	= ~HAHA! Do you think so, huh? *I* will nail you at the top of my tower. Nobody can escape the Spider's Web, you little fly!~
 @38	= ~*You* invaded my sanctuary! Nobody threatens me in my home.~
-
-/* Split #2661 into 2 parts */
-@40 = ~A job done well in every respect, and no finer a specimen could I have wished for. By far, she is the most elusive spell component I have ever had to seek. Her body will yield a score of human control potions, as well as at least two or three items of "command"! I am assured wealth for this season and next at the very least.~
-@41 = ~I have you to thank. You please have this item and enjoy, yes. It is a good thing you do here today. Show yourselves out, I have much work to attend to.~
