@@ -26,9 +26,7 @@ EXTEND_BOTTOM ~%NBaldursGate_RamazithsTower_L6_BCS%.BCS~ ~JA#BGT_AdvPack/Ramazit
 // BGT (coord fix)
 COPY_EXISTING ~AR7238.BCS~ ~override~ // %NBaldursGate_RamazithsTower_L6%
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH
-		~CreateCreature("RAMAZI",[0.0],0)~
-		~CreateCreature("RAMAZI",[169.147],13)~
+		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("RAMAZI",[0.0],0)~ ~CreateCreature("RAMAZI",[169.147],13)~
 	END
 IF_EXISTS BUT_ONLY
 
@@ -62,15 +60,9 @@ COPY_EXISTING ~AR7300.BCS~ ~override~ // %NBaldursGate%
 	ON_MISMATCH
 		PATCH_WARN ~WARNING: Something went wrong while patching %SOURCE_FILE%! Trying to replace each part separately...~
 		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY EXACT_MATCH
-			~[%WNL%%MNL%%LNL%%TAB% ]Global("HelpRamazith","GLOBAL",0)~
-			~ True()~ // ~AreaCheck(%NBaldursGate%)~ always true here
-			REPLACE_TEXTUALLY EXACT_MATCH
-			~[%WNL%%MNL%%LNL%%TAB% ]Global("AbelaTeleport","GLOBAL",1)~
-			~ OR(2) Global("AbelaTeleport","GLOBAL",1) Dead("Abela")~
-			REPLACE_TEXTUALLY EXACT_MATCH
-			~ActionOverride("Ramazith",DestroySelf())~
-			~ActionOverride("Ramazith",DestroySelf()) SetGlobal("RamazithMove","GLOBAL",1)~
+			REFACTOR_TRIGGER EXACT_MATCH ~Global("HelpRamazith","GLOBAL",0)~ ~True()~ // Same as ~AreaCheck(%NBaldursGate%)~ since it's always true here
+			REFACTOR_TRIGGER EXACT_MATCH ~Global("AbelaTeleport","GLOBAL",1)~ ~OR(2) Global("AbelaTeleport","GLOBAL",1) Dead("Abela")~
+			REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Ramazith",DestroySelf())~ ~\0 SetGlobal("RamazithMove","GLOBAL",1)~
 		END
 	END
 IF_EXISTS BUT_ONLY
@@ -78,14 +70,13 @@ IF_EXISTS BUT_ONLY
 // BGEE/EET (Ramazith moves into his tower when Abela is gone)
 COPY_EXISTING ~RAMAZITH.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EVALUATE_REGEXP
-		~[%WNL%%MNL%%LNL%%TAB% ]Global("HelpRamazith","GLOBAL",0)~
-		~ AreaCheck("%NBaldursGate%")~
+		REFACTOR_TRIGGER EXACT_MATCH ~Global("HelpRamazith","GLOBAL",0)~ ~AreaCheck("%NBaldursGate%")~
 	END
 BUT_ONLY
 
 
 OUTER_SET default_state_during_quest = (GAME_IS ~bgt~ ? 22 : 10)
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#ramazi.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ramazith/ja#abela.d~
 
@@ -98,7 +89,7 @@ COPY_EXISTING ~ABELA.CRE~ ~override~
 	PHP_EACH items AS i => item BEGIN
 		READ_ASCII item item_filename
 		PATCH_IF (~%item_filename%~ STR_EQ ~CLCK07~) BEGIN
-			WRITE_LONG item+0x10 (THIS | 1<<3)
+			WRITE_LONG item+0x10 (THIS | BIT3) // Flag: Undroppable(3)
 		END
 	END
 BUT_ONLY
