@@ -108,15 +108,14 @@ FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed afte
 INCLUDE ~JA#BGT_AdvPack/Ramazith/setup-Ramazith.tpa~
 
 
-//////////////////////////////////////////////////////////////////////////
-// Komplett überarbeitete Herzogspalast-Szene mit restaurierten Inhalten
-// Restauriert: Abschluss der Husam-Storyline
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////
+// Husam's story line finished
+////////////////////////////////
 
-BEGIN ~Dukal Palace and Husam Story~ DESIGNATED 3
+BEGIN ~Husam's story line finished~ DESIGNATED 3
 LABEL "JA#BGT_AdvPack-Husam"
 
-INCLUDE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/setup-DukalPalace-Husamstory.tpa~
+INCLUDE ~JA#BGT_AdvPack/Husam/setup-Husam.tpa~
 
 
 /////////////////////////
@@ -625,6 +624,16 @@ LABEL "JA#BGT_AdvPack-Special_keg"
 REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~setup-infinityanimations.tp2~ 0) @37
 
 INCLUDE ~JA#BGT_AdvPack/Special_keg/setup-Special_keg.tpa~
+
+
+////////////////////////////////////
+// RESTORED/IMPROVED: Ducal Palace
+////////////////////////////////////
+
+BEGIN ~Ducal Palace~ DESIGNATED 52
+LABEL "JA#BGT_AdvPack-Ducal Palace"
+
+INCLUDE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/setup-DukalPalace-Husamstory.tpa~
 
 
 /////////////////////////////////////////////////////////
