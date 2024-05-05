@@ -4,40 +4,13 @@
 //////////////////////////////////////////////////////////////////////////
 
 
-COPY_EXISTING ~CYTHAN.CRE~ ~override~
-	LPF DELETE_CRE_ITEM STR_VAR item_to_delete = ~SCRL3F~ END
+COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7211A.BAM~ ~override~
 
-COPY_EXISTING ~SLYTHE.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
-
-COPY_EXISTING ~NILA.CRE~ ~override~
-	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#NILA~ END
-
-COPY_EXISTING ~HUSAM2.CRE~ ~override/JA#HUSAM.CRE~
-	SAY INITIAL_MEETING #4561
-	SAY MORALE #4560
-	SAY UNHAPPY_BREAKING_POINT #4560
-	SAY BATTLE_CRY1 #4561
-	SAY SELECT_COMMON1 #4561
-	SAY SELECT_COMMON2 #4565
-	SAY SELECT_COMMON3 #0
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~HUSAM2~ script_new = ~SEEENEMY~ END
-	WRITE_ASCII DEATHVAR ~JA#HUSAM~ #32
-	WRITE_ASCII DIALOG ~JA#HUSAM~ #8
-
-COPY_EXISTING ~FLAM7.CRE~ ~override~
-              ~FLAM9.CRE~ ~override~
-              ~FLAM10.CRE~ ~override~
-              ~FLAM11.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
-
-COPY_EXISTING ~FLAM7.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~FLAM7~ script_new = ~JA#FLM03~ END
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
-
-COPY_EXISTING ~FLAM9.CRE~ ~override~
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~JA#FLM03~ END
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.VVC~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.BAM~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.WAV~ ~override~
+END
 
 
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLAM1.CRE~ ~override~
@@ -52,39 +25,157 @@ COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PRISO.CRE~ ~override~
 	SAY NAME1 @2045
 	SAY NAME2 @2046
 
+COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA2.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA3.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA4.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA5.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA6.CRE~ ~override~
 	SAY NAME1 @2047
 	SAY NAME2 @2047
 
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH03.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH04.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH05.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH06.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH07.CRE~ ~override~
-END
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	COPY_EXISTING ~SHADOW03.CRE~ ~override/JA#STH03.CRE~
 	              ~SHADOW04.CRE~ ~override/JA#STH04.CRE~
 	              ~SHADOW05.CRE~ ~override/JA#STH05.CRE~
 	              ~SHADOW06.CRE~ ~override/JA#STH06.CRE~
 	              ~SHADOW02.CRE~ ~override/JA#STH07.CRE~
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = EVAL ~%SOURCE_RES%~ script_new = ~JA#STHFX~ END
-	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SEEENEMY~ END
-	WRITE_ASCIIE DEATHVAR ~%DEST_RES%~ #32
+		LPF REPLACE_CRE_SCRIPT STR_VAR script_old = EVAL ~%SOURCE_RES%~ script_new = ~JA#STHFX~ END
+		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SEEENEMY~ END
+		WRITE_ASCIIE DEATHVAR ~%DEST_RES%~ #32
+END ELSE BEGIN
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH03.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH04.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH05.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH06.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STH07.CRE~ ~override~
 END
 
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA1.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA2.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA3.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA4.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA5.CRE~ ~override~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM01.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM02.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM03.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM04.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM05.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM06.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM07.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM08.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM09.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#KAEM1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7209T.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7211T.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STHFX.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CANDL.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU2.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUSAR.BAF~
+
+
+EXTEND_TOP ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7208.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_DucalPalace_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7209.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_DucalPalace_Cellar_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7211.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7300.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%CentralSewers%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7325.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",0)~ ~\0 !Global("JA#HUSAM_MOVE","GLOBAL",1) PartyHasItem("SCRL3F")~
+		REPLACE_TEXTUALLY ~CreateCreature("NOBLPA",\[769\.571\],[0S])~ ~\0 ClearAllActions() StartCutSceneMode() FadeToColor([30.0],0) Wait(1) StartCutScene("JA#CUSAR")~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NEBaldursGate_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~CreateCreature("HUSAM2",\[199\.2039\],[0S])~ ~CreateCreature("HUSAM2",[358.1961],2)~
+	END
+BUT_ONLY
+
+// Belt initiates his dialog after final dialog from JA#Husam
+COPY_EXISTING ~BELT.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",1)~ ~\0 OR(2) Global("JA#HUSAM_MOVE","GLOBAL",4) Dead("JA#HUSAM")~
+	END
+BUT_ONLY
+
+// Let Liia use her script MAGE5.BCS
+COPY_EXISTING ~LIIA.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~See([ENEMY])~ ~False()~
+	END
+BUT_ONLY
+
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	COPY_EXISTING_REGEXP ~SHADOW0[2-6]\.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REFACTOR_TRIGGER EXACT_MATCH ~Global("HusamMove","GLOBAL",7)~ ~\0 !AreaCheck("%NBaldursGate_DucalPalace_L1%") !AreaCheck("%NBaldursGate_DucalPalace_Cellar%")~
+		END
+	BUT_ONLY
+END
+
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.VVC~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.BAM~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.WAV~ ~override~
+	// transport cutscene with Belt/Liia
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#cubel.d~
+	// 2 cutscenes with Husam2
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU1.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU3.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#husam_bgt.d~
 END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#nila.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#palast.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#priso.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#husam.d~
+// misc.d
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#mcook4.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#denkod.d~
+
+ADD_JOURNAL @4 @7 @13 @15 @19 USING ~JA#BGT_AdvPack/languages/%s/ja#husam.tra~
+
+
+COPY_EXISTING ~CYTHAN.CRE~ ~override~
+	LPF DELETE_CRE_ITEM STR_VAR item_to_delete = ~SCRL3F~ END
+BUT_ONLY
+
+COPY_EXISTING ~SLYTHE.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
+BUT_ONLY
+
+COPY_EXISTING ~NILA.CRE~ ~override~
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#NILA~ END
+BUT_ONLY
+
+COPY_EXISTING ~HUSAM2.CRE~ ~override/JA#HUSAM.CRE~
+	SAY INITIAL_MEETING #4561
+	SAY MORALE #4560
+	SAY UNHAPPY_BREAKING_POINT #4560
+	SAY BATTLE_CRY1 #4561
+	SAY SELECT_COMMON1 #4561
+	SAY SELECT_COMMON2 #4565
+	SAY SELECT_COMMON3 #0
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~HUSAM2~ script_new = ~SEEENEMY~ END
+	WRITE_ASCII DEATHVAR ~JA#HUSAM~ #32
+	WRITE_ASCII DIALOG ~JA#HUSAM~ #8
+BUT_ONLY
+
+COPY_EXISTING ~FLAM7.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~FLAM7~ script_new = ~JA#FLM03~ END
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SEEENEMY~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
+BUT_ONLY
+
+COPY_EXISTING ~FLAM9.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~JA#FLM03~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
+BUT_ONLY
+
+COPY_EXISTING ~FLAM10.CRE~ ~override~
+              ~FLAM11.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
+BUT_ONLY
 
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
@@ -120,7 +211,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 			DEFAULT
 		END
 	END
-	// Delete Nobles
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW5~ END
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW12~ END
 	// Add new Noble and Lady Odelia
@@ -202,6 +292,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 		fj_cre_resref     = ~JA#NOPA6~ // with JA#NOPA6.DLG
 		fj_bcs_specific   = ~SARRUN~
 	END
+BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 	LPF ALTER_AREA_ACTOR
@@ -270,9 +361,9 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		fj_name           = ~Camerarius~
 		fj_cre_resref     = ~JA#KAEM1~
 	END
+BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
-	// delete Flaming Fist
 	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~FLAM11~ END
 	// Add new Flaming Fist
 	LPF fj_are_structure
@@ -327,6 +418,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
 		fj_cre_resref     = ~JA#FLAM3~
 		fj_bcs_specific   = ~JA#FLM01~
 	END
+BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
@@ -552,7 +644,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_reg_script       = ~JA#7211T~
 	END
 	// add entrance
-	LPF  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 627   // x
 		fj_loc_y       = 360   // y
@@ -573,6 +665,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_name = ~JA#7211A~
 		fj_bam_resref = ~JA#7211A~
 	END
+BUT_ONLY
 
 COPY_EXISTING ~%CentralSewers%.are~ ~override~
 	// add region triggers
@@ -597,7 +690,7 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		fj_destination_name = ~JA#7325~
 		fj_name             = ~JA#7211~
 	END
-	LPF  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 667    // x
 		fj_loc_y       = 1818   // y
@@ -606,86 +699,4 @@ COPY_EXISTING ~%CentralSewers%.are~ ~override~
 		fj_structure_type = entrance
 		fj_name           = ~JA#7211~
 	END
-
-
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	// transport cutscene with Belt/Liia
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.D~
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
-	// 2 cutscenes with Husam2
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM_bgt.D~
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU1.BAF~
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU3.BAF~
-END
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PALAST.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#PRISO.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUSAM.D~
-// misc.d
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#MCOOK4.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#DENKOD.D~
-
-ADD_JOURNAL @4 @7 @13 @15 @19 USING ~JA#BGT_AdvPack/languages/%s/ja#husam.tra~
-
-
-COPY_EXISTING ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY
-		~[%WNL%%MNL%%LNL%%TAB% ]Global("SarevokBehavior","GLOBAL",0)~ ~\0 !Global("JA#HUSAM_MOVE","GLOBAL",1) PartyHasItem("SCRL3F")~
-		REPLACE_TEXTUALLY
-		~CreateCreature("NOBLPA",\[769\.571\],[0S])~ ~\0 ClearAllActions() StartCutSceneMode() FadeToColor([30.0],0) Wait(1) StartCutScene("JA#CUSAR")~
-	END
-
-COPY_EXISTING ~%NEBaldursGate_BCS%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~CreateCreature("HUSAM2",\[199\.2039\],[0S])~ ~CreateCreature("HUSAM2",[358.1961],2)~
-	END
 BUT_ONLY
-
-// Belt initiates his dialog after final dialog from JA#Husam
-COPY_EXISTING ~BELT.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",1)~ ~\0 OR(2) Global("JA#HUSAM_MOVE","GLOBAL",4) Dead("JA#HUSAM")~
-	END
-
-// Let Liia use her script MAGE5.BCS
-COPY_EXISTING ~LIIA.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~See([ENEMY])~ ~False()~
-	END
-BUT_ONLY
-
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COPY_EXISTING_REGEXP ~SHADOW0[2-6]\.BCS~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REFACTOR_TRIGGER EXACT_MATCH ~Global("HusamMove","GLOBAL",7)~ ~\0 !AreaCheck("%NBaldursGate_DucalPalace_L1%") !AreaCheck("%NBaldursGate_DucalPalace_Cellar%")~
-		END
-END
-
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM01.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM02.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM03.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM04.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM05.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM06.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM07.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM08.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM09.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#KAEM1.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7209T.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7211T.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#STHFX.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CANDL.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#HUCU2.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUSAR.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
-
-EXTEND_TOP ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7208.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate_DucalPalace_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7209.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate_DucalPalace_Cellar_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7211.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%NBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7300.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%CentralSewers%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7325.BAF~ EVALUATE_BUFFER
-
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7211A.BAM~ ~override~
