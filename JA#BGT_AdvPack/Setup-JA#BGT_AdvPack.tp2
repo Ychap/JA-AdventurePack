@@ -631,9 +631,9 @@ INCLUDE ~JA#BGT_AdvPack/Special_keg/setup-Special_keg.tpa~
 ////////////////////////////////////
 
 BEGIN ~Ducal Palace~ DESIGNATED 52
-LABEL "JA#BGT_AdvPack-Ducal Palace"
+LABEL "JA#BGT_AdvPack-Ducal_Palace"
 
-INCLUDE ~JA#BGT_AdvPack/Dukalpalace-HusamStory/setup-DukalPalace-Husamstory.tpa~
+INCLUDE ~JA#BGT_AdvPack/Ducal_Palace/setup-Ducal_Palace.tpa~
 
 
 /////////////////////////////////////////////////////////

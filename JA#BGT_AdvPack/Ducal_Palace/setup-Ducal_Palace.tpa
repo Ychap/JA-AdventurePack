@@ -4,42 +4,42 @@
 
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.VVC~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.BAM~ ~override~
-	COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#SPWN1.WAV~ ~override~
+	COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#SPWN1.VVC~ ~override~
+	COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#SPWN1.BAM~ ~override~
+	COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#SPWN1.WAV~ ~override~
 END
 
 
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLAM3.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#FLAM3.CRE~ ~override~
 
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#KAEM1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#KAEM1.CRE~ ~override~
 	SAY NAME1 @2044
 	SAY NAME2 @2044
 
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA1.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA2.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA3.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA4.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA5.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NOPA6.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA2.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA3.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA4.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA5.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA6.CRE~ ~override~
 	SAY NAME1 @2047
 	SAY NAME2 @2047
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#NILA.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM01.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM04.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM05.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM06.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM07.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM08.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#FLM09.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#KAEM1.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#7209T.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUSAR.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#NILA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM01.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM04.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM05.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM06.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM07.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM08.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM09.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#KAEM1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#7209T.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#CUSAR.BAF~
 
 
-EXTEND_TOP ~%NBaldursGate_DucalPalace_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Dukalpalace-HusamStory/AR7209.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_DucalPalace_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Ducal_Palace/AR7209.BAF~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~override~
@@ -59,14 +59,14 @@ BUT_ONLY
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	// transport cutscene with Belt/Liia
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/JA#CUBEL.BAF~
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#cubel.d~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#CUBEL.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#cubel.d~
 END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#denkod.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#mcook4.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#nila.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Dukalpalace-HusamStory/ja#palast.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#denkod.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#mcook4.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#nila.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#palast.d~
 
 
 COPY_EXISTING ~CYTHAN.CRE~ ~override~
