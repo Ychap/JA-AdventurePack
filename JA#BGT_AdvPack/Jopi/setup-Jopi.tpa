@@ -3,21 +3,19 @@
 ////////////////////////////////
 
 
-// Spawn and despawn JA#JOPI.CRE(Jopi)
-EXTEND_TOP ~%WBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7600.BAF~ EVALUATE_BUFFER
-
-// Start cutscene with JA#JOPI(Jopi)
-EXTEND_BOTTOM ~%WBaldursGate_RagefastsHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~ EVALUATE_BUFFER
-
-
 COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~
 	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDRUNSGT~ script_new = ~RUNENEMY~ END
 	WRITE_ASCII DIALOG ~JA#JOPI~ #8
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Jopi/JA#JOPI.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Jopi/JA#CUJO1.BAF~
+
+// Spawn and despawn JA#JOPI.CRE(Jopi)
+EXTEND_TOP ~%WBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7600.BAF~ EVALUATE_BUFFER
+// Start cutscene with JA#JOPI(Jopi)
+EXTEND_BOTTOM ~%WBaldursGate_RagefastsHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~ EVALUATE_BUFFER
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Jopi/ja#jopi.d~
 
 ADD_JOURNAL @22 @39 @1023 USING ~JA#BGT_AdvPack/languages/%s/ja#jopi.tra~
-
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Jopi/JA#CUJO1.BAF~
