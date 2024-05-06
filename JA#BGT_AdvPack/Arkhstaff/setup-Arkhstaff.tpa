@@ -75,6 +75,7 @@ LAF GET_DLG_STRREF
 END
 
 <<<<<<<< ...inlined/thaldo_ee.d
+// BGEE/EET
 REPLACE_TRANS_ACTION THALDO
 BEGIN 0 END
 BEGIN 1 END
@@ -83,8 +84,8 @@ BEGIN 1 END
 >>>>>>>>
 COMPILE EVALUATE_BUFFER ~...inlined/thaldo_ee.d~ // Must be compiled before ja#thaldo.d
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#thaldo.d~ // Must be compiled before ja#arkhs.d
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#arkhs.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#thaldo.d~ // Process COPY_TRANS THALDO 0
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#arkhs.d~ // Creates CHAIN with JA#THALD.DLG
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#ironh.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#husam.d~
 
