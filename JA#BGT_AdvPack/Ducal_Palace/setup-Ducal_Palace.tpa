@@ -63,6 +63,7 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#cubel.d~
 END
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#flam10.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#mcook4.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#nila.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#palast.d~
