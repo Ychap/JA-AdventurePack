@@ -49,7 +49,7 @@ EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/A
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#friendlyarm.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#law.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#flam.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#flam2.d~
 
 
 COPY_EXISTING ~ALYTH.CRE~ ~override~
@@ -70,7 +70,7 @@ BUT_ONLY
 
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
-	// change container scripts (change Guard Enforcer dialog)
+	// change container scripts (different Guard Enforcer dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script
@@ -139,7 +139,7 @@ COPY_EXISTING ~%FriendlyArmInn_L1%.ARE~ ~override~
 		region_name   = ~REPTRAP~
 		region_script = ~None~
 	END
-	// change container scripts (change Guard Enforcer dialog)
+	// change container scripts (different Guard Enforcer dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script
@@ -165,7 +165,7 @@ COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
 		region_name   = ~REPTRAP~
 		region_script = ~None~
 	END
-	// change container scripts (change Guard Enforcer dialog)
+	// change container scripts (different Guard Enforcer dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		READ_ASCII container+0x48 container_script
@@ -177,7 +177,7 @@ BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 			  ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
-	// change container scripts (spawn Flaming Fist Enforcer with dialog)
+	// change all container scripts (spawn Flaming Fist Enforcer with dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		WRITE_ASCII container+0x48 ~JA#LAW05~ #8
@@ -185,7 +185,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
-	// change container scripts (spawn Flaming Fist Enforcer with dialog)
+	// change all container scripts (spawn Flaming Fist Enforcer with dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
 	PHP_EACH containers AS i => container BEGIN
 		WRITE_ASCII container+0x48 ~JA#LAW05~ #8
