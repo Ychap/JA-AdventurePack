@@ -2,7 +2,7 @@ IF
 	Global("JA#BRAUN_TOT","%NashkelCarnival%",0)
 	StateCheck("JA#COCK1",STATE_DEAD)
 THEN
-  	RESPONSE #100
+	RESPONSE #100
 		SetGlobalTimer("JA#DEADCOCK","GLOBAL",SIXTEEN_HOURS)
 		SetGlobal("JA#BRAUN_TOT","%NashkelCarnival%",1)
 		Continue()
@@ -12,7 +12,7 @@ IF
 	Global("JA#WEISS_TOT","%NashkelCarnival%",0)
 	StateCheck("JA#COCK2",STATE_DEAD)
 THEN
-  	RESPONSE #100
+	RESPONSE #100
 		SetGlobalTimer("JA#DEADCOCK","GLOBAL",SIXTEEN_HOURS)
 		SetGlobal("JA#WEISS_TOT","%NashkelCarnival%",1)
 		Continue()

@@ -74,12 +74,12 @@ END
 AUTO_TRA ~JA#BGT_AdvPack/languages/%s~
 
 LANGUAGE ~Deutsch~
-         ~german~
-         ~JA#BGT_AdvPack/languages/german/setup.tra~
+		 ~german~
+		 ~JA#BGT_AdvPack/languages/german/setup.tra~
 
 LANGUAGE ~English~
-         ~english~
-         ~JA#BGT_AdvPack/languages/english/setup.tra~
+		 ~english~
+		 ~JA#BGT_AdvPack/languages/english/setup.tra~
 
 
 

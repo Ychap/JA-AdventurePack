@@ -1,18 +1,18 @@
 // In case bg1npc is present: Set "X#XzarBoss" to -1 (so the the dialogs of JAP's quest extention will be triggered in NIEMAI.DLG)
 IF
-    GlobalGT("X#XzarBoss","GLOBAL",0)
+	GlobalGT("X#XzarBoss","GLOBAL",0)
 THEN
-    RESPONSE #100
-        SetGlobal("X#XzarBoss","GLOBAL",-1)
+	RESPONSE #100
+		SetGlobal("X#XzarBoss","GLOBAL",-1)
 		Continue()
 END
 
 // In case bg1npc is present: Set "X#MontBoss" to -1 (so the the dialogs of JAP's quest extention will be triggered in NIEMAI.DLG)
 IF
-    !Global("X#MontBoss","GLOBAL",-1)
+	!Global("X#MontBoss","GLOBAL",-1)
 THEN
-    RESPONSE #100
-        SetGlobal("X#MontBoss","GLOBAL",-1)
+	RESPONSE #100
+		SetGlobal("X#MontBoss","GLOBAL",-1)
 		Continue()
 END
 

@@ -7,9 +7,9 @@ THEN
 END
 
 IF
-    See([PC])
-    NumTimesTalkedTo(0)
+	See([PC])
+	NumTimesTalkedTo(0)
 THEN
-    RESPONSE #100
-        Dialogue([PC])
+	RESPONSE #100
+		Dialogue([PC])
 END

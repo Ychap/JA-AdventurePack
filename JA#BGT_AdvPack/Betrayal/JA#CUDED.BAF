@@ -18,7 +18,7 @@ THEN
 		FadeToColor([20.0],0)
 		Wait(2)
 		JumpToPoint([504.474])
-        MoveViewPoint([504.474],INSTANT)
+		MoveViewPoint([504.474],INSTANT)
 		SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",1)
 		Wait(2)
 		FaceObject("Aldeth")
@@ -81,5 +81,3 @@ THEN
 		Wait(1)
 		FaceObject("Aldeth")
 END
-
-

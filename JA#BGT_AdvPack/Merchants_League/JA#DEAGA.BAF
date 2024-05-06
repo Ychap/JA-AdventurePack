@@ -24,7 +24,7 @@ THEN
 END
 
 IF
-    Range([PC],4)
+	Range([PC],4)
 	See([PC])
 	Global("JA#DEAGAN_SEQ","GLOBAL",3)
 THEN

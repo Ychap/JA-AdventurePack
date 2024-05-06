@@ -22,7 +22,7 @@ COPY_EXISTING ~%FriendlyArmInn%.are~ ~override~
 		fj_destination_area = EVAL ~%FriendlyArmInn_TempleofWisdom%~
 		fj_destination_name = ~JA#FR6800~
 	END
-  	LPF fj_are_structure
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x       = 4066
 		fj_loc_y       = 2152
@@ -30,7 +30,7 @@ COPY_EXISTING ~%FriendlyArmInn%.are~ ~override~
 		STR_VAR
 		fj_structure_type = entrance
 		fj_name           = ~JA#FR6804~
-  	END
+	END
 BUT_ONLY
 
 COPY_EXISTING ~%FriendlyArmInn_TempleofWisdom%.are~ ~override~

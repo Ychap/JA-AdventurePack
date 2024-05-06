@@ -1,27 +1,27 @@
-@0  = ~I would like to ask you some questions.~ 
+@0  = ~I would like to ask you some questions.~
 @1  = ~Thank you. But I do not need anything right now. Farewell.~
-@2  = ~Ask frankly!~ 
+@2  = ~Ask frankly!~
 @3  = ~Why is your tavern called "Elfsong"? Just because of the beautiful sound of the name?~
 /* @4  =  */
 @5  = ~What's up with the ghostly voice, has it really disappeared lately?~
 @6  = ~I heard you bought Elfsong from a man called Wilyn. Do you think he might have something to do with the disappearance of the ghostly voice?~
-@7  = ~Do you know of a mage called Vaalahor? Do you know where I can find him?~ 
+@7  = ~Do you know of a mage called Vaalahor? Do you know where I can find him?~
 @8  = ~Why does the city guard leave you alone?~
-@9  = ~Doesn't it bother you to have so many shady characters visit your tavern?~ 
+@9  = ~Doesn't it bother you to have so many shady characters visit your tavern?~
 @10 = ~You don't really look like the usual pub owner.~
 @11 = ~Oh, alright. I'm already gone.~
-@12 = ~No, the name of my tavern comes from the elven ghostly voice, which haunts here during night time. It sounds incredibly beautiful and the melancholy in her songs give all the guests a peaceful mood. Many of our guests just visit us because of it. Until recently, the ghost lady has sang her song every night, but unfortunately she has not been heard for some time.~ 
+@12 = ~No, the name of my tavern comes from the elven ghostly voice, which haunts here during night time. It sounds incredibly beautiful and the melancholy in her songs give all the guests a peaceful mood. Many of our guests just visit us because of it. Until recently, the ghost lady has sang her song every night, but unfortunately she has not been heard for some time.~
 @13 = ~Do you have any idea why the voice has turned silent?~
-@14 = ~Do you know whose ghost is responsible for the song?~ 
+@14 = ~Do you know whose ghost is responsible for the song?~
 @15 = ~I have other questions.~
 @16 = ~I must leave. Farewell.~
 @17 = ~If I only knew. Should the voice be gone forever, I'm ruined. I spent dear gold to purchase this establishment just because of the voice. I hope I could get behind the mystery of its disappearance, but I have no time to investigate.~
-@18 = ~Any clues? Something must have happened.~ 
+@18 = ~Any clues? Something must have happened.~
 @19 = ~Maybe I could help you.~
-@20 = ~Uh, well. Then good luck! Farewell.~ 
-@21 = ~No one knows. Only one thing is certain, she must have died of grief a very long time ago, grief over a lost love, a man who did not return from the sea.~ 
+@20 = ~Uh, well. Then good luck! Farewell.~
+@21 = ~No one knows. Only one thing is certain, she must have died of grief a very long time ago, grief over a lost love, a man who did not return from the sea.~
 @22 = ~A sad story. Do you have any idea why the voice has remained silent?~
-@23 = ~Maybe I could even help you to find out why the ghostly voice has disappeared.~ 
+@23 = ~Maybe I could even help you to find out why the ghostly voice has disappeared.~
 @24 = ~If you could find out what has happened, that would be wonderful. Unfortunately, I have no time myself to look into it, but without the singing ghost the Elfsong is only a tavern among many.~
 @25 = ~But I need to be sure that you don't harass my guests unnecessarily while investigating this matter. This tavern is a place people can come together discreetly. Names mean just as little here as origin and righteousness and no one is walking through that door to be questioned, so please be gentle. If you need help or have further questions, just turn to me.~
 @26 = ~Okay, I'll see what I can find out.~
@@ -70,4 +70,3 @@
 @70 = ~The mystery of the silent ghostly voice
 
 I have solved the mysterious disappearance of the singing ghost at the Elfsong tavern and returned her voice to the "Lady". Alyth was extremely grateful to me, as the singing is the main reason for many guests to visit her inn. If I return in a few days, she will have a special gift for me.~
-                          
