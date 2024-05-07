@@ -32,7 +32,8 @@ THEN
 		Continue()
 END
 >>>>>>>>
-EXTEND_TOP_REGEXP ~\(%WyrmsCrossing_BCS%\|%FishingVillage_BCS%\)\.BCS~ ~...inlined/failedFisherQuest.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%FishingVillage_BCS%.BCS~ ~...inlined/failedFisherQuest.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~%WyrmsCrossing_BCS%.BCS~ ~...inlined/failedFisherQuest.baf~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~FISHER.BCS~ ~override~
