@@ -70,8 +70,7 @@ I didn't want to become the hangman and managed to find a peaceful solution betw
 @67 = ~Ah, the heroes who saved master Aldeth and all of us. Fortunately, we're rid of these disgusting shapeshifters! The blame for this disaster is to be given to the grand dukes, if you ask me. They let all the rabble into the city.~
 
 /* new for v1.07 */
-
-@68 = ~He is right, <CHARNAME> – the Shadow Druids do not stop when it comes to other druid circles if these do not share their extreme views of how to punish those who do not value Nature as the druids do – Seniyad, today you were more in tune with this thinking than you seem to notice!~
+// @68 = ~He is right, <CHARNAME> – the Shadow Druids do not stop when it comes to other druid circles if these do not share their extreme views of how to punish those who do not value Nature as the druids do – Seniyad, today you were more in tune with this thinking than you seem to notice!~
 @69 = ~Doppelgangers! I can't believe it. Keep up the fight, there are still some of the monsters around!~
 @70 = ~I thank you for bringing me my dead partners. I will see to a proper burial.~
 @71  = ~Did you really think I wouldn't come back to you about this, Aldeth? You need to give me a good reason for selling me out to the Flaming Fist, and fast! I helped you several times and you thank me with betrayal?!~
@@ -114,6 +113,6 @@ I didn't want to become the hangman and managed to find a peaceful solution betw
 @108  = ~Here, take these potions as a small compensation for what you had to go through.~
 // @109  = ~I am glad to see you well, my friends. I advice you not to tarry too long, though.~
 @110  = ~Aah, you've made it in time for the festivities. It'll be best if you go and fetch Aldeth so we can surprise him. As his old childhood friend that honor belongs to you, of course.~
-@111  = ~What you say is hardly appropriate, young dru-... Jaheira? Is that you, young one? I should have recognized you immediately!~
-@112  = ~It is indeed I, Jaheira. It saddens me to see that you still cling to your aggressive approach when dealing with those that are less caring with nature's bounty. Despicable as these men may be, you do not seem to consider how much your attitude costs us by denting the respect the city dwellers might feel for our course.~
-@113  = ~As much as your words hurt, Jaheira, as much I do realise that they state the truth. I fear, the recent troubles have affected me in ways I can't see, and I have grown more ruthless than I realize. Perhaps... this is something to reflect upon.~
+// @111  = ~What you say is hardly appropriate, young dru-... Jaheira? Is that you, young one? I should have recognized you immediately!~
+// @112  = ~It is indeed I, Jaheira. It saddens me to see that you still cling to your aggressive approach when dealing with those that are less caring with nature's bounty. Despicable as these men may be, you do not seem to consider how much your attitude costs us by denting the respect the city dwellers might feel for our course.~
+// @113  = ~As much as your words hurt, Jaheira, as much I do realise that they state the truth. I fear, the recent troubles have affected me in ways I can't see, and I have grown more ruthless than I realize. Perhaps... this is something to reflect upon.~
