@@ -141,7 +141,7 @@ BUT_ONLY
 COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT/EE with bg1ub)
 			  ~INN0705.STO~ ~override~ // BART8.DLG(EE without bg1ub)
 	WRITE_ASCII 0x44 ~JA#RUM01~ #8
-BUT_ONLY
+IF_EXISTS BUT_ONLY
 
 
 COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
