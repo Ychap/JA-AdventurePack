@@ -125,13 +125,13 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	END
 END
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	<<<<<<<< ...inlined/harbor_bgt.d
+	<<<<<<<< ...inlined/harbor_ee.d
 	ADD_TRANS_ACTION HARBOR
 	BEGIN 9 END
 	BEGIN END
 	~EraseJournalEntry(@1012) EraseJournalEntry(@1013) EraseJournalEntry(@1014)~
 	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/harbor_bgt.d~
+	COMPILE EVALUATE_BUFFER ~...inlined/harbor_ee.d~
 
 	ADD_JOURNAL EXISTING @1012 @1013 @1014
 END
