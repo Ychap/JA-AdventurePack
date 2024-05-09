@@ -1,13 +1,3 @@
-/*
-
-known issues:
-
--NTOUPAST.dlg from NTotSC and also MTOB5.dlg talk as if the singing voice is still gone even after the quest to restore it is finished.
-
-*/
-
-
-
 BACKUP ~weidu_external/backup/JA#BGT_AdvPack~
 // AUTHOR ~Jarl~
 SUPPORT ~Please post at G3 or Kerzenburgforum, refer to readme.~
@@ -70,6 +60,7 @@ ALWAYS
 			reload_array    = ja#reload
 	END
 END
+
 
 AUTO_TRA ~JA#BGT_AdvPack/languages/%s~
 

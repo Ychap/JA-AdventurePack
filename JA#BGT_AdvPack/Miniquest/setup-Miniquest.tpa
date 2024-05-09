@@ -111,16 +111,22 @@ END
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#alyth.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#bartley.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#brulgon.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#rum01.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#nathan.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#serw1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#esely.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#etc00.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#mtob5.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#nathan.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#rum01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#serw1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#vaala.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily1.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily2.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wilyn.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#vaala.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#esely.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#etc00.d~
+
+// NTotSC
+ACTION_IF FILE_EXISTS_IN_GAME ~NTOUPAST.DLG~ BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#mtob5.d~
+		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~MTOB5~ ~NTOUPAST~
+END
 
 ADD_JOURNAL @70 @1000 @1001 @1002 @1003 @1004 @1005 @1006 USING ~JA#BGT_AdvPack/languages/%s/ja#alyth.tra~
 
