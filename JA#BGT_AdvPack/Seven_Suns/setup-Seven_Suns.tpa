@@ -137,6 +137,18 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 END
 
 
+ACTION_IF GAME_IS ~bgee~ BEGIN
+	COPY_EXISTING_REGEXP ~JA#SSMR[134]\.CRE~ ~override~
+		GET_OFFSET_ARRAY items CRE_V10_ITEMS
+		PHP_EACH items AS i => item BEGIN
+			READ_ASCII item item_filename
+			PATCH_IF (~%item_filename%~ STR_EQ ~RNDTRE09~) BEGIN // Rich treasure
+				WRITE_ASCII item ~RNDTRE05~ #8
+			END
+		END
+	BUT_ONLY
+END
+
 COPY_EXISTING ~DOPPSM.CRE~ ~override~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ END
 	LPF INSERT_CRE_SCRIPT INT_VAR offset = SCRIPT_OVERRIDE STR_VAR script_new = ~JA#SSMER~ END
