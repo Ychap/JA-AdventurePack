@@ -10,6 +10,15 @@ COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#SKEL1.CRE~ ~override~
 	SAY NAME1 @34
 	SAY NAME2 @34
+	PATCH_IF GAME_IS ~bgt eet~ BEGIN
+		GET_OFFSET_ARRAY items CRE_V10_ITEMS
+		PHP_EACH items AS i => item BEGIN
+			READ_ASCII item item_filename
+			PATCH_IF (~%item_filename%~ STR_EQ ~RNDTRE05~) BEGIN // Rich treasure
+				WRITE_ASCII item ~RNDTRE09~ #8
+			END
+		END
+	END
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/ja#pira1.d~
