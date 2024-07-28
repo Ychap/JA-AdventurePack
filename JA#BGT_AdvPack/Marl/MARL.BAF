@@ -1,4 +1,5 @@
 IF
+	Allegiance(Myself,ENEMY)
 	HasWeaponEquiped(LastAttackerOf(Myself))
 	GlobalLT("JA#MARL_GUARD","GLOBAL",2)
 THEN

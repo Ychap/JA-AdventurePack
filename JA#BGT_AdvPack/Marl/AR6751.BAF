@@ -3,12 +3,12 @@ IF
 	Global("JA#MARL_WINS","%Beregost_FeldepostsInn_L1%",0)
 	Allegiance("Marl",ENEMY)
 	OR(6)
-		HPLT(Player1,3)
-		HPLT(Player2,3)
-		HPLT(Player3,3)
-		HPLT(Player4,3)
-		HPLT(Player5,3)
-		HPLT(Player6,3)
+		StateCheck(Player1,STATE_HELPLESS)
+		StateCheck(Player2,STATE_HELPLESS)
+		StateCheck(Player3,STATE_HELPLESS)
+		StateCheck(Player4,STATE_HELPLESS)
+		StateCheck(Player5,STATE_HELPLESS)
+		StateCheck(Player6,STATE_HELPLESS)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#MARL_WINS","%Beregost_FeldepostsInn_L1%",1)
@@ -17,9 +17,8 @@ END
 IF
 	Global("JA#MARL_GUARD_SPWN","%Beregost_FeldepostsInn_L1%",0)
 	Global("JA#MARL_LOSES","%Beregost_FeldepostsInn_L1%",0)
-	OR(2)
-		StateCheck("Marl",STATE_HELPLESS)
-		HPLT("Marl",3)
+	Allegiance("Marl",ENEMY)
+	HPLT("Marl",8)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#MARL_LOSES","%Beregost_FeldepostsInn_L1%",1)
