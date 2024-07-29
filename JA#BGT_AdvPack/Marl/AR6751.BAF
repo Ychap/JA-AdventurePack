@@ -22,6 +22,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#MARL_LOSES","%Beregost_FeldepostsInn_L1%",1)
+		AddExperienceParty(650)
 END
 
 IF
