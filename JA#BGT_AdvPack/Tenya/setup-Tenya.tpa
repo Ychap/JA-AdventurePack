@@ -59,3 +59,17 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya/ja#tenya.d~
 COPY_EXISTING ~SONNER.CRE~ ~override~
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SHOUTDLG~ END
 BUT_ONLY
+
+
+ACTION_IF ~%LANGUAGE%~ STR_EQ ~german~ BEGIN
+	ACTION_IF GAME_IS ~bgee~ BEGIN
+		ALTER_TLK_RANGE 27439 27448 BEGIN
+			REPLACE_TEXTUALLY ~^Der Fischer und die Priesterin~ ~Die Fischer und die Priesterin~
+		END
+	END
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		ALTER_TLK_RANGE 227439 227448 BEGIN
+			REPLACE_TEXTUALLY ~^Der Fischer und die Priesterin~ ~Die Fischer und die Priesterin~
+		END
+	END
+END
