@@ -3,7 +3,7 @@
 //////////////////////////////////////
 
 
-EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/PHANDALY.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Phandalyn/AR7705.BAF~ EVALUATE_BUFFER
 
 
 // Correct Phandalyn's script: should talk before attacking evil party members
@@ -13,7 +13,7 @@ COPY_EXISTING ~PHANDALY.BCS~ ~override~
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
 
 		PATCH_IF (num_matches > 0) BEGIN
-			REPLACE_TEXTUALLY ~%textToReplace%~ ~Dialogue([PC])~
+			REPLACE_TEXTUALLY ~%textToReplace%~ ~Continue()~ // attack is already handle by WDASIGHT.BCS
 			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
 		END ELSE BEGIN
 			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -40,28 +40,10 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Phandalyn/ja#bellam.d~
 
 // Remove SHOUT script - or the whole inn will turn hostile!
 COPY_EXISTING ~PHANDA.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~PHANDALY~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ script_new = ~PHANDALY~ END
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ END
 BUT_ONLY
 
 
 COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.ARE~ ~override~
 	LPF DELETE_AREA_ACTOR STR_VAR actor_to_delete = ~Phandalyn~ END
-BUT_ONLY
-
-COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
-	// add new actor
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 980
-		fj_loc_y          = 577
-		fj_dest_x         = 980
-		fj_dest_y         = 577
-		fj_orientation    = 1
-		fj_schedule		  = 0b000000011111111111100000
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Phandalyn~
-		fj_cre_resref     = ~PHANDA~
-	END
 BUT_ONLY
