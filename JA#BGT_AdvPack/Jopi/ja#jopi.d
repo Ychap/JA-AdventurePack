@@ -10,7 +10,7 @@ BEGIN END
 
 APPEND JOPI
 
-IF ~GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)~ THEN JA#JOPI_1
+IF WEIGHT #-1 ~GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)~ THEN JA#JOPI_1
   SAY @0
   IF ~~ THEN REPLY @1 DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",1)~ GOTO JA#JOPI_2
   IF ~~ THEN REPLY @2 EXIT

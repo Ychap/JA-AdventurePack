@@ -10,9 +10,11 @@ COPY_EXISTING ~JOPI.CRE~ ~override/JA#JOPI.CRE~
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Jopi/JA#CUJO1.BAF~
 
-// Spawn and despawn JA#JOPI.CRE(Jopi)
+// JOPI.CRE initiates dialog after chapter 3
+EXTEND_BOTTOM ~%FriendlyArmInn_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR6801.BAF~ EVALUATE_BUFFER
+// Spawn and despawn JA#JOPI.CRE
 EXTEND_TOP ~%WBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7600.BAF~ EVALUATE_BUFFER
-// Start cutscene with JA#JOPI(Jopi)
+// Start cutscene with JA#JOPI.CRE
 EXTEND_BOTTOM ~%WBaldursGate_RagefastsHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Jopi/AR7226.BAF~ EVALUATE_BUFFER
 
 

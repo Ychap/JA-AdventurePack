@@ -1,0 +1,7 @@
+IF
+	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
+	TriggerOverride("JOPI",NumTimesTalkedToGT(0))
+THEN
+	RESPONSE #100
+		ActionOverride("JOPI",SetNumTimesTalkedTo(0))
+END
