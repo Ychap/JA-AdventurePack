@@ -45,7 +45,9 @@ END
 
 BEGIN ~JA#GUAB6~
 
-IF ~OR(4) !Dead("Bassilus") Global("wyvernp","GLOBAL",0) !Dead("Mulahey") GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%) NumTimesTalkedTo(0)~ THEN JA#GUAB4_1
+IF ~OR(4) !Dead("Bassilus") Global("wyvernp","GLOBAL",0) !Dead("Mulahey") GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)
+    OR(4) !Dead("Bassilus") !PartyHasItem("MISC52") !Dead("Mulahey") GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)
+    NumTimesTalkedTo(0)~ THEN JA#GUAB4_1
   SAY @11
   IF ~~ THEN REPLY @12 GOTO 14
   IF ~~ THEN REPLY @13 EXIT
@@ -86,10 +88,11 @@ IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 15
   IF ~~ THEN EXIT
 END
 
-IF ~OR(4) !Dead("Bassilus") Global("wyvernp","GLOBAL",0) !Dead("Mulahey") GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)~ THEN 14
+IF ~OR(4) !Dead("Bassilus") Global("wyvernp","GLOBAL",0) !Dead("Mulahey") GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)
+    OR(4) !Dead("Bassilus") !PartyHasItem("MISC52") !Dead("Mulahey") GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)~ THEN 14
   SAY @23
   IF ~!Dead("Bassilus")~ THEN REPLY @24 GOTO JA#GUAB4_2
-  IF ~Global("wyvernp","GLOBAL",0)~ THEN REPLY @25 GOTO 0
+  IF ~Global("wyvernp","GLOBAL",0) !PartyHasItem("MISC52")~ THEN REPLY @25 GOTO 0
   IF ~!Dead("Mulahey")~ THEN REPLY @26 GOTO 7
   IF ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_4%)~ THEN REPLY @27 GOTO 6
   IF ~~ THEN REPLY @28 EXIT
