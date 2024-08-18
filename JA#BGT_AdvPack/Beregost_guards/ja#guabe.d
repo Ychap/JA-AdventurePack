@@ -78,7 +78,7 @@ END
 
 IF ~~ THEN 10
   SAY @21
-  IF ~~ THEN JOURNAL @22 EXIT
+  IF ~~ THEN UNSOLVED_JOURNAL @22 EXIT
 END
 
 IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 15
@@ -189,4 +189,4 @@ END
 ADD_TRANS_ACTION KELDDA
 BEGIN 1 3 END
 BEGIN END
-~EraseJournalEntry(@1020)~
+~EraseJournalEntry(@22) EraseJournalEntry(@1020)~

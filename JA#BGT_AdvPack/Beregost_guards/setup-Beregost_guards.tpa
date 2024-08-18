@@ -18,6 +18,8 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/JA#GUAB8.BAF~
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Beregost_guards/ja#guabe.d~
 
+ADD_JOURNAL EXISTING @22 USING ~JA#BGT_AdvPack/languages/%s/ja#guabe.tra~
+
 
 COPY_EXISTING ~%Beregost%.ARE~ ~override~
 	// add new actors
