@@ -1,7 +1,6 @@
 IF
-	OR(3)
-		Global("BrevlikRobbed","GLOBAL",2)
-		Global("HelpBrevlik","GLOBAL",2)
+	OR(2)
+		GlobalGT("ScarMission","GLOBAL",4)
 		GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
 	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",0)
 THEN
