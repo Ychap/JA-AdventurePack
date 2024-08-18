@@ -3,19 +3,20 @@
 //////////////////////////////////
 
 
-// BGT (already fixed in EE)
-COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1_BCS%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~CreateCreature("CREW\([1-7]\)"~ ~CreateCreature("LEAGGU\1"~
-	END
-BUT_ONLY
+// Swap CREW[1-7] with LEAGGU[1-7] in BGT (already fixed in EE)
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1_BCS%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~CreateCreature("CREW\([1-7]\)"~ ~CreateCreature("LEAGGU\1"~
+		END
+	BUT_ONLY
 
-// BGT (already fixed in EE)
-COPY_EXISTING ~%NEBaldursGate_CountingHouse_L2_BCS%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~CreateCreature("LEAGGU\([1-7]\)"~ ~CreateCreature("CREW\1"~
-	END
-BUT_ONLY
+	COPY_EXISTING ~%NEBaldursGate_CountingHouse_L2_BCS%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~CreateCreature("LEAGGU\([1-7]\)"~ ~CreateCreature("CREW\1"~
+		END
+	BUT_ONLY
+END
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Counting_House/ja#ulf.d~
