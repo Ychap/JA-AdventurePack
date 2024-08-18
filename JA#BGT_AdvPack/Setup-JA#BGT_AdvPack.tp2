@@ -469,11 +469,11 @@ FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed afte
 INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
 
-///////////////////////////////////////
-// Phandalyn waits in Jopalins Tavern
-///////////////////////////////////////
+//////////////////////////////////////
+// Phandalyn waits in Elfsong Tavern
+//////////////////////////////////////
 
-BEGIN ~Phandalyn waits in Jopalins Tavern~ DESIGNATED 38
+BEGIN ~Phandalyn waits in Elfsong Tavern~ DESIGNATED 38
 LABEL "JA#BGT_AdvPack-Phandalyn"
 
 INCLUDE ~JA#BGT_AdvPack/Phandalyn/setup-Phandalyn.tpa~

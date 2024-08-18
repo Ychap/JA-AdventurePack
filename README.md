@@ -44,7 +44,7 @@ Coded to be compatibile with BGEE, EET and BGT
 35. Ender Sai in Baldur's Gate city
 36. Sorcerous Sundries
 37. Mini-Quest: "The mystery of the silent ghostly voice"
-38. Phandalyn waits in Jopalins Tavern
+38. Phandalyn waits in Elfsong Tavern
 39. Black Alaric's Cave
 40. Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim
 41. Beregost guards
