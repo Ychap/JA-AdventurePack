@@ -14,11 +14,11 @@ REPLACE_TRANS_ACTION NIEMAI
 BEGIN 13 END
 BEGIN END
 ~ActionOverride("WHEBER",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("OULAM",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("WILLIAM",EscapeArea\(Destroy\)?([0-9]*))[%WNL%%MNL%%LNL%%TAB% ]*EscapeArea\(Destroy\)?([0-9]*)~
-~SetGlobal("JA#TalkedNiemai","LOCALS",1)~
+~SetGlobal("JA#TalkedNiemai","GLOBAL",1)~
 
 
 EXTEND_BOTTOM NIEMAI 9
-  IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#TalkedNiemai","LOCALS",1)~ EXIT
+  IF ~~ THEN REPLY @0 DO ~SetGlobal("JA#TalkedNiemai","GLOBAL",1)~ EXIT
 END
 
 
@@ -35,9 +35,9 @@ IF ~~ THEN JA#NIEMAI_4
 END
 
 
-IF WEIGHT #-1 ~Global("JA#TalkedNiemai","LOCALS",1)~ THEN JA#NIEMAI_6
+IF WEIGHT #-1 ~Global("JA#TalkedNiemai","GLOBAL",1)~ THEN JA#NIEMAI_6
   SAY @7
-  IF ~~ THEN REPLY @8 DO ~SetGlobal("JA#TalkedNiemai","LOCALS",2)~ GOTO JA#NIEMAI_7
+  IF ~~ THEN REPLY @8 DO ~SetGlobal("JA#TalkedNiemai","GLOBAL",2)~ GOTO JA#NIEMAI_7
   IF ~~ THEN REPLY @9 GOTO JA#NIEMAI_8
   IF ~~ THEN REPLY @10 EXIT
 END
@@ -65,7 +65,7 @@ IF ~~ THEN JA#NIEMAI_10
 END
 
 
-IF WEIGHT #-1 ~Global("JA#TalkedNiemai","LOCALS",2)~ THEN JA#NIEMAI_11
+IF WEIGHT #-1 ~Global("JA#TalkedNiemai","GLOBAL",2)~ THEN JA#NIEMAI_11
   SAY @18
   IF ~~ THEN EXIT
 END
@@ -175,12 +175,12 @@ END
 
 BEGIN ~JA#ZENT1~
 
-IF ~Global("JA#TalkedNiemai","LOCALS",1)~ THEN JA#ZENT1_5
+IF ~Global("JA#TalkedNiemai","GLOBAL",1)~ THEN JA#ZENT1_5
   SAY @45
   IF ~~ THEN EXIT
 END
 
-IF ~Global("JA#TalkedNiemai","LOCALS",2)~ THEN JA#ZENT1_6
+IF ~Global("JA#TalkedNiemai","GLOBAL",2)~ THEN JA#ZENT1_6
   SAY @46
   IF ~~ THEN EXIT
 END
