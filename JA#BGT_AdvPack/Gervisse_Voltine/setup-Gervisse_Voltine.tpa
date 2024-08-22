@@ -119,4 +119,13 @@ COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
 		fj_structure_type = entrance
 		fj_name           = ~Frja#c07~
 	END
+	// add mapnote
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 4120
+		fj_loc_y          = 1820
+		fj_note_strref    = RESOLVE_STR_REF(@1)
+		STR_VAR
+		fj_structure_type = note
+	END
 BUT_ONLY
