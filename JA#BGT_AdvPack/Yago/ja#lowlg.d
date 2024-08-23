@@ -1,12 +1,12 @@
 BEGIN ~JA#LOWLG~
 
-IF ~!StateCheck(Myself,STATE_CHARMED) Global("YagoFight","GLOBAL",1)~ THEN 6
-  SAY @1
+IF ~StateCheck(Myself,STATE_CHARMED)~ THEN BEGIN 5
+  SAY @0
   IF ~~ THEN EXIT
 END
 
-IF ~OR(2) StateCheck(Myself,STATE_CHARMED) Global("JA#LOWLG","GLOBAL",1)~ THEN 5
-  SAY @0
+IF ~Global("YagoFight","GLOBAL",1)~ THEN BEGIN 6
+  SAY @1
   IF ~~ THEN EXIT
 END
 
@@ -50,6 +50,11 @@ END
 IF ~~ THEN JA#LOWLG_1
   SAY @14
   IF ~~ THEN DO ~SetGlobal("JA#LOWLG","GLOBAL",1)~ EXIT
+END
+
+IF ~True()~ THEN BEGIN 7
+  SAY @18
+  IF ~~ THEN EXIT
 END
 
 // END JA#LOWLG
