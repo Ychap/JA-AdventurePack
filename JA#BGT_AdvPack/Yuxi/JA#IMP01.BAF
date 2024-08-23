@@ -7,16 +7,9 @@ THEN
 END
 
 IF
-	Allegiance(Myself,NEUTRAL)
-	Allegiance("Ragefast",ENEMY)
-THEN
-	RESPONSE #100
-		Enemy()
-END
-
-IF
+	Delay(30)
 	Range([PC],15)
-	NumberOfTimesTalkedTo(0)
+	NumTimesTalkedToLT(5)
 	See([PC])
 	See("Ragefast")
 	Allegiance(Myself,NEUTRAL)
