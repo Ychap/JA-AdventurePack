@@ -10,6 +10,7 @@ COPY_EXISTING ~VAI.DLG~ ~override~
 BUT_ONLY
 
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#aldeth.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bently.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bellam.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#centeo.d~
