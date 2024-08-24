@@ -13,7 +13,7 @@
 @13 = ~My name is <GABBER>.~
 @14 = ~As you want. Farewell.~
 @15 = ~Pleased to meet you, <GABBER>. My name is Krammoch Arkhstaff, scholar by profession, problem solver and a specialist in basilisks.~
-@16 = ~Sounds showy. What do you mean by "problem solver"?~
+@16 = ~Sounds exaggerated. What do you mean by "problem solver"?~
 @17 = ~How does one become a specialist for basilisks? Did you get yourself petrified or what?~
 @18 = ~I would like to ask a question to the scholar.~
 @19 = ~Well, we have to leave. Farewell.~
@@ -99,3 +99,6 @@ Krammoch was not pleased that I killed his lover in the tower of the Iron Throne
 
 /* new for v 1.07 */
 @97 = ~I have to insist that you help us. Our intentions are honorable and there is no objective reason why you would keep the key from us.~
+
+/* @20 without first sentence */
+@98 = ~Let's say I know quite a few people from different circles and I can make the right connections. Connections between people who would otherwise never meet in real life, if you know what I mean. Do you want to know anything else?~

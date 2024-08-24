@@ -99,3 +99,6 @@ Krammoch war nicht erfreut, dass ich seinen Geliebten im Turm des Eisenthrons er
 
 /* new for v 1.07 */
 @97   = ~Ich muss auf Eure Hilfe bestehen. Unser Vorhaben ist ehrenwert und es gibt offensichtlich keinen objektiven Grund, warum Ihr uns den Schlüssel nicht gebt!~
+
+/* @20 without first sentence */
+@98   = ~Sagen wir, ich kenne ziemlich viele Leute aus den unterschiedlichsten Kreisen und kann Kontakte herstellen. Kontakte zwischen Personen, die sich im normalen Leben sonst nie begegnen würden, wenn Ihr versteht, was ich meine. Wollt Ihr sonst noch was wissen?~
