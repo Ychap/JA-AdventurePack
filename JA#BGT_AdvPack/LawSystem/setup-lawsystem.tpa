@@ -52,6 +52,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#law.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#flam2.d~
 
 
+// BGT
 COPY_EXISTING ~ALYTH.CRE~ ~override~
 	WRITE_ASCII DEATHVAR ~alyth~ #32
 BUT_ONLY
