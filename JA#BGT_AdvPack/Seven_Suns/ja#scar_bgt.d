@@ -3,7 +3,7 @@ REPLACE_TRIGGER_TEXT SCAR
 ~NumDeadGT("SSDOPPLE",\1)~
 
 REPLACE_TRIGGER_TEXT SCAR
-~Global("KilledDopple","GLOBAL",\([0-9]+\)~
+~Global("KilledDopple","GLOBAL",\([0-9]+\))~
 ~OR(2) NumDead("SSDOPPLE",\1) NumDeadGT("SSDOPPLE",\1)~
 
 
