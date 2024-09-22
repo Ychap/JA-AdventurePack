@@ -476,8 +476,10 @@ Weight: 1~
 
 STATISTICS:
 
-AC-Bonus: -2 vs. Sword
-Weight: 1~
+Equipped abilities:
+– Armor Class: +2 vs. slashing attacks
+
+Weight: 2~
 /* @2098 = ~Deagan~ */
 @2099 = ~Shalak~
 @2100 = ~Jased~
