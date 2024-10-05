@@ -1,7 +1,9 @@
 IF
 	Global("JA#ELFSONG","GLOBAL",0)
 	GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
-	TimeOfDay(NIGHT)
+	OR(2)
+		TimeOfDay(DUSK)
+		TimeOfDay(NIGHT)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#ELFSONG","GLOBAL",1)
