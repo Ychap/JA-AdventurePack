@@ -86,7 +86,6 @@ END
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY2.BAF~
 
 
 MKDIR ~music/JA#ESTA~
@@ -119,7 +118,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#rum01.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#serw1.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#vaala.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily1.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily2.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wilyn.d~
 
 // NTotSC
