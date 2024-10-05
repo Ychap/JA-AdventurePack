@@ -16,4 +16,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#ELFSONG","GLOBAL",0)
+		PlaySong(0)
 END
