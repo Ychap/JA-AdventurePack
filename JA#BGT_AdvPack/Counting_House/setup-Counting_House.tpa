@@ -1,6 +1,6 @@
-//////////////////////////////////
+///////////////////////////////////
 // IMPROVED/FIXED: Counting House
-//////////////////////////////////
+///////////////////////////////////
 
 
 // Swap CREW[1-7] with LEAGGU[1-7] in BGT (already fixed in EE)
@@ -23,5 +23,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Counting_House/ja#ulf.d~
 
 
 COPY_EXISTING ~JACIL.CRE~ ~override~
+				~ULF.CRE~ ~override~
 	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
 BUT_ONLY
