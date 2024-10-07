@@ -2,7 +2,7 @@
 
 Coded to be compatibile with BGEE, EET and BGT
 
-[Install order](JA%23BGT_AdvPack/JA%23BGT_AdvPack.ini)
+[Install order](JA%23BGT_AdvPack/JA%23BGT_AdvPack.ini#L29-L31)
 
 
 ### List of components
