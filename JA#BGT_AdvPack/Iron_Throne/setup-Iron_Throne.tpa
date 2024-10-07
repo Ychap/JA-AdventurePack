@@ -1,0 +1,36 @@
+//////////////////////
+// Iron Throne Guard
+//////////////////////
+
+
+COPY ~JA#BGT_AdvPack/Iron_Throne/JA#IRONH.CRE~ ~override~
+
+
+EXTEND_TOP ~%BaldursGateDocks_BCS%.BCS~ ~JA#BGT_AdvPack/Iron_Throne/AR8100.BAF~ EVALUATE_BUFFER
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Iron_Throne/ja#ironh.d~
+
+
+COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
+	LPF ALTER_AREA_DOOR
+		INT_VAR
+		flag_locked     = 1
+		lock_difficulty = 100
+		STR_VAR
+		door_name       = ~Door0616~ // Correct door name in BGT, BGEE and EET
+	END
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 397
+		fj_loc_y          = 642
+		fj_dest_x         = 397
+		fj_dest_y         = 642
+		fj_orientation    = 15
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Iron Throne Guard~
+		fj_cre_resref     = ~JA#IRONH~
+	END
+BUT_ONLY

@@ -627,6 +627,16 @@ LABEL "JA#BGT_AdvPack-Ducal_Palace"
 INCLUDE ~JA#BGT_AdvPack/Ducal_Palace/setup-Ducal_Palace.tpa~
 
 
+//////////////////////
+// Iron Throne Guard
+//////////////////////
+
+BEGIN ~Iron Throne Guard~ DESIGNATED 53
+LABEL "JA#BGT_AdvPack-Iron_Throne"
+
+INCLUDE ~JA#BGT_AdvPack/Iron_Throne/setup-Iron_Throne.tpa~
+
+
 /////////////////////////////////////////////////////////
 // Graphical improvements: Animated torches and candles
 /////////////////////////////////////////////////////////

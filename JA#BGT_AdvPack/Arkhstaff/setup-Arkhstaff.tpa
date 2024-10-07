@@ -36,8 +36,6 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.CRE~ ~override~
 	SAY NAME1 @2049
 	SAY NAME2 @2049
 
-COPY ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.CRE~ ~override~
-
 COPY_EXISTING ~THALDO.CRE~ ~override/JA#THALD.CRE~
 	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~LEAVECH7~ END
 	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SHOUT~ END
@@ -61,9 +59,7 @@ COPY ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.ITM~ ~override~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#ARKHS.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#C04DR.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#C04.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/JA#IRONH.BAF~
 
-EXTEND_TOP ~%BaldursGateDocks_BCS%.BCS~ ~JA#BGT_AdvPack/Arkhstaff/AR8100.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%BaldursGateDocks_OgreMagiHouse_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Arkhstaff/AR8101.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%BaldursGateDocks_OgreMagiHouse_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Arkhstaff/AR8102.BAF~ EVALUATE_BUFFER
 
@@ -86,7 +82,6 @@ COMPILE EVALUATE_BUFFER ~...inlined/thaldo_ee.d~ // Must be compiled before ja#t
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#thaldo.d~ // Process COPY_TRANS THALDO 0
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#arkhs.d~ // Creates CHAIN with JA#THALD.DLG
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#ironh.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Arkhstaff/ja#husam.d~
 
 ADD_JOURNAL @81 @1010 @1019 USING ~JA#BGT_AdvPack/languages/%s/ja#arkhs.tra~
@@ -191,26 +186,6 @@ COPY_EXISTING ~%BaldursGateDocks_OgreMagiHouse_L2%.are~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
-	LPF ALTER_AREA_DOOR
-		INT_VAR
-		flag_locked     = 1
-		lock_difficulty = 100
-		STR_VAR
-		door_name       = ~Door0616~ // Correct door in BGT, BGEE and EET
-	END
-	// add new actor
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 397
-		fj_loc_y          = 642
-		fj_dest_x         = 397
-		fj_dest_y         = 642
-		fj_orientation    = 15
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Iron Throne Guard~
-		fj_cre_resref     = ~JA#IRONH~
-	END
 	// add mapnote
 	LPF fj_are_structure
 		INT_VAR

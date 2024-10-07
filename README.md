@@ -59,6 +59,7 @@ Coded to be compatibile with BGEE, EET and BGT
 50. Stationary Nashkel soldiers
 51. Special keg in Elfsong Tavern
 52. Ducal Palace
+53. Iron Throne Guard
 
 <ol start="100">
   <li>Graphical improvements: Animated torches and candles</li>
