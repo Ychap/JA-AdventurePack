@@ -406,7 +406,11 @@ Kann nicht verwendet werden von:
 @2048 = ~Kizska~
 @2049 = ~Krammoch Arkhstaff~
 @2050 = ~Krammochs Schlüssel~
-@2051 = ~Dies ist der Schlüssel, den Ihr von Krammoch Arkhstaff erhalten habt. Mit ihm könnt Ihr den geheimen Zugang zum Hauptquartier des Eisenthrons öffnen.~
+@2051 = ~Dies ist der Schlüssel, den Ihr von Krammoch Arkhstaff erhalten habt. Mit ihm könnt Ihr den geheimen Zugang zum Hauptquartier des Eisenthrons öffnen.
+
+EIGENSCHAFTEN:
+
+Gewicht: 0~
 @2052 = ~Basiliskenzähmer~
 @2053 = ~Dieses Amulett habt Ihr von Krammoch Arkhstaff, einem zwielichten Geschäftsmann aus Baldurs Tor, der für seine weitreichenden Kenntnisse über Basilisken bekannt ist. Seine Forschungen auf diesem Gebiet gingen so weit, dass er einige dieser gefährlichen Kreaturen als Haustiere in seinem städtischen Anwesen hielt. Die aufgebrachte Bevölkerung Baldurs Tors brachte den Fall schließlich vor Gericht und die Großherzöge verboten die Haltung von Basilisken innerhalb der Stadtmauern.
 
@@ -430,7 +434,11 @@ Gewicht: 1~
 /* @2066 = ~Gheldehar~ */
 /* @2067 = ~Pilar~ */
 @2068 = ~Gheldehars Stiefel~
-@2069 = ~Ein Paar abgetragener Stiefel, die Ihr im Auftrag von Gheldehar der Halbelfe Pilar abgenommen habt. Ihr habt jedoch starke Zweifel, ob der Aufwand hierfür gerechtfertigt war.~
+@2069 = ~Ein Paar abgetragener Stiefel, die Ihr im Auftrag von Gheldehar der Halbelfe Pilar abgenommen habt. Ihr habt jedoch starke Zweifel, ob der Aufwand hierfür gerechtfertigt war.
+
+EIGENSCHAFTEN:
+
+Gewicht: 4~
 @2070 = ~Pilars Ring~
 @2071 = ~Der Ring der Halbelfe Pilar, den Ihr von Gheldehar „zurückgewinnen“ konntet. Es handelt sich um einen ganz normalen Goldring, an dem Ihr keine besonderen oder gar magischen Fähigkeiten ausmachen könnt.
 

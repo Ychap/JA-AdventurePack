@@ -406,7 +406,11 @@ Thieves, druids, sorcerer, clerics, mages, monks~
 @2048 = ~Kizska~
 @2049 = ~Krammoch Arkhstaff~
 @2050 = ~Krammoch's Key~
-@2051 = ~This is the key, which you received from Krammoch Arkhstaff. With it, you can open the secret entrance of the Iron Throne Headquarters.~
+@2051 = ~This is the key, which you received from Krammoch Arkhstaff. With it, you can open the secret entrance of the Iron Throne Headquarters.
+
+STATISTICS:
+
+Weight: 0~
 @2052 = ~Basilisks' tamer~
 @2053 = ~You received this amulet from Krammoch Arkhstaff, a shady businessman from Baldur's Gate, who is known for his extensive knowledge of basilisks. His reseach in this field has gone so far that he took some of these dangerous creatures as pets in his urban estate. The enraged population of Baldur's Gate finally took the case to courth and the Grand Dukes prohibited the keeping of basilisks within the city walls.
 
@@ -430,7 +434,11 @@ Weight: 1~
 /* @2066 = ~Gheldehar~ */
 /* @2067 = ~Pilar~ */
 @2068 = ~Gheldehar's Boots~
-@2069 = ~A pair of worn boots, which you have taken from the Half-elf Pilar on behalf of Gheldehar. You have strong doubts, however, whether the effort for this purpose was justified.~
+@2069 = ~A pair of worn boots, which you have taken from the Half-elf Pilar on behalf of Gheldehar. You have strong doubts, however, whether the effort for this purpose was justified.
+
+STATISTICS:
+
+Weight: 4~
 @2070 = ~Pilar's Ring~
 @2071 = ~The ring of the Half-elf Pilar that you could "retrieve" from Gheldehar. It's a normal golden ring with no detectable special or even magical effects.
 
