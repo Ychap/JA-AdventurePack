@@ -50,13 +50,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~override~
 	END
 BUT_ONLY
 
-// Let Liia use her script MAGE5.BCS
-COPY_EXISTING ~LIIA.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~See([ENEMY])~ ~False()~
-	END
-BUT_ONLY
-
 
 ACTION_IF GAME_IS ~bgt~ BEGIN
 	// transport cutscene with Belt/Liia
