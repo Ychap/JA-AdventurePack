@@ -4,11 +4,19 @@ ADD_STATE_TRIGGER ALDETH 22 ~Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2
 SET_WEIGHT ALDETH 22 #%state21_weight%
 
 
+// BGEE/EET
+REPLACE_TRANS_ACTION FLAMAL
+BEGIN 1 END
+BEGIN END
+~ActionOverride("\(Aldeth\|Brandi\|JA#DEAGA\)",EscapeArea())~
+~ActionOverride("\1",NoAction())~
+
+
 // BGT
 ADD_TRANS_ACTION FLAMAL
 BEGIN 1 END
 BEGIN END
-~ActionOverride("FFHUNT",EscapeArea()) EscapeArea()~
+~ActionOverride("FFHUNT",EscapeArea()) ActionOverride("FFHUNT",EscapeArea()) ActionOverride("FFHUNT",EscapeArea()) EscapeArea()~
 UNLESS ~EscapeArea()~
 
 
