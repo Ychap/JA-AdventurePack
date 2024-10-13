@@ -1,4 +1,11 @@
 IF
+    Global("C#st_HeroOfBG","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
 	Global("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)
 	Allegiance(Myself,NEUTRAL)
 THEN
