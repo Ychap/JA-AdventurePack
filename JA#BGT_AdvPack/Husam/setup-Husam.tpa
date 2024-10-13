@@ -6,8 +6,6 @@
 COPY ~JA#BGT_AdvPack/Husam/JA#7211A.BAM~ ~override~
 
 
-COPY ~JA#BGT_AdvPack/Husam/JA#FLAM1.CRE~ ~override~
-
 COPY ~JA#BGT_AdvPack/Husam/JA#PRISO.CRE~ ~override~
 	SAY NAME1 @2045
 	SAY NAME2 @2046
@@ -30,7 +28,6 @@ END ELSE BEGIN
 END
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#FLM01.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#7211T.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#STHFX.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#CANDL.BAF~
@@ -118,44 +115,16 @@ COPY_EXISTING ~HUSAM2.CRE~ ~override/JA#HUSAM.CRE~
 	WRITE_ASCII DIALOG ~JA#HUSAM~ #8
 BUT_ONLY
 
-COPY_EXISTING ~FLAM7.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~FLAM7~ END
-	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#FLM01~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
-BUT_ONLY
-
-COPY_EXISTING ~FLAM9.CRE~ ~override~
-	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ END
-	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#FLM01~ END
-	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
-BUT_ONLY
-
 
 COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
-	PHP_EACH actors AS i => actor BEGIN
-		READ_SHORT actor+0x20 actor_pos_x
-		READ_ASCII actor+0x80 actor_filename
-		PATCH_MATCH ~%actor_pos_x%~ WITH
-			710 WHEN (~%actor_filename%~ STR_EQ ~FLAM7~) BEGIN
-				WRITE_SHORT actor+0x20 710
-				WRITE_SHORT actor+0x22 1055
-				WRITE_SHORT actor+0x24 710
-				WRITE_SHORT actor+0x26 1055
-				WRITE_SHORT actor+0x34 12
-			END
-			693 WHEN (~%actor_filename%~ STR_EQ ~FLAM7~) BEGIN
-				WRITE_SHORT actor+0x20 693
-				WRITE_SHORT actor+0x22 1072
-				WRITE_SHORT actor+0x24 693
-				WRITE_SHORT actor+0x26 1072
-				WRITE_SHORT actor+0x34 14
-			END
-			DEFAULT
+	// Delete all actors (guards and prisoner(BGT only))
+	FOR (i = (SHORT_AT 0x58)-1; i >= 0; --i) BEGIN
+		LPF fj_are_structure
+			INT_VAR fj_delete_mode = i
+			STR_VAR fj_structure_type = actor
 		END
 	END
-	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~PRISON~ END // exists only in BGT
-	// add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 1122
@@ -167,54 +136,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_structure_type = actor
 		fj_name           = ~Gefangener~
 		fj_cre_resref     = ~JA#PRISO~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 297
-		fj_loc_y          = 603
-		fj_dest_x         = 297
-		fj_dest_y         = 603
-		fj_orientation    = 9
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Flaming Fist Mercena~
-		fj_cre_resref     = ~FLAM7~
-		END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 383
-		fj_loc_y          = 579
-		fj_dest_x         = 383
-		fj_dest_y         = 579
-		fj_orientation    = 4
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Flaming Fist Mercena~
-		fj_cre_resref     = ~FLAM7~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 353
-		fj_loc_y          = 530
-		fj_dest_x         = 353
-		fj_dest_y         = 530
-		fj_orientation    = 1
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Flaming Fist Mercena~
-		fj_cre_resref     = ~FLAM7~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 895
-		fj_loc_y          = 828
-		fj_dest_x         = 895
-		fj_dest_y         = 828
-		fj_orientation    = 0
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~JA#FLAM1~
-		fj_cre_resref     = ~JA#FLAM1~
 	END
 	// add region triggers
 	LPF fj_are_structure
@@ -329,30 +250,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_structure_type   = region
 		fj_name             = ~JA#TRAP3~
 		fj_reg_script       = ~GTCK~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_type         = 0    // trap
-		fj_box_left     = 624
-		fj_box_top      = 528
-		fj_box_right    = 1199
-		fj_box_bottom   = 957
-		fj_cursor_idx   = 0
-		fj_flags        = 0b00000000010
-		fj_trap_active  = 1
-		fj_trap_status  = 0
-		fj_trap_detect  = 0
-		fj_trap_remove  = 0
-		fj_loc_x        = 461
-		fj_loc_y        = 768
-		fj_vertex_0     = 624 + (914 << 16)
-		fj_vertex_1     = 1146 + (528 << 16)
-		fj_vertex_2     = 1199 + (566 << 16)
-		fj_vertex_3     = 683 + (957 << 16)
-		STR_VAR
-		fj_structure_type   = region
-		fj_name             = ~JA#TRAP4~
-		fj_reg_script       = ~JA#7211T~
 	END
 	// add entrance
 	LPF fj_are_structure
