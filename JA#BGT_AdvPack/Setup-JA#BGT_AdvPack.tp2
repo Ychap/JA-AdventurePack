@@ -489,13 +489,11 @@ LABEL "JA#BGT_AdvPack-Black_Alarics_Cave"
 INCLUDE ~JA#BGT_AdvPack/Black_Alarics_Cave/setup-Black_Alarics_Cave.tpa~
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////
+// Extended meeting between Xzar and Niemain
+//////////////////////////////////////////////
 
-// Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
-
-BEGIN @2121 DESIGNATED 40
+BEGIN ~Extended meeting between Xzar and Niemain~ DESIGNATED 40
 LABEL "JA#BGT_AdvPack-Niemain_Zentarim"
 FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 

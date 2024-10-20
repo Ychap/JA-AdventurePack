@@ -46,7 +46,7 @@ Coded to be compatibile with BGEE, EET and BGT
 37. Mini-Quest: "The mystery of the silent ghostly voice"
 38. Phandalyn waits in Elfsong Tavern
 39. Black Alaric's Cave
-40. Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim
+40. Extended meeting between Xzar and Niemain
 41. Beregost guards
 42. Jopi and his uncle Ragefast
 43. Yuxi: An imp for Ragefast
