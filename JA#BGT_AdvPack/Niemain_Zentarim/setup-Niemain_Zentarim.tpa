@@ -1,8 +1,6 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Zweites Treffen und Dialogverbesserungen für Niemain und die Zentarim (Kampf kann leichter vermieden werden)
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Moved this into an own component to give the player the choice between bg1npc content (Xzar attacks Niemain) or JAP's quest extention (Niemain waits for more reports from Xzar) */
+//////////////////////////////////////////////
+// Extended meeting between Xzar and Niemain
+//////////////////////////////////////////////
 
 
 EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Niemain_Zentarim/AR7704.BAF~ EVALUATE_BUFFER
