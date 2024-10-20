@@ -333,11 +333,11 @@ FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed afte
 INCLUDE ~JA#BGT_AdvPack/Marl/setup-Marl.tpa~
 
 
-/////////////////////////////////////////////////////
-// RESTORED: Item-descriptions - Rythe's Last Arrow
-/////////////////////////////////////////////////////
+/////////////////////////////////
+// RESTORED: Rythe's Last Arrow
+/////////////////////////////////
 
-BEGIN ~Item-descriptions - Rythe's Last Arrow~ DESIGNATED 25
+BEGIN ~Rythe's Last Arrow~ DESIGNATED 25
 LABEL "JA#BGT_AdvPack-RythesLastArrow"
 
 INCLUDE ~JA#BGT_AdvPack/RythesLastArrow/setup-RythesLastArrow.tpa~

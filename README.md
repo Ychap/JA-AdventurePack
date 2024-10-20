@@ -31,8 +31,8 @@ Coded to be compatibile with BGEE, EET and BGT
 22. Mal-Kalen - Ulcaster's Adept
 23. Keelor & Nasha
 24. Marl (tarvern brawl)
-25. Item-descriptions - Rythe's Last Arrow
-26. IMPROVED/FIXED: Counting House
+25. Rythe's Last Arrow
+26. Counting House
 27. Merchants' League investigations
 28. Tenya and the fishermen
 29. Nashkel
