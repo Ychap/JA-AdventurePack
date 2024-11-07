@@ -76,19 +76,19 @@ LANGUAGE ~English~
 
 
 /////////////////////////////////////////////////////////////////////////////////
-// LAW-SYSTEM in FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID and DUKAL PALACE
+// LAW SYSTEM in FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID and DUKAL PALACE
 /////////////////////////////////////////////////////////////////////////////////
 
-BEGIN ~Extended Tavern Guard System~ DESIGNATED 1
-LABEL "JA#BGT_AdvPack-Law"
+BEGIN ~Extended Law System~ DESIGNATED 1
+LABEL "JA#BGT_AdvPack-Lawsystem"
 FORBID_COMPONENT ~JA#BGT_AdvPack/Setup-JA#BGT_AdvPack.tp2~ 3 ~This component cannot be installed after "Dukal Palace and Husam Story"~
 
 INCLUDE ~JA#BGT_AdvPack/Lawsystem/setup-lawsystem.tpa~
 
 
-/////////////////////
-// Ramazith's Tower
-/////////////////////
+/////////////
+// Ramazith
+/////////////
 
 BEGIN ~Ramazith~ DESIGNATED 2
 LABEL "JA#BGT_AdvPack-Ramazith"
@@ -248,11 +248,11 @@ LABEL "JA#BGT_AdvPack-nobles"
 INCLUDE ~JA#BGT_AdvPack/nobles/setup-nobles.tpa~
 
 
-/////////////////////////////
-// RESTORED: Ignatio Phleed
-/////////////////////////////
+/////////////////////////////////////////////////////
+// RESTORED: Ignatio Phleed - the invitation seller
+/////////////////////////////////////////////////////
 
-BEGIN ~Ignatio Phleed~ DESIGNATED 17
+BEGIN ~Ignatio Phleed - the invitation seller~ DESIGNATED 17
 LABEL "JA#BGT_AdvPack-Ignatio_Phleed"
 
 INCLUDE ~JA#BGT_AdvPack/Ignatio_Phleed/setup-Ignatio_Phleed.tpa~
@@ -272,7 +272,7 @@ INCLUDE ~JA#BGT_AdvPack/Shalasin/setup-Shalasin.tpa~
 // RESTORED: Sir Artolas
 //////////////////////////
 
-BEGIN ~Artola - Sir Artolas~ DESIGNATED 19
+BEGIN ~Sir Artolas~ DESIGNATED 19
 LABEL "JA#BGT_AdvPack-Artolas"
 
 INCLUDE ~JA#BGT_AdvPack/Artolas/setup-Artolas.tpa~
@@ -322,11 +322,11 @@ FORBID_FILE ~override/ntkeelor.cre~ ~Keelor & Nasha is already restored by anoth
 INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
 
-///////////////////////////////////
-// RESTORED: Marl (tarvern brawl)
-///////////////////////////////////
+//////////////////////////////////////////////////////
+// RESTORED: Marl (tarvern brawl in Feldepost's Inn)
+//////////////////////////////////////////////////////
 
-BEGIN ~Marl (tarvern brawl)~ DESIGNATED 24
+BEGIN ~Marl (tarvern brawl in Feldepost's Inn)~ DESIGNATED 24
 LABEL "JA#BGT_AdvPack-Marl"
 FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~
 
@@ -541,11 +541,11 @@ FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed afte
 INCLUDE ~JA#BGT_AdvPack/Seniyad_Aldeth/setup-Seniyad_Aldeth.tpa~
 
 
-/////////////////////////////////////////
-// Aldeth's betrayal and reconciliation
-/////////////////////////////////////////
+//////////////////////////////////
+// Aldeth's betrayal and remorse
+//////////////////////////////////
 
-BEGIN ~Aldeth's betrayal and reconciliation~ DESIGNATED 45
+BEGIN ~Aldeth's betrayal and remorse~ DESIGNATED 45
 LABEL "JA#BGT_AdvPack-Betrayal"
 
 INCLUDE ~JA#BGT_AdvPack/Betrayal/setup-Betrayal.tpa~

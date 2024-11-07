@@ -7,7 +7,7 @@ Coded to be compatibile with BGEE, EET and BGT
 
 ### List of components
 
-1. Extended Tavern Guard System
+1. Extended Law System
 2. Ramazith
 3. Husam's story line finished
 4. Gervisse and Voltine
@@ -23,14 +23,14 @@ Coded to be compatibile with BGEE, EET and BGT
 14. Suthie & Sthief at Silence's Store
 15. Warehouse Workers
 16. Nobles
-17. Ignatio Phleed
+17. Ignatio Phleed - the invitation seller
 18. Shalasin
-19. Artola - Sir Artolas
+19. Sir Artolas
 20. Pilar & Gheldehar
 21. Llindellyn - the archer
 22. Mal-Kalen - Ulcaster's Adept
 23. Keelor & Nasha
-24. Marl (tarvern brawl)
+24. Marl (tarvern brawl in Feldepost's Inn)
 25. Rythe's Last Arrow
 26. Counting House
 27. Merchants' League investigations
@@ -51,7 +51,7 @@ Coded to be compatibile with BGEE, EET and BGT
 42. Jopi and his uncle Ragefast
 43. Yuxi: An imp for Ragefast
 44. Seniyad & Aldeth
-45. Aldeth's betrayal and reconciliation
+45. Aldeth's betrayal and remorse
 46. Tenya quest in Temple of Umberlee
 47. Caldo can be charmed
 48. Yago's guard in Low Lantern
