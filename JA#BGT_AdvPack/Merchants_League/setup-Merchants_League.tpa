@@ -231,15 +231,15 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 			fj_name           = ~Main Ambient~
 			fj_wav_resref0    = ~AM0704~
 		END
+		LPF MUTE_AREA_SONG END
 	END
-	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 	LPF ALTER_AREA_ACTOR
 		STR_VAR
-		dlg_file    = ~JA#MLCOK~
 		actor_name  = ~Female Cook~
+		dlg_file    = ~JA#MLCOK~
 	END
 	LPF ALTER_AREA_ACTOR
 		INT_VAR
@@ -272,8 +272,8 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 			fj_name           = ~Main Ambient~
 			fj_wav_resref0    = ~AM0704~
 		END
+		LPF MUTE_AREA_SONG END
 	END
-	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
@@ -292,8 +292,8 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
 			fj_name           = ~Main Ambient~
 			fj_wav_resref0    = ~AM0704~
 		END
+		LPF MUTE_AREA_SONG END
 	END
-	LPF MUTE_AREA_SONG END
 BUT_ONLY
 
 COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
