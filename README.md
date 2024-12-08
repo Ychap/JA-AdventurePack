@@ -1,8 +1,8 @@
 ## Jarl's Adventure Pack
 
-Coded to be compatibile with BGEE, EET and BGT
+Coded to be compatibile with BGEE, EET and BGT.
 
-[Install order](JA%23BGT_AdvPack/JA%23BGT_AdvPack.ini#L29-L31)
+Have adjusted the [install order](JA%23BGT_AdvPack/JA%23BGT_AdvPack.ini#L29-L31) to fit better into large install lists.
 
 
 ### List of components
