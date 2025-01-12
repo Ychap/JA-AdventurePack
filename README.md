@@ -2,8 +2,20 @@
 
 Coded to be compatibile with BGEE, EET and BGT.
 
-Have adjusted the [install order](JA%23BGT_AdvPack/JA%23BGT_AdvPack.ini#L29-L31) to fit better into large install lists.
+Suggested [install order](JA%23BGT_AdvPack/JA%23BGT_AdvPack.ini#L29-L31) when installing with other mods:
 
+- BG1 Unfinished Business
+- Endless BG1
+- Northern Tales of the Sword Coast
+- BG1 Mini Quests And Encounters
+- ***Jarl's Adventure Pack***
+- Baldur's Gate Romantic Encounters
+- The BG1NPC Project
+- Garrick Tales of a Troubadour
+- Grey the Dog NPC
+- Sword Coast Stratagems
+
+<br>
 
 ### List of components
 
