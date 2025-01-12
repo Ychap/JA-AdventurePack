@@ -643,6 +643,7 @@ INCLUDE ~JA#BGT_AdvPack/Iron_Throne/setup-Iron_Throne.tpa~
 
 BEGIN ~Graphical improvements: Animated torches and candles~ DESIGNATED 100
 LABEL "JA#BGT_AdvPack-Graphical"
+FORBID_COMPONENT ~bggo/bggo.tp2~ 0 ~Baldurs Gate Graphical Overhaul (BGGO) is a superset of this component~
 
 INCLUDE ~JA#BGT_AdvPack/Graphical/setup-Graphical.tpa~
 
