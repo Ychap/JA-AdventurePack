@@ -1,7 +1,0 @@
-DEFINE_PATCH_FUNCTION MUTE_AREA_SONG
-BEGIN
-	READ_LONG 0xbc ofs_songs
-
-	WRITE_LONG ofs_songs+0x0 0
-	WRITE_LONG ofs_songs+0x4 0
-END

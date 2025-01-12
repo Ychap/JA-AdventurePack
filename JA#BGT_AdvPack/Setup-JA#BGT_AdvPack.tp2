@@ -33,7 +33,6 @@ ALWAYS
 	INCLUDE ~JA#BGT_AdvPack/lib/func_fetch_journal_entries.tph~
 
 	INCLUDE ~JA#BGT_AdvPack/lib/func_area/DELETE_AREA_ACTOR.tph~
-			~JA#BGT_AdvPack/lib/func_area/MUTE_AREA_SONG.tph~
 
 	INCLUDE ~JA#BGT_AdvPack/lib/func_cre_script/ADD_CRE_SCRIPT.tph~
 			~JA#BGT_AdvPack/lib/func_cre_script/INSERT_CRE_SCRIPT.tph~
