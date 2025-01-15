@@ -9,6 +9,11 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 END
 
 
+// BGEE
+PATCH_IF NOT FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
+	COPY ~JA#BGT_AdvPack/Merchants_League/AM0704.WAV~ ~override~
+END
+
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#MLBAR.STO~ ~override~
 
 COPY ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.CRE~ ~override~
@@ -216,29 +221,27 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
 			fj_dlg_resref     = EVAL ~JA#DOPP%i%~
 		END
 	END
-	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
-		// add ambient
-		LPF fj_are_structure
-			INT_VAR
-			fj_loc_x           = 50
-			fj_loc_y           = 50
-			fj_radius          = 500
-			fj_volume_variance = 40
-			fj_sound_num       = 1
-			fj_flags           = 0b0000000111
-			STR_VAR
-			fj_structure_type = ambient
-			fj_name           = ~Main Ambient~
-			fj_wav_resref0    = ~AM0704~
-		END
-		// mute songs
-		LPF fj_are_structure
-			INT_VAR
-			fj_song_day       = 0
-			fj_song_night     = 0
-			STR_VAR
-			fj_structure_type = songs
-		END
+	// add ambient
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x           = 50
+		fj_loc_y           = 50
+		fj_radius          = 500
+		fj_volume_variance = 40
+		fj_sound_num       = 1
+		fj_flags           = 0b0000000111
+		STR_VAR
+		fj_structure_type = ambient
+		fj_name           = ~Main Ambient~
+		fj_wav_resref0    = ~AM0704~
+	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
 	END
 BUT_ONLY
 
@@ -264,56 +267,52 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		lock_difficulty = 80
 		container_key   = ~JA#ZRLKY~
 	END
-	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
-		// add ambient
-		LPF fj_are_structure
-			INT_VAR
-			fj_loc_x           = 50
-			fj_loc_y           = 50
-			fj_radius          = 500
-			fj_volume_variance = 20
-			fj_sound_num       = 1
-			fj_flags           = 0b0000000111
-			STR_VAR
-			fj_structure_type = ambient
-			fj_name           = ~Main Ambient~
-			fj_wav_resref0    = ~AM0704~
-		END
-		// mute songs
-		LPF fj_are_structure
-			INT_VAR
-			fj_song_day       = 0
-			fj_song_night     = 0
-			STR_VAR
-			fj_structure_type = songs
-		END
+	// add ambient
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x           = 50
+		fj_loc_y           = 50
+		fj_radius          = 500
+		fj_volume_variance = 20
+		fj_sound_num       = 1
+		fj_flags           = 0b0000000111
+		STR_VAR
+		fj_structure_type = ambient
+		fj_name           = ~Main Ambient~
+		fj_wav_resref0    = ~AM0704~
+	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
 	END
 BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
-	PATCH_IF FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
-		// add ambient
-		LPF fj_are_structure
-			INT_VAR
-			fj_loc_x           = 50
-			fj_loc_y           = 50
-			fj_radius          = 500
-			fj_volume_variance = 20
-			fj_sound_num       = 1
-			fj_flags           = 0b0000000111
-			STR_VAR
-			fj_structure_type = ambient
-			fj_name           = ~Main Ambient~
-			fj_wav_resref0    = ~AM0704~
-		END
-		// mute songs
-		LPF fj_are_structure
-			INT_VAR
-			fj_song_day       = 0
-			fj_song_night     = 0
-			STR_VAR
-			fj_structure_type = songs
-		END
+	// add ambient
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x           = 50
+		fj_loc_y           = 50
+		fj_radius          = 500
+		fj_volume_variance = 20
+		fj_sound_num       = 1
+		fj_flags           = 0b0000000111
+		STR_VAR
+		fj_structure_type = ambient
+		fj_name           = ~Main Ambient~
+		fj_wav_resref0    = ~AM0704~
+	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
 	END
 BUT_ONLY
 
