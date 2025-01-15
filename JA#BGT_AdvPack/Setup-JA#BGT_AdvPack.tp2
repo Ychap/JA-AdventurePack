@@ -391,7 +391,6 @@ INCLUDE ~JA#BGT_AdvPack/Nashkel/setup-Nashkel.tpa~
 
 BEGIN ~Imoen at Winthrop's inn~ DESIGNATED 30
 LABEL "JA#BGT_AdvPack-Imoen_Winthrop"
-FORBID_COMPONENT ~candlekeep_revisited/candlekeep_revisited.tp2~ 0 ~This component is not compatible with Candlekeep Revisited~
 
 INCLUDE ~JA#BGT_AdvPack/Imoen_Winthrop/setup-Imoen_Winthrop.tpa~
 
