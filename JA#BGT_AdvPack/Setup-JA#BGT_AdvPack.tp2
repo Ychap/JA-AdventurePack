@@ -202,7 +202,6 @@ INCLUDE ~JA#BGT_AdvPack/Nim_Furlwing/setup-Nim_Furlwing.tpa~
 
 BEGIN ~Caravan merchant~ DESIGNATED 12
 LABEL "JA#BGT_AdvPack-Caravan_merchant"
-REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~bg2fixpack/setup-bg2fixpack.tp2~ 0) @38
 
 INCLUDE ~JA#BGT_AdvPack/Caravan_merchant/setup-Caravan_merchant.tpa~
 
