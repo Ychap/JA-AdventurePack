@@ -7,7 +7,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",1)
 		CreateCreature("JA#VOLTJ",[991.375],7)
-		ActionOverride("JA#VOLTJ",DialogInterrupt(FALSE))
+		ActionOverride("Voltine",DialogInterrupt(FALSE))
 		Continue()
 END
 
@@ -15,9 +15,9 @@ IF
 	Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",51)
 THEN
 	RESPONSE #100
-		CreateVisualEffectObject("SPPOLYMP","JA#VOLTJ")
-		CreateVisualEffectObject("POLYBACK","JA#VOLTJ")
-		ActionOverride("JA#VOLTJ",DestroySelf())
+		CreateVisualEffectObject("SPPOLYMP","Voltine")
+		CreateVisualEffectObject("POLYBACK","Voltine")
+		ActionOverride("Voltine",DestroySelf())
 		SmallWait(3)
 		CreateCreatureAtLocation("JA#VOLT_LOCA","%NWBaldursGate_LaertasHouse_L1%","VOLTIN")
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",52)

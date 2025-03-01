@@ -4,7 +4,7 @@ IF
 	!Global("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",50)
 THEN
 	RESPONSE #100
-		MoveViewObject("JA#VOLTJ",INSTANT)
+		MoveViewObject("Voltine",INSTANT)
 		SetGlobal("JA#VOLT_SPWN","%NWBaldursGate_LaertasHouse_L1%",50)
 END
 
