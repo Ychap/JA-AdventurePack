@@ -1,6 +1,6 @@
 BEGIN ~JA#KEELO~
 
-IF ~HPLT(Myself,2)~ THEN 5
+IF ~True()~ THEN 5
   SAY @0
   IF ~~ THEN EXIT
   IF ~NumTimesTalkedTo(0)~ THEN DO ~SetGlobalTimer("JA#KEELX","GLOBAL",TEN_HOURS)~ EXIT
