@@ -8,7 +8,6 @@
 @8    = ~Velara~
 @9    = ~Gnomin~
 @10   = ~Naiduja~
-// @11   = ~NSC-Portraets fuer Hauptkomponente~
 @12   = ~BG1 Unfinished Business Komponente #19 wird benötigt.~
 @13   = ~Vaalahors Harfe~
 @14   = ~Dies ist die Harfe von Vaalahor. Der Magier hat versucht, die Geisterstimme aus der Taverne Elfgesang an dieses Instrument zu binden, was ihm jedoch nicht so recht geglückt ist, denn das Instrument blieb stumm.~
@@ -73,9 +72,6 @@ Ich habe den Magier Vaalahor im Allerlei Zauberei getroffen. Es stellte sich her
 @1006   = ~Das Rätsel um die verstummte Geisterstimme
 
 Im oberen Stockwerk des Elfgesangs ist mir der Geist der Elfendame erschienen. Sie schien zu ihrer vermissten Liebe zu sprechen und nahm mich nur am Rande war. Als sich die Erscheinung wieder auflöste, war mit ihr die Harfe von Vaalahor verschwunden. Ich denke, damit dürfte die Dame ihre Stimme wiedergefunden haben. Jetzt muss ich nur noch Alyth von meinem Erfolg berichten.~
-// @1007   = ~Der Baum der Dryade
-
-// Als ich durch die Wolkengipfel reiste, traf ich eine Dryade. Sie bat mich darum, ihren Baum zu beschützen. Wie hätte ich eine solche Bitte ablehnen können?~
 @1008   = ~Überfall auf die Karawane
 
 Eine Karawane wurde am Küstenweg von Räubern überfallen und geplündert. Die Reisenden sind allesamt tot oder verschleppt, wir fanden jedoch einen schwer verletzten Händler, der unsere Hilfe benötigt.~
@@ -98,18 +94,6 @@ Jhasso glaubt, dass die Doppelgänger, die für Scars Tod verantwortlich sind, a
 @1014   = ~Herzog Eltans Krankheit
 
 Jhasso glaubt, dass Agenten des Eisenthrons hinter Eltans mysteriöser Krankheit stecken. Ich sollte ihn sofort im Hauptquartier der Flammenden Faust einen Besuch abstatten.~
-// @1015   = ~Scars Tod
-
-// Ich habe die Erzählung von Ivanne gehört, dem einzigen Zeugen von Scars Tod, mit Ausnahme des Mörders. Demzufolge wurde Scar von einem weiteren Doppelgänger, der ohne Zweifel vom Eisenthron bezahlt wurde, in seinen grausamen Tod gelockt, obwohl Ivanne meinte, dass Angelo ein gutes Motiv hätte. Glücklicherweise musste Scar nur kurz leiden, doch mehr aus Gründen der List denn aus Mitleid. Ja, ich habe in letzter Zeit so viele dieser miesen Spiegelwesen gesehen, doch ich bete, dass ich mich nie an ihre verfluchten, sich wandelnden Gesichter gewöhne. Um diesem Mord auf den Grund zu kommen, gibt es nur zwei Orte, an denen ich suchen kann - den Turm des Eisenthrons oder die Kaserne der Flammenden Faust, wo Herzog Eltan angeblich bleich wie der Tod danieder liegt. Sonst scheint alles andere bedeutungslos.~
-// @1016   = ~Scars Tod
-
-// Ich habe die Geschichte von Ivanne gehört, dem einzigen Zeugen von Scars Tod, mit Ausnahme des Mörders. Ihr zufolge wurde Scar von einem weiteren Doppelgänger, der ohne Zweifel vom Eisenthron bezahlt wurde, in seinen grausamen Tod gelockt, obwohl Ivanne meinte, dass Angelo ein gutes Motiv hätte. Gnädiger Weise musste Scar nur kurz leiden, doch mehr aus Gründen der List denn aus Mitleid. Ja, ich habe in letzter Zeit so viele dieser miesen Spiegelwesen gesehen, doch ich bete, dass ich mich nie an ihre verfluchten, sich wandelnden Gesichter gewöhnen werde. Um diesem Mord auf den Grund zu gehen, sollte ich den Turm des Eisenthrons durchsuchen. Alles andere scheint mir bedeutungslos.~
-// @1017   = ~Scars Tod
-
-// Ich habe die Geschichte von Ivanne gehört, dem einzigen Zeugen von Scars Tod, mit Ausnahme des Mörders. Ihr zufolge wurde Scar von einem weiteren Doppelgänger, der ohne Zweifel vom Eisenthron bezahlt wurde, in seinen grausamen Tod gelockt, obwohl Ivanne meinte, dass Angelo ein gutes Motiv hätte. Gnädiger Weise musste Scar nur kurz leiden, doch mehr aus Gründen der List denn aus Mitleid. Ja, ich habe in letzter Zeit so viele dieser miesen Spiegelwesen gesehen, doch ich bete, dass ich mich nie an ihre verfluchten, sich wandelnden Gesichter gewöhnen werde. Um diesem Mord auf den Grund zu gehen, sollte ich die Kaserne der Flammenden Faust durchsuchen, wo Herzog Eltan angeblich bleich wie der Tod danieder liegt. Alles andere scheint mir bedeutungslos.~
-// @1018   = ~Scars Tod
-
-// Ich habe die Geschichte von Ivanne gehört, dem einzigen Zeugen von Scars Tod, mit Ausnahme des Mörders. Ihr zufolge wurde Scar von einem weiteren Doppelgänger, der ohne Zweifel vom Eisenthron bezahlt wurde, in seinen grausamen Tod gelockt, obwohl Ivanne meinte, dass Angelo ein gutes Motiv hätte. Gnädiger Weise musste Scar nur kurz leiden, doch mehr aus Gründen der List denn aus Mitleid. Ja, ich habe in letzter Zeit so viele dieser miesen Spiegelwesen gesehen, doch ich bete, dass ich mich nie an ihre verfluchten, sich wandelnden Gesichter gewöhnen werde.~
 @1019   = ~Krammoch Arkhstaff und der Eisenthron
 
 Krammoch Arkhstaff war überaus glücklich, dass ich seinen Geliebten Thaldorn bei der Durchsuchung des Eisenthrons verschont habe. Er bot mir seine Hilfe an, wann immer ich sie nötig habe. Ob Krammoch und Thaldorn nun die Rache der anderen Anführer des Eisenthrons zu befürchten haben?~
@@ -183,7 +167,8 @@ Voltine hat mich über das wahre Wesen Gervisses aufgeklärt und ich habe Ihr ve
 
 
 
-@2000   = ~Die Geschichte dieser Waffe verlor ihre Bedeutung in dem Meer der großartigen Geschichten, die man sich über den Hochwald erzählt, aber das Lied des herausragenden Bogenschützen Adaniss Rhyte wird noch heute von vielen Barden gesungen.
+@2000	= ~Rhytes letzter Pfeil +2~
+@2001   = ~Die Geschichte dieser Waffe verlor ihre Bedeutung in dem Meer der großartigen Geschichten, die man sich über den Hochwald erzählt, aber das Lied des herausragenden Bogenschützen Adaniss Rhyte wird noch heute von vielen Barden gesungen.
 
 „Erschüttert von der Macht seines Bogens
 Fällt das von Adaniss getroffene Wild alsbald.
@@ -272,130 +257,6 @@ Mindeststärke: 4
 Gewicht: 3~
 
 
-@2015	= ~Der finstere Fürst Hertious, ein untoter Kriegsherr von Bane, trug dieses Stück Rüstung vor über 500 Jahren. Man munkelt, das er während dieser Zeit in einem Schloss irgendwo im Erdlaufgebirge gewohnt hat. Wie seine Rüstung ohne ihn in andere Länder gelangte ist ungewiss, aber die Trennung der beiden war sicher nicht angenehm.
-
-EIGENSCHAFTEN:
-
-Rüstungsklasse: 0
-Gewicht: 35
-Mindeststärke: 14
-
-Kann nur verwendet werden von:
-- bösen Wesen
-- Kämpfern
-- Klerikern~
-@2016	= ~In den Ebenen der Östlichen Shaar lebte ein kleiner Schmied von der Rasse der Menschen, dessen fast zwergenhafter Wuchs seiner Seele nicht gerecht wurde. Er war zwar ein versierter Waffenschmied, aber seine eigentliche Fähigkeit bestand darin, ein gefühlvolles Lied zu pfeifen, das einen gestandenen Mann dazu bringen konnte, wie ein Kind zu weinen. Nur ein zurückgezogen lebender Magier verbrachte seine Zeit mit dem Kleinwüchsigen, während die anderen sich lediglich über seine geringe Körpergröße lustig machten. Das Lied des Schmieds stieß bei ihnen wegen ihrer Vorurteile auf taube Ohren, und ihr Spott steigerte sich in grausame Quälerei, so dass der entmutigte Mann sich schließlich dazu gedrängt sah, sein Zuhause für immer zu verlassen. Vor seinem Aufbruch schmiedete er noch diese Waffe als Geschenk für seinen Freund, der sie bei der Herstellung verzauberte. So pfeift die Klinge ihrem Träger eine süße Melodie, wenn sie aus der Scheide gezogen wird. Nur kurze Zeit später verließ auch der Magier angewidert die kleine Stadt, wobei er das Schwert auf seine Reisen mitnahm.
-
-EIGENSCHAFTEN:
-
-Schaden: 1W6 +2 (Stich)
-ETW0-Bonus: -2
-Gewicht: 2
-Initiativefaktor: 1
-Mindeststärke: 4
-Fertigkeit: Kurzschwert
-Typ: 1-händig
-
-Kann nicht verwendet werden von:
-- Druiden
-- Klerikern
-- Magiern~
-@2017	= ~Dies ist eine legendäre Waffe heroischer Proportionen, die vor allem in den nördlichsten Barbarenstämmen zu finden ist. Meister auf Meister hat diese Klinge gegen zahllose Feinde geschwungen, und das Blut, das mit diesem Schwert vergossen wurde, könnte ein kleines Meer füllen. Will man der Geschichte Glauben schenken, dann kann eine solche Klinge nicht geschmiedet worden sein, und jeder Besitzer scheint ihren Ursprung dem Mythos zuzuweisen, an den er gerade glaubt. Die grandioseste Entstehungsgeschichte ist wohl die eines großen Häuptlings, der zu den Kliffs segelte, die angeblich die Welt begrenzen. Dort griff er ins Leere und seine Willenskraft formte die Klinge aus dem Nichts. Was auch immer die Wahrheit sein mag: Gelangt das Schwert in die richtigen Hände, ist es eine furchterregende Waffe.
-
-EIGENSCHAFTEN:
-
-Schaden: 1W10 +3 (Klinge)
-ETW0-Bonus: -3
-Gewicht: 9
-Initiativefaktor: 7
-Mindeststärke: 13
-Fertigkeit: Zweihänder
-Typ: 2-händig
-
-Kann nicht verwendet werden von:
-- Dieben
-- Druiden
-- Klerikern
-- Magiern
-- Mönchen~
-@2018	= ~Dieser prächtige Zweihänder ist ein Monument zu Ehren des Zwergenhelden Durlag Trolltöter.
-
-EIGENSCHAFTEN:
-
-Schaden: 1W10 +2 (Klinge)
-ETW0-Bonus: -2
-Gewicht: 10
-Initiativefaktor: 8
-Mindeststärke: 13
-Fertigkeit: Zweihänder
-Typ: 2-händig
-
-Kann nicht verwendet werden von:
-- Dieben
-- Druiden
-- Klerikern
-- Magiern
-- Mönchen~
-@2019	= ~Dieser fein gearbeitete Kampfstab gehört zu den Schätzen, die die Eindringlinge in Durlags Turm zurückließen. Er ist im Kampf tödlich und gehörte wohl zum Besitz eines Zauberwirkers, der es genoss, an der Front zu kämpfen. Anscheinend besitzt der Stab einen Eisenkern, und dennoch ist sein Gewicht vergleichbar mit einer normalen Waffe dieses Typs. Ein Teil der Verzauberung kommt anscheinend aus dem Fell, das den Griff umschließt. Das Leder stammt zweifellos von einem Geschöpf, das garantiert kampferprobt war. Der Geschmack und die Neigung der Angreifer des Turms sind zwar gut dokumentiert, aber das Fell könnte dennoch von allem … oder jedem stammen.
-
-EIGENSCHAFTEN:
-
-Schaden: 1W6 +3 (Wucht)
-ETW0-Bonus: -3
-Gewicht: 3
-Initiativefaktor: 1
-Mindeststärke: 5
-Fertigkeit: Kampfstab
-Typ: 1-händig
-
-Kann nicht verwendet werden von:
-- Mönchen~
-@2020	= ~Hauptmann Fallorain, der Anführer der 12. Kavalleriebrigade von Calimshan, trug diese verzauberte Rüstung zum letzten Mal bei der Schlacht am Spinnensumpf. Hier verlor er sein Leben und seine Armee bei dem Versuch, die Gegend von einem unbekannten Übel zu befreien.
-
-EIGENSCHAFTEN:
-
-Rüstungsklasse: 2
-Gewicht: 20
-Mindeststärke: 11
-
-Kann nicht verwendet werden von:
-- Barden
-- Dieben
-- Druiden
-- Magiern
-- Mönchen~
-@2021	= ~Während des Bürgerkriegs von Tethyr befand sich die Streitaxt von Mauletar im Besitz des Hauses von Ossyind. Diese Edelfamilie wurde während ihrer Flucht aus dem Land verraten, und Mauletar, Anführer der Garde und persönlicher Freund der Familie, nahm die Axt und opferte sich selbst, um seinen Gefährten genügend Zeit für ihre Flucht zu geben. Sein Kampfschrei wurde von den Göttern gehört und ertönte in allen Landen als ein Symbol für tiefe Freundschaft und Loyalität. Aus diesem Grund wird die magische Axt benutzt, um diese Werte hochzuhalten und gegen jene eingesetzt, denen es an Ehre und Mut mangelt.
-
-EIGENSCHAFTEN:
-
-Schaden: 1W8 +2 (Klinge)
-ETW0-Bonus: -2
-Gewicht: 5
-Initiativefaktor: 5
-Mindeststärke: 10
-Fertigkeit: Axt
-Typ: 1-händig
-
-Kann nicht verwendet werden von:
-- Dieben
-- Druiden
-- Hexenmeister
-- Klerikern
-- Magiern
-- Mönchen~
-
-
-@2023	= ~Rhytes letzter Pfeil +2~
-@2024	= ~Durlags Stolz~
-@2025	= ~Der Rand der Welt~
-@2026	= ~Das pfeifende Schwert~
-@2027	= ~Aules Stab~
-@2028	= ~Panzer der Finsternis~
-@2029	= ~Fallorains Panzer~
-@2030	= ~Streitaxt von Mauletar~
-@2032 = ~Sinvolle Fixes & Wiederherstellungen~
-// @2035 = ~Rausschmeißer~
-// @2036 = ~Wächter~
 @2037 = ~Hauptmann~
 @2040 = ~Niederer Lehmgolem~
 @2042 = ~Yuxi~

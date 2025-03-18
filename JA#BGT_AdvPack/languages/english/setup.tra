@@ -8,7 +8,6 @@
 @8    = ~Velara~
 @9    = ~Female Gnome~
 @10   = ~Naiduja~
-// @11   = ~NPC-Portraits for the main component~
 @12   = ~BG1 Unfinished Business component #19 is required.~
 @13   = ~Vaalahor's Harp~
 @14   = ~This is the harp of Vaalahor. The mage who tried to bind the ghost voice of the Elfsong tavern to this instrument.  But it does not seem to have worked because the instrument remains silent.~
@@ -72,9 +71,6 @@ I met the mage Vaalahor at the Sorcerous Sundries. It turned out that he had tri
 @1006 = ~The mystery of the silent ghostly voice
 
 In the upper floor of the Elfsong the spirit of the elven lady appeared to me. She seemed to speak to her missing love and only noticed me vaguely. When her manifestation dissolved again, the harp of Vaalahor went with her. I think that the lady should have gotten her voice back. Now I just have to report to Alyth of my success.~
-// @1007 = ~The Tree of the Dryad
-
-// While traveling the Cloudpeaks I met a Dryad. She asked that I help protect her tree. How could I refuse such a request?~
 @1008 = ~Attack on the caravan
 
 A caravan was attacked by bandits on the coastal road and looted. The passengers are all dead or abducted, but we found a seriously injured trader who needs our help.~
@@ -97,18 +93,6 @@ Jhasso believes that the doppelgangers, who are responsible for Scar's death, we
 @1014 = ~Duke Eltan's Illness
 
 Jhasso believes that agents of the Iron Throne were also behind Eltan's mysterious illness. I should immediately pay him a visit in the headquarters of the Flaming Fist.~
-// @1015 = ~Scar's assassination
-
-// I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces. To get to the bottom of the murder, there are only two places where I can be look - the tower of the Iron Throne and the barracks of the Flaming Fist, where apparently Duke Eltan is resting, pale as death. Everything else seems irrelevant.~
-// @1016 = ~Scar's assassination
-
-// I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces. To get to the bottom of the murder, I should pay a visit to the tower of the Iron Throne. Everything else seems irrelevant.~
-// @1017 = ~Scar's assassination
-
-// I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces. To get to the bottom of the murder, I should pay a visit to the barracks of the Flaming Fist, where apparently Duke Eltan is resting, pale as death. Everything else seems irrelevant.~
-// @1018 = ~Scar's assassination
-
-// I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces.~
 @1019 = ~Krammoch Arkhstaff and the Iron Throne
 
 Krammoch Arkhstaff was very pleased that I spared dear Thaldorn when I searched the Iron Throne. He offered me his help whenever I would need it. I wonder if Krammoch and Thaldorn now have to fear the vengeance of the other leaders of the Iron Throne?~
@@ -182,7 +166,8 @@ Voltine has enlightened me about the true nature of Gervisse and I promised her 
 
 
 
-@2000 = ~The tale of this weapon lost its significance in the sea of great stories that are told about the High Forest, but some bards still sing the song of the skilled archer Adaniss Rhyte.
+@2000 = ~Rhyte's Last Arrow +2~
+@2001 = ~The tale of this weapon lost its significance in the sea of great stories that are told about the High Forest, but some bards still sing the song of the skilled archer Adaniss Rhyte.
 
 "Oh, shocked from the strike of his powerful bow,
 The slain game sought by Adaniss falls.
@@ -276,126 +261,6 @@ Requires:
 Weight: 3~
 
 
-@2015 = ~The dark Lord Hertious, an undead warlord of Bane, wore this piece of armor over 500 years ago. It is rumored that he lived during that time in a castle somewhere in the Spine of the World. How his armor arrived without him in a different country is unknown, but the separation of the two was certainly not pleasant.
-
-STATISTICS:
-
-AC: 0
-Weight: 35
-Requires: 14 Strength
-
-Can only be used by:
-Evil beings
-Fighters
-Clerics~
-@2016 = ~In the plains of the Eastern Shaar, lived a small blacksmith of the human race whose almost dwarfish stature was not up to his soul. Although he was a skilled blacksmith, his real skill was to whistle a soulful song that could bring a seasoned man to cry like a child. Only a reclusive mage spent his time with the little person, while the others only made fun of his small size. The song of the blacksmith met only deaf ears because of their prejudices, and their cruel mockery grew into torment, and so the discouraged man found himself finally urged to leave his home for good. Before his departure he forged this weapon as a gift for his friend, who enchanted it during the manufacturing. The blade whistles a sweet tune to its wearer when it is drawn from its sheath. Shortly after the mage also left the small town in disgust, taking the sword on his travels.
-
-STATISTICS:
-
-Damage: 1d6 +2 (piercing)
-THAC0 Bonus: -2
-Weight: 2
-Speed Factor: 1
-Requires: 4 Strength
-Proficiency Type: Short Sword
-Type: 1-handed
-
-Can not be used by:
-Druids, clerics, mages~
-
-
-@2017 = ~This is a legendary weapon of heroic proportions, which is found mainly in the northern barbarian tribes. Master after master has swung this blade against countless enemies, and the blood that was spilled with this sword could fill a small sea. If the history is taken on faith, such a blade could not have been forged, and every owner seems to assign its origin to the myth, in which he currently believes. Probably the grandest origin story is that of a great chieftain, who sailed to the cliffs, which allegedly border the world. There he reached into emptiness and his will power shaped the blade out of nowhere. Whatever the truth may be: In the right hands, it is a fearsome weapon.
-
-STATISTICS:
-
-Damage: 1d10 +3 (Slashing)
-THAC0 Bonus: -3
-Weight: 9
-Speed Factor: 7
-Requires: 13 Strength
-Proficiency Type: Two Handed sword
-Type: 2-handed
-
-Can not be used by:
-Thieves, druids, clerics, mages, monks~
-
-
-
-
-@2018 = ~This magnificent two-handed sword is a monument in honor of the dwarven hero Durlag Trollslayer.
-
-STATISTICS:
-
-Damage: 1d10 +2 (slashing)
-THAC0 Bonus: -2
-Weight: 10
-Speed Factor: 8
-Requires: 13 Strength
-Proficiency Type: Two Handed sword
-Type: 2-handed
-
-Can not be used by:
-Thieves, druids, clerics, mages, monks~
-
-
-
-
-@2019 = ~This finely crafted battle staff is one of the treasures left behind by the invaders in Durlag tower. It is deadly in combat, and probably belonged to a spell caster, who equally enjoyed fighting at the front. Apparently the staff has an iron core, and yet its weight is comparable to a normal weapon of this type. Part of the enchantment seems to come from the hide that wraps the handle. The leather is undoubtedly from a creature that was surely battle-tested. The taste and inclination of the tower attackers are well documented, but the fur still could stem from anything ... or anyone.
-
-STATISTICS:
-
-Damage: 1d6 +3 (crushing)
-THAC0 Bonus: -3
-Weight: 3
-Speed Factor: 1
-Requires: 5 Strength
-Proficiency Type: Staff
-Type: 1-handed
-
-Can not be used by:
-Monks~
-@2020 = ~Captain Fallorain, the leader of the 12th Cavalry Brigade of Calimshan wore this enchanted armor for the last time at the battle at the Spider Swamp. Here he lost his life and his army in an attempt to free the area of an unknown evil.
-
-STATISTICS:
-
-Armor Class: 2
-Weight: 20
-Requires: 11 Strength
-
-Can not be used by:
-Bards, thieves, druids, mages, monks~
-
-
-
-
-@2021 = ~During the Civil War of Tethyr the Battle Axe of Mauletar was owned by the House of Ossyind. This noble family was betrayed during their flight from the country, and Mauletar, leader of the Guard and personal friend of the family, took the ax and sacrificed himself to give his companions enough time to flee. His battle cry was heard by the gods and resounded in all the lands as a symbol of deep friendship and loyalty. For this reason, the magic ax is used to uphold these values and waged against those who lack courage and honor.
-
-STATISTICS:
-
-Damage: 1d8 +2 (slashing)
-THAC0 Bonus: -2
-Weight: 5
-Speed Factor: 5
-Requires: 10 Strength
-Proficiency Type: Axe
-Type: 1-handed
-
-Can not be used by:
-Thieves, druids, sorcerer, clerics, mages, monks~
-
-
-@2023 = ~Rhyte's Last Arrow +2~
-@2024 = ~Durlag's Pride~
-@2025 = ~The Edge of the World~
-@2026 = ~The whistling sword~
-@2027 = ~Aule's staff~
-@2028 = ~Armor of Darkness~
-@2029 = ~Fallorain's armor~
-@2030 = ~Battle axe of the Mauletar~
-/* @2031 */
-@2032 = ~Useful Fixes & Repairs~
-// @2035 = ~Bouncer~
-// @2036 = ~Guardian~
 @2037 = ~Captain~
 @2040 = ~Lesser Clay Golem~
 @2042 = ~Yuxi~
