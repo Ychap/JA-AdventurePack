@@ -8,7 +8,7 @@ COPY_EXISTING ~%LonelyPeaks_BCS%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~Dead("Mulahey")[%WNL%%MNL%%LNL%%TAB% ]*Exists("Hulrik\(sCow\)?")~ ~False()~
 	END
-IF_EXISTS BUT_ONLY
+BUT_ONLY IF_EXISTS
 
 // BGT only - prevent Xvarts from disappearing
 COPY_EXISTING ~XVARTH.BCS~ ~override~

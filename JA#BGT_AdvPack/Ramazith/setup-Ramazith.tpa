@@ -28,7 +28,7 @@ COPY_EXISTING ~AR7238.BCS~ ~override~ // %NBaldursGate_RamazithsTower_L6%
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("RAMAZI",[0.0],0)~ ~CreateCreature("RAMAZI",[169.147],13)~
 	END
-IF_EXISTS BUT_ONLY
+BUT_ONLY IF_EXISTS
 
 // BGT (Ramazith moves into his tower when Abela is gone)
 <<<<<<<< ...inlined/AR7300_old.baf
@@ -65,7 +65,7 @@ COPY_EXISTING ~AR7300.BCS~ ~override~ // %NBaldursGate%
 			REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Ramazith",DestroySelf())~ ~\0 SetGlobal("RamazithMove","GLOBAL",1)~
 		END
 	END
-IF_EXISTS BUT_ONLY
+BUT_ONLY IF_EXISTS
 
 // BGEE/EET (Ramazith moves into his tower when Abela is gone)
 COPY_EXISTING ~RAMAZITH.BCS~ ~override~
