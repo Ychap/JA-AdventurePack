@@ -1,7 +1,0 @@
-IF
-	Die()
-THEN
-	RESPONSE #100
-		SetGlobalTimer("JA#DEADCOCK","GLOBAL",SIXTEEN_HOURS)
-		SetGlobal("JA#BRAUN_TOT","%NashkelCarnival%",1)
-END
