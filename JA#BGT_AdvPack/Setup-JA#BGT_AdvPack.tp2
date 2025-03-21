@@ -178,7 +178,7 @@ BEGIN ~Velvet - Cockfight~ DESIGNATED 10
 LABEL "JA#BGT_AdvPack-Velvet"
 REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~infinityanimations/setup-infinityanimations.tp2~ 0) @37
 
-INCLUDE ~JA#BGT_AdvPack/velvet/setup-velvet.tpa~
+INCLUDE ~JA#BGT_AdvPack/Velvet/setup-Velvet.tpa~
 
 
 ///////////////////////////
@@ -240,9 +240,9 @@ INCLUDE ~JA#BGT_AdvPack/Warehouse_Workers/setup-Warehouse_Workers.tpa~
 /////////////////////
 
 BEGIN ~Nobles~ DESIGNATED 16
-LABEL "JA#BGT_AdvPack-nobles"
+LABEL "JA#BGT_AdvPack-Nobles"
 
-INCLUDE ~JA#BGT_AdvPack/nobles/setup-nobles.tpa~
+INCLUDE ~JA#BGT_AdvPack/Nobles/setup-Nobles.tpa~
 
 
 /////////////////////////////////////////////////////
