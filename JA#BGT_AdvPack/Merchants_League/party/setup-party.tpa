@@ -5,7 +5,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/JA#CUIRL.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/JA#ZORL.BAF~
 
 
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/AR7227.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/party/AR7229.BAF~ EVALUATE_BUFFER
 
 
