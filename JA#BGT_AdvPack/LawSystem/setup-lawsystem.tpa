@@ -40,8 +40,6 @@ COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW05.BCS~
 	END
 
 
-EXTEND_TOP ~BENTLY.BCS~ ~JA#BGT_AdvPack/LawSystem/JA#FRGUB.BAF~ EVALUATE_BUFFER
-
 EXTEND_TOP ~%FriendlyArmInn_BCS%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR6800.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR7705.BAF~ EVALUATE_BUFFER
 
@@ -63,7 +61,8 @@ COPY_EXISTING ~BENTLY.CRE~ ~override~ // Bently Mirrorshade, FAI
 	WRITE_ASCII 0x250 ~SHOUT~  #8     // Assigns SHOUT.BCS as the Class script
 BUT_ONLY
 
-COPY_EXISTING ~FAFIGHT.CRE~ ~override~
+COPY_EXISTING ~BENTLY.CRE~  ~override~
+			  ~FAFIGHT.CRE~ ~override~
 			  ~FRIEND.CRE~  ~override~
 			  ~GELLAN.CRE~  ~override~
 	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ script_new = ~JA#FRGUB~ END
