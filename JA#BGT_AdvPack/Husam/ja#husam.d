@@ -3,7 +3,7 @@ BEGIN 12 END
 BEGIN END
 ~Wait(10)~
 ~FaceObject([PC])~
-IF ~MoveToPoint~ // only BGEE/EET
+IF ~MoveToPoint~ // BGEE/EET only
 
 
 ADD_TRANS_TRIGGER HUSAM2 16

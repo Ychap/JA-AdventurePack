@@ -90,7 +90,7 @@ COPY_EXISTING ~%FriendlyArmInn%.ARE~ ~override~
 			WRITE_ASCII actor+0x60 ~JA#FRINI~ #8 // Class script
 		END
 	END
-	// change container script (dont spawn Flaming Fist Enforcer)
+	// remove trigger script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name   = ~REPTRAP1~
@@ -134,7 +134,7 @@ BUT_ONLY
 COPY_EXISTING ~%FriendlyArmInn_L1%.ARE~ ~override~
 			  ~%FriendlyArmInn_L2%.ARE~ ~override~
 			  ~%FriendlyArmInn_L3%.ARE~ ~override~
-	// change container script (dont spawn Flaming Fist Enforcer)
+	// remove trigger script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name   = ~REPTRAP~
@@ -160,7 +160,7 @@ COPY_EXISTING ~%FriendlyArmInn_L1%.ARE~ ~override~
 BUT_ONLY
 
 COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L1%.ARE~ ~override~
-	// change container script (dont spawn Flaming Fist Enforcer)
+	// remove trigger script (dont spawn Flaming Fist Enforcer)
 	LPF ALTER_AREA_REGION
 		STR_VAR
 		region_name   = ~REPTRAP~

@@ -260,7 +260,6 @@ COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
 		STR_VAR
 		actor_name  = ~Zorl~
 	END
-	// container scripts, scroll and key
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
 		container_name  = ~Container 2~

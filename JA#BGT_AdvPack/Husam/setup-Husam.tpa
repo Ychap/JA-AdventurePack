@@ -15,7 +15,7 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 				  ~SHADOW04.CRE~ ~override/JA#STH04.CRE~
 				  ~SHADOW05.CRE~ ~override/JA#STH05.CRE~
 				  ~SHADOW06.CRE~ ~override/JA#STH06.CRE~
-				  ~SHADOW02.CRE~ ~override/JA#STH07.CRE~
+				  ~SHADOW.CRE~   ~override/JA#STH07.CRE~
 		LPF REPLACE_CRE_SCRIPT STR_VAR script_old = EVAL ~%SOURCE_RES%~ script_new = ~JA#STHFX~ END
 		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SEEENEMY~ END
 		WRITE_ASCIIE DEATHVAR ~%DEST_RES%~ #32

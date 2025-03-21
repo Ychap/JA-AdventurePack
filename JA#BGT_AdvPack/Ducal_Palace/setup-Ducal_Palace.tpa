@@ -220,7 +220,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		STR_VAR
 		actor_name  = ~Nila~
 	END
-	// container scripts, scroll and key
 	LPF ALTER_AREA_CONTAINER
 		STR_VAR
 		container_name   = ~Container 1~
@@ -232,6 +231,7 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
 		container_name   = ~Container 2~
 		container_script = ~NONE~
 	END
+	// add scroll to container
 	LPF fj_are_structure
 		INT_VAR
 		fj_con_itm_idx    = 0
