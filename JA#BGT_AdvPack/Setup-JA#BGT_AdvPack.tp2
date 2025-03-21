@@ -638,28 +638,26 @@ INCLUDE ~JA#BGT_AdvPack/Iron_Throne/setup-Iron_Throne.tpa~
 
 BEGIN ~Graphical improvements: Animated torches and candles~ DESIGNATED 100
 LABEL "JA#BGT_AdvPack-Graphical"
-FORBID_COMPONENT ~bggo/bggo.tp2~ 0 ~Baldurs Gate Graphical Overhaul (BGGO) is a superset of this component~
+DEPRECATED ~Baldurs Gate Graphical Overhaul (BGGO) is a superset of this component.~
 
 INCLUDE ~JA#BGT_AdvPack/Graphical/setup-Graphical.tpa~
 
 
-//////////////////////////////////
-// Backdoor for Gellana's temple
-//////////////////////////////////
+/////////////////////////////////
+// Backdoor to Gellana's temple
+/////////////////////////////////
 
-// Gellanas Tempel kann jetzt auch durch die Hintertür betreten/verlassen werden.
-BEGIN ~Backdoor for Gellana's temple~ DESIGNATED 101
+BEGIN ~Backdoor to Gellana's temple~ DESIGNATED 101
 LABEL "JA#BGT_AdvPack-Backdoor_Gellana"
 
 INCLUDE ~JA#BGT_AdvPack/Backdoor_Gellana/setup-Backdoor_Gellana.tpa~
 
 
-////////////////////////////////////
-// Backdoor for Waterqueen's House
-////////////////////////////////////
+///////////////////////////////////
+// Backdoor to Waterqueen's House
+///////////////////////////////////
 
-// Das Haus der Wasserkönigin kann jetzt auch durch die Hintertür betreten/verlassen werden.
-BEGIN ~Backdoor for Waterqueen's House~ DESIGNATED 102
+BEGIN ~Backdoor to Waterqueen's House~ DESIGNATED 102
 LABEL "JA#BGT_AdvPack-Backdoor_Waterqueen"
 
 INCLUDE ~JA#BGT_AdvPack/Backdoor_Waterqueen/setup-Backdoor_Waterqueen.tpa~
