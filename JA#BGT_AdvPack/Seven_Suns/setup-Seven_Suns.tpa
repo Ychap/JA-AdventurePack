@@ -87,15 +87,6 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/doppsm_bgt.d~
 
-	// Done in JA#BGT_AdvPack/Seven_Suns/ja#scar_bgt.d
-	// COPY_EXISTING ~SCAR.DLG~ ~override~
-	// 	DECOMPILE_AND_PATCH BEGIN
-	// 		REPLACE_EVALUATE ~Global\(GT\)?("KilledDopple","GLOBAL",\([0-9]+\))~ BEGIN
-	// 			SET num = (~%MATCH1%~ STR_EQ ~GT~) ? MATCH2 : MATCH2 - 1
-	// 		END ~NumDeadGT("SSDOPPLE",%num%)~
-	//    END
-	// BUT_ONLY
-
 	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#scar_bgt.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#scar.tra~
 END
 

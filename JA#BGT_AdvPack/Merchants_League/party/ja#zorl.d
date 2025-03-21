@@ -27,7 +27,7 @@ BEGIN END
 APPEND ZORL
 
 IF ~AreaCheck("%SWBaldursGate_MerchantLeague_L3%") Global("JA#CUIRL","GLOBAL",0)~ THEN JA#ZORL_04
-  SAY @110
+  SAY @10
   IF ~~ THEN EXIT
 END
 

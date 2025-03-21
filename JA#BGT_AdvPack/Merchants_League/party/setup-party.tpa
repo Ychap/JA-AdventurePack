@@ -17,7 +17,7 @@ BUT_ONLY
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/ja#aldeth.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/ja#zorl.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/party/ja#zorl.d~
 
 // JA#ZORL.BCS is added to ZORL.CRE in ../setup-Merchants_League.tpa
 
