@@ -9,4 +9,5 @@ THEN
 		SetGlobal("JA#DEAGA_SPWN","%NBaldursGate%",1)
 		SetGlobal("SpawnDabron","GLOBAL",1)
 		CreateCreature("JA#DEAGA",[2350.3000],2)
+		Continue()
 END

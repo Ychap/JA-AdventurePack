@@ -7,6 +7,7 @@ THEN
 		CreateCreature("JALANT",[459.531],3)
 		ActionOverride("Jalantha",SetNumTimesTalkedTo(1))
 		ActionOverride("Jalantha",Enemy())
+		Continue()
 END
 
 IF
@@ -20,6 +21,7 @@ THEN
 		CreateCreature("TENYA2",[536.648],3)
 		ActionOverride("Tenya2",SetNumTimesTalkedTo(1))
 		ActionOverride("Tenya2",Enemy())
+		Continue()
 END
 
 IF
@@ -31,4 +33,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("TENAPPEAR","GLOBAL",1)
 		CreateCreature("TENYA2",[536.648],3)
+		Continue()
 END
