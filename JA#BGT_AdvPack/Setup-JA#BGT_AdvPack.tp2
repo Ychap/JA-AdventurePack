@@ -632,6 +632,19 @@ LABEL "JA#BGT_AdvPack-Iron_Throne"
 INCLUDE ~JA#BGT_AdvPack/Iron_Throne/setup-Iron_Throne.tpa~
 
 
+///////////////////////////////////
+// RESTORED: Elfsong Tavern movie
+///////////////////////////////////
+
+BEGIN ~Elfsong Tavern Movie~ DESIGNATED 54
+LABEL "JA#BGT_AdvPack-Elfsong_movie"
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME ~ubtavern.mve~ ~Already restored by BG1 Unfinished Business~
+FORBID_FILE ~movies/TAVERN.wbm~ ~Already restored by BG:EE Classic Movies~
+FORBID_FILE ~lang/%EE_LANGUAGE%/movies/TAVERN.wbm~ ~Already restored by Baldur's Gate: Enhanced Edition Trilogy (EET)~
+
+INCLUDE ~JA#BGT_AdvPack/Elfsong_movie/setup-Elfsong_movie.tpa~
+
+
 /////////////////////////////////////////////////////////
 // Graphical improvements: Animated torches and candles
 /////////////////////////////////////////////////////////

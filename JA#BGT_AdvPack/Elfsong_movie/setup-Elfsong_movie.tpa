@@ -1,0 +1,9 @@
+///////////////////////////////////
+// RESTORED: Elfsong Tavern movie
+///////////////////////////////////
+
+
+COPY ~JA#BGT_AdvPack/Elfsong_movie/JA#TAVER.MVE~ ~override~
+
+
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Elfsong_movie/AR7705.BAF~ EVALUATE_BUFFER

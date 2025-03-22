@@ -67,24 +67,6 @@ COPY_EXISTING ~SERWEN.CRE~ ~override/JA#SERW1.CRE~
 	WRITE_ASCII DIALOG ~JA#SERW1~ #8
 
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~TAVERN.WBM~) OR (FILE_EXISTS_IN_GAME ~UBTAVERN.MVE~) BEGIN // BGEEClassicMovies, EET or BG1UB
-	PRINT ~Skipping Restored Elfsong Tavern Movie: Is already restored by another mod.~
-END ELSE BEGIN
-	COPY ~JA#BGT_AdvPack/Miniquest/JA#TAVER.MVE~ ~override~
-
-	<<<<<<<< ...inlined/EnteredElfsong.baf
-	IF
-		Global("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",0)
-	THEN
-		RESPONSE #100
-			SetGlobal("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",1)
-			StartMovie("JA#TAVER")
-	END
-	>>>>>>>>
-	EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~...inlined/EnteredElfsong.baf~ EVALUATE_BUFFER
-END
-
-
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~
 
 
