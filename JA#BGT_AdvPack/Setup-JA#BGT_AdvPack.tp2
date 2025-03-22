@@ -319,9 +319,9 @@ FORBID_FILE ~override/ntkeelor.cre~ ~Keelor & Nasha is already restored by North
 INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
 
-//////////////////////////////////////////////////////
-// RESTORED: Marl (tarvern brawl in Feldepost's Inn)
-//////////////////////////////////////////////////////
+////////////////////////////////////////////
+// Marl (tarvern brawl in Feldepost's Inn)
+////////////////////////////////////////////
 
 BEGIN ~Marl (tarvern brawl in Feldepost's Inn)~ DESIGNATED 24
 LABEL "JA#BGT_AdvPack-Marl"
@@ -330,14 +330,24 @@ FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed afte
 INCLUDE ~JA#BGT_AdvPack/Marl/setup-Marl.tpa~
 
 
-/////////////////////////////////
-// RESTORED: Rythe's Last Arrow
-/////////////////////////////////
+//////////////////////////////////////
+// RESTORED ITEM: Rythe's Last Arrow
+//////////////////////////////////////
 
-BEGIN ~Rythe's Last Arrow~ DESIGNATED 25
-LABEL "JA#BGT_AdvPack-RythesLastArrow"
+BEGIN ~RESTORED ITEM: Rythe's Last Arrow~ DESIGNATED 25
+LABEL "JA#BGT_AdvPack-Rythes_Last_Arrow"
 
-INCLUDE ~JA#BGT_AdvPack/RythesLastArrow/setup-RythesLastArrow.tpa~
+INCLUDE ~JA#BGT_AdvPack/Rythes_Last_Arrow/setup-Rythes_Last_Arrow.tpa~
+
+
+/////////////////////////////////////////////////
+// RESTORED ITEM: The Protector of the Unworthy
+/////////////////////////////////////////////////
+
+BEGIN ~RESTORED ITEM: The Protector of the Unworthy~ DESIGNATED 251
+LABEL "JA#BGT_AdvPack-The_Protector_of_the_Unworthy"
+
+INCLUDE ~JA#BGT_AdvPack/The_Protector_of_the_Unworthy/setup-The_Protector_of_the_Unworthy.tpa~
 
 
 ///////////////////////////////////

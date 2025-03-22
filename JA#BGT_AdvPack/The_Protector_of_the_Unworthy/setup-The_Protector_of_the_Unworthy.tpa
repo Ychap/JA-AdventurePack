@@ -1,0 +1,16 @@
+/////////////////////////////////////////////////
+// RESTORED ITEM: The Protector of the Unworthy
+/////////////////////////////////////////////////
+
+
+COPY ~JA#BGT_AdvPack/The_Protector_of_the_Unworthy/JA#BELT1.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/The_Protector_of_the_Unworthy/JA#BELT1.ITM~ ~override~
+	SAY NAME1 #6465
+	SAY NAME2 @2093
+	SAY UNIDENTIFIED_DESC #6466
+	SAY IDENTIFIED_DESC @2094
+
+
+COPY_EXISTING ~STO4906.STO~ ~override~
+	ADD_STORE_ITEM ~JA#BELT1~ AFTER ~RING21~ #1 #0 #0 ~IDENTIFIED~ #1
+BUT_ONLY

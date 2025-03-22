@@ -1,6 +1,6 @@
-/////////////////////////////////
-// RESTORED: Rythe's Last Arrow
-/////////////////////////////////
+//////////////////////////////////////
+// RESTORED ITEM: Rythe's Last Arrow
+//////////////////////////////////////
 
 
 COPY_EXISTING ~AX1H05.ITM~ ~override/JA#AX1H5.ITM~
@@ -16,18 +16,7 @@ COPY_EXISTING ~AX1H05.ITM~ ~override/JA#AX1H5.ITM~
 		insert_point = ~-1~ // Last effect
 	END
 
-COPY ~JA#BGT_AdvPack/RythesLastArrow/JA#BELT1.BAM~ ~override~
-COPY ~JA#BGT_AdvPack/RythesLastArrow/JA#BELT1.ITM~ ~override~
-	SAY NAME1 #6465
-	SAY NAME2 @2093
-	SAY UNIDENTIFIED_DESC #6466
-	SAY IDENTIFIED_DESC @2094
-
 
 COPY_EXISTING ~PRAT.CRE~ ~override~
 	REPLACE_CRE_ITEM ~JA#AX1H5~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
-BUT_ONLY
-
-COPY_EXISTING ~STO4906.STO~ ~override~
-	ADD_STORE_ITEM ~JA#BELT1~ AFTER ~RING21~ #1 #0 #0 ~IDENTIFIED~ #1
 BUT_ONLY
