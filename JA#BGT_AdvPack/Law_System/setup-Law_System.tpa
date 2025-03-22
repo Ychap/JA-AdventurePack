@@ -1,17 +1,17 @@
 /////////////////////////////////////////////////////////////////////////////////
-// LAW SYSTEM in FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID and DUKAL PALACE
+// LAW SYSTEM in FRIENDLY ARM INN, ELFSONG TAVERN, BL. MERMAID and DUCAL PALACE
 /////////////////////////////////////////////////////////////////////////////////
 
 
-COPY ~JA#BGT_AdvPack/LawSystem/JA#FACAP.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Law_System/JA#FACAP.CRE~ ~override~
 	SAY NAME1 @2037
 	SAY NAME2 @2037
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRCUT.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRINI.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRGUA.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/JA#FRGUB.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Law_System/JA#FRCUT.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Law_System/JA#FRINI.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Law_System/JA#FRGUA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Law_System/JA#FRGUB.BAF~
 
 COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW00.BCS~
 	DECOMPILE_AND_PATCH BEGIN
@@ -40,14 +40,14 @@ COPY_EXISTING ~ACT03.BCS~ ~override/JA#LAW05.BCS~
 	END
 
 
-EXTEND_TOP ~%FriendlyArmInn_BCS%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR6800.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/LawSystem/AR7705.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%FriendlyArmInn_BCS%.BCS~ ~JA#BGT_AdvPack/Law_System/AR6800.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Law_System/AR7705.BAF~ EVALUATE_BUFFER
 
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#friendlyarm.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#law.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/LawSystem/ja#flam2.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Law_System/ja#friendlyarm.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Law_System/ja#law.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Law_System/ja#flam2.d~
 
 
 // BGT

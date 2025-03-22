@@ -1,11 +1,11 @@
 /////////////////////
-// Seniyad & Aldeth
+// Aldeth & Seniyad
 /////////////////////
 
 // FYI: In EE with jaheira in group you already have a peaceful solution.
 
-COPY ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.BAM~ ~override~
-COPY ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.ITM~ ~override~
+COPY ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.ITM~ ~override~
 	SAY NAME1 @2101
 	SAY NAME2 @2101
 	SAY IDENTIFIED_DESC @2102
@@ -13,9 +13,9 @@ COPY ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.ITM~ ~override~
 
 // If Aldeth main component is installed
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~JA#ALDET.BCS~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.BAF~
 END ELSE BEGIN
-	EXTEND_TOP ~JA#ALDET.BCS~ ~JA#BGT_AdvPack/Seniyad_Aldeth/JA#ALDET.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~JA#ALDET.BCS~ ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.BAF~ EVALUATE_BUFFER
 END
 
 
@@ -46,8 +46,8 @@ LAF GET_DLG_WEIGHT
 	RET aldeth_state07_weight = weight
 END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/ja#aldeth_reward.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seniyad_Aldeth/ja#seniya.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth_Seniyad/ja#aldeth_reward.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth_Seniyad/ja#seniya.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
 
 ADD_JOURNAL EXISTING @20 USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
 
