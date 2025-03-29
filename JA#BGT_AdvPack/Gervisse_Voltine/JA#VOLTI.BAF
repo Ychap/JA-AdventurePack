@@ -8,3 +8,14 @@ THEN
 		Wait(3)
 		StartDialogueNoSet([PC])
 END
+
+IF
+    See(NearestEnemyOf(Myself))
+	Global("JA#VOLT_FIGHT","GLOBAL",0)
+THEN
+    RESPONSE #100
+		SetGlobal("JA#VOLT_FIGHT","GLOBAL",1)
+        ReallyForceSpell(Myself,CLERIC_BARKSKIN)
+		SmallWait(1)
+        ForceSpell(NearestEnemyOf(Myself),CLERIC_SUMMON_INSECTS)
+END
