@@ -6,7 +6,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#SECRET_OPEN","GLOBAL",1)
 		PlaySound("AMB_D16")
-		TriggerActivation("JA#AR7325",TRUE)
+		TriggerActivation("JA#7325",TRUE)
 		AmbientActivate("JA#7211A",TRUE)
 END
 
@@ -18,7 +18,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#SECRET_OPEN","GLOBAL",0)
 		PlaySound("AMB_D17")
-		TriggerActivation("JA#AR7325",FALSE)
+		TriggerActivation("JA#7325",FALSE)
 		AmbientActivate("JA#7211A",FALSE)
 END
 

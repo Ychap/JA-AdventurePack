@@ -34,6 +34,7 @@ Suggested [install order](JA%23BGT_AdvPack/JA%23BGT_AdvPack.ini#L29-L31) when in
 - BG1 Unfinished Business
 - Endless BG1
 - Northern Tales of the Sword Coast
+- Loretakers
 - BG1 Mini Quests And Encounters
 - ___Jarl's Adventure Pack___
 - Baldur's Gate Romantic Encounters

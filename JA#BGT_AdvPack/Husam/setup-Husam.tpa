@@ -37,7 +37,6 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#CANDL.BAF~
 
 
 EXTEND_TOP ~%NBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7300.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%CentralSewers_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7325.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7208.BAF~ EVALUATE_BUFFER
 EXTEND_TOP ~%NBaldursGate_DucalPalace_Cellar_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7211.BAF~ EVALUATE_BUFFER
 
@@ -142,27 +141,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	// add region triggers
 	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    // travel
-		fj_box_left     = 547
-		fj_box_top      = 244
-		fj_box_right    = 611
-		fj_box_bottom   = 346
-		fj_cursor_idx   = 34
-		fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
-		fj_loc_x        = 612
-		fj_loc_y        = 337
-		fj_vertex_0     = 555 + (346 << 16)
-		fj_vertex_1     = 547 + (283 << 16)
-		fj_vertex_2     = 595 + (244 << 16)
-		fj_vertex_3     = 611 + (308 << 16)
-		STR_VAR
-		fj_structure_type   = region
-		fj_destination_area = EVAL ~%CentralSewers%~
-		fj_destination_name = ~JA#7211~
-		fj_name             = ~JA#AR7325~
-	END
-	LPF fj_are_structure
-		INT_VAR
 		fj_type         = 1    // info
 		fj_box_left     = 448
 		fj_box_top      = 354
@@ -253,16 +231,6 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 		fj_name             = ~JA#TRAP3~
 		fj_reg_script       = ~GTCK~
 	END
-	// add entrance
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x       = 627   // x
-		fj_loc_y       = 360   // y
-		fj_orientation = 14
-		STR_VAR
-		fj_structure_type = entrance
-		fj_name           = ~JA#7325~
-	END
 	// bam as optical entrance JA#7325
 	LPF fj_are_structure
 	  INT_VAR
@@ -277,36 +245,77 @@ COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
 	END
 BUT_ONLY
 
-COPY_EXISTING ~%CentralSewers%.are~ ~override~
-	// add region triggers
-	LPF fj_are_structure
-		INT_VAR
-		fj_type         = 2    // travel
-		fj_box_left     = 420
-		fj_box_top      = 1741
-		fj_box_right    = 596
-		fj_box_bottom   = 1908
-		fj_cursor_idx   = 34
-		fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
-		fj_loc_x        = 572
-		fj_loc_y        = 1803
-		fj_vertex_0     = 573 + (1775 << 16)
-		fj_vertex_1     = 420 + (1741 << 16)
-		fj_vertex_2     = 454 + (1908 << 16)
-		fj_vertex_3     = 596 + (1907 << 16)
-		STR_VAR
-		fj_structure_type   = region
-		fj_destination_area = EVAL ~%NBaldursGate_DucalPalace_Cellar%~
-		fj_destination_name = ~JA#7325~
-		fj_name             = ~JA#7211~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x       = 667    // x
-		fj_loc_y       = 1818   // y
-		fj_orientation = 13
-		STR_VAR
-		fj_structure_type = entrance
-		fj_name           = ~JA#7211~
-	END
-BUT_ONLY
+
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Loretakers.tp2~ 0) BEGIN
+	EXTEND_TOP ~%CentralSewers_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7325.BAF~ EVALUATE_BUFFER
+
+	COPY_EXISTING ~%CentralSewers%.are~ ~override~
+		// add region triggers
+		LPF fj_are_structure
+			INT_VAR
+			fj_type         = 2    // travel
+			fj_box_left     = 420
+			fj_box_top      = 1741
+			fj_box_right    = 596
+			fj_box_bottom   = 1908
+			fj_cursor_idx   = 34
+			fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
+			fj_loc_x        = 572
+			fj_loc_y        = 1803
+			fj_vertex_0     = 573 + (1775 << 16)
+			fj_vertex_1     = 420 + (1741 << 16)
+			fj_vertex_2     = 454 + (1908 << 16)
+			fj_vertex_3     = 596 + (1907 << 16)
+			STR_VAR
+			fj_structure_type   = region
+			fj_destination_area = EVAL ~%NBaldursGate_DucalPalace_Cellar%~
+			fj_destination_name = ~JA#7325~
+			fj_name             = ~JA#7211~
+		END
+		// add entrance
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x       = 667    // x
+			fj_loc_y       = 1818   // y
+			fj_orientation = 13
+			STR_VAR
+			fj_structure_type = entrance
+			fj_name           = ~JA#7211~
+		END
+	BUT_ONLY
+
+	COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
+		// add region triggers
+		LPF fj_are_structure
+			INT_VAR
+			fj_type         = 2    // travel
+			fj_box_left     = 547
+			fj_box_top      = 244
+			fj_box_right    = 611
+			fj_box_bottom   = 346
+			fj_cursor_idx   = 34
+			fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
+			fj_loc_x        = 612
+			fj_loc_y        = 337
+			fj_vertex_0     = 555 + (346 << 16)
+			fj_vertex_1     = 547 + (283 << 16)
+			fj_vertex_2     = 595 + (244 << 16)
+			fj_vertex_3     = 611 + (308 << 16)
+			STR_VAR
+			fj_structure_type   = region
+			fj_destination_area = EVAL ~%CentralSewers%~
+			fj_destination_name = ~JA#7211~
+			fj_name             = ~JA#7325~
+		END
+		// add entrance
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x       = 627   // x
+			fj_loc_y       = 360   // y
+			fj_orientation = 14
+			STR_VAR
+			fj_structure_type = entrance
+			fj_name           = ~JA#7325~
+		END
+	BUT_ONLY
+END
