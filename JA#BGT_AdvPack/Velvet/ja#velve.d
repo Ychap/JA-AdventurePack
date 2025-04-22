@@ -1,6 +1,6 @@
 BEGIN ~JA#VELVE~
 
-IF ~NumTimesTalkedTo(0) Global("JA#BRAUN_TOT","%NashkelCarnival%",0) Global("JA#WEISS_TOT","%NashkelCarnival%",0)~ THEN 0
+IF ~NumTimesTalkedTo(0) Global("JA#BRAUN_TOT","%NashkelCarnival%",0) Global("JA#WEISS_TOT","%NashkelCarnival%",0) Exists("JA#COCK1") Exists("JA#COCK2")~ THEN 0
   SAY @1
   IF ~~ THEN REPLY @2 DO ~SetGlobal("JA#VELVET_BRAUN","LOCALS",1)~ GOTO 1
   IF ~~ THEN REPLY @3 DO ~SetGlobal("JA#VELVET_WEISS","LOCALS",1)~ GOTO 1
@@ -44,7 +44,7 @@ IF ~Global("JA#VELVET_WIN","LOCALS",2)~ THEN 6
 END
 
 
-IF ~Global("JA#BRAUN_TOT","%NashkelCarnival%",0) Global("JA#WEISS_TOT","%NashkelCarnival%",0)~ THEN 7
+IF ~Global("JA#BRAUN_TOT","%NashkelCarnival%",0) Global("JA#WEISS_TOT","%NashkelCarnival%",0) Exists("JA#COCK1") Exists("JA#COCK2")~ THEN 7
   SAY @17
   IF ~~ THEN REPLY @2 DO ~SetGlobal("JA#VELVET_BRAUN","LOCALS",1)~ GOTO 1
   IF ~~ THEN REPLY @3 DO ~SetGlobal("JA#VELVET_WEISS","LOCALS",1)~ GOTO 1
