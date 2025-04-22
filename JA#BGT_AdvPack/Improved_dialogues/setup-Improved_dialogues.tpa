@@ -24,6 +24,7 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#mtowba.d~ // MTOWB
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#norale.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#nobl2.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#phlydi.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#poe.d~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#prsbx.d~ // JA#PRS01.DLG JA#PRS02.DLG JA#PRS03.DLG
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#zordral.d~
 
