@@ -63,7 +63,7 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#ESELY.CRE~ ~override~
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#SERW1.CRE~ ~override~
 	SAY NAME1 @27
-	SAY NAME2 @28
+	SAY NAME2 @27
 
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~

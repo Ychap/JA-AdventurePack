@@ -1,6 +1,11 @@
-////////////////////
-// Nashkel changes
-////////////////////
+////////////
+// Nashkel
+////////////
+
+
+COPY ~JA#BGT_AdvPack/Nashkel/JA#VOLSE.CRE~ ~override~
+	SAY NAME1 @28
+	SAY NAME2 @28
 
 
 // Add Bardolan's respawn to Nashkel area if he disappeared because of bg1re encounter
@@ -74,5 +79,21 @@ COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 	LPF ALTER_AREA_REGION
 		INT_VAR info_point  = RESOLVE_STR_REF(@2119)
 		STR_VAR region_name = ~Info4803~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%Nashkel_BelchingDragonTavern%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 410
+		fj_loc_y          = 250
+		fj_dest_x         = 410
+		fj_dest_y         = 250
+		fj_orientation    = 2
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Volo Wench~
+		fj_cre_resref     = ~JA#VOLSE~
 	END
 BUT_ONLY

@@ -485,9 +485,9 @@ FORBID_COMPONENT ~GARRICK-TT/SETUP-GARRICK-TT.TP2~ 0 ~This component cannot be i
 INCLUDE ~JA#BGT_AdvPack/Tenya2/setup-Tenya2.tpa~
 
 
-////////////////////
-// Nashkel changes
-////////////////////
+////////////
+// Nashkel
+////////////
 
 BEGIN ~Nashkel~ DESIGNATED 40
 LABEL "JA#BGT_AdvPack-Nashkel"
