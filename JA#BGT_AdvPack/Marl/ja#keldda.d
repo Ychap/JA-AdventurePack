@@ -1,67 +1,32 @@
-ALTER_TRANS KELDDA
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#MARL_GUARD","GLOBAL",3)
-ActionOverride("JA#GUAB1",EscapeArea())
-ActionOverride("JA#GUAB2",EscapeArea())
-ActionOverride("JA#GUAB3",EscapeArea())
-TakePartyGold(300)~
-END
+REPLACE_STATE_TRIGGER KELDDA 3 ~%state01_trigger%~
+
+SET_WEIGHT KELDDA 3 #%state01_weight%
+
+
+ADD_STATE_TRIGGER KELDDA 1
+~Global("JA#MARL_GUARD","GLOBAL",0)~
+
 
 ALTER_TRANS KELDDA
-BEGIN 5 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#MARL_GUARD","GLOBAL",3)
-ActionOverride("JA#GUAB1",EscapeArea())
-ActionOverride("JA#GUAB2",EscapeArea())
-ActionOverride("JA#GUAB3",EscapeArea())
-TakePartyGold(200)~
+BEGIN 3 END
+BEGIN END
+BEGIN
+  "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5) %state01_response0_action%~
+  "SOLVED_JOURNAL" ~@0~
 END
 
-ADD_STATE_TRIGGER KELDDA 1 ~GlobalLT("JA#MARL_GUARD","GLOBAL",1)~
-
-REPLACE_STATE_TRIGGER KELDDA 3 ~Dead("bassilus")
-PartyHasItem("MISC04")
-!Global("BassilusDead","GLOBAL",2)
-GlobalGT("JA#MARL_GUARD","GLOBAL",0)~
 
 ALTER_TRANS KELDDA
-BEGIN 3 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("B!GavinBassilusQuest","GLOBAL",5)
-GiveGoldForce(1000)
-SetGlobal("BassilusDead","GLOBAL",2)
-AddexperienceParty(500)
-EraseJournalEntry(%kelddath1%)
-EraseJournalEntry(%kelddath2%)
-EraseJournalEntry(%kelddath3%)
-EraseJournalEntry(%kelddath4%)
-EraseJournalEntry(%kelddath5%)
-EraseJournalEntry(%kelddath6%)
-EraseJournalEntry(%kelddath7%)
-TakePartyItem("MISC04")~
+BEGIN 4 END
+BEGIN 0 END
+BEGIN
+  "ACTION" ~SetGlobal("JA#MARL_GUARD","GLOBAL",3) TakePartyGold(300) ActionOverride("JA#GUAB1",EscapeArea()) ActionOverride("JA#GUAB2",EscapeArea()) ActionOverride("JA#GUAB3",EscapeArea())~
 END
 
 
-//Dunkin
-
-ALTER_TRANS DUNKIN
-BEGIN 7 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~ClearAllActions()~
+ALTER_TRANS KELDDA
+BEGIN 5 END
+BEGIN 0 END
+BEGIN
+  "ACTION" ~SetGlobal("JA#MARL_GUARD","GLOBAL",3) TakePartyGold(200) ActionOverride("JA#GUAB1",EscapeArea()) ActionOverride("JA#GUAB2",EscapeArea()) ActionOverride("JA#GUAB3",EscapeArea())~
 END
-
-//misc.de
-REPLACE_STATE_TRIGGER DUNKIN 5 ~Global("JA#DUNKIN","%Beregost_FeldepostsInn_L1%",1)~
-
-ALTER_TRANS DUNKIN // file name
-BEGIN 5 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#DUNKIN","%Beregost_FeldepostsInn_L1%",2)~
-END
-

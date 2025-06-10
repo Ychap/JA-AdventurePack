@@ -1,0 +1,33 @@
+IF
+	Global("JA#HUSAM_SPWN","%NBaldursGate%",0)
+	Global("Chapter","GLOBAL",%tutu_chapter_7%)
+	Global("HusamMove","GLOBAL",7)
+	!Exists("Husam2")
+	!Dead("Husam2")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#HUSAM_SPWN","%NBaldursGate%",1)
+		CreateCreature("JA#HUSAM",[1931.2980],2)
+		Continue()
+END
+
+/* Husam should not remain in front of the Palace if Sarevok is already revealed */
+
+IF
+	Exists("JA#HUSAM")
+	Global("SarevokBehavior","GLOBAL",1)
+	Global("JA#HUSAM_MOVE","GLOBAL",0) // He is still in front of the Palace
+THEN
+	RESPONSE #100
+		ActionOverride("JA#HUSAM",DestroySelf())
+		Continue()
+END
+
+IF
+	Exists("JA#HUSAM")
+	Global("ENDOFBG1","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ActionOverride("JA#HUSAM",DestroySelf())
+		Continue()
+END

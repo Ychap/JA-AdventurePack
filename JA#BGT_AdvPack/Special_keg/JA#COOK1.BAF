@@ -1,0 +1,9 @@
+IF
+	Range([PC],6)
+	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",1)
+	See([PC])
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END

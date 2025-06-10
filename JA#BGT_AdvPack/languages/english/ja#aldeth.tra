@@ -18,8 +18,7 @@
 @17 = ~You've proven yourself as a wise negotiator. Continue to behave wisely as you walk through these woods. I wish you all the best, whatever adventure you shall be living. If your presence in this forest has to do with those who are known as the "Iron Throne", then you should go west. Be careful on your journey, for there are many treacherous beasts in the woods. Be aware of danger that is the sect of the Shadow Druids. Their order is a dangerous splinter group of the true Order of the Druids.~
 @18 = ~Hmm, alright. You didn't act as I requested, but at least I get out of this alive. If it wasn't for you, these fanatical savages surely would have skinned me alive.~
 @19 = ~Should your travels lead you to Baldur's Gate, make sure to come to the Merchant's League. I shall grant you whatever support we can provide, as far as it's in my power. But first, let me give you this as a sign of my gratitude. Farewell.~
-//Original: "Aldeth Sashenstar" is journal title
-@20 = ~Hunters in the Cloakwood Forest
+@20 = ~Aldeth Sashenstar
 
 I didn't want to become the hangman and managed to find a peaceful solution between Aldeth Sashenstar and the Druids of Cloakwood. The leader of the druids Seniyad warned me of the Shadow Druids, a fanatical splinter group, and mentioned activities of the Iron Throne in the west of the Cloakwood Forest. Aldeth also mentioned that I should visit him in the Merchant's League in the southwest area of Baldur's Gate.~
 @21 = ~Well, if it would be me spying on my friends, they might become suspicious. What's more, I don't know who or what is exactly behind all this. I need people from the outside who I can trust.~
@@ -42,7 +41,7 @@ I didn't want to become the hangman and managed to find a peaceful solution betw
 @38 = ~*gasp* You fled? What are you doing here, what will you do to me?~
 @39 = ~You have betrayed me, Aldeth. After everything I've done for you! Live with the knowledge that you are a lousy, disloyal traitor. I'm done with you!~
 @40 = ~You will pay for your treason, worm! I'm sending you straight to hell!~
-@41 = ~Um, please leave the Merchant's League.~
+@41 = ~Follow me, time is running out.~
 @42 = ~Ah, the primitive meatlings found out about us, Jased.~
 @43 = ~Well then! Farewell.~
 @44 = ~They terminate lucrative contracts, scare away old business partners, spend all their money for some crap that can't be sold, and so on...~
@@ -71,8 +70,7 @@ I didn't want to become the hangman and managed to find a peaceful solution betw
 @67 = ~Ah, the heroes who saved master Aldeth and all of us. Fortunately, we're rid of these disgusting shapeshifters! The blame for this disaster is to be given to the grand dukes, if you ask me. They let all the rabble into the city.~
 
 /* new for v1.07 */
-
-@68 = ~He is right, <CHARNAME> – the Shadow Druids do not stop when it comes to other druid circles if these do not share their extreme views of how to punish those who do not value Nature as the druids do – Seniyad, today you were more in tune with this thinking than you seem to notice!~
+// @68 = ~He is right, <CHARNAME> – the Shadow Druids do not stop when it comes to other druid circles if these do not share their extreme views of how to punish those who do not value Nature as the druids do – Seniyad, today you were more in tune with this thinking than you seem to notice!~
 @69 = ~Doppelgangers! I can't believe it. Keep up the fight, there are still some of the monsters around!~
 @70 = ~I thank you for bringing me my dead partners. I will see to a proper burial.~
 @71  = ~Did you really think I wouldn't come back to you about this, Aldeth? You need to give me a good reason for selling me out to the Flaming Fist, and fast! I helped you several times and you thank me with betrayal?!~
@@ -113,8 +111,6 @@ I didn't want to become the hangman and managed to find a peaceful solution betw
 @106  = ~This doesn't mean I won't let you pay for your betrayal! Draw your sword and defend yourself!~
 @107  = ~I see. Despite not agreeing the path you chose, I fear you are doing the right thing. Unfortunately, there is not much I can do to help you. Other than to pretend that you weren't here.~
 @108  = ~Here, take these potions as a small compensation for what you had to go through.~
-@109  = ~I am glad to see you well, my friends. I advice you not to tarry too long, though.~
-@110  = ~Aldeth, could you show me your special merchandise?~
-@111  = ~What you say is hardly appropriate, young dru-... Jaheira? Is that you, young one? I should have recognized you immediately!~
-@112  = ~It is indeed I, Jaheira. It saddens me to see that you still cling to your aggressive approach when dealing with those that are less caring with nature's bounty. Despicable as these men may be, you do not seem to consider how much your attitude costs us by denting the respect the city dwellers might feel for our course.~
-@113  = ~As much as your words hurt, Jaheira, as much I do realise that they state the truth. I fear, the recent troubles have affected me in ways I can't see, and I have grown more ruthless than I realize. Perhaps... this is something to reflect upon.~
+
+/* #1071 */
+@114  = ~I don't like the sound of this. I think we should leave here as soon as possible.~

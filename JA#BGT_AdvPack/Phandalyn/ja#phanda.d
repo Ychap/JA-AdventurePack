@@ -1,0 +1,39 @@
+REPLACE_STATE_TRIGGER PHANDA 2 ~NumTimesTalkedToGT(0) InParty([0.0.0.0.0.0.MASK_EVIL]) See([PC.0.0.0.0.0.MASK_EVIL])~
+REPLACE_STATE_TRIGGER PHANDA 3 ~NumTimesTalkedToGT(0)~
+
+
+// COPY_TRANS_LATE is not possible in EXTEND_(BOTTOM|TOP) - so process it early
+EXTEND_BOTTOM PHANDA 2
+  COPY_TRANS PHANDA 0 // Phandalyn attacks
+END
+
+
+REPLACE_ACTION_TEXT PHANDA
+~Attack(\[0\.0\.0\.0\.0\.0\.MASK_EVIL\])~
+~Attack([PC.0.0.0.0.0.MASK_EVIL])~
+
+REPLACE_ACTION_TEXT PHANDA
+~EscapeArea\(Destroy\)?([0-9]*)~
+~NoAction()~
+
+
+ALTER_TRANS PHANDA
+BEGIN 3 END
+BEGIN 0 END
+BEGIN
+  "REPLY" ~@1~
+END
+
+EXTEND_BOTTOM PHANDA 3
+  IF ~~ THEN REPLY @2 GOTO JA#PHANDA_1 // if installed after BG1NPC, DO ~SetGlobal("X#VicPhand","GLOBAL",1)~ (else @3 would be repeated in an INTERJECT)
+END
+
+
+APPEND PHANDA
+
+IF ~~ THEN JA#PHANDA_1
+  SAY @3
+  COPY_TRANS_LATE PHANDA 0 // Phandalyn attacks
+END
+
+END // APPEND PHANDA

@@ -1,0 +1,48 @@
+//////////////////////////////////
+// Special keg in Elfsong Tavern
+//////////////////////////////////
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	ACTION_IF NOT FILE_EXISTS ~µbea1.bam~ BEGIN // 0x525B µbe BGT+Infinity   0xCC00 MKG1 BGEE
+		COPY ~JA#BGT_AdvPack/Special_keg/Keg1~ ~override~
+	END
+END
+
+COPY ~JA#BGT_AdvPack/Special_keg/JA#KEG01.CRE~ ~override~
+	SAY NAME1 @29
+	SAY NAME2 @29
+	PATCH_IF GAME_IS ~eet bgee~ BEGIN
+		WRITE_LONG 0x28 0xCC00 // Animation: KEG1
+	END
+
+COPY ~JA#BGT_AdvPack/Special_keg/JA#KEG02.CRE~ ~override~
+	SAY NAME1 @30
+	SAY NAME2 @31
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#COOK1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#CUKEG.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#KEG01.BAF~
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/ja#cook1.d~
+
+
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Special_keg/AR7705.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord = 409
+		y_coord = 418
+		dest_x  = 409
+		dest_y  = 418
+		orient  = 13
+		STR_VAR
+		actor_name       = ~Cook~
+		dlg_file         = ~JA#COOK1~
+		script_specifics = ~JA#COOK1~
+	END
+BUT_ONLY

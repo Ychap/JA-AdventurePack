@@ -1,0 +1,44 @@
+IF
+	!See([ENEMY])
+	Global("JA#HUSAM_MOVE","GLOBAL",3)
+	Global("SarevokBehavior","GLOBAL",1)
+	!InMyArea("Sarevok")
+	!InMyArea("WINSKI")
+THEN
+	RESPONSE #100
+		ActionOverride("JA#HUSAM",Dialogue([PC]))
+		Continue()
+END
+
+IF
+	Global("NobleDopple","GLOBAL",1)
+	Global("JA#HUSAM_MOVE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#HUSAM_MOVE","GLOBAL",3)
+		Wait(4)
+		CreateCreature("JA#STH03",[584.179],0)
+		SmallWait(5)
+		ActionOverride("JA#STH03",Attack(NearestEnemyOf([PC])))
+		Wait(1)
+		CreateCreature("JA#STH04",[584.179],0)
+		SmallWait(5)
+		ActionOverride("JA#STH04",Attack(SecondNearestEnemyOf([PC])))
+		Wait(1)
+		CreateCreature("JA#STH05",[584.179],0)
+		SmallWait(5)
+		ActionOverride("JA#STH05",Attack(ThirdNearestEnemyOf([PC])))
+		Wait(1)
+		CreateCreature("JA#STH06",[584.179],0)
+		SmallWait(5)
+		ActionOverride("JA#STH06",Attack(FourthNearestEnemyOf([PC])))
+		Wait(1)
+		CreateCreature("JA#STH07",[584.179],0)
+		SmallWait(5)
+		ActionOverride("JA#STH07",Attack(FifthNearestEnemyOf([PC])))
+		Wait(1)
+		CreateCreature("JA#HUSAM",[584.179],0)
+		SmallWait(5)
+		ActionOverride("JA#HUSAM",Attack(NearestEnemyOf([PC])))
+		Continue()
+END

@@ -1,0 +1,72 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#DEAGA")
+		Wait(2)
+		DestroySelf()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(1)
+		FadeToColor([20.0],0)
+		Wait(2)
+		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1159.750],9)
+		SetMasterArea("%SWBaldursGate%")
+        Wait(1)
+        ActionOverride("Aldeth",JumpToPoint([1244.720]))
+        ActionOverride("Aldeth",Face(2))
+        Wait(1)
+		FadeFromColor([20.0],0)
+		Wait(2)
+		ActionOverride("Aldeth",StartDialogueNoSet(Player1))
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		Wait(3)
+		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1208.786],9)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		Wait(3)
+		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1128.774],10)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		Wait(3)
+		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1176.810],9)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		Wait(3)
+		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1079.809],10)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		Wait(3)
+		LeaveAreaLUA("%SWBaldursGate_MerchantLeague_L2%","",[1128.846],9)
+END

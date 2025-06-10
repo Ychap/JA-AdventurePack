@@ -1,0 +1,11 @@
+IF
+	OR(2)
+		Global("LetThePartyBegin","GLOBAL",1)
+		Global("ZorlDopple","GLOBAL",1)
+	Exists("Zorl")
+	!Dead("Zorl")
+THEN
+	RESPONSE #100
+		SaveObjectLocation("MYAREA","JA#ZorlLocation","Zorl")
+		Continue()
+END

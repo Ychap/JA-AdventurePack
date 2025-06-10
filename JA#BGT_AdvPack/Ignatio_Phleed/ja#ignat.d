@@ -1,0 +1,79 @@
+BEGIN ~JA#IGNAT~
+
+IF ~NumTimesTalkedTo(0) !PartyHasItem("MISC78")~ THEN 0
+  SAY @0
+  IF ~~ THEN REPLY @1 DO ~~ GOTO 1
+  IF ~ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)~ THEN REPLY @2 GOTO 2
+  IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER) ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~ THEN REPLY @2 GOTO 3
+  IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN REPLY @2 GOTO 4
+END
+
+IF ~~ THEN 1
+  SAY @3
+  IF ~~ THEN REPLY @4 DO ~~ GOTO 5
+  IF ~~ THEN REPLY @5 DO ~~ GOTO 6
+  IF ~ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)~ THEN REPLY @6 GOTO 2
+  IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER) ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~ THEN REPLY @6 GOTO 3
+  IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN REPLY @6 GOTO 4
+END
+
+IF ~~ THEN 2
+  SAY @7
+  IF ~PartyGoldGT(149)~ THEN REPLY @8 DO ~TakePartyGold(150) GiveItem("MISC78",LastTalkedToBy)~ GOTO 8
+  IF ~~ THEN REPLY @9 DO ~~ GOTO 7
+END
+
+IF ~~ THEN 3
+  SAY @10
+  IF ~~ THEN REPLY @9 DO ~~ GOTO 7
+  IF ~PartyGoldGT(199)~ THEN REPLY @11 DO ~TakePartyGold(200) GiveItem("MISC78",LastTalkedToBy)~ GOTO 8
+END
+
+IF ~~ THEN 4
+  SAY @12
+  IF ~PartyGoldGT(249)~ THEN REPLY @13 DO ~TakePartyGold(250) GiveItem("MISC78",LastTalkedToBy)~ GOTO 8
+  IF ~~ THEN REPLY @14 DO ~~ GOTO 7
+END
+
+IF ~~ THEN 5
+  SAY @15
+  IF ~ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)~ THEN REPLY @16 GOTO 2
+  IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER) ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~ THEN REPLY @16 GOTO 3
+  IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN REPLY @16 GOTO 4
+  IF ~~ THEN REPLY @17 DO ~~ GOTO 6
+END
+
+IF ~~ THEN 6
+  SAY @18
+  IF ~~ THEN DO ~~ EXIT
+END
+
+IF ~~ THEN 7
+  SAY @19
+  IF ~~ THEN DO ~~ EXIT
+END
+
+IF ~~ THEN 8
+  SAY @20
+  IF ~~ THEN DO ~~ EXIT
+END
+
+IF ~~ THEN 9
+  SAY @21
+  IF ~~ THEN EXIT
+END
+
+IF ~!PartyHasItem("MISC78")~ THEN 10
+  SAY @22
+  IF ~~ THEN REPLY @23 DO ~~ GOTO 7
+  IF ~ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)~ THEN REPLY @24 GOTO 2
+  IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER) ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)~ THEN REPLY @24 GOTO 3
+  IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN REPLY @24 GOTO 4
+END
+
+IF ~True()~ THEN 11
+  SAY @25
+  IF ~~ THEN GOTO 9
+END
+
+// END JA#IGNAT

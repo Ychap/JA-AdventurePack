@@ -1,0 +1,45 @@
+IF
+	AreaCheck("%SWBaldursGate_MerchantLeague_L3%")
+	Global("HelpAldeth","GLOBAL",2)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	AreaCheck("%SWBaldursGate_MerchantLeague_L3%")
+	!HasItem("potn08",Myself) // Heiltrank
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		GiveItemCreate("potn08",Myself,0,0,0) // Heiltrank
+		Continue()
+END
+
+IF
+	HasItem("potn08",Myself)
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		UseItem("potn08",Myself)
+		Continue()
+END
+
+IF
+	AreaCheck("%SWBaldursGate_MerchantLeague_L3%")
+	HPPercentLT(Myself,25)
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),3)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	See([ENEMY])
+	Class(LastSeenBy(Myself),DOPPLEGANGER)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate([ENEMY],30)
+END

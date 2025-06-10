@@ -1,0 +1,31 @@
+DEFINE_PATCH_FUNCTION DELETE_AREA_ACTOR
+	STR_VAR actor_to_delete = ~None~
+			cre_to_delete = ~None~
+BEGIN
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	// Reverse loops to match correct index on multiple occurrences
+
+	PATCH_IF (~%actor_to_delete%~ STR_CMP ~None~) BEGIN
+		FOR (i = (SHORT_AT 0x58)-1; i >= 0; --i) BEGIN
+			READ_ASCII $actors("%i%") actor_name (32) NULL
+			PATCH_IF (~%actor_name%~ STR_EQ ~%actor_to_delete%~) BEGIN
+				LPF fj_are_structure
+					INT_VAR fj_delete_mode = i
+					STR_VAR fj_structure_type = actor
+				END
+			END
+		END
+	END
+
+	PATCH_IF (~%cre_to_delete%~ STR_CMP ~None~) BEGIN
+		FOR (i = (SHORT_AT 0x58)-1; i >= 0; --i) BEGIN
+			READ_ASCII $actors("%i%")+0x80 actor_filename
+			PATCH_IF (~%actor_filename%~ STR_EQ ~%cre_to_delete%~) BEGIN
+				LPF fj_are_structure
+					INT_VAR fj_delete_mode = i
+					STR_VAR fj_structure_type = actor
+				END
+			END
+		END
+	END
+END

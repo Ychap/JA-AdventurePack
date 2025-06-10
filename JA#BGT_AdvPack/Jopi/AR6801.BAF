@@ -1,0 +1,8 @@
+IF
+	GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)
+	Global("JA#JOPIMOVE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#JOPIMOVE","GLOBAL",1)
+		ActionOverride("JOPI",SetNumTimesTalkedTo(0))
+END

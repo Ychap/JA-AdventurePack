@@ -23,8 +23,7 @@
 @22   = ~I thought so. Um, I must proceed; the preparations for the celebrations are waiting. Farewell and don't spread too much dirt. Your boots look as if you were recently emerged from the sewers...~
 @23   = ~Farewell and don't spread too much dirt. Your boots look as if you were recently emerged from the sewers...~
 @24   = ~I am the treasurer of the palace and make sure that the High Lords lack nothing. The celebrations for the context of Sarevok's election as Grand Duke are up and there is still much to do.~
-@25   = ~I can only advise you to leave the palace immediately. Intruders will be punished hard and fast.~
-@26   = ~Intruders! Inside the Palace! For such a brazen thief there is no mercy!~
+
 @27   = ~Guests of the ceremony aren't allowed up here. Please go back downstairs.~
 @28   = ~These spaces are reserved for the Dukes. Please go now.~
 @29   = ~You have no business here. Please go downstairs.~
@@ -35,7 +34,7 @@
 @33   = ~I heard that Sarevok might be willing to donate a large portion of his coster's iron supplies to the city.~
 /* #1637 */
 @34   = ~I'll definitely vote for Sarevok in the coming election. He might be new, but he has a lot to add to the city.~
-/* #1638 */ 
+/* #1638 */
 @35   = ~I do hope they catch those rapscallions that escaped from Candlekeep. From what I understand they were trying to frame the Iron Throne for what's really the fault of Amn. To think that Duke Eltan was trusting Amnian spies.~
 @36   = ~Shut up! You are disturbing the procedure!~
 @37   = ~Psssssst... Sarevok doesn't look as if he would like to be interrupted!~
@@ -44,4 +43,3 @@
 @40   = ~What a bad behavior! And on such an occasion! Go away, lout!~
 @41   = ~Shouldn't your attention be on Sarevok? After all, we're here because of him.~
 @42   = ~Something... is wrong with this great man. Maybe I am imagining things, but something's wrong...~
-@43   = ~Welcome to the Palace.~

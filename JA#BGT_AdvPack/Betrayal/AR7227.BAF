@@ -1,0 +1,9 @@
+IF
+	Global("JA#MGUAR","GLOBAL",1)
+	Global("JA#DABRONSPWN","%SWBaldursGate_MerchantLeague_L1%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#DABRONSPWN","%SWBaldursGate_MerchantLeague_L1%",1)
+		CreateCreature("JA#DABRO",[667.683],3)
+		Continue()
+END

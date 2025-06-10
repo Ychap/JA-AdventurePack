@@ -11,7 +11,7 @@ BEGIN
 	COPY ~%path_to_2da_file%~ ~%path_to_2da_file%~
 		READ_2DA_ENTRIES_NOW ~newpixelarray~ 4
 		COUNT_2DA_ROWS 4 ~pixelnumber~
-		
+
 	COPY_EXISTING ~%areaname%SR.bmp~ ~override~
 		FOR (cnt=0; cnt<pixelnumber; cnt=cnt+1) BEGIN
 			READ_2DA_ENTRY_FORMER ~newpixelarray~ cnt 0 ~offset~
@@ -24,8 +24,8 @@ BEGIN
 			SET right_newpixel = newpixel MODULO 16
 			PATCH_IF (~%byte%~ STRING_EQUAL ~b~)=1 BEGIN
 				SET setpixel = newpixel
-				//PATCH_PRINT ~%offset%: oldpixel %oldpixel% - newpixel %newpixel% - setpixel %setpixel%~
-				//PATCH_PRINT ~%offset%: lo %left_oldpixel% ro %right_oldpixel% - ln %left_newpixel% rn %right_newpixel% - setpixel %setpixel%~
+				// PATCH_PRINT ~%offset%: oldpixel %oldpixel% - newpixel %newpixel% - setpixel %setpixel%~
+				// PATCH_PRINT ~%offset%: lo %left_oldpixel% ro %right_oldpixel% - ln %left_newpixel% rn %right_newpixel% - setpixel %setpixel%~
 			END
 			PATCH_IF (~%byte%~ STRING_EQUAL ~r~)=1 BEGIN
 				SET setpixel = left_oldpixel * 16 + right_newpixel
@@ -33,6 +33,6 @@ BEGIN
 			PATCH_IF (~%byte%~ STRING_EQUAL ~l~)=1 BEGIN
 				SET setpixel = left_newpixel * 16 + right_oldpixel
 			END
-			WRITE_BYTE offset ~%setpixel%~ 
+			WRITE_BYTE offset ~%setpixel%~
 		END
 END

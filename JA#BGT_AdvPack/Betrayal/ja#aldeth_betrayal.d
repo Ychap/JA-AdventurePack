@@ -1,0 +1,95 @@
+ADD_STATE_TRIGGER ALDETH 21 ~Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",0)~
+ADD_STATE_TRIGGER ALDETH 22 ~Global("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",1) Global("Chapter","GLOBAL",%tutu_chapter_7%)~
+
+SET_WEIGHT ALDETH 22 #%state21_weight%
+
+
+// BGEE/EET
+REPLACE_TRANS_ACTION FLAMAL
+BEGIN 1 END
+BEGIN END
+~ActionOverride("\(Aldeth\|Brandi\|JA#DEAGA\)",EscapeArea())~
+~ActionOverride("\1",NoAction())~
+
+
+// BGT
+ADD_TRANS_ACTION FLAMAL
+BEGIN 1 END
+BEGIN END
+~ActionOverride("FFHUNT",EscapeArea()) ActionOverride("FFHUNT",EscapeArea()) ActionOverride("FFHUNT",EscapeArea()) EscapeArea()~
+UNLESS ~EscapeArea()~
+
+
+// BGEE/EET
+ADD_TRANS_ACTION ALDETH
+BEGIN 21 END
+BEGIN 0 END
+~%state21_response1_action%~
+UNLESS ~CreateCreature("FLAMAL"~
+
+
+ALTER_TRANS ALDETH
+BEGIN 21 END
+BEGIN 0 END
+BEGIN
+  "EPILOGUE" ~GOTO JA#ALDETH_32~
+END
+
+ALTER_TRANS ALDETH
+BEGIN 21 END
+BEGIN 1 END
+BEGIN
+  "EPILOGUE" ~GOTO JA#ALDETH_32X~
+END
+
+
+ALTER_TRANS ALDETH
+BEGIN 22 END
+BEGIN 0 END
+BEGIN
+  "EPILOGUE" ~GOTO JA#ALDETH_33~
+END
+
+ALTER_TRANS ALDETH
+BEGIN 22 END
+BEGIN 1 END
+BEGIN
+  "EPILOGUE" ~GOTO JA#ALDETH_34~
+END
+
+ALTER_TRANS ALDETH
+BEGIN 22 END
+BEGIN 2 END
+BEGIN
+  "EPILOGUE" ~GOTO JA#ALDETH_35~
+END
+
+
+APPEND ALDETH
+
+IF ~~ THEN JA#ALDETH_32
+  SAY @34
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDED")~ EXIT
+END
+
+IF ~~ THEN JA#ALDETH_32X
+  SAY @41
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUDED")~ EXIT
+END
+
+IF ~~ THEN JA#ALDETH_33
+  SAY @35
+  IF ~~ THEN DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
+END
+
+IF ~~ THEN JA#ALDETH_34
+  SAY @36
+  IF ~~ THEN DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
+END
+
+IF ~~ THEN JA#ALDETH_35
+  SAY @37
+  IF ~~ THEN DO ~SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",2)~ EXTERN FLAMAL 0
+END
+
+END // APPEND ALDETH

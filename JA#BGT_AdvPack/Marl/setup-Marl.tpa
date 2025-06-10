@@ -1,220 +1,51 @@
-///////////////////////////////
-//RESTORED: Marl & the Guard
-///////////////////////////////
+/////////////////////////////////////////////////////
+// RESTORED: Marl - Tavern brawl at Feldepost's Inn
+/////////////////////////////////////////////////////
 
-COPY_EXISTING ~MARL.CRE~ ~override~
-	WRITE_BYTE 0x273 155	//innocent - reputation
-	//delete item
-		FOR (cnt=BYTE_AT 0x2C0 -1; cnt>=0; --cnt) BEGIN
-			READ_LONG SHORT_AT 0x2BC +(0x14 * (cnt)) item_name
-			PATCH_IF (~%item_name%~ STR_EQ  ~B1-2~) BEGIN
-				LPF fj_are_structure
-					INT_VAR fj_delete_mode = EVAL %cnt%
-					STR_VAR fj_structure_type = item
-				END
-			END
-		END
-
-COPY_EXISTING ~DUNKIN.CRE~ ~override~
-	WRITE_ASCII 0x248 ~JA#DUNKI~ #8
 
 COPY ~JA#BGT_AdvPack/Marl/JA#GUAB1.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB2.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB3.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB4.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB5.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB6.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB7.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB8.CRE~ ~override~
-	~JA#BGT_AdvPack/Marl/JA#GUAB9.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Marl/JA#GUAB2.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Marl/JA#GUAB3.CRE~ ~override~
 	SAY NAME1 @2085
 	SAY NAME2 @2085
 
-COPY_EXISTING ~KELDDA.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "8"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath1 = strref
-COPY_EXISTING ~BASSIL.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "3"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath2 = strref
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "14"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath3 = strref
-COPY_EXISTING ~FOOTY.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "1"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath4 = strref
-COPY_EXISTING ~TOWNCR.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "0"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath5 = strref
-COPY_EXISTING ~FTOWBE.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "0"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath6 = strref
-COPY_EXISTING ~RBEREG.dlg~ ~override~
-		LPF ~READ_JOURNAL_STRREF~
-			INT_VAR
-			state         = "22"  // state index
-			stateResponse = 0     // relative response index (e.g. 0 for first response associated with the state, 1 for second response, and so on...)
-			RET
-			strref    // returned string reference, or -1 if not available
-		END
-		SET kelddath7 = strref
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#KELDDA.D~		
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#GUABE.D~
-
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#DUNKI.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#GUAB8.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/JA#GBECU.BAF~
+
+
 EXTEND_BOTTOM ~MARL.BCS~ ~JA#BGT_AdvPack/Marl/MARL.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%Beregost_FeldepostsInn_L1%.BCS~ ~JA#BGT_AdvPack/Marl/AR6751.BAF~ EVALUATE_BUFFER
 
-COPY_EXISTING ~%Beregost%.ARE~ ~override~
-	//add new actors
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 4194
-		fj_loc_y          = 3651
-		fj_dest_x         = 4194
-		fj_dest_y         = 3651
-		fj_orientation    = 13     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB4~
-		fj_dlg_resref	  = ~JA#GUAB4~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 2509
-		fj_loc_y          = 554 
-		fj_dest_x         = 2509
-		fj_dest_y         = 554 
-		fj_orientation    = 6      
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB5~
-		fj_dlg_resref	  = ~JA#GUAB5~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 1535
-		fj_loc_y          = 3287
-		fj_dest_x         = 1535
-		fj_dest_y         = 3287
-		fj_orientation    = 1      
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB6~
-		fj_dlg_resref	  = ~JA#GUAB6~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 452 
-		fj_loc_y          = 2095
-		fj_dest_x         = 452 
-		fj_dest_y         = 2095
-		fj_orientation    = 4      
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB7~
-		fj_dlg_resref	  = ~JA#GUAB7~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 3948
-		fj_loc_y          = 2745
-		fj_dest_x         = 3948
-		fj_dest_y         = 2745
-		fj_orientation    = 14     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB7~
-		fj_dlg_resref	  = ~JA#GUAB7~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 1768
-		fj_loc_y          = 1634
-		fj_dest_x         = 1768
-		fj_dest_y         = 1634
-		fj_orientation    = 5      
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB7~
-		fj_dlg_resref	  = ~JA#GUAB7~
-	END
+EXTEND_TOP ~%Beregost_FeldepostsInn_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Marl/AR6751.BAF~ EVALUATE_BUFFER
 
-COPY_EXISTING ~%Beregost_JovialJuggler_L1%.ARE~ ~override~
-	//add new actors
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 700
-		fj_loc_y          = 638
-		fj_dest_x         = 700
-		fj_dest_y         = 638
-		fj_orientation    = 5     
-		fj_schedule 	  = 0b111100000000000001111111
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB9~
-		fj_dlg_resref	  = ~JA#GUAB9~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 709
-		fj_loc_y          = 591
-		fj_dest_x         = 709
-		fj_dest_y         = 591
-		fj_orientation    = 1     
-		fj_schedule 	  = 0b111100000000000001111111
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Guard~   
-		fj_cre_resref     = ~JA#GUAB8~
-		fj_dlg_resref	  = ~JA#GUAB8~
-	END
 
-//Marl misc.d
-COMPILE ~JA#BGT_AdvPack/Marl/JA#MARL.D~
+LAF GET_DLG_SCRIPT
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~KELDDA.DLG~
+	RET state01_weight = idx_state_trigger
+		state01_trigger = state_trigger
+		state01_response0_action = response_action
+END
+OUTER_PATCH_SAVE ~state01_response0_action~ ~%state01_response0_action%~ BEGIN
+	REPLACE_TEXTUALLY ~GiveGoldForce([0-9]+)~ ~GiveGoldForce(2000)~
+	REPLACE_EVALUATE ~AddexperienceParty(\([0-9]+\))~ BEGIN
+		SET result = MATCH1 / 2
+	END ~AddexperienceParty(%result%)~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#keldda.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#marl.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#dunkin.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Marl/ja#guab1.d~
+
+ADD_JOURNAL EXISTING @0 USING ~JA#BGT_AdvPack/languages/%s/ja#keldda.tra~
+
+
+COPY_EXISTING ~MARL.CRE~ ~override~
+	WRITE_BYTE 0x273 155 // Class: innocent (reputation loss when killed)
+	REMOVE_CRE_ITEM ~B1-2~
+BUT_ONLY
+
+COPY_EXISTING ~DUNKIN.CRE~ ~override~
+	LPF INSERT_CRE_SCRIPT INT_VAR offset = SCRIPT_OVERRIDE STR_VAR script_new = ~JA#DUNKI~ END
+BUT_ONLY

@@ -1,0 +1,332 @@
+////////////////////////////////////
+// RESTORED/IMPROVED: Ducal Palace
+////////////////////////////////////
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	// Used in JA#CUBEL.BAF
+	COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#SPWN1.VVC~ ~override~
+	COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#SPWN1.BAM~ ~override~
+	COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#SPWN1.WAV~ ~override~
+END
+
+
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#FLAM3.CRE~ ~override~
+
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#KAEM1.CRE~ ~override~
+	SAY NAME1 @2044
+	SAY NAME2 @2044
+
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA2.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA3.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA4.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA5.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Ducal_Palace/JA#NOPA6.CRE~ ~override~
+	SAY NAME1 @2047
+	SAY NAME2 @2047
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#NILA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM03.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM04.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM05.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM06.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM07.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM08.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#FLM09.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#KAEM1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#7209T.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#CUSAR.BAF~
+
+
+EXTEND_TOP ~%NBaldursGate_DucalPalace_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Ducal_Palace/AR7209.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",0)~ ~\0 PartyHasItem("SCRL3F")~
+		REPLACE_TEXTUALLY ~CreateCreature("NOBLPA",\[769\.571\],[0S])~ ~\0 ClearAllActions() StartCutSceneMode() FadeToColor([30.0],0) Wait(1) StartCutScene("JA#CUSAR")~
+	END
+BUT_ONLY
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	// transport cutscene with Belt/Liia
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/JA#CUBEL.BAF~
+
+	<<<<<<<< ...inlined/cutscene_belt_liia_bgt.d
+	ALTER_TRANS BELT
+	BEGIN 13 END
+	BEGIN 0 END
+	BEGIN
+	  "ACTION" ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUBEL")~
+	END
+
+	ALTER_TRANS LIIA
+	BEGIN 11 END
+	BEGIN 0 END
+	BEGIN
+	  "ACTION" ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#CUBEL")~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/cutscene_belt_liia_bgt.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#flam10.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#mcook4.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#nila.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ducal_Palace/ja#palast.d~
+
+
+COPY_EXISTING ~CYTHAN.CRE~ ~override~
+	REMOVE_CRE_ITEM ~SCRL3F~
+BUT_ONLY
+
+COPY_EXISTING ~NILA.CRE~ ~override~
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#NILA~ END
+BUT_ONLY
+
+COPY_EXISTING ~FLAM10.CRE~ ~override~
+			  ~FLAM11.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
+BUT_ONLY
+
+
+COPY_EXISTING ~%NBaldursGate_DucalPalace_L1%.ARE~ ~override~
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
+		// Flaming Fist Dialog and Script changes
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			463 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM04~ #8
+			END
+			829 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM05~ #8
+			END
+			625 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM06~ #8
+			END
+			507 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x78 ~JA#FLM07~ #8
+			END
+			1019 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM08~ #8
+			END
+			396 WHEN (~%actor_filename%~ STR_EQ ~FLAM10~) BEGIN
+				WRITE_ASCII actor+0x48 ~JA#FLAM4~ #8
+				WRITE_ASCII actor+0x78 ~JA#FLM09~ #8
+			END
+			DEFAULT
+		END
+	END
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW5~ END
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~NOBW12~ END
+	// Add new Noble and Lady Odelia
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 271
+		fj_loc_y          = 555
+		fj_dest_x         = 271
+		fj_dest_y         = 555
+		fj_orientation    = 6
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Noble Woman~
+		fj_cre_resref     = ~JA#NOPA1~ // with NOBW5.DLG
+		fj_bcs_specific   = ~SARRUN~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 297
+		fj_loc_y          = 603
+		fj_dest_x         = 297
+		fj_dest_y         = 603
+		fj_orientation    = 9
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Noble Woman~
+		fj_cre_resref     = ~JA#NOPA5~ // with JA#NOBW6.DLG
+		fj_bcs_specific   = ~SARRUN~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 274
+		fj_loc_y          = 509
+		fj_dest_x         = 274
+		fj_dest_y         = 509
+		fj_orientation    = 0
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Noble Man~
+		fj_cre_resref     = ~JA#NOPA2~ // with NOBL12.DLG
+		fj_bcs_specific   = ~SARRUN~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 286
+		fj_loc_y          = 471
+		fj_dest_x         = 286
+		fj_dest_y         = 471
+		fj_orientation    = 6
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Noble Man~
+		fj_cre_resref     = ~JA#NOPA3~ // with JA#NOB00.DLG
+		fj_bcs_specific   = ~SARRUN~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 204
+		fj_loc_y          = 511
+		fj_dest_x         = 204
+		fj_dest_y         = 511
+		fj_orientation    = 14
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Noble Man~
+		fj_cre_resref     = ~JA#NOPA4~ // with JA#NOB13.DLG
+		fj_bcs_specific   = ~SARRUN~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 784
+		fj_loc_y          = 872
+		fj_dest_x         = 784
+		fj_dest_y         = 872
+		fj_orientation    = 5
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Lady Odelia~
+		fj_cre_resref     = ~JA#NOPA6~ // with JA#NOPA6.DLG
+		fj_bcs_specific   = ~SARRUN~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NBaldursGate_DucalPalace_L2%.ARE~ ~override~
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord     = 264
+		y_coord     = 523
+		dest_x      = 264
+		dest_y      = 523
+		orient      = 13
+		STR_VAR
+		actor_name  = ~Nila~
+	END
+	LPF ALTER_AREA_CONTAINER
+		STR_VAR
+		container_name   = ~Container 1~
+		container_script = ~NONE~
+		lock_difficulty  = 100 // will be unlocked by Nila
+	END
+	LPF ALTER_AREA_CONTAINER
+		STR_VAR
+		container_name   = ~Container 2~
+		container_script = ~NONE~
+	END
+	// add scroll to container
+	LPF fj_are_structure
+		INT_VAR
+		fj_con_itm_idx    = 0
+		fj_flags          = 0
+		STR_VAR
+		fj_structure_type = itm
+		fj_name           = ~SCRL3F~
+	END
+	// new trap
+	LPF fj_are_structure
+		INT_VAR
+		fj_type        = 0    // trap
+		fj_box_left    = 538
+		fj_box_top     = 545
+		fj_box_right   = 616
+		fj_box_bottom  = 596
+		fj_cursor_idx  = 0
+		fj_flags       = 0b0000000010
+		fj_trap_active = 1
+		fj_trap_status = 0
+		fj_loc_x       = 776
+		fj_loc_y       = 1103
+		fj_vertex_0    = 586 + (545 << 16)
+		fj_vertex_1    = 616 + (566 << 16)
+		fj_vertex_2    = 570 + (596 << 16)
+		fj_vertex_3    = 538 + (576 << 16)
+		STR_VAR
+		fj_structure_type = region
+		fj_name           = ~JA#TRAP1~
+		fj_reg_script     = ~JA#7209T~
+	END
+	// add actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 512
+		fj_loc_y          = 700
+		fj_dest_x         = 512
+		fj_dest_y         = 700
+		fj_orientation    = 9
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Camerarius~
+		fj_cre_resref     = ~JA#KAEM1~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NBaldursGate_DucalPalace_L3%.ARE~ ~override~
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~FLAM11~ END
+	// Add new Flaming Fist
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 909
+		fj_loc_y          = 695
+		fj_dest_x         = 909
+		fj_dest_y         = 695
+		fj_orientation    = 14
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Flammende Faust~
+		fj_cre_resref     = ~JA#FLAM3~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 836
+		fj_loc_y          = 750
+		fj_dest_x         = 836
+		fj_dest_y         = 750
+		fj_orientation    = 14
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Flammende Faust~
+		fj_cre_resref     = ~JA#FLAM3~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 566
+		fj_loc_y          = 435
+		fj_dest_x         = 566
+		fj_dest_y         = 435
+		fj_orientation    = 6
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Flammende Faust~
+		fj_cre_resref     = ~JA#FLAM3~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 506
+		fj_loc_y          = 476
+		fj_dest_x         = 506
+		fj_dest_y         = 476
+		fj_orientation    = 6
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Flammende Faust~
+		fj_cre_resref     = ~JA#FLAM3~
+	END
+BUT_ONLY

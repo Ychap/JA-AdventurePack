@@ -1,28 +1,46 @@
 @0    = ~Ich wollte nur mal nach Euch sehen. Lebt wohl.~
 @1    = ~Das wollen wir doch mal sehen! Kampflos werdet Ihr uns nicht kriegen!~
 @2    = ~Wellendienerinnen! Fegt diese Frevler hinfort!~
-@3    = ~Wartet! Ich habe gehört, was Ihr mit Hohepriesterin Jalantha besprochen habt. Nun, da Ihr im Dienst der Wasserkönigin steht, habe auch ich etwas mit Euch zu besprechen.~
-@4    = ~Ihr habt mir an den Ufern des Chionthar gegen die Anhänger des Talos beigestanden, die meine Mutter ermordet haben. Der Talos-Priester, der sie dazu angestachelt hat, wurde aufgespürt. Er hat sein Versteck hier in Baldurs Tor und plant im Namen seines ruchlosen Herrn weiter Intrigen gegen die Königin der Meere.~
-@5    = ~Ihr könntet Umberlee Eure Untertänigkeit beweisen, indem Ihr diesen feigen Wurm für mich tötet und meine ermordete Mutter rächt.~
-@6    = ~Der Mord an Eurer Mutter wird gesühnt werden, Tenya! Das verspreche ich Euch.~
+@3    = ~Wartet! Ich habe gehÃ¶rt, was Ihr mit Hohepriesterin Jalantha besprochen habt. Nun, da Ihr im Dienst der WasserkÃ¶nigin steht, habe auch ich etwas mit Euch zu besprechen.~
+@4    = ~Ihr habt mir an den Ufern des Chionthar gegen die AnhÃ¤nger des Talos beigestanden, die meine Mutter ermordet haben. Der Talos-Priester, der sie dazu angestachelt hat, wurde aufgespÃ¼rt. Er hat sein Versteck hier in Baldurs Tor und plant im Namen seines ruchlosen Herrn weiter Intrigen gegen die KÃ¶nigin der Meere.~
+@5    = ~Ihr kÃ¶nntet Umberlee Eure UntertÃ¤nigkeit beweisen, indem Ihr diesen feigen Wurm fÃ¼r mich tÃ¶tet und meine ermordete Mutter rÃ¤cht.~
+@6    = ~Der Mord an Eurer Mutter wird gesÃ¼hnt werden, Tenya! Das verspreche ich Euch.~
 @7    = ~Das ist ein Auftrag ganz nach meinem Geschmack! Aber wie sieht es mit einer Belohnung aus?~
 @8    = ~Mit Mord will ich nichts zu tun haben. Erledigt Eure Drecksarbeit selbst.~
-@9    = ~Das ist sehr bedauerlich - für Euch. Die launische Königin vergisst selten. Wir werden uns wiedersehen.~
-@10   = ~Eine kluge Entscheidung. Ihr gewinnt mehr und mehr die Gunst der launischen Königin.~
-@11   = ~Ihr werdet den Taloniten namens Storwyn in einem Haus nahe der Taverne "Zur Funkelnden Klinge" finden. Sorgt dafür, dass sein Ableben nicht mit mir in Verbindung gebracht werden kann. Kehrt zu mir zurück, wenn Ihr die Tat vollbracht habt. Nun geht und erfüllt den Willen der Wasserkönigin.~
-@12   = ~Die Gunst der launischen Königin sollte Euch Lohn genug sein, doch habe ich vielleicht etwas, das Eure eher... materiellen Gelüste befriedigen dürfte.~
+@9    = ~Das ist sehr bedauerlich - fÃ¼r Euch. Die launische KÃ¶nigin vergisst selten. Wir werden uns wiedersehen.~
+@10   = ~Eine kluge Entscheidung. Ihr gewinnt mehr und mehr die Gunst der launischen KÃ¶nigin.~
+@11   = ~Ihr werdet den Taloniten namens Storwyn in einem Haus nahe der Taverne â€Zur Funkelnden Klingeâ€œ finden. Sorgt dafÃ¼r, dass sein Ableben nicht mit mir in Verbindung gebracht werden kann. Kehrt zu mir zurÃ¼ck, wenn Ihr die Tat vollbracht habt. Nun geht und erfÃ¼llt den Willen der WasserkÃ¶nigin.~
+@12   = ~Die Gunst der launischen KÃ¶nigin sollte Euch Lohn genug sein, doch habe ich vielleicht etwas, das Eure eher â€¦ materiellen GelÃ¼ste befriedigen dÃ¼rfte.~
 @13   = ~Also gut. Ich bin dabei.~
-@14   = ~Ich hab's mir anders überlegt, Tenya. Erledigt Eure Drecksarbeit selbst.~
+@14   = ~Ich hab's mir anders Ã¼berlegt, Tenya. Erledigt Eure Drecksarbeit selbst.~
 @15   = ~Dann habe ich Euch nichts mehr zu sagen.~
-@16   = ~Ihr seid zurück. Habt Ihr den nichtswürdigen Taloniten getötet?~
-@17   = ~Ich habe es mir anders überlegt. Erledigt Eure Drecksarbeit selbst. Ich will damit nichts zu tun haben.~
-@18   = ~Der feige Mord an Eurer Mutter wurde gesühnt, Tenya. Ich habe seinem erbärmlichen Leben ein Ende gesetzt.~
-@19   = ~Der Priester ist nicht mehr. Ich habe meinen Teil der Abmachung erfüllt. Nun seid ihr an der Reihe.~
+@16   = ~Ihr seid zurÃ¼ck. Habt Ihr den nichtswÃ¼rdigen Taloniten getÃ¶tet?~
+@17   = ~Ich habe es mir anders Ã¼berlegt. Erledigt Eure Drecksarbeit selbst. Ich will damit nichts zu tun haben.~
+@18   = ~Der feige Mord an Eurer Mutter wurde gesÃ¼hnt, Tenya. Ich habe seinem erbÃ¤rmlichen Leben ein Ende gesetzt.~
+@19   = ~Der Priester ist nicht mehr. Ich habe meinen Teil der Abmachung erfÃ¼llt. Nun seid ihr an der Reihe.~
 @20   = ~Nein, wir sind noch dran.~
-@21   = ~Die Seele meiner Mutter wurde gerächt! Ihr habt mir einen weiteren Dienst erwiesen. Nehmt dieses Artefakt der Königin der Tiefen als Dank.~
+@21   = ~Die Seele meiner Mutter wurde gerÃ¤cht! Ihr habt mir einen weiteren Dienst erwiesen. Nehmt dieses Artefakt der KÃ¶nigin der Tiefen als Dank.~
 @22   = ~Zwischen Wasser und Sturm
 
-Ich habe der Umberlee-Priesterin Tenya geholfen, den Tod ihrer Mutter zu rächen, indem ich den Taloniten Storwyn tötete. Sollte ich auch Talos' Rache fürchten müssen, bin ich zumindest sicher, dass mir Umberlee, die königliche Schlampe, gewogen ist.~
-@23   = ~Umberlee ist Euch weiterhin gewogen, Eure Taten werden nicht vergessen werden. Ihr dürft Euch in diesem Heiligtum sicher fühlen.~
-@24   = ~Ihr wagt es, so mit mir zu sprechen?! Hier im Reich der Wasserkönigin?! Wellendienerinnen! Tötet diese Frevler!~
-@25   = ~Ich habe die Fischer in Eurem Namen gerichtet und die Schale Eurer Mutter wiederbeschafft. Hier, nehmt sie.~
+Ich habe der Umberlee-Priesterin Tenya geholfen, den Tod ihrer Mutter zu rÃ¤chen, indem ich den Taloniten Storwyn tÃ¶tete. Sollte ich auch Talos' Rache fÃ¼rchten mÃ¼ssen, bin ich zumindest sicher, dass mir Umberlee, die kÃ¶nigliche Schlampe, gewogen ist.~
+// from TENYA.DLG (state 23)
+/* #1856 */
+@23   = ~Ihr seid es! Ist es Wagemut, der Euch herfÃ¼hrt? Nein, wohl eher Dummheit! Wart nicht Ihr es, die Umberlee im Stich lieÃŸen? Ihr habt Euch sichtlich verÃ¤ndert, doch Ihr seid es. Ich sehe mit den Augen der Mutter! Eure UntÃ¤tigkeit ist folgenlos geblieben, denn die Mutter und ich, wir sind mit ihnen allen fertiggeworden. Nun wird Euch dasselbe Schicksal ereilen!~
+/* #1857 */
+@24   = ~Wir wollten Euch oder Eurem Tempel nichts BÃ¶ses! Bitte glaubt uns! Es ist eine Tat der Barmherzigkeit, die wir ausfÃ¼hren! Wir suchen die Leiche eines Kindes, das hier getÃ¶tet wurde. Seine Eltern vermissen es so sehr.~
+/* #6333 */
+@25   = ~Ich wollte Euch nicht beleidigen oder Euren Tempel entweihen! Bitte, ich flehe Euch an, ich bin im Auftrag der Barmherzigkeit hier. Ich suche ein Kind, das hier umkam. Seine Eltern vermissen es so sehr.~
+/* #1858 */
+@26   = ~Es war nicht unser Kampf. Es liegt uns fern, den Weg Eurer selbstgerechten RachegÃ¶ttin zu kreuzen. Unser Vorhaben hier ist jetzt nicht unangenehmer, als es bei unserem letzten Treffen war. Ihr habt die Leiche eines Kindes hier. Eurer Gerechtigkeit wurde GenÃ¼ge getan. Wir sind gekommen, um das Kind nach Hause zu bringen.~
+/* #6334 */
+@27   = ~Es war nicht mein Kampf. MÃ¶ge es mir fern liegen, mich Eurem gerechten Zorn in den Weg zu stellen. Ich werde Euch nicht mehr UmstÃ¤nde bereiten, als bei unserem letzten Zusammentreffen. Ihr habt ein totes Kind hier. Der Gerechtigkeit wurde genÃ¼ge getan, nun will ich es nach Hause bringen.~
+/* #1859 */
+@28   = ~HÃ¶rt auf mit dem Gejammer! Es kommt einer Beleidigung gleich, vor Umberlees Augen ein solches Theater zu veranstalten. Ihr sollt Gelegenheit haben, Euren Mut unter Beweis zu stellen und den armseligen Anblick vergessen zu machen, den Ihr hier bietet. Die Leiche, die Ihr sucht, befindet sich am vorderen Tor. Wenn Ihr dort hingelangt, so soll sie Euch Ã¼berlassen sein. SelbstverstÃ¤ndlich werden meine Wellendiener alles daransetzen, Euer Fortkommen zu behindern. Das wird sicherlich eine amÃ¼sante Abwechslung fÃ¼r die KÃ¶nigin der Meere.~
+/* #1860 */
+@29   = ~Tun sie das? Nicht anders, als ein Kind seine Eltern vermissen wÃ¼rde, vermute ich â€¦ Nehmt ihn und geht. Dies soll das letzte Mal sein, dass ich Milde mit Euch walten lasse. Kehrt niemals wieder, es sei denn, man ruft Euch!~
+/* #1861 */
+@30   = ~Weise Worte, in der Tat. Ihr seid Euch dessen wohl bewusst, was sich geziemt. Solch ordentliches Betragen muss belohnt werden. Hier ist die Leiche, nach der Ihr sucht. Sicherlich ist es Eure Absicht, das Kind wieder zum Leben zu erwecken? So soll es sein, denn seine Lektion hat es allemal gelernt. Kommt nicht noch einmal her, sofern Ihr nicht gerufen werdet. Der Empfang, den Ihr hier vorfÃ¤ndet, wÃ¤re sonst ein weitaus â€¦ kÃ¼hlerer.~
+/* #1862 */
+@31   = ~Wisst Ihr nicht, wo Ihr hier seid? Dies ist der Sitz von Umberlee! Ihr befindet Euch gleichsam in der HÃ¶hle des LÃ¶wen! Es steht Euch nicht zu, hier Forderungen aufzustellen. Wellendiener, nehmt Euch dieses Treibguts an! Ich ertrage den Anblick nicht mehr!~
+@32   = ~Umberlee ist Euch weiterhin gewogen, Eure Taten werden nicht vergessen werden. Ihr dÃ¼rft Euch in diesem Heiligtum sicher fÃ¼hlen.~
+@33   = ~Ihr wagt es, so mit mir zu sprechen?! Hier im Reich der WasserkÃ¶nigin?! Wellendienerinnen! TÃ¶tet diese Frevler!~

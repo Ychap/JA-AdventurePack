@@ -1,0 +1,321 @@
+////////////////////////////////
+// Husam's story line finished
+////////////////////////////////
+
+
+COPY ~JA#BGT_AdvPack/Husam/JA#7211A.BAM~ ~override~
+
+
+COPY ~JA#BGT_AdvPack/Husam/JA#PRISO.CRE~ ~override~
+	SAY NAME1 @2045
+	SAY NAME2 @2046
+
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	COPY_EXISTING ~SHADOW03.CRE~ ~override/JA#STH03.CRE~
+				  ~SHADOW04.CRE~ ~override/JA#STH04.CRE~
+				  ~SHADOW05.CRE~ ~override/JA#STH05.CRE~
+				  ~SHADOW06.CRE~ ~override/JA#STH06.CRE~
+				  ~SHADOW.CRE~   ~override/JA#STH07.CRE~
+		LPF REPLACE_CRE_SCRIPT STR_VAR script_old = EVAL ~%SOURCE_RES%~ script_new = ~JA#STHFX~ END
+		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SEEENEMY~ END
+		WRITE_ASCIIE DEATHVAR ~%DEST_RES%~ #32
+END ELSE BEGIN
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH03.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH04.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH05.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH06.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH07.CRE~ ~override~
+END
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#STHFX.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#HUCU2.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#CANDL.BAF~
+	PATCH_IF GAME_IS ~bgee~ BEGIN
+		REPLACE_TEXTUALLY ~14702~ ~38224~
+	END
+
+
+EXTEND_TOP ~%NBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7300.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7208.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_DucalPalace_Cellar_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7211.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%NEBaldursGate_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~CreateCreature("HUSAM2",\[199\.2039\],[0S])~ ~CreateCreature("HUSAM2",[358.1961],2)~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NBaldursGate_DucalPalace_L1_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",0)~ ~\0 !Global("JA#HUSAM_MOVE","GLOBAL",1)~
+	END
+BUT_ONLY
+
+// Belt initiates his dialog after final dialog from JA#Husam
+COPY_EXISTING ~BELT.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REFACTOR_TRIGGER EXACT_MATCH ~Global("SarevokBehavior","GLOBAL",1)~ ~\0 OR(2) Global("JA#HUSAM_MOVE","GLOBAL",4) Dead("JA#HUSAM")~
+	END
+BUT_ONLY
+
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	COPY_EXISTING_REGEXP ~SHADOW0[2-6]\.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REFACTOR_TRIGGER EXACT_MATCH ~Global("HusamMove","GLOBAL",7)~ ~\0 !AreaCheck("%NBaldursGate_DucalPalace_L1%") !AreaCheck("%NBaldursGate_DucalPalace_Cellar%")~
+		END
+	BUT_ONLY
+END
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	// 2 cutscenes with Husam2
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#HUCU1.BAF~
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/JA#HUCU3.BAF~
+
+	<<<<<<<< ...inlined/husam2_bgt.d
+	ALTER_TRANS HUSAM2
+	BEGIN 3 END
+	BEGIN 1 END
+	BEGIN
+	  "ACTION" ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#HUCU1")~
+	END
+
+	ALTER_TRANS HUSAM2
+	BEGIN 12 END
+	BEGIN 0 END
+	BEGIN
+	  "ACTION" ~ClearAllActions() StartCutSceneMode() StartCutScene("JA#HUCU3")~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/husam2_bgt.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/ja#husam.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Husam/ja#priso.d~
+
+ADD_JOURNAL @4 @7 @13 @15 @19 USING ~JA#BGT_AdvPack/languages/%s/ja#husam.tra~
+
+
+COPY_EXISTING ~SLYTHE.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
+BUT_ONLY
+
+COPY_EXISTING ~HUSAM2.CRE~ ~override/JA#HUSAM.CRE~
+	SAY INITIAL_MEETING #4561
+	SAY MORALE #4560
+	SAY UNHAPPY_BREAKING_POINT #4560
+	SAY BATTLE_CRY1 #4561
+	SAY SELECT_COMMON1 #4561
+	SAY SELECT_COMMON2 #4565
+	SAY SELECT_COMMON3 #0
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ END
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~HUSAM2~ script_new = ~SEEENEMY~ END
+	WRITE_ASCII DEATHVAR ~JA#HUSAM~ #32
+	WRITE_ASCII DIALOG ~JA#HUSAM~ #8
+BUT_ONLY
+
+
+COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
+	// Delete all actors (guards and prisoner(BGT only))
+	FOR (i = (SHORT_AT 0x58)-1; i >= 0; --i) BEGIN
+		LPF fj_are_structure
+			INT_VAR fj_delete_mode = i
+			STR_VAR fj_structure_type = actor
+		END
+	END
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 1122
+		fj_loc_y          = 396
+		fj_dest_x         = 1122
+		fj_dest_y         = 396
+		fj_orientation    = 2
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Gefangener~
+		fj_cre_resref     = ~JA#PRISO~
+	END
+	// add region triggers
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 1    // info
+		fj_box_left     = 448
+		fj_box_top      = 354
+		fj_box_right    = 458
+		fj_box_bottom   = 374
+		fj_cursor_idx   = 8
+		fj_flags        = 0b000100000000 // Trigger deactivated(8)
+		fj_loc_x        = 494
+		fj_loc_y        = 414
+		fj_vertex_0     = 450 + (374 << 16)
+		fj_vertex_1     = 448 + (363 << 16)
+		fj_vertex_2     = 458 + (354 << 16)
+		fj_vertex_3     = 455 + (374 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_reg_script       = ~JA#CANDL~
+		fj_name             = ~JA#CANDL~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 0    // trap
+		fj_box_left     = 599
+		fj_box_top      = 1007
+		fj_box_right    = 691
+		fj_box_bottom   = 1079
+		fj_cursor_idx   = 0
+		fj_flags        = 0b0000001010
+		fj_trap_active  = 1
+		fj_trap_status  = 0
+		fj_trap_detect  = 60
+		fj_trap_remove  = 50
+		fj_loc_x        = 776
+		fj_loc_y        = 1103
+		fj_vertex_0     = 674 + (1007 << 16)
+		fj_vertex_1     = 599 + (1066 << 16)
+		fj_vertex_2     = 616 + (1079 << 16)
+		fj_vertex_3     = 691 + (1020 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_name             = ~JA#TRAP1~
+		fj_reg_script       = ~GSPEAR~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 0    // trap
+		fj_box_left     = 514
+		fj_box_top      = 950
+		fj_box_right    = 606
+		fj_box_bottom   = 1022
+		fj_cursor_idx   = 0
+		fj_flags        = 0b0000001010
+		fj_trap_active  = 1
+		fj_trap_status  = 0
+		fj_trap_detect  = 70
+		fj_trap_remove  = 55
+		fj_loc_x        = 471
+		fj_loc_y        = 898
+		fj_vertex_0     = 589 + (950 << 16)
+		fj_vertex_1     = 514 + (1009 << 16)
+		fj_vertex_2     = 531 + (1022 << 16)
+		fj_vertex_3     = 606 + (963 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_name             = ~JA#TRAP2~
+		fj_reg_script       = ~GTLB~
+	END
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 0    // trap
+		fj_box_left     = 484
+		fj_box_top      = 356
+		fj_box_right    = 592
+		fj_box_bottom   = 467
+		fj_cursor_idx   = 0
+		fj_flags        = 0b0000001000
+		fj_trap_active  = 1
+		fj_trap_status  = 0
+		fj_trap_detect  = 80
+		fj_trap_remove  = 60
+		fj_loc_x        = 461
+		fj_loc_y        = 768
+		fj_vertex_0     = 484 + (446 << 16)
+		fj_vertex_1     = 521 + (467 << 16)
+		fj_vertex_2     = 592 + (376 << 16)
+		fj_vertex_3     = 557 + (356 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_name             = ~JA#TRAP3~
+		fj_reg_script       = ~GTCK~
+	END
+	// bam as optical entrance JA#7325
+	LPF fj_are_structure
+	  INT_VAR
+		fj_loc_x = 551
+		fj_loc_y = 246
+		fj_schedule = 0b111111111111111111111111 // Hours 0.00 - 24.00
+		fj_flags = 0b00000000000000000001000101000000 // blend colours, not covered by wall, don't remove in combat
+		STR_VAR
+		fj_structure_type = animation
+		fj_name = ~JA#7211A~
+		fj_bam_resref = ~JA#7211A~
+	END
+BUT_ONLY
+
+
+ACTION_IF NOT (MOD_IS_INSTALLED ~Setup-Loretakers.tp2~ 0) BEGIN
+	EXTEND_TOP ~%CentralSewers_BCS%.BCS~ ~JA#BGT_AdvPack/Husam/AR7325.BAF~ EVALUATE_BUFFER
+
+	COPY_EXISTING ~%CentralSewers%.are~ ~override~
+		// add region triggers
+		LPF fj_are_structure
+			INT_VAR
+			fj_type         = 2    // travel
+			fj_box_left     = 420
+			fj_box_top      = 1741
+			fj_box_right    = 596
+			fj_box_bottom   = 1908
+			fj_cursor_idx   = 34
+			fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
+			fj_loc_x        = 572
+			fj_loc_y        = 1803
+			fj_vertex_0     = 573 + (1775 << 16)
+			fj_vertex_1     = 420 + (1741 << 16)
+			fj_vertex_2     = 454 + (1908 << 16)
+			fj_vertex_3     = 596 + (1907 << 16)
+			STR_VAR
+			fj_structure_type   = region
+			fj_destination_area = EVAL ~%NBaldursGate_DucalPalace_Cellar%~
+			fj_destination_name = ~JA#7325~
+			fj_name             = ~JA#7211~
+		END
+		// add entrance
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x       = 667    // x
+			fj_loc_y       = 1818   // y
+			fj_orientation = 13
+			STR_VAR
+			fj_structure_type = entrance
+			fj_name           = ~JA#7211~
+		END
+	BUT_ONLY
+
+	COPY_EXISTING ~%NBaldursGate_DucalPalace_Cellar%.ARE~ ~override~
+		// add region triggers
+		LPF fj_are_structure
+			INT_VAR
+			fj_type         = 2    // travel
+			fj_box_left     = 547
+			fj_box_top      = 244
+			fj_box_right    = 611
+			fj_box_bottom   = 346
+			fj_cursor_idx   = 34
+			fj_flags        = 0b000100000100 // Party required(2) Trigger deactivated(8)
+			fj_loc_x        = 612
+			fj_loc_y        = 337
+			fj_vertex_0     = 555 + (346 << 16)
+			fj_vertex_1     = 547 + (283 << 16)
+			fj_vertex_2     = 595 + (244 << 16)
+			fj_vertex_3     = 611 + (308 << 16)
+			STR_VAR
+			fj_structure_type   = region
+			fj_destination_area = EVAL ~%CentralSewers%~
+			fj_destination_name = ~JA#7211~
+			fj_name             = ~JA#7325~
+		END
+		// add entrance
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x       = 627   // x
+			fj_loc_y       = 360   // y
+			fj_orientation = 14
+			STR_VAR
+			fj_structure_type = entrance
+			fj_name           = ~JA#7325~
+		END
+	BUT_ONLY
+END

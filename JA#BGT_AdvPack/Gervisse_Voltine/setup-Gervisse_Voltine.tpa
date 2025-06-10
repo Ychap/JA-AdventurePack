@@ -1,152 +1,131 @@
-//////////////////////////////
-//Gervisse und Voltine
-//////////////////////////////
+///////////////////////
+// Gervisse & Voltine
+///////////////////////
 
-COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~ //7200,7300,7600,7700s.u.
-	WRITE_ASCII 0x2cc ~BOYBA3~	#8
-
-COPY_EXISTING ~LOUISE.CRE~ ~override~
-			~LAERTA.CRE~ ~override~
-	WRITE_ASCII 0x258	~NONE~	#8
-	WRITE_ASCII 0x268	~NONE~	#8
-
-COPY_EXISTING ~VOLTIN.CRE~ ~override~
-	WRITE_LONG 0x14 720
-	WRITE_ASCII 0x248	~JA#VOLTI~	#8
-	REMOVE_KNOWN_SPELL ~SPPR105~ ~SPPR304~
-	REMOVE_MEMORIZED_SPELL ~SPPR105~ ~SPPR304~
-	ADD_KNOWN_SPELL ~SPPR301~ #2 ~priest~
-	ADD_KNOWN_SPELL ~SPPR503~ #4 ~priest~
-	ADD_MEMORIZED_SPELL ~SPPR301~ #2 ~priest~
-	ADD_MEMORIZED_SPELL ~SPPR503~ #4 ~priest~
 
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C07.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door7200~
-					destination_area	= EVAL ~%NWBaldursGate%~
-		END
+	WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L1%~ #8 // WED resource
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = ~Door7200~
+		destination_area = EVAL ~%NWBaldursGate%~
 	END
+
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%NWBaldursGate_House3_L2%~ #8 // WED resource
 
-COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
-	LPF  ~fj_are_structure~
-		INT_VAR
-		fj_type         = 2    //travel
-		fj_box_left     = 4000  //kleinstes x
-		fj_box_top      = 1780  //kleinstes y
-		fj_box_right    = 4200  //größtes x
-		fj_box_bottom   = 1950   //größtes y
-		fj_cursor_idx   = 30   //door
-		fj_vertex_0     = 4000 + (1780 << 16)   //kleinstes x +  kleinstes y
-		fj_vertex_1     = 4200 + (1780 << 16)   //größtes x + kleinstes y
-		fj_vertex_2     = 4200 + (1950 << 16)   //größtes x + größtes y
-		fj_vertex_3     = 4000 + (1950 << 16)   //kleinstes x + größtes y
-		STR_VAR
-		fj_structure_type   = region
-		fj_name             = DOORJA#C07
-		fj_destination_area = JA#C07
-		fj_destination_name = FR7200
-	END
-	LPF  ~fj_are_structure~
-		INT_VAR
-		fj_loc_x       = 4135    //x
-		fj_loc_y       = 1805   //y
-		fj_orientation = 8   //
-		STR_VAR
-		fj_structure_type = entrance
-		fj_name           = Frja#c07
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 2756
-		fj_loc_y          = 2769
-		fj_dest_x         = 2756
-		fj_dest_y         = 2769
-		fj_schedule		  = 0b000111111111111111110000
-		fj_orientation    = 4     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = Junge
-		fj_cre_resref     = JA#BOYBA
-		fj_dlg_resref	  = BOYBA3
-	END
-
-COPY_EXISTING ~AMB_E14A.WAV~ ~override~
 
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.CRE~ ~override~
 
-COPY_EXISTING ~LAERTA.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 0
-		RET
-		strref
-	END
-	SET gervis1 = strref 
-COPY_EXISTING ~GERVIS.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 1
-		RET
-		strref
-	END
-    SET gervis2 = strref 
-COPY_EXISTING ~VOLTIN.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 1
-		RET
-		strref
-	END
-	SET gervis3 = strref 
 
-
-/* if bg1npc interjections are installd, Faldorn will not tolerate if Voltine is attacked. Taken from bg1npc Project */
-
-<<<<<<<< ...inlined/ja#gervis_bg1npc.d
-EXTEND_BOTTOM VOLTIN JA_VOLTIN_9
-  IF ~InParty("faldorn") InMyArea("faldorn") !StateCheck("faldorn",CD_STATE_NOTVALID)~ THEN EXTERN ~FALDOJ~ P5#FalMadVoltine
-END
-
-APPEND FALDOJ
-
-IF ~~ THEN BEGIN P5#FalMadVoltine
-SAY @90
-IF ~~ THEN DO ~SetGlobal("HelpVoltine","GLOBAL",1)
-EraseJournalEntry(%gervis1%)
-EraseJournalEntry(%gervis2%)
-EraseJournalEntry(%gervis3%)
-EraseJournalEntry(@43)
-ActionOverride("voltine",Enemy()) LeaveParty() SetLeavePartyDialogFile() ChangeAIScript("",DEFAULT) Enemy()~ EXIT
-END
-END
->>>>>>>>
-
-/* The BG1 NPC Project: Banters, Quests, and Interjections */
-/* BEGIN @1007 DESIGNATED 10 */
-
-ACTION_IF (MOD_IS_INSTALLED ~BG1NPC/BG1NPC.TP2~ "10") BEGIN
-
-	PRINT ~BG1 NPC Quest und Banter Component detected~
-
-	COMPILE EVALUATE_BUFFER 
-		~...inlined/ja#gervis_bg1npc.d~ 
-		~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
-		USING ~JA#BGT_AdvPack/languages/%s/JA#GERVIS.tra~
-END ELSE BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVIS.D~
-END
-
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#Laerta_Gervis_EE.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#GERVIS.tra~
-END
-
-
-COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
-COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
-COMPILE ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#C08.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOL.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#CUVOM.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#GERVI.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTI.BAF~
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/JA#VOLTJ.BAF~
-EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~ EVALUATE_BUFFER
+
+EXTEND_TOP ~%NWBaldursGate_LaertasHouse_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Gervisse_Voltine/AR7262.BAF~ EVALUATE_BUFFER
+
+
+LAF GET_DLG_WEIGHT
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~GERVIS.DLG~
+	RET gervis_state01_weight = weight
+END
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~GERVIS.DLG~
+	RET gervis_state01_strref = state_strref
+		gervis_state01_journal = journal_strref
+END
+
+<<<<<<<< ...inlined/laerta_quest_finish.d
+REPLACE_ACTION_TEXT_PROCESS LAERTA
+~EraseJournalEntry(%gervis_state01_journal%)~
+~EraseJournalEntry(%gervis_state01_journal%) EraseJournalEntry(@1043)~
+GERVIS VOLTIN // BGT
+>>>>>>>>
+COMPILE EVALUATE_BUFFER ~...inlined/laerta_quest_finish.d~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#gervis.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#voltin.d~
+
+LAF GET_DLG_SCRIPT
+	INT_VAR idx_state = 4
+	STR_VAR dlg_file = ~LAERTA.DLG~
+	RET state04_response0_trigger = response_trigger
+		state04_response0_action = response_action
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Gervisse_Voltine/ja#twins.d~
+
+ADD_JOURNAL EXISTING @57 @58 @81 @1043 USING ~JA#BGT_AdvPack/languages/%s/ja#twins.tra~
+
+
+COPY_EXISTING ~LAERTA.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~WDRUNSGT~ END
+BUT_ONLY
+
+COPY_EXISTING ~LOUISE.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~WDRUNSGT~ END
+	WRITE_ASCII DEATHVAR ~Louise~ #32
+BUT_ONLY
+
+COPY_EXISTING ~GERVIS.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ END
+	LPF INSERT_CRE_SCRIPT INT_VAR offset = SCRIPT_OVERRIDE STR_VAR script_new = ~JA#GERVI~ END
+	REMOVE_MEMORIZED_SPELL ~SPWI308~ // No Lightning Bolt in Baldur's Gate city
+BUT_ONLY
+
+COPY_EXISTING ~VOLTIN.CRE~ ~override~
+	WRITE_LONG 0x14 720
+	LPF INSERT_CRE_SCRIPT INT_VAR offset = SCRIPT_OVERRIDE STR_VAR script_new = ~JA#VOLTI~ END
+	REMOVE_KNOWN_SPELL ~SPPR301~ ~SPPR501~
+	REMOVE_MEMORIZED_SPELL ~SPPR301~ ~SPPR501~
+	ADD_KNOWN_SPELL ~SPPR402~ #3 ~priest~
+	ADD_MEMORIZED_SPELL ~SPPR402~ #3 ~priest~ (2)
+BUT_ONLY
+
+
+COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
+	// add region triggers
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 2     // travel
+		fj_box_left     = 4020  //kleinstes x
+		fj_box_top      = 1810  //kleinstes y
+		fj_box_right    = 4143  //größtes x
+		fj_box_bottom   = 1953   //größtes y
+		fj_cursor_idx   = 30    // door
+		fj_vertex_0     = 4020 + (1810 << 16)   //kleinstes x +  kleinstes y
+		fj_vertex_1     = 4020 + (1894 << 16)   //größtes x + kleinstes y
+		fj_vertex_2     = 4143 + (1953 << 16)   //größtes x + größtes y
+		fj_vertex_3     = 4143 + (1867 << 16)   //kleinstes x + größtes y
+		STR_VAR
+		fj_structure_type   = region
+		fj_name             = ~DOORJA#C07~
+		fj_destination_area = ~JA#C07~
+		fj_destination_name = ~FR7200~
+	END
+	// add entrance
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x       = 4135
+		fj_loc_y       = 1805
+		fj_orientation = 8
+		STR_VAR
+		fj_structure_type = entrance
+		fj_name           = ~Frja#c07~
+	END
+	// add mapnote
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 4120
+		fj_loc_y          = 1820
+		fj_note_strref    = RESOLVE_STR_REF(@1)
+		STR_VAR
+		fj_structure_type = note
+	END
+BUT_ONLY

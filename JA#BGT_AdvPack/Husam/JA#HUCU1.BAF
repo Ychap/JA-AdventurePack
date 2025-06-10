@@ -1,0 +1,81 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Husam2")
+		SetGlobal("HusamMove","GLOBAL",99)
+		CreateCreature("JA#STH03",[404.2216],0) // Schattendieb
+		CreateCreature("JA#STH04",[757.2056],0) // Schattendieb
+		CreateCreature("JA#STH05",[701.1819],0) // Schattendieb
+		CreateCreature("JA#STH06",[701.1819],0) // Schattendieb
+		CreateCreature("JA#STH07",[658.2162],0) // Schattendieb
+		SmallWait(1)
+		ActionOverride("JA#STH03",MoveToPoint([310.2045]))
+		ActionOverride("JA#STH04",MoveToPoint([519.1987]))
+		ActionOverride("JA#STH05",MoveToPoint([411.1917]))
+		ActionOverride("JA#STH06",MoveToPoint([563.1939]))
+		ActionOverride("JA#STH07",MoveToPoint([422.2033]))
+		SetPlayerSound(Myself,4561,INITIAL_MEETING)
+		SetPlayerSound(Myself,4560,MORALE)
+		SetPlayerSound(Myself,4560,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,4561,BATTLE_CRY1)
+		SetPlayerSound(Myself,4561,SELECT_COMMON1)
+		SetPlayerSound(Myself,4565,SELECT_COMMON2)
+		SetPlayerSound(Myself,4561,SELECT_COMMON3)
+		Wait(4)
+		Dialogue([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(2)
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		Wait(2)
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		Wait(2)
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		Wait(2)
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		Wait(2)
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		Wait(2)
+		FaceObject("Husam2")
+END

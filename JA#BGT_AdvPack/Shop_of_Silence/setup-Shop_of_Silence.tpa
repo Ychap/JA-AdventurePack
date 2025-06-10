@@ -1,115 +1,126 @@
-///////////////////////////////////////
-//VERBESSERTES GESCHAEFT DER STILLE
-///////////////////////////////////////
+/////////////////////////////
+// Improved Shop of Silence
+/////////////////////////////
 
-//Im Blade & Stars: Der Besitzer heißt Aundegul Shawn, spricht wenn Geld kommt
 
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC.D~
-END
-ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	COPY_EXISTING ~SILENC.DLG~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY EXACT_MATCH ~!Global("Chapter","GLOBAL",7)~ ~GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)~
-		END	
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILENC_eet.D~ USING ~JA#BGT_AdvPack/languages/%s/JA#SILENC.tra~
-END
+COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MASK1.STO~ ~override~
+	SAY STORE_NAME @5
 
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.D~
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.D~
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.D~
-COMPILE ~JA#BGT_AdvPack/Shop_of_Silence/JA#SILC1.BAF~
-
-COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH01.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#STH02.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MONGO.CRE~ ~override~
 	SAY NAME1 @4
 	SAY NAME2 @4
+	WRITE_BYTE 0x238 17 // More strength to match his dialog
+	WRITE_BYTE 0x270 128 // Allegiance: NEUTRAL
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END
+	WRITE_ASCII DIALOG ~JA#MONGO~ #8
 
-COPY ~JA#BGT_AdvPack/Shop_of_Silence/JA#MASK1.STO~ ~override~
-	SAY 0xc @5
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	OUTER_SET silenc_initial_friendly_state = 0
+	OUTER_SET silenc_initial_neutral_state = 1
+	OUTER_SET silenc_last_chapter_not_seen_state = 6
+	OUTER_SET silenc_last_chapter_has_seen_state = 7
+	OUTER_SET silenc_payday_state = 3
+	OUTER_SET silenc_turn_hostile_state = 10
+	OUTER_SET silenc_default_state = 8
+END
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	OUTER_SET silenc_initial_friendly_state = 1
+	OUTER_SET silenc_initial_neutral_state = 2
+	OUTER_SET silenc_last_chapter_not_seen_state = 4
+	OUTER_SET silenc_last_chapter_has_seen_state = 5
+	OUTER_SET silenc_payday_state = 7
+	OUTER_SET silenc_turn_hostile_state = 8
+	OUTER_SET silenc_default_state = 9
+END
+
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = silenc_last_chapter_not_seen_state
+	STR_VAR dlg_file = ~SILENC.DLG~
+	RET silenc_flaming_fist_journal = journal_strref
+END
+LAF GET_DLG_WEIGHT
+	INT_VAR idx_state = silenc_last_chapter_not_seen_state
+	STR_VAR dlg_file = ~SILENC.DLG~
+	RET silenc_last_chapter_not_seen_state_weight = weight
+END
+
+// Orphan states in SILENC.DLG are already restored in BGEE/EET
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#silenc_bgt.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#silenc.d~
+
+// Must be processed in separate after ja#silenc.d due to WEIDU bugs
+<<<<<<<< ...inlined/silenc_late.d
+// BGT
+SET_WEIGHT SILENC %silenc_default_state% #999
+>>>>>>>>
+COMPILE EVALUATE_BUFFER ~...inlined/silenc_late.d~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#mongo.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#sth01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Shop_of_Silence/ja#sth02.d~
+
 
 COPY_EXISTING ~%EBaldursGate_Inn_L2%.ARE~ ~override~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 556
 		fj_loc_y          = 410
 		fj_dest_x         = 556
 		fj_dest_y         = 410
-		fj_orientation    = 9      
+		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Schattendieb
-		fj_cre_resref     = JA#STH02
-		fj_dlg_resref	  = JA#STH02
+		fj_name           = ~Thief~
+		fj_cre_resref     = ~THIEF~
+		fj_dlg_resref     = ~JA#STH02~
 	END
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_SilencesShop%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~SILENC~) BEGIN
-			WRITE_ASCII actors_offset+0x78        ~JA#SILC1~ #8	
-		END
-	END
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 317
 		fj_loc_y          = 367
 		fj_dest_x         = 317
 		fj_dest_y         = 367
-		fj_orientation    = 2      
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Schattendieb
-		fj_cre_resref     = JA#STH01
-		fj_dlg_resref	  = JA#STH01
+		fj_name           = ~Thief~
+		fj_cre_resref     = ~THIEF~
+		fj_bcs_specific   = ~SHOUT~
+		fj_dlg_resref     = ~JA#STH01~
 	END
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 581
-		fj_loc_y          = 164
-		fj_dest_x         = 581
-		fj_dest_y         = 164
-		fj_orientation    = 1      
+		fj_loc_x          = 555
+		fj_loc_y          = 305
+		fj_dest_x         = 555
+		fj_dest_y         = 305
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Mongo
-		fj_cre_resref     = JA#MONGO
-		fj_dlg_resref	  = JA#MONGO
+		fj_name           = ~Mongo~
+		fj_cre_resref     = ~JA#MONGO~
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 90
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 90 
+		fj_volume_variance = 90
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = GAHOUSE3
+		fj_wav_resref0    = ~GAHOUSE2~
 	END
 BUT_ONLY
-
-//Mongo and JA#Mongo sollten nicht gleichzeitig erscheinen
-//Mongo wird zu Honk
-ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	COPY_EXISTING ~Mongo.cre~ ~override/JA#Honk.cre~
-		SAY NAME1 @44
-		SAY NAME2 @44
-		WRITE_EVALUATED_ASCII 0x280 ~Honk~ #32 // script name / DV
-	<<<<<<<< ...inlined/JA#Silenc_mongo.d
-	
-	REPLACE_TRANS_ACTION SILENC
-	BEGIN 8 END BEGIN 0 END ~CreateCreature("mongo",[661.372],NW)~ ~CreateCreature("Honk",[661.372],NW)~
-	>>>>>>>>
-	COMPILE EVALUATE_BUFFER ~...inlined/JA#Silenc_mongo.d~
-END

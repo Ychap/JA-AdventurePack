@@ -1,47 +1,47 @@
-@0    = ~Uaah! Ihr seid die Abenteurer, die unsere Dame gerettet haben! Möchte wetten, dass Ihr Euch vor ausgegebenen Humpen nicht mehr retten könnt!~
-@1    = ~Mit der Dame macht die Arbeit nachts hier wieder Spaß, ich danke Euch!~
+@0    = ~Uaah! Ihr seid die Abenteurer, die unsere Dame gerettet haben! MÃ¶chte wetten, dass Ihr Euch vor ausgegebenen Humpen nicht mehr retten kÃ¶nnt!~
+@1    = ~Mit der Dame macht die Arbeit nachts hier wieder SpaÃŸ, ich danke Euch!~
 /* #8329 */
-@2    = ~Ich höre hier jeden Tag so viel, dass ich das nicht alles behalten kann.~
-/* #8325 */ 
-@3    = ~Hey, was stört Ihr mich? Ich habe zu tun.~
+@2    = ~Ich hÃ¶re hier jeden Tag so viel, dass ich das nicht alles behalten kann.~
+/* #8325 */
+@3    = ~Hey, was stÃ¶rt Ihr mich? Ich habe zu tun.~
 /* #8328 */
-@4    = ~He, was stört Ihr mich? Ich habe zu tun. Der Dreckskerl Cyrdemac trinkt wie ein Loch! Der blöde Schmuggler bringt hier sein halbes Vermögen durch.~
+@4    = ~He, was stÃ¶rt Ihr mich? Ich habe zu tun. Der Dreckskerl Cyrdemac trinkt wie ein Loch! Der blÃ¶de Schmuggler bringt hier sein halbes VermÃ¶gen durch.~
 /* #8326 */
-@5    = ~Noch so 'n Ding, und Ihr seid Eure Hand los, das schwör ich! Bestellungen können an der Theke aufgegeben werden.~
+@5    = ~Noch so 'n Ding, und Ihr seid Eure Hand los, das schwÃ¶r ich! Bestellungen kÃ¶nnen an der Theke aufgegeben werden.~
 /* #9086 */
 @6    = ~Lass mich in Ruhe, alter Suffkopf!~
 @7    = ~He! Was glotzt Ihr denn so?~
-@8    = ~Ich versuche herauszufinden, warum die Elfenstimme verschwunden ist. Könnt Ihr mir vielleicht weiterhelfen?~
+@8    = ~Ich versuche herauszufinden, warum die Elfenstimme verschwunden ist. KÃ¶nnt Ihr mir vielleicht weiterhelfen?~
 @9    = ~Ach, nichts. Lebt wohl.~
 @10   = ~Nee, keinen Schimmer. Ich vermute mal, die alte Dame hat endlich erkannt, dass es keinen Sinn hat, einem Mann nachzuheulen. Denken doch eh nur an sich, die Schweine!~
-@11   = ~Ist Euch vielleicht etwas Außergewöhnliches in letzter Zeit aufgefallen?~
+@11   = ~Ist Euch vielleicht etwas AuÃŸergewÃ¶hnliches in letzter Zeit aufgefallen?~
 @12   = ~Na, gut. Lebt wohl.~
-@13   = ~Nun, da wäre eine Sache, die mich verwundert hat...~
+@13   = ~Nun, da wÃ¤re eine Sache, die mich verwundert hat â€¦~
 @14   = ~Ja?~
 @15   = ~Bartley hat schon ein paar Tage nicht mehr versucht, unter meinen Rock zu kommen. Aber das ist auch alles.~
-@16   = ~Ähm, gut. Habt Dank.~
+@16   = ~Ã„hm, gut. Habt Dank.~
 @17   = ~Na, was darf es sein?~
-@18   = ~Ich habe von einem der Gäste erfahren, dass die Taverne früher einem gewissen Wilyn gehörte.~
-@19   = ~Oh ja, Der alte Wilyn. War ein guter Gastwirt, wisst Ihr? Hat mich immer gut behandelt.~
-@20   = ~Was könnt Ihr mir über Wilyn sonst noch erzählen?~
+@18   = ~Ich habe von einem der GÃ¤ste erfahren, dass die Taverne frÃ¼her einem gewissen Wilyn gehÃ¶rte.~
+@19   = ~Oh ja, der alte Wilyn. War ein guter Gastwirt, wisst Ihr? Hat mich immer gut behandelt.~
+@20   = ~Was kÃ¶nnt Ihr mir Ã¼ber Wilyn sonst noch erzÃ¤hlen?~
 @21   = ~Wisst Ihr, wo ich Wilyn finden kann?~
-@22   = ~Er hat den Laden an Alyth verkauft, fühlte sich wohl zu alt, um ihn selbst weiter zu führen. Aber er kam jeden Abend her, um die Dame singen zu hören. Jetzt war er schon eine ganze Weile nicht mehr da.~
+@22   = ~Er hat den Laden an Alyth verkauft, fÃ¼hlte sich wohl zu alt, um ihn selbst weiter zu fÃ¼hren. Aber er kam jeden Abend her, um die Dame singen zu hÃ¶ren. Jetzt war er schon eine ganze Weile nicht mehr da.~
 @23   = ~Habt Dank. Lebt wohl.~
-@24   = ~Nein, das weiß ich nicht. Und außerdem muss ich mich jetzt mal wieder um die Bestellungen kümmern. Ich weiß ja gar nicht, ob mein Hintern noch an Ort und Stelle ist, so lange habe ich keinen Klaps mehr drauf bekommen *kicher*.~
+@24   = ~Nein, das weiÃŸ ich nicht. Und auÃŸerdem muss ich mich jetzt mal wieder um die Bestellungen kÃ¼mmern. Ich weiÃŸ ja gar nicht, ob mein Hintern noch an Ort und Stelle ist, so lange habe ich keinen Klaps mehr drauf bekommen *kicher*.~
 @25   = ~Na, was gibts? Eine Lokalrunde?~
-@26   = ~Ähm, nein. Ich habe mit Wilyn über die verschwundene Stimme gesprochen. Er hat einen seltsamen Gast genannt, der hier mit einer alten Harfe auftauchte. Man hat ihn rausgeschmissen. Wisst Ihr, wen er meinte?~
-@27   = ~Oh, Ihr meint wohl Vaalahor, den Magier. Der war schon häufig hier, hat sich den Gesang der Dame angehört. Naja, jedenfalls, als sie noch was von sich hören ließ.~
-@28   = ~Das erste Mal hatte er diese Harfe dabei und sagte, er wolle den Gesang der Dame mit seinem Spiel begleiten. Das kam bei den anderen Gästen gar nicht gut an, deshalb hat er seine Harfe bei den nächsten Besuchen nicht mehr angerührt.~
-@29   = ~Hat er sich irgendwie verdächtig benommen? Könnte er was mit dem Verstummen der Geisterstimme zu tun haben?~
+@26   = ~Ã„hm, nein. Ich habe mit Wilyn Ã¼ber die verschwundene Stimme gesprochen. Er hat einen seltsamen Gast genannt, der hier mit einer alten Harfe auftauchte. Man hat ihn rausgeschmissen. Wisst Ihr, wen er meinte?~
+@27   = ~Oh, Ihr meint wohl Vaalahor, den Magier. Der war schon hÃ¤ufig hier, hat sich den Gesang der Dame angehÃ¶rt. Naja, jedenfalls, als sie noch was von sich hÃ¶ren lieÃŸ.~
+@28   = ~Das erste Mal hatte er diese Harfe dabei und sagte, er wolle den Gesang der Dame mit seinem Spiel begleiten. Das kam bei den anderen GÃ¤sten gar nicht gut an, deshalb hat er seine Harfe bei den nÃ¤chsten Besuchen nicht mehr angerÃ¼hrt.~
+@29   = ~Hat er sich irgendwie verdÃ¤chtig benommen? KÃ¶nnte er was mit dem Verstummen der Geisterstimme zu tun haben?~
 @30   = ~Vaalahor, ja? Wo kann ich ihn finden?~
-@31   = ~Vielleicht hat er die Dame verführt, sodass sie ihrer alten Liebe nun nicht mehr nachweint, he? *kicher* Nee, der war schon 'n Hübscher.~
+@31   = ~Vielleicht hat er die Dame verfÃ¼hrt, sodass sie ihrer alten Liebe nun nicht mehr nachweint, he? *kicher* Nee, der war schon 'n HÃ¼bscher.~
 @32   = ~Wisst Ihr, wo ich ihn finden kann?~
 @33   = ~Nun gut. Danke erstmal.~
 @34   = ~Hab keinen Schimmer. Seit sie nicht mehr singt, war er nicht mehr hier. Wie viele andere auch.~
-@35   = ~Er wollte sich irgendwo in der Stadt nach magischen Utensilien und Gegenständen umschauen, glaub' ich.~
+@35   = ~Er wollte sich irgendwo in der Stadt nach magischen Utensilien und GegenstÃ¤nden umschauen, glaub' ich.~
 @36   = ~Hey, kein Problem.~
-@38   = ~Keine Zeit! Bin total überarbeitet.~
-@39   = ~Holt Euch was an der Theke, bin beschäftigt.~
+@38   = ~Keine Zeit! Bin total Ã¼berarbeitet.~
+@39   = ~Holt Euch was an der Theke, bin beschÃ¤ftigt.~
 @40   = ~Ein Klaps auf den Hintern hat noch keinem geschadet. Hat schon meine Mutter so gehalten. Wo sie jetzt wohl steckt?~
-@41   = ~Hey, wenn Ihr mehr wollt, solltet Ihr die Unterkeller aufsuchen. Mit den Mädels dort könnt Ihr anstellen, was Ihr wollt.~
-@42   = ~Immer wachsam bleiben! Es vergeht kaum mal eine Woche hier, in der wir keine Leiche entsorgen müssen.~
+@41   = ~Hey, wenn Ihr mehr wollt, solltet Ihr die Unterkeller aufsuchen. Mit den MÃ¤dels dort kÃ¶nnt Ihr anstellen, was Ihr wollt.~
+@42   = ~Immer wachsam bleiben! Es vergeht kaum mal eine Woche hier, in der wir keine Leiche entsorgen mÃ¼ssen.~

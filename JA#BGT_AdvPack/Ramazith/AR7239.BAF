@@ -1,6 +1,5 @@
 IF
-	Global("JA#RamazithDeal","GLOBAL",0)
-	Global("RamazithMove","GLOBAL",2)
+	GlobalGT("RamazithMove","GLOBAL",1)
 	Global("JA#SPAWN_AR7239","%NBaldursGate_RamazithsTower_L2%",0)
 	!Dead("Ramazith")
 THEN
@@ -8,4 +7,5 @@ THEN
 		SetGlobal("JA#SPAWN_AR7239","%NBaldursGate_RamazithsTower_L2%",1)
 		CreateCreature("JELLYMU",[131.166],0)
 		CreateCreature("JELLYMU",[110.333],0)
+		Continue()
 END

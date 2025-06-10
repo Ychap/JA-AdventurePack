@@ -1,49 +1,34 @@
-ALTER_TRANS THALDO // file name
-BEGIN 2 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#SAVETHALDO","GLOBAL",1)EscapeAreaDestroy(90)~
-END
+REPLACE_ACTION_TEXT THALDO
+~EscapeArea\(Destroy\)?([0-9]*)~
+~SetGlobal("JA#SAVETHALDO","GLOBAL",1) \0~
 
-ALTER_TRANS THALDO // file name
-BEGIN 3 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#SAVETHALDO","GLOBAL",1)EscapeAreaDestroy(90)~
-END
+REPLACE_ACTION_TEXT THALDO
+~[%WNL%%MNL%%LNL%%TAB% ]Enemy()~
+~EraseJournalEntry(@1010)\0~
 
-ALTER_TRANS THALDO // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("JA#SAVETHALDO","GLOBAL",1)EscapeAreaDestroy(90)~
-END
 
-ALTER_TRANS THALDO // file name
-BEGIN 4 END // state number (can be more than one)
-BEGIN 1 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~EraseJournalEntry(@1010)~
-END
+ADD_STATE_TRIGGER THALDO 6 ~True()~
 
-ADD_STATE_TRIGGER THALDO 6 ~NumTimesTalkedToGT(0)~
-
-ALTER_TRANS THALDO // file name
-BEGIN 6 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "REPLY" ~@1~
-  "EPILOGUE" ~GOTO 1~
-END
-
-EXTEND_BOTTOM THALDO 6
-IF ~~ THEN REPLY @0 EXIT
+EXTEND_TOP THALDO 6
+  COPY_TRANS THALDO 0
 END
 
 
+BEGIN ~JA#THALD~
 
+IF ~RandomNum(3,1)~ THEN JA#THALD_1
+  SAY @0
+  IF ~~ THEN EXIT
+END
 
+IF ~RandomNum(3,2)~ THEN JA#THALD_2
+  SAY @1
+  IF ~~ THEN EXIT
+END
 
+IF ~RandomNum(3,3)~ THEN JA#THALD_3
+  SAY @2
+  IF ~~ THEN EXIT
+END
 
-
-
+// END JA#THALD

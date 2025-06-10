@@ -1,6 +1,0 @@
-IF
-	GlobalGT("SearchIronThrone","GLOBAL",0)
-THEN
-	RESPONSE #100
-		Dialogue([PC])
-END

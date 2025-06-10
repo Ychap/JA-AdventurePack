@@ -1,0 +1,114 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Husam2")
+		SetGlobal("HusamMove","GLOBAL",6)
+		MoveToPoint([1173.1352])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Explore()
+		MoveViewPoint([1173.1352],FAST)
+		SmallWait(3)
+		MoveToPoint([1128.1482])
+		FaceObject("Husam2")
+		Wait(1)
+		ActionOverride("Husam2",FaceObject([PC]))
+		Wait(1)
+		ActionOverride("Husam2",StartDialogueNoSet([PC]))
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		MoveToPoint([1176.1482])
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		MoveToPoint([1112.1518])
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		MoveToPoint([1176.1530])
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		MoveToPoint([1096.1554])
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		MoveToPoint([1160.1566])
+		FaceObject("Husam2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#STH03")
+		MoveToPoint([1032.1382])
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#STH04")
+		MoveToPoint([1019.1441])
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#STH05")
+		MoveToPoint([946.1437])
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#STH06")
+		MoveToPoint([982.1510])
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#STH07")
+		MoveToPoint([912.1528])
+		FaceObject([PC])
+END

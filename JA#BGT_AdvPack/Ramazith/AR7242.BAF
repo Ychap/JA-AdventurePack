@@ -1,6 +1,5 @@
 IF
-	Global("JA#RamazithDeal","GLOBAL",0)
-	Global("RamazithMove","GLOBAL",2)
+	GlobalGT("RamazithMove","GLOBAL",1)
 	Global("JA#RAMAZITH_AR7242","%NBaldursGate_RamazithsTower_L5%",0)
 	!Dead("Ramazith")
 THEN
@@ -10,7 +9,8 @@ THEN
 		CreateCreature("JA#GOLC1",[425.264],15)
 		CreateCreature("JA#GOLC1",[91.236],6)
 		ActionOverride("Ramazith",SetNumTimesTalkedTo(1))
-//		ActionOverride("RAMAZITH",Enemy())
-		Wait(1)
+		ActionOverride("RAMAZITH",Enemy())
+		SmallWait(2)
 		ActionOverride("RAMAZITH",StartDialogueNoSet([PC]))
+		Continue()
 END

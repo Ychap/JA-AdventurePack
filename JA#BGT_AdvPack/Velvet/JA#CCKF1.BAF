@@ -4,6 +4,8 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		FadeToColor([30.0],0)
+		ActionOverride("JA#COCK1",ReallyForceSpell(Myself,RESTORE_FULL_HEALTH))
+		ActionOverride("JA#COCK2",ReallyForceSpell(Myself,RESTORE_FULL_HEALTH))
 		Wait(2)
 		MoveViewPoint([2586.3399],INSTANT)
 		SmallWait(2)
@@ -25,9 +27,6 @@ THEN
 		ActionOverride("JA#COCK2",Attack("JA#COCK1"))
 		ActionOverride("JA#COCK1",Wait(2))
 		ActionOverride("JA#COCK2",Wait(2))
-		SetGlobal("JA#COCKFIGHT","%NashkelCarnival%",1)
 		ActionOverride("JA#COCK1",EndCutSceneMode())
 		ActionOverride("JA#COCK2",EndCutSceneMode())
 END
-
-

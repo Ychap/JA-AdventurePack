@@ -1,0 +1,22 @@
+IF
+	PickPocketFailed([PC])
+	Global("ZorlDopple","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@41)
+		Wait(2)
+		SetGlobal("ZorlDopple","GLOBAL",1)
+END
+
+IF
+	AreaCheck("%SWBaldursGate_MerchantLeague_L2%")
+	Global("ZorlDopple","GLOBAL",0)
+	!Global("JA#SENDZORL","GLOBAL",2)
+	See([PC])
+	PartyHasItem("SCRL2P")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@41)
+		Wait(2)
+		SetGlobal("ZorlDopple","GLOBAL",1)
+END

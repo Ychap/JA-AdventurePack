@@ -1,0 +1,21 @@
+IF
+	AreaCheck("%SWBaldursGate_MerchantLeague_L2%")
+	Global("JA#ZORL_MOVE","%SWBaldursGate_MerchantLeague_L2%",0)
+	Global("JA#CUIRL","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ZORL_MOVE","%SWBaldursGate_MerchantLeague_L2%",1)
+		EscapeArea()
+END
+
+IF
+	AreaCheck("%SWBaldursGate_MerchantLeague_L3%")
+	PartyHasItem("SCRL2P")
+	See([PC])
+	Global("JA#CUIRL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#CUIRL","GLOBAL",50)
+		Wait(2)
+		StartDialogueNoSet([PC])
+END

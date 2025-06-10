@@ -6,14 +6,9 @@
 @5    = ~Welcome back. What brings you to Nashkel this time?~
 @6    = ~But yes, what do you want to know?~
 @7    = ~Are there any strange events in the area?~
-/* #5810 + title */
-@8    = ~The Curse of the Commander
-
-The guards in Nashkel have been unable to locate their mad Captain Brage.~
+/* @8 -> journal entry @1040 */
 @9    = ~What do you know about the problems in the mines?~
-@10   = ~The investigation of the Nashkel Mines
-
-Bardolan of the Amnish Guards in Nashkel could not tell me anymore about the problems in the mines. People seem to think that there are "demons" at work there.~
+/* @10 -> journal entry @1039 */
 @11   = ~What can you tell me about the town of Nashkel?~
 @12   = ~Oh, nothing. Farewell.~
 @13   = ~We are looking for our former Commander, Brage. One night, he slew his wife, his children and all those who have seen him in a fit of rage. He then fled to the hills. He's still out there somewhere, and we mourn him just like his victims...~

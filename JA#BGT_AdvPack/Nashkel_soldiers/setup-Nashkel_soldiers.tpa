@@ -1,0 +1,74 @@
+///////////////////////////////////
+// Stationary soldiers in Nashkel
+///////////////////////////////////
+
+
+<<<<<<<< ...inlined/amnisna_del.baf
+IF
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToPoint([961.541])
+		MoveToPoint([3988.2516])
+END
+>>>>>>>>
+COPY_EXISTING ~AMNISNA.BCS~ ~override~
+	REPLACE_BCS_BLOCK
+		~...inlined/amnisna_del.baf~
+		~JA#BGT_AdvPack/empty~
+	ON_MISMATCH
+		PATCH_WARN ~WARNING: Something went wrong while patching %SOURCE_FILE%! Trying to replace with variable coords...~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY EVALUATE_REGEXP
+			~IF[%WNL%%MNL%%LNL%%TAB% ]+!See(NearestEnemyOf(Myself))[%WNL%%MNL%%LNL%%TAB% ]+THEN[%WNL%%MNL%%LNL%%TAB% ]+RESPONSE #100[%WNL%%MNL%%LNL%%TAB% ]+\(MoveToPoint(\[[0-9]+\.[0-9]+\])[%WNL%%MNL%%LNL%%TAB% ]+\)+END~
+			~~
+		END
+	END
+BUT_ONLY
+
+
+COPY_EXISTING ~%Nashkel%.ARE~ ~override~
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			500 WHEN (~%actor_filename%~ STR_EQ ~AMNIS~) BEGIN
+				WRITE_SHORT actor+0x20 912
+				WRITE_SHORT actor+0x22 604
+				WRITE_SHORT actor+0x24 912
+				WRITE_SHORT actor+0x26 604
+				WRITE_SHORT actor+0x34 7
+			END
+			614 WHEN (~%actor_filename%~ STR_EQ ~AMNIS~) BEGIN
+				WRITE_SHORT actor+0x20 1132
+				WRITE_SHORT actor+0x22 515
+				WRITE_SHORT actor+0x24 1132
+				WRITE_SHORT actor+0x26 515
+				WRITE_SHORT actor+0x34 4
+			END
+			634 WHEN (~%actor_filename%~ STR_EQ ~AMNIS~) BEGIN
+				WRITE_SHORT actor+0x20 3386
+				WRITE_SHORT actor+0x22 1797
+				WRITE_SHORT actor+0x24 3386
+				WRITE_SHORT actor+0x26 1797
+				WRITE_SHORT actor+0x34 2
+			END
+			663 WHEN (~%actor_filename%~ STR_EQ ~AMNIS~) BEGIN
+				WRITE_SHORT actor+0x20 2917
+				WRITE_SHORT actor+0x22 2855
+				WRITE_SHORT actor+0x24 2917
+				WRITE_SHORT actor+0x26 2855
+				WRITE_SHORT actor+0x34 1
+			END
+			688 WHEN (~%actor_filename%~ STR_EQ ~AMNIS~) BEGIN
+				WRITE_SHORT actor+0x20 3113
+				WRITE_SHORT actor+0x22 2986
+				WRITE_SHORT actor+0x24 3113
+				WRITE_SHORT actor+0x26 2986
+				WRITE_SHORT actor+0x34 6
+			END
+			DEFAULT
+		END
+	END
+BUT_ONLY

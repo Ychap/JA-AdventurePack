@@ -23,6 +23,24 @@
 @22   = ~Between Water and Storm
 
 I helped the Umberlee Priestess Tenya to revenge the death of her mother by killing the Talonite Storwyn. Should I have to fear Talos' revenge, at least I'm sure that Umberlee, the Bitch Queen, stands by me.~
-@23   = ~You are still in Umberlee's favor, your deeds won't be forgotten. Feel safe here in this sanctuary.~
-@24   = ~You dare to speak to me like this?! Here, in the realm of the Water Queen?! Waveservants! Kill these blasphemers!~
-@25   = ~I have executed the fishermen on your behalf and retrieved the bowl of your mother. Here, take it.~
+// from TENYA.DLG (state 23)
+/* #1856 */
+@23   = ~You! Is it nerve that brings thee here?! No, more likely stupidity. Was it not you who turned thy back on Umberlee's cause in Beregost? You have changed somewhat but it is you. I see with the mother's eyes! Your inaction was of little consequence, for the mother and I dealt well with all of them. Now you will join them!~
+/* #1857 */
+@24   = ~I meant no ill on you or your temple! Please, I beg of you! It is a mission of mercy I am on! I seek the body of a child killed here. The child's parent does miss him so!~
+/* #6333 */
+@25   = ~I meant no ill on you or your temple! Please, I beg of you! It is a mission of mercy I am on! I seek the body of a child killed here. The child's parent does miss him so!~
+/* #1858 */
+@26   = ~It was not my fight. Far be it from me to get in the path of your righteous fury. My purpose here now hath no more inconvenience than when we last met. You have the body of a child here. Your justice has been dealt, and now I have come to take him home.~
+/* #6334 */
+@27   = ~It was not my fight. Far be it from me to get in the path of your righteous fury. My purpose here now hath no more inconvenience than when we last met. You have the body of a child here. Your justice has been dealt, and now I have come to take him home.~
+/* #1859 */
+@28   = ~Cease your blubbering. It is an insult to show such pathos in the sight of Umberlee! Perhaps we should make ye prove your mettle, that we might forget this sickening display? The body you seek shall be at the front gate. Get there and it is yours to do with as you see fit. Of course my fellow waveservants will do their utmost to hinder your progress. It is sure to be an amusing diversion for the Sea Queen.~
+/* #1860 */
+@29   = ~Do they now? It is not unlike how a child would miss its parent I imagine... Take him and begone. Do not expect such charity in the future, and do not return to this place unless summoned!~
+/* #1861 */
+@30   = ~Some sage words indeed. You know your place in things well. Appropriate behavior should not go unrewarded. Here be the body you seek. No doubt your intention is to resurrect the child? No matter. The lesson will have been learned. Do not return here unless summoned. You shall find the reception more chilling.~
+/* #1862 */
+@31   = ~Do you not realize where you are? This is my very lair! This is the seat of Umberlee! You do not make demands here! Waveservants, dispose of this flotsam! I cannot stand the sight of them!~
+@32   = ~You are still in Umberlee's favor, your deeds won't be forgotten. Feel safe here in this sanctuary.~
+@33   = ~You dare to speak to me like this?! Here, in the realm of the Water Queen?! Waveservants! Kill these blasphemers!~

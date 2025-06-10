@@ -1,0 +1,8 @@
+IF
+	Global("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#EnteredElfsong","%EBaldursGate_ElfsongTavern_L1%",1)
+		StartMovie("JA#TAVER")
+        Continue()
+END

@@ -34,7 +34,7 @@ IF
 THEN
 	RESPONSE #100
 		AttackOneRound(LastTrigger())
-      	Continue()
+		Continue()
 END
 
 IF
@@ -152,5 +152,3 @@ THEN
 		EquipMostDamagingMelee()
 		AttackReevaluate(NearestEnemyOf(Myself),45)
 END
-
-

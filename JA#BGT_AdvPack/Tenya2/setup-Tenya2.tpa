@@ -1,0 +1,147 @@
+////////////////////////////////////////
+// Tenya's Quest in Temple of Umberlee
+////////////////////////////////////////
+
+
+COPY ~JA#BGT_AdvPack/Tenya2/JA#C02.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L1%~ #8 // WED resource
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = ~Door8200~
+		destination_area = EVAL ~%SEBaldursGate%~
+	END
+
+COPY ~JA#BGT_AdvPack/Tenya2/JA#C03.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%NWBaldursGate_House4_L2%~ #8 // WED resource
+
+
+COPY ~JA#BGT_AdvPack/Tenya2/JA#SUTY1.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Tenya2/JA#SUTY2.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Tenya2/JA#SUTY3.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Tenya2/JA#SUTY4.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Tenya2/JA#CTENY.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Tenya2/JA#TENYA.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Tenya2/JA#TENYA.ITM~ ~override~
+	SAY NAME1 @2112
+	SAY NAME2 @2113
+	SAY UNIDENTIFIED_DESC @2115
+	SAY IDENTIFIED_DESC @2114
+
+COPY ~JA#BGT_AdvPack/Tenya2/JA#TLOS1.CRE~ ~override~
+	SAY NAME1 @2116
+	SAY NAME2 @2116
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/JA#TENY2.BAF~
+
+
+EXTEND_TOP ~PUMBER.BCS~ ~JA#BGT_AdvPack/Tenya2/PUMBER.BAF~ EVALUATE_BUFFER
+
+EXTEND_TOP ~%BaldursGateDocks_WaterQueensHouse_BCS%.BCS~ ~JA#BGT_AdvPack/Tenya2/AR7609.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~JALANT.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~Enemy()~ ~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1) \0~
+	END
+BUT_ONLY
+
+
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = 28
+	STR_VAR dlg_file = ~TENYA.DLG~
+	RET tenya_state28_journal = journal_strref
+END
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = 0
+			idx_response = 2
+	STR_VAR dlg_file = ~TENYA2.DLG~
+	RET tenya2_state00_response2 = response_strref
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumber2.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#pumberl.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#tenya2.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Tenya2/ja#tlos1.d~
+
+ADD_JOURNAL @22 @1022 USING ~JA#BGT_AdvPack/languages/%s/ja#tenya2.tra~
+
+
+COPY_EXISTING ~PUMBER2.CRE~ ~override~
+	SAY NAME1 @2117
+	SAY NAME2 @2117
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~WDASIGHT~ script_new = ~WTASIGHT~ END // no RandomWalk()
+BUT_ONLY
+
+COPY_EXISTING ~PUMBERL.CRE~ ~override~
+	LPF ADD_CRE_SCRIPT INT_VAR offset_start = SCRIPT_CLASS STR_VAR script_new = ~PUMBER~ END
+BUT_ONLY
+
+COPY_EXISTING ~TENYA2.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~TENYA~ END
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ END
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#TENY2~ END
+BUT_ONLY
+
+
+COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
+	// add region triggers
+	LPF fj_are_structure
+		INT_VAR
+		fj_type         = 2    // travel
+		fj_box_left     = 970
+		fj_box_top      = 750
+		fj_box_right    = 1133
+		fj_box_bottom   = 908
+		fj_cursor_idx   = 30
+		fj_loc_x        = 1068
+		fj_loc_y        = 850
+		fj_vertex_0     = 1042 + (750 << 16)
+		fj_vertex_1     = 970 + (830 << 16)
+		fj_vertex_2     = 1053 + (908 << 16)
+		fj_vertex_3     = 1133 + (826 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_destination_area = ~JA#C02~
+		fj_destination_name = ~FR8200~
+		fj_name             = ~DOORJA#C02~
+	END
+	// add entrance
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x       = 978   // x
+		fj_loc_y       = 781   // y
+		fj_orientation = 7
+		STR_VAR
+		fj_structure_type = entrance
+		fj_name           = ~FRJA#C02~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%BaldursGateDocks_WaterQueensHouse%.ARE~ ~override~
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			349 WHEN (~%actor_filename%~ STR_EQ ~PUMBER2~) BEGIN
+				WRITE_SHORT actor+0x34 13
+			END
+			1029 WHEN (~%actor_filename%~ STR_EQ ~PUMBER2~) BEGIN
+				WRITE_SHORT actor+0x20 1143
+				WRITE_SHORT actor+0x22 610
+				WRITE_SHORT actor+0x24 1143
+				WRITE_SHORT actor+0x26 610
+				WRITE_SHORT actor+0x34 6
+			END
+			936 WHEN (~%actor_filename%~ STR_EQ ~PUMBER2~) BEGIN
+				WRITE_SHORT actor+0x20 395
+				WRITE_SHORT actor+0x22 825
+				WRITE_SHORT actor+0x24 395
+				WRITE_SHORT actor+0x26 825
+				WRITE_SHORT actor+0x34 10
+			END
+			DEFAULT
+		END
+	END
+BUT_ONLY

@@ -1,0 +1,9 @@
+IF
+	Global("JA#FACAP_SPWN","%FriendlyArmInn%",0)
+	Dead("TARNESH")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#FACAP_SPWN","%FriendlyArmInn%",1)
+		CreateCreature("JA#FACAP",[3474.1895],2)
+		Continue()
+END

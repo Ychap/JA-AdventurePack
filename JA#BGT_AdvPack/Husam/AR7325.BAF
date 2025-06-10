@@ -1,0 +1,19 @@
+IF
+	Global("JA#SECRET_OPEN","GLOBAL",1)
+	Global("JA#SECRET_OP","%CentralSewers%",0)
+THEN
+	RESPONSE #100
+		TriggerActivation("JA#7211",TRUE)
+		SetGlobal("JA#SECRET_OP","%CentralSewers%",1)
+		Continue()
+END
+
+IF
+	Global("JA#SECRET_OPEN","GLOBAL",0)
+	Global("JA#SECRET_OP","%CentralSewers%",1)
+THEN
+	RESPONSE #100
+		TriggerActivation("JA#7211",FALSE)
+		SetGlobal("JA#SECRET_OP","%CentralSewers%",0)
+		Continue()
+END

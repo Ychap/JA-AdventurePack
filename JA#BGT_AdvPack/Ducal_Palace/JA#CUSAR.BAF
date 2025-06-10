@@ -1,0 +1,123 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(1)
+		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[696.546],6)
+		Wait(1)
+		FaceObject("Belt")
+		FadeFromColor([30.0],0)
+		Wait(2)
+		ActionOverride("Belt",StartDialogueNoSet([PC]))
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		Wait(1)
+		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[757.516],6)
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		Wait(1)
+		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[808.534],6)
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		Wait(1)
+		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[728.594],6)
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		Wait(1)
+		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[871.581],6)
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		Wait(1)
+		LeaveAreaLUA("%NBaldursGate_DucalPalace_L1%","",[807.593],6)
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#NOPA1")
+		Wait(1)
+		JumpToPoint([733.470])
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#NOPA2")
+		Wait(1)
+		JumpToPoint([599.490])
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#NOPA3")
+		Wait(1)
+		JumpToPoint([900.500])
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#NOPA4")
+		Wait(1)
+		JumpToPoint([826.458])
+		Wait(1)
+		FaceObject("Belt")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JA#NOPA5")
+		Wait(1)
+		JumpToPoint([933.424])
+		Wait(1)
+		FaceObject("Belt")
+END

@@ -1,0 +1,33 @@
+IF
+	Global("JA#MGUAR","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	!See([PC])
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+END
+
+IF
+	See([PC])
+	NumTimesTalkedTo(0)
+	Global("JA#DEAGAN_SEQ","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END
+
+IF
+	Range([PC],4)
+	See([PC])
+	Global("JA#DEAGAN_SEQ","GLOBAL",3)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END

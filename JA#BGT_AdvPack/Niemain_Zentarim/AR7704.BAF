@@ -1,0 +1,29 @@
+// In case bg1npc is present: Set "X#XzarBoss" to -1 (so the the dialogs of JAP's quest extention will be triggered in NIEMAI.DLG)
+IF
+	GlobalGT("X#XzarBoss","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("X#XzarBoss","GLOBAL",-1)
+		Continue()
+END
+
+// In case bg1npc is present: Set "X#MontBoss" to -1 (so the the dialogs of JAP's quest extention will be triggered in NIEMAI.DLG)
+IF
+	!Global("X#MontBoss","GLOBAL",-1)
+THEN
+	RESPONSE #100
+		SetGlobal("X#MontBoss","GLOBAL",-1)
+		Continue()
+END
+
+IF
+	Global("Chapter","GLOBAL",%tutu_chapter_7%)
+	!Dead("NIEMAIN")
+	Global("JA#NIEMAIN_SPWN","GLOBAL",3)
+	InParty("XZAR")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",4)
+		CreateCreature("JA#NIEMA",[1031.460],2)
+		Continue()
+END

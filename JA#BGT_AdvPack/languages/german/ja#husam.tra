@@ -1,31 +1,31 @@
-@0    = ~Gibt es irgendeine Möglichkeit in das Hauptquartier des Eisenthrons zu gelangen?~
-@1    = ~Okay, Husam, wer sind die Anführer des Eisenthrons?~
-@2    = ~Einen geheimen Weg? Oh ja, ich kenne einen, einen richtig guten. Kennt Ihr Krammoch Arkhstaff? Was soll's, nicht weiter wichtig. Der hat sein Haus direkt neben der Zitadelle von dem - (hicks) - Eisenthron. Der ist ziemlich eng mit dem Thaldorn, hehe, wisst schon, was ich meine. Jedenfalls, es gibt da einen geheimen Gang zwischen seinem Keller und dem Keller vom Eisenthron.~
-@3    = ~Es geschieht heute Nacht! Im Erfolgsfall erlangt Sarevok die Herrschaft über die gesamte Stadt. Wir müssen sofort eingreifen und die Herzöge warnen, bevor es zu spät ist. Machen wir uns umgehend auf den Weg zum Palast!~
+@0    = ~Gibt es irgendeine MÃ¶glichkeit in das Hauptquartier des Eisenthrons zu gelangen?~
+@1    = ~Na gut, Husam, wer sind die AnfÃ¼hrer des Eisenthrons?~
+@2    = ~Kennt Ihr Krammoch Arkhstaff? Was soll's, nicht weiter wichtig. Der hat sein Haus direkt neben der Zitadelle von dem (hicks) Eisenthron. Der ist ziemlich eng mit dem Rieltar, hehe, wisst schon, was ich meine. Jedenfalls, es gibt da einen geheimen Gang zwischen seinem Keller und dem Keller vom Eisenthron.~
+@3    = ~Es geschieht heute Nacht! Im Erfolgsfall erlangt Sarevok die Herrschaft Ã¼ber die gesamte Stadt. Wir mÃ¼ssen sofort eingreifen und die HerzÃ¶ge warnen, bevor es zu spÃ¤t ist. Machen wir uns umgehend auf den Weg zum Palast!~
 @4    = ~Husam und die Schattendiebe
 
-Eile ist geboten! Der Anschlag auf die verbliebenen Herzöge von Baldurs Tor steht unmittelbar bevor. Husam und seine Schattendiebe wollen dabei helfen, die Katastrophe noch zu verhindern. Wir treffen uns mit Husam vor dem Herzogspalast.~
-@5    = ~Wir sind da, wir müssen uns Zugang zum Palast verschaffen. Ihr könnt die Einladung verwenden, die Ihr gefunden habt. Wir anderen versuchen durch die Kanalisation hineinzukommen. Soweit ich weiß, gibt es einen geheimen Eingang zum Palast, der durch die Abwasserkanäle führt. Leider wird er streng bewacht - das ist dann Eure Aufgabe. Ihr müsst alle Schutzmaßnahmen im Keller des Palasts außer Gefecht setzen und die Fallen entschärfen.~
-@6    = ~Wir, die Schattendiebe, lenken dann die Aufmerksamkeit von Euch ab, sobald wir drinnen sind. Ihr verschafft Euch Zugang zum Wahlraum, bringt in Erfahrung, wer die Doppelgänger sind, und tötet sie. Denkt daran: Ihr müsst Euch ganz sicher sein, wer die Doppelgänger sind. Wenn Ihr Recht hattet, werden sie wieder ihre ursprüngliche Gestalt annehmen - hattet Ihr Unrecht, wird es Euch übel ergehen. Ich weiß nicht, ob wir Erfolg haben werden, also hängt alles von Euch ab, <CHARNAME>.~
+Eile ist geboten! Der Anschlag auf die verbliebenen HerzÃ¶ge von Baldurs Tor steht unmittelbar bevor. Husam und seine Schattendiebe wollen dabei helfen, die Katastrophe noch zu verhindern. Wir treffen uns mit Husam vor dem Herzogspalast.~
+@5    = ~Wir sind da, wir mÃ¼ssen uns Zugang zum Palast verschaffen. Ihr kÃ¶nnt die Einladung verwenden, die Ihr gefunden habt. Wir anderen versuchen durch die Kanalisation hineinzukommen. Soweit ich weiÃŸ, gibt es dort einen geheimen Eingang zum Palast. Leider wird er streng bewacht - das ist dann Eure Aufgabe. Ihr mÃ¼sst alle SchutzmaÃŸnahmen im Keller des Palasts auÃŸer Gefecht setzen und die Fallen entschÃ¤rfen.~
+@6    = ~Wir, die Schattendiebe, lenken dann die Aufmerksamkeit von Euch ab, sobald wir drinnen sind. Ihr verschafft Euch Zugang zum Wahlraum, bringt in Erfahrung, wer die DoppelgÃ¤nger sind, und tÃ¶tet sie. Denkt daran: Ihr mÃ¼sst Euch ganz sicher sein, wer die DoppelgÃ¤nger sind. Wenn Ihr Recht hattet, werden sie wieder ihre ursprÃ¼ngliche Gestalt annehmen - hattet Ihr Unrecht, wird es Euch Ã¼bel ergehen. Ich weiÃŸ nicht, ob wir Erfolg haben werden, also hÃ¤ngt alles von Euch ab, <CHARNAME>.~
 @7    = ~Husam und die Schattendiebe
 
-Husam hat seine Schattendiebe bereits in Position gebracht. Sie stehen bereit, um über die Kanalisation in den Palast einzudringen. Damit dies gelingen kann, müssen wir ihnen den geheimen Zugang im Keller des Herzogspalast öffnen und die Wachen dort ausschalten. Alles hängt nun von uns ab.~
-@8    = ~Alles klar! Das lief ja wie am Schnürchen. Wie steht es mit Euren Untersuchungen im Palast? Hat die Amtseinführung schon begonnen?~
+Husam hat seine Schattendiebe bereits in Position gebracht. Sie stehen bereit, um Ã¼ber die Kanalisation in den Palast einzudringen. Damit dies gelingen kann, mÃ¼ssen wir ihnen den geheimen Zugang im Keller des Herzogspalast Ã¶ffnen und die Wachen dort ausschalten. Alles hÃ¤ngt nun von uns ab.~
+@8    = ~Alles klar! Das lief ja wie am SchnÃ¼rchen. Wie steht es mit Euren Untersuchungen im Palast? Hat die AmtseinfÃ¼hrung schon begonnen?~
 @9    = ~Nein, bisher nicht. Wir haben unsere Untersuchungen noch nicht abgeschlossen.~
-@10   = ~Wir haben Sarevoks Unterkunft im Palast untersucht und sein Tagebuch gefunden. Damit sollte es uns möglich sein, die anderen Herzöge und Edelleute davon zu überzeugen, dass er hinter der Krise und den Morden steckt.~
-@11   = ~Dann solltet Ihr Euch beeilen! Führt die Untersuchungen rasch zuende, denn lange kann es nicht mehr dauern.~
-@12   = ~Meine Schattendiebe und ich, werden solange hier unten warten und beim ersten Kampfeslärm nach oben stürmen, um Euch zu unterstützen. Viel Glück uns allen!~
+@10   = ~Wir haben Sarevoks Unterkunft im Palast untersucht und sein Tagebuch gefunden. Damit sollte es uns mÃ¶glich sein, die anderen HerzÃ¶ge und Edelleute davon zu Ã¼berzeugen, dass er hinter der Krise und den Morden steckt.~
+@11   = ~Dann solltet Ihr Euch beeilen! FÃ¼hrt die Untersuchungen rasch zuende, denn lange kann es nicht mehr dauern.~
+@12   = ~Meine Schattendiebe und ich, werden solange hier unten warten und beim ersten KampfeslÃ¤rm nach oben stÃ¼rmen, um Euch zu unterstÃ¼tzen. Viel GlÃ¼ck uns allen!~
 @13   = ~Husam und die Schattendiebe
 
-Wir haben den Geheimgang zum Keller geöffnet und Husams Schattendieben Zutritt verschafft. Sie werden uns zur Seite stehen, sobald wir die Doppelgänger enttarnt haben. Jetzt müssen wir schnell wieder nach oben und den Palast weiter untersuchen.~
-@14   = ~Gute Arbeit, Freunde. Dann geht nun wieder nach oben und wartet auf den Beginn der Feierlichkeiten. Sobald sich Sarevok und seine Anhänger zeigen, müsst Ihr die Doppelgänger irgendwie enttarnen und um jeden Preis das Leben der restlichen Herzöge, Belt und Liia, schützen.~
+Wir haben den Geheimgang zum Keller geÃ¶ffnet und Husams Schattendieben Zutritt verschafft. Sie werden uns zur Seite stehen, sobald wir die DoppelgÃ¤nger enttarnt haben. Jetzt mÃ¼ssen wir schnell wieder nach oben und den Palast weiter untersuchen.~
+@14   = ~Gute Arbeit, Freunde. Dann geht nun wieder nach oben und wartet auf den Beginn der Feierlichkeiten. Sobald sich Sarevok und seine AnhÃ¤nger zeigen, mÃ¼sst Ihr die DoppelgÃ¤nger irgendwie enttarnen und um jeden Preis das Leben der restlichen HerzÃ¶ge, Belt und Liia, schÃ¼tzen.~
 @15   = ~Husam und die Schattendiebe
 
-Wir haben den Geheimgang zum Keller geöffnet und Husams Schattendieben Zutritt verschafft. Sie werden uns zur Seite stehen, sobald wir die Doppelgänger enttarnt haben. Jetzt müssen wir schnell wieder nach oben und auf die Ankunft Sarevoks und den Beginn der Amtseinführung warten.~
-@16   = ~Geht schnell wieder nach oben! Die Feierlichkeiten dürften bald beginnen.~
+Wir haben den Geheimgang zum Keller geÃ¶ffnet und Husams Schattendieben Zutritt verschafft. Sie werden uns zur Seite stehen, sobald wir die DoppelgÃ¤nger enttarnt haben. Jetzt mÃ¼ssen wir schnell wieder nach oben und auf die Ankunft Sarevoks und den Beginn der AmtseinfÃ¼hrung warten.~
+@16   = ~Geht schnell wieder nach oben! Die Feierlichkeiten dÃ¼rften bald beginnen.~
 @17   = ~Wir haben's geschafft, <CHARNAME>! Die Schattendiebe stehen tief in Eurer Schuld. Ihr habt die Machenschaften des Eisenthrons und Sarevoks Verstrickung darin aufgedeckt und uns vor einem furchtbaren Krieg bewahrt.~
-@18   = ~Nun müsst Ihr Euch Sarevok wohl allein stellen. Unsere Arbeit hier ist getan. Solltet Ihr jemals nach Athkatla kommen, werden wir uns vielleicht wiedersehen. Lebt wohl, <CHARNAME>, und viel Glück.~
+@18   = ~Nun mÃ¼sst Ihr Euch Sarevok wohl allein stellen. Unsere Arbeit hier ist getan. Solltet Ihr jemals nach Athkatla kommen, werden wir uns vielleicht wiedersehen. Lebt wohl, <CHARNAME>, und viel GlÃ¼ck.~
 @19   = ~Husam und die Schattendiebe
 
-Husam hat sich für unsere Zusammenarbeit bedankt und mir viel Glück im Kampf gegen Sarevok gewünscht. Wir konnten den nötigen Beweis erbringen, dass die Schattendiebe nicht für die Mordanschläge der letzten Zeit verantwortlich sind. Sollte ich jemals nach Athkatla kommen, werde ich Husam vielleicht wiedersehen.~
-@20   = ~Das werde ich tun. Danke für die Informationen.~
+Husam hat sich fÃ¼r unsere Zusammenarbeit bedankt und mir viel GlÃ¼ck im Kampf gegen Sarevok gewÃ¼nscht. Wir konnten den nÃ¶tigen Beweis erbringen, dass die Schattendiebe nicht fÃ¼r die MordanschlÃ¤ge der letzten Zeit verantwortlich sind. Sollte ich jemals nach Athkatla kommen, werde ich Husam vielleicht wiedersehen.~
+// @20   = ~Das werde ich tun. Danke fÃ¼r die Informationen.~

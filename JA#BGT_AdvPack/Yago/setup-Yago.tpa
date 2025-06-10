@@ -1,0 +1,36 @@
+//////////////////////////////////////////
+// RESTORED: Yago's guard in Low Lantern
+//////////////////////////////////////////
+
+
+COPY ~JA#BGT_AdvPack/Yago/JA#LOWLG.CRE~ ~override~
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Yago/JA#LOWLG.BAF~
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Yago/ja#lowlg.d~
+	REPLACE_TEXTUALLY EXACT_MATCH ~MOVEPARTY~
+	~ActionOverride(Player1,LeaveAreaLUA("%BaldursGateDocks%","",[3464.3054],8))
+	 ActionOverride(Player2,LeaveAreaLUA("%BaldursGateDocks%","",[2891.2715],8))
+	 ActionOverride(Player3,LeaveAreaLUA("%BaldursGateDocks%","",[3416.3091],8))
+	 ActionOverride(Player4,LeaveAreaLUA("%BaldursGateDocks%","",[3480.3090],8))
+	 ActionOverride(Player5,LeaveAreaLUA("%BaldursGateDocks%","",[3384.3114],8))
+	 ActionOverride(Player6,LeaveAreaLUA("%BaldursGateDocks%","",[3432.3150],8))~
+
+
+COPY_EXISTING ~%BaldursGate_DocksLowLantern_D1%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 425
+		fj_loc_y          = 295
+		fj_dest_x         = 425
+		fj_dest_y         = 295
+		fj_orientation    = 3
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Wache~
+		fj_cre_resref     = ~JA#LOWLG~
+	END
+BUT_ONLY

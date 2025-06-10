@@ -1,0 +1,22 @@
+IF
+	OR(2)
+		Global("JA#CONTAINER2","%NBaldursGate_DucalPalace_L2%",1)
+		Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",1)
+	Global("JA#MOVE","LOCALS",0)
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		MoveToPoint([522.640])
+		SetGlobal("JA#MOVE","LOCALS",1)
+		DialogInterrupt(TRUE)
+END
+
+IF
+	OR(2)
+		Global("JA#CONTAINER2","%NBaldursGate_DucalPalace_L2%",1)
+		Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",1)
+	Global("JA#MOVE","LOCALS",1)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END

@@ -1,0 +1,31 @@
+IF
+	Clicked([ANYONE])
+	Global("JA#SECRET_OPEN","GLOBAL",0)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#SECRET_OPEN","GLOBAL",1)
+		PlaySound("AMB_D16")
+		TriggerActivation("JA#7325",TRUE)
+		AmbientActivate("JA#7211A",TRUE)
+END
+
+IF
+	Clicked([ANYONE])
+	Global("JA#SECRET_OPEN","GLOBAL",1)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#SECRET_OPEN","GLOBAL",0)
+		PlaySound("AMB_D17")
+		TriggerActivation("JA#7325",FALSE)
+		AmbientActivate("JA#7211A",FALSE)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END

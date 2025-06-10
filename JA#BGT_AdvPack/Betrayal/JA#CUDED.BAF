@@ -1,0 +1,83 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Aldeth")
+		Wait(2)
+		JumpToPoint([580.366])
+		Wait(1)
+		Face(1)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(1)
+		FadeToColor([20.0],0)
+		Wait(2)
+		JumpToPoint([504.474])
+		MoveViewPoint([504.474],INSTANT)
+		SetGlobal("JA#CUDED","%SWBaldursGate_MerchantLeague_L2%",1)
+		Wait(2)
+		FaceObject("Aldeth")
+		FadeFromColor([20.0],0)
+		Wait(2)
+		ActionOverride("Aldeth",StartDialogueNoSet(Player1))
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		Wait(2)
+		JumpToPoint([568.486])
+		Wait(1)
+		FaceObject("Aldeth")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		Wait(2)
+		JumpToPoint([488.510])
+		Wait(1)
+		FaceObject("Aldeth")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		Wait(2)
+		JumpToPoint([552.534])
+		Wait(1)
+		FaceObject("Aldeth")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		Wait(2)
+		JumpToPoint([471.558])
+		Wait(1)
+		FaceObject("Aldeth")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		Wait(2)
+		JumpToPoint([536.571])
+		Wait(1)
+		FaceObject("Aldeth")
+END

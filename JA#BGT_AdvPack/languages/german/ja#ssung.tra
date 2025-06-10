@@ -1,29 +1,29 @@
 /* #6388 */
-@0    = ~Ich bin nur eine angeheuerte Wache. Es ist nicht meine Aufgabe, viel zu wissen. Tut mir Leid.~
+@0    = ~Ich bin nur eine angeheuerte Wache. Es ist nicht meine Aufgabe, viel zu wissen. Tut mir leid.~
 /* #1000 */
-@1    = ~Es ist Euch nicht gestattet, dieses Gebäude zu betreten.~
+@1    = ~Es ist Euch nicht gestattet, dieses GebÃ¤ude zu betreten.~
 /* #1006 */
 @2    = ~Wir sind gekommen, um Jhasso zu sprechen.~
 /* #1007 */
 @3    = ~Warum nicht?~
 /* #1008 */
-@4    = ~Okay, bis später.~
+@4    = ~Gut, bis spÃ¤ter.~
 /* #1001 */
-@5    = ~In diesem Falle bitte ich Euch, hier zu warten, während ich ihn von Eurer Ankunft in Kenntnis setze.~
+@5    = ~In diesem Falle bitte ich Euch, hier zu warten, wÃ¤hrend ich ihn von Eurer Ankunft in Kenntnis setze.~
 /* #1002 */
-@6    = ~Weil es kein öffentliches Gebäude ist, Schwachkopf. Hinfort.~
-@7    = ~Das... das waren die ganze Zeit Gestaltwandler? Was für ein Glück, dass wir überlebt haben. Aber nochmal brauch ich das nicht!~
+@6    = ~Weil es kein Ã¶ffentliches GebÃ¤ude ist, Schwachkopf. Hinfort.~
+@7    = ~Das â€¦ das waren die ganze Zeit Gestaltwandler? Was fÃ¼r ein GlÃ¼ck, dass wir Ã¼berlebt haben. Aber nochmal brauch ich das nicht!~
 @8    = ~Ihr schon wieder? Der Zutritt ist im Augenblick nur Mitgliedern der Sieben Sonnen gestattet.~
 @9    = ~Okay. Dann gehen wir wieder.~
 /* #1005 */
-@10   = ~Sie töten? Aber das verstößt gegen das Gesetz.~
-@11   = ~Von gestaltwandelnden Monstern hat niemand was gesagt. Dafür ist der Sold zu niedrig, ich verdrück mich.~
+@10   = ~Sie tÃ¶ten? Aber das verstÃ¶ÃŸt gegen das Gesetz.~
+@11   = ~Von gestaltwandelnden Monstern hat niemand was gesagt. DafÃ¼r ist der Sold zu niedrig, ich verdrÃ¼ck mich.~
 /* #1003 */
 @12   = ~Was tut Ihr hier? Eindringlinge, hier sind Eindringlinge!~
 /* #1004 */
-@13   = ~Wenn Ihr Euch ergebt, werden wir Euch hinaus geleiten, ohne Euch ein Haar zu krümmen.~
+@13   = ~Wenn Ihr Euch ergebt, werden wir Euch hinaus geleiten, ohne Euch ein Haar zu krÃ¼mmen.~
 /* #1009 */
 @14   = ~Wir ergeben uns nicht kampflos.~
 /* #1010 */
-@15   = ~Das hört sich gut an, wir ergeben uns.~
+@15   = ~Das hÃ¶rt sich gut an, wir ergeben uns.~
 @16   = ~Dann war dies Eure letzte Dummheit!~

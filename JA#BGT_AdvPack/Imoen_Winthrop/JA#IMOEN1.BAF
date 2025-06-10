@@ -1,0 +1,22 @@
+IF
+	See([PC])
+	AreaCheck("%Candlekeep_Inn_L1%")
+	Global("JA#IMOEN","LOCALS",0)
+	GlobalLT("CHAPTER","GLOBAL",%tutu_chapter_1%)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#IMOEN","LOCALS",1)
+		SmallWait(2)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	See([PC])
+	AreaCheck("%Candlekeep_Inn_L2%")
+	Global("JA#IMOEN","LOCALS",1)
+	GlobalLT("CHAPTER","GLOBAL",%tutu_chapter_1%)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#IMOEN","LOCALS",2)
+		Dialogue([PC])
+END

@@ -1,0 +1,97 @@
+ADD_STATE_TRIGGER JOPI 0 ~NumTimesTalkedTo(0)~
+
+
+REPLACE_TRANS_ACTION JOPI
+BEGIN 2 3 4 END
+BEGIN END
+~EscapeArea\(Destroy\)?([0-9]*)~
+~NoAction()~
+
+
+APPEND JOPI
+
+IF WEIGHT #-1 ~GlobalGT("Chapter","GLOBAL",%tutu_chapter_3%)~ THEN JA#JOPI_1
+  SAY @0
+  IF ~~ THEN REPLY @1 DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",2)~ GOTO JA#JOPI_2
+  IF ~~ THEN REPLY @2 EXIT
+END
+
+IF ~~ THEN JA#JOPI_2
+  SAY @3
+  COPY_TRANS JOPI 4
+END
+
+IF ~RandomNum(3,1)~ THEN JA#JOPI_3
+  SAY @4
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(3,2)~ THEN JA#JOPI_4
+  SAY @5
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(3,3)~ THEN JA#JOPI_5
+  SAY @6
+  IF ~~ THEN EXIT
+END
+
+END // APPEND JOPI
+
+
+
+BEGIN ~JA#JOPI~
+
+IF ~Global("JA#JOPIMOVE","GLOBAL",3)~ THEN JA#JOPI_1
+  SAY @7
+  IF ~~ THEN REPLY @8 GOTO JA#JOPI_3
+  IF ~~ THEN REPLY @9 GOTO JA#JOPI_2
+END
+
+IF ~~ THEN JA#JOPI_2
+  SAY @10
+  IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EscapeArea()~ EXIT
+END
+
+IF ~~ THEN JA#JOPI_3
+  SAY @11 = @12 = @13
+  IF ~~ THEN REPLY @14 GOTO JA#JOPI_4
+  IF ~~ THEN REPLY @15 GOTO JA#JOPI_2
+END
+
+IF ~~ THEN JA#JOPI_4
+  SAY @16
+  IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",4)~ UNSOLVED_JOURNAL @1023 EXIT
+END
+
+IF ~Global("JA#JOPIMOVE","GLOBAL",4)~ THEN JA#JOPI_5
+  SAY @17
+  IF ~Dead("Ragefast")~ THEN REPLY @18 GOTO JA#JOPI_6
+  IF ~~ THEN REPLY @19 EXIT
+END
+
+IF ~~ THEN JA#JOPI_6
+  SAY @20 = @21
+  IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EraseJournalEntry(@1023) AddExperienceParty(100) EscapeArea()~ SOLVED_JOURNAL @22 EXIT
+END
+
+// END JA#JOPI
+
+
+CHAIN IF ~Global("JA#JOPIMOVE","GLOBAL",6)~ THEN JA#JOPI JA#JOPI_7
+  @23
+  == RAGEFA @24
+  == JA#JOPI @25
+  == RAGEFA @26
+  == JA#JOPI @27
+  == RAGEFA @28 = @29
+  == JA#JOPI @30
+  == RAGEFA @31
+  == JA#JOPI @32
+  == RAGEFA @33 = @34
+  == JA#JOPI @35
+  == RAGEFA @36
+  == JA#JOPI @37
+  == RAGEFA @38
+END
+  IF ~~ THEN DO ~SetGlobal("JA#JOPIMOVE","GLOBAL",20) EraseJournalEntry(@1023) AddExperienceParty(100) ActionOverride("Jopi",EscapeArea())~ SOLVED_JOURNAL @39 EXIT

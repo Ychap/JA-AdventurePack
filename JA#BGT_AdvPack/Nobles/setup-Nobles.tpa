@@ -1,0 +1,138 @@
+/////////////////////
+// RESTORED: Nobles
+/////////////////////
+
+// RESTORED: BOYBA3, FTOWB3.CRE (Bl. Merm.), NOBL15.CRE (3 Old Kegs), NOBLAY.CRE (Undercellars)
+
+COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~
+	WRITE_ASCII DIALOG ~BOYBA3~ #8
+BUT_ONLY
+
+COPY ~JA#BGT_AdvPack/Nobles/JA#FTOB3.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Nobles/JA#NOB15.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Nobles/JA#NOBLY.CRE~ ~override~
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#dillar.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nobl14.d~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#ftob3.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nob15.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nobly.d~
+
+
+COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 634
+		fj_loc_y          = 1303
+		fj_dest_x         = 634
+		fj_dest_y         = 1303
+		fj_orientation    = 2
+		fj_schedule       = 0b000111111111111111110000
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Junge~
+		fj_cre_resref     = ~JA#BOYBA~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NBaldursGate%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 1071
+		fj_loc_y          = 1252
+		fj_dest_x         = 1071
+		fj_dest_y         = 1252
+		fj_orientation    = 15
+		fj_schedule	      = 0b000111111111111111110000
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Junge~
+		fj_cre_resref     = ~JA#BOYBA~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 2756
+		fj_loc_y          = 2769
+		fj_dest_x         = 2756
+		fj_dest_y         = 2769
+		fj_schedule	      = 0b000111111111111111110000
+		fj_orientation    = 4
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Junge~
+		fj_cre_resref     = ~JA#BOYBA~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%WBaldursGate%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 1800
+		fj_loc_y          = 376
+		fj_dest_x         = 1800
+		fj_dest_y         = 376
+		fj_orientation    = 10
+		fj_schedule	      = 0b000111111111111111110000
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Junge~
+		fj_cre_resref     = ~JA#BOYBA~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NEBaldursGate_BlushingMermaid_L2%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 545
+		fj_loc_y          = 409
+		fj_dest_x         = 545
+		fj_dest_y         = 409
+		fj_orientation    = 7
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~FTOWB3~
+		fj_cre_resref     = ~JA#FTOB3~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%NBaldursGate_ThreeOldKegs_L3%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 1014
+		fj_loc_y          = 498
+		fj_dest_x         = 1014
+		fj_dest_y         = 498
+		fj_orientation    = 3
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Nobl15~
+		fj_cre_resref     = ~JA#NOB15~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%BaldursGate_Undercellars%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 1369
+		fj_loc_y          = 1094
+		fj_dest_x         = 1369
+		fj_dest_y         = 1094
+		fj_orientation    = 4
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Noblay~
+		fj_cre_resref     = ~JA#NOBLY~
+	END
+BUT_ONLY

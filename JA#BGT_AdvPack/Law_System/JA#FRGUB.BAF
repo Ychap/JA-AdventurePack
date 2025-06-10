@@ -1,0 +1,23 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	GlobalGT("JA#FRIEND_RAUS","GLOBAL",2)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	GlobalLT("JA#FRIEND_RAUS","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#FRIEND_RAUS","GLOBAL",3)
+END

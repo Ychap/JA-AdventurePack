@@ -1,0 +1,58 @@
+REPLACE_TRANS_ACTION HUSAM2
+BEGIN 12 END
+BEGIN END
+~Wait(10)~
+~FaceObject([PC])~
+IF ~MoveToPoint~ // BGEE/EET only
+
+
+ADD_TRANS_TRIGGER HUSAM2 16
+~PartyHasItem("MISC78")~ DO 1
+UNLESS ~PartyHasItem("MISC78")~
+
+
+REPLACE_SAY HUSAM2 17 @3
+
+ALTER_TRANS HUSAM2
+BEGIN 17 END
+BEGIN END
+BEGIN
+  "UNSOLVED_JOURNAL" ~@4~ // in BGEE fine to override journal entry #27163 as last block in AR0112.BCS (BaldursGate_Undercellars) has already shown up
+END
+
+
+
+BEGIN ~JA#HUSAM~
+
+IF ~Global("HusamMove","GLOBAL",7) Global("JA#HUSAM_MOVE","GLOBAL",0)~ THEN JA#HUSAM2_1
+  SAY @5 = @6
+  IF ~~ THEN DO ~SetGlobal("JA#HUSAM_MOVE","GLOBAL",1) MoveToPoint([1773.3193]) DestroySelf()~ UNSOLVED_JOURNAL @7 EXIT
+END
+
+IF ~Global("JA#HUSAM_MOVE","GLOBAL",1)~ THEN JA#HUSAM2_2
+  SAY @8
+  IF ~!PartyHasItem("SCRL3F")~ THEN REPLY @9 GOTO JA#HUSAM2_3
+  IF ~PartyHasItem("SCRL3F")~ THEN REPLY @10 GOTO JA#HUSAM2_4
+END
+
+IF ~~ THEN JA#HUSAM2_3
+  SAY @11 = @12
+  IF ~~ THEN DO ~SetGlobal("JA#HUSAM_MOVE","GLOBAL",2) MoveToPoint([900.838])~ UNSOLVED_JOURNAL @13 EXIT
+END
+
+IF ~~ THEN JA#HUSAM2_4
+  SAY @14 = @12
+  IF ~~ THEN DO ~SetGlobal("JA#HUSAM_MOVE","GLOBAL",2) MoveToPoint([900.838])~ UNSOLVED_JOURNAL @15 EXIT
+END
+
+IF ~Global("JA#HUSAM_MOVE","GLOBAL",2)~ THEN JA#HUSAM2_5
+  SAY @16
+  IF ~~ THEN EXIT
+END
+
+IF ~Global("JA#HUSAM_MOVE","GLOBAL",3) Global("SarevokBehavior","GLOBAL",1)~ THEN JA#HUSAM2_6
+  SAY @17 = @18
+  IF ~~ THEN DO ~EraseJournalEntry(@15) EraseJournalEntry(@13) EraseJournalEntry(@7) EraseJournalEntry(@4) SetGlobal("JA#HUSAM_MOVE","GLOBAL",4) EscapeArea()~ SOLVED_JOURNAL @19 EXIT
+END
+
+// END JA#HUSAM

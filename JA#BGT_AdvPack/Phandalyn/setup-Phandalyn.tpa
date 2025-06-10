@@ -1,45 +1,19 @@
-////////////////////////////////////////
-//FIXED: Moved Phandalyn to the Elfsong
-////////////////////////////////////////
-
-/* remove SHOUT script - or the whole inn will turn hostile! */
-COPY_EXISTING ~PHANDA.CRE~ ~override~
-	WRITE_ASCIIE 0x248 ~PHANDALY~ #8       // remove SHOUT OVERRIDE script
-BUT_ONLY
+//////////////////////////////////////
+// Phandalyn waits in Elfsong Tavern
+//////////////////////////////////////
 
 
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Phandalyn/AR7705.BAF~ EVALUATE_BUFFER
 
 
-/* this is not fail-proof in case other mods changed the area already
-COPY_EXISTING ~AR8009.ARE~ ~override~
-PATCH_IF (SOURCE_SIZE > 0x11b) BEGIN 
-READ_SHORT 0x54 "JA#OFF_ACT"
-WRITE_LONG "JA#OFF_ACT" + (0x110 * 15) + 0x38        0x00000000	//Remove Phandalyn
-END
-BUT_ONLY
-*/
-
-
-/* Better: cycle through the existing actors, first (in case area was altered by another mod) */
-
-COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.are~ ~override~
-	READ_LONG  0x54 actor_off
-	READ_SHORT 0x58 actor_num
-	FOR (index = 0 ; index < actor_num ; ++index) BEGIN
-		READ_ASCII (actor_off + 0x80 + (index * 0x110)) cre_file
-		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "phanda" = 0) BEGIN // phandalyn's creature file
-		WRITE_LONG (actor_off + 0x38 + (index * 0x110)) 0
-		END
-	END
-BUT_ONLY
-
-/* correct Phandalyn's script: should attack evil party member, not other evil (quest) NPCs! */
-COPY_EXISTING ~PHANDALY.bcs~ ~override~
+// Correct Phandalyn's script: should talk before attacking evil party members
+COPY_EXISTING ~PHANDALY.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		SPRINT textToReplace ~Attack(\[0\.0\.0\.0\.0\.0\.MASK_EVIL\])~
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+
 		PATCH_IF (num_matches > 0) BEGIN
-			REPLACE_TEXTUALLY ~\(%textToReplace%\)~ ~Attack(LastSeenBy(Myself))~
+			REPLACE_TEXTUALLY ~%textToReplace%~ ~Continue()~ // attack is already handle by WDASIGHT.BCS
 			PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
 		END ELSE BEGIN
 			PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -47,8 +21,29 @@ COPY_EXISTING ~PHANDALY.bcs~ ~override~
 	END
 BUT_ONLY
 
-EXTEND_TOP ~PHANDALY.BCS~ ~JA#BGT_AdvPack/Phandalyn/PHANDALY.BAF~
 
-//misc.d
-COMPILE ~JA#BGT_AdvPack/Phandalyn/PHANDALY.D~
-COMPILE ~JA#BGT_AdvPack/Phandalyn/Bellamy.D~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Phandalyn/ja#phanda.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Phandalyn/ja#bellam.d~
+	PATCH_MATCH _ WITH
+		ANY GAME_IS ~bgt~ BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~999999~ ~@1034~
+		END
+		ANY GAME_IS ~bgee~ BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~999999~ ~#26870~
+		END
+		ANY GAME_IS ~eet~ BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~999999~ ~#226870~
+		END
+		DEFAULT
+	END
+
+
+// Remove SHOUT script - or the whole inn will turn hostile!
+COPY_EXISTING ~PHANDA.CRE~ ~override~
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~SHOUT~ END
+BUT_ONLY
+
+
+COPY_EXISTING ~%SWBaldursGate_Tavern_L1%.ARE~ ~override~
+	LPF DELETE_AREA_ACTOR STR_VAR actor_to_delete = ~Phandalyn~ END
+BUT_ONLY

@@ -1,11 +1,11 @@
 @0    = ~Danke, aber ich muss schon wieder los.~
-/* @1 -> journal entry @1032 */
-@2    = ~Ich würde gerne dem Fürst der Schatten die Ehre erweisen.~
-@3    = ~Ah, habt Ihr mal wieder den Weg ins Heiligtum gefunden? Ihr kennt die Regeln, lasst die Waffen, wo sie sind, und stört die anderen Gäste nicht. Ich wünsche Euch einen geruhsamen Aufenthalt.~
+// @1 -> journal entry @1032
+@2    = ~Ich wÃ¼rde gerne dem FÃ¼rst der Schatten die Ehre erweisen.~
+@3    = ~Ah, habt Ihr mal wieder den Weg ins Heiligtum gefunden? Ihr kennt die Regeln, lasst die Waffen, wo sie sind, und stÃ¶rt die anderen GÃ¤ste nicht. Ich wÃ¼nsche Euch einen geruhsamen Aufenthalt.~
 @4    = ~Vielen Dank. Lasst sehen, was Ihr anzubieten habt.~
-@5    = ~Wir haben gehört, dass Ihr hier einen Schrein für den Fürst der Schatten betreibt. Dürfen wir um Eure Tempeldienste bitten?~
-@6    = ~Oh, ihr habt davon erfahren. Dann bitte ich Euch, dies für Euch zu behalten. Der Herr der Diebe und seine Anhänger bleiben gerne unerkannt.~
-@7    = ~Nun, ich bin wahrlich überrascht, dass Ihr von unserem kleinen Schrein erfahren habt. Ich kann Eurem Ansinnen allerdings nicht zustimmen, die Anwesenheit eines Cyric-Dieners in diesem Schrein wäre entwürdigend.~
-@8	= ~Danke. Lasst mich sehen, was Ihr anzubieten habt.~
-@9	= ~Hier sind Eure Münzen. Lasst sehen, was Ihr anzubieten habt.~
-@10	= ~Danke. Das Angebot nehme ich gerne an.~
+@5    = ~Wir haben gehÃ¶rt, dass Ihr hier einen Schrein fÃ¼r den FÃ¼rst der Schatten betreibt. DÃ¼rfen wir um Eure Tempeldienste bitten?~
+@6    = ~Oh, ihr habt davon erfahren. Dann bitte ich Euch, dies fÃ¼r Euch zu behalten. Der Herr der Diebe und seine AnhÃ¤nger bleiben gerne unerkannt.~
+@7    = ~Nun, ich bin wahrlich Ã¼berrascht, dass Ihr von unserem kleinen Schrein erfahren habt. Ich kann Eurem Ansinnen allerdings nicht zustimmen, die Anwesenheit eines Cyric-Dieners in diesem Schrein wÃ¤re entwÃ¼rdigend.~
+@8    = ~Danke. Lasst mich sehen, was Ihr anzubieten habt.~
+@9    = ~Hier sind Eure MÃ¼nzen. Lasst sehen, was Ihr anzubieten habt.~
+@10   = ~Danke. Das Angebot nehme ich gerne an.~

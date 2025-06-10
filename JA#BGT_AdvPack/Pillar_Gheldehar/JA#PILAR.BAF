@@ -34,7 +34,7 @@ IF
 THEN
 	RESPONSE #100
 		AttackOneRound(LastTrigger())
-      	Continue()
+		Continue()
 END
 
 IF

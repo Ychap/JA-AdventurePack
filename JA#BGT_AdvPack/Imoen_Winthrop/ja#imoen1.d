@@ -1,0 +1,50 @@
+ADD_STATE_TRIGGER IMOEN 0 ~AreaCheck("%Candlekeep%")~
+ADD_STATE_TRIGGER IMOEN 9 ~AreaCheck("%Candlekeep%")~
+
+
+INTERJECT_COPY_TRANS IMOEN 9 JA#IMOEN_INN
+  == IMOEN @0 = @0 = @1
+  DO ~DialogInterrupt(FALSE) MoveToPoint([1106.596]) EscapeAreaMove("%Candlekeep_Inn_L1%",511,379,13)~
+END
+
+
+CHAIN IF ~AreaCheck("%Candlekeep_Inn_L1%")~ THEN IMOEN JA#IMOEN14
+  @2
+  == INNKE2 @16
+  == IMOEN @3
+  == INNKE2 @17 = @18
+  == IMOEN @4
+END
+  IF ~~ THEN DO ~DialogInterrupt(FALSE) MoveToPoint([396.326]) EscapeAreaMove("%Candlekeep_Inn_L2%",254,275,6)~ EXIT
+
+
+APPEND IMOEN
+
+IF ~AreaCheck("%Candlekeep_Inn_L2%")~ THEN JA#IMOEN17
+  SAY @5 = @6
+  IF ~~ THEN REPLY @7 GOTO JA#IMOEN19
+  IF ~~ THEN REPLY @8 GOTO JA#IMOEN20
+END
+
+IF ~~ THEN JA#IMOEN19
+  SAY @9
+  IF ~~ THEN REPLY @10 GOTO JA#IMOEN21
+  IF ~~ THEN REPLY @11 GOTO JA#IMOEN20
+END
+
+IF ~~ THEN JA#IMOEN20
+  SAY @12
+  IF ~~ THEN REPLY @13 DO ~GiveGoldForce(17)~ GOTO JA#IMOEN22
+END
+
+IF ~~ THEN JA#IMOEN21
+  SAY @14
+  IF ~~ THEN REPLY @13 GOTO JA#IMOEN22
+END
+
+IF ~~ THEN JA#IMOEN22
+  SAY @15
+  IF ~~ THEN DO ~EscapeArea()~ EXIT
+END
+
+END // APPEND IMOEN

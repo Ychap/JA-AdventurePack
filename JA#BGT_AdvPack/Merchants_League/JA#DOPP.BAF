@@ -1,0 +1,24 @@
+IF
+	GlobalGT("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",3)
+	Global("JA#DOPPLE_LEAV27","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#DOPPLE_LEAV27","LOCALS",1)
+		MoveToPoint([394.342])
+		DestroySelf()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("ZorlDopple","GLOBAL",1)
+END
+
+IF
+	Global("ZorlDopple","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,DOPPLEGANGER_CHANGE2)
+END

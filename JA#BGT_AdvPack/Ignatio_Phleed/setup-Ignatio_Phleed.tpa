@@ -1,0 +1,14 @@
+/////////////////////////////////////////////////////
+// RESTORED: Ignatio Phleed - the invitation seller
+/////////////////////////////////////////////////////
+
+
+COPY ~JA#BGT_AdvPack/Ignatio_Phleed/JA#IGNAT.CRE~ ~override~
+	SAY NAME1 #11740 // ~Ignatio Phleed~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #11740 // ~Ignatio Phleed~ (string ref is true for BGT and BG:EE)
+
+
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Ignatio_Phleed/AR7705.BAF~ EVALUATE_BUFFER
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Ignatio_Phleed/ja#ignat.d~

@@ -4,7 +4,7 @@ IF
 	GlobalGT("JA#GERVIS_QUEST","GLOBAL",0)
 THEN
 	RESPONSE #100
-		ActionOverride("JA#VOLTI",DestroySelf())
+		ActionOverride("Voltine",DestroySelf())
 END
 
 IF
@@ -30,5 +30,3 @@ THEN
 		StartCutSceneMode()
 		StartCutScene("JA#CUVOM")
 END
-
-

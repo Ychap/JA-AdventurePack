@@ -6,6 +6,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JA#ELVENLADY_SPWN","%EBaldursGate_ElfsongTavern_L2%",1)
 		CreateCreature("JA#ESELY",[645.161],14)
+		Continue()
 END
 
 IF
@@ -14,4 +15,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#ELFSONG_QUEST","GLOBAL",10)
+		Continue()
 END

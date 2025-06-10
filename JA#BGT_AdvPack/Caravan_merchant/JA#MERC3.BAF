@@ -1,0 +1,72 @@
+IF
+	Global("JA#_HelpedMechant","MYAREA",2)
+	See([PC])
+THEN
+	RESPONSE #100
+		Wait(3)
+		Polymorph(FAT_MAN)
+		Wait(1)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	GlobalLT("JA#_HelpedMechant","MYAREA",2)
+	HasItem("POTN08",Myself) // Heiltrank
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		UseItem("POTN08",Myself) // Heiltrank
+		SetGlobal("JA#_HelpedMechant","MYAREA",2)
+END
+
+IF
+	GlobalLT("JA#_HelpedMechant","MYAREA",2)
+	HasItem("POTN17",Myself) // Heilungselixier
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		UseItem("POTN17",Myself) // Heilungselixier
+		SetGlobal("JA#_HelpedMechant","MYAREA",2)
+END
+
+IF
+	GlobalLT("JA#_HelpedMechant","MYAREA",2)
+	HasItem("GBERRY",Myself) // Gute Beeren
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		UseItem("GBERRY",Myself) // Gute Beeren
+		SetGlobal("JA#_HelpedMechant","MYAREA",2)
+END
+
+IF
+	GlobalLT("JA#_HelpedMechant","MYAREA",2)
+	GlobalTimerExpired("JA#MERC3","GLOBAL")
+THEN
+	RESPONSE #100
+		ReputationInc(-1)
+		EraseJournalEntry(@1008)
+		AddJournalEntry(@1033,QUEST_DONE)
+		Kill(Myself)
+END
+
+IF
+	GlobalLT("JA#_HelpedMechant","MYAREA",2)
+	OR(11)
+		SpellCastOnMeRES("SPIN101",[GOODCUTOFF])
+		SpellCastOnMe([GOODCUTOFF],PALADIN_LAY_ON_HANDS)
+		SpellCastOnMe([GOODCUTOFF],MONK_LAY_ON_HANDS)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_CURE_LIGHT_WOUNDS)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_CURE_MEDIUM_WOUNDS)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_CURE_SERIOUS_WOUNDS)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_CURE_CRITICAL_WOUNDS)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_MASS_CURE)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_HEAL)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_REGENERATE)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_RESTORATION)
+	See([PC])
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		SetGlobal("JA#_HelpedMechant","MYAREA",2)
+END

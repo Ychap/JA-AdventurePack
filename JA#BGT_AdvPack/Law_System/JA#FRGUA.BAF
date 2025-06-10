@@ -1,0 +1,13 @@
+IF
+	Entered([PC])
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+	GlobalLT("JA#FRIEND_RAUS","GLOBAL",3)
+	GlobalTimerNotExpired("JA#FRBLOCKED","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#FRIEND_RAUS","GLOBAL",3)
+		CreateCreature("FRIEND",[1619.2373],0)
+		CreateCreature("FRIEND",[1678.2370],0)
+		CreateCreature("FRIEND",[1660.2342],0)
+END

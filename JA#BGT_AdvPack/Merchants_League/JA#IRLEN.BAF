@@ -1,0 +1,30 @@
+IF
+	NumTimesTalkedTo(0)
+	Allegiance(Myself,NEUTRAL)
+	AreaCheck("%SWBaldursGate_MerchantLeague_L1%")
+	Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",0)
+THEN
+	RESPONSE #100
+		Wait(1)
+		Dialogue([PC])
+END
+
+IF
+	Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",1)
+	Allegiance(Myself,NEUTRAL)
+	AreaCheck("%SWBaldursGate_MerchantLeague_L1%")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",2)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",4)
+	Allegiance(Myself,NEUTRAL)
+	AreaCheck("%SWBaldursGate_MerchantLeague_L1%")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",5)
+		Dialogue([PC])
+END

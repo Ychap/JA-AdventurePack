@@ -1,167 +1,28 @@
-COMPILE ~JA#BGT_AdvPack/Counting_House/JA#ULF.D~
+///////////////////////////////////
+// IMPROVED/FIXED: Counting House
+///////////////////////////////////
 
-COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1%.ARE~ ~override~
-	//delete not needed actors
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~JACIL~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
+
+// Swap CREW[1-7] with LEAGGU[1-7] in BGT (already fixed in EE)
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1_BCS%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~CreateCreature("CREW\([1-7]\)"~ ~CreateCreature("LEAGGU\1"~
 		END
-	END
-BUT_ONLY
+	BUT_ONLY
+
+	COPY_EXISTING ~%NEBaldursGate_CountingHouse_L2_BCS%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~CreateCreature("LEAGGU\([1-7]\)"~ ~CreateCreature("CREW\1"~
+		END
+	BUT_ONLY
+END
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Counting_House/ja#ulf.d~
+
 
 COPY_EXISTING ~JACIL.CRE~ ~override~
-	WRITE_ASCII 0x248 ~SHOUTDLG~	#8
-
-COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("ULF",[602.489],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW1",[593.397],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW2",[461.513],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW3",[287.471],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW4",[384.594],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW5",[582.678],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW6",[614.189],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW7",[895.498],0)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("ULF",[602.489],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW1",[593.397],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW2",[461.513],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW3",[287.471],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW4",[384.594],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW5",[582.678],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW6",[614.189],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("CREW7",[895.498],S)~ ~NoAction()~
-		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("JACIL",DestroySelf())~ ~NoAction()~
-	END
+				~ULF.CRE~ ~override~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ script_new = ~SHOUTDLG~ END
 BUT_ONLY
-
-COPY_EXISTING ~%NEBaldursGate_CountingHouse_L2%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU1",[515.486],0)~ ~CreateCreature("CREW1",[515.486],0)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU2",[414.311],0)~ ~CreateCreature("CREW2",[414.311],0)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU3",[287.437],0)~ ~CreateCreature("CREW3",[287.437],0)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU4",[304.598],0)~ ~CreateCreature("CREW4",[304.598],0)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU5",[612.544],0)~ ~CreateCreature("CREW5",[612.544],0)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU6",[615.637],0)~ ~CreateCreature("CREW6",[615.637],0)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU7",[769.475],0)~ ~CreateCreature("CREW7",[769.475],0)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU1",[515.486],S)~ ~CreateCreature("CREW1",[515.486],S)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU2",[414.311],S)~ ~CreateCreature("CREW2",[414.311],S)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU3",[287.437],S)~ ~CreateCreature("CREW3",[287.437],S)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU4",[304.598],S)~ ~CreateCreature("CREW4",[304.598],S)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU5",[612.544],S)~ ~CreateCreature("CREW5",[612.544],S)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU6",[615.637],S)~ ~CreateCreature("CREW6",[615.637],S)~
-		REPLACE_TEXTUALLY EXACT_MATCH ~CreateCreature("LEAGGU7",[769.475],S)~ ~CreateCreature("CREW7",[769.475],S)~
-	END
-BUT_ONLY
-
-EXTEND_TOP ~%NEBaldursGate_CountingHouse_L2%.BCS~ ~JA#BGT_AdvPack/Counting_House/AR7408.BAF~ EVALUATE_BUFFER
-
-COPY_EXISTING ~%NEBaldursGate_CountingHouse_L1%.ARE~ ~override~
-	//add new actors
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 602
-		fj_loc_y          = 489
-		fj_dest_x         = 602
-		fj_dest_y         = 489
-		fj_orientation    = 0     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Ulf~
-		fj_cre_resref     = ~ULF~
-		fj_dlg_resref	  = ~ULF~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 593
-		fj_loc_y          = 397
-		fj_dest_x         = 593
-		fj_dest_y         = 397
-		fj_orientation    = 11    
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~LEAGGU1~
-		fj_cre_resref     = ~LEAGGU1~
-		fj_dlg_resref	  = ~LEAGGU1~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 461
-		fj_loc_y          = 513
-		fj_dest_x         = 461
-		fj_dest_y         = 513
-		fj_orientation    = 8     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~LEAGGU2~
-		fj_cre_resref     = ~LEAGGU2~
-		fj_dlg_resref	  = ~LEAGGU2~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 287
-		fj_loc_y          = 471
-		fj_dest_x         = 287
-		fj_dest_y         = 471
-		fj_orientation    = 13    
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~LEAGGU3~
-		fj_cre_resref     = ~LEAGGU3~
-		fj_dlg_resref	  = ~LEAGGU3~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 384
-		fj_loc_y          = 594
-		fj_dest_x         = 384
-		fj_dest_y         = 594
-		fj_orientation    = 0     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~LEAGGU4~
-		fj_cre_resref     = ~LEAGGU4~
-		fj_dlg_resref	  = ~LEAGGU4~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 582
-		fj_loc_y          = 678
-		fj_dest_x         = 582
-		fj_dest_y         = 678
-		fj_orientation    = 3     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~LEAGGU5~
-		fj_cre_resref     = ~LEAGGU5~
-		fj_dlg_resref	  = ~LEAGGU5~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 614
-		fj_loc_y          = 189
-		fj_dest_x         = 614
-		fj_dest_y         = 189
-		fj_orientation    = 3     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~LEAGGU6~
-		fj_cre_resref     = ~LEAGGU6~
-		fj_dlg_resref	  = ~LEAGGU6~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 895
-		fj_loc_y          = 498
-		fj_dest_x         = 895
-		fj_dest_y         = 498
-		fj_orientation    = 1     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~LEAGGU7~
-		fj_cre_resref     = ~LEAGGU7~
-		fj_dlg_resref	  = ~LEAGGU7~
-	END

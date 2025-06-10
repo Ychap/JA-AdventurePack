@@ -1,0 +1,36 @@
+@29 = ~Gervisse is dead, but I do not trust you any more than him. For the safety of the children, it seems I will have to eliminate you, too.~
+@30 = ~I did not expect people like you. More invaders who are dangerous to the girls?~
+@31 = ~Keep the masquerade for yourself! Gervisse told me everything. You will not kidnap the twins!~
+@32 = ~Gervisse told me about you, but first I want to hear your perspective.~
+@33 = ~Shut up and die!~
+@34 = ~I want nothing to do with the whole business. I'll let you alone with Gervisse to end this matter.~
+@35 = ~Kidnap? *That* is what he told you? Can't you guess what this old creep's up to with the girls?~
+@36 = ~Spare us your talking! I trust Gervisse's words, and now you die!~
+@37 = ~Very well, I'll hear what you have to say.~
+@38 = ~Gervisse is an old, depraved pervert. I have watched him many times as he peered through the window of other people's houses at night.~
+@39 = ~Lately I have been watching him several times before the window of the two girls. I can't say exactly what he intends to do with them and I don't even want to imagine it, but he is definitely a threat to both. I assure you!~
+@40 = ~You make an honest impression. I will have a talk with Gervisse.~
+@41 = ~For me, the priority is the security of the girls and as I can't know which of you is the real danger to them, I'll have to kill you both.~
+@42 = ~That you should do, but be careful. I don't know how powerful this man is. Better prepare yourself for a fight!~
+/* @43 -> journal entry @1043 */
+@44 = ~Then you are just an unscrupulous bastard like Gervisse. Leave now!~
+// @45 = ~Laerta and Louise
+
+// I had no desire to interfere in the dispute between Gervisse and Voltine. Whoever or both is the real danger to the twins Laerta and Louise, they will have to fight this out by themselves. With luck, the gods will make sure that in the upcoming duel the necessary justice is delivered.~
+@46 = ~Aaah, it's you! Have you found Gervisse already? The sinister creep has evil plans for this house!~
+@47 = ~You're back. Could you stop Gervisse?~
+@48 = ~No, not yet, but I'll take care of it.~
+@49 = ~I trust Gervisse more than I trust you, Voltine. Your dark plans will now come to an end!~
+// @50 = ~Gervisse is dead, but I do not trust you any more than him. For the safety of the girls I have to kill you, too!~
+@51 = ~You should hurry! As long as Gervisse is nearby, the children are not safe.~
+// @52 = ~Then you shall feel Voltines' anger!~
+
+// @86 = ~Thank you, Voltine. Farewell.~
+
+/* new for v0.7 */
+@88 = ~You killed Gervisse, I take it?~
+@89 = ~Yes, it is done.~
+@90 = ~Blind fool! I will not let you kill a druid to defend on a word of some mageling!~
+
+@91 = ~What is going on here?~
+@92 = ~I want nothing to do with the whole business.~

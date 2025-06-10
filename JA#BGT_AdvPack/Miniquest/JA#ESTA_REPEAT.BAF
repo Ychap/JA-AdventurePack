@@ -1,0 +1,22 @@
+IF
+	Global("JA#ELFSONG","GLOBAL",0)
+	GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
+	OR(2)
+		TimeOfDay(DUSK)
+		TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ELFSONG","GLOBAL",1)
+		RealSetGlobalTimer("JA#ELFSONG_TIMER","GLOBAL",180)
+		PlaySong(%JA#ESTA%)
+END
+
+IF
+	Global("JA#ELFSONG","GLOBAL",1)
+	GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
+	RealGlobalTimerExpired("JA#ELFSONG_TIMER","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ELFSONG","GLOBAL",0)
+		PlaySong(0)
+END

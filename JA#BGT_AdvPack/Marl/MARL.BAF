@@ -1,28 +1,10 @@
 IF
-	Global("JA#MARL_GUARD_SPWN","%Beregost_FeldepostsInn_L1%",0)
-	Global("JA#MARL_LOSES","%Beregost_FeldepostsInn_L1%",0)
-	OR(2)
-		StateCheck(Myself,STATE_HELPLESS)
-		HPLT(Myself,3)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#MARL_LOSES","%Beregost_FeldepostsInn_L1%",1)
-END
-
-IF
+	Allegiance(Myself,ENEMY)
 	HasWeaponEquiped(LastAttackerOf(Myself))
 	GlobalLT("JA#MARL_GUARD","GLOBAL",2)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#MARL_GUARD","GLOBAL",2)
-END
-
-IF
-	Global("JA#MARL_GUARD","GLOBAL",3)
-	Allegiance(Myself,ENEMY)
-THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,NEUTRAL)
 END
 
 IF

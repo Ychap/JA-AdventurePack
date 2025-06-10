@@ -1,10 +1,3 @@
-@0    = ~Welcome to the headquarters of the Merchant's League, my friends. I'm sorry that we let you waiting for so long, but we were still making preparations for Aldeth's anniversary. I ask you to proceed to the third floor so that the festivities can begin.~
+@0    = ~I'm sorry that we let you waiting for so long, but we were still making preparations for Aldeth's anniversary. I ask you to proceed to the third floor so that the festivities can begin.~
 @1    = ~Aldeth knows nothing about this surprise. Until we get him for the celebration we should continue to keep silent about it.~
 @2    = ~Oh, and please let my friend Zorl know when you go upstairs.~
-@3    = ~Irlentree told me to let you know that Aldeth's anniversary will be now celebrated on the third floor.~
-@4    = ~Could we ask you a few questions?~
-@5    = ~Well. Then enjoy your stay in this house. If you would excuse me, I'm busy.~
-@6    = ~Rather not. I'm really very busy.~
-@7    = ~Ah, finally! I can hardly wait for the feast. Zzsss - so hungry.~
-@8    = ~Aah, you've made it in time for the festivities. It'll be best if you go and fetch Aldeth so we can surprise him. As his old childhood friend that honor belongs to you, of course.~
-@9	= ~Very well, I'll be going.~

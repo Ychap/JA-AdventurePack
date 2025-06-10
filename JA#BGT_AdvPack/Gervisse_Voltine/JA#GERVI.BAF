@@ -1,0 +1,15 @@
+IF
+	Global("JA#GERVIS_OUTSIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#GERVIS_OUTSIDE","GLOBAL",1)
+		EscapeAreaMove("%NWBaldursGate%",2630,2386,7)
+END
+
+IF
+	See([PC])
+	NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END

@@ -1,40 +1,40 @@
-@1    = ~Main Component: Jarl's BGT Adventure Pack~ 
-@2    = ~Unrolling Scroll~
-@3    = ~Shrine of Suffering~ 
+@1    = ~Voltine's House~
+@2    = ~Temple of Oghma~
+@3    = ~Shrine of Suffering~
 @4    = ~Mongo~
-@5    = ~Temple of Mask~ 
+@5    = ~Temple of Mask~
 @6    = ~Saznar Vron~
 @7    = ~Red Wizards of Thay~
-@8    = ~Velara~ 
+@8    = ~Velara~
 @9    = ~Female Gnome~
-@10   = ~Naiduja~ 
-//@11   = ~NPC-Portraits for the main component~
+@10   = ~Naiduja~
 @12   = ~BG1 Unfinished Business component #19 is required.~
-@13   = ~Vaalahor's Harp~ 
+@13   = ~Vaalahor's Harp~
 @14   = ~This is the harp of Vaalahor. The mage who tried to bind the ghost voice of the Elfsong tavern to this instrument.  But it does not seem to have worked because the instrument remains silent.~
 @15   = ~This was the harp of Vaalahor, the mage who tried to steal the ghost song of the Elfsong tavern. Once you had solved the case, the owner Alyth Elendara gave you the instrument after she got it enchanted by a befriended mage, so that magical powers now flow through the rotten harp.
 
 STATISTICS:
 
-Charm Person (3x daily)
- Duration: 5 rounds
- Range: 1 person
+Charge abilities:
+– Charm Person three times per day (Save vs. Spell negates)
+  Range: 25 ft.
+  Duration: 5 rounds
+  Area of Effect: 1 creature
 
-Usable By:
-- Bard~ 
+Weight: 3~
 @16   = ~Bartley~
-@17   = ~Lady Alyth Elendara~
-@18   = ~Alyth Elendara~
-@19   = ~Rogue~ 
+@17   = ~"Lady" Alyth Elendara~
+/* @18   = ~"Lady" Alyth Elendara~ */
+/* @19   = ~Rogue~ */
 @20   = ~Guest~
-@21   = ~Brulgon Waterspeier~ 
-@22   = ~Dwarf~ 
+@21   = ~Brulgon Waterspeier~
+/* @22   = ~Dwarf~ */
 @23   = ~Nathan~
-@24   = ~Wilyn~ 
+@24   = ~Wilyn~
 @25   = ~Vaalahor~
 @26   = ~Ghostly Elf Lady~
 @27   = ~Bekki~
-@28   = ~Barmaid~
+@28   = ~Tavern Wench~
 @29   = ~Barrel~
 @30   = ~Thief~
 @31   = ~Halfling woman~
@@ -44,7 +44,7 @@ Usable By:
 @35   = ~The Red Beric~
 @36   = ~Ghostly Figure~
 @37   = ~Infinity Animations component #0 is required.~
-@38   = ~Main component #1 is required.~
+/* @38   = ~BG2 Fixpack component #0 is required.~ */
 @39   = ~You're trying to steal from ME! Are you really that stupid? Get the hell out of here!~
 @40   = ~House of Krammoch Arkhstaff~
 @41   = ~You have been snooping around long enough, meat being. This ends now!~
@@ -71,9 +71,6 @@ I met the mage Vaalahor at the Sorcerous Sundries. It turned out that he had tri
 @1006 = ~The mystery of the silent ghostly voice
 
 In the upper floor of the Elfsong the spirit of the elven lady appeared to me. She seemed to speak to her missing love and only noticed me vaguely. When her manifestation dissolved again, the harp of Vaalahor went with her. I think that the lady should have gotten her voice back. Now I just have to report to Alyth of my success.~
-@1007 = ~The Tree of the Dryad
-
-While traveling the Cloudpeaks I met a Dryad. She asked that I help protect her tree. How could I refuse such a request?~
 @1008 = ~Attack on the caravan
 
 A caravan was attacked by bandits on the coastal road and looted. The passengers are all dead or abducted, but we found a seriously injured trader who needs our help.~
@@ -87,27 +84,15 @@ I have promised Krammoch Arkhstaff to spare the life of Thaldorn Tenhevich when 
 @1011 = ~Svlast, the fallen paladin
 
 The unfortunate paladin Svlast is dead. Even if this is the end he had wished for, this event fills me with sadness. It seems impossible to keep away the melancholic mood in these ruins.~
-@1012 = ~Scar's murder
+@1012 = ~Duke Eltan's Illness
 
 Jhasso asked us to find out what is going on with the mysterious illness of the Grand Duke Eltan. He fears a plot and he thinks it might be linked with Scar's murder. He suggested that we should conduct an investigation in the Blushing Mermaid, because there might be clues about Scar's murder.~
-@1013 = ~Scar's murder
+@1013 = ~Duke Eltan's Illness
 
 Jhasso believes that the doppelgangers, who are responsible for Scar's death, were also behind Eltan's mysterious illness. I should immediately pay him a visit in the headquarters of the Flaming Fist.~
-@1014 = ~Scar's murder
+@1014 = ~Duke Eltan's Illness
 
-In his corner of the tavern "The Blushing Mermaid", Ivanne demands 10 gold coins for its dark story. Scar was apparently murdered in my absence, and should I ever want to find out more details about it, it will probably come from Ivanne's mouth. It would be good to come back here when I have more time to listen.~
-@1015 = ~Scar's murder
-
-I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces. To get to the bottom of the murder, there are only two places where I can be look - the tower of the Iron Throne and the barracks of the Flaming Fist, where apparently Duke Eltan is resting, pale as death. Everything else seems irrelevant.~
-@1016 = ~Scar's murder
-
-I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces. To get to the bottom of the murder, I should pay a visit to the tower of the Iron Throne. Everything else seems irrelevant.~
-@1017 = ~Scar's murder
-
-I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces. To get to the bottom of the murder, I should pay a visit to the barracks of the Flaming Fist, where apparently Duke Eltan is resting, pale as death. Everything else seems irrelevant.~
-@1018 = ~Scar's murder
-
-I've listened to the story of Ivanne, the only witnesses of Scars death, with the exception of the killer. Accordingly, Scar was lured by another doppelganger who was paid without a doubt by the iron throne, into his cruel death, though Ivanne said that Angelo would have had a good motive. Fortunately, Scar had to suffer only briefly but more so for reasons of cunning than out of pity. Yes, I have seen so many of these rotten mirror creatures lately, but I pray that I never get used to their haunted, ever changing faces.~
+Jhasso believes that agents of the Iron Throne were also behind Eltan's mysterious illness. I should immediately pay him a visit in the headquarters of the Flaming Fist.~
 @1019 = ~Krammoch Arkhstaff and the Iron Throne
 
 Krammoch Arkhstaff was very pleased that I spared dear Thaldorn when I searched the Iron Throne. He offered me his help whenever I would need it. I wonder if Krammoch and Thaldorn now have to fear the vengeance of the other leaders of the Iron Throne?~
@@ -149,225 +134,135 @@ The Flaming Fist has recently cracked down pretty hard on the Thieves' Guild.~
 @1033   = ~Attack on the caravan
 
 The wounded merchant died. I should have helped him sooner to save him.~
+/* #26870 */
+@1034   = ~Evil deeds go punished.
+
+Bellamy, a decidedly mysterious halfling bard, has warned me to steer clear of a paladin lurking behind one of the dockside taverns here in Baldur's Gate. His name is Phandalyn, and, from the sound of it, my reputation has preceded me.~
+/* #15800 + title */
+@1035   = ~Pilar and Gheldehar
+
+Over a frothy ale at the Friendly Arm Inn, Pilar the half-elf has warned me of Gheldehar, an old gnomish cleric in Baldur's Gate. He still has an old ring of hers and, if I could ever get it back to her, she has promised to make the journey worth my while.~
+@1036  = ~Pilar and Gheldehar
+
+I returned Pilar her ring, which I retrieved from the gnomish cleric Gheldehar. I still don't understand the reason of the hostility between the two, though.~
+/* #15797 + title */
+@1037    = ~Pilar and Gheldehar
+
+I stumbled across a dirty little gnome called Gheldehar in an alleyway today. He claims that Pilar, an old "friend" currently staying at the Friendly Arm Inn, has stolen his boots, and he would like to have them returned. As Gheldehar didn't seem to care how I may acquire them, I suspect his use of the term "friend" was little more than window-dressing.~
+@1038   = ~Pilar and Gheldehar
+
+I have retrieved the gnome priest Gheldehar's boots from Pilar. I don't think this will end the strange feud the two are having, though.~
+@1039   = ~Investigating the Nashkel Mines
+
+Bardolan of the Amnish Guards in Nashkel could not tell me anymore about the problems in the mines. People seem to think that there are "demons" at work there.~
+/* #5810 + title */
+@1040   = ~The Tale of Captain Brage
+
+The guards in Nashkel have been unable to locate their mad Captain Brage.~
+
+@1043   = ~Laerta and Louise
+
+Voltine has enlightened me about the true nature of Gervisse and I promised her to protect the girls from his doings.~
 
 
 
+@2000 = ~Rhyte's Last Arrow +2~
+@2001 = ~The tale of this weapon lost its significance in the sea of great stories that are told about the High Forest, but some bards still sing the song of the skilled archer Adaniss Rhyte.
 
-@2000 = ~The history of this weapon lost its significance in the great ocean of stories that are told about the High Forest, but the song of the outstanding archer Adaniss Rhyte is still sung by many bards:
+"Oh, shocked from the strike of his powerful bow,
+The slain game sought by Adaniss falls.
+Long ago in the time of the Quiet Earth,
+The hunt from the famed High Forest calls.
 
-Shocked by the power of his bow
-Quickly falls the game struck by Adaniss
-Many years ago at the time of the Quiet Earth
-During the hunt in the legendary High Forest.
+The Duke of Everlund known for his boast
+Of the trophies held in his pride as dear.
+Intensely enraged at his rival hunter
+Whose bounty by far surpassed his one year.
 
-The Duke of Everlund always boasted very much
-The trophies, which he lined up
-But his anger was inflamed by another hunter
-Whose prey of a year exceeded his own.
+One morn tragedy befell the land
+With the misconceived death of the Duke's prized hound.
+Fallen at the base of a great elm tree
+A bow's shot death in its heart was found.
 
-A dark tragedy befell one morning the land
-The death of the Duke's most magnificent dog.
-Fallen at the foot of a great elm tree
-The arrow still stuck in its throat.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
 
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
+The same eve Adaniss called on the Duke,
+His solemn mistake he wished to repay.
+But the noble's rage claimed ten pounds of flesh
+And an archer's arm hit the ground that day.
 
-That same evening Adaniss turned to the Duke.
-To atone for grave mistake that he had made.
-But the anger of the nobleman demanded ten pounds of meat
-And they pulled the archer's arm out of its joints.
+"The evil lord demanded justice unjust
+The most vile curse on his arm to be cast.
+Vengeance he sought for the price he had paid
+Rhyte vowed the hound's arrow not to be his last.
 
-Unlawfulness for justice demands the Duke
-The worst spell cursing his arm.
-He sought revenge for price he had paid
-And so Rhyte swore the arrow for the dog was not the last.
+In sorrow the town helped him forge an axe
+Blessed to honor his most glorious day.
+With the mark of Rhyte's arrow to guide its strike
+And reputed to kill in the very same way.
 
-Worried the city helped forge an ax
-Blessed to prove him the honor a famed day.
-The scar of Rhytes arrow as a guide for the ax
-And they say, it also kills with one hit.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
 
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
+Again called the forest with its precious game,
+And a prize Adaniss with thrill did he seek.
+But none could be finer than the great clawed falcon
+Sought by all amidst the forest's Lost Peaks.
 
-Again, the Forest called with its precious wild
-In search of prey  Adaniss roamed the lands.
-The Blood Falcon was the price that he wanted
-And on the Lost Peaks was where he would find it.
+Once more the rivalry of the Duke did stir,
+For he thought of his skills with Rhyte's bow to be best.
+And set his sights on the glorious bird
+To emerge as the holder of its sainted crest.
 
-Once again, the rivalry of the Duke was stirring
-Confident of his strength with the bow of Rhyte
-His focus on the magnificent bird
-The next heir is safe from all harm.
+The two climbed the peaks and searched days on end,
+Each of their wills set as strong as the stone.
+They found each other at a cliff by chance;
+Both of their hatreds ran as deep as the bone.
 
-Both climbed the summit and sought for endless days
-Their will power was of the strength of stones.
-They met by chance at a rocky cliff
-Both full of hatred running deep in their bones.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
 
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
+The Duke drew the bow and pulled the string taut,
+But first flew Adaniss's axe with its blow.
+Cleaved, the lord stumbled to cliff's edge and off,
+Defeated by Rhyte's last arrow...
 
-The Duke drew the bow and pulled the string
-But before flew Adaniss' ax so very quick.
-His skull split, the Duke stumbled to the rocky edge and fell
-Defeated by Rhytes last arrow...
-
-With a keen eye, he found the game fore sure.
-His hands firm and graceful
-Aiming at the fey target
-No shot was too difficult for Adaniss Rhyte.
-No shot was too difficult for Adaniss Rhyte.
+With skill so great targets in his eyes were at the mercy of his arrow's flight.
+His hands sure and still,
+Never missing a kill,
+None could match the marksmanship of Adaniss Rhyte.
+None could match the marksmanship of Adaniss Rhyte."
 
 STATISTICS:
 
-Damage: 1d6 +3 (slashing / projectile)
-THAC0 Bonus: -2
-(Returns immediately to the thrower)
-Weight: 3
+Equipped abilities:
+– Chance to score a critical hit: +5% (with this weapon only)
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+
+THAC0: +2
+Damage: 1d6+3
+Damage type (melee): Slashing
+Damage type (thrown): Missile
 Speed Factor: 2
-Requires: 4 Strength
 Proficiency Type: Axe
-Type: 1-handed
+Type: One-handed
+Requires:
+ 4 Strength
 
-Can not be used by:
-Thieves, druids, clerics, mages, monks~
-
-
-
+Weight: 3~
 
 
-
-@2015 = ~The dark Lord Hertious, an undead warlord of Bane, wore this piece of armor over 500 years ago. It is rumored that he lived during that time in a castle somewhere in the Spine of the World. How his armor arrived without him in a different country is unknown, but the separation of the two was certainly not pleasant.
-
-STATISTICS:
-
-AC: 0
-Weight: 35
-Requires: 14 Strength
-
-Can only be used by:
-Evil beings
-Fighters
-Clerics~
-@2016 = ~In the plains of the Eastern Shaar, lived a small blacksmith of the human race whose almost dwarfish stature was not up to his soul. Although he was a skilled blacksmith, his real skill was to whistle a soulful song that could bring a seasoned man to cry like a child. Only a reclusive mage spent his time with the little person, while the others only made fun of his small size. The song of the blacksmith met only deaf ears because of their prejudices, and their cruel mockery grew into torment, and so the discouraged man found himself finally urged to leave his home for good. Before his departure he forged this weapon as a gift for his friend, who enchanted it during the manufacturing. The blade whistles a sweet tune to its wearer when it is drawn from its sheath. Shortly after the mage also left the small town in disgust, taking the sword on his travels.
-
-STATISTICS:
-
-Damage: 1d6 +2 (piercing)
-THAC0 Bonus: -2
-Weight: 2
-Speed Factor: 1
-Requires: 4 Strength
-Proficiency Type: Short Sword
-Type: 1-handed
-
-Can not be used by:
-Druids, clerics, mages~
-
-
-@2017 = ~This is a legendary weapon of heroic proportions, which is found mainly in the northern barbarian tribes. Master after master has swung this blade against countless enemies, and the blood that was spilled with this sword could fill a small sea. If the history is taken on faith, such a blade could not have been forged, and every owner seems to assign its origin to the myth, in which he currently believes. Probably the grandest origin story is that of a great chieftain, who sailed to the cliffs, which allegedly border the world. There he reached into emptiness and his will power shaped the blade out of nowhere. Whatever the truth may be: In the right hands, it is a fearsome weapon.
-
-STATISTICS:
-
-Damage: 1d10 +3 (Slashing)
-THAC0 Bonus: -3
-Weight: 9
-Speed Factor: 7
-Requires: 13 Strength
-Proficiency Type: Two Handed sword
-Type: 2-handed
-
-Can not be used by:
-Thieves, druids, clerics, mages, monks~
-
-
-
-
-@2018 = ~This magnificent two-handed sword is a monument in honor of the dwarven hero Durlag Trollslayer.
-
-STATISTICS:
-
-Damage: 1d10 +2 (slashing)
-THAC0 Bonus: -2
-Weight: 10
-Speed Factor: 8
-Requires: 13 Strength
-Proficiency Type: Two Handed sword
-Type: 2-handed
-
-Can not be used by:
-Thieves, druids, clerics, mages, monks~
-
-
-
-
-@2019 = ~This finely crafted battle staff is one of the treasures left behind by the invaders in Durlag tower. It is deadly in combat, and probably belonged to a spell caster, who equally enjoyed fighting at the front. Apparently the staff has an iron core, and yet its weight is comparable to a normal weapon of this type. Part of the enchantment seems to come from the hide that wraps the handle. The leather is undoubtedly from a creature that was surely battle-tested. The taste and inclination of the tower attackers are well documented, but the fur still could stem from anything ... or anyone.
-
-STATISTICS:
-
-Damage: 1d6 +3 (crushing)
-THAC0 Bonus: -3
-Weight: 3
-Speed Factor: 1
-Requires: 5 Strength
-Proficiency Type: Staff
-Type: 1-handed
-
-Can not be used by:
-Monks~
-@2020 = ~Captain Fallorain, the leader of the 12th Cavalry Brigade of Calimshan wore this enchanted armor for the last time at the battle at the Spider Swamp. Here he lost his life and his army in an attempt to free the area of an unknown evil.
-
-STATISTICS:
-
-Armor Class: 2
-Weight: 20
-Requires: 11 Strength
-
-Can not be used by:
-Bards, thieves, druids, mages, monks~
-
-
-
-
-@2021 = ~During the Civil War of Tethyr the Battle Axe of Mauletar was owned by the House of Ossyind. This noble family was betrayed during their flight from the country, and Mauletar, leader of the Guard and personal friend of the family, took the ax and sacrificed himself to give his companions enough time to flee. His battle cry was heard by the gods and resounded in all the lands as a symbol of deep friendship and loyalty. For this reason, the magic ax is used to uphold these values and waged against those who lack courage and honor.
-
-STATISTICS:
-
-Damage: 1d8 +2 (slashing)
-THAC0 Bonus: -2
-Weight: 5
-Speed Factor: 5
-Requires: 10 Strength
-Proficiency Type: Axe
-Type: 1-handed
-
-Can not be used by:
-Thieves, druids, sorcerer, clerics, mages, monks~
-
-
-
-
-
-@2024 = ~Durlag's Pride~
-@2025 = ~The Edge of the World~
-@2026 = ~The whistling sword~
-@2027 = ~Aule's staff~
-@2028 = ~Armor of Darkness~
-@2029 = ~Fallorain's armor~
-@2030 = ~Battle axe of the Mauletar~
-/* @2031 */
-@2032 = ~Useful Fixes & Repairs~
-@2035 = ~Bouncer~
-@2036 = ~Guardian~
 @2037 = ~Captain~
+@2040 = ~Lesser Clay Golem~
 @2042 = ~Yuxi~
 @2044 = ~Treasurer~
 @2045 = ~Nelfas Vroc~
@@ -376,7 +271,11 @@ Thieves, druids, sorcerer, clerics, mages, monks~
 @2048 = ~Kizska~
 @2049 = ~Krammoch Arkhstaff~
 @2050 = ~Krammoch's Key~
-@2051 = ~This is the key, which you received from Krammoch Arkhstaff. With it, you can open the secret entrance of the Iron Throne Headquarters.~
+@2051 = ~This is the key, which you received from Krammoch Arkhstaff. With it, you can open the secret entrance of the Iron Throne Headquarters.
+
+STATISTICS:
+
+Weight: 0~
 @2052 = ~Basilisks' tamer~
 @2053 = ~You received this amulet from Krammoch Arkhstaff, a shady businessman from Baldur's Gate, who is known for his extensive knowledge of basilisks. His reseach in this field has gone so far that he took some of these dangerous creatures as pets in his urban estate. The enraged population of Baldur's Gate finally took the case to courth and the Grand Dukes prohibited the keeping of basilisks within the city walls.
 
@@ -385,7 +284,7 @@ STATISTICS:
 The wearer gets immunity to petrification.
 
 Weight: 1~
-@2054 = ~Faizah Tin~
+@2054 = ~Palin~
 /* @2055 = ~Svlast~ */
 @2056 = ~Velvet~
 @2057 = ~Fighting cock~
@@ -400,31 +299,36 @@ Weight: 1~
 /* @2066 = ~Gheldehar~ */
 /* @2067 = ~Pilar~ */
 @2068 = ~Gheldehar's Boots~
-@2069 = ~A pair of worn boots, which you have taken from the Half-elf Pilar on behalf of Gheldehar. You have strong doubts, however, whether the effort for this purpose was justified.~
+@2069 = ~A pair of worn boots, which you have taken from the Half-elf Pilar on behalf of Gheldehar. You have strong doubts, however, whether the effort for this purpose was justified.
+
+STATISTICS:
+
+Weight: 4~
 @2070 = ~Pilar's Ring~
-@2071 = ~The ring of the Half-elf Pilar that you could "retrieve" from Gheldehar. It's a normal golden ring with no detectable special or even magical effects.~
+@2071 = ~The ring of the Half-elf Pilar that you could "retrieve" from Gheldehar. It's a normal golden ring with no detectable special or even magical effects.
+
+STATISTICS:
+
+Weight: 0~
 @2072 = ~Ring of the Nature Servant~
 @2073 = ~This enchanted ring comes from a druid circle from the area of High Moor. A group of looters who were searching for the long disappeared treasures of the Realm of Athalantar but had little success, raided the dwellings of the druids and looted all valuables to sell them later in the area of Waterdeep.
 
 STATISTICS:
 
-Druid magic: +1 (Level 1 to 3)~
+Druid magic: +1 (Level 1 to 3)
+
+Weight: 0~
 /* @2074 = ~Llindellyn~ */
 @2075 = ~Llindellyn's Arrow~
 @2076 = ~This is the favorite arrow of Llindellyn, the elven archer you met in the Cloakwood Forest. The missile is neither well balanced nor crafted. Presumably, the value of this arrow is of a sentimal original you cannot name by looking at it.
 
 STATISTICS:
 
-Damage: 1D6-2 (missile)
-THAC0-Penalty: +2
-Weight: 0
+THAC0: -2
+Damage: 1d6-2 (missile)
 Launcher: Bow
 
-Not Usable By:
-- Druid
-- Cleric
-- Mage
-- Monk~
+Weight: 0~
 /* @2077 = ~Mal-Kalen~ */
 @2078 = ~Wounded dwarf~
 /* @2079 = ~Keelor~ */
@@ -434,8 +338,10 @@ Not Usable By:
 
 STATISTICS:
 
-AC-Bonus: -1, -2 vs. Sword
-Saving Throws-Bonus: -1
+Equipped abilities:
+– Armor Class: +1, an extra +1 vs. slashing attacks
+– Saving Throws: +1
+
 Weight: 1~
 @2085 = ~Guardsman~
 @2093 = ~The Protector of the Unworthy~
@@ -443,8 +349,10 @@ Weight: 1~
 
 STATISTICS:
 
-AC-Bonus: -2 vs. Sword
-Weight: 1~
+Equipped abilities:
+– Armor Class: +2 vs. slashing attacks
+
+Weight: 2~
 /* @2098 = ~Deagan~ */
 @2099 = ~Shalak~
 @2100 = ~Jased~
@@ -479,4 +387,5 @@ In rare cases, the sea servant turns against the master.~
 @2120 = ~Guest~
 
 /* new for v 0.7 */
-@2121 = ~Second meeting and dialogue improvements for Niemain and the Zhentarim~
+@2122 = ~Brown fighting cock~
+@2123 = ~White fighting cock~

@@ -1,32 +1,32 @@
 /* #14889 */
-@0    = ~Er ist da draußen. Er kommt näher. Ich spüre seine Schritte - der Geruch von fauligem Fleisch. Er wird uns alle holen!~
+@0    = ~Er ist da drauÃŸen. Er kommt nÃ¤her. Ich spÃ¼re seine Schritte â€“ der Geruch von fauligem Fleisch. Er wird uns alle holen!~
 @1    = ~Von wem sprecht Ihr?~
 @2    = ~Irrtum! Er wird nur Euch holen.~
 /* #14890 */
-@3    = ~Ich... habe ihn getötet. Aber er ist da draußen, er k-kommt hierher. Ich k-kann es spüren.~
+@3    = ~Ich â€¦ habe ihn getÃ¶tet. Aber er ist da drauÃŸen, er k-kommt hierher. Ich k-kann es spÃ¼ren.~
 @4    = ~Wovon redet Ihr, Mann?!~
-@5    = ~Wen habt Ihr getötet?~
+@5    = ~Wen habt Ihr getÃ¶tet?~
 /* #14891 */
-@6    = ~Ich war selbst einmal ein Paladin. Ich kämpfte auf der Seite des Guten, doch das kommt auf dasselbe heraus... Ich... habe ihn getötet, meinen Glaubensbruder... Ich war eifersüchtig, ich war... töricht. Wenn er kommt, dann lasst ihn... Zumindest herrscht dann Gerechtigkeit.~
-@7    = ~Kommt nicht in Frage! Ihr wollt, dass wir zusehen müssen, wie der Wiedergänger Euch zerfleischt. Vergesst es!~
+@6    = ~Ich war selbst einmal ein Paladin. Ich kÃ¤mpfte auf der Seite des Guten, doch das kommt auf dasselbe heraus â€¦ Ich â€¦ habe ihn getÃ¶tet, meinen Glaubensbruder â€¦ Ich war eifersÃ¼chtig, ich war â€¦ tÃ¶richt. Wenn er kommt, dann lasst ihn â€¦ Zumindest herrscht dann Gerechtigkeit.~
+@7    = ~Kommt nicht in Frage! Ihr wollt, dass wir zusehen mÃ¼ssen, wie der WiedergÃ¤nger Euch zerfleischt. Vergesst es!~
 @8    = ~In Ordnung. Wenn der Tod Euer Wunsch ist, werder ich ihn Euch nicht verwehren.~
-/* #14893 - 2. Hälfte */
-@9    = ~Mein Glaubensbruder... tot, ich bin sein Mörder... ich war... ein Narr. Und nun bin ich erst recht verzweifelt. Tötet mich, an diesem Unglücksort! Dann herrscht wenigstens etwas Gerechtigkeit.~
+/* #14893 - 2. HÃ¤lfte */
+@9    = ~Ich â€¦ habe ihn getÃ¶tet, meinen Glaubensbruder â€¦ Ich war eifersÃ¼chtig, ich war â€¦ ein Narr. Und nun bin ich erst recht verzweifelt. TÃ¶tet mich, an diesem UnglÃ¼cksort! Dann herrscht wenigstens etwas Gerechtigkeit.~
 @10   = ~Ich respektiere Euren Wunsch. Wenn es denn sein muss, werde ich Euch von Euren seelischen Qualen befreien.~
-@11   = ~Ich werde mir Euren Tod nicht aufs Gewissen laden. *Ihr* müsstet das doch am besten verstehen. Ihr mögt einen schweren Fehler begangen haben, aber auch aus den schwersten Fehlern kann man lernen. Seid mit Eurer bitteren Erfahrung in Zukunft anderen ein gutes Beispiel.~
+@11   = ~Ich werde mir Euren Tod nicht aufs Gewissen laden. Ihr mÃ¼sstet das doch am besten verstehen. Ihr mÃ¶gt einen schweren Fehler begangen haben, aber auch aus den schwersten Fehlern kann man lernen. Seid mit Eurer bitteren Erfahrung in Zukunft anderen ein gutes Beispiel.~
 /* #14894 */
-@12   = ~Was könntet Ihr von einem jämmerlichen Narren wie mir schon lernen? Nehmt mich höchstens als abschreckendes Beispiel, und versucht nicht, das Gute in der Welt zu töten.~
-@13   = ~Eine Weisheit, für die es sich zu leben lohnt! Ihr habt den Tod nicht verdient, Svlast.~
-@14   = ~Der Schmerz ist die Strafe für Eure Verfehlungen. Lernt damit zu leben.~
+@12   = ~Was kÃ¶nntet Ihr von einem jÃ¤mmerlichen Narren wie mir schon lernen? Nehmt mich hÃ¶chstens als abschreckendes Beispiel, und versucht nicht, das Gute in der Welt zu tÃ¶ten.~
+@13   = ~Eine Weisheit, fÃ¼r die es sich zu leben lohnt! Ihr habt den Tod nicht verdient, Svlast.~
+@14   = ~Der Schmerz ist die Strafe fÃ¼r Eure Verfehlungen. Lernt damit zu leben.~
 /* #14895 */
-@15   = ~Bitte lasst mich in meinem Kummer allein.~
+@15   = ~Bitte lasst mich in meinem Kummer alleine.~
 @16   = ~Svlast, der gefallene Paladin
 
-Ich habe versucht, den armen Svlast davon zu überzeugen, dass das Leben trotz allen Kummers und Schmerzes stets dem Tod vorzuziehen ist. Für den Augenblick scheint der gefallene Paladin auf meine Worte zu hören, doch ich habe Zweifel, ob ich ihn entgültig überzeugen konnte.~
+Ich habe versucht, den armen Svlast davon zu Ã¼berzeugen, dass das Leben trotz allen Kummers und Schmerzes stets dem Tod vorzuziehen ist. FÃ¼r den Augenblick scheint der gefallene Paladin auf meine Worte zu hÃ¶ren, doch ich habe Zweifel, ob ich ihn entgÃ¼ltig Ã¼berzeugen konnte.~
 /* #14896 */
-@17   = ~So sehr ich den Tod auch willkommen heiße, werde ich ihm doch nicht kampflos begegnen.~
+@17   = ~So sehr ich den Tod auch willkommen heiÃŸe, werde ich ihm doch nicht kampflos begegnen.~
 /* #15703 */
 @18   = ~Svlast, der gefallene Paladin
 
-Nachdem der arme und unglückliche Svlast den Angriff des Wiedergängers mit unserer Hilfe überlebt hat, hat er uns gebeten, seine Aufgabe zu vollenden... Dies ist ein schwarzer Tag in diesen Ruinen, und er wird wohl noch schwärzer werden.~
-@19   = ~Bitte... lasst mich einfach allein.~
+Nachdem der arme und unglÃ¼ckliche Svlast den Angriff des WiedergÃ¤ngers mit unserer Hilfe Ã¼berlebt hat, hat er uns gebeten, seine Aufgabe zu vollenden â€¦ Dies ist ein schwarzer Tag in diesen Ruinen, und er wird wohl noch schwÃ¤rzer werden.~
+@19   = ~Bitte â€¦ lasst mich einfach allein.~

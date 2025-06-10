@@ -1,0 +1,23 @@
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("AldethMove","GLOBAL",1)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Allegiance("Aldeth",ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Allegiance("Aldeth",NEUTRAL)
+THEN
+	RESPONSE #100
+		ActionOverride("Aldeth",Enemy())
+END

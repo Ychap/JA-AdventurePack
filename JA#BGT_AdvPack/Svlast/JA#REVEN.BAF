@@ -1,0 +1,7 @@
+IF
+	Dead("JA#SVLST")
+THEN
+	RESPONSE #100
+		Wait(2)
+		EscapeArea()
+END

@@ -1,11 +1,11 @@
-@0  = ~Thanks, but I have to go again.~ 
-/* @1 -> journal entry @1032 */
-@2  = ~I would like to show my respect to the Lord of Shadows.~ 
+@0  = ~Thanks, but I have to go again.~
+// @1 -> journal entry @1032
+@2  = ~I would like to show my respect to the Lord of Shadows.~
 @3  = ~Ah, once again you've found the way into the sanctuary? You know the rules, leave the weapons sheathed, and do not disturb the other guests. I wish you a peaceful stay.~
-@4  = ~Thank you. Let's see what you have to offer.~ 
+@4  = ~Thank you. Let's see what you have to offer.~
 @5  = ~We have heard that you run a shrine for the Lord of Shadows here. May we ask for your temple services?~
 @6  = ~Oh, you've come to know about us. Then I ask you to keep that for yourself. The Lord of thieves and his followers prefer to remain anonymous.~
-@7  = ~Well, I'm truly surprised that you have heard of our little shrine. I cannot agree with your suggestion however, the presence of servants of Cyric in this shrine would be degrading.~ 
+@7  = ~Well, I'm truly surprised that you have heard of our little shrine. I cannot agree with your suggestion however, the presence of servants of Cyric in this shrine would be degrading.~
 @8  = ~Thank you. Let me see what you have to offer.~
-@9  = ~Here are your coins. Let's see what you have to offer.~ 
+@9  = ~Here are your coins. Let's see what you have to offer.~
 @10 = ~Thank you. I gladly accept the offer.~

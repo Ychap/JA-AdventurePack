@@ -1,0 +1,80 @@
+/////////////////////
+// Aldeth & Seniyad
+/////////////////////
+
+// FYI: In EE with jaheira in group you already have a peaceful solution.
+
+COPY ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.ITM~ ~override~
+	SAY NAME1 @2101
+	SAY NAME2 @2101
+	SAY IDENTIFIED_DESC @2102
+
+
+// If Aldeth main component is installed
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~JA#ALDET.BCS~ BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.BAF~
+END ELSE BEGIN
+	EXTEND_TOP ~JA#ALDET.BCS~ ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.BAF~ EVALUATE_BUFFER
+END
+
+
+// BGT
+COPY_EXISTING ~DRUID3.BCS~ ~override~
+			  ~SENIYA.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~EscapeAreaDestroy(90)~ ~EscapeAreaObject("druid_escape")~
+	END
+BUT_ONLY
+
+
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	<<<<<<<< ...inlined/aldeth_ee.d
+	ADD_STATE_TRIGGER ALDETH 31 ~Global("SeniyadXP","GLOBAL",0)~
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_ee.d~
+END
+
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = (GAME_IS ~bgt~ ? 0 : 4)
+	STR_VAR dlg_file = ~ALDETH.DLG~
+	RET aldeth_state04_journal = journal_strref
+END
+LAF GET_DLG_WEIGHT
+	INT_VAR idx_state = 7
+	STR_VAR dlg_file = ~ALDETH.DLG~
+	RET aldeth_state07_weight = weight
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth_Seniyad/ja#aldeth_reward.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Aldeth_Seniyad/ja#seniya.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+
+ADD_JOURNAL EXISTING @20 USING ~JA#BGT_AdvPack/languages/%s/JA#ALDETH.tra~
+
+
+// Also defined in Merchants' League investigations
+COPY_EXISTING ~ALDETH.CRE~ ~override~
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
+BUT_ONLY
+
+
+// BGT
+COPY_EXISTING ~%CloakwoodLodge%.ARE~ ~override~
+	// add region trigger
+	LPF fj_are_structure
+		INT_VAR
+		fj_type             = 0
+		fj_box_left         = 2929
+		fj_box_top          = 2590
+		fj_box_right        = 3319
+		fj_box_bottom       = 2784
+		fj_cursor_idx       = 0
+		fj_vertex_0         = 3319 + (2687 << 16)
+		fj_vertex_1         = 2995 + (2784 << 16)
+		fj_vertex_2         = 2929 + (2672 << 16)
+		fj_vertex_3         = 3276 + (2590 << 16)
+		STR_VAR
+		fj_structure_type   = region
+		fj_name             = ~druid_escape~
+	END
+UNLESS ~druid_escape~

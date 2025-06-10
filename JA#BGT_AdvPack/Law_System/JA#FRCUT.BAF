@@ -1,0 +1,29 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("HouseEnforcer")
+		Wait(2)
+		MoveBetweenAreas("%FriendlyArmInn%",[1468.3213],2)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		ActionOverride("HouseEnforcer",MoveBetweenAreas("%FriendlyArmInn%",[1468.3213],2))
+		LeaveAreaLUA("%FriendlyArmInn%","",[1400.3306],8)
+		ActionOverride(Player2,LeaveAreaLUA("%FriendlyArmInn%","",[1464.3318],8))
+		ActionOverride(Player3,LeaveAreaLUA("%FriendlyArmInn%","",[1384.3342],8))
+		ActionOverride(Player4,LeaveAreaLUA("%FriendlyArmInn%","",[1448.3366],8))
+		ActionOverride(Player5,LeaveAreaLUA("%FriendlyArmInn%","",[1368.3378],8))
+		ActionOverride(Player6,LeaveAreaLUA("%FriendlyArmInn%","",[1432.3390],8))
+		Wait(1)
+		FadeFromColor([30.0],0)
+		Wait(1)
+		ActionOverride("HouseEnforcer",StartDialogueNoSet([PC]))
+END

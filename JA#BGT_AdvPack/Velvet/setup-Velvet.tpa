@@ -1,0 +1,54 @@
+/////////////////////////////////
+// RESTORED: Velvet - Cockfight
+/////////////////////////////////
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	APPEND ~ANIMATE.IDS~ ~0x547C CHICKEN_BROWN~ UNLESS ~^0x547C~  // 0x547C £AC BGT+Infinity		0x7D2 ACHB BGEE
+	APPEND ~ANISND.IDS~ ~0x547C £AC      CGAMEANIMATIONTYPE_CHICKEN_BROWN~ UNLESS ~^0x547C~
+
+	ACTION_IF NOT FILE_EXISTS ~£ACG1.bam~ BEGIN
+		COPY ~JA#BGT_AdvPack/Velvet/chicken_brown~ ~override~
+	END
+END
+
+COPY ~JA#BGT_AdvPack/Velvet/JA#COCK1.CRE~ ~override~
+	SAY NAME1 @2122
+	SAY NAME2 @2057
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
+		WRITE_LONG 0x28 0x7D02 // Animation: CHICKEN_BROWN
+	END
+
+COPY ~JA#BGT_AdvPack/Velvet/JA#COCK2.CRE~ ~override~
+	SAY NAME1 @2123
+	SAY NAME2 @2057
+
+COPY ~JA#BGT_AdvPack/Velvet/JA#VELVE.CRE~ ~override~
+	SAY NAME1 @2056
+	SAY NAME2 @2056
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Velvet/JA#CCKF1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Velvet/JA#VELVE.BAF~
+
+EXTEND_TOP ~%NashkelCarnival_BCS%.BCS~ ~JA#BGT_AdvPack/Velvet/AR3800.BAF~ EVALUATE_BUFFER
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Velvet/ja#velve.d~
+
+
+COPY_EXISTING ~%NashkelCarnival%.ARE~ ~override~
+	// add new actor
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x          = 2509
+		fj_loc_y          = 3344
+		fj_dest_x         = 2509
+		fj_dest_y         = 3344
+		fj_orientation    = 13
+		STR_VAR
+		fj_structure_type = actor
+		fj_name           = ~Velvet~
+		fj_cre_resref     = ~JA#VELVE~
+	END
+BUT_ONLY

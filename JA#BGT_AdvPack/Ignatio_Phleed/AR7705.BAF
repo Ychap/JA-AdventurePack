@@ -1,0 +1,20 @@
+IF
+	Global("Chapter","GLOBAL",%tutu_chapter_7%)
+	Global("Captured","GLOBAL",1)
+	Global("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",1)
+		CreateCreature("JA#IGNAT",[842.653],14)
+		Continue()
+END
+
+IF
+	GlobalGT("SarevokBehavior","GLOBAL",0)
+	Global("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#IGNATIO","%EBaldursGate_ElfsongTavern_L1%",2)
+		ActionOverride("JA#IGNAT",DestroySelf())
+		Continue()
+END

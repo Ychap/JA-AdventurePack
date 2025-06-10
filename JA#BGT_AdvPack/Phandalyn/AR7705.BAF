@@ -1,0 +1,10 @@
+IF
+    TimeGT(8)
+    TimeLT(20)
+	Global("JA#PHANDA","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#PHANDA","GLOBAL",2)
+		CreateCreature("PHANDA",[980.577],1)
+		Continue()
+END

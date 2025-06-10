@@ -1,0 +1,32 @@
+IF
+	Global("SarevokBehavior","GLOBAL",1)
+	Global("JA#GUA_MOVE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#GUA_MOVE","LOCALS",1)
+		ActionOverride(Myself,MoveToPointNoInterrupt([507.768]))
+END
+
+IF
+	Global("JA#ALERT","%NBaldursGate_DucalPalace_L1%",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!See([PC])
+THEN
+	RESPONSE #100
+		MoveToObject([PC])
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("JA#ALERT","%NBaldursGate_DucalPalace_L1%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L1%",1)
+END

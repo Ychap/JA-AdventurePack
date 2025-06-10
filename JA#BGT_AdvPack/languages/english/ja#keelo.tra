@@ -1,5 +1,5 @@
 /* #15085 */
-@0    = ~*moan*...~
+@0    = ~*moan*...~ [DRUNK06]
 /* #15083 */
 @1    = ~My leg... *moan*... damned gnolls... Please... heal me... *moan*... even a little bit... It hurts so... much... *moan*~
 @2    = ~Here, take this healing potion.~
@@ -25,4 +25,4 @@
 @15   = ~The bones are setting just fine. Next time I'll have to take a few friends with me when I go gnoll-hunting.~
 /* #15086 */
 @16   = ~First you heal me, now you want to kill me. I don't understand the workin's of your mind but damned if I'm gonna let you get away with this.~
-@17    = ~Here, take a Potion of Extra Healing.~
+@17   = ~Here, take a Potion of Extra Healing.~

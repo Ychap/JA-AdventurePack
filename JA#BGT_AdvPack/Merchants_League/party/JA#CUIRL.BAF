@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Aldeth")
+		ActionOverride(Player2,MoveToPoint([532.504]))
+		ActionOverride(Player3,MoveToPoint([494.384]))
+		ActionOverride(Player4,MoveToPoint([445.422]))
+		ActionOverride(Player5,MoveToPoint([531.335]))
+		ActionOverride(Player6,MoveToPoint([382.447]))
+		MoveToPoint([603.515])
+		CreateCreature("Zorl",[658.547],6)
+		CreateCreature("Irlent",[612.577],6)
+		Wait(2)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveToPoint([586.471])
+END

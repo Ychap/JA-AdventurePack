@@ -1,0 +1,15 @@
+IF
+	Global("Chapter","GLOBAL",%tutu_chapter_7%)
+	Global("ENDOFBG1","GLOBAL",0)
+	Global("Capture800","GLOBAL",0)
+	Global("DukeThanks","GLOBAL",0)
+	Global("HelpAldeth","GLOBAL",2)
+	Global("JA#ALDETHCHP8","GLOBAL",0)
+	!Dead("Aldeth")
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ALDETHCHP8","GLOBAL",1)
+		SetGlobal("Capture800","GLOBAL",1)
+		CreateCreature("JA#DEAGB",[1222.2392],8)
+		Continue()
+END

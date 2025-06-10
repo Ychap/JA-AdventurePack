@@ -1,0 +1,31 @@
+IF
+	OR(2)
+		GlobalGT("ScarMission","GLOBAL",4)
+		GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
+	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",1)
+		CreateCreature("JA#KEG01",[648.257],0) // Fass
+		Continue()
+END
+
+IF
+	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",4)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",5)
+		Kill("JA#KEG01")
+		SmallWait(5)
+		CreateCreature("JA#KEG02",[648.257],0) // Diebin - Halblingsfrau
+		Wait(1)
+		ActionOverride("JA#KEG02",StartDialogueNoSet([PC]))
+END
+
+IF
+	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",6)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",7)
+		ActionOverride("JA#KEG02",EscapeArea())
+END

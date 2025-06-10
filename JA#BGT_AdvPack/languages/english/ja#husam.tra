@@ -1,12 +1,14 @@
 @0    = ~Is there any way to reach the Iron Throne Headquarters?~
-@1    = ~Okay, Husam, who are the Iron Throne leaders?~
-@2    = ~A secrets route. Oh ya, I know ones, a really goods one. Ya know Krammach Arhsstaff? Ah it doeshn't matter. His *hic* home's located righst beside the Iron Throne citadel. He's in close with Rieltar, he he, know what I mean. Wells anyways, he's gots a passage from hish bashement to the Throne's bashement.~
+@1    = ~Okay. Husam, who are the leaders of the Iron Throne?~
+@2    = ~Ya know Krammach Arhsstaff? Ah it doeshn't matter. His *hic* home's located righst beside the Iron Throne citadel. He's in close with Rieltar, he he, know what I mean. Wells anyways, he's gots a passage from hish bashement to the Throne's bashement.~
+/* first part of #16946 */
 @3    = ~That's happening tonight! If they succeed, Sarevok will have seized control of the entire city. We should move immediately; we have to get to the dukes before it's too late. Let's head to the palace now!~
 @4    = ~Husam and the Shadow Thieves
 
 There is no time to lose! The attack on the remaining Dukes of Baldur's Gate is imminent. Husam and his Shadow Thieves want to help prevent the catastrophe. We meet up with Husam in front of the Ducal Palace.~
 /* @5 + @6 is #16947 */
 @5    = ~Here we are, we must gain entrance to the palace. You can use the invitation you found. The rest of us will see if we can gain access through the sewers of the city. From what I know, there's a secret entrance into the palace via the sewers. Unfortunately, it's heavily warded and guarded. That's where you come in. You'll have to disable the wards and traps.~
+/* second part of #16946 */
 @6    = ~Once we're inside, us Shadow Thieves will create a diversion for the rest of you. You make your way to the election room, find out who the dopplegangers are and kill them. Remember, make sure you know who the dopplegangers are. If you're right they'll revert to their true form; if you're wrong, you're in a heap of trouble. I don't know how succesful we'll be, so it's really up to you, <CHARNAME>.~
 @7    = ~Husam and the Shadow Thieves
 
@@ -29,4 +31,4 @@ We have opened the secret passage to the basement and Husam's Shadow Thieves got
 @19   = ~Husam and the Shadow Thieves
 
 Husam thanked us for our cooperation and wished me good luck in the fight against Sarevok. We were able to provide the necessary proof that the Shadow Thieves were not responsible of the recent assassinations. Should I ever come to Athkatla, maybe I'll meet Husam.~
-@20	= ~I will do that. Thanks for the information.~
+// @20	= ~I will do that. Thanks for the information.~

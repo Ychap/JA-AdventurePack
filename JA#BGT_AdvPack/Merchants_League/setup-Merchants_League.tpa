@@ -1,0 +1,320 @@
+/////////////////////////////////////
+// Merchants' League investigations
+/////////////////////////////////////
+
+
+// Restore party part only in BGT (already restored in EE)
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	INCLUDE ~JA#BGT_AdvPack/Merchants_League/party/setup-party.tpa~
+END
+
+
+// BGEE
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~AM0704.WAV~ BEGIN
+	COPY ~JA#BGT_AdvPack/Merchants_League/AM0704.WAV~ ~override~
+END
+
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#MLBAR.STO~ ~override~
+
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.CRE~ ~override~
+	SAY NAME1 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
+
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DOPP0.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP1.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP2.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP3.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP4.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP5.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP6.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP7.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP8.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Merchants_League/JA#DOPP9.CRE~ ~override~
+	SAY NAME1 @2120
+	SAY NAME2 @2120
+	WRITE_ASCII SCRIPT_OVERRIDE ~None~ #8
+	WRITE_ASCII SCRIPT_CLASS ~None~ #8
+	WRITE_ASCII SCRIPT_RACE ~JA#DOPP~ #8
+	WRITE_ASCII SCRIPT_GENERAL ~None~ #8
+	WRITE_ASCII SCRIPT_DEFAULT ~WTASIGHT~ #8
+	WRITE_ASCII DEATHVAR ~DopZorl~ #32
+	PATCH_IF GAME_IS ~bgee~ BEGIN
+		GET_OFFSET_ARRAY items CRE_V10_ITEMS
+		PHP_EACH items AS i => item BEGIN
+			READ_ASCII item item_filename
+			PATCH_IF (~%item_filename%~ STR_EQ ~RNDTRE09~) BEGIN // Rich treasure
+				WRITE_ASCII item ~RNDTRE05~ #8
+			END
+		END
+	END
+
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#ZRLKY.BAM~ ~override~
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#ZRLKY.ITM~ ~override~
+	SAY NAME1 @2103
+	SAY NAME2 @2103
+	SAY IDENTIFIED_DESC @2104
+
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DZORL.ITM~ ~override~
+	SAY NAME1 @2105
+	SAY NAME2 @2105
+	SAY IDENTIFIED_DESC @2106
+
+COPY ~JA#BGT_AdvPack/Merchants_League/JA#DIRLE.ITM~ ~override~
+	SAY NAME1 @2107
+	SAY NAME2 @2107
+	SAY IDENTIFIED_DESC @2108
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ALDET.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUALD.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUDEA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#CUDEB.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DEAGA.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#DOPP.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#IRLEN.BAF~
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~JA#ZORL.BAF~ BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/JA#ZORL.BAF~
+END ELSE BEGIN
+	EXTEND_BOTTOM ~JA#ZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#ZORL.BAF~ EVALUATE_BUFFER
+END
+
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	// On doppelganger reveal, change Zorl(Shalak) and Irlentree(Jased) to DOPPLEGANGER_GREATER
+	EXTEND_TOP ~DOPZORL.BCS~ ~JA#BGT_AdvPack/Merchants_League/DOPZORL.BAF~ EVALUATE_BUFFER
+
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#IrlentreLocation.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#ZorlLocation.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#IrlentreLocation.BAF~ EVALUATE_BUFFER
+	EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/JA#ZorlLocation.BAF~ EVALUATE_BUFFER
+END
+EXTEND_TOP ~%NBaldursGate_ThreeOldKegs_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7219.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7228.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L3_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7229.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%NBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Merchants_League/AR7300.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~IRLENTRE.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~CreateCreature("DOPZORL",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))~ ~NoAction()~
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%SWBaldursGate_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~SetGlobal("SpawnDabron","GLOBAL",1)~ ~NoAction()~
+		REPLACE_TEXTUALLY CASE_SENSITIVE ~CreateCreature("ALDETH",\[3507\.2477\],[0S])~ ~Continue()~
+	END
+BUT_ONLY
+
+
+COPY_EXISTING ~ALDETH.DLG~ ~override~
+			  ~FLAMAL.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~ActionOverride("Brandi",EscapeArea())~ ~\0 ActionOverride("JA#DEAGA",EscapeArea())~
+	END
+BUT_ONLY
+
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	LAF GET_DLG_STRREF
+		INT_VAR idx_state = 13
+		STR_VAR dlg_file = ~ALDETH.DLG~
+		RET aldeth_state13_journal = journal_strref
+	END
+
+	<<<<<<<< ...inlined/aldeth_bgt.d
+	ALTER_TRANS ALDETH
+	BEGIN JA#ALDETH_00 END
+	BEGIN 0 END
+	BEGIN
+	  "UNSOLVED_JOURNAL" ~%aldeth_state13_journal%~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
+END ELSE BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#bart10.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#brandi.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#deaga.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#dopp.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#merchg.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#merlea.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#mlcok.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	LAF GET_DLG_STRREF
+		INT_VAR idx_state = 0
+		STR_VAR dlg_file = ~IRLENT.DLG~
+		RET irlent_state00_journal = journal_strref
+	END
+
+	<<<<<<<< ...inlined/irlent_bgt.d
+	ALTER_TRANS IRLENT
+	BEGIN 0 END
+	BEGIN 1 END
+	BEGIN
+	  "UNSOLVED_JOURNAL" ~%irlent_state00_journal%~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/irlent_bgt.d~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#irlent.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#zorl.d~
+
+ADD_JOURNAL @12 @17 USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
+ADD_JOURNAL EXISTING @1025 @1026 @1027 @1028 @1029 @1030
+
+
+COPY_EXISTING ~IRLENT.CRE~ ~override~
+	WRITE_BYTE 0x271 255 // General: MONSTER
+	WRITE_BYTE 0x272 106 // Race: DOPPLEGANGER
+	WRITE_BYTE 0x273 112 // Class: DOPPLEGANGER_GREATER
+	WRITE_BYTE 0x275 4   // Gender: NIETHER
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#IRLEN~ END
+	REPLACE_CRE_ITEM ~CHAN04~ #0 #0 #0 ~NONE~ ~ARMOR~ EQUIP
+BUT_ONLY
+
+COPY_EXISTING ~ZORL.CRE~ ~override~
+	SAY NAME1 @2109
+	SAY NAME2 @2109
+	WRITE_BYTE 0x271 255 // General: MONSTER
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ZORL~ END
+	ADD_CRE_ITEM ~JA#ZRLKY~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
+BUT_ONLY
+
+COPY_EXISTING ~ALDETH.CRE~ ~override~
+	LPF ADD_CRE_SCRIPT STR_VAR script_new = ~JA#ALDET~ END
+BUT_ONLY
+
+
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L1%.ARE~ ~override~
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord     = 914
+		y_coord     = 528
+		dest_x      = 914
+		dest_y      = 528
+		orient      = 0
+		STR_VAR
+		actor_name  = ~Irlentree~
+	END
+	// add new actors
+	PATCH_DEFINE_ARRAY x_coord BEGIN 1103 1176 779 1048 688 632 711 219 402 1125 END
+	PATCH_DEFINE_ARRAY y_coord BEGIN 587  577  888 757  598 576 301 487 606 500 END
+	PATCH_DEFINE_ARRAY orient  BEGIN 11   2    6   8    5   13  0   14  6   3 END
+	PHP_EACH x_coord AS i => x BEGIN
+		LPF fj_are_structure
+			INT_VAR
+			fj_loc_x          = $x_coord("%i%")
+			fj_loc_y          = $y_coord("%i%")
+			fj_dest_x         = $x_coord("%i%")
+			fj_dest_y         = $y_coord("%i%")
+			fj_orientation    = $orient("%i%")
+			STR_VAR
+			fj_structure_type = actor
+			fj_name           = ~Gast~
+			fj_cre_resref     = EVAL ~JA#DOPP%i%~
+			fj_dlg_resref     = EVAL ~JA#DOPP%i%~
+		END
+	END
+	// add ambient
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x           = 50
+		fj_loc_y           = 50
+		fj_radius          = 500
+		fj_volume_variance = 40
+		fj_sound_num       = 1
+		fj_flags           = 0b0000000111
+		STR_VAR
+		fj_structure_type = ambient
+		fj_name           = ~Main Ambient~
+		fj_wav_resref0    = ~AM0704~
+	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L2%.ARE~ ~override~
+	LPF ALTER_AREA_ACTOR
+		STR_VAR
+		actor_name  = ~Female Cook~
+		dlg_file    = ~JA#MLCOK~
+	END
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord     = 1352
+		y_coord     = 671
+		dest_x      = 1352
+		dest_y      = 671
+		STR_VAR
+		actor_name  = ~Zorl~
+	END
+	LPF ALTER_AREA_CONTAINER
+		STR_VAR
+		container_name  = ~Container 2~
+		lock_difficulty = 80
+		container_key   = ~JA#ZRLKY~
+	END
+	// add ambient
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x           = 50
+		fj_loc_y           = 50
+		fj_radius          = 500
+		fj_volume_variance = 20
+		fj_sound_num       = 1
+		fj_flags           = 0b0000000111
+		STR_VAR
+		fj_structure_type = ambient
+		fj_name           = ~Main Ambient~
+		fj_wav_resref0    = ~AM0704~
+	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%SWBaldursGate_MerchantLeague_L3%.ARE~ ~override~
+	// add ambient
+	LPF fj_are_structure
+		INT_VAR
+		fj_loc_x           = 50
+		fj_loc_y           = 50
+		fj_radius          = 500
+		fj_volume_variance = 20
+		fj_sound_num       = 1
+		fj_flags           = 0b0000000111
+		STR_VAR
+		fj_structure_type = ambient
+		fj_name           = ~Main Ambient~
+		fj_wav_resref0    = ~AM0704~
+	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
+BUT_ONLY
+
+COPY_EXISTING ~%UlgothsBeard_House2%.ARE~ ~override~
+	LPF REPLACE_AREA_ITEM STR_VAR old_item = ~SW1H03~ new_item = ~SW1H02~ END
+BUT_ONLY

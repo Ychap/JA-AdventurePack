@@ -1,0 +1,34 @@
+DEFINE_ACTION_FUNCTION GET_DLG_STRREF
+	INT_VAR idx_state = 0
+			idx_response = 0
+	STR_VAR dlg_file = ~~
+	RET state_strref
+		response_strref
+		journal_strref
+BEGIN
+	COPY_EXISTING ~%dlg_file%~ ~override~
+		READ_LONG 0x08 num_states
+		PATCH_IF (idx_state >= num_states) BEGIN
+			PATCH_FAIL ~GET_DLG_STRREF: In %dlg_file% state %idx_state% is out of bound!~
+		END
+
+		READ_LONG 0x0c ofs_states
+		READ_LONG 0x14 ofs_responses
+		READ_LONG 0x18 ofs_state_triggers
+		READ_LONG 0x20 ofs_response_triggers
+		READ_LONG 0x28 ofs_actions
+
+		SET state = ofs_states + (idx_state * 0x10)
+		READ_LONG (state + 0x0) state_strref
+		READ_LONG (state + 0x4) idx_first_response
+		READ_LONG (state + 0x8) num_responses
+		// READ_LONG (state + 0xc) state_weight
+		PATCH_IF (idx_response >= num_responses) BEGIN
+			PATCH_FAIL ~GET_DLG_STRREF: In %dlg_file% state %idx_state% response %idx_response% is out of bound!~
+		END
+
+		SET response = ofs_responses + ((idx_first_response + idx_response) * 0x20)
+		READ_LONG (response + 0x4) response_strref
+		READ_LONG (response + 0x8) journal_strref
+	BUT_ONLY
+END

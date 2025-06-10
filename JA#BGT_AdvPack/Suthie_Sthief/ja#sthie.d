@@ -1,16 +1,18 @@
 BEGIN ~JA#STHIE~
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+IF ~NumTimesTalkedTo(0)~ THEN 0
   SAY @0
   IF ~~ THEN EXIT
 END
 
-IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER)~ THEN BEGIN 1
+IF ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER)~ THEN 1
   SAY @1
   IF ~~ THEN EXIT
 END
 
-IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN BEGIN 2
+IF ~ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)~ THEN 2
   SAY @2
   IF ~~ THEN EXIT
 END
+
+// END JA#STHIE

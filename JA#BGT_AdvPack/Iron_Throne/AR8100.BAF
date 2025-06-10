@@ -1,0 +1,10 @@
+IF
+	Global("JA#THRONE_DOOR","%BaldursGateDocks%",0)
+	GlobalGT("EnteredIronThrone","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#THRONE_DOOR","%BaldursGateDocks%",1)
+		Unlock("DOOR0616")
+		OpenDoor("DOOR0616")
+		Continue()
+END

@@ -1,0 +1,56 @@
+IF
+	Global("JA#DOPPELGANGER_SPAWN","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#DOPPELGANGER_SPAWN","GLOBAL",2)
+		CreateCreature("JA#DOPP0",[696.569],8) // Gast
+		CreateCreature("JA#DOPP1",[990.562],4) // Gast
+		CreateCreature("JA#DOPP4",[826.704],7) // Gast
+		CreateCreature("JA#DOPP2",[752.621],3) // Gast
+		CreateCreature("JA#DOPP3",[505.688],8) // Gast
+		CreateCreature("JA#DOPP5",[577.733],10) // Gast
+		CreateCreature("JA#DOPP6",[437.641],11) // Gast
+		CreateCreature("JA#DOPP8",[905.422],3) // Gast
+		CreateCreature("JA#DOPP7",[860.464],6) // Gast
+		CreateCreature("JA#DOPP9",[964.497],4) // Gast
+		ActionOverride("DOPZORL",NoAction()) // Compatibility with SCS
+		Continue()
+END
+
+IF
+	Global("JA#CUIRL","GLOBAL",1)
+	Global("ZorlDopple","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		CreateCreature("ALDETH",[353.395],11) // Aldeth Sashenstar
+		Wait(1)
+		ActionOverride("Aldeth",SetNumTimesTalkedTo(2))
+		SetGlobal("HelpBrandilar","GLOBAL",2)
+		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1)
+		SetGlobal("JA#CUIRL","GLOBAL",2)
+		Wait(1)
+		StartCutScene("JA#CUIRL")
+END
+
+IF
+	Global("ZorlDopple","GLOBAL",1)
+	Global("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",1)
+		SetGlobal("JA#MERLEA_MYST","GLOBAL",1)
+		SetGlobal("HelpBrandilar","GLOBAL",2)
+		SetGlobal("JA#CUTSCENE_ACTIVE","%SWBaldursGate_MerchantLeague_L3%",2) // cutscene is over
+END
+
+IF
+	NumDeadGT("DopZorl",9)
+	Dead("Zorl")
+	Dead("Irlentre")
+	Global("AldethDopple","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AldethDopple","GLOBAL",6)
+END

@@ -1,26 +1,26 @@
-@0  = ~Well, I'm leaving.~ 
+@0  = ~Well, I'm leaving.~
 @1  = ~Keep to the shadows! There are many dangers lurking in this city. Take care of the Iron Throne, then a lot of things will clear up by themselves. Look for me at Elfsong tavern, when you have progressed further.~
 @3  = ~If you have made progress in the matter, look for me at Elfsong tavern.~
-@4  = ~If you have learned more, then look for me at Elfsong tavern.~ 
+@4  = ~If you have learned more, then look for me at Elfsong tavern.~
 @5  = ~Ah yes, what do we have here? It looks like some busybodies snooping around in our affairs! Busybodies of the worst kind, it seems to me!~
 @6  = ~Damn Harper's brood! Why must you always put your dirty nose in things not concerning you, huh?! A bad habit I intend to expel! Come on, guys, show them!~
-@7  = ~Oh, no! You again? Will you continue to keep us from our duties with your lack of understanding?~ 
+@7  = ~Oh, no! You again? Will you continue to keep us from our duties with your lack of understanding?~
 @8  = ~What exactly are these duties?~
-@9  = ~By the way you look these can hardly be honorable duties... No, really, you are very much like a couple of tramps I dealed with recently.~ 
+@9  = ~By the way you look these can hardly be honorable duties... No, really, you are very much like a couple of tramps I dealed with recently.~
 @10  = ~No, alright, I'm already gone.~
 @11 = ~That's really none of your business. Listen, we do know of your role in this game. Although we are enemies of the Iron Throne, that still does not make us friends. So stay away from us.~
-@12 = ~Really? You are interested in the schemes of the Iron Throne, too?~ 
+@12 = ~Really? You are interested in the schemes of the Iron Throne, too?~
 @13 = ~How do you know about "my role in this game"?~
-@14 = ~Oh well. Farewell.~ 
+@14 = ~Oh well. Farewell.~
 @15 = ~For that you will suffer indescribable pain! Guys, tear the grin off their faces!~
 @16 = ~Quiet now! This is nothing to be discussed publicly in this city. Examine the tower of the Iron Throne in the west section of the city. That's all I can tell you at this time.~
 @17 = ~Well, I have my sources and I am well informed about your past deeds. You could actually prove to be beneficial in this matter. Examine the tower of the Iron Throne in the west section of the city. That's all I can tell you at this time.~
-@18 = ~Please keep away. Your presence puts us all in danger.~ 
+@18 = ~Please keep away. Your presence puts us all in danger.~
 @19 = ~Shut hut harper bitch! Save us your hypocritical babble of do-gooders and get ready to die!~
-@20 = ~Is Xzar dead? Everything is looking dark, that's not a good omen for our plans. The events here in Baldur's Gate slowly but surely are running out of control. We will have to reconsider our plans.~ 
-@21 = ~I wish you luck with your business against the Iron Throne. That's all that you can expect from me.~ 
+@20 = ~Is Xzar dead? Everything is looking dark, that's not a good omen for our plans. The events here in Baldur's Gate slowly but surely are running out of control. We will have to reconsider our plans.~
+@21 = ~I wish you luck with your business against the Iron Throne. That's all that you can expect from me.~
 @22 = ~Xzar really moves in bad company. That's not like him...~
-@23 = ~What are people like you doing here?~ 
+@23 = ~What are people like you doing here?~
 @24 = ~There you are. Did you take a closer look at the tower of the Iron Throne?~
 @25 = ~Yes, we have examined the tower of the Iron Throne and found that their leaders Rieltar and Bruno are behind it all. They are currently in Candlekeep. So I'll have to go there.~
 @26 = ~No, we didn't make any progress yet. Farewell.~
@@ -55,7 +55,3 @@ We have reported to Xzar's superior, Niemain, what happened in the tower of the 
 @53   = ~Endgame
 
 Niemain of the Zentarim didn't encourage me. Everything seems to turn against us and the triumph of Sarevok seems imminent.~
-
-/* new for v 0.7 */
-@54  = ~<CHARNAME>.~
-@55  = ~What now?!~

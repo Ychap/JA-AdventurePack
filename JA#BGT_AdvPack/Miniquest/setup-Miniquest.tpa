@@ -1,121 +1,55 @@
-////////////////////////////////////////////////////////////
-// Mini-Quest: "Das Rätsel um die verstummte Geisterstimme" 
-////////////////////////////////////////////////////////////
-ACTION_IF GAME_IS ~bgt~ AND NOT MOD_IS_INSTALLED ~setup-infinityanimations.tp2~ 0 BEGIN
-	FAIL @37
-END
+//////////////////////////////////////////////////////////
+// Mini-Quest: "The mystery of the silent ghostly voice"
+//////////////////////////////////////////////////////////
+
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#C00.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%Beregost_House13_L1%~ #8 // WED resource
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name      = ~Door8200~
+		destination_area = EVAL ~%SEBaldursGate%~
+	END
+
+COPY ~JA#BGT_AdvPack/Miniquest/JA#C01.ARE~ ~override~
+	WRITE_ASCIIE 0x8 ~%Beregost_House13_L2%~ #8 // WED resource
+
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#BEHOL.BAM~ ~override~
+
 COPY ~JA#BGT_AdvPack/Miniquest/JA#HRP01.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Miniquest/JA#CHRP1.BAM~ ~override~
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#HRP01.ITM~ ~override~
 	SAY NAME1 @13
 	SAY NAME2 @13
-	SAY DESC @14
+	SAY IDENTIFIED_DESC @14
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#HRP02.ITM~ ~override~
 	SAY NAME1 @13
 	SAY NAME2 @13
 	SAY UNIDENTIFIED_DESC @14
-	SAY DESC @15
+	SAY IDENTIFIED_DESC @15
 
-
-COPY_EXISTING ~BART8.CRE~ ~override~
-	SAY NAME1 @16
-	SAY NAME2 @16
-
-COPY_EXISTING ~ALYTH.CRE~ ~override~
-	SAY NAME1 @17
-	SAY NAME2 @18
-//WRITE_SHORT 0x28 0x1163 //make her halfelf
-//WRITE_SHORT 0x272 0x03
-//WRITE_SHORT 0x273 0x04
-
-ACTION_IF (FILE_EXISTS_IN_GAME ubtavern.mve) BEGIN
-	PRINT ~Skipping Restored Elfsong Tavern Movie: Is already restored by another mod.~
-END ELSE BEGIN
-	COPY ~JA#BGT_AdvPack/Miniquest/JA#TAVER.MVE~ ~override~
-END
-
-
-EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7704.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706.BAF~ EVALUATE_BUFFER
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#CUKEG.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#KEG01.BAF~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#ESELY.BAF~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#THF01.BAF~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#THF02.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#705TR.BAF~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILY2.BAF~
-
-
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#ALYTH.D~
-	REPLACE_TEXTUALLY ~#999999~ ~@1000~
-	REPLACE_TEXTUALLY ~999999~ ~@1000~
-	REPLACE_TEXTUALLY ~999998~ ~@1001~
-	REPLACE_TEXTUALLY ~999997~ ~@1002~
-	REPLACE_TEXTUALLY ~999996~ ~@1003~
-	REPLACE_TEXTUALLY ~999995~ ~@1004~
-	REPLACE_TEXTUALLY ~999994~ ~@1005~
-	REPLACE_TEXTUALLY ~999993~ ~@1006~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#BRULGON.D~
-	REPLACE_TEXTUALLY ~#999998~ ~@1001~
-	
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	OUTER_SPRINT storename ~TAV0705~
-END
-ACTION_IF GAME_IS ~eet bgee~ BEGIN
-	OUTER_SPRINT storename ~inn0705~
-END
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#BARTLEY.D~
-COPY_EXISTING ~%storename%.STO~ ~override~
-	WRITE_ASCII 0x44 ~JA#RUM01~ #8
-
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#NATHAN.D~
-	REPLACE_TEXTUALLY ~#999997~ ~@1002~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#SERW1.D~
-	REPLACE_TEXTUALLY ~#999995~ ~@1004~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#COOK1.D~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#RUM01.D~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#MTOB5.D~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILY1.D~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILY2.D~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#WILYN.D~
-	REPLACE_TEXTUALLY ~#999996~ ~@1003~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#VAALA.D~
-	REPLACE_TEXTUALLY ~#999994~ ~@1005~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#ESELY.D~
-	REPLACE_TEXTUALLY ~#999993~ ~@1006~
-COMPILE ~JA#BGT_AdvPack/Miniquest/JA#ETC00.D~
-
-
-COPY ~JA#BGT_AdvPack/Miniquest/JA#THF01.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF02.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF03.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF04.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF05.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#THF06.CRE~ ~override~
-	SAY NAME1 @19
-	SAY NAME2 @19
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#ETC01.CRE~ ~override/JA#ETC03.CRE~
+	 ~JA#BGT_AdvPack/Miniquest/JA#ETC02.CRE~ ~override/JA#ETC04.CRE~
 	SAY NAME1 @20
 	SAY NAME2 @20
+	WRITE_ASCIIE DIALOG ~%DEST_RES%~ #8
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#BRULG.CRE~ ~override~
 	SAY NAME1 @21
-	SAY NAME2 @22
+	SAY NAME2 @21
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#NATHA.CRE~ ~override~
 	SAY NAME1 @23
 	SAY NAME2 @23
 
 COPY ~JA#BGT_AdvPack/Miniquest/JA#WILYN.CRE~ ~override~
-	~JA#BGT_AdvPack/Miniquest/JA#WILY1.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Miniquest/JA#WILY1.CRE~ ~override~
 	SAY NAME1 @24
 	SAY NAME2 @24
 
@@ -127,106 +61,132 @@ COPY ~JA#BGT_AdvPack/Miniquest/JA#ESELY.CRE~ ~override~
 	SAY NAME1 @26
 	SAY NAME2 @26
 
-COPY_EXISTING ~SERWEN.CRE~ ~override/JA#SERW1.CRE~
+COPY ~JA#BGT_AdvPack/Miniquest/JA#SERW1.CRE~ ~override~
 	SAY NAME1 @27
-	SAY NAME2 @28
-	WRITE_ASCII 0x2cc ~JA#SERW1~ #8 //DLG
+	SAY NAME2 @27
 
 
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	ACTION_IF NOT FILE_EXISTS ~µbea1.bam~ THEN BEGIN		//0x525B µbe BGT+Infinity   0xCC00 MKG1 BGEE
-		COPY ~JA#BGT_AdvPack/Miniquest/Keg1~ ~override~
-	END
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/JA#WILY1.BAF~
+
+
+MKDIR ~music/JA#ESTA~
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTAA.ACM~ ~music/JA#ESTA~
+COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~music~
+
+ADD_MUSIC ~JA#ESTA~ ~music/JA#ESTA.MUS~
+
+EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/JA#ESTA_REPEAT.BAF~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/JA#ESTA_REPEAT.BAF~ EVALUATE_BUFFER
+
+EXTEND_TOP ~%EBaldursGate_SorcerousSundries_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7704.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706.BAF~ EVALUATE_BUFFER
+
+
+LAF GET_DLG_SCRIPT
+	INT_VAR idx_state = 0
+	STR_VAR dlg_file = ~BART8.DLG~
+	RET bart8_startstore_action = response_action
 END
-COPY ~JA#BGT_AdvPack/Miniquest/JA#KEG01.CRE~ ~override~
-	SAY NAME1 @29
-	SAY NAME2 @29
-	PATCH_IF GAME_IS ~eet bgee~ BEGIN
-		WRITE_LONG 0x28	0xCC00
-	END
 
-COPY ~JA#BGT_AdvPack/Miniquest/JA#KEG02.CRE~ ~override~
-	SAY NAME1 @30
-	SAY NAME2 @31
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#alyth.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#bartley.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#brulgon.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#esely.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#etc00.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#mtob5.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#nathan.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#rum01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#serw1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#vaala.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wily1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#wilyn.d~
 
-COPY_EXISTING ~MCOOK2.CRE~ ~override/JA#COOK1.CRE~
-	WRITE_ASCII 0x280 ~JA#MCOOK2~ #32
-	WRITE_ASCII 0x2cc ~JA#MCOOK2~ #8 //DLG
+// NTotSC
+ACTION_IF FILE_EXISTS_IN_GAME ~NTOUPAST.DLG~ BEGIN
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Miniquest/ja#mtob5.d~
+		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~MTOB5~ ~NTOUPAST~
+END
 
-COPY ~JA#BGT_AdvPack/Miniquest/JA#C00.ARE~ ~override~
-	PATCH_IF GAME_IS ~bgee eet~ BEGIN
-		LPF ALTER_AREA_REGION
-			STR_VAR region_name			= ~Door8200~
-					destination_area	= EVAL ~%SEBaldursGate%~
-		END
-	END
-COPY ~JA#BGT_AdvPack/Miniquest/JA#C01.ARE~ ~override~
+ADD_JOURNAL @70 @1000 @1001 @1002 @1003 @1004 @1005 @1006 USING ~JA#BGT_AdvPack/languages/%s/ja#alyth.tra~
+
+
+COPY_EXISTING ~ALYTH.CRE~ ~override~
+	SAY NAME1 @17
+	SAY NAME2 @17
+	// WRITE_LONG 0x28 0x1163 // make her halfelf
+	// WRITE_BYTE 0x272 03 // Race: HALF_ELF
+	// WRITE_BYTE 0x273 12 // Class: RANGER
+BUT_ONLY
+
+// BG1UB/BGEE/EET
+COPY_EXISTING ~BART8.CRE~ ~override~
+	SAY NAME1 @16
+	SAY NAME2 @16
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~TAV0705.STO~ ~override~ // ALYTH.DLG(BGT/EE) und BART8.DLG(BGT/EE with bg1ub)
+			  ~INN0705.STO~ ~override~ // BART8.DLG(EE without bg1ub)
+	WRITE_ASCII 0x44 ~JA#RUM01~ #8
+BUT_ONLY IF_EXISTS
+
 
 COPY_EXISTING ~%SEBaldursGate%.ARE~ ~override~
-	LPF  ~fj_are_structure~
+	LPF fj_are_structure
 		INT_VAR
-		fj_type         = 2    //travel
-		fj_box_left     = 1819  //kleinstes x
-		fj_box_top      = 1769  //kleinstes y
-		fj_box_right    = 1945  //größtes x
-		fj_box_bottom   = 1896   //größtes y
-		fj_cursor_idx   = 30   //door
-		fj_loc_x		= 1817
-		fj_loc_y		= 1847
-		fj_vertex_0     = 1819 + (1875 << 16)   //kleinstes x +  kleinstes y
-		fj_vertex_1     = 1863 + (1769 << 16)   //größtes x + kleinstes y
-		fj_vertex_2     = 1945 + (1780 << 16)   //größtes x + größtes y
-		fj_vertex_3     = 1908 + (1896 << 16)   //kleinstes x + größtes y
+		fj_type         = 2     // travel
+		fj_box_left     = 1819  // kleinstes x
+		fj_box_top      = 1769  // kleinstes y
+		fj_box_right    = 1945  // größtes x
+		fj_box_bottom   = 1896  // größtes y
+		fj_cursor_idx   = 30    // door
+		fj_loc_x        = 1817
+		fj_loc_y        = 1847
+		fj_vertex_0     = 1819 + (1875 << 16)   // kleinstes x +  kleinstes y
+		fj_vertex_1     = 1863 + (1769 << 16)   // größtes x + kleinstes y
+		fj_vertex_2     = 1945 + (1780 << 16)   // größtes x + größtes y
+		fj_vertex_3     = 1908 + (1896 << 16)   // kleinstes x + größtes y
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = DOORJA#C00
-		fj_destination_area = JA#C00
-		fj_destination_name = FR8200
-	END
-	LPF  ~fj_are_structure~
-		INT_VAR
-		fj_loc_x       = 1730    //x
-		fj_loc_y       = 1828   //y
-		fj_orientation = 13  //
-		STR_VAR
-		fj_structure_type = entrance
-		fj_name           = Frja#C00
-	END
-
-COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
-	//delete actors
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~SERWEN~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~MCOOK2~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
+		fj_name             = ~DOORJA#C00~
+		fj_destination_area = ~JA#C00~
+		fj_destination_name = ~FR8200~
 	END
 	LPF fj_are_structure
-		INT_VAR fj_delete_mode = 0
-		STR_VAR fj_structure_type = ambient
+		INT_VAR
+		fj_loc_x       = 1730
+		fj_loc_y       = 1828
+		fj_orientation = 13
+		STR_VAR
+		fj_structure_type = entrance
+		fj_name           = ~Frja#C00~
 	END
-	//add new actors
+BUT_ONLY
+
+COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord     = 560
+		y_coord     = 725
+		dest_x      = 560
+		dest_y      = 725
+		orient      = 8
+		STR_VAR
+		actor_name  = ~Serving Wench~
+		cre_file    = ~JA#SERW1~
+		dlg_file    = ~~
+	END
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 417
 		fj_loc_y          = 865
 		fj_dest_x         = 417
 		fj_dest_y         = 865
-		fj_orientation    = 9      
+		fj_orientation    = 9
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Nathan
-		fj_cre_resref     = JA#NATHA
-		fj_dlg_resref	  = JA#NATHA
+		fj_name           = ~Nathan~
+		fj_cre_resref     = ~JA#NATHA~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -234,38 +194,11 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 360
 		fj_dest_x         = 784
 		fj_dest_y         = 360
-		fj_orientation    = 11     
+		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Brulgon
-		fj_cre_resref     = JA#BRULG
-		fj_dlg_resref	  = JA#BRULG
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 560
-		fj_loc_y          = 725
-		fj_dest_x         = 560
-		fj_dest_y         = 725
-		fj_orientation    = 8      
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = Bekki
-		fj_cre_resref     = JA#SERW1
-		fj_dlg_resref	  = JA#SERW1
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 409
-		fj_loc_y          = 418
-		fj_dest_x         = 409
-		fj_dest_y         = 418
-		fj_orientation    = 13     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = Koch
-		fj_cre_resref     = JA#COOK1
-		fj_dlg_resref	  = JA#COOK1
+		fj_name           = ~Brulgon~
+		fj_cre_resref     = ~JA#BRULG~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -273,12 +206,11 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 728
 		fj_dest_x         = 735
 		fj_dest_y         = 728
-		fj_orientation    = 0      
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC01
-		fj_dlg_resref	  = JA#ETC01
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -286,12 +218,11 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 644
 		fj_dest_x         = 665
 		fj_dest_y         = 644
-		fj_orientation    = 3      
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC01
-		fj_dlg_resref	  = JA#ETC03
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC03~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -299,12 +230,11 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 422
 		fj_dest_x         = 931
 		fj_dest_y         = 422
-		fj_orientation    = 3      
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC01
-		fj_dlg_resref	  = JA#ETC01
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -312,12 +242,11 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 629
 		fj_dest_x         = 640
 		fj_dest_y         = 629
-		fj_orientation    = 1      
+		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC02
-		fj_dlg_resref	  = JA#ETC02
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC02~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -325,12 +254,11 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 405
 		fj_dest_x         = 860
 		fj_dest_y         = 405
-		fj_orientation    = 15     
+		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC02
-		fj_dlg_resref	  = JA#ETC04
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC04~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -338,12 +266,11 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 747
 		fj_dest_x         = 795
 		fj_dest_y         = 747
-		fj_orientation    = 3      
+		fj_orientation    = 3
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Gast
-		fj_cre_resref     = JA#ETC02
-		fj_dlg_resref	  = JA#ETC02
+		fj_name           = ~Gast~
+		fj_cre_resref     = ~JA#ETC02~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -351,97 +278,92 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
 		fj_loc_y          = 506
 		fj_dest_x         = 594
 		fj_dest_y         = 506
-		fj_orientation    = 1    
-		fj_schedule		  = 0b111111100000000000011111
+		fj_orientation    = 1
+		fj_schedule       = 0b111111100000000000011111
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Wilyn
-		fj_cre_resref     = JA#WILY1
-		fj_dlg_resref	  = JA#WILY1
+		fj_name           = ~Wilyn~
+		fj_cre_resref     = ~JA#WILY1~
 	END
+	// add region trigger
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 980
-		fj_loc_y          = 577
-		fj_dest_x         = 980
-		fj_dest_y         = 577
-		fj_orientation    = 1    
-		fj_schedule		  = 0b000000011111111111100000
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = Phandalyn
-		fj_cre_resref     = PHANDA
-		fj_dlg_resref	  = PHANDA
-	END
-	//add region triggers
-	LPF fj_are_structure
-		INT_VAR
-		fj_type         = 1    //info
-		fj_box_left     = 882
-		fj_box_top      = 203
-		fj_box_right    = 931
-		fj_box_bottom   = 279
-		fj_cursor_idx	= 22
-		fj_loc_x		= 891
-		fj_loc_y		= 203
-		fj_vertex_0     = 891 + (203 << 16)
-		fj_vertex_1     = 931 + (234 << 16)
-		fj_vertex_2     = 925 + (279 << 16)
-		fj_vertex_3     = 882 + (252 << 16)
+		fj_type              = 1    // info
+		fj_box_left          = 882
+		fj_box_top           = 203
+		fj_box_right         = 931
+		fj_box_bottom        = 279
+		fj_cursor_idx        = 22
+		fj_info_point_strref = RESOLVE_STR_REF (@32)
+		fj_loc_x             = 891
+		fj_loc_y             = 203
+		fj_vertex_0          = 891 + (203 << 16)
+		fj_vertex_1          = 931 + (234 << 16)
+		fj_vertex_2          = 925 + (279 << 16)
+		fj_vertex_3          = 882 + (252 << 16)
 		STR_VAR
 		fj_structure_type   = region
-		fj_name             = JA#BEHOL
+		fj_name             = ~JA#BEHOL~
 	END
-	// Add Ambient 1
+	LPF fj_are_structure
+		INT_VAR fj_delete_mode = 0
+		STR_VAR fj_structure_type = ambient
+	END
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 384
-		fj_loc_y           = 320 
+		fj_loc_y           = 320
 		fj_radius          = 500
-		fj_volume_variance = 100 
+		fj_volume_variance = 100
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags            = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = AMB_M08A
+		fj_wav_resref0    = ~AMB_M08A~
 	END
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 100 
+		fj_volume_variance = 100
 		fj_sound_num       = 7
-		fj_flags 		   = 0b0000001001
-		fj_delay		   = 150
-		fj_variation 	   = 25
+		fj_flags           = 0b0000001001
+		fj_delay           = 150
+		fj_variation       = 25
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~SS-Glass Break 1~
-		fj_wav_resref0    = AM0406D1
-		fj_wav_resref1    = AM0406D2
-		fj_wav_resref2    = AM0406D3
-		fj_wav_resref3    = AM0406D4
-		fj_wav_resref4    = AM0406D5
-		fj_wav_resref5    = AM0406D6
-		fj_wav_resref6    = AM0406D7
+		fj_wav_resref0    = ~AM0406D1~
+		fj_wav_resref1    = ~AM0406D2~
+		fj_wav_resref2    = ~AM0406D3~
+		fj_wav_resref3    = ~AM0406D4~
+		fj_wav_resref4    = ~AM0406D5~
+		fj_wav_resref5    = ~AM0406D6~
+		fj_wav_resref6    = ~AM0406D7~
 	END
-	//animation
+	// animation
 	LPF fj_are_structure
-	  INT_VAR
+		INT_VAR
 		fj_loc_x = 906
 		fj_loc_y = 246
-		fj_schedule = 0b111111111111111111111111 //Hours 0.00 - 24.00
+		fj_schedule = 0b111111111111111111111111 // Hours 0.00 - 24.00
 		fj_flags = 0b0001000011
 		STR_VAR
 		fj_structure_type = animation
-		fj_name = Beholder
-		fj_bam_resref = JA#BEHOL
+		fj_name = ~Beholder~
+		fj_bam_resref = ~JA#BEHOL~
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
 BUT_ONLY
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
@@ -449,32 +371,26 @@ COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 		INT_VAR fj_delete_mode = 0
 		STR_VAR fj_structure_type = ambient
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 384
-		fj_loc_y           = 320 
+		fj_loc_y           = 320
 		fj_radius          = 500
-		fj_volume_variance = 70 
+		fj_volume_variance = 70
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = AMB_M08A
+		fj_wav_resref0    = ~AMB_M08A~
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
 BUT_ONLY
-
-MKDIR ~Music\JA#ESTA~
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTAA.ACM~ ~Music\JA#ESTA~
-COPY ~JA#BGT_AdvPack/Miniquest/JA#ESTA.MUS~ ~Music~
-
-ADD_MUSIC ~JA#ESTA~ ~Music\JA#ESTA.mus~ 
-
-EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L1%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7705B.BAF~
-	REPLACE_TEXTUALLY 999999 ~%JA#ESTA%~
-EXTEND_BOTTOM ~%EBaldursGate_ElfsongTavern_L2%.BCS~ ~JA#BGT_AdvPack/Miniquest/AR7706B.BAF~
-	REPLACE_TEXTUALLY 999999 ~%JA#ESTA%~

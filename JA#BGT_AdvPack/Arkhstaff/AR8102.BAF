@@ -1,22 +1,22 @@
 IF
-	OnCreation()
-	Global("Chapter","GLOBAL",%tutu_chapter_7%)
-	Global("JA#KILL","%BaldursGateDocks_OgreMagiHouse_L2%",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#KILL","%BaldursGateDocks_OgreMagiHouse_L2%",0)
-		Kill("JA#ARKHS")
-		Kill("JA#THALD")
-END
-
-IF
-	OnCreation()
 	GlobalLT("Chapter","GLOBAL",%tutu_chapter_7%)
 	Global("JA#SAVETHALDO","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#SAVETHALDO","GLOBAL",2)
 		CreateCreature("JA#THALD",[768.446],14)
+		Continue()
+END
+
+IF
+	Global("Chapter","GLOBAL",%tutu_chapter_7%)
+	Global("JA#KILL","%BaldursGateDocks_OgreMagiHouse_L2%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#KILL","%BaldursGateDocks_OgreMagiHouse_L2%",1)
+		Kill("JA#ARKHS")
+		Kill("Thaldo")
+		Continue()
 END
 
 IF
@@ -26,8 +26,5 @@ THEN
 		SetGlobal("JA#SAVETHALDO","GLOBAL",11)
 		CreateCreatureDoor("BASILG",[868.526],5)
 		CreateCreatureDoor("BASILG",[718.683],8)
+		Continue()
 END
-
-
-
-

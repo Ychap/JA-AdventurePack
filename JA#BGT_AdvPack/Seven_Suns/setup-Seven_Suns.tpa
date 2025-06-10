@@ -1,6 +1,7 @@
-//////////////////////////////
-//SIEBEN SONNEN / SEVEN SUNS
-//////////////////////////////
+///////////////
+// Seven Suns
+///////////////
+
 
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU1.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU4.CRE~ ~override~
@@ -12,129 +13,206 @@ COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU2.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSGU5.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSMR3.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#SSMR4.CRE~ ~override~
+	PATCH_IF GAME_IS ~bgee~ BEGIN
+		SAY INITIAL_MEETING ~~ [TANNER20]
+	END
 
-COPY ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.CRE~ ~override~
+COPY_EXISTING ~DOPPGR.CRE~ ~override/JA#DPKIZ.CRE~
 	SAY NAME1 @2048
 	SAY NAME2 @2048
+	WRITE_SHORT 0x24 (THIS+25) // Current HP
+	WRITE_SHORT 0x26 (THIS+25) // Maximum HP
+	WRITE_ASCII DEATHVAR ~RASHAD~ #32
 
 COPY ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.ITM~ ~override~
 
-COPY_EXISTING ~DOPPSE.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 1
-		RET
-		strref
-	END
-	SET ssungu1 = strref 
-COPY_EXISTING ~DOPPSE.DLG~ ~override~
-	LPF READ_JOURNAL_STRREF
-		INT_VAR
-		state = 3
-		RET
-		strref
-	END
-	SET ssungu2 = strref 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DOPPSE.D~	//Cutscene oben
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSDOP.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSGUA.BAF~ // used by JA#SSGU1.CRE and JA#SSGU4.CRE
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSMER.BAF~ // used in DOPPSM.CRE
+	PATCH_IF GAME_IS ~bgee~ BEGIN
+		REPLACE_TEXTUALLY ~46151~ ~62279~
+	END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSUNG.D~		//Wache unten
+EXTEND_TOP ~%SWBaldursGate_SevenSuns_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7601.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_SevenSuns_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7602.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR8000.BAF~ EVALUATE_BUFFER
+
+
+COPY_EXISTING ~%SWBaldursGate_BCS%.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EVALUATE_REGEXP
+		~Global("laola","GLOBAL",1)[%WNL%%MNL%%LNL%%TAB% ]*Global("LaolaSpawn","GLOBAL",0)[%WNL%%MNL%%LNL%%TAB% ]*Global("ScarMission","GLOBAL",1)~
+		~Global("LaolaSpawn","GLOBAL",0)~
+		REPLACE_TEXTUALLY ~CreateCreature("LAOLA",\[[0-9]+\.[0-9]+\],\(1?[0-9]\|[NS]?[NS]?[WE]?[WE]?\))~ ~CreateCreature("LAOLA",[3909.1387],0)~
+	END
+BUT_ONLY
+
+
+COPY_EXISTING ~RASHAD.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY EXACT_MATCH ~ApplySpell(Myself,DOPPLEGANGER_CHANGE_DEFAULT)~ ~UseItem("JA#DPKIZ",Myself)~
+	END
+BUT_ONLY
+
+
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = 1
+	STR_VAR dlg_file = ~DOPPSE.DLG~
+	RET doppse_state01_journal = journal_strref
+END
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = 3
+	STR_VAR dlg_file = ~DOPPSE.DLG~
+	RET doppse_state03_journal = journal_strref
+END
+LAF GET_DLG_STRREF
+	INT_VAR idx_state = 3
+	STR_VAR dlg_file = ~DOPPSM.DLG~
+	RET doppsm_state03_journal = journal_strref
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#doppse.d~ // Doppelganger + merchants
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#ssung.d~ // Guards
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	<<<<<<<< ...inlined/doppsm_bgt.d
+	ALTER_TRANS DOPPSM
+	BEGIN 3 7 8 END
+	BEGIN END
+	BEGIN
+	  "UNSOLVED_JOURNAL" ~#%doppse_state01_journal%~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/doppsm_bgt.d~
+
+	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#scar_bgt.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#scar.tra~
+END
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#laola.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#jhasso.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/ja#ivanne.d~
+
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	WITH_TRA ~JA#BGT_AdvPack/languages/%s/ja#jhasso.tra~ BEGIN
+		OUTER_SET JA#JHASSO_20 = STATE_WHICH_SAYS @50 FROM ~JHASSO.DLG~
+		OUTER_SET JA#JHASSO_21 = STATE_WHICH_SAYS @52 FROM ~JHASSO.DLG~
+
+		<<<<<<<< ...inlined/jhasso_bgt.d
+		ADD_TRANS_ACTION JHASSO
+		BEGIN %JA#JHASSO_20% %JA#JHASSO_21% END
+		BEGIN END
+		~EraseJournalEntry(@1012) EraseJournalEntry(@1013) EraseJournalEntry(@1014)~
+
+		ALTER_TRANS JHASSO
+		BEGIN %JA#JHASSO_20% %JA#JHASSO_21% END
+		BEGIN 0 END
+		BEGIN
+		  "SOLVED_JOURNAL" ~@51~
+		END
+		>>>>>>>>
+		COMPILE EVALUATE_BUFFER ~...inlined/jhasso_bgt.d~
+	END
+END
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	<<<<<<<< ...inlined/harbor_ee.d
+	ADD_TRANS_ACTION HARBOR
+	BEGIN 9 END
+	BEGIN END
+	~EraseJournalEntry(@1012) EraseJournalEntry(@1013) EraseJournalEntry(@1014)~
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/harbor_ee.d~
+
+	ADD_JOURNAL EXISTING @1012 @1013 @1014
+END
+
+
+ACTION_IF GAME_IS ~bgee~ BEGIN
+	COPY_EXISTING_REGEXP ~JA#SSMR[134]\.CRE~ ~override~
+		GET_OFFSET_ARRAY items CRE_V10_ITEMS
+		PHP_EACH items AS i => item BEGIN
+			READ_ASCII item item_filename
+			PATCH_IF (~%item_filename%~ STR_EQ ~RNDTRE09~) BEGIN // Rich treasure
+				WRITE_ASCII item ~RNDTRE05~ #8
+			END
+		END
+	BUT_ONLY
+END
 
 COPY_EXISTING ~DOPPSM.CRE~ ~override~
-	WRITE_ASCII 0x248	~NONE~	#8
-	WRITE_BYTE 0x271 1
-	WRITE_BYTE 0x272 1
-	WRITE_BYTE 0x273 155
+	LPF REMOVE_CRE_SCRIPT STR_VAR script_old = ~INITDLG~ END
+	LPF INSERT_CRE_SCRIPT INT_VAR offset = SCRIPT_OVERRIDE STR_VAR script_new = ~JA#SSMER~ END
+	WRITE_BYTE 0x271 1 // General: HUMANOID
+	WRITE_BYTE 0x272 1 // Race: HUMAN
+	WRITE_BYTE 0x273 155 // Class: INNOCENT
+BUT_ONLY
 
 COPY_EXISTING ~RASHAD.CRE~ ~override~
-	WRITE_ASCII 0x258	~JA#DPKIZ~	#8
-	ADD_CRE_ITEM ~JA#DPKIZ~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
-/*ACTION_IF GAME_IS ~eet~ BEGIN
-	ADD_JOURNAL EXISTING TITLE (#231394) @1012 @1013 @1014 @1015 @1016 @1017 @1018 @1019
-END
-ACTION_IF GAME_IS ~bgee~ BEGIN
-	ADD_JOURNAL EXISTING TITLE (#31394) @1012 @1013 @1014 @1015 @1016 @1017 @1018 @1019
-END*/
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#JHASSO.D~
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#JHASSO_EE.D~
-END
-COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR.D~
-ACTION_IF GAME_IS ~bgee eet~ BEGIN
-	COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SCAR_EE.D~
-END
-COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#laola.D~
+	LPF REPLACE_CRE_SCRIPT STR_VAR script_old = ~GDCHANGE~ script_new = ~JA#DPKIZ~ END
+	ADD_CRE_ITEM ~JA#DPKIZ~ #0 #0 #0 ~IDENTIFIED~ ~LRING~ // Turn into JA#DPKIZ.CRE (Kizska)
+BUT_ONLY
+
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L1%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~DOPPSM~) BEGIN
-			WRITE_SHORT actors_offset+0x20        331	//MERCHANT
-			WRITE_SHORT actors_offset+0x22        303
-			WRITE_SHORT actors_offset+0x24        331
-			WRITE_SHORT actors_offset+0x26        303
-			WRITE_SHORT actors_offset+0x34        15
-		END
-	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 433
-		fj_loc_y          = 330
-		fj_dest_x         = 433
-		fj_dest_y         = 330
-		fj_orientation    = 14     
+		fj_loc_x          = 472
+		fj_loc_y          = 272
+		fj_dest_x         = 472
+		fj_dest_y         = 272
+		fj_orientation    = 1
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard
-		fj_cre_resref     = JA#SSGU1
-		fj_dlg_resref	  = JA#SSGU1
+		fj_name           = ~Guard~
+		fj_cre_resref     = ~JA#SSGU1~
 	END
-
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
+BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF ((~%actors_pos_x%~ = 436) AND (~%actors_filename%~ STR_EQ  ~DOPMER~)) BEGIN
-			WRITE_SHORT actors_offset+0x20        360	//MERCHANT
-			WRITE_SHORT actors_offset+0x22        468
-			WRITE_SHORT actors_offset+0x24        360
-			WRITE_SHORT actors_offset+0x26        468
-			WRITE_SHORT actors_offset+0x34        11
-		END
-		PATCH_IF ((~%actors_pos_x%~ = 523) AND (~%actors_filename%~ STR_EQ  ~DOPMER~)) BEGIN
-			WRITE_SHORT actors_offset+0x20        281	//MERCHANT
-			WRITE_SHORT actors_offset+0x22        255
-			WRITE_SHORT actors_offset+0x24        281
-			WRITE_SHORT actors_offset+0x26        255
-			WRITE_SHORT actors_offset+0x34        1
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_SHORT actor+0x20 actor_pos_x
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_MATCH ~%actor_pos_x%~ WITH
+			436 WHEN (~%actor_filename%~ STR_EQ ~DOPMER~) BEGIN
+				WRITE_SHORT actor+0x20 360
+				WRITE_SHORT actor+0x22 468
+				WRITE_SHORT actor+0x24 360
+				WRITE_SHORT actor+0x26 468
+				WRITE_SHORT actor+0x34 11
+			END
+			523 WHEN (~%actor_filename%~ STR_EQ ~DOPMER~) BEGIN
+				WRITE_SHORT actor+0x20 281
+				WRITE_SHORT actor+0x22 255
+				WRITE_SHORT actor+0x24 281
+				WRITE_SHORT actor+0x26 255
+				WRITE_SHORT actor+0x34 1
+			END
+			DEFAULT
 		END
 	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 454
 		fj_loc_y          = 356
 		fj_dest_x         = 454
 		fj_dest_y         = 356
-		fj_orientation    = 4      
+		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = JhassoDopp
-		fj_cre_resref     = JA#JHASS
-		fj_dlg_resref	  = JA#DPSS3
+		fj_name           = ~JhassoDopp~
+		fj_cre_resref     = ~JA#JHASS~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -142,12 +220,11 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 311
 		fj_dest_x         = 424
 		fj_dest_y         = 311
-		fj_orientation    = 15     
+		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR1
-		fj_dlg_resref	  = JA#DPSS2
+		fj_name           = ~MercDopp~
+		fj_cre_resref     = ~JA#SSMR2~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -155,12 +232,11 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 342
 		fj_dest_x         = 365
 		fj_dest_y         = 342
-		fj_orientation    = 13     
+		fj_orientation    = 13
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR2
-		fj_dlg_resref	  = JA#DPSS1
+		fj_name           = ~MercDopp~
+		fj_cre_resref     = ~JA#SSMR1~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -168,12 +244,11 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 262
 		fj_dest_x         = 628
 		fj_dest_y         = 262
-		fj_orientation    = 6      
+		fj_orientation    = 6
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard
-		fj_cre_resref     = JA#SSGU4
-		fj_dlg_resref	  = JA#SSGU4
+		fj_name           = ~Guard~
+		fj_cre_resref     = ~JA#SSGU4~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -181,54 +256,46 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_L2%.ARE~ ~override~
 		fj_loc_y          = 230
 		fj_dest_x         = 519
 		fj_dest_y         = 230
-		fj_orientation    = 8      
+		fj_orientation    = 8
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = MercDopp
-		fj_cre_resref     = JA#SSMR3
-		fj_dlg_resref	  = JA#SSMR3
+		fj_name           = ~MercDopp~
+		fj_cre_resref     = ~JA#SSMR3~
 	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
+BUT_ONLY
 
 COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
-	GET_OFFSET_ARRAY actors_array ARE_V10_ACTORS 
-	PHP_EACH actors_array AS actors_num => actors_offset BEGIN
-		READ_ASCII actors_offset actors_name (32) NULL
-		READ_SHORT actors_offset+0x20 actors_pos_x
-		READ_ASCII actors_offset+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~JHASSO~) BEGIN
-			WRITE_SHORT actors_offset+0x20        440	//Jhasso PosT
-			WRITE_SHORT actors_offset+0x22        435
-			WRITE_SHORT actors_offset+0x24        440
-			WRITE_SHORT actors_offset+0x26        435
-			WRITE_SHORT actors_offset+0x34        7
-		END
+	LPF ALTER_AREA_ACTOR
+		INT_VAR
+		x_coord     = 440
+		y_coord     = 435
+		dest_x      = 440
+		dest_y      = 435
+		orient      = 7
+		STR_VAR
+		actor_name  = ~Jhasso~
 	END
-	//Delete Remove Doppelganger
-	FOR (cnt=BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~DOPPSS~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
-			END
-		END
-	END
-	READ_LONG 0xbc "JA#OFF_SNG"
-	WRITE_LONG "JA#OFF_SNG" ~0~
-	WRITE_LONG "JA#OFF_SNG" + 0x4 ~0~
-	//add new actors
+	LPF DELETE_AREA_ACTOR STR_VAR cre_to_delete = ~DOPPSS~ END
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 263
 		fj_loc_y          = 417
 		fj_dest_x         = 263
 		fj_dest_y         = 417
-		fj_orientation    = 15     
+		fj_orientation    = 15
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard1
-		fj_cre_resref     = JA#SSGU2
-		fj_dlg_resref	  = JA#SSGU3
+		fj_name           = ~Guard1~
+		fj_cre_resref     = ~JA#SSGU2~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -236,12 +303,11 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_loc_y          = 366
 		fj_dest_x         = 200
 		fj_dest_y         = 366
-		fj_orientation    = 0      
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard2
-		fj_cre_resref     = JA#SSGU3
-		fj_dlg_resref	  = JA#SSGU3
+		fj_name           = ~Guard2~
+		fj_cre_resref     = ~JA#SSGU3~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -249,27 +315,18 @@ COPY_EXISTING ~%SWBaldursGate_SevenSuns_Cellar%.ARE~ ~override~
 		fj_loc_y          = 349
 		fj_dest_x         = 368
 		fj_dest_y         = 349
-		fj_orientation    = 2      
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Guard2
-		fj_cre_resref     = JA#SSGU3
-		fj_dlg_resref	  = JA#SSGU3
+		fj_name           = ~Guard3~
+		fj_cre_resref     = ~JA#SSGU3~
+	END
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
 	END
 BUT_ONLY
-
-COPY_EXISTING ~%SWBaldursGate%.BCS~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY EXACT_MATCH ~Global("laola","GLOBAL",1)~ ~False()~
-	END
-BUT_ONLY
-
-COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#DPKIZ.BAF~
-COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#INITD.BAF~
-COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#INITF.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Seven_Suns/JA#SSDOP.BAF~
-COMPILE ~JA#BGT_AdvPack/Seven_Suns/JA#SSGUA.BAF~
-
-EXTEND_TOP ~%SWBaldursGate_SevenSuns_L1%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7601.BAF~
-EXTEND_TOP ~%SWBaldursGate_SevenSuns_L2%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR7602.BAF~
-EXTEND_TOP ~%SWBaldursGate%.BCS~ ~JA#BGT_AdvPack/Seven_Suns/AR8000.BAF~ EVALUATE_BUFFER

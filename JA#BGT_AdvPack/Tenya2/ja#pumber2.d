@@ -1,0 +1,8 @@
+ADD_STATE_TRIGGER PUMBER2 0 ~!Dead("Tenya")~
+ADD_STATE_TRIGGER PUMBER2 1 ~True()~
+
+
+ADD_TRANS_ACTION PUMBER2
+BEGIN 1 END
+BEGIN 0 END
+~SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)~

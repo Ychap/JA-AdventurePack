@@ -10,9 +10,9 @@
 @4    = ~We're here looking for Yago. We're friends of his.~
 /* #1580 */
 @5    = ~We're members of the Flaming Fist, we're here to arrest Yago.~
-@6    = ~He's already gone.~
+@6    = ~Nothing at all. I'll be on my way.~
 /* #1574 */
-@7    = ~The price is a gold piece from each of you. I hope you enjoy your stay.~
+@7    = ~The price is a gold piece from each of you.~
 /* #1575 */
 @8    = ~Yago has said that he wishes to see no one.~
 /* #1581 */
@@ -25,3 +25,10 @@
 /* #1577 */
 @13   = ~You can't expect me to believe that. Please leave before I call the real Flaming Fist.~
 @14   = ~I wish you a pleasant stay. Here you can get all sumptuous pleasures you would care to indulge, as long as you stick to the rules.~
+
+/* new for beta3 */
+@15   = ~Sure.~
+@16   = ~Can't afford it. I guess we'll be on our way.~
+@17   = ~We're not interested.~
+
+@18   = ~I'm busy.~

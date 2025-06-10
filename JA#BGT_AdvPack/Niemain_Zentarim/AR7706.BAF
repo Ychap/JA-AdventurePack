@@ -1,0 +1,19 @@
+IF
+	!Dead("NIEMAIN")
+	Global("JA#NIEMAIN_SPWN","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",2)
+		CreateCreature("JA#NIEMA",[942.617],7)
+		Continue()
+END
+
+IF
+	Global("Chapter","GLOBAL",%tutu_chapter_7%)
+	Global("JA#NIEMAIN_SPWN","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",4)
+		ActionOverride("NIEMAIN",DestroySelf())
+		Continue()
+END

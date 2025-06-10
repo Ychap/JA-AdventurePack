@@ -1,0 +1,36 @@
+IF
+	OnCreation()
+	Global("JA#THIEFSAWAY","%NBaldursGate_DucalPalace_Cellar%",0)
+	GlobalGT("JA#HUSAM_MOVE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#THIEFSAWAY","%NBaldursGate_DucalPalace_Cellar%",1)
+		ActionOverride("JA#STH03",DestroySelf())
+		ActionOverride("JA#STH04",DestroySelf())
+		ActionOverride("JA#STH05",DestroySelf())
+		ActionOverride("JA#STH06",DestroySelf())
+		ActionOverride("JA#STH07",DestroySelf())
+		ActionOverride("JA#HUSAM",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("JA#SHADOW_CUT","%NBaldursGate_DucalPalace_Cellar%",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#SHADOW_CUT","%NBaldursGate_DucalPalace_Cellar%",2)
+		TriggerActivation("JA#CANDL",TRUE)
+		Continue()
+END
+
+IF
+	Global("JA#SECRET_OPEN","GLOBAL",1)
+	Global("JA#HUSAM_MOVE","GLOBAL",1)
+	!Global("JA#SHADOW_CUT","%NBaldursGate_DucalPalace_Cellar%",3)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("JA#HUCU2")
+		Continue()
+END

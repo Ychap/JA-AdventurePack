@@ -1,0 +1,9 @@
+IF
+	Entered([ANYONE])
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+	Global("JA#NILA","%NBaldursGate_DucalPalace_L2%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#NILA","%NBaldursGate_DucalPalace_L2%",1)
+END

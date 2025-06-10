@@ -1,0 +1,57 @@
+////////////////////////////////
+// Extended/Improved dialogues
+////////////////////////////////
+
+
+COPY_EXISTING ~VAI.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~Enemy()~ ~\0 ActionOverride("FLAMVAI",Enemy())~
+	END
+BUT_ONLY
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#aldeth.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#brandi.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bently.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#bellam.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#centeo.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#cauter.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#connol.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#denkod.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#greywo.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#jondal.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#mtowba.d~ // MTOWBASC.DLG MTOWBASN.DLG MTOWBAST.DLG
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#norale.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#nobl2.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#phlydi.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#poe.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#prsbx.d~ // JA#PRS01.DLG JA#PRS02.DLG JA#PRS03.DLG
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Improved_dialogues/ja#zordral.d~
+
+
+COPY_EXISTING ~FLAMVAI.CRE~ ~override~
+	WRITE_ASCII DEATHVAR ~FLAMVAI~ #32
+BUT_ONLY
+
+COPY_EXISTING ~MTOWBASC.CRE~ ~override~
+	WRITE_ASCII DIALOG ~MTOWBASC~ #8
+BUT_ONLY
+COPY_EXISTING ~MTOWBASN.CRE~ ~override~
+	WRITE_ASCII DIALOG ~MTOWBASN~ #8
+BUT_ONLY
+COPY_EXISTING ~MTOWBAST.CRE~ ~override~
+	WRITE_ASCII DIALOG ~MTOWBAST~ #8
+BUT_ONLY
+COPY_EXISTING ~MTOWUBSC.CRE~ ~override~
+	WRITE_ASCII DIALOG ~MTOWUB~ #8
+BUT_ONLY
+
+COPY_EXISTING ~PRSBAX_A.CRE~ ~override~
+	WRITE_ASCII DIALOG ~JA#PRS01~ #8
+BUT_ONLY
+COPY_EXISTING ~PRSBAX_B.CRE~ ~override~
+	WRITE_ASCII DIALOG ~JA#PRS02~ #8
+BUT_ONLY
+COPY_EXISTING ~PRSBAX_C.CRE~ ~override~
+	WRITE_ASCII DIALOG ~JA#PRS03~ #8
+BUT_ONLY

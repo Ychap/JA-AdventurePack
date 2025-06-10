@@ -1,0 +1,38 @@
+IF
+	AreaCheck("%NBaldursGate_DucalPalace_L1%")
+	Global("SarevokBehavior","GLOBAL",1)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!Global("HusamMove","GLOBAL",100)
+THEN
+	RESPONSE #100
+		SetGlobal("HusamMove","GLOBAL",100)
+END
+
+IF
+	Global("HusamMove","GLOBAL",100)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("HusamMove","GLOBAL",7)
+	Global("JA#HUSAM_MOVE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	Global("HusamMove","GLOBAL",10)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END

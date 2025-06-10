@@ -1,0 +1,45 @@
+IF
+	!Dead("Irlentre")
+	Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",0)
+	Global("ZorlDopple","GLOBAL",0)
+	GlobalGT("JA#MERCLEAGUE_INSP","GLOBAL",2)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		FadeToColor([30.0],0)
+		ActionOverride("Irlentre",DestroySelf())
+		Wait(2)
+		SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",1)
+		MoveViewPoint([485.428],INSTANT)
+		ActionOverride(Player1,JumpToPoint([540.367]))
+		ActionOverride(Player2,JumpToPoint([386.476]))
+		ActionOverride(Player3,JumpToPoint([557.538]))
+		ActionOverride(Player4,JumpToPoint([344.480]))
+		ActionOverride(Player5,JumpToPoint([566.301]))
+		ActionOverride(Player6,JumpToPoint([299.490]))
+		CreateCreature("Irlent",[391.338],14)
+		SmallWait(3)
+		ActionOverride(Player1,Face(15))
+		ActionOverride(Player2,Face(13))
+		ActionOverride(Player3,Face(15))
+		ActionOverride(Player4,Face(13))
+		ActionOverride(Player5,Face(15))
+		ActionOverride(Player6,Face(13))
+		ActionOverride("Irlentre",Face(14))
+		FadeFromColor([30.0],0)
+		ActionOverride("Irlentre",MoveToPoint([426.379]))
+		Wait(3)
+		EndCutSceneMode()
+END
+
+IF
+	Global("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",3)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("JA#IRLENT_CUT01","%SWBaldursGate_MerchantLeague_L1%",4)
+		ActionOverride("Irlentre",MoveToPoint([584.403]))
+		ActionOverride("Irlentre",FaceObject(Player1))
+		Wait(2)
+		EndCutSceneMode()
+END

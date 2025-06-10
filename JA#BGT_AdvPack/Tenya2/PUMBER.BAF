@@ -1,0 +1,15 @@
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#UMBERL_HOST","%BaldursGateDocks_WaterQueensHouse%",1)
+END

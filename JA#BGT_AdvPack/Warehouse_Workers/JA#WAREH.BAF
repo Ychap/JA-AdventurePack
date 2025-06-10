@@ -2,7 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		PlaySound("%sound%")
+		PlaySound("EDWIN43")
 		MoveToPointNoInterrupt([477.1124])
 		DestroySelf()
 END

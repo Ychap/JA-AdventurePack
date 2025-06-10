@@ -1,0 +1,19 @@
+IF
+	Global("HelpTenya","GLOBAL",2)
+	Global("ReturnedBook","GLOBAL",1)
+	Global("gtt#tenyagarrick","GLOBAL",0) // compatibility with Garrick Tales of a Troubadour
+	Global("JA#TENYA_QUEST","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#TENYA_QUEST","GLOBAL",1)
+END
+
+IF
+	See([PC])
+	OR(2)
+		NumTimesTalkedTo(0)
+		Global("JA#TENYA_QUEST","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END

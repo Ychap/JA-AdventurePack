@@ -1,6 +1,28 @@
 IF
-	Global("JA#BRAUN_TOT","%NashkelCarnival%",1)
+	Global("JA#BRAUN_TOT","%NashkelCarnival%",0)
+	StateCheck("JA#COCK1",STATE_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("JA#DEADCOCK","GLOBAL",SIXTEEN_HOURS)
+		SetGlobal("JA#BRAUN_TOT","%NashkelCarnival%",1)
+		Continue()
+END
+
+IF
+	Global("JA#WEISS_TOT","%NashkelCarnival%",0)
+	StateCheck("JA#COCK2",STATE_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("JA#DEADCOCK","GLOBAL",SIXTEEN_HOURS)
+		SetGlobal("JA#WEISS_TOT","%NashkelCarnival%",1)
+		Continue()
+END
+
+
+IF
 	Global("JA#VELVET_WEISS","LOCALS",1)
+	Global("JA#WEISS_TOT","%NashkelCarnival%",0)
+	Global("JA#BRAUN_TOT","%NashkelCarnival%",1)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VELVET_WEISS","LOCALS",0)
@@ -8,8 +30,9 @@ THEN
 END
 
 IF
-	Global("JA#WEISS_TOT","%NashkelCarnival%",1)
 	Global("JA#VELVET_BRAUN","LOCALS",1)
+	Global("JA#WEISS_TOT","%NashkelCarnival%",1)
+	Global("JA#BRAUN_TOT","%NashkelCarnival%",0)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VELVET_BRAUN","LOCALS",0)
@@ -17,8 +40,9 @@ THEN
 END
 
 IF
-	Global("JA#WEISS_TOT","%NashkelCarnival%",1)
 	Global("JA#VELVET_WEISS","LOCALS",1)
+	Global("JA#WEISS_TOT","%NashkelCarnival%",1)
+	Global("JA#BRAUN_TOT","%NashkelCarnival%",0)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VELVET_WEISS","LOCALS",0)
@@ -26,8 +50,9 @@ THEN
 END
 
 IF
-	Global("JA#BRAUN_TOT","%NashkelCarnival%",1)
 	Global("JA#VELVET_BRAUN","LOCALS",1)
+	Global("JA#WEISS_TOT","%NashkelCarnival%",0)
+	Global("JA#BRAUN_TOT","%NashkelCarnival%",1)
 THEN
 	RESPONSE #100
 		SetGlobal("JA#VELVET_BRAUN","LOCALS",0)

@@ -1,34 +1,43 @@
-/////////////////////////////////////////
-//RESTORED: Mal-Kalen - Ulcaster's Adept
-/////////////////////////////////////////
+///////////////////////////////////////////
+// RESTORED: Mal-Kalen - Ulcaster's Adept
+///////////////////////////////////////////
 
-ACTION_IF (FILE_EXISTS_IN_GAME UBMALKAL.CRE) BEGIN
-	PRINT ~Skipping Mal-Kalen, the Ulcaster Ghost: Is already restored by another mod.~
-END ELSE BEGIN
 
 COPY ~JA#BGT_AdvPack/Mal-Kalen/JA#MALKA.CRE~ ~override~
-	SAY NAME1 #12701 //~Mal-Kalen~ (string ref is true for BGT and BG:EE)
-	SAY NAME2 #12701 //~Mal-Kalen~ (string ref is true for BGT and BG:EE)
+	SAY NAME1 #12701 // ~Mal-Kalen~ (string ref is true for BGT and BG:EE)
+	SAY NAME2 #12701 // ~Mal-Kalen~ (string ref is true for BGT and BG:EE)
+	PATCH_IF GAME_IS ~bgee~ BEGIN
+		GET_OFFSET_ARRAY items CRE_V10_ITEMS
+		PHP_EACH items AS i => item BEGIN
+			READ_ASCII item item_filename
+			PATCH_IF (~%item_filename%~ STR_EQ ~RNDTRE08~) BEGIN // Wealthy treasure
+				WRITE_ASCII item ~RNDTRE04~ #8
+			END
+		END
+	END
 
 COPY ~JA#BGT_AdvPack/Mal-Kalen/JA#SPWN1.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Mal-Kalen/JA#SPWN1.VVC~ ~override~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Mal-Kalen/JA#MALKA.D~
+
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Mal-Kalen/JA#MALKA.BAF~
 
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Mal-Kalen/ja#malka.d~
+
+
 COPY_EXISTING ~%Ulcaster%.ARE~ ~override~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 3930
-		fj_loc_y          = 352 
-		fj_dest_x         = 3930
-		fj_dest_y         = 352 
-		fj_orientation    = 6      
+		fj_loc_x          = 4348
+		fj_loc_y          = 694
+		fj_dest_x         = 4348
+		fj_dest_y         = 694
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Mal-Kalen~
-		fj_cre_resref     = ~JA#MALKA~ 
-		fj_dlg_resref	  = ~JA#MALKA~ 
+		fj_cre_resref     = ~JA#MALKA~
 	END
-END
+BUT_ONLY

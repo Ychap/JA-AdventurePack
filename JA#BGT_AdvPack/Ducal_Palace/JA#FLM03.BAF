@@ -1,0 +1,30 @@
+IF
+    Global("C#st_HeroOfBG","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!See([PC])
+THEN
+	RESPONSE #100
+		MoveToObject([PC])
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("JA#ALERT","%NBaldursGate_DucalPalace_L3%",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ALERT","%NBaldursGate_DucalPalace_L3%",1)
+END

@@ -1,9 +1,0 @@
-IF
-	!Dead("NIEMAIN")
-	Global("JA#NIEMAIN_SPWN","GLOBAL",2)
-	InParty("XZAR")
-THEN
-	RESPONSE #100
-		SetGlobal("JA#NIEMAIN_SPWN","GLOBAL",3)
-		CreateCreature("JA#NIEMA",[1031.460],2)
-END

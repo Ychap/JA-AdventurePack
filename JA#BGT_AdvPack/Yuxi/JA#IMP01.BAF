@@ -1,0 +1,20 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Delay(30)
+	Range([PC],15)
+	NumTimesTalkedToLT(5)
+	See([PC])
+	See("Ragefast")
+	Allegiance(Myself,NEUTRAL)
+	Allegiance("Ragefast",NEUTRAL)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END

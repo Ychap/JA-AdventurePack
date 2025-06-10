@@ -1,40 +1,40 @@
+// BGT (make in SONNER.DLG state 9 available)
+REPLACE_TRANS_ACTION SONNER
+BEGIN 8 END
+BEGIN END
+~ActionOverride("Telman",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*ActionOverride("Jebadoh",EscapeAreaDestroy(90))[%WNL%%MNL%%LNL%%TAB% ]*EscapeAreaDestroy(90)~
+~NoAction()~
 
-//State 8 muss wegen der EE Version alleine ausgeführt werden. Siehe tpa
-/*ALTER_TRANS SONNER // file name
-BEGIN 8 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~SetGlobal("HelpJebadoh","GLOBAL",2)~
-END*/
+// BGEE/EET (make in SONNER.DLG state 9 available)
+REPLACE_TRANS_ACTION SONNER
+BEGIN 8 END
+BEGIN END
+~SetGlobal("HelpJebadoh","GLOBAL",3)~
+~SetGlobal("HelpJebadoh","GLOBAL",2)~
 
-ADD_TRANS_ACTION SONNER
-BEGIN 10 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
+
+// Fishermen escape area instead of turning hostile
+REPLACE_TRANS_ACTION SONNER
+BEGIN 10 13 17 END
+BEGIN END
 ~SetGlobal("HostileFishermen","GLOBAL",1)~
+~NoAction()~
+
+// Change state 10 only in BGEE/EET
+ADD_TRANS_ACTION SONNER
+BEGIN 10 13 17 END
+BEGIN END
+~%fishermenEscapeArea%~
+UNLESS ~EscapeArea~
 
 
 EXTEND_BOTTOM SONNER 14
-IF ~~ THEN REPLY @0 EXTERN SONNER JA#SONNER_1
+  IF ~~ THEN REPLY @0 EXTERN SONNER JA#SONNER_1
 END
 
-CHAIN
-IF ~~ THEN SONNER JA#SONNER_1
- @1 DO ~SetGlobal("HostileFishermen","GLOBAL",1)SetGlobal("JA#KillFishermen","%FishingVillage%",1)~
-  = @2
-  == JEBADO
-  @3
-  == SONNER
-  @4
-  == TELMAN
-  @5
-EXIT 
-
-ALTER_TRANS SONNER // file name
-BEGIN 17 END // state number (can be more than one)
-BEGIN 0 END // transition number (can be more than one)
-BEGIN // list of changes, see below for flags
-  "ACTION" ~GiveItem("MISC53",[PC])
-ActionOverride("Jebadoh",EscapeAreaDestroy(90))
-ActionOverride("Telman",EscapeAreaDestroy(90))
-EscapeAreaDestroy(90)~
-END
+CHAIN SONNER JA#SONNER_1
+  @1 = @2
+  == JEBADO @3
+  == SONNER @4
+  == TELMAN @5 DO ~SetGlobal("HostileFishermen","GLOBAL",1)~
+EXIT

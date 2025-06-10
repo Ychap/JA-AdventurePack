@@ -1,23 +1,6 @@
 ///////////////////////
-//SORCEROUS SUNDRIES
+// Sorcerous Sundries
 ///////////////////////
-
-/* ~Allerlei Zauberei: Neue Personen, neue Ambients~ */
-
-COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
-
-COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
-	PATCH_IF (SOURCE_SIZE > 0x11b) BEGIN 
-		READ_LONG 0xbc "JA#OFF_SNG"
-		WRITE_LONG "JA#OFF_SNG"	~0~
-		WRITE_LONG "JA#OFF_SNG" + 0x4	~0~
-	END
-BUT_ONLY
-
-COPY_EXISTING ~HALBAZ.CRE~ ~override~
-	WRITE_BYTE 0x2e 37 //color
-	WRITE_ASCII 0x268 ~JA#HLBZ1~	#8
-	REPLACE_CRE_ITEM ~CLCK16~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
 
 
 COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.CRE~ ~override~
@@ -31,26 +14,49 @@ COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.CRE~ ~override~
 COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.CRE~ ~override~
 	SAY NAME1 @10
 	SAY NAME2 @10
-	WRITE_ASCII 0x248 ~None~ #8
 
-COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#TAY01.D~
-COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSELF.D~
-COMPILE ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#SSC01.D~
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#HLBZ1.BAF~
+
+
+// BGEE/EET: Connect specific response text to state 7 (Advantage: edit any COPY_TRANS HALBAZ of previous mods)
+COPY_EXISTING ~HALBAZ.DLG~ ~override~
+	GET_OFFSET_ARRAY responses 0x14 4 0x10 4 0 0 0x20
+	PHP_EACH responses AS i => response BEGIN
+		READ_LONG (response + 0x04) strref
+		PATCH_IF ((strref MODULO 200000) = 192) BEGIN
+			WRITE_LONG (response + 0x1c) 7 // Point to next state
+		END
+	END
+BUT_ONLY
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/ja#halbaz.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/ja#tay01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/ja#ssc01.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sorcerous_Sundries/ja#sself.d~
+
+
+COPY_EXISTING ~HALBAZ.CRE~ ~override~
+	WRITE_ASCII SCRIPT_DEFAULT ~JA#HLBZ1~ #8
+BUT_ONLY
+
+
+COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#AMSS1.WAV~ ~override~
 
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
-	//add new actors
+	// add new actors
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 238 
-		fj_loc_y          = 697 
-		fj_dest_x         = 238 
-		fj_dest_y         = 697 
-		fj_orientation    = 5   
+		fj_loc_x          = 238
+		fj_loc_y          = 697
+		fj_dest_x         = 238
+		fj_dest_y         = 697
+		fj_orientation    = 5
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Roter Magier~
-		fj_cre_resref     = JA#TAY01
-		fj_dlg_resref	  = JA#TAY01
+		fj_cre_resref     = ~JA#TAY01~
 	END
 	LPF fj_are_structure
 		INT_VAR
@@ -58,63 +64,70 @@ COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L1%.ARE~ ~override~
 		fj_loc_y          = 274
 		fj_dest_x         = 827
 		fj_dest_y         = 274
-		fj_orientation    = 14 
+		fj_orientation    = 14
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Velara
-		fj_cre_resref     = JA#SSC01
-		fj_dlg_resref	  = JA#SSC01
+		fj_name           = ~Velara~
+		fj_cre_resref     = ~JA#SSC01~
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 100 
+		fj_volume_variance = 100
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = JA#AMSS1
+		fj_wav_resref0    = ~JA#AMSS1~
 	END
-	
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
+BUT_ONLY
+
 COPY_EXISTING ~%EBaldursGate_SorcerousSundries_L2%.ARE~ ~override~
-	//add new actors
+	// add new actor
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 709 
-		fj_loc_y          = 519 
-		fj_dest_x         = 709 
-		fj_dest_y         = 519 
-		fj_orientation    = 11  
+		fj_loc_x          = 709
+		fj_loc_y          = 519
+		fj_dest_x         = 709
+		fj_dest_y         = 519
+		fj_orientation    = 11
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = Naiduja
-		fj_cre_resref     = JA#SSELF
-		fj_dlg_resref	  = JA#SSELF
+		fj_name           = ~Naiduja~
+		fj_cre_resref     = ~JA#SSELF~
 	END
-	// Add Ambient 1
+	// add ambient
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x           = 50
-		fj_loc_y           = 50 
+		fj_loc_y           = 50
 		fj_radius          = 500
-		fj_volume_variance = 80 
+		fj_volume_variance = 80
 		fj_sound_num       = 1
-		fj_flags 		   = 0b0000000111
+		fj_flags           = 0b0000000111
 		STR_VAR
 		fj_structure_type = ambient
 		fj_name           = ~Main Ambient~
-		fj_wav_resref0    = JA#AMSS1
+		fj_wav_resref0    = ~JA#AMSS1~
 	END
-
-
-//COPY_EXISTING ~STO0703.STO~ ~override~
-//ADD_STORE_ITEM ~SCRL6N~ AFTER ~SCRL1Z~ #0 #0 #0 ~IDENTIFIED~ #1 //Roter Feuerschild
-//ADD_STORE_ITEM ~SCRL6F~ BEFORE ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #3 //Strahl der Schwächung
-//ADD_STORE_ITEM ~SCRLA3~ AFTER ~SCRL5U~ #0 #0 #0 ~IDENTIFIED~ #4 //Glitzerstaub
-//ADD_STORE_ITEM ~SCRLA7~ AFTER ~SCRLA6~ #0 #0 #0 ~IDENTIFIED~ #2 //Magie zerstören
-
-COPY ~JA#BGT_AdvPack/Sorcerous_Sundries/JA#AMSS1.WAV~ ~override~
+	// mute songs
+	LPF fj_are_structure
+		INT_VAR
+		fj_song_day       = 0
+		fj_song_night     = 0
+		STR_VAR
+		fj_structure_type = songs
+	END
+BUT_ONLY

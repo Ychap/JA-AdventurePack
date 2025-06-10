@@ -1,0 +1,5 @@
+ADD_TRANS_ACTION GREYWO
+BEGIN 5 END
+BEGIN 0 END
+~Attack("Prism")~
+IF ~Enemy()~ // BGT

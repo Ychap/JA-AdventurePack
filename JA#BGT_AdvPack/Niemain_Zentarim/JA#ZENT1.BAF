@@ -1,8 +1,0 @@
-IF
-	GlobalGT("JA#ZENTEXIT","%EBaldursGate_SorcerousSundries_L2%",0)
-	Global("JA#ZENTEXIT","LOCALS",0)
-THEN
-	RESPONSE #100
-		SetGlobal("JA#ZENTEXIT","LOCALS",1)
-		ActionOverride(Myself,EscapeAreaDestroy(150))
-END

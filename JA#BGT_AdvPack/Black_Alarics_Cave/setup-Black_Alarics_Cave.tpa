@@ -1,94 +1,62 @@
 ////////////////////////
-//Black Alaric's Cave
+// Black Alaric's Cave
 ////////////////////////
+
 
 COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.CRE~ ~override~
 	SAY NAME1 @35
 	SAY NAME2 @36
-	SAY INITIAL_MEETING #5659
-	SAY DAMAGE #5840
-	SAY DYING #5841
 
 COPY ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#SKEL1.CRE~ ~override~
 	SAY NAME1 @34
 	SAY NAME2 @34
-
-COMPILE ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/JA#PIRA1.D~
-
-COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
-	//delete not needed actors
-	FOR (cnt = BYTE_AT 0x58 -1; cnt>=0; --cnt) BEGIN
-		READ_ASCII SHORT_AT 0x54 +(0x110 * (cnt))+0x80 actors_filename (32) NULL
-		PATCH_IF (~%actors_filename%~ STR_EQ  ~GOLEMF~) BEGIN
-			LPF fj_are_structure
-				INT_VAR fj_delete_mode = EVAL %cnt%
-				STR_VAR fj_structure_type = actor
+	PATCH_IF GAME_IS ~bgt eet~ BEGIN
+		GET_OFFSET_ARRAY items CRE_V10_ITEMS
+		PHP_EACH items AS i => item BEGIN
+			READ_ASCII item item_filename
+			PATCH_IF (~%item_filename%~ STR_EQ ~RNDTRE05~) BEGIN // Rich treasure
+				WRITE_ASCII item ~RNDTRE09~ #8
 			END
 		END
 	END
-	//add new actors
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Black_Alarics_Cave/ja#pira1.d~
+
+
+COPY_EXISTING ~%Lighthouse_BlackAlaricsCave%.ARE~ ~override~
+	// Replace each Flesh Golem with a Pirate skeleton
+	GET_OFFSET_ARRAY actors ARE_V10_ACTORS
+	PHP_EACH actors AS i => actor BEGIN
+		READ_ASCII actor+0x80 actor_filename
+		PATCH_IF (~%actor_filename%~ STR_EQ ~GOLEMF~) BEGIN
+			WRITE_ASCII actor+0x00 ~Piratenskelett~ #32
+			WRITE_LONG  actor+0x30  0xEB10 // Animation: SKELETON_WARRIOR
+			WRITE_ASCII actor+0x80 ~JA#SKEL1~ #8
+		END
+	END
+	// Add The Red Beric
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 882
 		fj_loc_y          = 212
 		fj_dest_x         = 882
 		fj_dest_y         = 212
-		fj_orientation    = 4     
+		fj_orientation    = 4
 		STR_VAR
 		fj_structure_type = actor
-		fj_name           = ~Piratenskelett~
+		fj_name           = ~Pirat~
 		fj_cre_resref     = ~JA#PIRA1~
-		fj_dlg_resref	  = ~JA#PIRA1~
 	END
+	// Rest encounters
 	LPF fj_are_structure
 		INT_VAR
-		fj_loc_x          = 209
-		fj_loc_y          = 775
-		fj_dest_x         = 209
-		fj_dest_y         = 775
-		fj_orientation    = 0     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Piratenskelett~
-		fj_cre_resref     = ~JA#SKEL1~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 1226
-		fj_loc_y          = 761 
-		fj_dest_x         = 1226
-		fj_dest_y         = 761 
-		fj_orientation    = 11     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Piratenskelett~
-		fj_cre_resref     = ~JA#SKEL1~
-	END
-	LPF fj_are_structure
-		INT_VAR
-		fj_loc_x          = 693
-		fj_loc_y          = 176
-		fj_dest_x         = 693
-		fj_dest_y         = 176
-		fj_orientation    = 2     
-		STR_VAR
-		fj_structure_type = actor
-		fj_name           = ~Piratenskelett~
-		fj_cre_resref     = ~JA#SKEL1~
-	END
-	//Rest encounters
-	LPF fj_are_structure
-		INT_VAR
-		fj_cre_strref0	  = RESOLVE_STR_REF (#10134)
+		fj_cre_strref0    = 10148 // strref fine for BGT, BGEE and EET
 		STR_VAR
 		fj_structure_type = interrupts
-		fj_name           = ~~
-		fj_cre_resref0    = JA#SKEL1
-		fj_max_num		  = 10
-		fj_day_prob		  = 20
-		fj_night_prob 	  = 20
+		fj_cre_resref0    = ~JA#SKEL1~
+		fj_max_num        = 10
+		fj_day_prob       = 20
+		fj_night_prob     = 20
 	END
-
-
-
+BUT_ONLY

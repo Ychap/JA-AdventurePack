@@ -1,49 +1,51 @@
 ////////////////////////////////
-//RESTORED: WAREHOUSE WORKERS
+// RESTORED: Warehouse Workers
 ////////////////////////////////
 
 COPY ~JA#BGT_AdvPack/Warehouse_Workers/JA#WARE1.CRE~ ~override~
-	~JA#BGT_AdvPack/Warehouse_Workers/JA#WARE2.CRE~ ~override~
+	 ~JA#BGT_AdvPack/Warehouse_Workers/JA#WARE2.CRE~ ~override~
 	SAY NAME1 @2062
 	SAY NAME2 @2062
 
-COMPILE ~JA#BGT_AdvPack/Warehouse_Workers/JA#WARE1.D~
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	OUTER_SPRINT ~sound~ ~BEDWIN43~
-END
-ACTION_IF GAME_IS ~bgee~ BEGIN
-	OUTER_SPRINT ~sound~ ~EDWIN43~
-END
-ACTION_IF GAME_IS ~eet~ BEGIN
-	OUTER_SPRINT ~sound~ ~EDWIN43_~
-END
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Warehouse_Workers/JA#WAREH.BAF~ //sound
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Warehouse_Workers/JA#WAREH.BAF~
+	PATCH_MATCH _ WITH
+		ANY GAME_IS ~bgt~ BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~"EDWIN43"~ ~"BEDWIN43"~
+		END
+		ANY GAME_IS ~eet~ BEGIN
+			REPLACE_TEXTUALLY EXACT_MATCH ~"EDWIN43"~ ~"EDWIN43_"~
+		END
+		DEFAULT
+	END
+
+
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Warehouse_Workers/ja#ware1.d~
+
 
 COPY_EXISTING ~%BaldursGateDocks_BasiliskWarehouse%.ARE~ ~override~
-	//add new actors
 	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 876
 		fj_loc_y          = 573
 		fj_dest_x         = 876
 		fj_dest_y         = 573
-		fj_orientation    = 2     
+		fj_orientation    = 2
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Warehouse Worker~
-		fj_cre_resref     = ~JA#WARE1~        
-		fj_dlg_resref	  = ~JA#WARE1~
+		fj_cre_resref     = ~JA#WARE1~
 	END
-		LPF fj_are_structure
+	LPF fj_are_structure
 		INT_VAR
 		fj_loc_x          = 593
 		fj_loc_y          = 872
 		fj_dest_x         = 593
 		fj_dest_y         = 872
-		fj_orientation    = 0     
+		fj_orientation    = 0
 		STR_VAR
 		fj_structure_type = actor
 		fj_name           = ~Warehouse Worker~
-		fj_cre_resref     = ~JA#WARE2~        
-		fj_dlg_resref	  = ~JA#WARE1~			//changed from JA#WARE2 to JA#WARE1
+		fj_cre_resref     = ~JA#WARE2~
 	END
+BUT_ONLY

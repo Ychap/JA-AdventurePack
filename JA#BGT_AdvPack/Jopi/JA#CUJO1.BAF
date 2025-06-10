@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewPoint([434.368],INSTANT)
+		CreateCreature("JA#JOPI",[588.485],7)
+		SmallWait(3)
+		ActionOverride("JOPI",MoveToPoint([434.368]))
+		ActionOverride("JOPI",FaceObject("Ragefast"))
+		Wait(1)
+		ActionOverride("JOPI",StartDialogueNoSet([PC]))
+END

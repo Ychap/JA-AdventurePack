@@ -1,8 +1,0 @@
------------------
---Hulrik
------------------
-
--Changes Hulrik's initial selection sound ("Rhaaa! Help!") to a generic "Hello there".
--Adds reply options to Hulrik to tell him about the Xvart Village and the Nashkell Mines in case both are cleared.
--for BGT: will prevent Hulrik and his cow from leaving after Mulahey is dead
--adds more dialogue options after quest is done.

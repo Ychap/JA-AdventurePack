@@ -1,0 +1,23 @@
+IF
+	!Global("JA#ZorlLocation","MYAREA",0)
+	NearSavedLocation(Myself,"MYAREAJA#ZorlLocation",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#ZorlLocation","MYAREA",0)
+		SetName(@2099)
+		Polymorph(DOPPLEGANGER_GREATER)
+		ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
+		ApplySpell(Myself,WIZARD_HASTE)
+END
+
+IF
+	!Global("JA#IrlentreLocation","MYAREA",0)
+	NearSavedLocation(Myself,"MYAREAJA#IrlentreLocation",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#IrlentreLocation","MYAREA",0)
+		SetName(@2100)
+		Polymorph(DOPPLEGANGER_GREATER)
+		ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
+		ApplySpell(Myself,WIZARD_HASTE)
+END

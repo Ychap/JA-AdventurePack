@@ -13,9 +13,9 @@
 @7  = ~Here, take these Good Berries.~
 @8  = ~We'll see what we can do for you. Hold still for a moment.~
 @9  = ~You're as good as dead, we can't help you.~
-@10 = ~Attack on the caravan
+// @10 = ~Attack on the caravan
 
-A caravan was attacked and plundered by bandits on the coastal path. The passengers are all dead or kidnapped. One of the merchants was still alive when we found him, but there's probably no hope for him. Maybe I should release him of his agony before the wild animals take care of him.~
+// A caravan was attacked and plundered by bandits on the coastal path. The passengers are all dead or kidnapped. One of the merchants was still alive when we found him, but there's probably no hope for him. Maybe I should release him of his agony before the wild animals take care of him.~
 /* #4735 */
 @11 = ~I'm saved! You saved me, oh may all the gods bless your soul. What is there that I can do to repay you?~
 /* #4737 */
