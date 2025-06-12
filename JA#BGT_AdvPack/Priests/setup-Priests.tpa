@@ -4,10 +4,14 @@
 
 
 COPY ~JA#BGT_AdvPack/Priests/JA#OGHM1.CRE~ ~override~
+	SAY NAME1 @2124
+	SAY NAME2 @2124
 COPY ~JA#BGT_AdvPack/Priests/JA#OGHM1.STO~ ~override~
 	SAY STORE_NAME @2
 
 COPY ~JA#BGT_AdvPack/Priests/JA#PILL1.CRE~ ~override~
+	SAY NAME1 @2125
+	SAY NAME2 @2125
 COPY ~JA#BGT_AdvPack/Priests/JA#ILMA1.STO~ ~override~
 	SAY STORE_NAME @3
 
