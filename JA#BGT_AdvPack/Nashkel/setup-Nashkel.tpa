@@ -8,41 +8,6 @@ COPY ~JA#BGT_AdvPack/Nashkel/JA#VOLSE.CRE~ ~override~
 	SAY NAME2 @28
 
 
-// Add Bardolan's respawn to Nashkel area if he disappeared because of bg1re encounter
-COPY_EXISTING ~BARDOL.CRE~ ~override~
-	WRITE_ASCII DEATHVAR ~Bardolan~ #32
-BUT_ONLY
-
-<<<<<<<< ...inlined/bardolan_ar4800_bg1re.baf
-IF
-	Exists("Bardolan")
-	Global("C#LC_BardolanMoves","GLOBAL",1)
-	Global("C#JA#BardolanDespawn","MYAREA",0)
-THEN
-RESPONSE #100
-	SetGlobal("C#JA#BardolanDespawn","MYAREA",1)
-	ActionOverride("Bardolan",EscapeArea())
-	Continue()
-END
-
-IF
-	!Exists("C#BARDOL")
-	!Exists("Bardolan")
-	OR(2)
-		Global("C#LC_BardolanMoves","GLOBAL",0)
-		Global("C#LC_BardolanMoves","GLOBAL",5)
-	Global("C#JA#BardolanRespawn","MYAREA",0)
-THEN
-	RESPONSE #100
-		SetGlobal("C#JA#BardolanRespawn","MYAREA",1)
-		CreateCreature("BARDOL",[1104.722],11)
-		ActionOverride("Bardolan",SetNumTimesTalkedTo(1))
-		Continue()
-END
->>>>>>>>
-EXTEND_TOP ~%Nashkel_BCS%.BCS~ ~...inlined/bardolan_ar4800_bg1re.baf~ EVALUATE_BUFFER
-
-
 COPY_EXISTING ~%NashkelMines_L4_BCS%.BCS~ ~override~
 			  ~%NashkelMines_MulaheysCave_BCS%.BCS~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
