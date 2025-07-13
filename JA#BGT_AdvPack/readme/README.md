@@ -20,6 +20,11 @@ This Adventure Pack adds to such points in the game. A lot of missing content no
 
 Additionally to restorations and expansions this mod introduces some of my own ideas. For a detailed list of the content please refer to the section [Components](#components) below.
 
+
+[Mod Page at Kerzenburgforum](https://baldurs-gate.de/index.php?resources/jarls-bgt-adventure-pack.8/)
+
+[Mod Thread at Kerzenburgforum](https://baldurs-gate.de/index.php?threads/jarls-bgt-adventure-pack.42222/)
+
 <br>
 
 ## Installation & Compatibility
