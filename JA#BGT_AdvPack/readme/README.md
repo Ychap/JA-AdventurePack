@@ -67,7 +67,7 @@ Suggested install order with other mods:
 12. RESTORED: Svlast - the fallen Paladin [^2] [^3]
 13. RESTORED: Nashkel Garrison soldier
 14. RESTORED: Velvet - Cockfight [^4]
-15. RESTORED: Nim Furlwing [^2] [^3]
+15. ~~RESTORED: Nim Furlwing~~ [^2] [^3]
 16. RESTORED: Caravan merchant
 17. RESTORED: Galtoth - the fence
 18. Phandalyn waits in Elfsong Tavern
