@@ -12,10 +12,10 @@ END
 /* Zorl's and Irlentree's corpse will be on the table when doppelgangers are revealed */
 IF
 	Global("HelpBrandilar","GLOBAL",2)
-	Global("JA#Dopp_Corpse","LOCALS",0)
+	Global("JA#Dopp_Corpse","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("JA#Dopp_Corpse","LOCALS",1)
+		SetGlobal("JA#Dopp_Corpse","MYAREA",1)
 		ActionOverride("Container 1",CreateItem("JA#DIRLE",0,0,0)) // Irlentrees Leiche
 		ActionOverride("Container 1",CreateItem("JA#DZORL",0,0,0)) // Zorls Leiche
 		Continue()
@@ -24,10 +24,10 @@ END
 /* In case the player didn't find the bodies yet */
 IF
 	GlobalGT("Chapter","GLOBAL",%tutu_chapter_6%)
-	Global("JA#Dopp_Corpse","LOCALS",1)
+	Global("JA#Dopp_Corpse","MYAREA",1)
 THEN
 	RESPONSE #100
-		SetGlobal("JA#Dopp_Corpse","LOCALS",2)
+		SetGlobal("JA#Dopp_Corpse","MYAREA",2)
 		ActionOverride("Container 1",DestroyItem("JA#DIRLE"))
 		ActionOverride("Container 1",DestroyItem("JA#DZORL"))
 		Continue()
