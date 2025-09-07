@@ -11,12 +11,12 @@ APPEND ALDETH
 
 IF ~~ THEN JA#ALDETH_30
   SAY @31 = @32
-  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) SetGlobal("JA#ALD_MOVE1","%SWBaldursGate_MerchantLeague_L2%",1) EscapeArea()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN JA#ALDETH_31
   SAY @33
-  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) SetGlobal("JA#ALD_MOVE1","%SWBaldursGate_MerchantLeague_L2%",1) EscapeArea()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) EscapeArea()~ EXIT
 END
 
 /* new dialogue state - if PC attacked Zorl or Irlentree and forced them to change without the invitation to the 2nd floor */
