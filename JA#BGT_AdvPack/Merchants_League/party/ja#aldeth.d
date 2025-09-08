@@ -2,7 +2,7 @@ ADD_STATE_TRIGGER ALDETH 14 ~Global("ZorlDopple","GLOBAL",0)~
 
 
 EXTEND_BOTTOM ALDETH 14
-  IF ~PartyHasItem("SCRL2P")~ THEN REPLY @1 DO ~SetGlobal("JA#ALDETH_KNOWDOPP","GLOBAL",1)~ UNSOLVED_JOURNAL @1025 GOTO JA#ALDETH_30
+  IF ~PartyHasItem("SCRL2P")~ THEN REPLY @1 DO ~TakePartyItem("SCRL2O") TakePartyItem("SCRL2P") TakePartyItem("SCRL2Q") SetGlobal("JA#ALDETH_KNOWDOPP","GLOBAL",1)~ UNSOLVED_JOURNAL @1025 GOTO JA#ALDETH_30
   IF ~!PartyHasItem("SCRL2P") GlobalGT("JA#DOPPELGANGER_SPAWN","GLOBAL",0) Global("JA#SENDZORL","GLOBAL",2)~ THEN REPLY @2 GOTO JA#ALDETH_31
 END
 
@@ -11,12 +11,12 @@ APPEND ALDETH
 
 IF ~~ THEN JA#ALDETH_30
   SAY @31 = @32
-  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) SetGlobal("JA#ALD_MOVE1","%SWBaldursGate_MerchantLeague_L2%",1) EscapeArea()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN JA#ALDETH_31
   SAY @33
-  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) SetGlobal("JA#ALD_MOVE1","%SWBaldursGate_MerchantLeague_L2%",1) EscapeArea()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("JA#CUIRL","GLOBAL",1) EscapeArea()~ EXIT
 END
 
 /* new dialogue state - if PC attacked Zorl or Irlentree and forced them to change without the invitation to the 2nd floor */

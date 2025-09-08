@@ -133,7 +133,15 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
 END ELSE BEGIN
-	COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
+	<<<<<<<< ...inlined/aldeth_ee.d
+	ALTER_TRANS ALDETH
+	BEGIN 29 END
+	BEGIN 0 END
+	BEGIN
+	  "UNSOLVED_JOURNAL" ~@1025~
+	END
+	>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_ee.d~ ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
 END
 
 COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Merchants_League/ja#bart10.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
