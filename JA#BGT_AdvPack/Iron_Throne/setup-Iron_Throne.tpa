@@ -6,6 +6,8 @@
 COPY ~JA#BGT_AdvPack/Iron_Throne/JA#IRONH.CRE~ ~override~
 
 
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Iron_Throne/JA#IRONH.BAF~
+
 EXTEND_TOP ~%BaldursGateDocks_BCS%.BCS~ ~JA#BGT_AdvPack/Iron_Throne/AR8100.BAF~ EVALUATE_BUFFER
 
 
@@ -13,12 +15,15 @@ COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Iron_Throne/ja#ironh.d~
 
 
 COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
-	LPF ALTER_AREA_DOOR
-		INT_VAR
-		flag_locked     = 1
-		lock_difficulty = 100
-		STR_VAR
-		door_name       = ~Door0616~ // Correct door name in BGT, BGEE and EET
+	GET_OFFSET_ARRAY doors ARE_V10_DOORS
+	PHP_EACH doors AS i => door BEGIN
+		READ_ASCII door+0x20 door_id
+
+		PATCH_IF ~%door_id%~ STR_EQ ~DOOR0611~ BEGIN
+			WRITE_ASCII door+0x00 ~DOOR0611~ #32 // Name
+			WRITE_LONG door+0x28 (THIS | BIT1) // Flag: Door locked(1)
+			WRITE_LONG door+0x8c 100 // Lock difficulty
+		END
 	END
 	// add new actor
 	LPF fj_are_structure
