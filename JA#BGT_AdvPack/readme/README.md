@@ -165,6 +165,7 @@ Note the following to see as much mod content as possible:
 - Fix corpse spawn in Merchants' League investigations
 - Fix little quest bug in Merchants' League investigations
 - Fix behavior of Iron Throne guard
+- Fix despawn logic in Aldeth's Betrayal
 
 #### v1.0: 06.04.2025 (by Ychap)
 
