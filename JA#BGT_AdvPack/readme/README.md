@@ -166,6 +166,7 @@ Note the following to see as much mod content as possible:
 - Fix little quest bug in Merchants' League investigations
 - Fix behavior of Iron Throne guard
 - Fix despawn logic in Aldeth's Betrayal
+- Naiduja in Sorcerous Sundries does not turn hostile when Niemain attacks
 
 #### v1.0: 06.04.2025 (by Ychap)
 
