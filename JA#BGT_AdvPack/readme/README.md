@@ -161,8 +161,10 @@ Note the following to see as much mod content as possible:
 ## Version History
 
 #### v1.1 (by Ychap)
+
 - Fix corpse spawn in Merchants' League investigations
 - Fix little quest bug in Merchants' League investigations
+- Fix behavior of Iron Throne guard
 
 #### v1.0: 06.04.2025 (by Ychap)
 

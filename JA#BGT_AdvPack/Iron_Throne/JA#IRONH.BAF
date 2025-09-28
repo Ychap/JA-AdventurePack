@@ -1,0 +1,11 @@
+IF
+	Global("JA#THRONE_DOOR","%BaldursGateDocks%",1)
+	Range([PC],10)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	Delay(5)
+THEN
+	RESPONSE #100
+		SetGlobal("JA#THRONE_DOOR","%BaldursGateDocks%",2)
+		StartDialogueNoSet([PC])
+END
