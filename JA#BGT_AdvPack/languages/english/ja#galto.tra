@@ -1,5 +1,5 @@
 /* #8346 */
-@0    = ~ 'Allo, me friends. You've the look of the well-armed wanderer, which means you *burp* either do the fool's work of dungeon slumming or the easy labor of the blade-and-night man. Aye! Either way, you've items you've liberated from their previous owners. I can help you on that point. If you've something a touch too "known" for a store to buy, I'll take it off your hands—at a slightly reduced figure, of course.~
+@0    = ~ 'Allo, me friends. You've the look of the well-armed wanderer, which means you *burp* either do the fool's work of dungeon slumming or the easy labor of the blade-and-night man. Aye! Either way, you've items you've liberated from their previous owners. I can help you on that point. If you've something a touch too "known" for a store to buy, I'll take it off your handsâ€”at a slightly reduced figure, of course.~
 
 @1    = ~I see. Then show me what you have.~
 @2    = ~I don't do business with fences. Farewell.~
