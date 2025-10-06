@@ -25,7 +25,7 @@ IF ~Global("JA#_HelpedMechant","MYAREA",2)~ THEN 3
   SAY @11
   IF ~~ THEN REPLY @12 DO ~EraseJournalEntry(@1008)~ SOLVED_JOURNAL @13 GOTO 4
   IF ~~ THEN REPLY @14 DO ~EraseJournalEntry(@1008)~ SOLVED_JOURNAL @15 GOTO 6
-  IF ~~ THEN REPLY @16 DO ~EraseJournalEntry(@1008)~ SOLVED_JOURNAL @15 GOTO 5
+  IF ~~ THEN REPLY @16 DO ~EraseJournalEntry(@1008)~ SOLVED_JOURNAL @15 GOTO 7
   IF ~~ THEN REPLY @17 DO ~EraseJournalEntry(@1008)~ SOLVED_JOURNAL @18 GOTO 5
 END
 
