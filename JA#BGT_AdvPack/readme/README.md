@@ -167,6 +167,7 @@ Note the following to see as much mod content as possible:
 - Fix behavior of Iron Throne guard
 - Fix despawn logic in Aldeth's Betrayal
 - Naiduja in Sorcerous Sundries does not turn hostile when Niemain attacks
+- Make sure Tenya has an eligible dialog when summoned in Temple of Umberlee
 
 #### v1.0: 06.04.2025 (by Ychap)
 
