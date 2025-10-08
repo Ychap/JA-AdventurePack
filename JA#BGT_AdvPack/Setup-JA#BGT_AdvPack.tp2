@@ -173,6 +173,7 @@ INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
 
 BEGIN ~Iron Throne guard~ DESIGNATED 10
 LABEL "JA#BGT_AdvPack-Iron_Throne"
+REQUIRE_COMPONENT ~JA#BGT_AdvPack/Setup-JA#BGT_AdvPack.tp2~ 9 ~This component requires "Arkhstaff"~
 
 INCLUDE ~JA#BGT_AdvPack/Iron_Throne/setup-Iron_Throne.tpa~
 
