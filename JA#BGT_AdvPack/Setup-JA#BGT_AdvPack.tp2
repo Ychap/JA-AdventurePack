@@ -161,8 +161,8 @@ INCLUDE ~JA#BGT_AdvPack/Seven_Suns/setup-Seven_Suns.tpa~
 // Arkhstaff
 //////////////
 
-BEGIN ~Arkhstuff~ DESIGNATED 9
-LABEL "JA#BGT_AdvPack-Arkhstuff"
+BEGIN ~Arkhstaff~ DESIGNATED 9
+LABEL "JA#BGT_AdvPack-Arkhstaff"
 
 INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
 

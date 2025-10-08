@@ -61,7 +61,7 @@ Suggested install order with other mods:
 6. IMPROVED/RESTORED: Ducal Palace
 7. Gervisse & Voltine
 8. Seven Suns
-9. Arkhstuff
+9. Arkhstaff
 10. Iron Throne guard
 11. RESTORED: Palin - Aldeth's hunter comrade [^1]
 12. RESTORED: Svlast - the fallen Paladin [^2] [^3]
