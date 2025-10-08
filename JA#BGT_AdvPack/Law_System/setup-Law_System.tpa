@@ -69,6 +69,15 @@ COPY_EXISTING ~BENTLY.CRE~  ~override~
 BUT_ONLY
 
 
+COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
+	// remove trigger script (dont spawn Flaming Fist Enforcer)
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name   = ~REPTRAP~
+		region_script = ~None~
+	END
+BUT_ONLY
+
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L2%.ARE~ ~override~
 	// change container scripts (different Guard Enforcer dialog)
 	GET_OFFSET_ARRAY containers ARE_V10_CONTAINERS
