@@ -62,7 +62,7 @@ Suggested install order with other mods:
 7. Gervisse & Voltine
 8. Seven Suns
 9. Arkhstuff
-10. Iron Throne Guard
+10. Iron Throne guard
 11. RESTORED: Palin - Aldeth's hunter comrade [^1]
 12. RESTORED: Svlast - the fallen Paladin [^2] [^3]
 13. RESTORED: Nashkel Garrison soldier

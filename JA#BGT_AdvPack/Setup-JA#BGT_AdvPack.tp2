@@ -168,10 +168,10 @@ INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
 
 
 //////////////////////
-// Iron Throne Guard
+// Iron Throne guard
 //////////////////////
 
-BEGIN ~Iron Throne Guard~ DESIGNATED 10
+BEGIN ~Iron Throne guard~ DESIGNATED 10
 LABEL "JA#BGT_AdvPack-Iron_Throne"
 
 INCLUDE ~JA#BGT_AdvPack/Iron_Throne/setup-Iron_Throne.tpa~
@@ -194,8 +194,8 @@ INCLUDE ~JA#BGT_AdvPack/Palin/setup-Palin.tpa~
 
 BEGIN ~RESTORED: Svlast - the fallen Paladin~ DESIGNATED 12
 LABEL "JA#BGT_AdvPack-Svlast"
-FORBID_FILE ~override/ntsvlast.cre~ ~Svlast, the Fallen Paladin is already restored by Northern Tales of the Sword Coast.~
-FORBID_FILE ~override/UBSVLAST.CRE~ ~Svlast, the Fallen Paladin is already restored by BG1 Unfinished Business.~
+FORBID_FILE ~override/ntsvlast.cre~ ~Svlast, the Fallen Paladin is already restored by Northern Tales of the Sword Coast~
+FORBID_FILE ~override/UBSVLAST.CRE~ ~Svlast, the Fallen Paladin is already restored by BG1 Unfinished Business~
 
 INCLUDE ~JA#BGT_AdvPack/Svlast/setup-Svlast.tpa~
 
@@ -227,8 +227,8 @@ INCLUDE ~JA#BGT_AdvPack/Velvet/setup-Velvet.tpa~
 
 BEGIN ~RESTORED: Nim Furlwing~ DESIGNATED 15
 LABEL "JA#BGT_AdvPack-Nim_Furlwing"
-FORBID_FILE ~override/ntnimfur.cre~ ~NimFurlwing is already restored by Northern Tales of the Sword Coast.~
-FORBID_FILE ~override/ubnimfur.cre~ ~NimFurlwing is already restored by BG1 Unfinished Business.~
+FORBID_FILE ~override/ntnimfur.cre~ ~NimFurlwing is already restored by Northern Tales of the Sword Coast~
+FORBID_FILE ~override/ubnimfur.cre~ ~NimFurlwing is already restored by BG1 Unfinished Business~
 
 INCLUDE ~JA#BGT_AdvPack/Nim_Furlwing/setup-Nim_Furlwing.tpa~
 
@@ -340,7 +340,7 @@ INCLUDE ~JA#BGT_AdvPack/Artolas/setup-Artolas.tpa~
 
 BEGIN ~RESTORED: Pilar & Gheldehar~ DESIGNATED 26
 LABEL "JA#BGT_AdvPack-Pillar_Gheldehar"
-FORBID_FILE ~override/ntghelde.cre~ ~Pilar und Gheldehar is already restored by Northern Tales of the Sword Coast.~
+FORBID_FILE ~override/ntghelde.cre~ ~Pilar und Gheldehar is already restored by Northern Tales of the Sword Coast~
 
 INCLUDE ~JA#BGT_AdvPack/Pillar_Gheldehar/setup-Pillar_Gheldehar.tpa~
 
@@ -351,7 +351,7 @@ INCLUDE ~JA#BGT_AdvPack/Pillar_Gheldehar/setup-Pillar_Gheldehar.tpa~
 
 BEGIN ~RESTORED: Llindellyn - the archer~ DESIGNATED 27
 LABEL "JA#BGT_AdvPack-Llindellyn"
-FORBID_FILE ~override/ntllinde.cre~ ~Llyndellyn's Lucky Arrow is already restored by Northern Tales of the Sword Coast.~
+FORBID_FILE ~override/ntllinde.cre~ ~Llyndellyn's Lucky Arrow is already restored by Northern Tales of the Sword Coast~
 
 INCLUDE ~JA#BGT_AdvPack/Llindellyn/setup-Llindellyn.tpa~
 
@@ -362,7 +362,7 @@ INCLUDE ~JA#BGT_AdvPack/Llindellyn/setup-Llindellyn.tpa~
 
 BEGIN ~RESTORED: Mal-Kalen - Ulcaster's Adept~ DESIGNATED 28
 LABEL "JA#BGT_AdvPack-Mal-Kalen"
-FORBID_FILE ~override/UBMALKAL.CRE~ ~Mal-Kalen, the Ulcaster Ghost is already restored by BG1 Unfinished Business.~
+FORBID_FILE ~override/UBMALKAL.CRE~ ~Mal-Kalen, the Ulcaster Ghost is already restored by BG1 Unfinished Business~
 
 INCLUDE ~JA#BGT_AdvPack/Mal-Kalen/setup-Mal-Kalen.tpa~
 
@@ -373,7 +373,7 @@ INCLUDE ~JA#BGT_AdvPack/Mal-Kalen/setup-Mal-Kalen.tpa~
 
 BEGIN ~RESTORED: Keelor & Nasha~ DESIGNATED 29
 LABEL "JA#BGT_AdvPack-Keelor_Nasha"
-FORBID_FILE ~override/ntkeelor.cre~ ~Keelor & Nasha is already restored by Northern Tales of the Sword Coast.~
+FORBID_FILE ~override/ntkeelor.cre~ ~Keelor & Nasha is already restored by Northern Tales of the Sword Coast~
 
 INCLUDE ~JA#BGT_AdvPack/Keelor_Nasha/setup-Keelor_Nasha.tpa~
 
@@ -660,7 +660,7 @@ INCLUDE ~JA#BGT_AdvPack/Niemain_Zentarim/setup-Niemain_Zentarim.tpa~
 
 BEGIN ~Graphical improvements: Animated torches and candles~ DESIGNATED 100
 LABEL "JA#BGT_AdvPack-Graphical"
-DEPRECATED ~Baldurs Gate Graphical Overhaul (BGGO) is a superset of this component.~
+DEPRECATED ~Baldurs Gate Graphical Overhaul (BGGO) is a superset of this component~
 
 INCLUDE ~JA#BGT_AdvPack/Graphical/setup-Graphical.tpa~
 
