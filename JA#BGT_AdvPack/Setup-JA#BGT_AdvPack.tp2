@@ -340,10 +340,10 @@ INCLUDE ~JA#BGT_AdvPack/Artolas/setup-Artolas.tpa~
 ////////////////////////////////
 
 BEGIN ~RESTORED: Pilar & Gheldehar~ DESIGNATED 26
-LABEL "JA#BGT_AdvPack-Pillar_Gheldehar"
+LABEL "JA#BGT_AdvPack-Pilar_Gheldehar"
 FORBID_FILE ~override/ntghelde.cre~ ~Pilar und Gheldehar is already restored by Northern Tales of the Sword Coast~
 
-INCLUDE ~JA#BGT_AdvPack/Pillar_Gheldehar/setup-Pillar_Gheldehar.tpa~
+INCLUDE ~JA#BGT_AdvPack/Pilar_Gheldehar/setup-Pilar_Gheldehar.tpa~
 
 
 //////////////////////////////////////
