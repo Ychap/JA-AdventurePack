@@ -169,6 +169,7 @@ Note the following to see as much mod content as possible:
 - Naiduja in Sorcerous Sundries does not turn hostile when Niemain attacks
 - Make sure Tenya has an eligible dialog when summoned in Temple of Umberlee
 - Tiny dialog fix for caravan merchant
+- Fix cock texture in BG:EE
 
 #### v1.0: 06.04.2025 (by Ychap)
 
