@@ -614,14 +614,14 @@ INCLUDE ~JA#BGT_AdvPack/Miniquest/setup-Miniquest.tpa~
 
 
 //////////////////////////////////
-// Special keg in Elfsong Tavern
+// Unusual keg in Elfsong Tavern
 //////////////////////////////////
 
-BEGIN ~Special keg in Elfsong Tavern~ DESIGNATED 52
-LABEL "JA#BGT_AdvPack-Special_keg"
+BEGIN ~Unusual keg in Elfsong Tavern~ DESIGNATED 52
+LABEL "JA#BGT_AdvPack-Unusual_keg"
 REQUIRE_PREDICATE GAME_IS ~bgee eet~ OR (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~infinityanimations/setup-infinityanimations.tp2~ 0) @37
 
-INCLUDE ~JA#BGT_AdvPack/Special_keg/setup-Special_keg.tpa~
+INCLUDE ~JA#BGT_AdvPack/Unusual_keg/setup-Unusual_keg.tpa~
 
 
 ////////////////////////

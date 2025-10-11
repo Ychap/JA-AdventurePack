@@ -104,7 +104,7 @@ Suggested install order with other mods:
 49. Sorcerous Sundries
 50. RESTORED: Elfsong Tavern Movie [^2] [^5] [^6]
 51. Mini-Quest "The mystery of the silent ghostly voice"
-52. Special keg in Elfsong Tavern [^4]
+52. Unusual keg in Elfsong Tavern [^4]
 53. Black Alaric's Cave
 54. RESTORED: Cloakwood druid
 55. Extended meeting between Xzar and Niemain
@@ -171,6 +171,7 @@ Note the following to see as much mod content as possible:
 - Tiny dialog fix for caravan merchant
 - Fix cock texture in BG:EE
 - Fix keg texture in BG:EE
+- Rename component "Special keg in Elfsong Tavern" into "Unusual keg in Elfsong Tavern"
 
 #### v1.0: 06.04.2025 (by Ychap)
 

@@ -1,36 +1,36 @@
 //////////////////////////////////
-// Special keg in Elfsong Tavern
+// Unusual keg in Elfsong Tavern
 //////////////////////////////////
 
 
 // BAMs for KEG1 are missing in BG:EE without SoD
-ACTION_BASH_FOR ~JA#BGT_AdvPack/Special_keg/KEG1~ ~.*\.BAM~ BEGIN
+ACTION_BASH_FOR ~JA#BGT_AdvPack/Unusual_keg/KEG1~ ~.*\.BAM~ BEGIN
 	ACTION_IF NOT FILE_EXISTS ~%BASH_FOR_FILE%~ BEGIN
 		COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
 	END
 END
 
-COPY ~JA#BGT_AdvPack/Special_keg/JA#KEG01.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Unusual_keg/JA#KEG01.CRE~ ~override~
 	SAY NAME1 @29
 	SAY NAME2 @29
 	PATCH_IF GAME_IS ~bgee eet~ BEGIN
 		WRITE_LONG 0x28 0xCC00 // Animation: KEG1
 	END
 
-COPY ~JA#BGT_AdvPack/Special_keg/JA#KEG02.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Unusual_keg/JA#KEG02.CRE~ ~override~
 	SAY NAME1 @30
 	SAY NAME2 @31
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#COOK1.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#CUKEG.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/JA#KEG01.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Unusual_keg/JA#COOK1.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Unusual_keg/JA#CUKEG.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Unusual_keg/JA#KEG01.BAF~
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Special_keg/ja#cook1.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Unusual_keg/ja#cook1.d~
 
 
-EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Special_keg/AR7705.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_ElfsongTavern_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Unusual_keg/AR7705.BAF~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~%EBaldursGate_ElfsongTavern_L1%.ARE~ ~override~
