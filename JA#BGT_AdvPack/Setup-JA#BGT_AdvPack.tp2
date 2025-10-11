@@ -452,14 +452,14 @@ FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed afte
 INCLUDE ~JA#BGT_AdvPack/Aldeth_Seniyad/setup-Aldeth_Seniyad.tpa~
 
 
-//////////////////////////////////
-// Aldeth's betrayal and remorse
-//////////////////////////////////
+/////////////////////
+// Aldeth's Sellout
+/////////////////////
 
-BEGIN ~Aldeth's betrayal and remorse~ DESIGNATED 37
-LABEL "JA#BGT_AdvPack-Betrayal"
+BEGIN ~Aldeth's Sellout~ DESIGNATED 37
+LABEL "JA#BGT_AdvPack-Sellout"
 
-INCLUDE ~JA#BGT_AdvPack/Betrayal/setup-Betrayal.tpa~
+INCLUDE ~JA#BGT_AdvPack/Sellout/setup-Sellout.tpa~
 
 
 ////////////////////////////

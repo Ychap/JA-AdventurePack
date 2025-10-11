@@ -1,23 +1,23 @@
-//////////////////////////////////
-// Aldeth's betrayal and remorse
-//////////////////////////////////
+/////////////////////
+// Aldeth's Sellout
+/////////////////////
 
 
-COPY ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Sellout/JA#DEAGB.CRE~ ~override~
 	SAY NAME1 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
 	SAY NAME2 #3224 // ~Deagan~ (string ref is true for BGT and BG:EE)
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#CUDEC.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#CUDED.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sellout/JA#CUDEC.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sellout/JA#CUDED.BAF~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#DEAGB.BAF~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/JA#MGUAR.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sellout/JA#DEAGB.BAF~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sellout/JA#MGUAR.BAF~
 
 
-EXTEND_TOP ~%EBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7800.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7227.BAF~ EVALUATE_BUFFER
-EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Betrayal/AR7228.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%EBaldursGate_BCS%.BCS~ ~JA#BGT_AdvPack/Sellout/AR7800.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L1_BCS%.BCS~ ~JA#BGT_AdvPack/Sellout/AR7227.BAF~ EVALUATE_BUFFER
+EXTEND_TOP ~%SWBaldursGate_MerchantLeague_L2_BCS%.BCS~ ~JA#BGT_AdvPack/Sellout/AR7228.BAF~ EVALUATE_BUFFER
 
 
 COPY_EXISTING ~%EBaldursGate_BCS%.BCS~ ~override~
@@ -76,9 +76,9 @@ LAF GET_DLG_SCRIPT
 		state21_response1_action = response_action
 END
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/ja#aldeth_betrayal.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/ja#aldeth_reconciliation.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Betrayal/ja#deagb.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sellout/ja#aldeth_betrayal.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sellout/ja#aldeth_reconciliation.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#aldeth.tra~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Sellout/ja#deagb.d~ USING ~JA#BGT_AdvPack/languages/%s/ja#deagan.tra~
 
 
 COPY_EXISTING ~BRANDI.CRE~ ~override~

@@ -89,7 +89,7 @@ Suggested install order with other mods:
 34. IMPROVED/FIXED: Counting House
 35. Merchants' League investigations
 36. Aldeth & Seniyad
-37. Aldeth's betrayal and remorse
+37. Aldeth's Sellout
 38. Tenya and the fishermen
 39. Tenya's quest in Temple of Umberlee
 40. Nashkel changes
@@ -165,13 +165,14 @@ Note the following to see as much mod content as possible:
 - Fix corpse spawn in Merchants' League investigations
 - Fix little quest bug in Merchants' League investigations
 - Fix behavior of Iron Throne guard
-- Fix despawn logic in Aldeth's Betrayal
+- Fix despawn logic in Aldeth's Sellout
 - Naiduja in Sorcerous Sundries does not turn hostile when Niemain attacks
 - Make sure Tenya has an eligible dialog when summoned in Temple of Umberlee
 - Tiny dialog fix for caravan merchant
 - Fix cock texture in BG:EE
 - Fix keg texture in BG:EE
 - Rename component "Special keg in Elfsong Tavern" into "Unusual keg in Elfsong Tavern"
+- Rename component "Aldeth's betrayal and remorse" into "Aldeth's Sellout"
 
 #### v1.0: 06.04.2025 (by Ychap)
 
