@@ -1,7 +1,4 @@
 IF
-	OR(2)
-		GlobalGT("ScarMission","GLOBAL",4)
-		GlobalGT("JA#ELFSONG_QUEST","GLOBAL",8)
 	Global("JA#CUKEG","%EBaldursGate_ElfsongTavern_L1%",0)
 THEN
 	RESPONSE #100

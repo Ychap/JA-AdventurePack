@@ -5,5 +5,5 @@ IF
 	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
-		StartDialogueNoSet([PC])
+		Dialogue([PC])
 END

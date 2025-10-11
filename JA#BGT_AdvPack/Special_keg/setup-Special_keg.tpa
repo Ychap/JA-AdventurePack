@@ -3,16 +3,17 @@
 //////////////////////////////////
 
 
-ACTION_IF GAME_IS ~bgt~ BEGIN
-	ACTION_IF NOT FILE_EXISTS ~µbea1.bam~ BEGIN // 0x525B µbe BGT+Infinity   0xCC00 MKG1 BGEE
-		COPY ~JA#BGT_AdvPack/Special_keg/Keg1~ ~override~
+// BAMs for KEG1 are missing in BG:EE without SoD
+ACTION_BASH_FOR ~JA#BGT_AdvPack/Special_keg/KEG1~ ~.*\.BAM~ BEGIN
+	ACTION_IF NOT FILE_EXISTS ~%BASH_FOR_FILE%~ BEGIN
+		COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
 	END
 END
 
 COPY ~JA#BGT_AdvPack/Special_keg/JA#KEG01.CRE~ ~override~
 	SAY NAME1 @29
 	SAY NAME2 @29
-	PATCH_IF GAME_IS ~eet bgee~ BEGIN
+	PATCH_IF GAME_IS ~bgee eet~ BEGIN
 		WRITE_LONG 0x28 0xCC00 // Animation: KEG1
 	END
 
