@@ -53,6 +53,8 @@ Suggested install order with other mods:
 
 ## Components
 
+A short description of each component can be found [here](/JA%23BGT_AdvPack/readme/components.md).
+
 1. Extended Law System
 2. Ramazith
 3. Jopi and his uncle Ragefast
@@ -63,25 +65,25 @@ Suggested install order with other mods:
 8. Seven Suns
 9. Arkhstuff
 10. Iron Throne Guard
-11. RESTORED: Palin - Aldeth's hunter comrade [^1]
-12. RESTORED: Svlast - the fallen Paladin [^2] [^3]
+11. RESTORED: Palin - Aldeth's hunter comrade
+12. RESTORED: Svlast - the fallen Paladin
 13. RESTORED: Nashkel Garrison soldier
-14. RESTORED: Velvet - Cockfight [^4]
-15. RESTORED: Nim Furlwing [^2] [^3]
+14. RESTORED: Velvet - Cockfight
+15. RESTORED: Nim Furlwing
 16. RESTORED: Caravan merchant
 17. RESTORED: Galtoth - the fence
 18. Phandalyn waits in Elfsong Tavern
-19. RESTORED: Suthie & Sthief at Silence's Store [^1]
+19. RESTORED: Suthie & Sthief at Silence's Store
 20. RESTORED: Warehouse Workers
 21. RESTORED: Nobles
 22. RESTORED: Yago's guard in Low Lantern
 23. RESTORED: Ignatio Phleed - the invitation seller
 24. RESTORED: Shalasin
 25. RESTORED: Sir Artolas
-26. RESTORED: Pilar & Gheldehar [^3]
-27. RESTORED: Llindellyn - the archer [^3]
-28. RESTORED: Mal-Kalen - Ulcaster's Adept [^2]
-29. RESTORED: Keelor & Nasha [^3]
+26. RESTORED: Pilar & Gheldehar
+27. RESTORED: Llindellyn - the archer
+28. RESTORED: Mal-Kalen - Ulcaster's Adept
+29. RESTORED: Keelor & Nasha
 30. RESTORED: Marl - Tavern brawl at Feldepost's Inn
 31. RESTORED: Beregost guards
 32. RESTORED ITEM: Rythe's Last Arrow
@@ -102,9 +104,9 @@ Suggested install order with other mods:
 47. Improved Shop of Silence
 48. Ender Sai in Baldur's Gate
 49. Sorcerous Sundries
-50. RESTORED: Elfsong Tavern Movie [^2] [^5] [^6]
+50. RESTORED: Elfsong Tavern Movie
 51. Mini-Quest: "The mystery of the silent ghostly voice"
-52. Special keg in Elfsong Tavern [^4]
+52. Special keg in Elfsong Tavern
 53. Black Alaric's Cave
 54. RESTORED: Cloakwood druid
 55. Extended meeting between Xzar and Niemain
@@ -250,11 +252,3 @@ Note the following to see as much mod content as possible:
 Legal Information: BALDUR'S GATE II: SHADOWS OF AMN Developed and © 2000 BioWare Corp. All Rights Reserved. BALDUR'S GATE II: THRONE OF BHAAL Developed and © 2001 BioWare Corp. All Rights Reserved. Baldur's Gate, Shadows of Amn, Tales of the Sword Coast, Forgotten Realms, the Forgotten Realms logo, Advanced Dungeons & Dragons, the AD&D logo, TSR and the TSR logo, and the Wizards of the Coast logo, are trademarks of the Wizards of the Coast, Inc., a subsidiary of Hasbro, Inc., and are used by Interplay Entertainment Corp. under license. All Rights Reserved. BioWare, the BioWare Infinity Engine and the BioWare logo are the trademarks of BioWare Corp. All Rights Reserved. Black Isle Studios and the Black Isle Studios logo are trademarks of Interplay Entertainment Corp. All Rights Reserved. Exclusively licensed and distributed by Interplay Entertainment Corp. All other trademarks and copyrights are property of their respective owners.
 
 This mod is not developed, supported, or endorsed by BioWare, Black Isle Studios, Interplay Entertainment Corp., or the Wizards of the Coast. All other trademarks and copyrights are property of their respective owners.
-
-
-[^1]: Already restored in BG:EE
-[^2]: Also included in BG1 Unfinished Business
-[^3]: Also included in Northern Tales of the Sword Coast
-[^4]: Requires BG:EE, EET or Infinity Animations
-[^5]: Already restored by BG:EE Classic Movies
-[^6]: Already restored by Baldur's Gate: Enhanced Edition Trilogy (EET)
