@@ -2,7 +2,7 @@
 // Aldeth & Seniyad
 /////////////////////
 
-// FYI: In EE with jaheira in group you already have a peaceful solution.
+// FYI: EE already added another peaceful solution with Jaheira in group.
 
 COPY ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.BAM~ ~override~
 COPY ~JA#BGT_AdvPack/Aldeth_Seniyad/JA#ALDET.ITM~ ~override~

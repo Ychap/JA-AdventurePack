@@ -601,11 +601,11 @@ FORBID_FILE ~lang/%EE_LANGUAGE%/movies/TAVERN.wbm~ ~Already restored by Baldur's
 INCLUDE ~JA#BGT_AdvPack/Elfsong_movie/setup-Elfsong_movie.tpa~
 
 
-//////////////////////////////////////////////////////////
-// Mini-Quest: "The mystery of the silent ghostly voice"
-//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+// Mini-Quest "The mystery of the silent ghostly voice"
+/////////////////////////////////////////////////////////
 
-BEGIN ~Mini-Quest: "The mystery of the silent ghostly voice"~ DESIGNATED 51
+BEGIN ~Mini-Quest "The mystery of the silent ghostly voice"~ DESIGNATED 51
 LABEL "JA#BGT_AdvPack-Miniquest"
 FORBID_COMPONENT ~bg1re/setup-bg1re.tp2~ 41 ~This component cannot be installed after Baldur's Gate Romantic Encounters~
 FORBID_COMPONENT ~bg1npc/bg1npc.tp2~ 10 ~This component cannot be installed after BG1NPC~

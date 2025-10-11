@@ -103,7 +103,7 @@ Suggested install order with other mods:
 48. Ender Sai in Baldur's Gate
 49. Sorcerous Sundries
 50. RESTORED: Elfsong Tavern Movie [^2] [^5] [^6]
-51. Mini-Quest: "The mystery of the silent ghostly voice"
+51. Mini-Quest "The mystery of the silent ghostly voice"
 52. Special keg in Elfsong Tavern [^4]
 53. Black Alaric's Cave
 54. RESTORED: Cloakwood druid
