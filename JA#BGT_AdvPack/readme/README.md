@@ -73,7 +73,7 @@ Suggested install order with other mods:
 18. Phandalyn waits in Elfsong Tavern
 19. RESTORED: Suthie & Sthief at Silence's Store [^1]
 20. RESTORED: Warehouse Workers
-21. RESTORED: Nobles
+21. RESTORED: Townspeople dialogues
 22. RESTORED: Yago's guard in Low Lantern
 23. RESTORED: Ignatio Phleed - the invitation seller
 24. RESTORED: Shalasin
@@ -173,6 +173,7 @@ Note the following to see as much mod content as possible:
 - Fix keg texture in BG:EE
 - Rename component "Special keg in Elfsong Tavern" into "Unusual keg in Elfsong Tavern"
 - Rename component "Aldeth's betrayal and remorse" into "Aldeth's Sellout"
+- Rename component "RESTORED: Nobles" into "RESTORED: Townspeople dialogues"
 
 #### v1.0: 06.04.2025 (by Ychap)
 

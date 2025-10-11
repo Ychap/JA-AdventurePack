@@ -1,6 +1,6 @@
-/////////////////////
-// RESTORED: Nobles
-/////////////////////
+////////////////////////////////////
+// RESTORED: Townspeople dialogues
+////////////////////////////////////
 
 // RESTORED: BOYBA3, FTOWB3.CRE (Bl. Merm.), NOBL15.CRE (3 Old Kegs), NOBLAY.CRE (Undercellars)
 
@@ -8,17 +8,17 @@ COPY_EXISTING ~BOYBA1.CRE~ ~override/JA#BOYBA.CRE~
 	WRITE_ASCII DIALOG ~BOYBA3~ #8
 BUT_ONLY
 
-COPY ~JA#BGT_AdvPack/Nobles/JA#FTOB3.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Nobles/JA#NOB15.CRE~ ~override~
-COPY ~JA#BGT_AdvPack/Nobles/JA#NOBLY.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Townspeople_dialogues/JA#FTOB3.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Townspeople_dialogues/JA#NOB15.CRE~ ~override~
+COPY ~JA#BGT_AdvPack/Townspeople_dialogues/JA#NOBLY.CRE~ ~override~
 
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#dillar.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nobl14.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Townspeople_dialogues/ja#dillar.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Townspeople_dialogues/ja#nobl14.d~
 
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#ftob3.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nob15.d~
-COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Nobles/ja#nobly.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Townspeople_dialogues/ja#ftob3.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Townspeople_dialogues/ja#nob15.d~
+COMPILE EVALUATE_BUFFER ~JA#BGT_AdvPack/Townspeople_dialogues/ja#nobly.d~
 
 
 COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
