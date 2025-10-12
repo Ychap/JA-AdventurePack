@@ -2,45 +2,51 @@
 
 1. __Extended Law System__
 
-    Flaming Fist soldiers do not spawn in Friendly Arm Inn, Blushing Mermaid or Elfsong Tavern.\
-    But stealing from containers in Friendly Arm Inn, Elfsong Tavern, Blushing Mermaid or Ducal Palace may be interrupted by a guard.
+    Friendly Arm Inn, Elfsong Tavern and Blushing Mermaid Inn are "neutral grounds" where the group will not be attacked by Flaming Fist soldiers.\
+    But stealing from containers in may be interrupted by tavern guards.
 
 2. __Ramazith__
 
-    Improved dialogues for Ramazith and Abela. Tougher monsters on each level of Ramazith's tower. He will reappear on some levels during your battle to the top.
+    Improved dialogues for Ramazith and Abela.\
+    Tougher monsters on each level of Ramazith's tower. He will reappear on some levels during your battle to the top.
 
 3. __Jopi and his uncle Ragefast__
 
-    You can talk to Jopi at the Friendly Arm Inn after you cleared the bandit camp and tell him that the roads are clear. Then he will reappear in chapter 5 outside of his uncle Ragefast's home for an extended plot that can be solved without violence.
+    You can talk to Jopi at the Friendly Arm Inn after you cleared the bandit camp and tell him that the roads are clear. Then he will reappear in Baldur's Gate city outside of his uncle Ragefast's home for an extended plot that can be solved without violence.
 
 4. __Yuxi - Ragefast's imp__
 
-    Ragefast gets a talkative imp in his home who will try to incite Ragefast to violence.
+    Ragefast gets a talkative imp who tries to incite Ragefast to violence.
 
 5. __Husam's story line finished__
 
-    In chapter 7 Husam stands in front of the Blushing Mermaid. He and his Shadow Thieves may find a secret passage into the Ducal Palace, where they can help you with the upcoming fight.
+    Closure of the Husam storyline: Husam and his Shadow Thieves will help inside the Ducal Palace with the confrontation with Sarevok.\
+    Please note: to activate his help, talk to him in front of the Blushing Mermaid.
 
 6. __IMPROVED/RESTORED: Ducal Palace__
 
-    Gives Sarevok a room in Ducal Palace before his reveal as a scoundrel. It may be useful to find his diary in the palace.\
-    More nobles are present in the Ducal Palace.
+    Completely revised scene in the Duke's Palace with restored content.\
+    More nobles are present in the Ducal Palace.\
+    Note: You have to retrieve a personal item from Sarevok from the upper floor before the nomination starts.
 
 7. __Gervisse & Voltine__
 
-    Voltine gets a house in Baldur's gate city and the "bogeyman" plot with the two twins Laerta and Louise is extended.\
-    In vanilla this is fairly simple, but this component requires the party to have more dialogue with Gervisse and Voltine to understand what is happening.
+    Completely revised Voltine & Gervisse quest with restored content.\
+    Voltine gets her own house in Baldur's gate city.\
+    Expanded "bogeyman" plot with the two twins Laerta and Louise: More dialogue with Gervisse and Voltine to understand what is happening.
 
 8. __Seven Suns__
 
-    More dialogue and more background plot about the doppelganger take over in the Seven Suns.
+    Completely revised Scar quest in the Seven Suns with restored content.\
+    More dialogue and more background plot about Jhasso and the doppelganger take over.\
+    Jhasso may be helpful in chapter 7.
 
-9. __Arkhstaff__
+9. __Krammoch Arkhstaff__
 
     [Krammoch Arkhstaff](https://forgottenrealms.fandom.com/wiki/Krammoch_Arkhstaff) lives in a house near the harbor.
     With his help, you may find another way into the Iron Throne and rescue a person close to him.
 
-10. __Iron Throne guard__ (Requires previous component Arkhstaff)
+10. __Iron Throne guard__ (Requires previous component Krammoch Arkhstaff)
 
     A guard in front of the Iron Throne building blocks the entrance. But there is another way into the building.
 
@@ -74,7 +80,8 @@
 
 18. __Phandalyn waits in Elfsong Tavern__
 
-    The paladin Phandalyn is relocated to the Elfsong Tavern. (Mentioned by Bellamy)
+    Revised encounter with the paladin Phandalyn.\
+    Please note: First the party needs to be warned about Phandalyn. After that, Phandalyn will be inside the Elfsong Tavern!
 
 19. __RESTORED: Suthie & Sthief at Silence's Store__ (Already restored in BG:EE)
 
@@ -102,7 +109,7 @@
 
 25. __RESTORED: Sir Artolas__
 
-    In the Sewers a paladin of Helm is on a righteous path.
+    In the Sewers a paladin of Helm is on his righteous path.
 
 26. __RESTORED: Pilar & Gheldehar__ (Also included in Northern Tales of the Sword Coast)
 
@@ -123,12 +130,12 @@
 
 30. __RESTORED: Marl - Tavern brawl at Feldepost's Inn__
 
-    Significant change that adds dialogue that can avoid violence and gain reward.\
-    Tip: Keep to the unwritten laws for tavern brawls. (More specific [here](/JA%23BGT_AdvPack/readme/README.md#spoiler))
+    Significant changes to the Marl encounter.\
+    Note: Keep to the unwritten laws for tavern brawls. (More specific [here](/JA%23BGT_AdvPack/readme/README.md#spoiler))
 
 31. __RESTORED: Beregost guards__
 
-    Guards are protecting the streets of Beregost and two guards are drinking and discussing current events at the Jovial Juggler.
+    Guardsmen are protecting the streets of Beregost and two are drinking and discussing current events at the Jovial Juggler.
 
 32. __RESTORED ITEM: Rythe's Last Arrow__
 
@@ -146,21 +153,21 @@
 
 35. __Merchants' League investigations__
 
-    Significant plot expansion, depending on how Aldeth plot was handled in Cloakwood, he will seek an audience with party at Three Kegs to discuss his suspicions about the doppelganger takeover.\
+    Completely revised Mearchants' League quest with a lot of restored content.\
+    A messenger will approach you in Baldur's Gate and lead the group to a first meeting with Aldeth to discuss his suspicions about the doppelganger takeover.\
     Expanded dialogue and plot in the Merchant League including more options to gain evidence that leads to exposure of the plot and battle.
 
 36. __Aldeth & Seniyad__
 
-    Extended dialogue options that allows PC to negotiate a peaceful solution and gain a reward.
+    The conflict of Aldeth and Seniyad can now be settled peacefully with a reward.
 
-37. __Aldeth's betrayal__
+37. __Aldeth's Sellout__
 
-    In chapter 7 near the Elfsong Tavern a servent of Aldeth offers some help...\
-    After be freed from Flaming Fist HQ you can ask Aldeth about his previous behaviour.
+    In chapter 7 near the Elfsong Tavern a messenger of Aldeth offers some help. With added possibility to confront Aldeth about it afterwards.
 
 38. __Tenya and the fishermen__
 
-    Allows to side with either Tenya or the fishermen. May lead to violence.
+    Dialogue possibilities and quest development for Tenya and the fishermen. May lead to violence.
 
 39. __Tenya's quest in Temple of Umberlee__
 
@@ -174,7 +181,7 @@
 
 41. __Stationary soldiers in Nashkel__
 
-    Nashkel soldiers stay at post instead of patrolling.
+    Soldiers in Nashkel no longer move about but have fixed posts.
 
 42. __Imoen at Winthrop's inn__
 
@@ -187,10 +194,10 @@
 
 44. __Extended/Improved dialogues__
 
-    Phlydia in Candlekeep prologue gets additional dialogue.\
-    Noralee in Baldur's Gate city gets additional dialogue.\
+    Phlydia in Candlekeep prologue gets more dialogue.\
+    Noralee in Baldur's Gate city can be asked for her gauntlets.\
     Some named persons get single restored dialogue lines.\
-    Some commoners in Baldur's Gate city get unique dialogues.
+    Some commoners in Baldur's Gate city get their own dialogue.
 
 45. __Caldo can be charmed__
 
@@ -198,16 +205,16 @@
 
 46. __Hulrik and his cows__
 
-    Additional dialogue options with Hulrik about cleared Nashkel mine and Xvart village.
+    Additional dialogue options with Hulrik about cleared Nashkel mine or destroyed Xvart village.
 
 47. __Improved Shop of Silence__
 
-    More thiefs and Silence's bruiser Mongo are present in her store.\
-    Small amount of additional dialogue with Silence.
+    Thieves and Silence's bruiser Mongo are present in her store.\
+    Additional dialogue options with Silence.
 
 48. __Ender Sai in Baldur's Gate__
 
-    Meet Ender Sai at an inn in Baldur's Gate city after he is freed from Bandit Camp.
+    Meet Ender Sai at a tavern in Baldur's Gate after he is freed from Bandit Camp.
 
 49. __Sorcerous Sundries__
 
