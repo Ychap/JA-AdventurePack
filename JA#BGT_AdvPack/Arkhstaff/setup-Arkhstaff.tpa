@@ -1,6 +1,6 @@
-//////////////
-// Arkhstaff
-//////////////
+///////////////////////
+// Krammoch Arkhstaff
+///////////////////////
 
 
 COPY ~JA#BGT_AdvPack/Arkhstaff/JA#C04.TIS~ ~override~

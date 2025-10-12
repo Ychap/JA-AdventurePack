@@ -61,7 +61,7 @@ Suggested install order with other mods:
 6. IMPROVED/RESTORED: Ducal Palace
 7. Gervisse & Voltine
 8. Seven Suns
-9. Arkhstaff
+9. Krammoch Arkhstaff
 10. Iron Throne guard
 11. RESTORED: Palin - Aldeth's hunter comrade [^1]
 12. RESTORED: Svlast - the fallen Paladin [^2] [^3]
@@ -174,6 +174,7 @@ Note the following to see as much mod content as possible:
 - Rename component "Special keg in Elfsong Tavern" into "Unusual keg in Elfsong Tavern"
 - Rename component "Aldeth's betrayal and remorse" into "Aldeth's Sellout"
 - Rename component "RESTORED: Nobles" into "RESTORED: Townspeople dialogues"
+- Rename component "Arkhstaff" into "Krammoch Arkhstaff"
 
 #### v1.0: 06.04.2025 (by Ychap)
 

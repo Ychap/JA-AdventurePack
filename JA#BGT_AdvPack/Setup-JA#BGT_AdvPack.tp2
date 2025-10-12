@@ -157,11 +157,11 @@ LABEL "JA#BGT_AdvPack-Seven_Suns"
 INCLUDE ~JA#BGT_AdvPack/Seven_Suns/setup-Seven_Suns.tpa~
 
 
-//////////////
-// Arkhstaff
-//////////////
+///////////////////////
+// Krammoch Arkhstaff
+///////////////////////
 
-BEGIN ~Arkhstaff~ DESIGNATED 9
+BEGIN ~Krammoch Arkhstaff~ DESIGNATED 9
 LABEL "JA#BGT_AdvPack-Arkhstaff"
 
 INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
@@ -173,7 +173,7 @@ INCLUDE ~JA#BGT_AdvPack/Arkhstaff/setup-Arkhstaff.tpa~
 
 BEGIN ~Iron Throne guard~ DESIGNATED 10
 LABEL "JA#BGT_AdvPack-Iron_Throne"
-REQUIRE_COMPONENT ~JA#BGT_AdvPack/Setup-JA#BGT_AdvPack.tp2~ 9 ~This component requires "Arkhstaff"~
+REQUIRE_COMPONENT ~JA#BGT_AdvPack/Setup-JA#BGT_AdvPack.tp2~ 9 ~This component requires "Krammoch Arkhstaff"~
 
 INCLUDE ~JA#BGT_AdvPack/Iron_Throne/setup-Iron_Throne.tpa~
 
