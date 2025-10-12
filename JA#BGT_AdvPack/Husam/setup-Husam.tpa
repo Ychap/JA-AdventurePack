@@ -10,6 +10,13 @@ COPY ~JA#BGT_AdvPack/Husam/JA#PRISO.CRE~ ~override~
 	SAY NAME1 @2045
 	SAY NAME2 @2046
 
+ACTION_IF GAME_IS ~bgt~ BEGIN
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH03.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH04.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH05.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH06.CRE~ ~override~
+	COPY ~JA#BGT_AdvPack/Husam/JA#STH07.CRE~ ~override~
+END
 ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	COPY_EXISTING ~SHADOW03.CRE~ ~override/JA#STH03.CRE~
 				  ~SHADOW04.CRE~ ~override/JA#STH04.CRE~
@@ -19,12 +26,6 @@ ACTION_IF GAME_IS ~bgee eet~ BEGIN
 		LPF REPLACE_CRE_SCRIPT STR_VAR script_old = EVAL ~%SOURCE_RES%~ script_new = ~JA#STHFX~ END
 		LPF ADD_CRE_SCRIPT STR_VAR script_new = ~SEEENEMY~ END
 		WRITE_ASCIIE DEATHVAR ~%DEST_RES%~ #32
-END ELSE BEGIN
-	COPY ~JA#BGT_AdvPack/Husam/JA#STH03.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Husam/JA#STH04.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Husam/JA#STH05.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Husam/JA#STH06.CRE~ ~override~
-	COPY ~JA#BGT_AdvPack/Husam/JA#STH07.CRE~ ~override~
 END
 
 

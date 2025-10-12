@@ -132,7 +132,8 @@ ACTION_IF GAME_IS ~bgt~ BEGIN
 	END
 	>>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/aldeth_bgt.d~ ~JA#BGT_AdvPack/Merchants_League/ja#aldeth.d~
-END ELSE BEGIN
+END
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
 	<<<<<<<< ...inlined/aldeth_ee.d
 	ALTER_TRANS ALDETH
 	BEGIN 29 END
