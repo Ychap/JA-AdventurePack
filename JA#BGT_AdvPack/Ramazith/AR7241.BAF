@@ -8,6 +8,6 @@ THEN
 		CreateCreature("SPIDSW",[419.275],0)
 		CreateCreature("SPIDSW",[162.355],11)
 		CreateCreature("SPIDGI",[99.213],6)
-		CreateCreature("SPIDHU",[249.143],14)
+		CreateCreature("SPIDPH",[249.143],14)
 		Continue()
 END

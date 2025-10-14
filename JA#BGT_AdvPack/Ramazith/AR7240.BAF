@@ -5,9 +5,11 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JA#RAMAZITH_AR7240","%NBaldursGate_RamazithsTower_L3%",1)
-		CreateCreature("ELEMEP08",[78.235],15)
-		CreateCreature("MEPICE01",[172.140],6)
-		CreateCreature("MEPSAL01",[424.286],1)
+		CreateCreature("GHAST",[101.209],0)
+		CreateCreature("GHAST",[409.301],0)
+		CreateCreature("GHAST",[167.156],2)
+		CreateCreature("GHAST",[249.138],4)
+		CreateCreature("GHAST",[396.188],0)
 		CreateCreature("RAMAZI",[422.293],6)
 		ActionOverride("Ramazith",SetNumTimesTalkedTo(1))
 		ActionOverride("RAMAZITH",Enemy())

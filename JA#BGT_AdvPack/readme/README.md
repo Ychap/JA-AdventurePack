@@ -175,6 +175,7 @@ Note the following to see as much mod content as possible:
 - Rename component "Aldeth's betrayal and remorse" into "Aldeth's Sellout"
 - Rename component "RESTORED: Nobles" into "RESTORED: Townspeople dialogues"
 - Rename component "Arkhstaff" into "Krammoch Arkhstaff"
+- Fix creature spawn at third floor of Ramazith's Tower
 
 #### v1.0: 06.04.2025 (by Ychap)
 
