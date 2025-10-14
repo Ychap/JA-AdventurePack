@@ -205,16 +205,16 @@
 
 46. __Hulrik and his cows__
 
-    Additional dialogue options with Hulrik about cleared Nashkel mine or destroyed Xvart village.
+    Additional dialogue options with Hulrik about cleared Nashkel Mine or destroyed Xvart Village.
 
 47. __Improved Shop of Silence__
 
     Thieves and Silence's bruiser Mongo are present in her store.\
     Additional dialogue options with Silence.
 
-48. __Ender Sai in Baldur's Gate__
+48. __Ender Sai in Baldur's Gate__ (Not compatible with Ender Sai from BG1 Unfinished Business)
 
-    Meet Ender Sai at a tavern in Baldur's Gate after he is freed from Bandit Camp.
+    Meet Ender Sai at an inn in Baldur's Gate after he is freed from Bandit Camp.
 
 49. __Sorcerous Sundries__
 
