@@ -11,7 +11,7 @@
 
 3. __Jopi and his uncle Ragefast__
 
-    You can talk to Jopi at the Friendly Arm Inn after you cleared the bandit camp and tell him that the roads are clear. Then he will reappear in Baldur's Gate city outside of his uncle Ragefast's home for an extended plot that can be solved without violence.
+    You can talk to Jopi at the Friendly Arm Inn after you cleared the bandit camp and tell him that the roads are clear. Then he will appear in Baldur's Gate city at his uncle Ragefast's home for an extended plot that can be solved without violence.
 
 4. __Yuxi - Ragefast's imp__
 
@@ -32,28 +32,29 @@
 
     Completely revised Voltine & Gervisse quest with restored content.\
     Voltine gets her own house in Baldur's Gate city.\
-    Expanded "bogeyman" plot with the two twins Laerta and Louise: More dialogue with Gervisse and Voltine to understand what is happening.
+    Expanded "bogeyman" plot: More dialogue with Gervisse and Voltine to understand what is happening.
 
 8. __Seven Suns__
 
     Completely revised Scar quest in the Seven Suns with restored content.\
     More dialogue and more background plot about Jhasso and the doppelganger take over.\
-    Jhasso has some tips in chapter 7.
+    In chapter 7 Jhasso may have some tips for you.
 
 9. __Krammoch Arkhstaff__
 
-    [Krammoch Arkhstaff](https://forgottenrealms.fandom.com/wiki/Krammoch_Arkhstaff) lives in a house at the harbor of Baldur's Gate.\
+    [Krammoch Arkhstaff](https://forgottenrealms.fandom.com/wiki/Krammoch_Arkhstaff) has a home at the harbor of Baldur's Gate.\
     With his help, you may find another way into the Iron Throne and rescue a person close to him.
 
-10. __Iron Throne guard__ (Requires previous component Krammoch Arkhstaff)
+10. __Iron Throne guard__
 
-    A guard in front of the Iron Throne building blocks the entrance. But there is another way into the building.
+    A guard in front of the Iron Throne building blocks the entrance. But there is another way into the building.\
+    Note: Previous component Krammoch Arkhstaff is required.
 
-11. __RESTORED: Palin - Aldeth's hunter comrade__ (Already restored in BG:EE)
+11. __RESTORED: Palin - Aldeth's hunter comrade__ [^1]
 
 	Aldeth has an additional comrade at Cloakwood Lodge.
 
-12. __RESTORED: Svlast - the fallen Paladin__ (Also included in BG1 Unfinished Business or Northern Tales of the Sword Coast)
+12. __RESTORED: Svlast - the fallen Paladin__ [^2] [^3]
 
     A fallen Paladin near Firewine Bridge is haunted by a revenant.
 
@@ -61,11 +62,11 @@
 
     Small verbal skirmish with a soldier when the party enters the garrison in Nashkel.
 
-14. __RESTORED: Velvet - Cockfight__ (Requires BG:EE, EET or Infinity Animations)
+14. __RESTORED: Velvet - Cockfight__ [^4]
 
     Bet on cockfights at Nashkel Carnival.
 
-15. __RESTORED: Nim Furlwing__ (Also included in BG1 Unfinished Business or Northern Tales of the Sword Coast)
+15. __RESTORED: Nim Furlwing__ [^2] [^3]
 
     Save Nim and her hunting dogs in Peldvale.
 
@@ -80,9 +81,9 @@
 18. __Phandalyn waits in Elfsong Tavern__
 
     Revised encounter with the paladin Phandalyn.\
-    Please note: First the party needs to be warned about Phandalyn. After that, Phandalyn will be inside the Elfsong Tavern!
+    Please note: First the party needs to be warned about Phandalyn. After that, Phandalyn will be inside the Elfsong Tavern.
 
-19. __RESTORED: Suthie & Sthief at Silence's Store__ (Already restored in BG:EE)
+19. __RESTORED: Suthie & Sthief at Silence's Store__ [^1]
 
     Two more thieves are present at Silence's Store.
 
@@ -110,20 +111,20 @@
 
     In the Sewers Sir Artolas is on his righteous path.
 
-26. __RESTORED: Pilar & Gheldehar__ (Also included in Northern Tales of the Sword Coast)
+26. __RESTORED: Pilar & Gheldehar__ [^3]
 
     They do not talk to each other but everyone has one item the other one would like to have back.\
     Quest can only be solved through violence or pickpocketing.
 
-27. __RESTORED: Llindellyn - the archer__ (Also included in Northern Tales of the Sword Coast)
+27. __RESTORED: Llindellyn - the archer__ [^3]
 
     In Cloakwood Forest Llindellyn misses his lucky arrow.
 
-28. __RESTORED: Mal-Kalen - Ulcaster's Adept__ (Also included in BG1 Unfinished Business)
+28. __RESTORED: Mal-Kalen - Ulcaster's Adept__ [^2]
 
     The spirit of Mal-Kalen haunts the depths of the Ulcaster Ruins.
 
-29. __RESTORED: Keelor & Nasha__ (Also included in Northern Tales of the Sword Coast)
+29. __RESTORED: Keelor & Nasha__ [^3]
 
     Save a wounded dwarf at the Bear River and then later find his sister in Baldur's Gate city.
 
@@ -153,8 +154,8 @@
 35. __Merchants' League investigations__
 
     Completely revised Merchants' League quest with a lot of restored content.\
-    A messenger will approach you in Baldur's Gate and lead the group to a first meeting with Aldeth to discuss his suspicions about the doppelganger takeover.\
-    Expanded dialogue and plot in the Merchants' League including more options to gain evidence that leads to exposure of the plot and battle.
+    A messenger will approach you and lead the group to a first meeting with Aldeth to discuss his suspicions about the doppelganger takeover.\
+    Expanded dialogue and plot in the Merchants' League including more options to gain evidence that leads to exposure of the plot.
 
 36. __Aldeth & Seniyad__
 
@@ -211,7 +212,7 @@
     Thieves and Silence's bruiser, Mongo, are present in her store.\
     Additional dialogue options with Silence.
 
-48. __Ender Sai in Baldur's Gate__ (Not compatible with Ender Sai from BG1 Unfinished Business)
+48. __Ender Sai in Baldur's Gate__ [^5]
 
     Meet Ender Sai at an inn in Baldur's Gate after he is freed from Bandit Camp.
 
@@ -221,7 +222,7 @@
     New merchant on second floor has same goods as Halbazzer Drin.\
     Halbazzer Drin constantly examines his store items.
 
-50. __RESTORED: Elfsong Tavern Movie__ (Also included in BG1 Unfinished Business, BG:EE Classic Movies or Baldur's Gate: Enhanced Edition Trilogy (EET))
+50. __RESTORED: Elfsong Tavern Movie__ [^2] [^6] [^7]
 
     Plays a cinematic when entering the Elfsong Tavern.
 
@@ -229,7 +230,7 @@
 
     A small quest to find out what happened to the ghost in the Elfsong that has gone quiet and no longer sings to the patrons.
 
-52. __Unusual keg in Elfsong Tavern__ (Requires BG:EE, EET or Infinity Animations)
+52. __Unusual keg in Elfsong Tavern__ [^4]
 
     The cook at the Elfsong Tavern has spotted an unusual keg and asks for your assistance.
 
@@ -255,3 +256,12 @@
         <p>Adds a working rear entrance/exit.</p>
     </li>
 </ol>
+
+
+[^1]: Already restored in BG:EE
+[^2]: Also included in BG1 Unfinished Business
+[^3]: Also included in Northern Tales of the Sword Coast
+[^4]: Requires BG:EE, EET or Infinity Animations
+[^5]: Not compatible with Ender Sai from BG1 Romantic Encounters
+[^6]: Already restored by BG:EE Classic Movies
+[^7]: Already restored by Baldur's Gate: Enhanced Edition Trilogy (EET)
