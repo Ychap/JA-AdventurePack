@@ -53,6 +53,8 @@ Suggested install order with other mods:
 
 ## Components
 
+A short description of each component can be found [here](/JA%23BGT_AdvPack/readme/components.md).
+
 1. Extended Law System
 2. Ramazith
 3. Jopi and his uncle Ragefast
