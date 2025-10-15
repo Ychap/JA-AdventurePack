@@ -574,6 +574,7 @@ INCLUDE ~JA#BGT_AdvPack/Shop_of_Silence/setup-Shop_of_Silence.tpa~
 
 BEGIN ~Ender Sai in Baldur's Gate~ DESIGNATED 48
 LABEL "JA#BGT_AdvPack-Ender_Sai"
+FORBID_COMPONENT ~bg1re/setup-bg1re.tp2~ 27 ~This component is not compatible with Ender Sai from Baldur's Gate Romantic Encounters~
 
 INCLUDE ~JA#BGT_AdvPack/Ender_Sai/setup-Ender_Sai.tpa~
 
