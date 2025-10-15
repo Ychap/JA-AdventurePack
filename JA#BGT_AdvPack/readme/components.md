@@ -2,13 +2,12 @@
 
 1. __Extended Law System__
 
-    Friendly Arm Inn, Elfsong Tavern and Blushing Mermaid Inn are "neutral grounds" where the group will not be attacked by Flaming Fist soldiers.\
-    But stealing from containers in may be interrupted by tavern guards.
+    Friendly Arm Inn, Elfsong Tavern and Blushing Mermaid Inn are "neutral grounds" where the group will not be attacked by Flaming Fist soldiers. But stealing from containers may be interrupted by tavern guards.
 
 2. __Ramazith__
 
     Improved dialogues for Ramazith and Abela.\
-    Tougher monsters on each level of Ramazith's tower. He will reappear on some levels during your battle to the top.
+    Tougher monsters on each level of Ramazith's Tower. He will reappear on some levels during your battle to the top.
 
 3. __Jopi and his uncle Ragefast__
 
@@ -21,7 +20,7 @@
 5. __Husam's story line finished__
 
     Closure of the Husam storyline: Husam and his Shadow Thieves will help inside the Ducal Palace with the confrontation with Sarevok.\
-    Please note: to activate his help, talk to him in front of the Blushing Mermaid.
+    Please note: To activate his help, talk to him in front of the Blushing Mermaid.
 
 6. __IMPROVED/RESTORED: Ducal Palace__
 
@@ -32,18 +31,18 @@
 7. __Gervisse & Voltine__
 
     Completely revised Voltine & Gervisse quest with restored content.\
-    Voltine gets her own house in Baldur's gate city.\
+    Voltine gets her own house in Baldur's Gate city.\
     Expanded "bogeyman" plot with the two twins Laerta and Louise: More dialogue with Gervisse and Voltine to understand what is happening.
 
 8. __Seven Suns__
 
     Completely revised Scar quest in the Seven Suns with restored content.\
     More dialogue and more background plot about Jhasso and the doppelganger take over.\
-    Jhasso may be helpful in chapter 7.
+    Jhasso has some tips in chapter 7.
 
 9. __Krammoch Arkhstaff__
 
-    [Krammoch Arkhstaff](https://forgottenrealms.fandom.com/wiki/Krammoch_Arkhstaff) lives in a house near the harbor.
+    [Krammoch Arkhstaff](https://forgottenrealms.fandom.com/wiki/Krammoch_Arkhstaff) lives in a house at the harbor of Baldur's Gate.\
     With his help, you may find another way into the Iron Throne and rescue a person close to him.
 
 10. __Iron Throne guard__ (Requires previous component Krammoch Arkhstaff)
@@ -56,7 +55,7 @@
 
 12. __RESTORED: Svlast - the fallen Paladin__ (Also included in BG1 Unfinished Business or Northern Tales of the Sword Coast)
 
-    A fallen Paladin near Firewine bridge is haunted by a revenant.
+    A fallen Paladin near Firewine Bridge is haunted by a revenant.
 
 13. __RESTORED: Nashkel Garrison soldier__
 
@@ -64,7 +63,7 @@
 
 14. __RESTORED: Velvet - Cockfight__ (Requires BG:EE, EET or Infinity Animations)
 
-    Allows to bet on cockfights at Nashkel Carnival.
+    Bet on cockfights at Nashkel Carnival.
 
 15. __RESTORED: Nim Furlwing__ (Also included in BG1 Unfinished Business or Northern Tales of the Sword Coast)
 
@@ -85,11 +84,11 @@
 
 19. __RESTORED: Suthie & Sthief at Silence's Store__ (Already restored in BG:EE)
 
-    Two more thiefs are present at Silence's Store.
+    Two more thieves are present at Silence's Store.
 
 20. __RESTORED: Warehouse Workers__
 
-    More warehouse workers during the basilisk encounter in docks. Opportunity to save petrified worker.
+    More warehouse workers during the basilisk encounter in docks. Opportunity to save the petrified worker.
 
 21. __RESTORED: Townspeople dialogues__
 
@@ -105,11 +104,11 @@
 
 24. __RESTORED: Shalasin__
 
-    Minor interaction on second floor of ElfSong Tavern. Gives additional information about Seven Suns.
+    Minor interaction on second floor of Elfsong Tavern. Gives additional information about Seven Suns.
 
 25. __RESTORED: Sir Artolas__
 
-    In the Sewers a paladin of Helm is on his righteous path.
+    In the Sewers Sir Artolas is on his righteous path.
 
 26. __RESTORED: Pilar & Gheldehar__ (Also included in Northern Tales of the Sword Coast)
 
@@ -126,7 +125,7 @@
 
 29. __RESTORED: Keelor & Nasha__ (Also included in Northern Tales of the Sword Coast)
 
-    Save a wounded dwarf at the Bear River and then later find his sister in Baldurs Gate city.
+    Save a wounded dwarf at the Bear River and then later find his sister in Baldur's Gate city.
 
 30. __RESTORED: Marl - Tavern brawl at Feldepost's Inn__
 
@@ -153,9 +152,9 @@
 
 35. __Merchants' League investigations__
 
-    Completely revised Mearchants' League quest with a lot of restored content.\
+    Completely revised Merchants' League quest with a lot of restored content.\
     A messenger will approach you in Baldur's Gate and lead the group to a first meeting with Aldeth to discuss his suspicions about the doppelganger takeover.\
-    Expanded dialogue and plot in the Merchant League including more options to gain evidence that leads to exposure of the plot and battle.
+    Expanded dialogue and plot in the Merchants' League including more options to gain evidence that leads to exposure of the plot and battle.
 
 36. __Aldeth & Seniyad__
 
@@ -171,11 +170,11 @@
 
 39. __Tenya's quest in Temple of Umberlee__
 
-    If you have saved Tenya and the bowl in the fishermen quest, and have completed the Tremaine and Lothander geas quests, Tenya will ask you to hunt down her mother's killer.
+    If you have saved Tenya in the fishermen quest and have completed the Tremaine and Lothander geas quests, Tenya will ask you to hunt down her mother's killer.
 
 40. __Nashkel changes__
 
-    Guard Bardolan gets more dialogue.\
+    The guard Bardolan gets more dialogue.\
     The store gets a unique name: The Northern Lights\
     A wench serves in the Belching Dragon Tavern.
 
@@ -205,11 +204,11 @@
 
 46. __Hulrik and his cows__
 
-    Additional dialogue options with Hulrik about cleared Nashkel Mine or destroyed Xvart Village.
+    Additional dialogue options with Hulrik about the cleared Nashkel Mine or the destroyed Xvart Village.
 
 47. __Improved Shop of Silence__
 
-    Thieves and Silence's bruiser Mongo are present in her store.\
+    Thieves and Silence's bruiser, Mongo, are present in her store.\
     Additional dialogue options with Silence.
 
 48. __Ender Sai in Baldur's Gate__ (Not compatible with Ender Sai from BG1 Unfinished Business)
@@ -224,7 +223,7 @@
 
 50. __RESTORED: Elfsong Tavern Movie__ (Also included in BG1 Unfinished Business, BG:EE Classic Movies or Baldur's Gate: Enhanced Edition Trilogy (EET))
 
-    Plays cinnematic the first time entering Elfsong Tavern.
+    Plays a cinematic when entering the Elfsong Tavern.
 
 51. __Mini-Quest "The mystery of the silent ghostly voice"__
 
@@ -244,7 +243,7 @@
 
 55. __Extended meeting between Xzar and Niemain__
 
-    Dialogue improvements for Niemain and the Zentarim (fight can be avoided more easily).
+    Dialogue improvements for Niemain and the Zentarim. Fight can be avoided more easily.
 
 <ol start="101">
     <li>
