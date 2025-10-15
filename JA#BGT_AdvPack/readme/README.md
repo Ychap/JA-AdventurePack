@@ -151,11 +151,6 @@ Note the following to see as much mod content as possible:
     To start the scene, you need to go and pick Sarevok's journal from the second level. Nila will help you with this. Also, if expecting help from Husam, you need to grant him and his Shadow Thieves access to the palace, first (via the cellars).
 </details>
 
-<details>
-  <summary><b>How can I spare Caldo and Krumm?</b></summary>
-    Try the spell "Charm Person".
-</details>
-
 <br>
 
 ## Version History
