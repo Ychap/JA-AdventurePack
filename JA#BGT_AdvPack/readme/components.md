@@ -257,6 +257,9 @@
     </li>
 </ol>
 
+\
+[Back to README](/JA%23BGT_AdvPack/readme/README.md)
+
 
 [^1]: Already restored in BG:EE
 [^2]: Also included in BG1 Unfinished Business
